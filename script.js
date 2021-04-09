@@ -20,5 +20,11 @@ function createBoard() {
     }
   }
 }
-
 createBoard();
+
+function initialBlack() {
+  const initialColor = document.querySelector('.first-color');
+  initialColor.classList.add('selected');
+}
+
+initialBlack();
