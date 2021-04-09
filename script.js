@@ -1,17 +1,17 @@
-window.onload = function() {
-let numberOfBlock = 5
-let section = document.querySelector('#pixel-board')
+window.onload = function allFunction() {
+  const numberOfBlock = 5;
+  const section = document.querySelector('#pixel-board');
 
-function blockPixel(size) {
-  for (let index = 0; index < size; index += 1) {
-    let pixelColumn = document.createElement('div');
-    section.appendChild(pixelColumn)
+  function blockPixel(size) {
     for (let index = 0; index < size; index += 1) {
-      let pixelLine = document.createElement('div');
-      pixelLine.className = 'pixel'
-      pixelColumn.appendChild(pixelLine)
+      const pixelColumn = document.createElement('div');
+      section.appendChild(pixelColumn);
+      for (let indexOfLine = 0; indexOfLine < size; indexOfLine += 1) {
+        const pixelLine = document.createElement('div');
+        pixelLine.className = 'pixel';
+        pixelColumn.appendChild(pixelLine);
+      }
     }
   }
-}
-blockPixel(numberOfBlock)
-}
+  blockPixel(numberOfBlock);
+};
