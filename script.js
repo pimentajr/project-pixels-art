@@ -33,3 +33,17 @@ function blackSelected() {
   }
 }
 blackSelected();
+
+function colorSelect() {
+  const colorSelection = document.querySelectorAll('.color');
+  for (let i = 0; i < colorSelection.length; i += 1) {
+    colorSelection[i].addEventListener('click', () => {
+      for (let j = 0; j < colorSelection.length; j += 1) {
+        colorSelection[j].classList.remove('selected');
+      }
+      colorSelection[i].classList.add('selected');
+    });
+  }
+  console.log(colorSelection);
+}
+colorSelect();
