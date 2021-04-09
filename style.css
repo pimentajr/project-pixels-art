@@ -34,12 +34,22 @@ h1 {
   box-shadow: 0 0 0 1px white, 0 0 0 3px black;
 }
 
+#pixel-board {
+  display: block;
+  height: 210px;
+  margin: auto;
+  margin-top: 20px;
+  width: fit-content;
+}
+
 .pixel {
+  height: 40px;
+  width: 40px;
   border: 1px solid black;
   border-collapse: separate;
   border-spacing: 0 0;
-  height: 40px;
-  width: 40px;
+  cursor: pointer;
+  display: table-cell;
 }
 
 .black {
@@ -75,11 +85,10 @@ h1 {
 }
 
 .submit-button {
-  width: 100%;
+  width: 40%;
   height: 42px;
   color: #fffbfe;
   background-color: #181717;
   border: 2px solid #616a6d;
   text-transform: uppercase;
-  margin: 1em 0;
 }

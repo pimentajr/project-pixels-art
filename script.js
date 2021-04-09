@@ -7,6 +7,11 @@ function creatPallete() {
     createDiv.className = 'color';
     createDiv.style.backgroundColor = colors[index];
     colorPalette.appendChild(createDiv);
+
+    if (index === 0) {
+      createDiv.classList.add('selected');
+    }
+
   }
 }
 creatPallete();
