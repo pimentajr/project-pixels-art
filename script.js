@@ -1,7 +1,7 @@
 const pixelBoard = document.getElementById('pixel-board');
 const colorPalette = document.getElementById('color-palette');
 const clearBtn = document.getElementById('clear-board');
-var colorToPaint = document.getElementsByClassName('selected')[0];
+let colorToPaint = document.getElementsByClassName('selected')[0];
 function createPixels(line) {
   for (let column = 1; column <= 5; column += 1) {
     const pixel = document.createElement('div');
@@ -20,20 +20,24 @@ function createRows() {
 }
 createRows();
 
-colorPalette.addEventListener('click', function(event) {
+function selectColor(event) {
   colorToPaint.classList.remove('selected');
   colorToPaint = event.target;
   colorToPaint.classList.add('selected');
-})
+}
+colorPalette.addEventListener('click', selectColor);
 
-pixelBoard.addEventListener('click', function(event) {
-  event.target.className = 'pixel';
-  event.target.classList.add(colorToPaint.classList[1]);
-})
+function changeColor(event) {
+  const pixel = event.target;
+  pixel.className = 'pixel';
+  pixel.target.classList.add(colorToPaint.classList[1]);
+}
+pixelBoard.addEventListener('click', changeColor);
 
-clearBtn.addEventListener('click', function() {
-  let pixels = document.getElementsByClassName('pixel');
+function clearPixels() {
+  const pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].className = 'pixel empty';
   }
-})
+}
+clearBtn.addEventListener('click', clearPixels);
