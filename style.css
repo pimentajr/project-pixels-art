@@ -9,7 +9,7 @@
   margin-left: 38%;
 }
 
-#color-pallete {
+#color-palette {
   border: 1px solid black;
   display: inline-block;
   padding: 5px;
@@ -52,14 +52,14 @@
 #pixelsBlankBoard {
   width: 155px;
   height: 155px;
+  margin: 5px 0 0 44%;
   border: 1px solid black;
 }
 
-#pixel {
+.pixel {
   width: 25px;
   height: 25px;
   border: 1px solid black;
   display: inline-block;
   margin: 0;
-
 }
