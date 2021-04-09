@@ -16,3 +16,7 @@ function createColunnLines() {
 
     
 }createColunnLines()
+
+/* function selected() {
+    if
+} */
