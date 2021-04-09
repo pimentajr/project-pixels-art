@@ -34,7 +34,11 @@ body {
   border: 1px solid black;
 }
 
-#clear-board {
+#clear-board , #generate-board {
   padding: 0 20px;
-  margin: 20px;
+  margin: 20px 0;
+}
+
+#board-size {
+  width: 130px;
 }
