@@ -19,8 +19,9 @@ function defaultColor() {
 defaultColor();
 
 let selectedColor;
+let colorPaint = 'black';
 
-colorPalette.addEventListener('click', function (event) {
+colorPalette.addEventListener('click', function selectColor(event) {
   selectedColor = document.querySelectorAll('.selected');
 
   if (event.target.classList.contains('color')) {
@@ -31,4 +32,17 @@ colorPalette.addEventListener('click', function (event) {
     }
     event.target.classList.add('selected');
   }
+  colorPaint = document.querySelector('.selected').classList[1];
+  return colorPaint;
 });
+
+pixelBoard.addEventListener('click', function paintPixel(event) {
+  if (event.target.classList.contains('pixel')){
+    if (event.target.classList.length > 1) {
+      event.target.className = 'pixel';
+      event.target.classList.add(colorPaint);
+    } else {
+      event.target.classList.add(colorPaint);
+    }
+  }
+})

@@ -21,22 +21,6 @@
   display: inline-block;
 }
 
-.black {
-  background-color: black;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.red {
-  background-color: red;
-}
-
-.green {
-  background-color: green;
-}
-
 #pixel-board {
   margin-top: 50px;
   margin-left: 50px;
@@ -51,4 +35,20 @@
   height: 40px;
   width: 40px;
   border: 1px solid black;
+}
+
+.black {
+  background-color: black;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
 }
