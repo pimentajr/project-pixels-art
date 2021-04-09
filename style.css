@@ -1,7 +1,33 @@
+:root {
+
+  --box: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .color {
   border: 1px solid black;
-  height: 80px;
-  width: 80px;
+  height: var(--box);
+  width: var(--box);
   display: inline-block;
   margin-left: 10px;
+}
+
+#pixel-board {
+  margin: 20px 10px;
+}
+
+.lineBox {
+  height: var(--box);
+}
+
+.pixel {
+  height: var(--box);
+  width: var(--box);
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
 }

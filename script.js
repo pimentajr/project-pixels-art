@@ -1,18 +1,34 @@
-window.onload = function() {
+const colors = ['black', 'red', 'blue', 'green'];
+const pixel = 5;
+const pixelBoard = document.querySelector('#pixel-board');
 
-  function creatPalette(colorTitle){
-    let colorPalette = document.querySelector('#color-palette');
-    for (let index = 0; index < colorTitle.length; index += 1){
-      let colorBox = document.createElement('div');
-      colorBox.className = colorTitle[index] + ' color';
-      colorBox.style.backgroundColor = colorTitle[index];
-      console.log(colorBox);
-      colorPalette.appendChild(colorBox);
-    }
+function createPalette(colorTitle) {
+  const colorPalette = document.querySelector('#color-palette');
+  for (let index = 0; index < colorTitle.length; index += 1) {
+    const colorBox = document.createElement('div');
+    colorBox.className = `${colorTitle[index]} color`;
+    colorBox.style.backgroundColor = colorTitle[index];
+    colorPalette.appendChild(colorBox);
   }
-
-  let colors = ['black', 'red', 'blue', 'green']; 
-  creatPalette(colors);
 }
 
+function createPixelLine(numberOfPixelsXY) {
+  const lineBox = document.createElement('div');
+  lineBox.className = 'lineBox';
+  for (let index = 0; index < numberOfPixelsXY; index += 1) {
+    const pixelBox = document.createElement('div');
+    pixelBox.className = 'pixel';
+    lineBox.appendChild(pixelBox);
+    pixelBoard.appendChild(lineBox);
+    console.log(pixelBox);
+  }
+}
 
+function numberOfLines(lines) {
+  for (let index = 0; index < lines; index += 1) {
+    createPixelLine(pixel);
+  }
+}
+
+createPalette(colors);
+numberOfLines(pixel);
