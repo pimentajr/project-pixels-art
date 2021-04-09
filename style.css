@@ -8,6 +8,10 @@
   padding: 20px;
 }
 
+.black {
+  background-color: black;
+}
+
 .green {
   background-color: green;
 }
@@ -22,4 +26,12 @@
 
 .magenta {
   background-color: magenta;
+}
+
+.pixel {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: table-cell;
 }
