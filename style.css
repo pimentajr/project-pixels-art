@@ -23,12 +23,12 @@ body {
 
 .pixel {
   background-color: white;
-  height: 39px;
-  width: 39px;
+  height: 40px;
+  width: 40px;
 }
 
 td {
   border: solid;
-  border-width: 1px;
+  padding: 1px;
   border-color: black;
 }
