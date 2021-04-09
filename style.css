@@ -1,0 +1,25 @@
+
+
+.color{ 
+    border: black;
+    border-width: 1px;
+    border:solid; 
+    display: inline-flex;
+     
+}
+
+.green {
+    background-color: green;
+}
+
+.magenta{
+    background-color: magenta;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.yellow{
+    background-color: yellow;
+}
