@@ -1,11 +1,32 @@
-.container-pallete {
-  width: 500px;
+header{
+    position: relative;
 
 }
 
+.container-pallete {
+  width: 500px;
+  position: relative;
+}
+
 .color {
-  width: 65px;
-  height: 65px;
+  width: 63px;
+  height: 63px;
   border: 1px solid black;
   display: inline-block;
+}
+
+#pixel-board {
+  width:240px;
+  height:240px;
+  position: relative;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  backgroundcolor: white;
+  border: 1px solid black;
+  display: inline-block
+
+
 }
