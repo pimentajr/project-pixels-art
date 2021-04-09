@@ -33,3 +33,18 @@ function createPixels(size) {
   }
 }
 createPixels(5);
+
+function clickPalette() {
+  const eventPalette = document.getElementById('color-palette');
+  eventPalette.addEventListener('click', (e) => {
+    const target = e.target;
+    const color = document.getElementsByClassName('color');
+    for (let index =0; index < color.length; index += 1) {
+      color[index].classList.remove('selected');
+      if (target.className === 'color') {
+        target.classList.add('selected')
+      }
+    }
+  })
+}
+clickPalette();
