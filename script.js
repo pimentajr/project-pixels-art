@@ -26,7 +26,7 @@ for (let lineIndex = 1; lineIndex <= pixelBoardSize; lineIndex += 1) {
 const colorPaleteDiv = document.querySelector('#color-palette');
 
 function selectColor() {
-  colorPaleteDiv.addEventListener('click', (event)=> {
+  colorPaleteDiv.addEventListener('click', (event) => {
     const colorDiv = document.querySelector('.selected');
     if (event.target.id !== 'color-palette') {
       colorDiv.classList.remove('selected');
@@ -38,8 +38,8 @@ function selectColor() {
 selectColor();
 
 // Requisito 8
-pixelBoard.addEventListener('click', (event)=> {
-  let storageColor = document.querySelector('.selected').id;
+pixelBoard.addEventListener('click', (event) => {
+  const storageColor = document.querySelector('.selected').id;
   if (event.target.className === 'pixel') {
     event.target.style.backgroundColor = storageColor;
   }
