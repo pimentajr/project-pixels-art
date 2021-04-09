@@ -1,7 +1,6 @@
 const pixelBoard = document.getElementById('pixel-board');
 const boardLength = 25;
 const colorPalette = document.getElementById('color-palette');
-const colorPick = document.querySelectorAll('.color');
 const clearButton = document.getElementById('clear-board');
 
 for (let index = 0; index < boardLength; index += 1) {
