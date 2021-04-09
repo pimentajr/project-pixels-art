@@ -4,12 +4,27 @@ h1 {
   text-align: center;
   margin: 30px 0;
   cursor: no-drop;
-  transition: 0.6s;
+  transition: 0.8s;
   color: black;
+}
+
+h1:after {
+  content: '';
+  display: block;
+  width: 400px;
+  height: 4px;
+  background: linear-gradient(90deg, red 0%, blue 52%, green 100%);
+  margin: 1px auto;
+  transition: 0.8s;
 }
 
 h1:hover {
   color: red;
-  transition: 0.3s;
+  font-size: 56px;
+  transition: 0.5s;
 }
 
+h1:hover:after {
+  opacity: 0;
+  transition: 0.5s;
+}
