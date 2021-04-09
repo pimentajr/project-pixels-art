@@ -38,16 +38,16 @@ body {
   margin-right: auto;
 }
 
+#green {
+  background-color: green;
+}
+
 #red {
   background-color: red;
 }
 
-#black {
-  background-color: black;
-}
-
-#yellowgreen {
-  background-color: yellowgreen;
+#yellow {
+  background-color: yellow;
 }
 
 #blue {
