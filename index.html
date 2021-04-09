@@ -9,19 +9,26 @@
 </head>
 
 <body>
-  <h1 id="title">Paleta de Cores</h1>
+  <div class="center">
+    <h1 id="title">Paleta de Cores</h1>
+  
+    <ul id="color-palette">
+      <li class="color"></li>
+      <li class="color"></li>
+      <li class="color"></li>
+      <li class="color"></li>
+    </ul>
+  
+    <section class="generate-container">
+      <input id="board-size" min="0" placeholder="pick a number 5 or higher" type="number">
+      <button id="generate-board">#VQV</button>
+    </section>
 
-  <ul id="color-palette">
-    <li class="color"></li>
-    <li class="color"></li>
-    <li class="color"></li>
-    <li class="color"></li>
-  </ul>
-
-  <button id="clear-board">Limpar</button>
-
-  <section id="pixel-board">
-  </section>
+    <button id="clear-board">Limpar</button>
+  
+    <section id="pixel-board">
+    </section>
+  </div>
 
   <script src="script.js"></script>
 </body>

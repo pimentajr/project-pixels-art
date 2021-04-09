@@ -13,8 +13,12 @@ function createColorPalette() {
 createColorPalette();
 
 const pixelBoard = document.querySelector('#pixel-board');
+const boardSizeInput = document.querySelector('#board-size');
+const generateBoardButton = document.querySelector('#generate-board');
 
 function fillPixelBoard(boardSize) {
+  boardSize = boardSizeInput.value;
+
   for (let lineIndex = 0; lineIndex < boardSize; lineIndex += 1) {
     const line = document.createElement('div');
     line.className = 'line';
@@ -29,7 +33,17 @@ function fillPixelBoard(boardSize) {
   }
 }
 
-fillPixelBoard(5);
+function generateBoard(boardSize) {
+  boardSize = boardSizeInput.value;
+
+  if (boardSize < 5) {
+    alert('Board inválido!');
+  } else {
+    fillPixelBoard();
+  }
+}
+
+generateBoardButton.addEventListener('click', generateBoard);
 
 function iniciateColorPalette() {
   for (let index = 0; index < paletteColors.length; index += 1) {
