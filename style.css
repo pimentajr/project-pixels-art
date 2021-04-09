@@ -70,12 +70,7 @@ h1:hover:after {
   background-color: green;
 }
 
-#color-palette ul li:hover {
-  transform: scale(0.9);
-  transition: 0.3s;
-}
-
 #color-palette ul li:active {
-  background-color: white;
+  transform: scale(0.9);
   transition: 0.1s;
 }
