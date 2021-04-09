@@ -1,3 +1,10 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 #color-palette {
   display: block;
 }
@@ -6,26 +13,6 @@
   display: inline-block;
   border: 1px solid black;
   padding: 20px;
-}
-
-#black {
-  background-color: black;
-}
-
-#green {
-  background-color: green;
-}
-
-#red {
-  background-color: red;
-}
-
-#blue {
-  background-color: blue;
-}
-
-#magenta {
-  background-color: magenta;
 }
 
 .pixel {
