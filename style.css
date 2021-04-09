@@ -16,7 +16,6 @@ h1 {
 
 h2 {
   align-self:center;
- 
   padding: 25px;
   margin: auto;
   text-align: center;
@@ -31,11 +30,10 @@ h2 {
 }
 
 td {  
-  size: 40px, 40px;
+  size: 41px, 41px;
   align-self:center;
-  border-collapse: collapse;
   border: 1px solid rgb(0,0,0);
-  padding: 40px;
+  padding: 41px;
   background-color: rgb(255, 255, 255);
 }
 #pixel-board {
@@ -48,8 +46,8 @@ td {
 }
 
 .pixel {
-   size: 40px, 40px;
-  border-collapse: collapse;
+  width: 40px;
+  height: 40px;
   border: 1px solid rgb(0,0,0);
   background-color: rgb(255, 255, 255);
 }
