@@ -46,6 +46,13 @@
   margin: auto;
   
 }
+
+#button-section {
+width: 90px;
+margin: auto;
+padding: 50px;
+}
+
 .column {
   display: table-row;
 }

@@ -16,5 +16,10 @@ pixelBoardSquare.addEventListener('click', (event2) => {
   pixelToPrint.style.backgroundColor = window.getComputedStyle(colorSelected).backgroundColor;
 });
 
-// const buttonClearColor = document.querySelector('#clear-board');
-// buttonClearColor.addEventListener
+const buttonClearColor = document.querySelector('#clear-board');
+buttonClearColor.addEventListener('click', () => {
+  const pixelsColored = document.querySelectorAll('.pixel')
+  for (let index = 0; index < pixelsColored.length; index += 1) {
+    pixelsColored[index].style.backgroundColor = 'white';
+}
+});
