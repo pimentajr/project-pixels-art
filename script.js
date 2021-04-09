@@ -3,6 +3,14 @@ const board = document.getElementById('pixel-board');
 
 let selectedColor;
 
+function clearBoard () {
+  for (let row of board.rows) {
+    for (let cell of row.children) {
+      cell.style.backgroundColor = 'white';
+    }
+  }
+}
+
 function createBoard (rows, columns) {
   for (let i = 0; i < rows; i += 1) {
     let row = document.createElement('tr');
@@ -10,6 +18,8 @@ function createBoard (rows, columns) {
     for (let j = 0; j < columns; j += 1) {
       let cell = document.createElement('td');
       cell.classList.add('pixel');
+      cell.addEventListener('click', paintPixel);
+
       row.appendChild(cell);
     }
 
@@ -17,7 +27,7 @@ function createBoard (rows, columns) {
   }
 }
 
-function fillPaletteColors (colorPalette) {
+function createPalette (colorPalette) {
   const paletteRow = document.createElement('tr');
   
   for (let i = 0; i < colorPalette.length; i++) {
@@ -34,9 +44,20 @@ function fillPaletteColors (colorPalette) {
   selectColor(0);
 }
 
+function deleteBoard() {
+  console.log(board.lastChild);
+  while (board.lastElementChild) {
+    board.removeChild(board.lastElementChild);
+  }
+}
+
 function handlePaletteClick(e) {
   console.log(e.target);
   selectColor(e.target.index);
+}
+
+function paintPixel(e) {
+  e.target.style.backgroundColor = selectedColor.style.backgroundColor;
 }
 
 function selectColor(index) {
@@ -50,7 +71,24 @@ function selectColor(index) {
   selectedColor = paletteElements[index];
 }
 
+const clearButton = document.getElementById('clear-board');
+clearButton.addEventListener('click', clearBoard);
 
+const sizeInput = document.getElementById('board-size');
+const resizeButton = document.getElementById('generate-board');
+
+resizeButton.addEventListener('click', function() {
+  const size = sizeInput.value;
+
+  if (!size) {
+    return alert('Board inválido!');
+  }
+
+  deleteBoard();
+  createBoard(size, size);
+
+  sizeInput.value = '';
+});
 
 createBoard(5, 5);
-fillPaletteColors(['black', 'red', 'green', 'blue']);
+createPalette(['black', 'red', 'green', 'blue']);
