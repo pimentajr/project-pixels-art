@@ -36,3 +36,12 @@ function selectYellowColor() {
   yellowColor.classList.add('selected');
 }
 yellowColor.addEventListener('click', selectYellowColor);
+
+const emptyPixel = document.querySelector('#pixel-board');
+function pixelColor(event) {
+  const colorChosen = document.querySelector('.selected');
+  // window.getComputedStyle, recupera o estilo computado pelo CSS(Elemento que eu quero recuperar).A estilização usado no CSS.
+  const currentSelectedColor = window.getComputedStyle(colorChosen).backgroundColor;
+  event.target.style.backgroundColor = currentSelectedColor;
+}
+emptyPixel.addEventListener('click', pixelColor);
