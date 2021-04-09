@@ -13,6 +13,6 @@ for (let index = 1; index <= differentColors; index += 1) {
   colorBox.classList.add('color');
   const maxColorValue = 16777215;
   const randomColor = Math.floor(Math.random() * maxColorValue).toString(16);
-  colorBox.style.backgroundColor = '#${ randomColor}';
+  colorBox.style.backgroundColor = `#${randomColor}`;
   colorPalette.appendChild(colorBox);
 }
