@@ -6,6 +6,9 @@ function selectColors() {
   }
 }
 
+function createBoard() {
+  
+}
 window.onload = function () {
   selectColors();
 };
