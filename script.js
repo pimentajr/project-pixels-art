@@ -1,12 +1,12 @@
 // Requisito 3 - Criação da cor de paleta preta na primeira posição
 function addBlackColor() {
-  const firstColor = document.getElementById('firstcolor');
+  const firstColor = document.getElementById('green');
   firstColor.style.backgroundColor = 'black';
-  firstColor.classList.add('selected'); // Requisito 6 - Classe selected no início
 }
 addBlackColor();
 
-// Requisito 4 - Criação do Pixel Board - 5 linhas div com 5 divs dentro - inline
+// Requisito 4 - Criação do Pixel Board
+// 5 linhas div com 5 divs dentro - inline
 function createBoard() {
   const pixelBoard = document.getElementById('pixel-board');
   for (let index = 0; index < 5; index += 1) {
@@ -20,7 +20,5 @@ function createBoard() {
     }
   }
 }
+
 createBoard();
-
-//Requisito 6 - Pincel com cor preta inicial definida
-
