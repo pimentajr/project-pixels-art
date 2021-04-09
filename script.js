@@ -33,7 +33,7 @@ function printBoard() {
         break;
       default:
       }
-    }            
+    }
   });
 }
 printBoard();
