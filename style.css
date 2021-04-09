@@ -16,3 +16,19 @@
 .yellow {
   background-color: yellow;
 }
+.pixels {
+  display: inline-block;
+  background-color: white;
+  width: 75px;
+  height: 75px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.pixel-parente {
+    display: block;
+}
+#pixel-board {
+    border: solid black 3px;
+    width: 425px;px;
+}
