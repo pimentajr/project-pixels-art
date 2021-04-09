@@ -1,0 +1,10 @@
+.color {
+  border: black solid 1px;
+  display: inline-block;
+  padding: 30px;
+}
+
+.terms{
+    display: inline-block;
+    padding: 14px;
+}
