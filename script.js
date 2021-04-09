@@ -1,5 +1,5 @@
 window.onload = function() {
-    document.querySelector('.black').className = 'selectd';
+    document.querySelector('.black').className += 'selectd';
 }
 
 function createDiv(number) {
