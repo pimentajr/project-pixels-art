@@ -23,3 +23,18 @@ function squareColuns() {
 }
 
 squareColuns();
+
+function changeClass(event) {
+  const classToRemove = document.getElementsByClassName('color');
+  for (let index = 0; index < classToRemove.length; index += 1) {
+    classToRemove[index].classList.remove('selected');
+  }
+  event.target.classList.add('selected');
+}
+
+function selectColor() {
+  const selection = document.getElementById('color-container');
+  selection.addEventListener('click', changeClass);
+}
+
+selectColor();
