@@ -2,23 +2,29 @@ body {
   margin: 0;
 }
 
-#color-palette {
-  width: 166px;
-  margin-left: 25px;
+div.color {
+  text-align: center;
 }
 
 .color {
-  text-align: center;
+  color: white;
   margin-left: 5px;
   border: 1px solid black;
-  height: 30px;
-  width: 30px;
+  height: 70px;
+  width: 70px;
   display: inline-block;
-  background-color: red;
 }
 
-#red {
+#color-palette {
+  border: 1px solid black;
+  width: 330px;
+  margin-left: 5px;
+  padding: 20px;
+}
+
+#black {
   background-color: black;
+  align-content: center;
 }
 
 #green {

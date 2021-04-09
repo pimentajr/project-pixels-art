@@ -1,3 +1,4 @@
-// window.onload = function onLoadExecution () {
-//   let colorDiv = document.querySelectorAll('.color');
-// };
+window.onload = function jsExec() {
+  const colorDiv = document.querySelector('.div-container');
+  console.log(colorDiv);
+};
