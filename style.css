@@ -5,17 +5,17 @@
 
 #title {
   font-family: monospace;
+  text-align: center;
 }
 
 #color-palette {
-  width: auto;
-  height: auto;
+  text-align: center; 
 }
 
 .color {
   border: black solid 1px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
 }
 
@@ -35,22 +35,24 @@
   background-color: green;
 }
 
-table, tr, td {
-  width: 50px;
-  height: 50px;
+table , tr , td {
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
   border-collapse: collapse;
 }
 
-table, tr{
+table ,tr {
   width: auto;
   height: auto;
 }
 
-/* .pixel-board {
-  
-} */
+#pixel-board {
+  margin-left: auto;
+  margin-right: auto;
+}
 
-.pixel{
+.pixel {
   background-color:white;
+
 }
