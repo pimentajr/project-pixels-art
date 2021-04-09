@@ -1,4 +1,5 @@
 const boardSize = 5;
+const colorPalette = document.getElementById('color-palette');
 const colors = document.getElementsByClassName('color');
 const pixelBoard = document.getElementById('pixel-board');
 
@@ -30,6 +31,7 @@ function setBoardSize(size) {
 function onPageLoad() {
   setColors();
   setBoardSize(boardSize);
+  colorPalette.firstElementChild.classList.add('selected');
 }
 
 window.onload = onPageLoad;
