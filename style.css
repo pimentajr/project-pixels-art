@@ -19,7 +19,7 @@
   display: inline-block;
 }
 
-#red {
+#black {
   background-color: black;
 }
 
@@ -27,10 +27,30 @@
   background-color: blue;
 }
 
-#yellow {
-  background-color: yellow;
+#red {
+  background-color: red;
 }
 
 #green {
   background-color: green;
+}
+
+table, tr, td {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table, tr{
+  width: auto;
+  height: auto;
+}
+
+.pixel-board {
+  
+}
+
+.pixel{
+  background-color:white;
 }
