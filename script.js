@@ -5,16 +5,16 @@ function colorInsert() {
   const green = document.getElementById('green');
   const red = document.getElementById('red');
   let colorGenerate = [];
-  let randNumber = [];
-  for (const index = 0; index < 3; index += 1) {
-    for (const zindex = 0; zindex < 3; zindex += 1) {
-      randNumber[zindex] = Math.ceil(Math.random()*255);
+  for (let index = 0; index < 3; index += 1) {
+    let randNumber = [];
+    for (let zindex = 0; zindex < 3; zindex += 1) {
+      randNumber[zindex] = Math.ceil(Math.random() * 255);
     }
     colorGenerate[index] = randNumber;
   }
-  blue.style.backgroundColor = 'blue';
-  green.style.backgroundColor = 'green';
-  red.style.backgroundColor = 'red';
+  blue.style.backgroundColor = `rgba(${colorGenerate[0].join(', ')})`;
+  green.style.backgroundColor = `rgba(${colorGenerate[1].join(', ')})`;
+  red.style.backgroundColor = `rgba(${colorGenerate[2].join(', ')})`;
   black.style.backgroundColor = 'black';
   black.classList.add('selected');
 }
@@ -73,8 +73,7 @@ function clearBoard() {
 // Função para limpar todas as linhas
 function clearLines() {
   const pixelP = document.getElementById('pixel-board');
-  const childLength = pixelP.childElementCount;
-  for (let index = 0; index < childLength; index += 1) {
+  for (let index = 0; index < pixelP.childElementCount;) {
     pixelP.removeChild(pixelP.childNodes[0]);
   }
 }
