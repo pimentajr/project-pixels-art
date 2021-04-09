@@ -18,6 +18,9 @@ function getColor(element){
 	const color = getComputedStyle(pencil).backgroundColor
 	if(pencil.parentNode === colorPallete){
 		actualMouseColor = color;
+		const actualSelected = document.querySelector(".selected");
+		actualSelected.classList.remove("selected")
+		pencil.classList.add("selected")
 	}
 };
 
