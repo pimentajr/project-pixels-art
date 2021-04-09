@@ -9,6 +9,7 @@ secaoSelecionaCor.id = 'color-palette';
 textBody.appendChild(secaoSelecionaCor);
 
 const divColor1 = document.createElement('div');
+divColor1.classList.add('selected');
 divColor1.classList.add('color');
 divColor1.style.backgroundColor = 'black';
 secaoSelecionaCor.appendChild(divColor1);
