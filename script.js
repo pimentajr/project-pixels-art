@@ -1,3 +1,4 @@
+const FIXED_COLOR = 'black';
 const COLORS = [
   'rgb(191, 97, 106)',
   'rgb(235, 203, 139)',
@@ -6,22 +7,39 @@ const COLORS = [
 // Doesn't count the fixed color.
 const NUM_OF_COLORS = COLORS.length;
 
-function setFixedColor(fixedColor) {
-  let fixedColorBox = document.querySelector('.color.fixed');
+function initializePalette() {
+  const colorPalette = document.getElementById('color-palette');
+  const fixedColorBox = document.createElement('div');
+  let colorBox;
 
-  fixedColorBox.style.backgroundColor = fixedColor;
-}
-
-function setColors(colors) {
-  let colorBoxes = document.querySelectorAll('.color:not(.fixed)');
+  fixedColorBox.style.backgroundColor = FIXED_COLOR;
+  fixedColorBox.classList.add('color', 'fixed');
+  colorPalette.appendChild(fixedColorBox);
 
   for (let index = 0; index < NUM_OF_COLORS; index += 1) {
-    colorBoxes[index].style.backgroundColor = colors[index];
+    colorBox = document.createElement('div');
+    colorBox.classList.add('color');
+    colorBox.style.backgroundColor = COLORS[index];
+    colorPalette.appendChild(colorBox);
   }
-  console.log(colorBoxes);
+}
+
+function setFixedColor() {
+  const fixedColorBox = document.querySelector('.color.fixed');
+
+  fixedColorBox.style.backgroundColor = FIXED_COLOR;
+}
+
+function setColors() {
+  const colorBoxes = document.querySelectorAll('.color:not(.fixed)');
+
+  for (let index = 0; index < NUM_OF_COLORS; index += 1) {
+    colorBoxes[index].style.backgroundColor = COLORS[index];
+  }
 }
 
 window.onload = () => {
-  setFixedColor('black');
-  setColors(COLORS);
+  initializePalette();
+  setFixedColor();
+  setColors();
 };
