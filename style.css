@@ -2,7 +2,7 @@ body {
     align-items: center;
     background-color: rgba(36, 33, 30, 0.479);
     color: white;
-    display: flex;
+    display:flex;
     flex-flow: column wrap;
     font-family: Montserrat, sans-serif;
     justify-content: center;
@@ -15,18 +15,15 @@ body {
     display: flex;
     flex-flow: row wrap;
 } 
-#color-palette li {
+#color-palette div {
     align-items: center;
-    display: flex;
-    flex-flow: column wrap;
     height: 80px;
     justify-content: center;
     margin: 2px;
     padding: 15px;
     text-align: center;
-    transition: all 0.25s ease;
     width: 80px;
-    border: 100px black;
+    border: 1px black solid;
 }
 #color-palette #black {
     background-color: #000000;
