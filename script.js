@@ -1,9 +1,13 @@
+const selectedColorDiv = document.querySelector('.color');
+let flag1 = false;
+
 function createPaletteColorDiv(color) {
   const palletColorDiv = document.createElement('div');
   if (color === 'black') {
     palletColorDiv.className = 'color selected';
+  } else {
+    palletColorDiv.className = 'color';
   }
-  palletColorDiv.className = 'color';
   palletColorDiv.style.backgroundColor = color;
   document.querySelector('#color-palette').appendChild(palletColorDiv);
 }
@@ -13,11 +17,13 @@ function createBoardPixels() {
   document.querySelector('#pixel-board').appendChild(boardPixelsDiv);
 }
 
-for (let index = 1; index <= 25; index += 1) {
-  createBoardPixels();
-}
-
 createPaletteColorDiv('black');
 createPaletteColorDiv('yellow');
 createPaletteColorDiv('red');
 createPaletteColorDiv('green');
+
+for (let index = 1; index <= 25; index += 1) {
+  createBoardPixels();
+}
+
+selectedColorDiv.addEventListener('click', () => {});
