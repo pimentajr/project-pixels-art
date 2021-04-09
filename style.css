@@ -35,3 +35,16 @@ a:hover {
 .footer-container a {
   font-weight: bold;
 }
+
+.content-container {
+  text-align: center;
+}
+
+.color {
+  display: inline-block;
+  height: 4vw;
+  width: 4vw;
+  min-height: 30px;
+  min-width: 30px;
+  border: 1px solid black;
+}
