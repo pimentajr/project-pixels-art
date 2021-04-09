@@ -85,16 +85,12 @@ const input = document.querySelector('#board-size');
 btn.addEventListener('click', () => {
   board.remove();
   document.querySelector('.board-container').appendChild(newBoard);
-  let value = input.value;
+  let { value } = input;
   checkValue(value);
-  if (value < 5) {
-    value = 5;
-  }
-  if (value > 50) {
-    value = 50;
-  }
-  for (let i = 0; i < Number(value * value); i += 1) {
-    if (i % value === 0) {
+  const numberValued = valued(value);
+  const valueXvalue = Number(numberValued * numberValued);
+  for (let i = 0; i < valueXvalue; i += 1) {
+    if (i % numberValued === 0) {
       const br = document.createElement('br');
       newBoard.appendChild(br);
     }
@@ -107,5 +103,16 @@ btn.addEventListener('click', () => {
 function checkValue(value) {
   if (value === '') {
     return alert('Board inválido');
+  }
+}
+
+function valued(value) {
+  if (value < 5) {
+    return 5;
+  }
+  if (value > 50) {
+    return 50;
+  } else {
+    return value;
   }
 }
