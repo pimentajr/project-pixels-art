@@ -50,17 +50,16 @@
 }
 
 #pixelsBlankBoard {
-  width: 155px;
-  height: 155px;
-  margin: 5px 0 0 44%;
+  width: 210px;
+  height: 210px;
+  margin: 5px 0 0 42%;
   border: 1px solid black;
 }
 
 .pixel {
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
-  display: inline-block;
-  margin: 0;
+  float: left;
   background-color: white;
 }
