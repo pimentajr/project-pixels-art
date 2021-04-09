@@ -49,7 +49,7 @@ colorPalette.addEventListener('click', switchColor);
 
 // 8.
 function printColorPixel(event) {
-  const selectedColor = document.querySelector('.selected');
-  event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+  const color = document.querySelector('.selected').style.backgroundColor
+  event.target.style.backgroundColor = color;
 }
 pixelBoard.addEventListener('click', printColorPixel);
