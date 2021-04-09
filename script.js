@@ -9,6 +9,8 @@ colorPallet('black');
 colorPallet('red');
 colorPallet('green');
 colorPallet('blue');
+let firstColor = document.querySelector('.color')
+firstColor.classList.add(['selected'])
 
 function pixelBoard(lines) {
   const divPixel = document.createElement('div');
@@ -34,5 +36,5 @@ function paintPixelBoard(color) {
     }
   }
 }
-localStorage.setItem('color','black')
-paintPixelBoard(localStorage.getItem('color'))
+localStorage.setItem('color', 'black');
+paintPixelBoard(localStorage.getItem('color'));
