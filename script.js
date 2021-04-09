@@ -46,11 +46,13 @@ function pixelColor(event) {
 }
 emptyPixel.addEventListener('click', pixelColor);
 
-let buttonClear = document.querySelector('#clear-button');
+const buttonClear = document.querySelector('#clear-board');
+
 function clearBoard() {
-  let allPixels = document.querySelectorAll('.pixel');
-  for (let pixel of allPixels) {
-    pixel.style.backgroundColor = white;
+  const allPixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < allPixels.length; index += 1) {
+    allPixels[index].style.backgroundColor = 'white';
   }
-buttonClear.addEventListener('click', clearBoard);
 }
+
+buttonClear.addEventListener('click', clearBoard);
