@@ -27,7 +27,7 @@ nav {
 
 #pixel-board h2 {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 5px;
 }
 
@@ -74,5 +74,6 @@ nav {
 #clear-board {
   display: block;
   margin: auto;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }

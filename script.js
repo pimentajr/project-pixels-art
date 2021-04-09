@@ -69,7 +69,6 @@ function initialize() {
   selectColor();
   makeLiColors(liColors);
   createDivBoard(25);
-  // createCleanButton();
   createEventListeners();
 }
 
