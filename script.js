@@ -8,7 +8,7 @@ function colorSelection() {
   tableColor.addEventListener('click', (event) => {
     const actualColor = document.querySelector('.selected');
     actualColor.className = 'color';
-    event.target.className = 'color selected';
+    event.target.classList = 'color selected';
   });
 }
 colorSelection();
