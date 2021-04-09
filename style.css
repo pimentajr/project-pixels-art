@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+#title {
+    margin: 5px;
+}
+
+.color {
+  display: inline-block;
+  border: 1px solid black;
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+}
