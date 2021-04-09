@@ -7,6 +7,6 @@ window.onload = function() {
     }
   }
 
-  primaryColors(['green', 'yellow', 'black', 'blue']);
+  primaryColors(['black', 'yellow', 'green', 'blue']);
 
 }
