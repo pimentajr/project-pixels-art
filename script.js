@@ -25,5 +25,4 @@ window.onload = function () {
   }
 
   pixelsTable (5, 5);
-  console.log(document.body);
 }
