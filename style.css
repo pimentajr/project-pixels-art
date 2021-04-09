@@ -1,58 +1,45 @@
-#title{
+#title {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-style: italic;
   color: crimson;  
 }
 
-section{
+section {
   display: inline-block;
 }
 
-#color-palette{ 
-  position: relative;
-  top: 15px;
-  left: 150px;
-  display: table; 
-  width: 300px;
-  height: 80px;
-  border: black solid 1px;
-}
-
-#color-list{
+#color-list {
   position: absolute;
   width: 300px;
   height: 80px;
 }
 
-.color{ 
-  display: table-row;  
+#color-palette {
+  position: relative;
+  top: 15px;
+  margin-left: 150px;
 }
 
-.black{ 
-  display: table-cell;
+.color {
+  display: inline-block;
   width: 60px;
-  border: black solid 1px;
+  height: 60px;
+  border: 1px solid black;
+}
+
+.black {
   background-color: black;
-
 }
-.blue{ 
-  display: table-cell;
-  width: 60px;
-  border: black solid 1px;
+
+.blue {
   background-color: blue;
 }
 
-.red{ 
-  display: table-cell;
-  width: 60px;
-  border: black solid 1px;
+.red {
   background-color: red;
 }
 
-.yellow{ 
-  display: table-cell;
-  width: 60px;
-  border: black solid 1px;
+.yellow {
   background-color: yellow;
 }
 
