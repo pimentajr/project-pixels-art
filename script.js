@@ -13,11 +13,13 @@ window.onload = function () {
     const tableWidth = width;
     const tableHeight = height;
     const table = document.querySelector('#pixel-board');
+    table.style.width = width * 40 + 'px';
+    table.style.height = height * 40 + 'px';
     for (let index = 1; index <= height; index += 1) {
       let newColumn = document.createElement('tr');
       for (let index2 = 1; index2 <= width; index2 += 1) {
         let newLine = document.createElement('td');
-        newLine.className = 'pixel';
+        newLine.className = 'pixel white';
         newColumn.appendChild(newLine);
       }
       table.appendChild(newColumn);
