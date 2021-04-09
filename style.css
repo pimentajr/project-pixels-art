@@ -1,0 +1,24 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, sans-serif;
+    text-align: center;
+}
+.color {
+    padding: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    cursor: pointer
+}
+#black {
+    background-color: black;
+}
+#blue {
+    background-color: blue;
+}
+#yellow {
+    background-color: yellow;
+}
+#magenta {
+    background-color: magenta;
+}
