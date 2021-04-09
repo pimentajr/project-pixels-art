@@ -8,22 +8,6 @@
   width: 40px;
 }
 
-#black {
-  background-color: black;
-}
-
-#orange {
-  background-color: orange;
-}
-
-#yellow {
-  background-color: yellow;
-}
-
-#red {
-  background-color: red;
-}
-
 #pixel-board {
   display: table;
 }
