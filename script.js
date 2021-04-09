@@ -1,4 +1,5 @@
 const boardSize = 5;
+const selectedClass = 'selected';
 const colorPalette = document.getElementById('color-palette');
 const colors = document.getElementsByClassName('color');
 const pixelBoard = document.getElementById('pixel-board');
@@ -28,10 +29,33 @@ function setBoardSize(size) {
   }
 }
 
+function setSelectedColor(target) {
+  const selectedColors = document.getElementsByClassName(selectedClass);
+
+  if (selectedColors.length > 0) {
+    for (let index = 0; index < selectedColors.length; index += 1) {
+      selectedColors[index].classList.remove(selectedClass);
+    }
+  }
+
+  target.classList.add(selectedClass);
+}
+
+function colorPaletteClickHandler({ target }) {
+  if (target.classList.contains('color')) {
+    setSelectedColor(target);
+  }
+}
+
+function setColorElementClickEvent() {
+  colorPalette.addEventListener('click', colorPaletteClickHandler);
+}
+
 function onPageLoad() {
   setColors();
   setBoardSize(boardSize);
-  colorPalette.firstElementChild.classList.add('selected');
+  setSelectedColor(colorPalette.firstElementChild);
+  setColorElementClickEvent();
 }
 
 window.onload = onPageLoad;
