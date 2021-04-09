@@ -8,20 +8,41 @@
 
 #color-palette{
   display: inline-block;
+  width: 300px;
 }
 
 .rose{
   background-color: #F32F92;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .blue{
   background-color:#03989E;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border-style: solid;
+  border-width: 1px;
 }
 
-.white{
-  background-color: white;
+.yellow{
+  background-color: #FFAA17;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .black{
   background-color: #242424;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border-style: solid;
+  border-width: 1px;
 }
