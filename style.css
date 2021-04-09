@@ -2,10 +2,7 @@ body {
   align-items: center;
   background-color: rgba(36, 33, 30, 0.479);
   color: white;
-  display: flex;
-  flex-flow: column wrap;
   font-family: Montserrat, sans-serif;
-  justify-content: center;
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -13,17 +10,17 @@ body {
 
 #color-palette {
   display: flex;
-  flex-flow: row wrap;
+  
 
 } 
 #color-palette div {
   align-items: center;
-  height: 80px;
+  height: 30px;
   justify-content: center;
   margin: 2px;
   padding: 15px;
   text-align: center;
-  width: 80px;
+  width: 30px;
   border: 1px black solid;
 }
 #color-palette #black {
@@ -38,4 +35,12 @@ body {
 #color-palette  #blue {
   background-color: #4070f3;
   color: #333;
+}
+.lines{
+  height: 30px;
+  margin: 2px;
+  padding: 15px;
+  width: 30px;
+  border: 1px black solid;
+  display: inline-block;
 }
