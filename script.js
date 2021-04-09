@@ -45,3 +45,13 @@ pixelBoard.addEventListener('click', (event) => {
     evTarget.style.backgroundColor = storageColor;
   }
 });
+
+// Requisito 9
+const clearButton = document.querySelector('#clear-board');
+
+clearButton.addEventListener('click', () => {
+  const pixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+});
