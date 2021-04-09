@@ -32,14 +32,18 @@ function createColor(color) {
   const container = document.querySelector('.palette');
   const element = createBox(color);
 
-  element.classList.add('palette-color');
+  element.classList.add('color');
 
   container.appendChild(element);
 }
 
+createColor('black');
 createColor('red');
 createColor('blue');
 createColor('yellow');
 createColor('green');
 createColor('#34f67a');
 createColor('rgb(243, 104, 012)');
+
+// para ver de forma rápida: npm run cypress
+// para ver com mais detalhes: npm run cypress:open
