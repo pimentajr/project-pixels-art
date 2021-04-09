@@ -1,11 +1,12 @@
 const colorPalette = document.querySelector('#color-palette');
+const colorPaletteList = colorPalette.children;
 const colors = ['black', 'red', 'green', 'blue'];
 
 function createColorPalette() {
-  for (let index = 0; index < colorPalette.children.length; index += 1) {
-    // colorPalette.children[index].innerHTML = colors[index];
-    colorPalette.children[index].style.backgroundColor = colors[index];
-    colorPalette.children[index].style.color = colors[index];
+  for (let index = 0; index < colorPaletteList.length; index += 1) {
+    colorPaletteList[index].innerHTML = colors[index];
+    colorPaletteList[index].style.backgroundColor = colors[index];
+    colorPaletteList[index].style.color = colors[index];
   }
 }
 
@@ -31,11 +32,23 @@ function fillPixelBoard(boardSize) {
 fillPixelBoard(5);
 
 function iniciateColorPalette() {
-  for (let index = 0; index < colorPalette.children.length; index += 1) {
-    if (colorPalette.children[index].style.backgroundColor === 'black') {
-      colorPalette.children[index].classList.add('selected');
+  for (let index = 0; index < colorPaletteList.length; index += 1) {
+    if (colorPaletteList[index].style.backgroundColor === 'black') {
+      colorPaletteList[index].classList.add('selected');
     }
   }
 }
 
 iniciateColorPalette();
+
+colorPalette.addEventListener('click', function(event) {
+  if (event.target.id !== 'color-palette') {
+    for (let index = 0; index < colorPaletteList.length; index += 1) {
+      if (colorPaletteList[index].className.includes('selected')) {
+        colorPaletteList[index].classList.remove('selected');
+      }
+    }
+
+    event.target.classList.add('selected');
+  }
+});
