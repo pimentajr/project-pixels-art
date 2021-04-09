@@ -22,7 +22,7 @@ function createLineSquares(lineLength) {
     for (let index = 0; index < lineLength; index += 1) {
       squares[index] = document.createElement('div');
       squares[index].className = 'pixel';
-      squares[index].style.backgroundColor = 'rgba(0, 0, 0, 0)';
+      squares[index].style.backgroundColor = 'rgb(255, 255, 255)';
       lines[lineIndex].appendChild(squares[index]);
     }
   }
