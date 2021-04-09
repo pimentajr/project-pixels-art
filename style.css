@@ -1,0 +1,14 @@
+ .container-pallete {
+  width: 500px;
+
+}
+ #color-pallete{
+
+}
+
+ .color {
+    width: 65px;
+    height: 65px;
+    border: 1px solid black;
+    display: inline-block;
+}

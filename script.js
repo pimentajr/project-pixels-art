@@ -1,0 +1,9 @@
+let colors = document.querySelectorAll('.color');
+let color1 = document.querySelectorAll('.color')[0];
+let color2 = document.querySelectorAll('.color')[1];
+let color3 = document.querySelectorAll('.color')[2];
+let color4 = document.querySelectorAll('.color')[3];
+color1.style.backgroundColor = 'black';
+color2.style.backgroundColor = 'purple';
+color3.style.backgroundColor = 'gold';
+color4.style.backgroundColor = 'red';
