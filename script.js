@@ -28,6 +28,20 @@ function setBoarSize () {
           }
         }
       }
+      newBoard(boardSize);
+    }
+    else {
+      alert('Board inválido!');
     }
   }
+}
+function selectedColorChoise () {
+  let colorPalette = document.getElementById('color-palette');
+  colorPalette.addEventListener ('click', function (event) {
+    let colors = document.getElementsByClassName('color');
+    for (index3 = 0; index3 < colors.length; index3 += 1) {
+      colors[index3].classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+  })
 }
