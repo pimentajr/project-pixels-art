@@ -17,21 +17,23 @@ colorSelection();
 function printBoard() {
   document.getElementById('pixel-board').addEventListener('click', (event) => {
     const printBox = event.target;
-    switch (document.querySelector('.selected').id) {
-    case 'black-box':
-      printBox.style.backgroundColor = 'black';
-      break;
-    case 'red-box':
-      printBox.style.backgroundColor = 'red';
-      break;
-    case 'green-box':
-      printBox.style.backgroundColor = 'green';
-      break;
-    case 'yellow-box':
-      printBox.style.backgroundColor = 'yellow';
-      break;
-    default:
-    }
+    if (printBox.id !== 'pixel-board') {
+      switch (document.querySelector('.selected').id) {
+      case 'black-box':
+        printBox.style.backgroundColor = 'black';
+        break;
+      case 'red-box':
+        printBox.style.backgroundColor = 'red';
+        break;
+      case 'green-box':
+        printBox.style.backgroundColor = 'green';
+        break;
+      case 'yellow-box':
+        printBox.style.backgroundColor = 'yellow';
+        break;
+      default:
+      }
+    }            
   });
 }
 printBoard();
@@ -60,3 +62,8 @@ function buttonAction() {
   });
 }
 buttonAction();
+
+// Cria um botão e um campo de input
+function pixelChanger() {
+
+}
