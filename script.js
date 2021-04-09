@@ -1,12 +1,3 @@
-// Desafio 2
-function createDiv(tag, id) {
-  const createP = document.createElement(tag);
-  createP.id = id;
-  document.body.appendChild(createP);
-}
-
-createDiv('section', 'color-palette');
-
 function createDiv1(tag, classN) {
   const CreatDiv = document.createElement(tag);
   CreatDiv.className = classN;
