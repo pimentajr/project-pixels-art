@@ -40,7 +40,7 @@ window.onload = function start() {
     }
   });
 
-  // aumenta ou diminui o board.
+  // aumenta ou diminui o board chamando a funçao abaixo.
   btnResize.addEventListener('click', function(){
     let numberRows = eval(document.getElementById('board-size').value);
     if (numberRows === undefined) {
@@ -57,6 +57,8 @@ window.onload = function start() {
   
 };
 
+
+//Resize no tabalho da tabela.
 const boardSection = document.getElementById('pixel-board');
 function boardResize(num) {
   while (boardSection.firstChild) {
@@ -71,5 +73,16 @@ function boardResize(num) {
       everyPixel.setAttribute('class', 'pixel');
       everyPixelRow.appendChild(everyPixel);
     }
+  }
+}
+
+
+//Cores aleatorios nas tres ultima opcoes toda hora que o navegador abre.
+let last3Colors = document.getElementsByClassName('color');
+
+for (let n of last3Colors) {
+  let newColor = Math.floor(Math.random()*16777215).toString(16);
+  if (n.className === 'color'){
+    n.style.backgroundColor = "#" + newColor;
   }
 }
