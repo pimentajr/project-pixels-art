@@ -24,6 +24,6 @@ window.onload = function () {
       parent.appendChild(pixelTr);
     }
   }
-  let pixelBoard = document.querySelector('#pixel-board');
+  const pixelBoard = document.querySelector('#pixel-board');
   createBoardPixel(pixelBoard, 5, 5);
-}
+};
