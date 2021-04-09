@@ -7,7 +7,6 @@
 }
 
 #color-palette {
-  background-color: lightgray;
   width: 350px;
   height: 84px;
 }
@@ -58,5 +57,13 @@
 }
 
 .selected {
-  border: 3px solid black;
+  animation: colorMove 0.1s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes colorMove {
+  0% {border-radius: 0px;}
+  25%{border-radius: 2px;}
+  50%{border-radius: 10px;}
+  100% {border-radius: 15px;}
 }
