@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Paleta de Cores</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  
 </head>
 <body>
   <h1 id= 'title'>Paleta de Cores</h1>
@@ -14,9 +14,16 @@
     <div class='color'></div>
     <div class='color'></div>
   </section>
-  <button id='clear-board'>Limpar</button>
+  <div>
+    <button id='clear-board'>Limpar</button>
+  </div>
+  <div>
+    <input id='board-size' type="number" min="1">
+    <button id='generate-board'>#VQV</button>
+  </div> 
   <section id='pixel-board'>
 
   </section>
 </body>
+<script src="script.js"></script>
 </html>

@@ -2,14 +2,20 @@ window.onload = function start() {
   const boardSection = document.getElementById('pixel-board');
   const colorPalette = document.getElementById('color-palette');
   const btnRest = document.getElementById('clear-board');
+  let btnResize = document.getElementById('generate-board');
 
   // Cria o quadro com os quadrados brancos;
-  for (let index = 0; index < 25; index += 1) {
-    const everyPixel = document.createElement('div');
-    everyPixel.setAttribute('class', 'pixel');
-    boardSection.appendChild(everyPixel);
+  for (let index = 0; index < 5; index += 1) {
+    const everyPixelRow = document.createElement('div');
+    everyPixelRow.setAttribute('class', 'pixelRow');
+    boardSection.appendChild(everyPixelRow);
+    for (let index = 0; index < 5; index += 1) {
+      const everyPixel = document.createElement('div');
+      everyPixel.setAttribute('class', 'pixel');
+      everyPixelRow.appendChild(everyPixel);
+    }
   }
-
+  // muda a classe do elemento colorido clickado para selected.
   colorPalette.addEventListener('click', (event) => {
     const allDivsColorPallete = document.getElementById('color-palette').children;
     for (let index = 0; index < allDivsColorPallete.length; index += 1) {
@@ -17,14 +23,44 @@ window.onload = function start() {
     }
     event.target.className += ' selected';
   });
+
+
+  //Pinta o pixel!
   boardSection.addEventListener('click', (event) => {
-    const colorSelected = window.getComputedStyle(document.querySelector('.selected')).backgroundColor;
+    let colorSelected = window.getComputedStyle(document.querySelector('.selected')).backgroundColor;
     event.target.style.backgroundColor = colorSelected;
   });
-  btnRest.addEventListener('click', () => {
-    const AllDivsPixels = document.getElementById('pixel-board').children;
+
+
+  //Limpa o pixel!
+  btnRest.addEventListener('click', function() {
+    const AllDivsPixels = document.getElementsByClassName('pixel');
     for (let index = 0; index < AllDivsPixels.length; index += 1) {
       AllDivsPixels[index].style.backgroundColor = 'white';
     }
   });
+
+  btnResize.addEventListener('click', function(){
+    let numberRows = eval(document.getElementById('board-size').value);
+    if (numberRows === undefined) {
+      return alert('Board inválido!');
+    }
+    while (boardSection.firstChild) {
+      boardSection.removeChild(boardSection.lastChild);
+    }
+    for (let index = 0; index < numberRows; index += 1) {
+      const everyPixelRow = document.createElement('div');
+      everyPixelRow.setAttribute('class', 'pixelRow');
+      boardSection.appendChild(everyPixelRow);
+      for (let index = 0; index < numberRows; index += 1) {
+        const everyPixel = document.createElement('div');
+        everyPixel.setAttribute('class', 'pixel');
+        everyPixelRow.appendChild(everyPixel);
+      }
+    }
+  });
+
+  
 };
+
+
