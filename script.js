@@ -5,3 +5,19 @@ function addBlackColor() {
 }
 addBlackColor();
 
+// Requisito 4 - Criação do Pixel Board
+// 5 linhas div com 5 divs dentro - inline
+function createBoard() {
+	let pixelBoard = document.getElementById('pixel-board');
+	for (let index = 0; index < 5; index += 1) {
+		let lines = document.createElement('div');
+		lines.className = 'boardline';
+		pixelBoard.appendChild(lines);
+        for (let index = 0; index < 5; index += 1) {
+            let pixelItem = document.createElement('div');
+            pixelItem.className = 'pixel';
+            lines.appendChild(pixelItem);
+        }
+	}
+}
+createBoard(); 
