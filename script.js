@@ -7,15 +7,17 @@ function generateInitialBoard(input) {
     const row = document.createElement('div');
     pixelBoard.appendChild(row);
     row.className = 'row';
+    row.style.backgroundColor = 'white';
     for (let secondIndex = 0; secondIndex < input; secondIndex += 1) {
       const pixel = document.createElement('div');
       row.appendChild(pixel);
       pixel.className = 'pixel';
+      pixel.style.backgroundColor = 'white';
     }
   }
 }
 
-window.onload = generateInitialBoard(5);
+generateInitialBoard(5);
 
 generateButton.onclick = function generateBoard() {
   pixelBoard.innerHTML = '';
@@ -28,9 +30,6 @@ generateButton.onclick = function generateBoard() {
 
 const colorPalette = document.getElementById('color-palette');
 const pixel = document.getElementsByClassName('pixel');
-for (let index = 0; index < pixel.length; index += 1) {
-  pixel[index].style.backgroundColor = 'white';
-}
 
 const color = document.getElementsByClassName('color');
 const listOfColors = ['black', 'orange', 'yellow', 'red'];
