@@ -2,3 +2,17 @@
   font-style: italic;
   text-align: center;
 }
+
+#color-palette {
+  text-align: center;
+
+}
+
+.color {
+  display: inline-block;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  width: 100px;
+  height: 100px;
+}
