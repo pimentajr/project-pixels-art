@@ -1,5 +1,5 @@
 window.onload = function() {
-    let blackColor = document.getElementById('black');
+    let blackColor = document.getElementById('#black');
     blackColor.className += 'selected';
 }
 function setBoardSize () {
@@ -75,7 +75,7 @@ function makeBoard () {
   }
 }
 function randomColor () {
-  let pixelArt = document.getElementsByClassName ('color');
+  let pixelArt = document.querySelectorAll('.color');
   for (i = 0; i < pixelArt.length; i += 1) {
     if (pixelArt[i].id === 'black') {
     }

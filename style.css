@@ -7,6 +7,9 @@ button {
     display: block;
     text-align: center;
 }
+.td {
+    display: table-row;
+}
 #generete-board {
     display: inline;
 }
@@ -15,25 +18,37 @@ button {
     align-items: center;
     margin: 10px auto;
 }
-.color {
+.container {
     padding: 10px;
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 80%;
     border: 1px solid black;
-    cursor: pointer
+    margin: auto;
+    text-align: center;
 }
 #black {
     background-color: black;
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
 }
 #blue {
     background-color: blue;
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
 }
 #yellow {
     background-color: yellow;
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
 }
 #magenta {
     background-color: magenta;
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
 }
 #pixel-board {
     display: inline-block;
@@ -44,7 +59,6 @@ button {
     border: 1px solid black;
     width: 40px;
     height: 40px;
-    cursor: pointer;
 }
 .colum {
     margin: 0;
