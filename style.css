@@ -1,1 +1,43 @@
+#title {
+  text-align: center;
+}
 
+#color-palette {
+  text-align: center;
+  padding: 5px;
+}
+
+#black {
+  border: black solid 1px;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  display: inline-block;
+}
+
+#red {
+  border: black solid 1px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#yellow {
+  border: black solid 1px;
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#blue {
+  border: black solid 1px;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  display: inline-block;
+  margin-left: 10px;
+}
