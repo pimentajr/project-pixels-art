@@ -1,1 +1,37 @@
+#black {
+  background-color: black;
+  border: 1px solid black;
+  display: inline;
+  margin: 5px;
+  padding: 0 5px;
+  
+}
+#lime {
+  background-color: lime;
+  border: 1px solid black;
+  display: inline;
+  margin: 5px;
+  padding: 0 5px;
+  color: lime;
 
+}
+#dimgray {
+  background-color: dimgray;
+  border: 1px solid black;
+  display: inline;
+  margin: 5px;
+  padding: 0 5px;
+  color: dimgray;
+
+}
+#deepskyblue {
+  background-color: deepskyblue;
+  border: 1px solid black;
+  display: inline;
+  margin: 5px;
+  padding: 0 5px;
+  color: deepskyblue;
+}
+li {
+  list-style: none;
+}
