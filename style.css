@@ -5,3 +5,20 @@
   border: 1px black solid;
   margin-right: 10px;
 }
+
+#pixel-board {
+  padding: 20px 10px;
+}
+
+#pixel-board div {
+  height: 42px;
+}
+
+.pixel {
+  display: inline-block;
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  border: 1px black solid;
+  border-collapse: collapse;
+}
