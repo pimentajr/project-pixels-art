@@ -14,9 +14,9 @@ function createDiv(tag, id) {
   document.body.appendChild(createP);
 }
 
-createDiv('div', 'color-palette');
+createDiv('section', 'color-palette');
 
-function createDiv1 (tag, classN) {
+function createDiv1(tag, classN) {
   const CreatDiv = document.createElement(tag);
   CreatDiv.className = classN;
   const Father = document.querySelector('#color-palette');
@@ -26,4 +26,3 @@ createDiv1('div', 'red');
 createDiv1('div', 'green');
 createDiv1('div', 'black');
 createDiv1('div', 'blue');
-
