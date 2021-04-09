@@ -3,5 +3,5 @@ window.onload = function() {
     blackColor.className += ' selected';
 }
 function setBoarSize () {
-    
+ let vqv = document.querySelector('#generete-board');   
 }
