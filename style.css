@@ -1,6 +1,14 @@
 .color {
-    border: solid;
-    border-color: black;
-    border-width: 1px;
-    display: inline-block;
+	border: solid;
+  border-color: black;
+  border-width: 1px;
+  display: inline-block;
+}
+
+#color-palette {
+	display: block;
+}
+
+.pixel {
+	background-color: white;
 }
