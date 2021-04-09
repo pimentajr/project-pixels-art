@@ -41,6 +41,7 @@ selectColor();
 pixelBoard.addEventListener('click', (event) => {
   const storageColor = document.querySelector('.selected').id;
   if (event.target.className === 'pixel') {
-    event.target.style.backgroundColor = storageColor;
+    const evTarget = event.target;
+    evTarget.style.backgroundColor = storageColor;
   }
 });
