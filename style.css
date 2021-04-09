@@ -1,4 +1,5 @@
 * {
+  border: border-box;
   padding: 0;
   margin: 0%;
 }
@@ -12,11 +13,8 @@ table {
   border: 2px solid black;
 }
 
-#pixel-board{
-  background-color: white;
-}
-
 .pixel {
+  background-color: white;
   height: 40px;
   width: 40px;  
   border: 1px solid black;  
