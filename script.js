@@ -8,11 +8,21 @@ black.className = 'color black selected';
 
 paleta.addEventListener('click', function color(event) {
   let color = event.target;
-  let colorName = color.classList[1];
   black.classList.remove('selected');
   green.classList.remove('selected');
   grey.classList.remove('selected');
   magenta.classList.remove('selected');
+  let colorName = color.classList[1];
   color.className = 'color' + ' ' + colorName + ' selected';
   return colorName;
+});
+
+//  ---------------------
+let board = document.querySelector('#pixel-board');
+
+board.addEventListener('click', function (event) {
+  let pixel = event.target;
+  let itemColor = document.querySelector('.selected');
+  let color = itemColor.classList[1];
+  pixel.style.backgroundColor = color;
 });

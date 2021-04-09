@@ -9,22 +9,22 @@ h1 {
 
 .black {
   background-color: black;
-  padding: 20px;
+  padding: 30px;
 }
 
 .green {
   background-color: green;
-  padding: 20px;
+  padding: 30px;
 }
 
 .magenta {
   background-color: magenta;
-  padding: 20px;
+  padding: 30px;
 }
 
 .grey {
   background-color: grey;
-  padding: 20px;
+  padding: 30px;
 }
 
 .pixel {
@@ -47,8 +47,14 @@ h1 {
 
 #color-palette {
   background: blue;
-  margin-left: 390px;
-  margin-bottom: 20px;
-  width: 180px;
-  height: 40px;
+  margin-left: 340px;
+  margin-bottom: 100px;
+  width: 260px;
+  height: 0.000000000000000001px;
+}
+
+#pixel-board {
+  background: blue;
+  width: 426px;
+  height: 0.000000000000000001px;
 }
