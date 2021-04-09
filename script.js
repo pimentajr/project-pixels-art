@@ -22,7 +22,7 @@ generateInitialBoard(5);
 generateButton.onclick = function generateBoard() {
   pixelBoard.innerHTML = '';
   let input = boardSize.value;
-  if (input === '' || input === null) alert('Board inválido');
+  if (input === '') alert('Board inválido!');
   if (input < 5) input = 5;
   if (input > 50) input = 50;
   generateInitialBoard(input);
