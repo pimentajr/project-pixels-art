@@ -1,3 +1,5 @@
+// 7.
+
 function selectedTarget(event) {
   const colorList = document.querySelectorAll('.color');
 
@@ -13,6 +15,8 @@ function selectedTarget(event) {
 const colorPallete = document.querySelector('#color-palette');
 colorPallete.addEventListener('click', selectedTarget);
 
+// 8.
+
 function selectColor(event) {
   const color = document.querySelector('.selected').id;
 
@@ -23,6 +27,8 @@ function selectColor(event) {
 
 const pixelBoard = document.querySelector('#pixel-board');
 pixelBoard.addEventListener('click', selectColor);
+
+// 9.
 
 function clearPixels() {
   const pixels = document.querySelectorAll('.pixel');
