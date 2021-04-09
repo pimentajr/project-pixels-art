@@ -10,13 +10,8 @@ function colorPalletDefinition(){
 		if(index === 0){
 			palleteColors[index].style.backgroundColor = "black"
 		}else{
-			if(palleteColors[index - 1].style.backgroundColor === palleteColors[index].style.backgroundColor){
-				const randomColor = Math.floor(Math.random()*16777215).toString(16);
-				palleteColors[index].style.backgroundColor = "#" + randomColor + 30;
-			}else{
 				const randomColor = Math.floor(Math.random()*16777215).toString(16);
 				palleteColors[index].style.backgroundColor = "#" + randomColor;
-			}
 		}
 	}
 }
