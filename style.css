@@ -10,18 +10,17 @@
   border: 1px black solid;
 }
 
-.darkslategray {
-  background-color: darkslategray;
+.black {
+  background-color: black;
 }
-
-.darkcyan {
-  background-color: darkcyan;
+.maroon {
+  background-color: maroon;
 }
 
 .darkolivegreen {
   background-color: darkolivegreen;
 }
 
-.maroon {
-  background-color: maroon;
+.darkcyan {
+  background-color: darkcyan;
 }
