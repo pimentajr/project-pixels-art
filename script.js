@@ -2,13 +2,8 @@ function create(tag) {
   return document.createElement(tag);
 }
 
-function addTo(father, son) {
+function add(father, son) {
   return father.appendChild(son);
-}
-
-function addClass(element, className) {
-  element.className = className;
-  return element.className;
 }
 
 const { body } = document;
@@ -28,20 +23,19 @@ function randomColors() {
   colors[0].style.background = 'black';
 }
 
-const pixelBoard = create('section');
-addTo(body, pixelBoard);
-addClass(pixelBoard, 'pixel-board');
-
 for (let i = 0; i < 5; i += 1) {
-  const pixelCreate = create('div');
-  addTo(pixelBoard, pixelCreate);
+  const pixelBoard = create('section');
+  pixelBoard.className = 'pixel-board';
+  add(body, pixelBoard);
+
+  for (let j = 0; j < 5; j += 1) {
+    const pixels = create('div');
+    pixels.className = 'pixels';
+    add(pixelBoard, pixels);
+  }
 }
 
-for (let i = 0; i < pixelBoard.childElementCount; i += 1) {
-  addClass(pixelBoard.children[i], 'pixels');
-}
-
-const pixels = document.querySelector('.pixels');
+// const pixels = document.querySelector('.pixels');
 
 function start() {
   randomColors();
