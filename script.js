@@ -22,7 +22,7 @@ function generateRandomColor() {
     'cadetBlue',
     'chartreuse',
   ];
-  const randomNumber = Math.round(Math.random() * 18);
+  const randomNumber = Math.round(Math.random() * 15);
   return arr[randomNumber];
 }
 
@@ -86,9 +86,8 @@ btn.addEventListener('click', () => {
   board.remove();
   document.querySelector('.board-container').appendChild(newBoard);
   let value = input.value;
-  if (value === '') {
-    alert('Board inválido!');
-  } else if (value < 5) {
+  checkValue(value);
+  if (value < 5) {
     value = 5;
   }
   if (value > 50) {
@@ -104,3 +103,9 @@ btn.addEventListener('click', () => {
     newBoard.appendChild(newDiv);
   }
 });
+
+function checkValue(value) {
+  if (value === '') {
+    return alert('Board inválido');
+  }
+}
