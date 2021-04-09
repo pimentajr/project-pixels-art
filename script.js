@@ -44,3 +44,12 @@ function addClassSelect() {
   });
 }
 addClassSelect();
+
+function addColorPixel(){
+  let pixelSelect = document.querySelector('#pixel-board');
+  pixelSelect.addEventListener('click', (event) => {
+    let colorSelect = document.querySelector('.selected')
+    event.target.style.backgroundColor = colorSelect.style.backgroundColor;
+  });
+}
+addColorPixel()
