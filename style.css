@@ -2,11 +2,18 @@
   text-align: center;
 }
 
+#chooseColor {
+  border: 1px solid black;
+  display: inline-block;
+  width: 320px;
+  margin-left: 38%;
+}
+
 #color-pallete {
   border: 1px solid black;
   display: inline-block;
   padding: 5px;
-  margin-left: 39%;
+  margin: auto;
 }
 
 #listaDeCores {
