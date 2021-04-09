@@ -59,8 +59,10 @@ function selectColor(event) {
 colorPalette.addEventListener('click', selectColor);
 
 function paintPixel(event) {
+  const element = event;
+
   if (event.target.className === 'pixel') {
-    let selected = document.querySelector('.selected');
+    const selected = document.querySelector('.selected');
     event.target.style.backgroundColor = selected.style.backgroundColor;
   }
 }
