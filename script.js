@@ -1,12 +1,13 @@
-let title = document.querySelector('#title');
+const title = document.querySelector('#title');
 title.innerHTML = 'Paleta de Cores';
 
-let colorPalette = document.getElementsByTagName('div');
-for (let index = 1; index < 5; index += 1) {
-  colorPalette[index].className = 'color';
+let colorPalette = document.querySelectorAll('#color-palette>div')
+for (let i = 0; i < colorPalette.length; i += 1) {
+  colorPalette[i].className = 'color';
 }
-
-let colorPixel = document.getElementsByTagName('div');
-for (let index = 6; index < 31; index += 1) {
-  colorPalette[index].className = 'pixel';
+let pixelColor = document.querySelectorAll('#pixel-board>div')
+for (let i = 0; i < pixelColor.length; i += 1) {
+  pixelColor[i].className = 'pixel';
 }
+let colorBlack = document.getElementsByClassName('color')[0];
+colorBlack.className = 'selected color';
