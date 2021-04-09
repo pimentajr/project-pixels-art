@@ -1,11 +1,10 @@
-* {
-  background-color: white;
-}
-
 #color-palette {
-  border: 1px solid black;
+  display: inline-block;
 }
 
 .color {
+  display: inline-block;
   border: 1px solid black;
+  width: 100px;
+  height: 100px;
 }
