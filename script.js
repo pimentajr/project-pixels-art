@@ -23,3 +23,16 @@ function pixelBoard() {
   pixelBoard.appendChild(creatPixel);
 }
 pixelBoard();
+
+function addClassSelect() {
+  const selectColor = document.querySelector('#color-palette')
+  selectColor.addEventListener('click', function (event) {
+    let select = document.querySelector('.selected');
+    event.target.classList.add('selected');
+    if (select) {
+      select.classList.remove('selected');
+      select = document.querySelector('.selected');
+    }
+  });
+}
+addClassSelect()
