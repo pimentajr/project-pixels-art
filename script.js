@@ -3,6 +3,7 @@ const green = document.querySelector('.green');
 const grey = document.querySelector('.grey');
 const magenta = document.querySelector('.magenta');
 const paleta = document.querySelector('#color-palette');
+const board = document.querySelector('#pixel-board');
 
 black.className = 'color black selected';
 paleta.addEventListener('click', function (event) {
@@ -17,7 +18,6 @@ paleta.addEventListener('click', function (event) {
 });
 
 //  ---------------------
-const board = document.querySelector('#pixel-board');
 
 board.addEventListener('click', function (event) {
   const pixel = event.target;
@@ -36,40 +36,3 @@ clear.addEventListener('click', function () {
 });
 
 //  ---------------------- EX 10
-const button = document.querySelector('#generate-board');
-const size = document.querySelector('#board-size');
-
-button.addEventListener('click', function () {
-  const value = size.value;
-  if (value === '') {
-    alert('Board inválido!');
-  }
-  if (value < 5) {
-    value = 5;
-  }
-  if (value > 50) {
-    value = 50;
-  }
-  board.remove();
-  const newBoard = document.createElement('div');
-  newBoard.id = 'pixel-board';
-  document.body.appendChild(newBoard);
-  for (let i = 0; i < parseInt(value * value); i += 1) {
-    if (i % parseInt(value) === 0) {
-      const br = document.createElement('br');
-      newBoard.appendChild(br);
-    }
-    const pixel = document.createElement('div');
-    pixel.className = 'pixel';
-    newBoard.appendChild(pixel);
-  }
-});
-
-const secondBoard = documenr.querySelector('#pixel-board');
-
-secondBoard.addEventListener('click', function (event) {
-  const pixel = event.target;
-  const itemColor = document.querySelector('.selected');
-  const color = itemColor.classList[1];
-  pixel.style.backgroundColor = color;
-});
