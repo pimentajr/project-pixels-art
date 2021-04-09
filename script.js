@@ -30,3 +30,11 @@ function selectColor(event) {
 }
 
 colorPalette.addEventListener('click', selectColor);
+
+function paintPixel(event) {
+  const selectedPixel = event.target;
+  const selectedColor = document.querySelector('.selected');
+  selectedPixel.style.backgroundColor = selectedColor.style.backgroundColor;
+}
+
+pixelBoard.addEventListener('click', paintPixel);
