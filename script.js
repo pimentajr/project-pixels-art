@@ -51,11 +51,23 @@ function setColorElementClickEvent() {
   colorPalette.addEventListener('click', colorPaletteClickHandler);
 }
 
+function paintPixelElementHandler({ target }) {
+  if (target.classList.contains('pixel')) {
+    const { color } = document.getElementsByClassName(selectedClass)[0].dataset;
+    target.setAttribute('style', `background-color: ${color};`);
+  }
+}
+
+function setPixelClickEvent() {
+  pixelBoard.addEventListener('click', paintPixelElementHandler);
+}
+
 function onPageLoad() {
   setColors();
   setBoardSize(boardSize);
   setSelectedColor(colorPalette.firstElementChild);
   setColorElementClickEvent();
+  setPixelClickEvent();
 }
 
 window.onload = onPageLoad;
