@@ -4,8 +4,8 @@ body {
 
 .color {
   display: table-cell;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border: 1px solid black;
 }
 
@@ -27,8 +27,8 @@ body {
 
 .pixel {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
   background-color: white;
 }
@@ -36,7 +36,8 @@ body {
 #pixel-board {
   margin-top: 30px;
   display: table;
-  width: 600px;
-  height: 600px;
+  width: 220px;
+  height: 220px;
+  margin-left: 60px;
 }
 
