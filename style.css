@@ -5,6 +5,7 @@
 .big-block {
   text-align: center;
 }
+
 .color {
   display: inline-block;
   padding: 30px;
@@ -31,6 +32,7 @@
 #pixel-board {
   display: table;
   border: black solid 1px;
+  background-color: white;
 }
 
 .column {
