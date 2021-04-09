@@ -1,26 +1,9 @@
-function fillColors (colorPalette) {
-  const paletteContainer = document.getElementById('color-palette');
+const paletteContainer = document.getElementById('color-palette');
+const board = document.getElementById('pixel-board');
 
-  const paletteElements = paletteContainer.rows[0].children;
-
-  if (colorPalette.length !== paletteElements.length) {
-    throw new Error('Palette passed is not the same length as the table element');
-  }
-
-  for (let i = 0; i < colorPalette.length; i++) {
-    paletteElements[i].style.backgroundColor = colorPalette[i];
-  }
-
-  paletteElements[0].classList.add('selected');
-}
-
-fillColors(
-  ['black', 'red', 'green', 'blue']
-);
+let selectedColor;
 
 function createBoard (rows, columns) {
-  const board = document.getElementById('pixel-board');
-
   for (let i = 0; i < rows; i += 1) {
     let row = document.createElement('tr');
     
@@ -34,4 +17,40 @@ function createBoard (rows, columns) {
   }
 }
 
+function fillPaletteColors (colorPalette) {
+  const paletteRow = document.createElement('tr');
+  
+  for (let i = 0; i < colorPalette.length; i++) {
+    const paletteElement = document.createElement('td');
+    paletteElement.className = 'color';
+    paletteElement.style.backgroundColor = colorPalette[i];
+    paletteElement.addEventListener('click', handlePaletteClick);
+    paletteElement.index = i;
+
+    paletteRow.appendChild(paletteElement);
+  }
+
+  paletteContainer.appendChild(paletteRow);
+  selectColor(0);
+}
+
+function handlePaletteClick(e) {
+  console.log(e.target);
+  selectColor(e.target.index);
+}
+
+function selectColor(index) {
+  const paletteElements = paletteContainer.rows[0].children;
+
+  if (selectedColor) {
+    selectedColor.classList.remove('selected');
+  }
+
+  paletteElements[index].classList.add('selected');
+  selectedColor = paletteElements[index];
+}
+
+
+
 createBoard(5, 5);
+fillPaletteColors(['black', 'red', 'green', 'blue']);
