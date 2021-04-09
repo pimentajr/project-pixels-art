@@ -24,7 +24,7 @@
   border: black solid 1px;
 }
 
-#table { 
+#table {
   display: table;
   background-color: red;
   border: black solid 1px;
@@ -34,7 +34,7 @@
   display: table-row;
 }
 
-.pixel { 
+.pixel {
   display: table-cell;
   border: black solid 1px;
   height: 40px;
