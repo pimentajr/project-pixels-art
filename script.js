@@ -111,9 +111,24 @@ function initializeBoardListeners() {
   }
 }
 
+function clearBoard() {
+  const pixels = document.getElementsByClassName('pixel');
+
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+
+function initializeClearButtonListener() {
+  const clearButton = document.getElementById('clear-board');
+
+  clearButton.addEventListener('click', clearBoard);
+}
+
 window.onload = () => {
   initializePalette();
   initializePixelBoard();
   initializePaletteListeners();
   initializeBoardListeners();
+  initializeClearButtonListener();
 };

@@ -55,6 +55,10 @@ a:hover {
   margin-right: 8px;
 }
 
+#pixel-board {
+  margin: 15px 0;
+}
+
 .pixel-row {
   line-height: 0;
 }
