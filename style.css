@@ -14,7 +14,8 @@
   display: inline-block;
   width: 100px;
   height: 100px;
-  border:  1px solid black;
+  border: 1px solid black;
+  letter-spacing: 10px;
 }
 
 .color:nth-child( 1 ) {
@@ -31,4 +32,19 @@
 
 .color:nth-child( 4 ) {
   background-color: blue;
+}
+
+#pixel-board {
+  width: 526px;
+  height: 526px;
+  margin-left: 36%;
+  margin-top: 50px;
+}
+
+.pixel {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border: 1px solid black;
+  background-color: white;
 }
