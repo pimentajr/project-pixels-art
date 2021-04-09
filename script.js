@@ -5,8 +5,7 @@ const magenta = document.querySelector('.magenta');
 const paleta = document.querySelector('#color-palette');
 
 black.className = 'color black selected';
-
-paleta.addEventListener('click', function color(event) {
+paleta.addEventListener('click', function(event) {
   const color = event.target;
   black.classList.remove('selected');
   green.classList.remove('selected');
@@ -20,7 +19,7 @@ paleta.addEventListener('click', function color(event) {
 //  ---------------------
 const board = document.querySelector('#pixel-board');
 
-board.addEventListener('click', function (event) {
+board.addEventListener('click', function(event) {
   const pixel = event.target;
   const itemColor = document.querySelector('.selected');
   const color = itemColor.classList[1];
@@ -29,7 +28,7 @@ board.addEventListener('click', function (event) {
 
 const clear = document.querySelector('#clear-board');
 
-clear.addEventListener('click', function () {
+clear.addEventListener('click', function() {
   const pixels = document.querySelectorAll('.pixel');
   for (const pixel of pixels) {
     pixel.style.backgroundColor = 'white';
