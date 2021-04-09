@@ -22,7 +22,7 @@ function createDiv1(tag, classN) {
   const Father = document.querySelector('#color-palette');
   Father.appendChild(CreatDiv);
 }
-createDiv1('div', 'red');
-createDiv1('div', 'green');
-createDiv1('div', 'black');
-createDiv1('div', 'blue');
+createDiv1('div', 'red color');
+createDiv1('div', 'green color');
+createDiv1('div', 'black color');
+createDiv1('div', 'blue color');
