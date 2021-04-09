@@ -45,3 +45,20 @@ function selectedColorChoise () {
     event.target.classList.add('selected');
   })
 }
+function paintPixel () {
+  let pixelsBoard = document.querySelector('#pixel-board');
+  pixelsBoard.addEventListener('click', function (event){
+    let selectedColor = document.querySelector('.selected');
+    let selectedColorStyle = window.getComputedStyle(selectedColor).getPropertyValue('background-color');
+    event.target.style.backgroundColor = selectedColorStyle;
+  })
+}
+function clearBoard () {
+  let clear = document.querySelector('#clear-board');
+  clear.addEventListener('click', function () {
+    pixels = document.getElementsByClassName ('pixel');
+    for (index4 = 0; index4 < pixels.length; index4 += 1) {
+      pixels[index4].style.backgroundColor = '';
+    }
+  })
+}
