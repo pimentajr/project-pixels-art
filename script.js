@@ -1,14 +1,12 @@
-const pixelBoard = document.getElementById('pixel-board');
-
 // inserindo as cores
 function colorInsert() {
   const black = document.getElementById('black');
   const blue = document.getElementById('blue');
   const green = document.getElementById('green');
   const red = document.getElementById('red');
-  let colorGenerate;
+  const colorGenerate = [0];
   for (let index = 0; index < 3; index += 1) {
-    let randNumber;
+    const randNumber = [0];
     for (let zindex = 0; zindex < 3; zindex += 1) {
       randNumber[zindex] = Math.ceil(Math.random() * 255);
     }
@@ -22,7 +20,7 @@ function colorInsert() {
 }
 
 // cria uma linha de quadrados
-function createLineSquares(lineLength) {
+function createLineSquares(lineLength, pixelBoard) {
   const squares = [];
   for (let lineIndex = 0; lineIndex < lineLength; lineIndex += 1) {
     const lines = [];
@@ -51,14 +49,14 @@ function selectColor() {
   });
 }
 
-// Pinta o quadrado selecionado!
-function paintPixel() {
+// Pinta o quadrado selecionado
+function paintPixel(pixelBoard) {
   pixelBoard.addEventListener('click', (event) => {
     const selectedElement = document.querySelector('.selected');
     const color = selectedElement.style.backgroundColor;
     if (event.target.classList[0] === 'pixel') {
-      const divTarget = event.target;
-      divTarget.style.backgroundColor = color;
+      const selectedEvent = event.target;
+      selectedEvent.style.backgroundColor = color;
     }
   });
 }
@@ -100,10 +98,11 @@ function lengthBoard() {
 
 // eslint-disable-next-line func-names
 window.onload = () => {
+  const pixelBoard = document.getElementById('pixel-board');
   colorInsert();
-  createLineSquares(5);
+  createLineSquares(5, pixelBoard);
   selectColor();
-  paintPixel();
+  paintPixel(pixelBoard);
   lengthBoard();
   const clearPixelBoard = document.getElementById('clear-board');
   clearPixelBoard.addEventListener('click', clearBoard);
