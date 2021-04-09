@@ -23,8 +23,6 @@ for (let lineIndex = 0; lineIndex < lines; lineIndex += 1) {
   }
 }
 
-pixelBoard.style.maxWidth = `${(columns * 40) + (columns * 2)}px`;
-
 function selectColor(event) {
   const selectedColor = document.querySelector('.selected');
   selectedColor.classList.remove('selected');
@@ -52,3 +50,42 @@ function resetBoard() {
 }
 
 resetButton.addEventListener('click', resetBoard);
+
+const generateBoardBtn = document.querySelector('#generate-board');
+
+const boardSize = document.querySelector('#board-size');
+
+function removeCurrentBoard() {
+  while (pixelBoard.firstChild) {
+    pixelBoard.firstChild.remove();
+  }
+}
+
+function createBoard(newLines, newColumns) {
+  removeCurrentBoard();
+  for (let lineIndex = 0; lineIndex < newLines; lineIndex += 1) {
+    const newLine = document.createElement('div');
+    pixelBoard.appendChild(newLine);
+    for (let columnIndex = 0; columnIndex < newColumns; columnIndex += 1) {
+      const newPixel = document.createElement('div');
+      newPixel.className = 'pixel';
+      newLine.appendChild(newPixel);
+    }
+  }
+  boardSize.value = '';
+}
+
+function generateBoard() {
+  const input = boardSize.value;
+  if (input < 0 || input.replace(/\s/g, '') === '') {
+    alert('Board inválido!');
+  } else if (input < 5) {
+    createBoard(5, 5);
+  } else if (input > 50) {
+    createBoard(50, 50);
+  } else {
+    createBoard(input, input);
+  }
+}
+
+generateBoardBtn.addEventListener('click', generateBoard);

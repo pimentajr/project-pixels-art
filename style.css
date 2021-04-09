@@ -22,3 +22,15 @@
   border: 1px black solid;
   border-collapse: collapse;
 }
+
+#clear-board {
+  width: 60px;
+  margin-top: 15px;
+  margin-left: 84px;
+}
+
+#board-size {
+  display: inline-block;
+  margin-top: 15px;
+  margin-right: 10px;
+}
