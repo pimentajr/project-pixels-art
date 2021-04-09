@@ -50,7 +50,6 @@ h1:hover:after {
   width: 50px;
   display: inline-block;
   border: solid 1px black;
-  background-color: aqua;
   transition: 0.6s;
 }
 
@@ -71,6 +70,31 @@ h1:hover:after {
 }
 
 #color-palette ul li:active {
+  transform: scale(0.9);
+  background-color: white;
+  transition: 0.1s;
+}
+
+#pixel-board table {
+  margin: 20px auto;
+  background-color: black;
+}
+
+#pixel-board tr td {
+  padding: 0;
+  height: 50px;
+  width: 50px;
+  background-color: black;
+}
+
+#pixel-board tr td div {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  transition: 0.6s;
+}
+
+#pixel-board tr td div:active {
   transform: scale(0.9);
   transition: 0.1s;
 }
