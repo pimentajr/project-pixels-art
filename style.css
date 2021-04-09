@@ -14,6 +14,11 @@
   border: solid black 1px;
 }
 
+#clear-board {
+  margin: 0 auto;
+  display: block;
+}
+
 #pixel-board {
   text-align: center;
   margin-top: 15px;

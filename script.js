@@ -48,9 +48,22 @@ function eventPrintColor() {
   }
 }
 
+function clearBoard() {
+  const pixelList = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixelList.length; index += 1) {
+    pixelList[index].style.backgroundColor = 'white';
+  }
+}
+
+function eventClear() {
+  const button = document.getElementById('clear-board');
+  button.addEventListener('click', clearBoard);
+}
+
 window.onload = function () {
   createColorPalette();
   createBoard();
   eventColorSelect();
   eventPrintColor();
+  eventClear();
 };
