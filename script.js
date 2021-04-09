@@ -38,3 +38,11 @@ for (let index = 1; index <= numOfPixels; index += 1) {
 // 5.
 // 6.
 firstColor.classList.add('selected');
+
+// 7.
+const colorBoxes = document.getElementsByClassName('color');
+colorPalette.addEventListener('click', function(event) {
+  const selectedColor = document.querySelector('.selected');
+  selectedColor.classList.remove('selected');
+  event.target.classList.add('selected');
+});
