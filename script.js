@@ -5,4 +5,3 @@ function changesToBlack() {
   }
 }
 changesToBlack();
-
