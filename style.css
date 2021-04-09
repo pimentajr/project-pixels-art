@@ -1,27 +1,45 @@
 * {
-    text-align: center;
+  text-align: center;
 }
+
 #color-palette {
-    display: inline-flex;
+  display: inline-flex;
 }
+
 .color {
-    border: 1px solid #000;
-    width: 50px;
-    height: 50px;
+  border: 1px solid #000;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  cursor: pointer;
 }
 
 .black {
-    background: #000;
+  background: #000;
 }
 
 .orange {
-    background: #ffb52c;
+  background: #ffb52c;
 }
 
 .pink {
-    background: #ff7b91;
+  background: #ff7b91;
 }
 
 .green {
-    background: #008300;
+  background: #008300;
+}
+
+
+#pixel-board {
+  width: 300px;
+  margin: 50px auto;
+}
+
+.pixel {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000;
+  background: #fff;
+  display: inline-block;
 }
