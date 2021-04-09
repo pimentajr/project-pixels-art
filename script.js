@@ -1,3 +1,15 @@
+//inserindo as cores
+function colorInsert() {
+  const black = document.getElementById('black');
+  const blue = document.getElementById('blue');
+  const green = document.getElementById('green');
+  const red = document.getElementById('red');
+  black.style.backgroundColor = 'black';
+  blue.style.backgroundColor = 'blue';
+  green.style.backgroundColor = 'green';
+  red.style.backgroundColor = 'red';
+}
+
 // cria uma linha de quadrados
 function createLineSquares(lineLength) {
   const pixelBoard = document.getElementById('pixel-board');
@@ -9,7 +21,7 @@ function createLineSquares(lineLength) {
     pixelBoard.appendChild(lines[lineIndex]);
     for (let index = 0; index < lineLength; index += 1) {
       squares[index] = document.createElement('div');
-      squares[index].className = 'pixel color';
+      squares[index].className = 'pixel';
       lines[lineIndex].appendChild(squares[index]);
     }
   }
@@ -49,6 +61,7 @@ function clearBoard() {
 }
 
 window.onload = function () {
+  colorInsert();
   createLineSquares(5);
   selectColor();
   paintPixel();
