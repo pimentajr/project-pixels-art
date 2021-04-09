@@ -24,7 +24,6 @@ main {
 
 body {
   background: rgb(4,82,110);
-  background: linear-gradient(90deg, rgba(4,82,110,1) 0%, rgba(32,186,185,1) 52%, rgba(0,212,255,1) 100%);
 }
 
 #userPainel {
