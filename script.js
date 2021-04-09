@@ -22,7 +22,6 @@ function createBox(boxColor) {
   const box = document.createElement('div');
 
   box.style.backgroundColor = boxColor;
-  box.className = 'color';
 
   return box;
 }
@@ -32,7 +31,7 @@ function createColor(color) {
   const container = document.querySelector('.palette');
   const element = createBox(color);
 
-  element.classList.add('color');
+  element.className = ('color');
 
   container.appendChild(element);
 }
