@@ -4,8 +4,16 @@ const color3 = color2.nextElementSibling;
 const color4 = color3.nextElementSibling;
 
 function generateRandomColor() {
-  const arr = [ 'red', 'blue', 'green', 'pink', 'yellow', 'brown', 'grey', 'aliceBlue', 'antiqueWhite', 'aqua', 'aquamarine',
-    'azure',
+  const arr = [
+    'red',
+    'blue',
+    'green',
+    'pink',
+    'yellow',
+    'brown',
+    'grey',
+    'aliceBlue',
+    'aquamarine',
     'beige',
     'bisque',
     'blanchedAlmond',
