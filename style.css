@@ -1,25 +1,38 @@
 .color {
-   border-color: black;
-   border: 1px solid;
-   padding: 20px;
-   height: 50px;
-   width: 50px;
-   margin: 5px;
-   display: inline-block;
+  border-color: black;
+  border: 1px solid;
+  height: 50px;
+  width: 50px;
+  margin: 2px;
+  display: inline-block;
 }
 
 #black {
-    background-color: black;
+  background-color: black;
 }
 
 #red {
-    background-color: red;
+  background-color: red;
 }
 
 #blue { 
-    background-color: blue;
+  background-color: blue;
 }
 
 #purple {
-    background-color: purple;
+  background-color: purple;
+}
+
+.pixel {
+   border-color: black;
+   border: 1px solid;
+   height: 40px;
+   width: 40px;
+   border-collapse: collapse;
+   background-color: white;
+}
+
+.table {
+   border-collapse: collapse;
+   margin: 5px;
 }
