@@ -75,3 +75,20 @@ function paintPixel() {
 }
 
 paintPixel();
+
+function buttonClear() {
+  const container = document.querySelector('#button-container');
+  const btnClear = document.createElement('button');
+  btnClear.id = 'clear-board';
+  btnClear.innerText = 'Limpar';
+  container.appendChild(btnClear);
+  btnClear.addEventListener('click', () => {
+    const pixelDivsArray = document.getElementsByClassName('pixel');
+    for (let index = 0; index < pixelDivsArray.length; index += 1) {
+      const pixel = pixelDivsArray[index];
+      pixel.style.backgroundColor = 'white';
+    }
+  });
+}
+
+buttonClear();
