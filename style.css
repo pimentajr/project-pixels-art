@@ -47,10 +47,10 @@ h1 {
 }
 
 #pixel-board {
+  /* display: table; */
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  display: table;
   border-collapse: collapse;
   width: 400px;
   height: 400px;
