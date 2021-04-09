@@ -1,10 +1,8 @@
 window.onload = function () {
   const pixelBoard = document.querySelector('#pixel-board').children;
-  const initialColor = document.querySelector('#black');
-  let color = initialColor.id;
-  color.className = 'selected';
-  
-  
+  let black = document.querySelector('#black');
+
+  black.classList.add('selected');  
   
   const quant = 5;
   
