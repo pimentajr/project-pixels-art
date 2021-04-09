@@ -1,5 +1,5 @@
 // Palette parameters:
-const FIXED_COLOR = 'rgb(0, 0, 0)';
+const FIXED_COLOR = 'black';
 const COLORS = [
   'rgb(191, 97, 106)',
   'rgb(235, 203, 139)',
