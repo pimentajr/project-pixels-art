@@ -1,18 +1,18 @@
 const pixelBoard = document.getElementById('pixel-board');
 const boardLength = 25;
 const colorPalette = document.getElementById('color-palette');
-let colorPick = document.querySelectorAll('.color');
+const colorPick = document.querySelectorAll('.color');
 const clearButton = document.getElementById('clear-board');
 
 for (let index = 0; index < boardLength; index += 1) {
-  let pixelDiv = document.createElement('div');
+  const pixelDiv = document.createElement('div');
 
   pixelDiv.className = 'pixel';
 
   pixelBoard.appendChild(pixelDiv);
 }
 
-let pixel = document.querySelectorAll('.pixel');
+const pixel = document.querySelectorAll('.pixel');
 
 function defaultColor() {
   document.querySelector('.black').classList.add('selected');
@@ -39,7 +39,7 @@ colorPalette.addEventListener('click', function selectColor(event) {
 });
 
 pixelBoard.addEventListener('click', function paintPixel(event) {
-  if (event.target.classList.contains('pixel')){
+  if (event.target.classList.contains('pixel')) {
     if (event.target.classList.length > 1) {
       event.target.className = 'pixel';
       event.target.classList.add(colorPaint);
@@ -51,6 +51,6 @@ pixelBoard.addEventListener('click', function paintPixel(event) {
 
 clearButton.addEventListener('click', function clearBoard() {
   for (let index = 0; index < pixel.length; index += 1) {
-    pixel[index].className = "pixel";
+    pixel[index].className = 'pixel white';
   }
 });
