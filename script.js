@@ -108,4 +108,3 @@ window.onload = () => {
   const clearPixelBoard = document.getElementById('clear-board');
   clearPixelBoard.addEventListener('click', clearBoard);
 };
-
