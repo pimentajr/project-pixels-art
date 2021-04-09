@@ -2,7 +2,7 @@ const boardSize = 5;
 const selectedClass = 'selected';
 const colorPalette = document.getElementById('color-palette');
 const colors = document.getElementsByClassName('color');
-const clearButton = document.getElementById('clear-board');
+const buttonClearBoard = document.getElementById('clear-board');
 const inputBoardSize = document.getElementById('board-size');
 const buttonGenerateBoard = document.getElementById('generate-board');
 const pixelBoard = document.getElementById('pixel-board');
@@ -17,7 +17,7 @@ function generateRandomHexColor() {
   return hexArray.join('') === '000000' ? '000001' : hexArray.join('');
 }
 
-function setColors() {
+function createColors() {
   for (let index = 0; index < colors.length; index += 1) {
     if (index === 0) {
       colors[index].setAttribute('style', `background-color: ${colors[index].dataset.color};`);
@@ -34,15 +34,15 @@ function checkBoardSize(size) {
   return size;
 }
 
-function setBoardSize(size) {
+function createBoard(size) {
   if (!size) return alert('Board inválido!');
 
   let newSize = size;
   newSize = checkBoardSize(newSize);
   pixelBoard.innerHTML = '';
 
+  const div = document.createElement('div');
   for (let index = 0; index < newSize; index += 1) {
-    const div = document.createElement('div');
     const row = div.cloneNode();
     row.classList.add('table-row');
     const cell = div.cloneNode();
@@ -96,13 +96,13 @@ function clearBoard() {
   }
 }
 
-function setClearButtonClickEvent() {
-  clearButton.addEventListener('click', clearBoard);
+function setClearBoardClickEvent() {
+  buttonClearBoard.addEventListener('click', clearBoard);
 }
 
 function newBoardSize() {
   const newSize = inputBoardSize.value;
-  setBoardSize(newSize);
+  createBoard(newSize);
 }
 
 function setGenerateBoardClickEvent() {
@@ -110,12 +110,12 @@ function setGenerateBoardClickEvent() {
 }
 
 function onPageLoad() {
-  setColors();
-  setBoardSize(boardSize);
+  createColors();
+  createBoard(boardSize);
   setSelectedColor(colorPalette.firstElementChild);
   setColorElementClickEvent();
   setPixelClickEvent();
-  setClearButtonClickEvent();
+  setClearBoardClickEvent();
   setGenerateBoardClickEvent();
 }
 
