@@ -30,7 +30,7 @@ colorPalette.addEventListener('click', selectColor);
 function changeColor(event) {
   const pixel = event.target;
   pixel.className = 'pixel';
-  pixel.target.classList.add(colorToPaint.classList[1]);
+  pixel.classList.add(colorToPaint.classList[1]);
 }
 pixelBoard.addEventListener('click', changeColor);
 
