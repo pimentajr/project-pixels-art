@@ -4,12 +4,15 @@ window.onload = function() {
 }
 
 
-function selectColor(nameOfColor){
-  nameOfColor.onclick
-  
+function colorPallete(){
+  let allPallete = document.querySelectorAll('.color')
+  for (let c = 0; c < allPallete.length; c += 1){
+      allPallete[c].className = 'color';
+    }
 }
 
-
-function selectedColor(){
-
+function selectColor(slColor){
+  let color = document.getElementById(slColor)
+  colorPallete()
+  color.className = 'color selected'
 }
