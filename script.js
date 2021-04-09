@@ -13,9 +13,14 @@ window.onload = function() {
     if(event.target !== colorSection){
       event.target.classList.add('selected')
     }
-    
+  })
 
-    console.log(document.querySelector('#color-palette'))
+  let pixels = document.querySelector('#pixel-board')
+
+  pixels.addEventListener('click', function(event){
+    let actualColor = document.querySelector('.selected')
+    let pixel = event.target
+    pixel.id = actualColor.id
   })
 
 }
