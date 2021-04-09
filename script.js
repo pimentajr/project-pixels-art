@@ -48,3 +48,17 @@ function fillLines() {
 }
 
 fillLines();
+
+function selectColor() {
+  const colorDivsArray = document.getElementsByClassName('color');
+  for (let index = 0; index < colorDivsArray.length; index += 1) {
+    const color = colorDivsArray[index];
+    color.addEventListener('click', () => {
+      const currentSelected = document.querySelector('.selected');
+      currentSelected.classList.remove('selected');
+      color.classList.add('selected');
+    });
+  }
+}
+
+selectColor();
