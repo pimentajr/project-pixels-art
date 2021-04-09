@@ -78,7 +78,7 @@ function clearLines() {
 }
 
 // Função que define o tamanho do board
-function lengthBoard() {
+function lengthBoard(pixelBoard) {
   const boardSize = document.getElementById('board-size');
   const generateBoard = document.getElementById('generate-board');
   generateBoard.addEventListener('click', () => {
@@ -91,7 +91,7 @@ function lengthBoard() {
         boardSize.value = 50;
       }
       clearLines();
-      createLineSquares(boardSize.value);
+      createLineSquares(boardSize.value, pixelBoard);
     }
   });
 }
@@ -103,7 +103,7 @@ window.onload = () => {
   createLineSquares(5, pixelBoard);
   selectColor();
   paintPixel(pixelBoard);
-  lengthBoard();
+  lengthBoard(pixelBoard);
   const clearPixelBoard = document.getElementById('clear-board');
   clearPixelBoard.addEventListener('click', clearBoard);
 };
