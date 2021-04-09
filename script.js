@@ -1,5 +1,6 @@
 const pixelBoard = document.getElementById('pixel-board');
 const colorPalette = document.getElementById('color-palette');
+const clearBtn = document.getElementById('clear-board');
 var colorToPaint = document.getElementsByClassName('selected')[0];
 function createPixels(line) {
   for (let column = 1; column <= 5; column += 1) {
@@ -26,8 +27,13 @@ colorPalette.addEventListener('click', function(event) {
 })
 
 pixelBoard.addEventListener('click', function(event) {
-  console.log(colorToPaint);
-  console.log(event.target);
   event.target.className = 'pixel';
   event.target.classList.add(colorToPaint.classList[1]);
+})
+
+clearBtn.addEventListener('click', function() {
+  let pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].className = 'pixel empty';
+  }
 })
