@@ -13,5 +13,5 @@ function selectColor (param) {
   yellow.className = 'color';
   red.className = 'color';
   blue.className = 'color';
-  param.target.className = 'selected'
+  param.target.className = 'color selected'
 }
