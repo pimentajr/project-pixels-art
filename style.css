@@ -29,8 +29,16 @@ body {
   border: solid;
 }
 
+#pixel-board {
+  display: table-row;
+}
+
+.pixel-board-line {
+  display: table-row;
+}
+
 .pixel {
-  display: inline-block;
+  display: table-cell;
   background-color: white;
   width: 40px;
   height: 40px;
