@@ -36,13 +36,13 @@
 
 .column {
   display: table-row;
-  padding: 25px;
+  padding: 40px;
   border: black solid 1px;
 }
 
 .pixel {
   display: table-cell;
-  padding: 25px;
+  padding: 40px;
   border: black solid 1px;
   background-color: white;
 }
