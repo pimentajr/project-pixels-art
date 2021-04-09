@@ -1,5 +1,4 @@
-//
-
+// função para mostrar a cor selecionada
 function showColorSelected() {
 let getColorsPallete = document.querySelector('#color-pallete')
 
@@ -13,43 +12,43 @@ getColorsPallete.addEventListener('click', function(event) {
 })
 }
 
-// evento click para selecionar cor
-// esse deve ocorrer dentro de #collor-pallete
-// o click precisa atribuir uma cor para alguma variável
-
-
-
-// evento click para aplicar cor
-// esse deve ocorrer dentro de #pixel-board
-
-function applySelectedColor() {
-  let getPaintTable = document.querySelector('#pixel-board');
-
-  getPaintTable.addEventListener('click', function(event) {
-    if (event.target.style.backgroundColor === 'black') {
-      event.target.classList.remove('black');
-    } else {
-      event.target.classList.add('black');
-    }
-    console.log(event.target);
-  })
+// adiciona fundo branco para pixel da paintBoard
+function addWhiteToBoard() {
+  let paintBoardContainer = document.querySelector('#pixel-board');
+  paintBoardContainer.style.backgroundColor = 'white';
 }
 
-applySelectedColor();
+addWhiteToBoard();
 
-
+// adiciona tag selected p/ cor preta ao iniciair a página
 function addSelectedToBlack() {
   let countSelectClass = document.getElementsByClassName('selected');
   let getBlackColor = document.querySelector('.black');
   if (countSelectClass.length === 0) {
-    getBlackColor.classList.add('select');
+    getBlackColor.classList.add('selected');
   }
 }
 
 addSelectedToBlack();
 
+// evento click para aplicar cor - ocorrer dentro de #pixel-board
+function applySelectedColor() {
+  let getPaintTable = document.querySelector('#pixel-board');
+  let getSelectedColor = document.querySelector('.selected');
+  let compStyles = window.getComputedStyle(getSelectedColor);
+
+  getPaintTable.addEventListener('click', function(event) {
+    event.target.style.backgroundColor = compStyles.getPropertyValue('background-color');
+    console.log(event.target);
+      console.log(getSelectedColor);
+  console.log(getPaintTable);
+  });
+}
+
+applySelectedColor();
 
 
+// remove a classe selected de um determinado elemento
 function removeSelectedClass() {
   let countSelectClass = document.getElementsByClassName('selected')
   if (countSelectClass.length !== 0) {
@@ -59,7 +58,6 @@ function removeSelectedClass() {
   }
 }
 
-removeSelectedClass() 
 
 
 // ao clicar em uma nova cor:
