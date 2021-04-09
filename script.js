@@ -8,11 +8,11 @@ const elemento = document.querySelectorAll('.color');
 createSquares();
 
 function createTable() {
-	const quadro = document.querySelector('#pixel-board');
-	for (let index = 0; index < 11; index += 1) {
-		const elementsQ = document.createElement('div');
+	const linha = document.querySelector('tr');
+	for (let index = 0; index < 5; index += 1) {
+		const elementsQ = document.createElement('td');
 		elementsQ.classList.add('pixel');
-		quadro.appendChild(elementsQ);
+		linha.appendChild(elementsQ);
 }
 }
 createTable();
