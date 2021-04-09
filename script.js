@@ -8,3 +8,8 @@ createDiv1('div', 'black color');
 createDiv1('div', 'red color');
 createDiv1('div', 'green color');
 createDiv1('div', 'blue color');
+
+function setClassColor() {
+  const classColor = document.querySelector('.black');
+  classColor.classList.add('selected');
+}
