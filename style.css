@@ -27,6 +27,36 @@ h1 {
   padding: 30px;
 }
 
+.grey {
+  background-color: grey;
+  padding: 30px;
+}
+
+.red {
+  background-color: red;
+  padding: 30px;
+}
+
+.blue {
+  background-color: blue;
+  padding: 30px;
+}
+
+.pink {
+  background-color: pink;
+  padding: 30px;
+}
+
+.yellow {
+  background-color: yellow;
+  padding: 30px;
+}
+
+.brown {
+  background-color: brown;
+  padding: 30px;
+}
+
 .pixel {
   background-color: white;
   border: 1px black solid;

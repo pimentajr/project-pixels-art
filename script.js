@@ -1,6 +1,18 @@
 const black = document.querySelector('.black');
-const green = document.querySelector('.green');
-const grey = document.querySelector('.grey');
+const color2 = document.querySelector('.black').nextElementSibling;
+const color3 = color2.nextElementSibling;
+const color4 = color3.nextElementSibling;
+
+color2.className += ` ${generateRandomColor()}`;
+color3.className += ` ${generateRandomColor()}`;
+color4.className += ` ${generateRandomColor()}`;
+
+function generateRandomColor() {
+  arr = ['red', 'blue', 'green', 'pink', 'yellow', 'brown', 'grey'];
+  let randomNumber = Math.round(Math.random() * 6);
+  return arr[randomNumber];
+}
+
 const magenta = document.querySelector('.magenta');
 const paleta = document.querySelector('#color-palette');
 const board = document.querySelector('#pixel-board');
@@ -52,6 +64,7 @@ clear.addEventListener('click', function () {
 
 const newBoard = document.createElement('div');
 let btn = document.querySelector('#generate-board');
+
 btn.addEventListener('click', function () {
   const board = document.querySelector('#pixel-board');
   board.remove();
