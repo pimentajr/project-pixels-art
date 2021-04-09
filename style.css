@@ -7,9 +7,41 @@ body {
   background-color: #ccc;
 }
 
+nav {
+  text-align: center;
+}
+
 #title {
   text-align: center;
   margin-top: 20px;
+  list-style: none;
+}
+
+#color-pallete li{
+  display: inline;
+  width: 25px;
+  height: 25px;
+  color: white;
+}
+
+.color {
+
+}
+
+#black {
+  background-color: black;
+}
+
+#red { 
+  background-color: red;
+}
+
+#green {
+  background-color: green;
+}
+
+#blue {
+  background-color: blue;
 }
 
 #footer {
