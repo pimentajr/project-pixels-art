@@ -20,7 +20,7 @@ main {
   margin-bottom: 64px;
 }
 
-#color-palette, #color-palette td {
+#color-palette , #color-palette td {
   border: 1px solid black;
 }
 
