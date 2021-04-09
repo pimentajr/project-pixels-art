@@ -4,7 +4,7 @@
 } */
 
 #title {
-  font-family:monospace;
+  font-family: monospace;
 }
 
 #color-palette {
@@ -26,10 +26,11 @@
 #blue {
   background-color: blue;
 }
+
 #yellow {
-  background-color:yellow;
+  background-color: yellow;
 }
 
 #green {
-  background-color:green;
+  background-color: green;
 }
