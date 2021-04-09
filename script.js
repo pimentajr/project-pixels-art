@@ -19,24 +19,25 @@ function printBoard() {
   pixelBoard.addEventListener('click', function (event) {
     const printBox = event.target;
     switch (document.querySelector('.selected').id) {
-      case 'black-box':
-        printBox.style.backgroundColor = 'black';
-        break;
-      case 'red-box':
-        printBox.style.backgroundColor = 'red';
-        break;
-      case 'green-box':
-        printBox.style.backgroundColor = 'green';
-        break;
-      case 'yellow-box':
-        printBox.style.backgroundColor = 'yellow';
+    case 'black-box':
+      printBox.style.backgroundColor = 'black';
+      break;
+    case 'red-box':
+      printBox.style.backgroundColor = 'red';
+      break;
+    case 'green-box':
+      printBox.style.backgroundColor = 'green';
+      break;
+    case 'yellow-box':
+      printBox.style.backgroundColor = 'yellow';
+    default:
     }
-  })
+  });
 }
 printBoard();
 
 // Cria o botão limpar e insere na div
-function createButton() {
+function createButton () {
   const clearButton = document.createElement('input');
   clearButton.style.margin = '20px 120px' ;
   clearButton.id = 'clear-board';
@@ -50,9 +51,9 @@ createButton();
 
 // Ao clicar no botão, limpa a tela
 function buttonAction() {
-  let button = document.getElementById('clear-board');
+  const button = document.getElementById('clear-board');
   button.addEventListener('click', function() {
-    let pixels = document.getElementsByClassName('pixel');
+    const pixels = document.getElementsByClassName('pixel');
     for (let index = 0; index < pixels.length; index += 1) {
       pixels[index].style.backgroundColor = 'white';
     }
