@@ -48,14 +48,21 @@ window.onload = function () {
         if (color[index].className === 'color selected') {
           event.target.style.backgroundColor = color[index].style.backgroundColor;
         } if (classOff.style.backgroundColor === color[index].style.backgroundColor) {
-          classOff.style.backgroundColor = 'white'
+          classOff.style.backgroundColor = ''
         }
       }
     });
   }
   addColorPixel();
 
-  function cleanButton() {
-    const getButton = document.querySelector('#clean')
+  function clearButton() {
+    const getButton = document.querySelector('#clear-board')
+    getButton.addEventListener('click', function (event) {
+      let pixelClear = document.querySelectorAll('.pixel');
+      for (let index = 0; index < pixelClear.length; index += 1) {
+        pixelClear[index].style.backgroundColor = 'white'
+      }
+    })
   }
+  clearButton()
 };
