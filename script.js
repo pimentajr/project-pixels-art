@@ -22,5 +22,10 @@ window.onload = function () {
     }
   }
 
+  function colorSelect() {
+    color[0].classList.add('selected');
+  }
+
   createBoard();
+  colorSelect();
 };
