@@ -1,0 +1,1 @@
+// 1 - Adicione à página o título "Paleta de Cores"
