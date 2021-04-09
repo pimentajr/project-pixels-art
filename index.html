@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Arte Pixels</title>
+</head>
+<body>
+  <h1 id="title">Paleta de Cores</h1>
+  <div class="clear-options">
+    <div class="menu-container">
+      <div class="menu">
+
+        <h5>Select color</h5>
+        <div id="color-palette">
+          <div class="color black"></div>
+          <div class="color red"></div>
+          <div class="color orange"></div>
+          <div class="color yellow"></div>
+          <div class="color green"></div>
+          <div class="color blue"></div>
+          <div class="color pink"></div>
+          <div class="color purple"></div>                    
+        </div>
+        
+        <h3>Grid size</h3>
+        <form id="size-picker">
+          <h5>Lines</h5>
+          <input type="number" class="input-lines" name="lines" min="1" max="30" value="15">
+
+          <h5>Columns</h5>
+          <input type="number" class="input-columns" name="columns" min="1" max="30" value="15">
+          
+          <input type="submit" class="submit-button" value="submit">
+        </form>
+
+      </div>
+    </div> 
+    
+    <div class="table-container">
+      <table id="pixel-canvas" class="pixel-canvas"></table>
+    </div>
+
+  </div> 
+  <script src="script.js"></script>
+</body>
+</html>
