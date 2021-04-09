@@ -8,7 +8,12 @@ for (let index = 0; index < pixelColor.length; index += 1) {
   pixelColor[index].addEventListener('click', setAsSelected);
 }
 
-// function paintPixel(event) { //pintar o pixel do quadro pixel-board
-//   const pixelToChange = event.target;
-//   pixelToChange.style.backgroundColor = document.querySelectorAll('.selected')[0].id;
-// }
+function paintPixel(event) { // pintar o pixel do quadro pixel-board
+  const pixelToChange = event.target;
+  pixelToChange.style.backgroundColor = document.querySelectorAll('.selected')[0].id;
+}
+
+const pixels = document.querySelectorAll('.pixel');
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].addEventListener('click', paintPixel);
+}
