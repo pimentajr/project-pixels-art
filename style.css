@@ -7,8 +7,8 @@ body {
 .color {
   border: 1px solid black;
   display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
 }
 
 #black {
@@ -33,8 +33,8 @@ body {
 
 td , tr {
   border: 1px solid black;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
 }
 
 table {
