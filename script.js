@@ -42,7 +42,7 @@ function setSelectedColor(target) {
 }
 
 function colorPaletteClickHandler({ target }) {
-  if (target.classList.contains('color')) {
+  if (target.classList.contains('color') && !target.classList.contains(selectedClass)) {
     setSelectedColor(target);
   }
 }
