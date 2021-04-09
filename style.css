@@ -62,7 +62,15 @@
 }
 
 @keyframes colorMove {
-  25% { border-radius: 2px; }
-  50% { border-radius: 10px; }
-  100% { border-radius: 15px; }
+  25% { 
+    border-radius: 2px; 
+  }
+  
+  50% { 
+    border-radius: 10px; 
+  }
+
+  100% { 
+    border-radius: 15px; 
+  }
 }
