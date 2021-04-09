@@ -1,14 +1,22 @@
 function setSelectedClass(event) {
-  const selectedElement = document.getElementsByClassName('selected')[0];
+  const selectedElement = document.querySelector('.selected');
   selectedElement.classList.remove('selected');
 
   const newSelection = event.target;
   newSelection.classList.add('selected');
 }
 
-const selectors = document.getElementsByClassName('color');
-for (let index = 0; index < selectors.length; index += 1) {
-  selectors[index].addEventListener('click', setSelectedClass);
+function paintPixel(event) {
+  const activeSelector = document.querySelector('.selected');
+  const color = getComputedStyle(activeSelector).backgroundColor;
+  const pixel = event.target;
+  pixel.style.backgroundColor = color;
 }
 
-console.log(document.getElementsByClassName('selected'));
+const selectorElements = document.getElementsByClassName('color');
+for (let index = 0; index < selectorElements.length; index += 1) {
+  selectorElements[index].addEventListener('click', setSelectedClass);
+}
+
+const boardElement = document.getElementById('pixel-board');
+boardElement.addEventListener('click', paintPixel);
