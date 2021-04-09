@@ -1,6 +1,8 @@
 window.onload = function allFunction() {
   const numberOfBlock = 5;
   const section = document.querySelector('#pixel-board');
+  const divBlack = document.querySelector('.black');
+  divBlack.classList.add('selected');
 
   function blockPixel(size) {
     for (let index = 0; index < size; index += 1) {
