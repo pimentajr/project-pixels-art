@@ -56,6 +56,16 @@ function handlePaletteClick(e) {
   selectColor(e.target.index);
 }
 
+function getRandomColorExceptWhite() {
+  let color = "#";
+
+  for(let i = 0; i < 3; i++) {
+    color += Math.round((Math.random() * 255) + 1).toString(16);
+  }
+
+  return color;
+}
+
 function paintPixel(e) {
   e.target.style.backgroundColor = selectedColor.style.backgroundColor;
 }
@@ -99,4 +109,4 @@ resizeButton.addEventListener('click', function() {
 });
 
 createBoard(5, 5);
-createPalette(['black', 'red', 'green', 'blue']);
+createPalette(['black', getRandomColorExceptWhite(), getRandomColorExceptWhite(), getRandomColorExceptWhite()]);
