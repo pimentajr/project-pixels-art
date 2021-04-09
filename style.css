@@ -19,5 +19,5 @@
   background-color: black;
   display: inline-grid;
   grid-template-columns: auto auto auto auto auto;
-  padding: 2px 1px 2px 1px;
+  padding: 2px 2px 1px 1px;
 }

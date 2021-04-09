@@ -1,5 +1,8 @@
 function createPaletteColorDiv(color) {
   const palletColorDiv = document.createElement('div');
+  if (color === 'black') {
+    palletColorDiv.className = 'color selected';
+  }
   palletColorDiv.className = 'color';
   palletColorDiv.style.backgroundColor = color;
   document.querySelector('#color-palette').appendChild(palletColorDiv);
