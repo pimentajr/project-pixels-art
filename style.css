@@ -5,8 +5,8 @@
   display: inline-block;
 }
 
-#red {
-  background-color: red;
+#black {
+  background-color: black;
 }
 
 #orange {
@@ -17,6 +17,6 @@
   background-color: yellow;
 }
 
-#pink {
-  background-color: pink;
+#red {
+  background-color: red;
 }
