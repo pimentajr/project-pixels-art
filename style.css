@@ -14,11 +14,10 @@
 }
 
 .pixels {
-  
   width: 25px;
   border: 1px solid black;
 }
 
-.white{
+.white {
   background-color: white;
 }
