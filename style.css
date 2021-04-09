@@ -22,3 +22,11 @@ body {
 #magenta {
     background-color: magenta;
 }
+.pixel {
+    background-color: white;
+    margin: 0;
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
