@@ -42,16 +42,14 @@ h1 {
 }
 
 /* Canvas */
-table.pixel-board {
+#pixel-board {
   border-collapse: collapse;
   display: table;
   margin: 60px auto;
 }
-table.pixel-board td, table.pixel-board th {
-  border: 1px solid #000000;
-}
 
 .pixel {
+  border: 1px solid black;
   height: 40px;
   width: 40px;
 }
