@@ -5,7 +5,7 @@ const magenta = document.querySelector('.magenta');
 const paleta = document.querySelector('#color-palette');
 
 black.className = 'color black selected';
-paleta.addEventListener('click', function(event) {
+paleta.addEventListener('click', function (event) {
   const color = event.target;
   black.classList.remove('selected');
   green.classList.remove('selected');
@@ -19,7 +19,7 @@ paleta.addEventListener('click', function(event) {
 //  ---------------------
 const board = document.querySelector('#pixel-board');
 
-board.addEventListener('click', function(event) {
+board.addEventListener('click', function (event) {
   const pixel = event.target;
   const itemColor = document.querySelector('.selected');
   const color = itemColor.classList[1];
@@ -28,9 +28,29 @@ board.addEventListener('click', function(event) {
 
 const clear = document.querySelector('#clear-board');
 
-clear.addEventListener('click', function() {
+clear.addEventListener('click', function () {
   const pixels = document.querySelectorAll('.pixel');
   for (const pixel of pixels) {
     pixel.style.backgroundColor = 'white';
+  }
+});
+
+//  ---------------------- EX 10
+const button = document.querySelector('#generate-board');
+const size = document.querySelector('#board-size');
+
+button.addEventListener('click', function () {
+  const value = size.value;
+  if (value === '') {
+    alert('Board inválido');
+  }
+  board.remove();
+  const newBoard = document.createElement('div');
+  newBoard.id = 'pixel-board';
+  document.body.appendChild(newBoard);
+  for (let i = 0; i < parseInt(value); i += 1) {
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    newBoard.appendChild(pixel);
   }
 });

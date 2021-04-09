@@ -66,6 +66,21 @@ h1 {
   color: white;
 }
 
+#generate-board {
+  padding: 3px 20px;
+  display: inline-block;
+  margin-bottom: 20px;
+  background-color: #252525;
+  border: 0px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: white;
+}
+
+#board-size {
+  margin-left: 400px;
+}
+
 .white {
   background-color: white;
 }
