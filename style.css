@@ -12,85 +12,6 @@ h1 {
   margin-bottom: 1.2em;
 }
 
-h3 {
-  text-align: center;
-  font-size: 1.3em;
-  margin: 0.5em;
-}
-
-h5 {
-  text-align: center;
-  margin: 0.1em;
-  font-size: 1.1em;
-}
-
-table, tr, td {
-  border: #0e0d0d 1px solid;
-}
-
-table {
-  margin: 0 auto;
-  border-collapse: collapse;
-  background-color: white;
-}
-
-tr {
-  height: 20px;
-}
-
-td {
-  width: 20px;
-}
-
-.menu-container {
-  position: relative;
-  float: left;
-  width: 30%;
-}
-
-.menu {
-  margin: 0 auto;
-  min-width: 100px;
-  width: 70%;
-  min-height: 300px;
-  background-color: white;
-  border: 2px solid black;
-}
-
-.clear-options:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-#size-picker {
-  margin-left: 20px;
-  margin-right: 20px;
-  padding: 0;
-  text-align: center;
-}
-
-input[ type = "number" ] {
-  border: 1px solid black;
-  padding: 4px;
-  text-align: center;
-  font-size: 0.9em;
-}
-
-input[ type = "submit" ] {
-  width: 100%;
-  height: 42px;
-  color: #fffbfe;
-  background-color: #181717;
-  border: 2px solid #616a6d;
-  text-transform: uppercase;
-  margin: 1em 0;
-}
-
-.purple {
-  background-color: #5a17cc;
-}
-
 #color-palette {
   display: flex;
   flex-wrap: wrap;
@@ -99,8 +20,8 @@ input[ type = "submit" ] {
 
 .color {
   display: inline-block;
-  width: 34px;
-  height: 34px;
+  width: 25px;
+  height: 25px;
   border: 1px solid black;
   margin: 0.5em;
 }
@@ -113,6 +34,12 @@ input[ type = "submit" ] {
   box-shadow: 0 0 0 1px white, 0 0 0 3px black;
 }
 
+.pixel {
+  width: 5px;
+  height: 5px;
+  background-color: white;
+}
+
 .black {
   background-color: black;
 }
@@ -123,6 +50,10 @@ input[ type = "submit" ] {
 
 .pink {
   background-color: #f523fc;
+}
+
+.purple {
+  background-color: #5a17cc;
 }
 
 .orange {
@@ -141,8 +72,12 @@ input[ type = "submit" ] {
   background-color: #0026ff;
 }
 
-.table-container {
-  float: right;
-  position: relative;
-  width: 70%;
+.submit-button {
+  width: 100%;
+  height: 42px;
+  color: #fffbfe;
+  background-color: #181717;
+  border: 2px solid #616a6d;
+  text-transform: uppercase;
+  margin: 1em 0;
 }

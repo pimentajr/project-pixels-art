@@ -11,3 +11,11 @@ function creatPallete() {
   }
 }
 creatPallete();
+
+function pixelBoard() {
+  let createpixelBoard = document.createElement('div');
+  createpixelBoard.id = 'pixel-board';
+  createpixelBoard.className = 'pixel';
+  colorPalette.appendChild(createpixelBoard);
+}
+pixelBoard();
