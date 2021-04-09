@@ -9,4 +9,4 @@ function createColor(array) {
     colorPallet.appendChild(color);
   }
 }
-createColor(['red', 'black', 'blue', 'green']);
+createColor(['black', 'red', 'blue', 'green']);
