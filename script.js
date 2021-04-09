@@ -5,12 +5,11 @@ firstSelectedColor.classList = ('color selected');
 // Seleciona a cor mudando a classe da div clicada
 function colorSelection() {
   const tableColor = document.querySelector('#color-palette');
-  function selectingNewColor(event) {
+  tableColor.addEventListener('click', function (event) {
     const actualColor = document.querySelector('.selected');
     actualColor.className = 'color';
     event.target.className = 'color selected';
   }
-  tableColor.addEventListener('click', selectingNewColor);
 }
 colorSelection();
 
@@ -41,6 +40,7 @@ function createButton() {
   let clearButton = document.createElement('input');
   clearButton.style.margin = '20px 120px' ;
   clearButton.id = 'clear-board';
+  clearButton.value = 'Limpar';
   clearButton.innerHTML = 'Limpar';
   clearButton.type = 'button';
   let buttonDiv = document.getElementById('button');
@@ -59,7 +59,3 @@ function buttonAction() {
   })
 }
 buttonAction();
-
-xco.addEventListener('click', function() {
-  sasdsadadadada
-})
