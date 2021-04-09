@@ -9,15 +9,15 @@ window.onload = function (){
 
     for (let i = 0;  i < 5; i += 1) {
         let blockRow = document.createElement('div')
-        blockRow.className = 'blockRow'
+        blockRow.className = 'pixel-row'
         pixelTable.appendChild(blockRow)
     
     
     for (let j =0; j < 5; j +=1) {
         let blockCell = document.createElement('div')
-        blockCell.className = 'blockCell'
+        blockCell.className = 'pixel'
         blockRow.appendChild(blockCell)
-        blockCell.style.backgroundColor = 'White'
+        blockCell.style.backgroundColor = 'white'
         
 
     }
