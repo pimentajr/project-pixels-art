@@ -38,17 +38,19 @@ function printBoard() {
 }
 printBoard();
 
+// Cria o botão limpar e insere na div
 function createButton() {
   let clearButton = document.createElement('input');
   clearButton.style.margin = '20px 120px' ;
   clearButton.id = 'clear-board';
-  clearButton.value = 'Limpar';
+  clearButton.value = '\'Limpar\'';
   clearButton.type = 'button';
   let buttonDiv = document.getElementById('button');
   buttonDiv.appendChild(clearButton);
 }
 createButton();
 
+// Ao clicar no botão, limpa a tela
 function buttonAction() {
   let button = document.getElementById('clear-board');
   button.addEventListener('click', function() {
