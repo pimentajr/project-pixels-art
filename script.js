@@ -31,7 +31,7 @@ let clear = document.querySelector('#clear-board');
 
 clear.addEventListener('click', function () {
   let pixels = document.querySelectorAll('.pixel');
-  for (let i = 0; i < pixels; i += 1) {
-    pixels[i].className = 'pixel white';
+  for (let pixel of pixels) {
+    pixel.style.backgroundColor = 'white';
   }
 });

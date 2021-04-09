@@ -50,13 +50,13 @@ h1 {
   margin-left: 340px;
   margin-bottom: 80px;
   width: 260px;
-  height: 0.000000001px;
+  height: 1px;
 }
 
 #pixel-board {
   background: blue;
   width: 426px;
-  height: 0.0000000001px;
+  height: 1px;
 }
 
 #clear-board {
