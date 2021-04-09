@@ -8,12 +8,22 @@ function creatH1(tag, id, Name) {
 creatH1('h1', 'title', 'Paleta de Cores');
 
 // Desafio 2
-function createPalet(tag, id, classN) {
+function createDiv(tag, id) {
   const createP = document.createElement(tag);
   createP.id = id;
-  createP.className = classN;
-  createP.style.backgroundColor = classN;
   document.body.appendChild(createP);
 }
 
-createPalet('div', 'color-palette', 'red');
+createDiv('div', 'color-palette');
+
+function createDiv1 (tag, classN) {
+  const CreatDiv = document.createElement(tag);
+  CreatDiv.className = classN;
+  const Father = document.querySelector('#color-palette');
+  Father.appendChild(CreatDiv);
+}
+createDiv1('div', 'red');
+createDiv1('div', 'green');
+createDiv1('div', 'black');
+createDiv1('div', 'blue');
+
