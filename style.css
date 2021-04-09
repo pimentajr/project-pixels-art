@@ -1,0 +1,15 @@
+#color-palette {
+  display: table;
+}
+
+.color {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;  
+}
+
+/*display: table-cell;
+  background-color: white;
+  width: 40px;
+  height: 40px;*/
