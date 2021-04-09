@@ -1,4 +1,6 @@
 const pixelBoard = document.getElementById('pixel-board');
+const colorPalette = document.getElementById('color-palette');
+var colorToPaint = 'black';
 function createPixels(line) {
   for (let column = 1; column <= 5; column += 1) {
     const pixel = document.createElement('div');
@@ -15,3 +17,7 @@ function createRows() {
   }
 }
 createRows();
+
+colorPalette.addEventListener('click', function(event) {
+  colorToPaint  = event.target.style.backgroundColor;
+})
