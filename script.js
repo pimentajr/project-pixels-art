@@ -60,7 +60,7 @@ function getRandomColorExceptWhite() {
   let color = "#";
 
   for(let i = 0; i < 3; i++) {
-    color += Math.round((Math.random() * 255) + 1).toString(16);
+    color += Math.ceil((Math.random() * 255 + 0.1)).toString(16);
   }
 
   return color;
