@@ -4,9 +4,18 @@ const color3 = color2.nextElementSibling;
 const color4 = color3.nextElementSibling;
 
 function generateRandomColor() {
-  const arr = [ 'red', 'blue', 'green', 'pink',
-    'yellow', 'brown', 'grey', 'aliceBlue', 'aquamarine', 'beige', 'bisque', 
-    'blanchedAlmond', 'blueViolet', 'burlyWood','cadetBlue','chartreuse',
+  const arr = ['red', 'blue', 'green', 'pink', 'yellow',
+    'brown',
+    'grey',
+    'aliceBlue',
+    'aquamarine',
+    'beige',
+    'bisque',
+    'blanchedAlmond',
+    'blueViolet',
+    'burlyWood',
+    'cadetBlue',
+    'chartreuse',
   ];
   const randomNumber = Math.round(Math.random() * 15);
   return arr[randomNumber];
@@ -79,12 +88,12 @@ function valued(value) {
 }
 
 btn.addEventListener('click', () => {
-  board.remove();
-  document.querySelector('.board-container').appendChild(newBoard);
   const valor = input.value;
   if (valor === '') {
-    alert('Board inválido');
-  }
+    return alert('Board inválido');
+   }
+  board.remove();
+  document.querySelector('.board-container').appendChild(newBoard);
   const numberValued = valued(valor);
   const valueXvalue = Number(numberValued * numberValued);
   for (let i = 0; i < valueXvalue; i += 1) {
