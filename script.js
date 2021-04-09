@@ -21,3 +21,11 @@ function generatePixels() {
 }
 
 generatePixels();
+
+function clearPixelsBoard() {
+  const color = document.querySelectorAll('.pixel');
+  for (let index = 0; index < 25; index += 1) {
+    color[index].style.backgroundColor = 'white';
+  }
+}
+

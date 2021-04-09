@@ -10,7 +10,7 @@ h1 {
 }
 
 #pixel-board {
-  width: 360px;
+  width: 300px;
 }
 
 .pixel {
@@ -19,4 +19,13 @@ h1 {
   border: 1px solid black;
   display: inline-block;
   background-color: white;
+}
+
+section {
+  padding: 5px;
+}
+
+button {
+  padding: 5px;
+  margin-left: 5px;
 }
