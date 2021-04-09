@@ -1,0 +1,23 @@
+.navy {
+  background-color: navy;
+}
+
+.turquoise {
+  background-color: turquoise;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.darkorange {
+  background-color: darkorange;
+}
+
+.color {
+  border: 1px solid black;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  margin: 1px;
+}
