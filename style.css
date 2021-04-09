@@ -3,6 +3,8 @@
   border-color: black;
   border-width: 1px;
   border-style: solid;
+  width: 50px;
+  height: 50px;
 }
 
 .red {
@@ -17,6 +19,26 @@
   background-color: blue;
 }
 
-.yellow {
-  background-color: yellow;
+.black {
+  background-color: black;
 }
+
+.pixel {
+  display: inline-block;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+.line {
+  width: fit-content;
+}
+
+#pixel-board {
+  width: fit-content;
+  height: fit-content;
+}
+
