@@ -1,16 +1,28 @@
-function holdColor(event) {
+function handleColorSelect(event) {
   console.log('fui clicado', event.target);
   let colorSelected = document.getElementsByClassName('selected')[0];
   colorSelected.classList.remove('selected');
   event.target.classList.add('selected');
 }
 
-// adicionar o click para cada elemento
-let color1 = document.getElementById('color1');
-let color2 = document.getElementById('color2');
-let color3 = document.getElementById('color3');
-let color4 = document.getElementById('color4');
-color1.addEventListener('click', holdColor);
-color2.addEventListener('click', holdColor);
-color3.addEventListener('click', holdColor);
-color4.addEventListener('click', holdColor);
+let arrayColors = document.getElementsByClassName('color');
+console.log(arrayColors);
+for (let i = 0; i < arrayColors.length; i += 1) {
+  let currentColorElement = arrayColors[i];
+  currentColorElement.addEventListener('click', handleColorSelect);
+}
+
+function handlePixelSelected(event) {
+  console.log('fui clicado', event.target);
+  let colorSelected = document.getElementsByClassName('selected')[0];
+  let compStyles = window.getComputedStyle(colorSelected);
+  let backgroundColor = compStyles.getPropertyValue('background-color');
+  event.target.style.backgroundColor = backgroundColor;
+}
+
+let arrayPixel = document.getElementsByClassName('pixel');
+console.log(arrayPixel);
+for (let i = 0; i < arrayPixel.length; i += 1) {
+  let currentPixelElement = arrayPixel[i];
+  currentPixelElement.addEventListener('click', handlePixelSelected);
+}
