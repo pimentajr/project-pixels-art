@@ -11,8 +11,8 @@ for (let index = 0; index < 4; index += 1) {
 }
 
 const pixelBoard = document.querySelector('#pixel-board');
-const lines = 5;
-const columns = 5;
+let lines = 5;
+let columns = 5;
 for (let lineIndex = 0; lineIndex < lines; lineIndex += 1) {
   const newLine = document.createElement('div');
   pixelBoard.appendChild(newLine);
@@ -22,6 +22,8 @@ for (let lineIndex = 0; lineIndex < lines; lineIndex += 1) {
     newLine.appendChild(newPixel);
   }
 }
+
+pixelBoard.style.maxWidth = `${(columns * 40) + (columns * 2)}px`;
 
 function selectColor(event) {
   const selectedColor = document.querySelector('.selected');
@@ -73,6 +75,9 @@ function createBoard(newLines, newColumns) {
     }
   }
   boardSize.value = '';
+  lines = newLines;
+  columns = newColumns;
+  pixelBoard.style.maxWidth = `${(columns * 40) + (columns * 2)}px`;
 }
 
 function generateBoard() {
