@@ -8,6 +8,7 @@ function colorInsert() {
   blue.style.backgroundColor = 'blue';
   green.style.backgroundColor = 'green';
   red.style.backgroundColor = 'red';
+  black.classList.add('selected');
 }
 
 // cria uma linha de quadrados
@@ -22,7 +23,7 @@ function createLineSquares(lineLength) {
     for (let index = 0; index < lineLength; index += 1) {
       squares[index] = document.createElement('div');
       squares[index].className = 'pixel';
-      squares[index].style.backgroundColor = 'rgb(255, 255, 255)';
+      squares[index].style.backgroundColor = 'rgba(255, 255, 255)';
       lines[lineIndex].appendChild(squares[index]);
     }
   }
@@ -45,10 +46,9 @@ function paintPixel() {
   const pixelBoard = document.getElementById('pixel-board');
   pixelBoard.addEventListener('click', (event) => {
     const selectedElement = document.querySelector('.selected');
-    const color = selectedElement.classList[1];
+    const color = selectedElement.style.backgroundColor;
     if (event.target.classList[0] === 'pixel') {
-      event.target.className = 'pixel';
-      event.target.classList.add(`${color}`);
+      event.target.style.backgroundColor = color;
     }
   });
 }
