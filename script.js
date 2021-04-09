@@ -18,19 +18,22 @@ function populateDiv(div, className, qtd) {
 populateDiv(colorPalette, 'palette', 1);
 
 // Cria uma caixa com base nas diferentes cores
+/*
 function createBox(boxColor) {
-  const box = document.createElement('div');
+  const element = document.createElement('div');
 
-  box.style.backgroundColor = boxColor;
+  element.style.backgroundColor = boxColor;
 
-  return box;
+  return element;
 }
+*/
 
 // Colore as caixas
-function createColor(color) {
+function createColor(boxColor) {
   const container = document.querySelector('.palette');
-  const element = createBox(color);
+  const element = document.createElement('div');
 
+  element.style.backgroundColor = boxColor;
   element.className = ('color');
 
   container.appendChild(element);
@@ -40,9 +43,26 @@ createColor('black');
 createColor('red');
 createColor('blue');
 createColor('yellow');
-createColor('green');
-createColor('#34f67a');
-createColor('rgb(243, 104, 012)');
 
-// para ver de forma rápida: npm run cypress
-// para ver com mais detalhes: npm run cypress:open
+/*
+Adicione à página um quadro de pixels, com 25 pixels.
+
+    O quadro de "pixels" deve ter 5 elementos de largura e 5 elementos de comprimento;
+
+    O quadro de "pixels" deve possuir o id denominado pixel-board, ao passo que cada "pixel" individual dentro do quadro deve possuir a classe denominada pixel;
+
+    A cor inicial dos "pixels" dentro do quadro, ao abrir a página, deve ser branca;
+
+    O quadro de "pixels" deve aparecer abaixo da paleta de cores.
+
+O que será verificado:
+
+    Verifica se o quadro de pixels possui o id denominado pixel-board
+
+    Verifica se cada pixel individual dentro do quadro possui a classe denominada pixel.
+
+    Verifica se a cor inicial dos pixels dentro do quadro, ao abrir a página, é branca.
+
+    Verifica se o quadro de pixels aparece abaixo da paleta de cores
+
+*/
