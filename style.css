@@ -28,3 +28,19 @@
   border: 1px solid black;
   background-color: white;
 }
+
+.black{
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
