@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+}
+
+#title{
+  text-align: center;
+}
+
+#color-palette{
+  display: inline-block;
+}
+
+.rose{
+  background-color: #F32F92;
+}
+
+.blue{
+  background-color:#03989E;
+}
+
+.white{
+  background-color: white;
+}
+
+.black{
+  background-color: #242424;
+}
