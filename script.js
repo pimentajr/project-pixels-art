@@ -11,4 +11,4 @@ color4.style.backgroundColor = 'red';
 
 // criando o botão na paleta
 window.onload = 'selected';
-let selected = document.color1;
+let selected = document.getElementById('color black');
