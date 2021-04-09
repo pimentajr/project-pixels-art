@@ -61,25 +61,42 @@ window.onload = function () {
 
   function createInputBoard() {
     const pixelTable = document.getElementById('pixel-board');
-    let input = document.getElementById('board-size');
-    let button = document.getElementById('generate-board');
+    const input = document.getElementById('board-size');
+    const button = document.getElementById('generate-board');
 
     button.addEventListener('click', function () {
-      if (input.value > 0) {
-        if (input.value >= 5 && input.value <= 50) {
-          pixelTable.innerHTML = '';
-          createBoard(input.value);
-        }
-      } else {
+      if (input.value.length === 0) {
         alert('Board inválido!');
+      } else {
+        if (input.value < 5) {
+          input.value = 5;
+        } else if (input.value > 50) {
+          input.value = 50;
+        }
+        pixelTable.innerHTML = '';
+        createBoard(input.value);
       }
-      
-    })
+    });
+
+    input.addEventListener('keyup', function(event) {
+      if (event.keyCode === 13) {
+        if (input.value.length === 0) {
+          alert('Board inválido!');      
+        } else {
+          if (input.value < 5) {
+          input.value = 5;
+        } else if (input.value > 50) {
+          input.value = 50;
+        }
+        pixelTable.innerHTML = '';
+        createBoard(input.value);
+      }}
+    });
   }
 
   createBoard(5);
   colorSelect();
   colorPixel();
   clearButton();
-  createInputBoard()
+  createInputBoard();
 };
