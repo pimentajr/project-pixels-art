@@ -5,6 +5,7 @@ function createPixels(line) {
   for (let column = 1; column <= 5; column += 1) {
     const pixel = document.createElement('div');
     pixel.className = 'pixel';
+    pixel.classList.add('empty');
     line.appendChild(pixel);
   }
 }
@@ -27,5 +28,6 @@ colorPalette.addEventListener('click', function(event) {
 pixelBoard.addEventListener('click', function(event) {
   console.log(colorToPaint);
   console.log(event.target);
-  event.target.style.backgroundColor = colorToPaint.style.backgroundColor;
+  event.target.className = 'pixel';
+  event.target.classList.add(colorToPaint.classList[1]);
 })
