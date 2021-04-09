@@ -24,3 +24,14 @@
 .yellow {
     background-color: yellow;       
 }
+
+#pixel-board{ 
+    display: table; 
+}
+
+
+.pixel{ 
+    display: table-cell;
+    width: 5px;
+    height: 5px;
+}
