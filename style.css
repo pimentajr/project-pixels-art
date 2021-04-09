@@ -23,15 +23,15 @@
 }
 
 #pixel-board {
-  height: 750px;
-  width: 750px;
+  height: 200px;
+  width: 200px;
   margin: auto;
 }
 
 .pixel {
   display: inline-block;
-  height: 150px;
-  width: 150px;
+  height: 40px;
+  width: 40px;
   border-style: solid;
   margin: -5px;
 }
