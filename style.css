@@ -19,21 +19,24 @@
 }
 
 .orange {
-  background: #ffb52c;
+  background: orange;
 }
 
 .pink {
-  background: #ff7b91;
+  background: pink;
 }
 
 .green {
-  background: #008300;
+  background: green;
 }
 
+.panelBtn {
+  margin-top: 20px;
+}
 
 #pixel-board {
   width: 230px;
-  margin: 50px auto;
+  margin: 30px auto;
 }
 
 .pixel {

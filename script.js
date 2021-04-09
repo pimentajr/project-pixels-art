@@ -1,6 +1,8 @@
 const getcolorPalette = document.getElementById('color-palette');
 const getpixelBoard = document.getElementById('pixel-board');
 const getColors = document.querySelectorAll('.color');
+const getclearBoard = document.getElementById('clear-board');
+const getPixel = document.querySelectorAll('.pixel');
 
 function setSelect(event) {
   getColors.forEach((elem) => {
@@ -22,3 +24,11 @@ function paintPixel(event) {
 }
 
 getpixelBoard.addEventListener('click', paintPixel);
+
+function btnClear() {
+  getPixel.forEach((elem) => {
+    elem.style.removeProperty('background-color');
+  });
+}
+
+getclearBoard.addEventListener('click', btnClear);
