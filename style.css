@@ -1,0 +1,8 @@
+.color {
+  display: inline-block;
+  background-color: blue;
+  border: 1px solid black;
+  margin: 1px;
+  width: 25px;
+  height: 25px;
+}
