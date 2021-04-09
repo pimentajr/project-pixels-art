@@ -3,3 +3,49 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#title {
+  text-align: center;
+  padding: 36px 0;
+}
+
+main {
+  min-height: 75vh;
+}
+
+#color-palette {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 64px;
+}
+
+#color-palette, #color-palette td {
+  border: 1px solid black;
+}
+
+#color-palette td {
+  height: 60px;
+  width: 60px;
+}
+
+#pixel-board {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: content-box;
+}
+
+.pixel {
+  background-color: white;
+  box-sizing: content-box;
+  height: 41px;
+  width: 41px;
+  border: 1px solid black;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 0;
+}
