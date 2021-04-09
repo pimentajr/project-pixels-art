@@ -81,8 +81,8 @@ choiceSizeOfPixelBox();
 
 function resetColorsButton() {
   const resetButton = document.createElement('button');
-  const interface = document.getElementById('userPainel');
-  interface.appendChild(resetButton)
+  const interfaceHtml = document.getElementById('userPainel');
+  interfaceHtml.appendChild(resetButton)
   resetButton.innerHTML = 'Limpar';
   resetButton.id = 'clear-board';
   resetButton.addEventListener('click', () => {
@@ -93,3 +93,15 @@ function resetColorsButton() {
   });
 }
 resetColorsButton()
+
+function randomColor() {
+  const paletteColor = document.getElementsByClassName('color');
+  for (let index = 1; index < paletteColor.length; index += 1) {
+  let r = parseInt(Math.random() * 255);
+  let g = parseInt(Math.random() * 255);
+  let b = parseInt(Math.random() * 255);
+
+  paletteColor[index].style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
+  }
+}
+randomColor();
