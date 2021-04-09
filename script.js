@@ -16,7 +16,7 @@ function paintPixel(event) {
   getColors.forEach((elem) => {
     if (elem.classList[2] === 'selected') {
       const color = elem.classList[1];
-      ev.style.background = color;
+      ev.style.backgroundColor = color;
     }
   });
 }
