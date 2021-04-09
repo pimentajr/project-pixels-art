@@ -20,3 +20,12 @@
 .fourth-color {
   background-color: red;
 }
+
+/* Main */
+#pixel-board {
+  border: 1px solid black;
+}
+
+.pixel {
+  color: white;
+}
