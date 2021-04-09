@@ -9,14 +9,14 @@ function colorSelection() {
     const actualColor = document.querySelector('.selected');
     actualColor.className = 'color';
     event.target.className = 'color selected';
-  }
+  })
 }
 colorSelection();
 
 // Pinta os pixels em branco com a cor selecionada
 function printBoard() {
   const pixelBoard = document.getElementById('pixel-board');
-  pixelBoard.addEventListener('click', function(event) {
+  pixelBoard.addEventListener('click', function (event) {
     const printBox = event.target;
     switch (document.querySelector('.selected').id) {
       case 'black-box':
@@ -37,13 +37,13 @@ printBoard();
 
 // Cria o botão limpar e insere na div
 function createButton() {
-  let clearButton = document.createElement('input');
+  const clearButton = document.createElement('input');
   clearButton.style.margin = '20px 120px' ;
   clearButton.id = 'clear-board';
   clearButton.value = 'Limpar';
   clearButton.innerHTML = 'Limpar';
   clearButton.type = 'button';
-  let buttonDiv = document.getElementById('button');
+  const buttonDiv = document.getElementById('button');
   buttonDiv.appendChild(clearButton);
 }
 createButton();
