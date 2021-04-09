@@ -16,6 +16,8 @@ function colorPalletDefinition(){
 	}
 }
 
+colorPalletDefinition();
+
 function getColor(element){
 	const pencil = element.target;
 	const color = getComputedStyle(pencil).backgroundColor
