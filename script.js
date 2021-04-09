@@ -18,6 +18,8 @@ window.onload = function() {
       event.target.classList.add(`${color}`);
     }
   });
+  const clearPixelBoard = document.getElementById('clear-board');
+  clearPixelBoard.addEventListener('click', clearBoard);
 }
 
 //cria uma linha de quadrados
@@ -37,3 +39,9 @@ function createLineSquares(lineLength) {
   }
 }
 
+function clearBoard() {
+  let board = document.querySelectorAll('.pixel');
+  for (let index = 0; index < board.length; index++) {
+    board[index].className = 'pixel color';
+  }
+}
