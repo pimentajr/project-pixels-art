@@ -1,0 +1,27 @@
+#color-palette {
+  height: 100px;
+  width: 50%;
+}
+
+#color-palette div {
+  height: 100%;
+  width: 15%;
+  display: inline-block;
+  border: 1px black solid;
+}
+
+.darkslategray {
+  background-color: darkslategray;
+}
+
+.darkcyan {
+  background-color: darkcyan;
+}
+
+.darkolivegreen {
+  background-color: darkolivegreen;
+}
+
+.maroon {
+  background-color: maroon;
+}
