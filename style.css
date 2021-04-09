@@ -32,18 +32,15 @@ h1 {
   border: 1px black solid;
   width: 40px;
   height: 40px;
-  padding: 20px;
   display: inline-block;
 }
 
 #pixel-board {
-  margin-left: 260px;
-  width: 426px;
+  margin: 0 auto;
   height: 1px;
 }
 
 .container {
-  max-width: 960px;
   margin: 0 auto;
 }
 

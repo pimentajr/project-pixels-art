@@ -48,7 +48,11 @@ button.addEventListener('click', function () {
   const newBoard = document.createElement('div');
   newBoard.id = 'pixel-board';
   document.body.appendChild(newBoard);
-  for (let i = 0; i < parseInt(value); i += 1) {
+  for (let i = 0; i < parseInt(value * value); i += 1) {
+    if (i % parseInt(value) === 0) {
+      const br = document.createElement('br');
+      newBoard.appendChild(br);
+    }
     const pixel = document.createElement('div');
     pixel.className = 'pixel';
     newBoard.appendChild(pixel);
