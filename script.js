@@ -62,9 +62,10 @@ function makeNewPixelBoard(diagonal) {
 }
 
 function verifyIfInputIsWithinRange(inputTest) {
-  const diagonal = parseInt(inputTest, 10);
+  let diagonal = parseInt(inputTest, 10);
   if (diagonal < 5) diagonal = 5;
   if (diagonal > 50) diagonal = 50;
+  console.log(diagonal);
   makeNewPixelBoard(diagonal);
 }
 function verifyIfInputIsEmpty(inputTest) {
