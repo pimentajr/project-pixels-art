@@ -19,7 +19,7 @@ function pixelBoard(){
     let lineBoard = document.querySelectorAll('.line');
     for (let i = 0; i < lines; i++){
         let pixelBox = document.createElement('div');
-        pixelBox.className = 'pixel box';
+        pixelBox.className = 'pixel';
         pixelBox.style.backgroundColor = 'white';
         lineBoard[i].appendChild(pixelBox);
     }
