@@ -50,6 +50,8 @@ h1 {
 
 #pixel-board {
   display: inline-block;
+  height: 250px;
+  width: 250px;
 }
 
 main {
@@ -57,7 +59,7 @@ main {
 }
 
 .linha {
-  margin-top: -4px;
+  margin-top: -3px;
 }
 
 .pixel {
