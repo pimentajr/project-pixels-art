@@ -2,7 +2,7 @@
   display: inline-block;
 }
 
-.color, .pixel {
+.color , .pixel {
   border: 1px solid black;
   height: 40px;
   width: 40px;
