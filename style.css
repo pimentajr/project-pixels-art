@@ -1,0 +1,22 @@
+.color {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  border: 1px solid black;
+}
+
+#black-selector {
+  background-color: rgb(11, 36, 40);
+}
+
+#blue-selector {
+  background-color: rgb(78, 205, 196);
+}
+
+#red-selector {
+  background-color: rgb(255, 107, 107);
+}
+
+#yellow-selector {
+  background-color: rgb(255, 230, 109);
+}
