@@ -7,6 +7,8 @@ let colors = document.getElementsByClassName('color')
 let selectedColor = document.querySelector('.selected')
 // get Color Board 
 let pixelBoard = document.getElementById('pixel-board')
+// get Pixels
+let pixels = document.getElementsByClassName('pixel')
 
 // Color Select
 colorPalette.addEventListener('click', function(event){
@@ -20,8 +22,13 @@ colorPalette.addEventListener('click', function(event){
 pixelBoard.addEventListener('click', function(event){
   selectedColor = document.querySelector('.selected');
   let selectedColorStyle = window.getComputedStyle(selectedColor).getPropertyValue('background-color');
-  // event.target.style.backgroundColor = selectedColor.style.backgroundColor;
   event.target.style.backgroundColor = selectedColorStyle;
   })
+
+  function clearBoard() {
+    for (let key of pixels) {
+      key.removeAttribute('style');
+    }
+  }
 
 
