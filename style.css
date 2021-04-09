@@ -4,26 +4,26 @@ body {
   margin: 0;
 }
 
-.pallete-wrapper{
+.palette-wrapper{
   display:inline;
-  margin:0;
-  text-align: center;;
+  margin: 0;
+  text-align: center;
 }
 
-ul#color-pallete {
+ul#color-palette {
   list-style-type: none;
-  display:inline-block;
-  padding-inline-start:0;
+  display: inline-block;
+  padding-inline-start: 0;
 }
 
 li.color {
-  display:inline-block;
-  border: black solid 1px;
+  display: inline-block;
+  border:  black solid 1px;
   padding: 25px;
 }
 
 .black {
-  background-color: black;
+  background-color:  black;
 }
 
 .yellow {
@@ -31,11 +31,11 @@ li.color {
 }
 
 .blue {
-  background-color: blue;
+  background-color:  blue;
 }
 
 .green {
-  background-color: green;
+  background-color:  green;
 }
 
 .table-wrapper {
