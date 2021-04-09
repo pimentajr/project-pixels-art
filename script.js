@@ -9,10 +9,10 @@ colorPalette.setAttribute('id', 'color-palette');
 body.appendChild(colorPalette);
 const differentColors = 4;
 for (let index = 1; index <= differentColors; index += 1) {
-  let colorBox = document.createElement('div');
+  const colorBox = document.createElement('div');
   colorBox.classList.add('color');
   const maxColorValue = 16777215;
-  randomColor = Math.floor(Math.random()*maxColorValue).toString(16);
-  colorBox.style.backgroundColor = '#' + randomColor;
+  const randomColor = Math.floor(Math.random() * maxColorValue).toString(16);
+  colorBox.style.backgroundColor = '#${ randomColor}';
   colorPalette.appendChild(colorBox);
 }
