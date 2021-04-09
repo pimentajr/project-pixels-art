@@ -4,7 +4,24 @@
   padding: 30px;
 }
 
-.terms{
-    display: inline-block;
-    padding: 14px;
+.terms {
+  display: inline-block;
+  padding: 14px;
+
 }
+
+.blockRow{
+  border: black solid 1px;
+  padding: 5px;
+  display: table-row;
+
+
+}
+
+.blockCell {
+  border:  black solid 1px;
+  padding: 5px;
+  display: table-cell;
+
+}
+
