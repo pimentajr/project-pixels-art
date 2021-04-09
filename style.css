@@ -16,10 +16,6 @@ h1 {
   display: inline-block;
 }
 
-.line {
-  border: 1px solid black;
-}
-
 .pixel-matrix {
   margin: 50px auto;
   border-collapse: collapse;
@@ -68,5 +64,6 @@ h1 {
 
 .pixel {
   display: table-cell;
+  background-color:white;
   border: 2px solid black;
 }
