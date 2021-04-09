@@ -41,14 +41,17 @@ function iniciateColorPalette() {
 
 iniciateColorPalette();
 
+function removeSelected() {
+  for (let index = 0; index < colorPaletteList.length; index += 1) {
+    if (colorPaletteList[index].className.includes('selected')) {
+      colorPaletteList[index].classList.remove('selected');
+    }
+  }
+}
+
 colorPalette.addEventListener('click', function(event) {
   if (event.target.id !== 'color-palette') {
-    for (let index = 0; index < colorPaletteList.length; index += 1) {
-      if (colorPaletteList[index].className.includes('selected')) {
-        colorPaletteList[index].classList.remove('selected');
-      }
-    }
-
+    removeSelected();
     event.target.classList.add('selected');
   }
 });
