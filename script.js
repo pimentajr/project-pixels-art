@@ -2,6 +2,7 @@ const boardSize = 5;
 const selectedClass = 'selected';
 const colorPalette = document.getElementById('color-palette');
 const colors = document.getElementsByClassName('color');
+const clearButton = document.getElementById('clear-board');
 const pixelBoard = document.getElementById('pixel-board');
 
 function setColors() {
@@ -62,12 +63,25 @@ function setPixelClickEvent() {
   pixelBoard.addEventListener('click', paintPixelElementHandler);
 }
 
+function clearBoard() {
+  const pixels = document.getElementsByClassName('pixel');
+
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+
+function setClearButtonClickEvent() {
+  clearButton.addEventListener('click', clearBoard);
+}
+
 function onPageLoad() {
   setColors();
   setBoardSize(boardSize);
   setSelectedColor(colorPalette.firstElementChild);
   setColorElementClickEvent();
   setPixelClickEvent();
+  setClearButtonClickEvent();
 }
 
 window.onload = onPageLoad;
