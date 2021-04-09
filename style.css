@@ -1,3 +1,11 @@
 * {
   background-color: white;
 }
+
+#color-palette {
+  border: 1px solid black;
+}
+
+.color {
+  border: 1px solid black;
+}
