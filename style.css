@@ -3,3 +3,16 @@
   font-weight: bolder;
   color: #14213d;
 }
+
+#color-palette {
+  height: 100px;
+}
+
+.color {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
