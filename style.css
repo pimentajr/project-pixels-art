@@ -19,12 +19,12 @@
 
 .color {
   height: 100%;
-  border: 1px solid rgba(0, 0, 0, .2);
+  border: 1px solid black;
   margin: 0 5px;
 }
 
 .color:nth-child(1) {
-  background-color: tomato;
+  background-color: black;
 }
 
 .color:nth-child(2) {
