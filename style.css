@@ -19,13 +19,9 @@
 }
 .pixel{
     border: 1px solid;
-    padding-bottom: 2%;
-    width: 2%;
+    padding-bottom: 40px;
+    width: 40px;
     display: inline-block;
     background-color: white;
-    margin: -2px;
-  
-}
-br{
     margin: -2px;
 }
