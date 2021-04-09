@@ -1,7 +1,7 @@
 const lines = 5;
 
 function colorBoxes(){
-    const boxes = document.querySelectorAll('.color');
+    let boxes = document.querySelectorAll('.color');
     const black = boxes[0];
     black.style.backgroundColor = 'black';
     const blue = boxes[1];
@@ -37,3 +37,31 @@ window.onload = function() {
     })
 }
 
+
+function giveAndRemoveSelec() {
+    function removeSelected() {
+        let boxes = document.querySelectorAll('.color');
+        for (let i = 0; i < boxes.length; i +=1) {
+            boxes[i].addEventListener('click', function test() {
+            
+                let boxWithSelec = document.querySelector('.selected');
+                boxWithSelec.classList.remove('selected');
+                
+            })
+        }
+        
+    }
+    removeSelected();
+
+    function giveSelected() {
+        let boxes = document.querySelectorAll('.color');
+        for (let i = 0; i < boxes.length; i +=1) {
+            boxes[i].addEventListener('click', function() {
+                boxes[i].classList.add('selected');
+            })
+        }
+    }
+    giveSelected();
+
+}
+giveAndRemoveSelec();
