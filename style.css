@@ -5,12 +5,12 @@
 }
 
 #body {
-  background-image: url(https://camillaresta.files.wordpress.com/2012/08/fundo-suave.png);
+  background-image: url('https://camillaresta.files.wordpress.com/2012/08/fundo-suave.png');
 }
 
 #color-palette {
-  margin-left: 36%;
-  margin-right: 30%;
+  margin-left: 39%;
+  margin-right: 29%;
   align-items: center;
 }
 
@@ -27,21 +27,13 @@
   background-color: #e76f51;
 }
 
-#cocoa {
-  display: inline-block;
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  background-color: #f4a261;
-  }
-
 #yellow {
   display: inline-block;
   border-color: black;
   border-style: solid;
   border-width: 1px;
   background-color: #e9c46a;
-  }
+}
 
 #aquaGren {
   display: inline-block;
@@ -49,12 +41,12 @@
   border-style: solid;
   border-width: 1px;
   background-color: #2a9d8f;
-  }
+}
 
- #black {
+#black {
   display: inline-block;
   border-color: black;
   border-style: solid;
   border-width: 1px;
   background-color: black;
- }
+}
