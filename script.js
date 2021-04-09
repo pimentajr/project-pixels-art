@@ -19,8 +19,10 @@ window.onload = generateInitialBoard(5);
 
 generateButton.onclick = function generateBoard() {
   pixelBoard.innerHTML = '';
-  const input = boardSize.value;
-  if (input === null) alert('Board inválido');
+  let input = boardSize.value;
+  if (input === '') alert('Board inválido');
+  if (input < 5) input = 5;
+  if (input > 50) input = 50;
   generateInitialBoard(input);
 };
 
