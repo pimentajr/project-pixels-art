@@ -1,7 +1,7 @@
 function creatPallete() {
   const colorPalette = document.querySelector('#color-palette');
   const colors = ['black', 'red', 'orange', 'yellow'];
-  
+
   for (let index = 0; index < colors.length; index += 1) {
     const createDiv = document.createElement('div');
     createDiv.className = 'color';
@@ -11,16 +11,24 @@ function creatPallete() {
     if (index === 0) {
       createDiv.classList.add('selected');
     }
-
   }
 }
 creatPallete();
 
 function pixelBoard() {
   const pixelBoard = document.querySelector('#pixel-board');
-  const creatPixel = document.createElement('div');
-  creatPixel.className = 'pixel';
-  pixelBoard.appendChild(creatPixel);
+
+  for (let i = 0; i < 5; i += 1) {
+    const lines = document.createElement('div');
+    // lines.className = 'pixel';
+    pixelBoard.appendChild(lines);
+
+    for (let j = 0; j < 5; j += 1) {
+      const columns = document.createElement('div');
+      columns.className = 'pixel';
+      lines.appendChild(columns);
+    }
+  }
 }
 pixelBoard();
 
@@ -35,4 +43,4 @@ function addClassSelect() {
     }
   });
 }
-addClassSelect()
+addClassSelect();
