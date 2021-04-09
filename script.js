@@ -1,10 +1,9 @@
-window.onload = function() {
-
-  let colorPalette = document.getElementById('color-palette');
-  let arrColors = ['black', 'blue', 'magenta', 'yellow', 'red'];
+window.onload = function () {
+  const colorPalette = document.getElementById('color-palette');
+  const arrColors = ['black', 'blue', 'magenta', 'yellow', 'red'];
 
   for (let index = 0; index < arrColors.length; index += 1) {
-    let colorPixel = document.createElement('div');
+    const colorPixel = document.createElement('div');
     colorPixel.className = 'color';
     colorPixel.classList.add(arrColors[index]);
     colorPixel.style.backgroundColor = arrColors[index];
@@ -12,4 +11,4 @@ window.onload = function() {
     colorPixel.style.border = 'solid 1px black';
     colorPalette.appendChild(colorPixel);
   }
-}
+};
