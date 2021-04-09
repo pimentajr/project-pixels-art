@@ -46,3 +46,10 @@ function switchColor(event) {
   event.target.classList.add('selected');
 }
 colorPalette.addEventListener('click', switchColor);
+
+// 8.
+function printColorPixel(event) {
+  const selectedColor = document.querySelector('.selected');
+  event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+}
+pixelBoard.addEventListener('click', printColorPixel);
