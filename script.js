@@ -10,3 +10,11 @@ function setColorToPalette() {
     }
 }
 setColorToPalette();
+
+window.onload = setBlack
+
+  function setBlack() {
+    const elementBlack = document.getElementsById('black');
+    elementBlack.classList.add('selected');
+  }
+
