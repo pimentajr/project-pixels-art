@@ -20,6 +20,7 @@ window.onload = generateInitialBoard(5);
 generateButton.onclick = function generateBoard() {
   pixelBoard.innerHTML = '';
   const input = boardSize.value;
+  if (input === null) alert('Board inválido');
   generateInitialBoard(input);
 };
 
@@ -44,7 +45,9 @@ colorPalette.onclick = function selectColor(event) {
 
 pixelBoard.onclick = function paint(e) {
   const selectedColor = document.querySelector('.selected');
-  e.target.style.backgroundColor = selectedColor.style.backgroundColor;
+  if (e.target.className === 'pixel') {
+    e.target.style.backgroundColor = selectedColor.style.backgroundColor;
+  }
 };
 
 const clearButton = document.getElementById('clear-board');
