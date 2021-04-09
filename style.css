@@ -50,3 +50,15 @@
   border-width: 1px;
   background-color: black;
 }
+
+.pixel {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-color: white;
+ }
+
+ #pixel-board {
+   margin-left: 35%;
+   margin-right: 29%;
+ }
