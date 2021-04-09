@@ -1,5 +1,11 @@
 window.onload = function() {
   createLineSquares(5);
+  const colorPaletteId = document.getElementById('color-palette');
+  colorPaletteId.addEventListener('click', function(event) {
+  let selectedElement = document.querySelector('.selected');
+  selectedElement.classList.remove('selected');
+  event.target.classList.add('selected');
+});
 }
 
 //cria uma linha de quadrados
@@ -17,5 +23,5 @@ function createLineSquares(lineLength) {
       lines[lineIndex].appendChild(squares[index]);
     }
   }
-  
 }
+
