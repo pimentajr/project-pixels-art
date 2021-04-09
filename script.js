@@ -32,22 +32,3 @@ colorPalette.addEventListener('click', function (event) {
     event.target.classList.add('selected');
   }
 });
-
-/*let selectedColor = document.querySelector('.black');
-
-function selectColor(element) {
-  if (colorPick.length > 1) {
-    for (let index = 0; index < colorPick('.color').length; index += 1) {
-      colorPick[index].classList.remove('select');
-    }
-
-    selectedColor = element;
-    return selectedColor;
-  } else {
-    selectedColor = element;
-    return selectedColor;
-  }
-};
-
-selectedColor.classList.add('selected');
-*/
