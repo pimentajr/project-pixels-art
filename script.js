@@ -14,5 +14,12 @@ for (let index = 0; index < 5; index += 1) {
     makeTd.className = 'pixel branco';
   }
 }
+
+function initBlack() {
+  const divBlack = document.querySelector('.preto');
+  divBlack.classList.add('selected');
+}
+
+initBlack();
 // npm run lint
 // npm run lint:styles
