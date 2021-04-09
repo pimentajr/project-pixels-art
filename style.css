@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#color-palette {
+  display:table;
+  margin:3px;
+  padding:3px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.black { display:table-cell;
+  width:30px;
+  height:30px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgb(0,0,0);
+}
+
+.blue { display:table-cell;
+  width:30px;
+  height:30px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgb(61,114,252);
+}
+
+.pink { display:table-cell;
+  width:30px;
+  height:30px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgb(244,192,93);
+}
+
+.red { display:table-cell;
+  width:30px;
+  height:30px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgb(231,55,15);
+}
+
