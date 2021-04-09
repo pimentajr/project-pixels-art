@@ -1,11 +1,23 @@
 window.onload = function() {
   createLineSquares(5);
   const colorPaletteId = document.getElementById('color-palette');
+  
   colorPaletteId.addEventListener('click', function(event) {
-  let selectedElement = document.querySelector('.selected');
-  selectedElement.classList.remove('selected');
-  event.target.classList.add('selected');
-});
+    let selectedElement = document.querySelector('.selected');
+    if(event.target.classList[0] === 'color') {
+      selectedElement.classList.remove('selected');
+      event.target.classList.add('selected');
+    }
+  });
+  const pixelBoard = document.getElementById('pixel-board');
+  pixelBoard.addEventListener('click', function(event) {
+    let selectedElement = document.querySelector('.selected');
+    let color = selectedElement.classList[1];
+    if(event.target.classList[0] === 'color') {
+      event.target.className = 'color';
+      event.target.classList.add(`${color}`);
+    }
+  });
 }
 
 //cria uma linha de quadrados
