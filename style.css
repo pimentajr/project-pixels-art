@@ -26,13 +26,11 @@
 .pixel {
    border-color: black;
    border: 1px solid;
-   height: 37px;
-   width: 37px;
-   border-collapse: collapse;
+   height: 41px;
+   width: 41px;
    background-color: white;
 }
 
 .table {
    border-collapse: collapse;
-   margin: 5px;
 }
