@@ -1,7 +1,11 @@
 const colorSelectedClass = 'selected';
-let colorPallet;
+
+function getColorPallet() {
+  return document.querySelector('#color-palette');
+}
 
 function clearColorSelection() {
+  const colorPallet = getColorPallet();
   for (let index = 0; index < colorPallet.childElementCount; index += 1) {
     colorPallet.children[index].classList.remove(colorSelectedClass);
   }
@@ -9,7 +13,7 @@ function clearColorSelection() {
 
 function restoreColorSelection() {
   clearColorSelection();
-  colorPallet
+  getColorPallet()
     .children[0]
     .classList
     .add(colorSelectedClass);
@@ -17,7 +21,7 @@ function restoreColorSelection() {
 
 function selectColor(colorId) {
   clearColorSelection();
-  colorPallet.querySelector(`#${colorId}`)
+  getColorPallet().querySelector(`#${colorId}`)
     .classList
     .add(colorSelectedClass);
 }
@@ -27,11 +31,10 @@ function onClickColorPallet(event) {
 }
 
 function bindListeners() {
-  colorPallet.onclick = onClickColorPallet;
+  getColorPallet().onclick = onClickColorPallet;
 }
 
 window.onload = () => {
-  colorPallet = document.querySelector('#color-palette');
   restoreColorSelection();
   bindListeners();
 };
