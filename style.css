@@ -40,7 +40,14 @@ main {
   margin: 0 auto;
 }
 
+.pixel-base {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
 #pixel-board {
-  width: 500px;
+  width: 200px;
   margin: 0 auto;
 }

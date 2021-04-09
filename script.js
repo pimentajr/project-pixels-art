@@ -3,7 +3,7 @@ window.onload = () => {
     for (let index = 0; index < column; index += 1) {
       for (let jIndex = 0; jIndex < line; jIndex += 1) {
         const elementCreated = document.createElement('div');
-        elementCreated.className = 'pixel color white';
+        elementCreated.className = 'pixel pixel-base white';
         console.log(elementCreated);
         pixelBoard.appendChild(elementCreated);
       }
