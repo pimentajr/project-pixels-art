@@ -5,4 +5,4 @@ function creatH1(tag, id, Name) {
   create.innerText = Name;
   document.body.appendChild(create);
 }
-creatH1('h1', 'title', 'Paleta De Cores!');
+creatH1('h1', 'title', 'Paleta De Cores');
