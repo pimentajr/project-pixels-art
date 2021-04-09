@@ -28,12 +28,17 @@
 #pixel-board{ 
     display: table; 
     background-color: white;
+   
+   
 }
+
 
 
 .pixel{ 
     display: table-cell;
-    width: 5px;
-    height: 5px;
-    background-color: white;
+    width: 40px;
+    height: 40px;
+    background-color: white; 
+    border: 1px solid black;
+    
 }
