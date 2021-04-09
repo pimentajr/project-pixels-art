@@ -1,3 +1,7 @@
+window.onload(){
+    document.querySelector('.black').className = 'selectd';
+}
+
 function createDiv(number) {
   for (let index = 0; index < number; index += 1) {
     const createdDiv = document.createElement('div');
