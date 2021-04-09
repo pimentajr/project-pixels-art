@@ -40,27 +40,36 @@ window.onload = function start() {
     }
   });
 
+  // aumenta ou diminui o board.
   btnResize.addEventListener('click', function(){
     let numberRows = eval(document.getElementById('board-size').value);
     if (numberRows === undefined) {
       return alert('Board inválido!');
-    }
-    while (boardSection.firstChild) {
-      boardSection.removeChild(boardSection.lastChild);
-    }
-    for (let index = 0; index < numberRows; index += 1) {
-      const everyPixelRow = document.createElement('div');
-      everyPixelRow.setAttribute('class', 'pixelRow');
-      boardSection.appendChild(everyPixelRow);
-      for (let index = 0; index < numberRows; index += 1) {
-        const everyPixel = document.createElement('div');
-        everyPixel.setAttribute('class', 'pixel');
-        everyPixelRow.appendChild(everyPixel);
-      }
+    } else if (numberRows < 5) {
+      boardResize(5);
+    } else if (numberRows > 50) {
+      boardResize(50);
+    } else {
+      boardResize(numberRows);
     }
   });
 
   
 };
 
-
+const boardSection = document.getElementById('pixel-board');
+function boardResize(num) {
+  while (boardSection.firstChild) {
+    boardSection.removeChild(boardSection.lastChild);
+  }
+  for (let index = 0; index < num; index += 1) {
+    const everyPixelRow = document.createElement('div');
+    everyPixelRow.setAttribute('class', 'pixelRow');
+    boardSection.appendChild(everyPixelRow);
+    for (let index = 0; index < num; index += 1) {
+      const everyPixel = document.createElement('div');
+      everyPixel.setAttribute('class', 'pixel');
+      everyPixelRow.appendChild(everyPixel);
+    }
+  }
+}
