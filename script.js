@@ -19,7 +19,8 @@ for (let i = 0; i < numberLines; i += 1) {
 }
 
 const color = document.querySelectorAll('.color');
-for (let i = 0; i < color.length; i += 1) { 
+
+for (let i = 0; i < color.length; i += 1) {
   color[i].addEventListener('click', function () {
     const selected = document.querySelector('.selected');
     selected.classList.remove('selected');
@@ -27,15 +28,17 @@ for (let i = 0; i < color.length; i += 1) {
   });
 }
 
-pixelBoard.addEventListener('click', function (event) {
+pixelBoard.addEventListener('click', function(event) {
   const selected = document.querySelector('.selected');
   event.target.style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
 });
 
 const buttonClear = document.getElementById('botaoLimpar');
+const pixels = document.querySelectorAll('.pixel');
 
-buttonClear.addEventListener('click', function () {
-  for (let i = 0; i < pixel.length; i += 1) {
-    pixel[i].style.backgroundColor = 'white';
+function botaoLimpa() {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
   }
-});
+}
+buttonClear.addEventListener('click', botaoLimpa);
