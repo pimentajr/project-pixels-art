@@ -1,0 +1,38 @@
+*{
+	margin: 0;
+	text-align: center;
+}
+
+.color {
+	border: 1px black solid;
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: blue;
+	vertical-align: middle;
+}
+
+#color-pallete {
+	/* background-color: violet;; */
+	text-align: center;
+	margin: 50px 0;
+}
+
+.pixel {
+	border: 1px black solid;
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: white;
+}
+
+#pixel-board {
+	border: 3px blue solid;
+	padding: 10px;
+	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 226px;
+	width: 226px;
+	text-align: center;
+}
