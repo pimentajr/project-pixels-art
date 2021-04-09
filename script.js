@@ -1,15 +1,15 @@
-window.onload = function () {
-  let divSelected = document.getElementById('color-palette');
+window.onload = function onLoadWindow() {
+  const divSelected = document.getElementById('color-palette');
   let divSelectedUpdate = document.querySelector('.selected');
   let colorSelected = document.querySelector('.selected').classList[1];
-  divSelected.addEventListener('click',function(event) {
+  console.log(divSelectedUpdate);
+  console.log(document.getElementById('color-palette'));
+  divSelected.addEventListener('click',function eventFunction(event) {
     divSelectedUpdate.classList.remove('selected');
     divSelectedUpdate = event.target;
     divSelectedUpdate.classList.add('selected');
-    //divSelectedUpdate = divSelected.classList.add('selected');
     console.log(divSelectedUpdate);
     console.log(document.getElementById('color-palette'));
-    //document.querySelector('.selected')
-    //console.log(divSelected);
+    colorSelected = divSelectedUpdate.classList[1];
   })
 }
