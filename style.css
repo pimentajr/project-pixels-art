@@ -2,10 +2,6 @@ body {
   margin: 0;
 }
 
-div.color {
-  text-align: center;
-}
-
 .color {
   color: white;
   margin-left: 5px;
