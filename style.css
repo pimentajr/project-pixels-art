@@ -2,17 +2,17 @@
 .color {
   border: 1px solid black;
   display: inline-block;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }
 
 /* Finaliza requisito 2, estilizando asclasses de cores --> */
-#green {
-  background-color: green;
-}
-
 #black {
   background-color: black;
+}
+
+#green {
+  background-color: green;
 }
 
 #red {
