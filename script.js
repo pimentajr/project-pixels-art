@@ -1,8 +1,8 @@
 const pixelBoard = document.getElementById('pixel-board');
 const boardLength = 25;
-let pixel = document.querySelectorAll('.pixel');
 const colorPalette = document.getElementById('color-palette');
 let colorPick = document.querySelectorAll('.color');
+const clearButton = document.getElementById('clear-board');
 
 for (let index = 0; index < boardLength; index += 1) {
   let pixelDiv = document.createElement('div');
@@ -11,6 +11,8 @@ for (let index = 0; index < boardLength; index += 1) {
 
   pixelBoard.appendChild(pixelDiv);
 }
+
+let pixel = document.querySelectorAll('.pixel');
 
 function defaultColor() {
   document.querySelector('.black').classList.add('selected');
@@ -45,4 +47,10 @@ pixelBoard.addEventListener('click', function paintPixel(event) {
       event.target.classList.add(colorPaint);
     }
   }
-})
+});
+
+clearButton.addEventListener('click', function clearBoard() {
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].className = "pixel";
+  }
+});
