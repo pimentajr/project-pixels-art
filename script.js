@@ -27,3 +27,18 @@ const divColor4 = document.createElement('div');
 divColor4.classList.add('color');
 divColor4.style.backgroundColor = 'magenta';
 secaoSelecionaCor.appendChild(divColor4);
+
+const contaneinerCores = document.createElement('div');
+contaneinerCores.id = 'pixel-board';
+textBody.appendChild(contaneinerCores);
+
+for (let indice = 1; indice <= 5; indice += 1) {
+  const createLinha = document.createElement('tr');
+
+  for (let index = 1; index <= 5; index += 1) {
+    const celulas = document.createElement('td');
+    celulas.classList = 'pixel';
+    createLinha.appendChild(celulas);
+  }
+  contaneinerCores.appendChild(createLinha);
+}
