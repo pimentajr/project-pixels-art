@@ -1,7 +1,7 @@
 const lines = 5;
 
 function squareLines(value) {
-  const square = document.getElementById('pixel-board');
+  const square = document.getElementById('color-container');
   for (let index = 1; index <= value; index += 1) {
     const newLine = document.createElement('div');
     newLine.className = 'lineSquare';
@@ -34,7 +34,7 @@ function changeClass(event) {
 }
 
 function selectColor() {
-  const selection = document.getElementById('color-container');
+  const selection = document.getElementById('color-palette');
   selection.addEventListener('click', changeClass);
 }
 
@@ -49,7 +49,7 @@ function addColor(event) {
 }
 
 function changeColor() {
-  const pixelSquare = document.getElementById('pixel-board');
+  const pixelSquare = document.getElementById('color-container');
   pixelSquare.addEventListener('click', addColor);
 }
 

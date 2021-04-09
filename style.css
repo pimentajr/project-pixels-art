@@ -2,6 +2,10 @@
   display: table-row;
 }
 
+.lineSquare {
+  display: table-row;
+}
+
 div .color {
   display: table-cell;
   border: 1px solid black;
@@ -36,10 +40,7 @@ div .color {
   height: 40px;
 }
 
-.lineSquare {
-  display: table-row;
-}
 
-#color-palette {
+#color-container {
   display: inline-block;
 }
