@@ -11,7 +11,9 @@ function setColorToPalette() {
 }
 setColorToPalette();
 
-window.onload = function () {
+window.onload = setBlack
+
+function setBlack() {
   const elementBlack = document.getElementById('black');
-  elementBlack.classList.add('selected');
+  elementBlack.addEventListener("onload", setBlack);
 }
