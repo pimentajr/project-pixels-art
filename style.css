@@ -7,12 +7,42 @@
 #black {
   background-color: black;
 }
-#indian-red {
-  background-color: #cd5c5c;
+#gray21 {
+  background-color: #363636;
 }
-#teal {
-  background-color: #008080;
+#dim-gray {
+  background-color: #696969;
 }
-#dark-olive-green {
-  background-color: #556b2f;
+#dark-gray {
+  background-color: #a9a9a9;
+}
+.line1 {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border: 1px solid black;
+}
+.line2 {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border: 1px solid black;
+}
+.line3 {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border: 1px solid black;
+}
+.line4 {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border: 1px solid black;
+}
+.line5 {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border: 1px solid black;
 }
