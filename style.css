@@ -7,3 +7,19 @@ body {
   width: 5vw;
   height: 5vw;
 }
+
+#black {
+  background-color: black;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#green {
+  background-attachment: green;
+}
+
+#magenta {
+  background-color: magenta;
+}
