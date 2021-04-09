@@ -5,6 +5,7 @@ const colors = ['black', 'red', 'green', 'blue'];
 const colorsList = document.getElementsByClassName('color');
 const selectedColor = document.getElementsByClassName('selected');
 const pixelList = document.getElementsByClassName('pixel');
+const cleanButton = document.getElementById('clear-board');
 
 // ------
 // Create elements
@@ -27,15 +28,6 @@ function makeLiColors(param) {
     liProperties[index].style.border = '1px solid black';
   }
 }
-
-function createCleanButton() {
-  const button = document.createElement('button');
-  button.innerText = 'Limpar';
-  button.id = 'clear-board';
-  console.log(button);
-  pixelBoard.appendChild(button);
-}
-// ------
 
 // Select function
 function selectColor() {
@@ -77,10 +69,8 @@ function initialize() {
   selectColor();
   makeLiColors(liColors);
   createDivBoard(25);
-  createCleanButton();
-  const cleanButton = document.getElementById('clear-board');
+  // createCleanButton();
   createEventListeners();
-
 }
 
 window.onload = initialize;

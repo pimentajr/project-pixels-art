@@ -28,17 +28,14 @@ nav {
 #pixel-board h2 {
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 #pixel-board {
   margin: auto;
   max-width: 210px;
-  min-height: 300px;
+  min-height: 315px;
 }
-
-/* .color {
-
-} */
 
 .pixel {
   width: 40px;
@@ -72,4 +69,10 @@ nav {
   background-color: #ccc;
   padding: 6px;
   border-radius: 7px;
+}
+
+#clear-board {
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
 }
