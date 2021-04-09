@@ -42,13 +42,13 @@ window.onload = function () {
 
   function addColorPixel() {
     const pixelSection = document.querySelector('#pixel-board');
-    const classOff = document.querySelector('.off')
+    const classOff = document.querySelector('.off');
     pixelSection.addEventListener('click', function (event) {
       for (let index = 0; index < color.length; index += 1) {
         if (color[index].className === 'color selected') {
           event.target.style.backgroundColor = color[index].style.backgroundColor;
         } if (classOff.style.backgroundColor === color[index].style.backgroundColor) {
-          classOff.style.backgroundColor = ''
+          classOff.style.backgroundColor = '';
         }
       }
     });
@@ -56,13 +56,13 @@ window.onload = function () {
   addColorPixel();
 
   function clearButton() {
-    const getButton = document.querySelector('#clear-board')
-    getButton.addEventListener('click', function (event) {
-      let pixelClear = document.querySelectorAll('.pixel');
+    const getButton = document.querySelector('#clear-board');
+    getButton.addEventListener('click', function () {
+      const pixelClear = document.querySelectorAll('.pixel');
       for (let index = 0; index < pixelClear.length; index += 1) {
-        pixelClear[index].style.backgroundColor = 'white'
+        pixelClear[index].style.backgroundColor = 'white';
       }
-    })
+    });
   }
-  clearButton()
+  clearButton();
 };
