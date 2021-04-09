@@ -1,3 +1,20 @@
 body {
-    background-color: gray;
+  background-color:deepskyblue;
+}
+
+#title {
+  text-align: center;
+  color: green;
+  font-size: 50px;
+}
+
+#color-palette {
+  width: 500px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+#color-palette th {
+  text-align: 0 auto;
+  border: black solid 1px;
 }
