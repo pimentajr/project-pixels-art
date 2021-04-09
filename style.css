@@ -76,11 +76,11 @@ h1:hover:after {
 }
 
 #color-palette ul li:active {
-  transform: scale(0.9);
+  transform: scale(1.1);
   transition: 0.1s;
 }
 
-#pixel-board table {
+#pixel-board {
   margin: 20px auto;
   background-color: white;
 }
@@ -90,17 +90,11 @@ h1:hover:after {
   height: 40px;
   width: 40px;
   background-color: white;
-}
-
-#pixel-board tr td div {
-  height: 40px;
-  width: 40px;
-  background-color: white;
   transition: 0.6s;
   border: solid 1px black;
 }
 
-#pixel-board tr td div:active {
-  transform: scale(0.9);
+#pixel-board tr td:active {
+  transform: scale(1.1);
   transition: 0.1s;
 }
