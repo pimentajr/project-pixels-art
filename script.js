@@ -1,4 +1,4 @@
-//let colors = document.querySelectorAll('.color');
+// let colors = document.querySelectorAll('.color');
 const color1 = document.querySelectorAll('.color')[0];
 const color2 = document.querySelectorAll('.color')[1];
 const color3 = document.querySelectorAll('.color')[2];

@@ -1,6 +1,6 @@
 header {
   position: absolute;
-  left: 50px; ;
+  left: 50px;
 }
 
 .container-palette {
@@ -27,6 +27,7 @@ header {
 
 #pixel-board {
   width: 15%;
+  height: 50%;
   position: relative;
   top: 120px;
   left: 42px;
