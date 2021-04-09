@@ -1,6 +1,6 @@
 const colorsNum = 4;
-const gridX = 5;
-const gridY = 5;
+let gridX = 5;
+let gridY = 5;
 
 function colorGrid() {
   const gridOfColors = document.querySelector('#color-palette');
@@ -26,6 +26,7 @@ giveColor();
 
 function createLines() {
   const gridOfPixels = document.querySelector('#pixel-board');
+  gridOfPixels.innerHTML = '';
   for (let index = 0; index < gridY; index += 1) {
     const line = document.createElement('div');
     line.className = 'line';
@@ -76,8 +77,39 @@ function paintPixel() {
 
 paintPixel();
 
+function changeGridSizeComplemnt(inputSize) {
+  const newValue = inputSize.value;
+  if (newValue !== '' && newValue !== null) {
+    gridX = newValue;
+    gridY = newValue;
+    createLines();
+    fillLines();
+    paintPixel();
+    return '';
+  }
+  alert('Board inválido!');
+}
+
+function changeGridSize() {
+  const container = document.querySelector('#control-panel');
+  const inputSize = document.createElement('input');
+  inputSize.id = 'board-size';
+  inputSize.type = 'number';
+  inputSize.min = '1';
+  const btnResize = document.createElement('button');
+  btnResize.id = 'generate-board';
+  btnResize.innerText = 'VQV';
+  container.appendChild(inputSize);
+  container.appendChild(btnResize);
+  btnResize.addEventListener('click', () => {
+    inputSize.value = changeGridSizeComplemnt(inputSize);
+  });
+}
+
+changeGridSize();
+
 function buttonClear() {
-  const container = document.querySelector('#button-container');
+  const container = document.querySelector('#control-panel');
   const btnClear = document.createElement('button');
   btnClear.id = 'clear-board';
   btnClear.innerText = 'Limpar';
