@@ -9,12 +9,48 @@ body {
 }
 
 #color-palette {
-  width: 500px;
-  height: 100px;
   margin: 0 auto;
+  text-align: center;
 }
 
-#color-palette th {
-  text-align: 0 auto;
+#color-palette div {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
   border: black solid 1px;
+  margin: 2px;
+}
+
+#pixel-board {
+  width: 60vw;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 40px 40px 40px 40px 40px;
+  grid-gap: 5px;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+}
+
+#pixel-board div {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border: black 1px;
+}
+
+#black {
+  background-color: black;
+}
+
+#red {
+  background-color: red;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#pink {
+  background-color: pink;
 }

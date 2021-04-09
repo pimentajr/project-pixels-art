@@ -1,29 +1,12 @@
-let elementH1 = document.createElement('h1');
-elementH1.id = 'title';
-elementH1.innerHTML = 'Paleta de Cores'
-document.body.appendChild(elementH1);
+let title = document.querySelector('#title');
+title.innerHTML = 'Paleta de Cores';
 
-let elementTable = document.createElement('table');
-elementTable.id = 'color-palette';
-elementH1.appendChild(elementTable);
+let colorPalette = document.getElementsByTagName('div');
+for (let index = 1; index < 5; index += 1) {
+  colorPalette[index].className = 'color';
+}
 
-let tableColor1 = document.createElement('th');
-tableColor1.className = 'color';
-tableColor1.style.backgroundColor = 'red'
-elementTable.appendChild(tableColor1);
-
-let tableColor2 = document.createElement('th');
-tableColor2.className = 'color';
-tableColor2.style.backgroundColor = 'blue'
-elementTable.appendChild(tableColor2);
-
-let tableColor3 = document.createElement('th');
-tableColor3.className = 'color';
-tableColor3.style.backgroundColor = 'yellow'
-elementTable.appendChild(tableColor3);
-
-let tableColor4 = document.createElement('th');
-tableColor4.className = 'color';
-tableColor4.style.backgroundColor = 'pink'
-elementTable.appendChild(tableColor4);
-
+let colorPixel = document.getElementsByTagName('div');
+for (let index = 6; index < 31; index += 1) {
+  colorPalette[index].className = 'pixel';
+}
