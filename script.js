@@ -1,7 +1,6 @@
 window.onload = function() {
   createLineSquares(5);
   const colorPaletteId = document.getElementById('color-palette');
-  
   colorPaletteId.addEventListener('click', function(event) {
     let selectedElement = document.querySelector('.selected');
     if(event.target.classList[0] === 'color') {
