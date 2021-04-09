@@ -82,12 +82,24 @@ newBoard.id = 'pixel-board';
 const btn = document.querySelector('#generate-board');
 const input = document.querySelector('#board-size');
 
+function valued(value) {
+  if (value < 5) {
+    return 5;
+  }
+  if (value > 50) {
+    return 50;
+  }
+  return value;
+}
+
 btn.addEventListener('click', () => {
   board.remove();
   document.querySelector('.board-container').appendChild(newBoard);
-  let { value } = input;
-  checkValue(value);
-  const numberValued = valued(value);
+  const valor = input.value;
+  if (valor === '') {
+    alert('Board inválido');
+  }
+  const numberValued = valued(valor);
   const valueXvalue = Number(numberValued * numberValued);
   for (let i = 0; i < valueXvalue; i += 1) {
     if (i % numberValued === 0) {
@@ -99,20 +111,3 @@ btn.addEventListener('click', () => {
     newBoard.appendChild(newDiv);
   }
 });
-
-function checkValue(value) {
-  if (value === '') {
-    return alert('Board inválido');
-  }
-}
-
-function valued(value) {
-  if (value < 5) {
-    return 5;
-  }
-  if (value > 50) {
-    return 50;
-  } else {
-    return value;
-  }
-}
