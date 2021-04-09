@@ -13,23 +13,28 @@ function setColors() {
   }
 }
 
-function setBoardSize(size) {
-  if (!size || size < 1) return alert('Board inválido!');
+function checkBoardSize(size) {
+  if (size < 5 || size > 50) return size < 5 ? 5 : 50;
+  return size;
+}
 
+function setBoardSize(size) {
+  if (!size) return alert('Board inválido!');
+
+  let newSize = size;
+  newSize = checkBoardSize(newSize);
   pixelBoard.innerHTML = '';
 
-  for (let index = 0; index < size; index += 1) {
+  for (let index = 0; index < newSize; index += 1) {
     const div = document.createElement('div');
     const row = div.cloneNode();
     row.classList.add('table-row');
     const cell = div.cloneNode();
     cell.classList.add('pixel');
-
-    for (let secondIndex = 0; secondIndex < size; secondIndex += 1) {
+    for (let secondIndex = 0; secondIndex < newSize; secondIndex += 1) {
       const newCell = cell.cloneNode();
       row.appendChild(newCell);
     }
-
     pixelBoard.appendChild(row);
   }
 }
