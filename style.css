@@ -1,0 +1,12 @@
+h1 {
+  text-align: center;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.color {
+  border: 1px solid black;
+}
