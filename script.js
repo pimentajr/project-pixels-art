@@ -21,6 +21,7 @@ for (let lineIndex = 1; lineIndex <= pixelBoardSize; lineIndex += 1) {
   }
   pixelBoard.appendChild(createLineDivs);
 }
+
 // Requisito 7
 const colorPaleteDiv = document.querySelector('#color-palette');
 
@@ -35,3 +36,11 @@ function selectColor() {
 }
 
 selectColor();
+
+// Requisito 8
+pixelBoard.addEventListener('click', (event)=> {
+  let storageColor = document.querySelector('.selected').id;
+  if (event.target.className === 'pixel') {
+    event.target.style.backgroundColor = storageColor;
+  }
+});
