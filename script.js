@@ -10,7 +10,6 @@ window.onload = function () {
     color[1].style.backgroundColor = 'green';
     color[2].style.backgroundColor = 'red';
     color[3].style.backgroundColor = 'blue';
-    color[4].style.backgroundColor = 'magenta';
   }
   addColorPalette();
 
