@@ -1,3 +1,28 @@
+const pixelBoard = document.getElementById('pixel-board');
+const generateButton = document.getElementById('generate-board');
+const boardSize = document.getElementById('board-size');
+
+function generateInitialBoard(input) {
+  for (let index = 0; index < input; index += 1) {
+    const row = document.createElement('div');
+    pixelBoard.appendChild(row);
+    row.className = 'row';
+    for (let secondIndex = 0; secondIndex < input; secondIndex += 1) {
+      const pixel = document.createElement('div');
+      row.appendChild(pixel);
+      pixel.className = 'pixel';
+    }
+  }
+}
+
+window.onload = generateInitialBoard(5);
+
+generateButton.onclick = function generateBoard() {
+  pixelBoard.innerHTML = '';
+  const input = boardSize.value;
+  generateInitialBoard(input);
+};
+
 const colorPalette = document.getElementById('color-palette');
 const pixel = document.getElementsByClassName('pixel');
 for (let index = 0; index < pixel.length; index += 1) {
@@ -16,8 +41,6 @@ colorPalette.onclick = function selectColor(event) {
   if (selectedColor) colorAux.classList.remove('selected');
   event.target.classList.add('selected');
 };
-
-const pixelBoard = document.getElementById('pixel-board');
 
 pixelBoard.onclick = function paint(e) {
   const selectedColor = document.querySelector('.selected');
