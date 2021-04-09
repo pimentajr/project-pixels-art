@@ -6,6 +6,12 @@ h1 {
   background-color: rgb(60, 142, 218);
 }
 
+.tool {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(60, 142, 218);
+}
+
 .color {
   border-color: black;
   border-width: 1px;
