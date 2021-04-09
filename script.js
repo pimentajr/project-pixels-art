@@ -34,3 +34,5 @@ for (let index = 1; index <= numOfPixels; index += 1) {
   pixelBox.style.backgroundColor = 'white';
   pixelBoard.appendChild(pixelBox);
 }
+
+// 5.

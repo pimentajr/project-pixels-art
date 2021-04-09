@@ -1,6 +1,7 @@
 #color-palette {
   width: 180px;
   height: 45px;
+  margin-bottom: 7.5px;
 }
 
 .color {
@@ -9,4 +10,17 @@
   height: 40px;
   margin: 0.5px;
   border: 1px solid black;
+}
+
+#pixel-board {
+  width: 210px;
+  height: 210px;
+}
+
+.pixel {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  margin: 0;
 }
