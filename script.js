@@ -21,5 +21,14 @@ function createDivBoard(param) {
   }
 }
 
-makeLiColors(liColors);
-createDivBoard(25);
+function selectColor() {
+  liColors[0].classList.add('selected');
+}
+
+function initialize() {
+  selectColor();
+  makeLiColors(liColors);
+  createDivBoard(25);
+}
+
+window.onload = initialize;
