@@ -24,3 +24,13 @@ for (let index = 0; index < 5; index += 1) {
   pixelBoard('#lines_4');
   pixelBoard('#lines_5');
 }
+
+function paintPixelBoard() {
+  const initialcolor = document.querySelectorAll('.pixel')
+  for (let index = 0; index < initialcolor.length; index += 1) {
+    initialcolor[index].addEventListener('click', function () {
+      initialcolor[index].style.backgroundColor = 'black'
+    })
+  }
+}
+paintPixelBoard()
