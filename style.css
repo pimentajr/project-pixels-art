@@ -30,8 +30,8 @@
 
 .pixel {
   display: inline-block;
-  width: 41px;
-  height: 41px;
+  width: 40px;
+  height: 40px;
   border: solid black 1px;
   margin: 0;
   background-color: white;

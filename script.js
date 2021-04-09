@@ -1,8 +1,10 @@
 function selectColors() {
-  const colors = ['black', 'blue', 'red', 'green'];
+  const colors = ['blue', 'red', 'green'];
   const paletlist = document.getElementsByClassName('color');
-  for (let index = 0; index < paletlist.length; index += 1) {
-    paletlist[index].style.backgroundColor = colors[index];
+  paletlist[0].style.backgroundColor = 'black'
+  paletlist[0].classList.add('selected');
+  for (let index = 1; index < paletlist.length; index += 1) {
+    paletlist[index].style.backgroundColor = colors[index - 1];
   }
 }
 
