@@ -1,7 +1,7 @@
 h1 {
   color:blueviolet;
   font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
+  text-align: center; 
   text-shadow:blue;
   font-size: 40px;
 }
@@ -9,21 +9,39 @@ h1 {
 #color-palette {
   width:100%;
   height: auto;
-  display:flex;
+  display:inline-flex;
   justify-content: center;
   align-items: center;
 }
-
-td {  
-  size: 60px, 60px;
+h2 {
+  size: 40px, 40px;
   align-self:center;
-  font-size: 30px;
   border-collapse: collapse;
   border: 1px solid black;
   padding: 40px;
   text-align: center;
-  width:100px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;
   color: white;
   text-shadow: black 3px 3px;
+}
+
+td {  
+  size: 40px, 40px;
+  align-self:center;
+  border-collapse: collapse;
+  border: 1px solid black;
+  padding: 40px;
+}
+#pixel-board {
+  width:100%;
+  height: auto;
+  display:flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.pixel {
+  size: 40px, 40px;
+  border-collapse: collapse;
+  border: 1px solid black;
 }
