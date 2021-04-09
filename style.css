@@ -1,10 +1,12 @@
 * {
   margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: sans-serif;
   background-color: #eee;
+  size: 1360px 768px
 }
 
 .title_container {
@@ -20,9 +22,24 @@ body {
   width: 70px;
   margin: 3px;
   display: inline-block;
-  text-align: center;
   border-style: solid;
   border-width: 1px;
+}
+.pixel {
+  height: 70px;
+  width: 70px;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 0%;
+  padding: 0%;
+}
+
+#pixel_board {
+  height: 400px;
+  width: 400px;
+  margin: 3px;
+  display: inline-block;
 }
 
 .interactive_container {
