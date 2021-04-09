@@ -25,14 +25,21 @@ div .color {
   background-color: green;
 }
 
+.white {
+  background-color: white;
+}
+
 .pixel {
   display: table-cell;
   border: 1px solid black;
   width: 40px;
   height: 40px;
-  background-color: white;
 }
 
 .lineSquare {
   display: table-row;
+}
+
+#pixel-board {
+  display: inline-block;
 }
