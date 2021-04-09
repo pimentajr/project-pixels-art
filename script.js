@@ -1,7 +1,7 @@
 function setColorPalette() {
   const color = document.querySelectorAll('.color');
   const arrColors = ['black', 'red', 'blue', 'yellow'];
-  for (const index in arrColors) {
+  for (let index = 0; index < arrColors.length; index += 1) {
     color[index].style.backgroundColor = arrColors[index];
   }
   document.getElementsByClassName('color')[0].classList.add('selected');
