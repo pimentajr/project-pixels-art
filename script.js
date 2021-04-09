@@ -1,11 +1,11 @@
 //7
 let getColors = document.querySelector('#color-palette');
-getColors.addEventListener('click', function(event) {
+getColors.addEventListener('click', function (event) {
   let getSelected = document.querySelector('.selected');
   if (getSelected.classList[0] === 'color') {
     getSelected.className = 'color';
     event.target.className = 'color selected';
-  } 
+  }
 })
 //set colors
 let getBlack = document.getElementById('black').style.backgroundColor = 'black';
@@ -15,29 +15,26 @@ let getBlue = document.getElementById('blue').style.backgroundColor = 'blue';
 
 let getWhitePixel = document.getElementsByClassName('pixel');
 for (let i = 0; i < getWhitePixel.length; i += 1) {
- let eachPixel = getWhitePixel[i]
+  let eachPixel = getWhitePixel[i]
   eachPixel.style.backgroundColor = 'white';
 }
 
 
 //8
 let getPixelBoard = document.querySelector('#pixel-board')
-getPixelBoard.addEventListener('click', function(event) {
+getPixelBoard.addEventListener('click', function (event) {
   let getSelected = document.querySelector('.selected');
-    if (event.target.className === 'pixel') {
+  if (event.target.className === 'pixel') {
     event.target.style.backgroundColor = getSelected.style.backgroundColor;
-  } 
+  }
 })
 
 //9
 let getButton = document.querySelector('#clear-board');
-getButton.addEventListener('click', function() {
+getButton.addEventListener('click', function () {
   let getWhitePixel = document.getElementsByClassName('pixel');
-for (let i = 0; i < getWhitePixel.length; i += 1) {
- let eachPixel = getWhitePixel[i]
-  eachPixel.style.backgroundColor = 'white';
-}
-  if (eachPixel.style.backgroundColor !== 'white') {
+  for (let i = 0; i < getWhitePixel.length; i += 1) {
+    let eachPixel = getWhitePixel[i]
     eachPixel.style.backgroundColor = 'white';
-  } 
+  }
 })
