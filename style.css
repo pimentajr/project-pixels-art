@@ -10,3 +10,18 @@
   margin-right: auto;
   text-align: center;
 }
+
+.pBoard {
+  width: 500px;
+}
+
+.line {
+  display: inline-block;
+}
+
+.pixel {
+  background: white;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+}
