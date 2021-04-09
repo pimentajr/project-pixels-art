@@ -36,14 +36,14 @@
   border-color: black;
 }
 
-#pixel-board {
-  display: inline;
+#pixel-board { 
 }
 
 .pixel {
   background-color: white;
   width: 40px;
   height: 40px;
+  border: 1px;
   display: inline-block;
-  border-style:ridge;
+  border-style:solid;  
 }
