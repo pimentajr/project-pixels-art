@@ -32,28 +32,25 @@ background-color: bisque;
     background-color: green;
 }
 
-#pixel-board{ 
+#pixel-board { 
     display:table;
-    border-width: 8px;
-    border-color: black;
+
 }
 
 .tr { 
     display: table-row ; 
-    border-width: 8px;
-    border-color: black;
     border-style: solid;
 }
 
 .pixel { 
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display:table-cell;
     border-width: 1px;
     border-color: black;
     border-style: solid;
     background-color: white;
 }
-#xa.pixel{
-    background-color: aquamarine;
+.selected{
+
 }
