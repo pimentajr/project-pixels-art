@@ -41,11 +41,16 @@ h1 {
   background-color: thistle;
 }
 
+/* Button */
+button {
+  margin: 30px 0;
+}
+
 /* Canvas */
 #pixel-board {
   border-collapse: collapse;
   display: table;
-  margin: 60px auto;
+  margin: auto;
 }
 
 .pixel {
