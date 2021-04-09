@@ -1,8 +1,18 @@
-window.onload = function allFunction() {
+window.onload = function () {
   const numberOfBlock = 5;
   const section = document.querySelector('#pixel-board');
-  const divBlack = document.querySelector('.black');
-  divBlack.classList.add('selected');
+  const selected = document.querySelector('.selected');
+  const color = document.getElementsByClassName('color');
+
+  function addColorPalette() {
+    color[0].style.backgroundColor = 'black';
+    color[0].classList.add('selected');
+    color[1].style.backgroundColor = 'green';
+    color[2].style.backgroundColor = 'red';
+    color[3].style.backgroundColor = 'blue';
+    color[4].style.backgroundColor = 'magenta';
+  }
+  addColorPalette();
 
   function blockPixel(size) {
     for (let index = 0; index < size; index += 1) {
@@ -16,4 +26,29 @@ window.onload = function allFunction() {
     }
   }
   blockPixel(numberOfBlock);
+
+  function clickEventColor() {
+    const sectionColor = document.querySelector('#color-palette');
+    sectionColor.addEventListener('click', function (event) {
+      for (let index = 0; index < color.length; index += 1) {
+        color[index].classList.remove('selected');
+        if (event.target.className === 'color') {
+          event.target.classList.add('selected');
+        }
+      }
+    });
+  }
+  clickEventColor();
+
+  function addColorPixel() {
+    const pixelSection = document.querySelector('#pixel-board');
+    pixelSection.addEventListener('click', function (event) {
+      for (let index = 0; index < color.length; index += 1) {
+        if (color[index].className === 'color selected') {
+          event.target.style.backgroundColor = color[index].style.backgroundColor;
+        }
+      }
+    });
+  }
+  addColorPixel();
 };
