@@ -11,8 +11,6 @@ for (let indexPalette = 0; indexPalette < paletteColors.length; indexPalette += 
   paletteColors[indexPalette].style.backgroundColor = colors[indexPalette];
 }
 
-let colorSelected = document.querySelector('.selected').style.backgroundColor;
-
 function clearBoard() {
   pixelBoard.innerHTML = '';
 }
@@ -56,7 +54,6 @@ function selectColor() {
     paletteColors[index].addEventListener('click', () => {
       removeSelected();
       paletteColors[index].className = 'color selected';
-      colorSelected = paletteColors[index].style.backgroundColor;
     });
   }
 }
@@ -64,7 +61,8 @@ function selectColor() {
 function paintPixel() {
   for (let indexPixel = 0; indexPixel < pixels.length; indexPixel += 1) {
     pixels[indexPixel].addEventListener('click', () => {
-      pixels[indexPixel].style.backgroundColor = colorSelected;
+      const backColor = document.querySelector('.selected').style.backgroundColor;
+      pixels[indexPixel].style.backgroundColor = backColor;
     });
   }
 }
