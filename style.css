@@ -23,3 +23,10 @@ body {
 #magenta {
   background-color: magenta;
 }
+
+.pixel {
+  width: 5vw;
+  height: 5vw;
+  border: 1px solid black;
+  display: inline-block;
+}
