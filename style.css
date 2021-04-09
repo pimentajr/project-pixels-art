@@ -1,5 +1,7 @@
 #title {
   font-family: New Tegomin;
+  font-size: 45px;
+  margin-left: 5%;
   text-align: center;
   color: darkblue;
 }
@@ -9,14 +11,15 @@
 }
 
 #color-palette {
-  margin-left: 39%;
-  margin-right: 29%;
+  margin-left: 44%;
+  margin-right: 25%;
   align-items: center;
 }
 
 .color {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
+  border-radius: 40%;
 }
 
 #salmon {
@@ -53,12 +56,19 @@
 
 .pixel {
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   background-color: white;
- }
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  margin: -3px;
+  padding: 0;
+  border-spacing: 0;
+}
 
- #pixel-board {
-   margin-left: 35%;
-   margin-right: 29%;
- }
+#pixel-board {
+ align-content: center;
+ margin-left: 45%;
+ margin-right: 40%;
+}
