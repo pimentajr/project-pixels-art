@@ -9,7 +9,10 @@ black.className = 'color black selected';
 paleta.addEventListener('click', function color(event) {
   let color = event.target;
   let colorName = color.classList[1];
-  console.log(colorName);
+  black.classList.remove('selected');
+  green.classList.remove('selected');
+  grey.classList.remove('selected');
+  magenta.classList.remove('selected');
   color.className = 'color' + ' ' + colorName + ' selected';
   return colorName;
 });
