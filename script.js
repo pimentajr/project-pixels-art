@@ -22,3 +22,11 @@ for (let lineIndex = 0; lineIndex < lines; lineIndex += 1) {
     newLine.appendChild(newPixel);
   }
 }
+
+function selectColor(event) {
+  const selectedColor = document.querySelector('.selected');
+  selectedColor.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+colorPalette.addEventListener('click', selectColor);
