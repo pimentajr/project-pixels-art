@@ -13,35 +13,35 @@ nav {
 
 #title {
   text-align: center;
-  margin-top: 20px;
+  margin: 15px 0 3px;
   list-style: none;
 }
 
 #color-palette li {
-  display: inline;
-  width: 25px;
-  height: 25px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
   color: white;
+}
+
+#pixel-board h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#pixel-board {
+  margin: auto;
+  max-width: 210px;
 }
 
 /* .color {
 
 } */
 
-#black {
-  background-color: black;
-}
-
-#red {
-  background-color: red;
-}
-
-#green {
-  background-color: green;
-}
-
-#blue {
-  background-color: blue;
+.pixel {
+  width: 40px;
+  height: 40px;
+  background-color: white;
 }
 
 #footer {
