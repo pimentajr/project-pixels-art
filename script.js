@@ -24,7 +24,9 @@ function selectColor(event) {
 
   const evento = event;
 
-  evento.target.style.backgroundColor = color;
+  if (evento.target.className === 'pixel') {
+    evento.target.style.backgroundColor = color;
+  }
 }
 
 const pixelBoard = document.querySelector('#pixel-board');
