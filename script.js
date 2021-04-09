@@ -1,6 +1,7 @@
-function primaryColors(colors) {
-  const colorBox = document.querySelectorAll('.color');
+const colorPalette = document.querySelector('#color-palette');
+const colorBox = document.querySelectorAll('.color');
 
+function primaryColors(colors) {
   for (let index = 0; index < colors.length; index += 1) {
     colorBox[index].style.backgroundColor = colors[index];
     if (index === 0) {
@@ -24,7 +25,14 @@ function pixelsTable(width, height) {
       newColumn.appendChild(newLine);
     }
     table.appendChild(newColumn);
-  }
+  }  
 }
 
 pixelsTable(5, 5);
+
+colorPalette.addEventListener('click', function(event) {
+  for (let index = 0; index < colorBox.length; index += 1) {
+    colorBox[index].classList.remove('selected');
+  }
+  event.target.classList.add('selected');
+});
