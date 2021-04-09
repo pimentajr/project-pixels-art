@@ -6,4 +6,3 @@ function changesToBlack() {
 }
 changesToBlack();
 
-console.log();
