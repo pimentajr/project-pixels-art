@@ -13,8 +13,10 @@
   height: 50px;
   border: solid black 1px;
 }
+
 #pixel-board {
   text-align: center;
+  margin-top: 15px;
 }
 
 .line {
@@ -32,4 +34,5 @@
   height: 50px;
   border: solid black 1px;
   margin: 0;
+  background-color: white;
 }

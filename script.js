@@ -9,11 +9,11 @@ function selectColors() {
 function createBoard() {
   const board = document.getElementById('pixel-board');
   for (let index = 0; index < 5; index += 1) {
-    let line = document.createElement('div');
+    const line = document.createElement('div');
     line.classList.add('line');
     board.appendChild(line);
     for (let secondIndex = 0; secondIndex < 5; secondIndex += 1) {
-      let pixel = document.createElement('div');
+      const pixel = document.createElement('div');
       pixel.classList.add('pixel');
       line.appendChild(pixel);
     }
