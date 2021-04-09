@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+}
+
+.color {
+  height: 2vh;
+  width: 2vw;
+  display: inline-block;
+  border: black solid 1px;
+}
+
+#first-color {
+  background-color: black;
+}
+
+#second-color {
+  background-color: red;
+}
+
+#third-color {
+  background-color: green;
+}
+
+#fourth-color {
+  background-color: blue;
+}
+
+#color-pallette {
+  border: solid;
+}
