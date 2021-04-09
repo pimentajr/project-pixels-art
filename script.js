@@ -48,3 +48,48 @@ function clickPalette() {
   });
 }
 clickPalette();
+
+function paintPixels() {
+  const board = document.getElementById(pixelIdentification);
+  board.addEventListener('click', (e) => {
+    const target = e.target;
+    const multipleTarget = document.querySelector('.selected');
+    if (target.className === 'pixel') {
+      target.style.backgroundColor = multipleTarget.style.backgroundColor;
+    }
+  });
+}
+paintPixels();
+
+function choiceSizeOfPixelBox() {
+  const input = document.getElementById('board-size');
+  const rstBtn = document.getElementById('generate-board');
+  rstBtn.addEventListener('click', () => {
+    const pixelBoard = document.getElementById(pixelIdentification);
+    if(input.value === '') {
+      alert('Board Inválido!')
+    } else if (input.value < 5) {
+      input.value =5;
+    } else if (input.value > 50) {
+      input.value = 50;
+    }
+    pixelBoard.innerHTML = '';
+    createPixels(input.value);
+  });
+}
+choiceSizeOfPixelBox();
+
+function resetColorsButton() {
+  const resetButton = document.createElement('button');
+  const interface = document.getElementById('userPainel');
+  interface.appendChild(resetButton)
+  resetButton.innerHTML = 'Limpar';
+  resetButton.id = 'clear-board';
+  resetButton.addEventListener('click', () => {
+    const color = document.getElementsByClassName('pixel');
+    for (let index = 0; index < color.length; index += 1) {
+      color[index].style.backgroundColor = 'white';
+    }
+  });
+}
+resetColorsButton()
