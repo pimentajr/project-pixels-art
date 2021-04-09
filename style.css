@@ -1,4 +1,4 @@
-#color-pallete {
+#color-palette {
   display: inline-block;
 }
 
@@ -6,6 +6,7 @@
   border-width: 1px;
   border-color: black;
   border-style: solid;
+  display: inline-block;
 }
 
 .red {
@@ -16,8 +17,8 @@
   background-color: blue;
 }
 
-.green {
-  background-color: green;
+.black {
+  background-color: black;
 }
 
 .yellow {
