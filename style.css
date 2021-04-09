@@ -1,3 +1,13 @@
+body {
+  margin: 0;
+}
+
+header {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(60, 142, 218);
+}
+
 h1 {
   text-align: center;
   margin: 0;
@@ -40,6 +50,10 @@ h1 {
 
 #pixel-board {
   display: inline-block;
+}
+
+main {
+  text-align: center;
 }
 
 .linha {
