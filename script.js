@@ -6,5 +6,4 @@ function setColorToPalete() {
     colorDivs[index].style.backgroundColor = colorDivsIDValue;
   }
 }
-
 setColorToPalete();
