@@ -5,16 +5,18 @@
   border: 1px solid black;
 }
 
-#pixel-board td {
+#pixel-board {
   height: 40px;
   width: 40px;
-  padding: 0;
-  margin: 0;
-  border: 1px solid black;
+  display: table;
 }
 
-.pixels {
-  width: 25px;
+.tr{ 
+  display: table-row;
+}
+
+.td{ 
+  display: table-cell;
   border: 1px solid black;
 }
 
