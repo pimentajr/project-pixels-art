@@ -8,21 +8,17 @@ body {
 }
 
 #black {
-  border: solid black;
-  width: 1px;
+  border: solid black 1px; 
 }
 
 #red {
-  border: solid black;
-  width: 1px;
+  border: solid black 1px;
 }
 
 #orange {
-  border: solid black;
-  width: 1px;
+  border: solid black 1px; 
 }
 
 #yellow {
-  border: solid black;
-  width: 1px;
+  border: solid black 1px; 
 }
