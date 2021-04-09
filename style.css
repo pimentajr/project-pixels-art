@@ -6,7 +6,7 @@
   border: 1px solid black;
   display: inline-block;
   width: 320px;
-  margin-left: 38%;
+  margin-left: 30%;
 }
 
 #color-palette {
@@ -52,7 +52,7 @@
 #pixel-board {
   width: 210px;
   height: 210px;
-  margin: 5px 0 0 42%;
+  margin: 5px 0 0 37%;
   border: 1px solid black;
 }
 
@@ -62,4 +62,8 @@
   border: 1px solid black;
   float: left;
   background-color: white;
+}
+
+#clear-board {
+  margin: 0  0 10px 115px;
 }

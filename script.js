@@ -45,3 +45,12 @@ function pixelColor(event) {
   event.target.style.backgroundColor = currentSelectedColor;
 }
 emptyPixel.addEventListener('click', pixelColor);
+
+let buttonClear = document.querySelector('#clear-button');
+function clearBoard() {
+  let allPixels = document.querySelectorAll('.pixel');
+  for (let pixel of allPixels) {
+    pixel.style.backgroundColor = white;
+  }
+buttonClear.addEventListener('click', clearBoard);
+}
