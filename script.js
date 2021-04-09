@@ -30,7 +30,7 @@ function generateDiv() {
 generateDiv();
 
 black.className = 'color black selected';
-paleta.addEventListener('click', function selecionaCor(event) {
+paleta.addEventListener('click', (event) => {
   const color = event.target;
   black.classList.remove('selected');
   color2.classList.remove('selected');
@@ -43,7 +43,7 @@ paleta.addEventListener('click', function selecionaCor(event) {
 
 //  ---------------------
 
-board.addEventListener('click', function mudaCor(event) {
+board.addEventListener('click', (event) => {
   const pixel = event.target;
   const itemColor = document.querySelector('.selected');
   const color = itemColor.classList[1];
@@ -52,10 +52,10 @@ board.addEventListener('click', function mudaCor(event) {
 
 const clear = document.querySelector('#clear-board');
 
-clear.addEventListener('click', function limpar() {
+clear.addEventListener('click', function () {
   const pixels = document.querySelectorAll('.pixel');
-  for (const pixel of pixels) {
-    pixel.style.backgroundColor = 'white';
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
   }
 });
 
@@ -70,7 +70,6 @@ btn.addEventListener('click', function novaBoard() {
   document.querySelector('.board-container').appendChild(newBoard);
   const input = document.querySelector('#board-size');
   let value = input.value;
-
   if (value === '') {
     alert('Board inválido!');
   }
