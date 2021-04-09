@@ -1,4 +1,5 @@
 window.onload = function jsExec() {
-  const colorDiv = document.querySelector('.div-container');
-  console.log(colorDiv);
+  const initialColor = document.querySelector('#black');
+  
+  console.log(initialColor.style.backgroundColor);
 };
