@@ -50,6 +50,7 @@ h1 {
 
 .pixel {
   background: white;
+  box-sizing: border-box;
   border: 1px solid black;
   height: 40px;
   width: 40px;
