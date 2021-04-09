@@ -11,6 +11,16 @@ h1 {
   display:  inline-block;
 }
 
+
+.selected {
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 100px;
+  width: 200px;
+  inline-size: auto;
+  display:  inline-block;
+}
+
 #black {
   background-color: black;
 }
