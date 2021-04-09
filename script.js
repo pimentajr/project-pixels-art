@@ -23,3 +23,14 @@ function selectColor(event) {
 
 const pixelBoard = document.querySelector('#pixel-board');
 pixelBoard.addEventListener('click', selectColor);
+
+function clearPixels() {
+  const pixels = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+
+const button = document.querySelector('#clear-board');
+button.addEventListener('click', clearPixels);
