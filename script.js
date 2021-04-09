@@ -2,10 +2,9 @@ function setColorPalette() {
   const color = document.querySelectorAll('.color');
   const arrColors = ['black', 'red', 'blue', 'yellow'];
   for (let index = 0; index < arrColors.length; index += 1) {
-    color[index].style.backgroundColor = arrColors[index];
+    color[index].classList.add(arrColors[index]);
   }
   document.getElementsByClassName('color')[0].classList.add('selected');
-  console.log(color);
 }
 
 setColorPalette();
@@ -29,3 +28,15 @@ function generatePixels() {
 }
 
 generatePixels();
+
+function selectColor() {
+  const colorSelection = document.getElementById('color-palette');
+  colorSelection.addEventListener('click', function (event) {
+    const selected = document.querySelector('.selected');
+    selected.classList.remove('selected');
+    const selectedColor = event.target.classList[1];
+    document.getElementsByClassName(selectedColor)[0].classList.add('selected');
+  });
+}
+
+selectColor();
