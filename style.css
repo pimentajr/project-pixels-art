@@ -3,18 +3,23 @@
   margin: 0%;
 }
 
+.tableTotal {
+  margin: auto;
+}
+
 table {
   border-collapse: collapse;
   border: 2px solid black;
 }
 
-.pixel {
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  margin: 0;
-  border: 2px solid black;
+#pixel-board{
   background-color: white;
+}
+
+.pixel {
+  height: 40px;
+  width: 40px;  
+  border: 1px solid black;  
 }
 
 .black {
