@@ -1,14 +1,30 @@
+body {
+	background-color: grey;
+}
+
 .color {
 	border: solid;
   border-color: black;
   border-width: 1px;
   display: inline-block;
+	height: 70px;
+	width: 70px;
 }
 
 #color-palette {
 	display: block;
 }
 
-.pixel {
+#pixel-board {
 	background-color: white;
+	height: 20px;
+	display:table-row-group;
+}
+.pixel {
+	color: white;
+	height: 70px;
+	width: 70px;
+	border: solid;
+	border-width: 1px;
+	border-color: black;
 }
