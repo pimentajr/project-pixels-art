@@ -1,12 +1,12 @@
 const colorPalette = document.querySelector('#color-palette');
-const colorPaletteList = colorPalette.children;
+const paletteColors = colorPalette.children;
 const colors = ['black', 'red', 'green', 'blue'];
 
 function createColorPalette() {
-  for (let index = 0; index < colorPaletteList.length; index += 1) {
-    colorPaletteList[index].innerHTML = colors[index];
-    colorPaletteList[index].style.backgroundColor = colors[index];
-    colorPaletteList[index].style.color = colors[index];
+  for (let index = 0; index < paletteColors.length; index += 1) {
+    paletteColors[index].innerHTML = colors[index];
+    paletteColors[index].style.backgroundColor = colors[index];
+    paletteColors[index].style.color = colors[index];
   }
 }
 
@@ -32,9 +32,9 @@ function fillPixelBoard(boardSize) {
 fillPixelBoard(5);
 
 function iniciateColorPalette() {
-  for (let index = 0; index < colorPaletteList.length; index += 1) {
-    if (colorPaletteList[index].style.backgroundColor === 'black') {
-      colorPaletteList[index].classList.add('selected');
+  for (let index = 0; index < paletteColors.length; index += 1) {
+    if (paletteColors[index].style.backgroundColor === 'black') {
+      paletteColors[index].classList.add('selected');
     }
   }
 }
@@ -42,9 +42,9 @@ function iniciateColorPalette() {
 iniciateColorPalette();
 
 function removeSelected() {
-  for (let index = 0; index < colorPaletteList.length; index += 1) {
-    if (colorPaletteList[index].className.includes('selected')) {
-      colorPaletteList[index].classList.remove('selected');
+  for (let index = 0; index < paletteColors.length; index += 1) {
+    if (paletteColors[index].className.includes('selected')) {
+      paletteColors[index].classList.remove('selected');
     }
   }
 }
@@ -66,3 +66,14 @@ function paintPixel(event) {
 }
 
 pixelBoard.addEventListener('click', paintPixel);
+
+let clearButton = document.querySelector('#clear-board');
+let pixels = document.querySelectorAll('.pixel');
+
+function clearBoard() {
+  for(let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+
+clearButton.addEventListener('click', clearBoard);
