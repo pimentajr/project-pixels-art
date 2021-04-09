@@ -18,3 +18,17 @@
   border-width: 1px;
 }
 
+#pixel-board{
+  display: table;
+}
+.column {
+  display: table-column;
+}
+.pixel {
+  display: table-cell;
+  width: 40px;
+  height: 40px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+}
