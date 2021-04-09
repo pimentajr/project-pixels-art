@@ -1,3 +1,30 @@
 * {
   margin: 0;
-};
+}
+
+.color {
+  display: inline-block;
+  padding: 30px;
+  width: 15px;
+  border: black solid 1px;
+}
+
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.lightsalmon {
+  background-color: lightsalmon;
+}
