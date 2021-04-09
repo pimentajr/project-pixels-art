@@ -1,8 +1,2 @@
-function titleContent() { 
-    let getBody = document.querySelector('body')
-    let title = document.createElement('h1')
-    title.id = 'title'
-    title.innerHTML = 'Paleta de Cores'
-    getBody.appendChild(title)
-  }
-  titleContent()
+let elementH1 =  document.getElementById('title');
+elementH1.innerText = 'Paleta de Cores'; 
