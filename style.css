@@ -27,3 +27,21 @@
   background-color: blue;
   border: black solid 1px;
 }
+
+#table { 
+  display: table;
+  background-color: red;
+  border: black solid 1px
+}
+
+.tr { 
+  display: table-row;
+}
+
+.pixel { 
+  display: table-cell;
+  border: black solid 1px;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+}
