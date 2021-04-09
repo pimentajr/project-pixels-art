@@ -1,26 +1,28 @@
-/* General */
-
-.flex-parent {
-  display: flex;
+/* Container */
+.container {
+  margin: 0 auto;
+  display: table;
+  text-align: center;
 }
 
-.flex-child-1-row {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+h1 {
+  color: #37474f
 }
 
 /* Color Palette */
-
 .color-palette {
   height: 50px;
   width: 450px;
+  display: flex;
 }
 
 .color {
   height: 100%;
   border: 1px solid black;
   margin: 0 5px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .color:nth-child(1) {
@@ -37,4 +39,24 @@
 
 .color:nth-child(4) {
   background-color: thistle;
+}
+
+/* Canvas */
+table.pixel-board {
+  text-align: left;
+  border-collapse: collapse;
+  display: table;
+  margin: 60px auto;
+}
+table.pixel-board td, table.pixel-board th {
+  border: 1px solid #000000;
+  padding: 0px 0px;
+}
+table.pixel-board tbody td {
+  font-size: 13px;
+}
+
+.pixel {
+  height: 40px;
+  width: 40px;
 }
