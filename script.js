@@ -11,13 +11,17 @@ function createPixel() {
  */
 function createPixelBoard(num) {
   const board = document.getElementById('pixel-board');
-  for (let row = 0; row <= num; row += 1) {
+  for (let row = 0; row < num; row += 1) {
     const pixelRow = document.createElement('div');
     pixelRow.className = 'pixel-row';
-    for (let column = 0; column <= num; column += 1) {
+    for (let column = 0; column < num; column += 1) {
       pixelRow.appendChild(createPixel());
     }
     board.appendChild(pixelRow);
   }
 }
-createPixelBoard(5); // inicia o quadro com num=5.
+// createPixelBoard(5); // inicia o quadro com num=5.
+
+window.onload = function init() {
+  createPixelBoard(5);
+};
