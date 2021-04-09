@@ -69,11 +69,11 @@ function paintPixel(event) {
 
 pixelBoard.addEventListener('click', paintPixel);
 
-let clearButton = document.querySelector('#clear-board');
-let pixels = document.querySelectorAll('.pixel');
+const clearButton = document.querySelector('#clear-board');
+const pixels = document.querySelectorAll('.pixel');
 
 function clearBoard() {
-  for(let index = 0; index < pixels.length; index += 1) {
+  for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
 }
