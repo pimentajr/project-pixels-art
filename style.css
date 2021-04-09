@@ -13,7 +13,7 @@ h1 {
 
 
 .selected {
-  border: 1px solid black;
+  border: 5px solid red;
   padding: 20px;
   border-radius: 100px;
   width: 200px;
