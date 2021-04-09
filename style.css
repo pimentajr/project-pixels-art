@@ -38,3 +38,14 @@ button {
     height: 40px;
     cursor: pointer;
 }
+#color-pattern {
+    display: table;
+    align-items: center;
+    margin: 10px auto;
+}
+#pixel-board {
+    display: inline-block;
+}
+.colum {
+    margin: 0;
+}
