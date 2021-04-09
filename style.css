@@ -13,6 +13,7 @@
 .black {
   background-color: black;
 }
+
 .maroon {
   background-color: maroon;
 }
@@ -23,4 +24,18 @@
 
 .darkcyan {
   background-color: darkcyan;
+}
+
+#pixel-board {
+  width: 210px;
+  margin-top: 10px;
+}
+
+.pixel {
+  background-color: white;
+  display: inline-block;
+  border: 1px black solid;
+  height: 40px;
+  width: 40px;
+  margin-bottom: -4px;
 }
