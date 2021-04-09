@@ -92,8 +92,28 @@ function initializePaletteListeners() {
   }
 }
 
+function fillPixel(e) {
+  const clickedPixel = e.target;
+  const selectedColor = document.querySelector('.color.selected').style.backgroundColor;
+
+  if (clickedPixel.style.backgroundColor !== selectedColor) {
+    clickedPixel.style.backgroundColor = selectedColor;
+  } else {
+    clickedPixel.style.backgroundColor = 'white';
+  }
+}
+
+function initializeBoardListeners() {
+  const pixels = document.getElementsByClassName('pixel');
+
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', fillPixel);
+  }
+}
+
 window.onload = () => {
   initializePalette();
   initializePixelBoard();
   initializePaletteListeners();
+  initializeBoardListeners();
 };
