@@ -41,3 +41,14 @@
   display: inline-block;
   margin-left: 10px;
 }
+
+table {
+  margin: auto;
+}
+
+.pixel {
+  border: black solid 1px;
+  width: 25px;
+  height: 25px;
+  background-color: white;  
+}
