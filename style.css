@@ -25,3 +25,7 @@ li {
   height: 40px;
   border: 1px solid black;
 }
+
+.selected {
+  border: 3px inset #1C6EA4;
+}

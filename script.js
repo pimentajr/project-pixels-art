@@ -3,7 +3,7 @@ const colors = ['black', 'red', 'green', 'blue'];
 
 function createColorPalette() {
   for (let index = 0; index < colorPalette.children.length; index += 1) {
-    colorPalette.children[index].innerHTML = colors[index];
+    // colorPalette.children[index].innerHTML = colors[index];
     colorPalette.children[index].style.backgroundColor = colors[index];
     colorPalette.children[index].style.color = colors[index];
   }
@@ -32,8 +32,8 @@ fillPixelBoard(5);
 
 function iniciateColorPalette() {
   for (let index = 0; index < colorPalette.children.length; index += 1) {
-    if (colorPalette[index].style.backgroundColor === 'black') {
-      colorPalette[index].classList.add('selected');
+    if (colorPalette.children[index].style.backgroundColor === 'black') {
+      colorPalette.children[index].classList.add('selected');
     }
   }
 }
