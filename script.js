@@ -11,20 +11,16 @@ colorPallet('green');
 colorPallet('blue');
 
 function pixelBoard(lines) {
-  const divPixel= document.createElement('div');
+  const divPixel = document.createElement('div');
   const divBlock = document.querySelector(lines);
   divPixel.className = 'pixel';
-  divBlock.appendChild(divPixel)
+  divBlock.appendChild(divPixel);
   divPixel.style.backgroundColor = 'white';
 }
 for (let index = 0; index < 5; index += 1) {
-pixelBoard('#lines_1')
-pixelBoard('#lines_2')
-pixelBoard('#lines_3')
-pixelBoard('#lines_4')
-pixelBoard('#lines_5')
+  pixelBoard('#lines_1');
+  pixelBoard('#lines_2');
+  pixelBoard('#lines_3');
+  pixelBoard('#lines_4');
+  pixelBoard('#lines_5');
 }
-
-
-
-
