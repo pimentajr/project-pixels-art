@@ -1,3 +1,8 @@
+body {
+  text-align: center;
+  background-color: #474bc6;
+}
+
 .color , .selected {
   display: inline-block;
   border: 1px solid black;
@@ -27,4 +32,9 @@
   display: inline-block;
   background-color: white;
   border: 1px solid black;
+}
+
+#clear-board {
+  padding: 0 20px;
+  margin: 20px;
 }
