@@ -2,12 +2,9 @@
   display: table-row;
 }
 
-.color {
+div .color {
   display: table-cell;
   border: 1px solid black;
-}
-
-div {
   width: 60px;
   height: 60px;
 }
@@ -26,4 +23,16 @@ div {
 
 .green {
   background-color: green;
+}
+
+.pixel {
+  display: table-cell;
+  border: 1px solid black;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+}
+
+.lineSquare {
+  display: table-row;
 }
