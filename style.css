@@ -1,23 +1,31 @@
-.red {
+.color:nth-child(1){
     background-color: red;
     display: inline-block;
-    border-style: 1px solid black;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
 }
 
-.blue {
+.color:nth-child(2) {
     background-color: blue;
     display: inline-block;
-    border-style: 1px solid black;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
 }
 
-.green {
+.color:nth-child(3) {
     background-color: green;
     display: inline-block;
-    border-style: 1px solid black;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
 }
 
-.yellow {
+.color:nth-child(4) {
     background-color: yellow;
     display: inline-block;
-    border-style: 1px solid black;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
 }
