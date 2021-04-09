@@ -76,8 +76,12 @@ function lengthBoard() {
   const boardSize = document.getElementById('board-size');
   const generateBoard = document.getElementById('generate-board');
   generateBoard.addEventListener('click', () => {
-    clearLines();
-    createLineSquares(boardSize.value);
+    if (!boardSize.value) {
+      console.log('Board inválido!');
+    } else {
+      clearLines();
+      createLineSquares(boardSize.value);
+    }
   });
 }
 
