@@ -9,7 +9,9 @@ function selectedTarget(event) {
     }
   }
 
-  event.target.classList.add('selected');
+  if (event.target.className === 'color') {
+    event.target.classList.add('selected');
+  }
 }
 
 const colorPallete = document.querySelector('#color-palette');

@@ -3,7 +3,7 @@ body {
   background-color: #474bc6;
 }
 
-.color , .selected {
+.color {
   display: inline-block;
   border: 1px solid black;
   width: 60px;
