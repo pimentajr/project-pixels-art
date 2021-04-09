@@ -4,10 +4,18 @@ function colorInsert() {
   const blue = document.getElementById('blue');
   const green = document.getElementById('green');
   const red = document.getElementById('red');
-  black.style.backgroundColor = 'black';
+  let colorGenerate = [];
+  let randNumber = [];
+  for (const index = 0; index < 3; index += 1) {
+    for (const zindex = 0; zindex < 3; zindex += 1) {
+      randNumber[zindex] = Math.ceil(Math.random()*255);
+    }
+    colorGenerate[index] = randNumber;
+  }
   blue.style.backgroundColor = 'blue';
   green.style.backgroundColor = 'green';
   red.style.backgroundColor = 'red';
+  black.style.backgroundColor = 'black';
   black.classList.add('selected');
 }
 
@@ -90,15 +98,6 @@ function lengthBoard() {
   });
 }
 
-// 11 - Limite o tamanho mínimo e máximo do board.
-// Caso o valor digitado no input board-sze fuja do intervalo de 5 a 50, faça:
-// Valor menor que 5, considerar 5 como padrão;
-// Valor maior que 50, considerar 50 como padrão.
-// O que será verificado:
-// Verifica se a altura máxima do board é 50
-// Verifica se a altura do board é 5 quando um valor menor é colocado no input
-// Verifica se a altura do board é 50 quando um valor maior é colocado no input
-
 // eslint-disable-next-line func-names
 window.onload = function () {
   colorInsert();
@@ -109,11 +108,3 @@ window.onload = function () {
   const clearPixelBoard = document.getElementById('clear-board');
   clearPixelBoard.addEventListener('click', clearBoard);
 };
-
-
-
-// 12 - Faça com que as cores da paleta sejam geradas aleatoriamente ao carregar a página.
-// A cor preta ainda precisa estar presente e deve ser a primeira na sua paleta de cores.
-// O que será verificado:
-// Verifica se as cores geradas na paleta são diferentes a cada carregamento da página
-// Verifica se a cor preta ainda está presente e é a primeira na sua paleta de cores
