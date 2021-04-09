@@ -74,7 +74,26 @@ function initializePixelBoard() {
   initializePixels();
 }
 
+function selectColor(e) {
+  const targetColorBox = e.target;
+  const currentlySelectedColor = document.querySelector('.color.selected');
+
+  if (targetColorBox !== currentlySelectedColor) {
+    currentlySelectedColor.classList.remove('selected');
+    targetColorBox.classList.add('selected');
+  }
+}
+
+function initializePaletteListeners() {
+  const colorBoxes = document.getElementsByClassName('color');
+
+  for (let index = 0; index < NUM_OF_COLORS + 1; index += 1) {
+    colorBoxes[index].addEventListener('click', selectColor);
+  }
+}
+
 window.onload = () => {
   initializePalette();
   initializePixelBoard();
+  initializePaletteListeners();
 };

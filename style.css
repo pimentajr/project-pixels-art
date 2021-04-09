@@ -18,7 +18,7 @@ a:hover {
   padding: 20px 5%;
 }
 
-.header-container, .footer-container {
+.header-container , .footer-container {
   width: 100%;
   padding: 10px 0;
   text-align: center;
@@ -65,13 +65,13 @@ a:hover {
   height: 40px;
   width: 40px;
   border: 1px solid black;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 }
 
-.pixel-row .pixel:not( :last-child )  {
-  border-right-width: 0;
+.pixel-row:not( :last-child ) {
+  margin-bottom: -1px;
 }
 
-.pixel-row:not( :last-child ) .pixel {
-  border-bottom-width: 0;
+.pixel-row .pixel:not( :last-child ) {
+  margin-right: -1px;
 }
