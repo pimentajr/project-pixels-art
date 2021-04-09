@@ -1,29 +1,8 @@
-#color-palette {
-  height: 100px;
-  width: 50%;
-}
-
-#color-palette div {
-  height: 100%;
-  width: 15%;
+.color {
+  height: 40px;
+  width: 40px;
   display: inline-block;
   border: 1px black solid;
-}
-
-.black {
-  background-color: black;
-}
-
-.maroon {
-  background-color: maroon;
-}
-
-.darkolivegreen {
-  background-color: darkolivegreen;
-}
-
-.darkcyan {
-  background-color: darkcyan;
 }
 
 #pixel-board {
