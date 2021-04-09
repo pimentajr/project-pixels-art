@@ -10,7 +10,7 @@ h1 {
 }
 
 /* Color Palette */
-.color-palette {
+#color-palette {
   height: 50px;
   width: 450px;
   display: flex;
@@ -43,17 +43,12 @@ h1 {
 
 /* Canvas */
 table.pixel-board {
-  text-align: left;
   border-collapse: collapse;
   display: table;
   margin: 60px auto;
 }
 table.pixel-board td, table.pixel-board th {
   border: 1px solid #000000;
-  padding: 0px 0px;
-}
-table.pixel-board tbody td {
-  font-size: 13px;
 }
 
 .pixel {
