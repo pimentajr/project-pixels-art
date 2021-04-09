@@ -48,3 +48,18 @@
   border: 1px solid black;
   background-color: yellow;
 }
+
+#pixelsBlankBoard {
+  width: 155px;
+  height: 155px;
+  border: 1px solid black;
+}
+
+#pixel {
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 0;
+
+}
