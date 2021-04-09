@@ -1,0 +1,43 @@
+#title {
+  text-align: center;
+}
+
+#color-pallete {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 5px;
+  margin-left: 39%;
+}
+
+#listaDeCores {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+#black {
+  padding: 20px;
+  display: inline-block;
+  border: 1px solid black;
+  background-color: black;
+}
+
+#blue {
+  padding: 20px;
+  display: inline-block;
+  border: 1px solid black;
+  background-color: blue;
+}
+
+#green {
+  padding: 20px;
+  display: inline-block;
+  border: 1px solid black;
+  background-color: green;
+}
+
+#yellow {
+  padding: 20px;
+  display: inline-block;
+  border: 1px solid black;
+  background-color: yellow;
+}
