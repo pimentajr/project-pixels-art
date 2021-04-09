@@ -3,7 +3,6 @@ const colorPallet = document.querySelector('#color-palette');
 function createColor(array) {
   for (let i = 0; i < array.length; i += 1) {
     const color = document.createElement('div');
-    // color.id = 'color-palette';
     color.className = 'color';
     color.style.backgroundColor = array[i];
     colorPallet.appendChild(color);
@@ -26,3 +25,11 @@ function createBoard() {
   }
 }
 createBoard();
+
+function blackSelected() {
+  const black = document.querySelector('.color');
+  if (black.style.backgroundColor === 'black') {
+    black.classList.add('selected');
+  }
+}
+blackSelected();
