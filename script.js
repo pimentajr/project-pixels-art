@@ -1,3 +1,4 @@
+// Palette parameters:
 const FIXED_COLOR = 'black';
 const COLORS = [
   'rgb(191, 97, 106)',
@@ -6,6 +7,23 @@ const COLORS = [
 ];
 // Doesn't count the fixed color.
 const NUM_OF_COLORS = COLORS.length;
+
+// Pixel board parameters:
+const BOARD_SIDE_SIZE = 5;
+
+function setFixedColor() {
+  const fixedColorBox = document.querySelector('.color.fixed');
+
+  fixedColorBox.style.backgroundColor = FIXED_COLOR;
+}
+
+function setColors() {
+  const colorBoxes = document.querySelectorAll('.color:not(.fixed)');
+
+  for (let index = 0; index < NUM_OF_COLORS; index += 1) {
+    colorBoxes[index].style.backgroundColor = COLORS[index];
+  }
+}
 
 function initializePalette() {
   const colorPalette = document.getElementById('color-palette');
@@ -22,24 +40,41 @@ function initializePalette() {
     colorBox.style.backgroundColor = COLORS[index];
     colorPalette.appendChild(colorBox);
   }
+
+  setFixedColor();
+  setColors();
 }
 
-function setFixedColor() {
-  const fixedColorBox = document.querySelector('.color.fixed');
+function initializePixels() {
+  const pixelRows = document.getElementsByClassName('pixel-row');
+  let pixel;
 
-  fixedColorBox.style.backgroundColor = FIXED_COLOR;
-}
-
-function setColors() {
-  const colorBoxes = document.querySelectorAll('.color:not(.fixed)');
-
-  for (let index = 0; index < NUM_OF_COLORS; index += 1) {
-    colorBoxes[index].style.backgroundColor = COLORS[index];
+  for (let rowIndex = 0; rowIndex < BOARD_SIDE_SIZE; rowIndex += 1) {
+    for (let colIndex = 0; colIndex < BOARD_SIDE_SIZE; colIndex += 1) {
+      pixel = document.createElement('div');
+      pixel.classList.add('pixel');
+      pixelRows[rowIndex].appendChild(pixel);
+    }
   }
+}
+
+function initializePixelBoard() {
+  const pixelBoard = document.createElement('section');
+  const contentContainer = document.querySelector('.content-container');
+  let pixelRow;
+
+  pixelBoard.id = 'pixel-board';
+  for (let index = 0; index < BOARD_SIDE_SIZE; index += 1) {
+    pixelRow = document.createElement('div');
+    pixelRow.classList.add('pixel-row');
+    pixelBoard.appendChild(pixelRow);
+  }
+  contentContainer.appendChild(pixelBoard);
+
+  initializePixels();
 }
 
 window.onload = () => {
   initializePalette();
-  setFixedColor();
-  setColors();
+  initializePixelBoard();
 };

@@ -15,7 +15,7 @@ a:hover {
 .site-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 3% 5%;
+  padding: 20px 5%;
 }
 
 .header-container,
@@ -40,15 +40,38 @@ a:hover {
   text-align: center;
 }
 
+#color-palette {
+  margin-bottom: 10px;
+}
+
 .color {
   display: inline-block;
-  height: 4vw;
-  width: 4vw;
-  min-height: 30px;
-  min-width: 30px;
+  box-sizing: border-box;
+  height: 40px;
+  width: 40px;
   border: 1px solid black;
 }
 
 .color:not(:last-child) {
-  margin-right: 1%;
+  margin-right: 8px;
+}
+
+.pixel-row {
+  line-height: 0;
+}
+
+.pixel {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+}
+
+.pixel-row .pixel:not(:last-child) {
+  border-right-width: 0;
+}
+
+.pixel-row:not(:last-child) .pixel {
+  border-bottom-width: 0;
 }
