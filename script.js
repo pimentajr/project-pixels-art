@@ -13,8 +13,8 @@ primaryColors(['black', 'yellow', 'green', 'blue']);
 
 function pixelsTable(width, height) {
   const table = document.querySelector('#pixel-board');
-  table.style.width = [width * 40, 'px'].join('');
-  table.style.height = [height * 40, 'px'].join('');
+  table.style.width = [width * 42, 'px'].join('');
+  table.style.height = [height * 42, 'px'].join('');
   for (let index = 1; index <= height; index += 1) {
     const newColumn = document.createElement('div');
     newColumn.className = 'tr';
