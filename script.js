@@ -19,7 +19,7 @@ function createMatrix() {
   }
 }
 
-window.onload = function () {
+window.onload = function load() {
   const getColors = document.getElementsByClassName('color');
   getColors[0].style.backgroundColor = 'black';
   getColors[0].classList.add('selected');
@@ -32,23 +32,16 @@ window.onload = function () {
 };
 
 function setSelected(event) {
-  let selectedElement = document.querySelector('.selected');
+  const selectedElement = document.querySelector('.selected');
   selectedElement.classList.remove('selected');
   event.target.classList.add('selected');
 }
 
-function getPaletteColor () {
-  let selectColor = document.getElementsByClassName('color');
+function getPaletteColor() {
+  const selectColor = document.getElementsByClassName('color');
 
-  for(let index = 0; index < selectColor.length; index += 1) {
+  for (let index = 0; index < selectColor.length; index += 1) {
     selectColor[index].addEventListener('click', setSelected);
-  }    
+  }  
 }
-getPaletteColor(); 
-
-// if (event.target.className !== 'color selected') {
-//   event.target.classList.add('selected');
-// }
-// else {
-//   event.target.classList.remove('selected');
-// }
+getPaletteColor();
