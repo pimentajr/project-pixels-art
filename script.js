@@ -52,7 +52,7 @@ board.addEventListener('click', (event) => {
 
 const clear = document.querySelector('#clear-board');
 
-clear.addEventListener('click', function () {
+clear.addEventListener('click', () => {
   const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = 'white';
@@ -64,7 +64,7 @@ clear.addEventListener('click', function () {
 const newBoard = document.createElement('div');
 const btn = document.querySelector('#generate-board');
 
-btn.addEventListener('click', function novaBoard() {
+btn.addEventListener('click', () => {
   board.remove();
   newBoard.id = 'pixel-board';
   document.querySelector('.board-container').appendChild(newBoard);
@@ -72,15 +72,13 @@ btn.addEventListener('click', function novaBoard() {
   let value = input.value;
   if (value === '') {
     alert('Board inválido!');
-  }
-  if (value < 5) {
+  } else if (value < 5) {
     value = 5;
   }
   if (value > 50) {
     value = 50;
   }
-
-  for (let i = 0; i < parseInt(value * value); i += 1) {
+  for (let i = 0; i < Number(value * value); i += 1) {
     if (i % value === 0) {
       const br = document.createElement('br');
       newBoard.appendChild(br);
