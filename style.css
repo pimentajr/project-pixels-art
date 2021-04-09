@@ -8,11 +8,15 @@ h1 {
   border-radius: 100px;
   width: 200px;
   inline-size: auto;
-  display:inline-block;
+  display:  inline-block;
+}
+
+#black {
+  margin-left: 900px;
+  background-color: black;
 }
 
 #blue {
-  margin-left: 920px;
   background-color: blue;
 }
 
