@@ -3,3 +3,4 @@
 3 - Adicione a cor preta como a primeira cor da paleta de cores.
 4 - Adicione à página um quadro de pixels, com 25 pixels.
 5 - Faça com que cada elemento do quadro de pixels possua 40 pixels de largura, 40 pixels de altura e seja delimitado por uma borda preta de 1 pixel.
+6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels

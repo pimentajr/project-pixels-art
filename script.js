@@ -1,7 +1,7 @@
 const lines = 5;
 
 function colorBoxes(){
-    let boxes = document.querySelectorAll('.color');
+    const boxes = document.querySelectorAll('.color');
     const black = boxes[0];
     black.style.backgroundColor = 'black';
     const blue = boxes[1];
@@ -30,8 +30,10 @@ for (let i = 0; i < lines; i++){
 
 window.onload = function() {
     let locateBlack = document.querySelector('.color');
-    locateBlack.classList.add('selected')
-    locateBlack.addEventListener('click',function() {
+    locateBlack.classList.add('selected');
+    let selectedColor = document.querySelector('.selected');
+    selectedColor.addEventListener('click',function() {
         //document.body.style.backgroundColor =  'black';
     })
 }
+
