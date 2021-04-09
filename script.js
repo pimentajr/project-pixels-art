@@ -34,7 +34,7 @@ function paintPixel() {
     const selectedElement = document.querySelector('.selected');
     const color = selectedElement.classList[1];
     if (event.target.classList[0] === 'pixel') {
-      event.target.className = 'pixel color';
+      event.target.className = 'pixel';
       event.target.classList.add(`${color}`);
     }
   });
