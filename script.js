@@ -84,7 +84,7 @@ function lengthBoard() {
   const generateBoard = document.getElementById('generate-board');
   generateBoard.addEventListener('click', () => {
     if (!boardSize.value) {
-      console.log('Board inválido!');
+      alert('Board inválido!');
     } else {
       if (boardSize.value < 5) {
         boardSize.value = 5;
