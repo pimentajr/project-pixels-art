@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+}
+
+#color-palette {
+  width: 166px;
+  margin-left: 25px;
+}
+
+.color {
+  text-align: center;
+  margin-left: 5px;
+  border: 1px solid black;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  background-color: red;
+}
+
+#red {
+  background-color: black;
+}
+
+#green {
+  background-color: green;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#magenta {
+  background-color: magenta;
+}
+
