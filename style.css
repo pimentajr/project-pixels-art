@@ -3,7 +3,7 @@
   font-family: Courier New, Courier, monospace;
 }
 
-#color-palete {
+#color-palette {
   text-align: center;
 }
 
@@ -12,5 +12,24 @@
   width: 50px;
   height: 50px;
   border: solid black 1px;
-  margin: 0 auto;
+}
+#pixel-board {
+  text-align: center;
+}
+
+.line {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 50px;
+  width: auto;
+}
+
+.pixel {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: solid black 1px;
+  margin: 0;
 }
