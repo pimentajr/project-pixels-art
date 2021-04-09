@@ -13,6 +13,10 @@
   border: 1px solid black;
 }
 
+#controls {
+  display: flex;
+}
+
 #pixel-board {
   display: table;
 }
