@@ -4,7 +4,7 @@ const board = document.getElementById('pixel-board');
 let selectedColor;
 
 function clearBoard() {
-  const rows = { board };
+  const { rows } = board;
 
   for (let i = 0; i < rows.length; i += 1) {
     const columns = rows[i].children;
@@ -75,14 +75,58 @@ function deleteBoard() {
   }
 }
 
-function getRandomColorExceptWhite() {
+function getRandomColor() {
   let color = '#';
 
   for (let i = 0; i < 3; i += 1) {
-    color += Math.ceil((Math.random() * 255 + 0.1)).toString(16);
+    const randomSingleHue = Math.round(Math.random() * 255);
+
+    let hexPart = randomSingleHue.toString(16);
+    hexPart = hexPart.padStart(2, '0');
+
+    color += hexPart;
+  }
+  return color;
+}
+
+function getRandomPalette() {
+  const palette = [];
+
+  palette.push('black');
+
+  for (let i = 0; i < 3; i += 1) {
+    palette.push(getRandomColor());
   }
 
-  return color;
+  return palette;
+}
+
+function hasDuplicate(array) {
+  return new Set(array).size !== array.length;
+}
+
+function hasWhite(palette) {
+  for (let i = 0; i < palette.length; i += 1) {
+    if (palette[i] === '#000000') {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function getSpecificPalette() {
+  let palette;
+  let hasWhiteColor = true;
+  let hasDuplicateColor = true;
+
+  while (hasWhiteColor || hasDuplicateColor) {
+    palette = getRandomPalette();
+    hasWhiteColor = hasWhite(palette);
+    hasDuplicateColor = hasDuplicate(palette);
+  }
+
+  return palette;
 }
 
 const clearButton = document.getElementById('clear-board');
@@ -113,9 +157,4 @@ resizeButton.addEventListener('click', () => {
 });
 
 createBoard(5, 5);
-createPalette([
-  'black',
-  getRandomColorExceptWhite(),
-  getRandomColorExceptWhite(),
-  getRandomColorExceptWhite(),
-]);
+createPalette(getSpecificPalette());
