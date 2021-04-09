@@ -2,13 +2,20 @@ window.onload = function() {
   
   document.querySelector('#black').classList.add('selected')
 
-  // let colorSection = document.getElementById('color-palette')
+  let colorSection = document.getElementById('color-palette')
 
-  // colorSection.addEventListener('click', function(event){
-  //   let element = event.target
-  //   element.classList.add('selected')
-  //   console.log(element)
+  colorSection.addEventListener('click', function(event){
+    for (let index = 1; index < 5; index +=1){
+      let teste = document.querySelector(`#color-palette div:nth-child(${index})`)
+      teste.className = 'color'
+    }
+
+    if(event.target !== colorSection){
+      event.target.classList.add('selected')
+    }
     
-  // })
+
+    console.log(document.querySelector('#color-palette'))
+  })
 
 }
