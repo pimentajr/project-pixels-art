@@ -13,7 +13,6 @@ color2.className += ` ${generateRandomColor()}`;
 color3.className += ` ${generateRandomColor()}`;
 color4.className += ` ${generateRandomColor()}`;
 
-const magenta = document.querySelector('.magenta');
 const paleta = document.querySelector('#color-palette');
 const board = document.querySelector('#pixel-board');
 
@@ -23,7 +22,7 @@ function generateDiv() {
       const br = document.createElement('br');
       board.appendChild(br);
     }
-    let newDiv = document.createElement('div');
+    const newDiv = document.createElement('div');
     newDiv.className = 'pixel';
     board.appendChild(newDiv);
   }
@@ -31,7 +30,7 @@ function generateDiv() {
 generateDiv();
 
 black.className = 'color black selected';
-paleta.addEventListener('click', function (event) {
+paleta.addEventListener('click', function selecionaCor(event) {
   const color = event.target;
   black.classList.remove('selected');
   color2.classList.remove('selected');
@@ -44,7 +43,7 @@ paleta.addEventListener('click', function (event) {
 
 //  ---------------------
 
-board.addEventListener('click', function (event) {
+board.addEventListener('click', function mudaCor(event) {
   const pixel = event.target;
   const itemColor = document.querySelector('.selected');
   const color = itemColor.classList[1];
@@ -53,7 +52,7 @@ board.addEventListener('click', function (event) {
 
 const clear = document.querySelector('#clear-board');
 
-clear.addEventListener('click', function () {
+clear.addEventListener('click', function limpar() {
   const pixels = document.querySelectorAll('.pixel');
   for (const pixel of pixels) {
     pixel.style.backgroundColor = 'white';
@@ -65,21 +64,19 @@ clear.addEventListener('click', function () {
 const newBoard = document.createElement('div');
 const btn = document.querySelector('#generate-board');
 
-btn.addEventListener('click', function () {
+btn.addEventListener('click', function novaBoard() {
   board.remove();
   newBoard.id = 'pixel-board';
   document.querySelector('.board-container').appendChild(newBoard);
   const input = document.querySelector('#board-size');
-  const value = input.value;
+  let value = input.value;
 
   if (value === '') {
     alert('Board inválido!');
   }
-
   if (value < 5) {
     value = 5;
   }
-
   if (value > 50) {
     value = 50;
   }
