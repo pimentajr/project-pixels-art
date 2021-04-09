@@ -1,7 +1,7 @@
 function selectColors() {
   const colors = ['blue', 'red', 'green'];
   const paletlist = document.getElementsByClassName('color');
-  paletlist[0].style.backgroundColor = 'black'
+  paletlist[0].style.backgroundColor = 'black';
   paletlist[0].classList.add('selected');
   for (let index = 1; index < paletlist.length; index += 1) {
     paletlist[index].style.backgroundColor = colors[index - 1];
@@ -21,7 +21,20 @@ function createBoard() {
     }
   }
 }
+
+function colorSelect() {
+  const colorList = document.getElementsByClassName('color');
+  for (let index = 0; index < colorList.length; index += 1) {
+    colorList[index].addEventListener('click', function (event) {
+      const current = document.querySelector('.selected');
+      current.classList.remove('selected');
+      event.target.classList.add('selected');
+    });
+  }
+}
+
 window.onload = function () {
   selectColors();
   createBoard();
+  colorSelect();
 };
