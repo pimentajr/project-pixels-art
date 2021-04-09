@@ -27,15 +27,16 @@ h2 {
   
 }
 .color{
-  border: 1px solid black;  
+  border: 1px solid rgb(0,0,0)
 }
 
 td {  
   size: 40px, 40px;
   align-self:center;
   border-collapse: collapse;
-  border: 1px solid black;
+  border: 1px solid rgb(0,0,0);
   padding: 40px;
+  background-color: rgb(255, 255, 255);
 }
 #pixel-board {
   width:100%;
@@ -43,11 +44,12 @@ td {
   display:flex;
   justify-content: center;
   align-items: center; 
+  background-color: rgb(255, 255, 255);
 }
 
 .pixel {
-  background-color: white;
-  size: 40px, 40px;
+   size: 40px, 40px;
   border-collapse: collapse;
-  border: 1px solid black;
+  border: 1px solid rgb(0,0,0);
+  background-color: rgb(255, 255, 255);
 }
