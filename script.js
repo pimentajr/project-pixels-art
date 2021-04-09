@@ -27,7 +27,7 @@ pixelBoard.addEventListener('click', function(event){
 
   function clearBoard() {
     for (let key of pixels) {
-      key.removeAttribute('style');
+      key.style.backgroundColor = 'white';
     }
   }
 
