@@ -1,4 +1,4 @@
-table {
+#color-palette {
   border-collapse: collapse;
 }
 
@@ -21,4 +21,8 @@ td {
 
 .color:nth-child( 4 ) {
   background-color: red;
+}
+
+#pixel-board {
+  border-collapse: collapse;
 }
