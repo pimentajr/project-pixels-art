@@ -10,7 +10,8 @@
 
 .pixel {
   display: table-cell;
-  padding: 40px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
 }
 
