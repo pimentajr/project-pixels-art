@@ -78,10 +78,18 @@ const sizeInput = document.getElementById('board-size');
 const resizeButton = document.getElementById('generate-board');
 
 resizeButton.addEventListener('click', function() {
-  const size = sizeInput.value;
+  let size = sizeInput.value;
 
   if (!size) {
     return alert('Board inválido!');
+  }
+
+  size = parseInt(size);
+
+  if (size < 5) {
+    size = 5;
+  } else if (size > 50) {
+    size = 50;
   }
 
   deleteBoard();
