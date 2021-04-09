@@ -63,5 +63,6 @@ h1 {
   height: 40px;
   width: 40px;
   background-color: white;
+  box-sizing: border-box;
   border: 1px solid black;
 }
