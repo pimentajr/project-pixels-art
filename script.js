@@ -40,8 +40,7 @@ for (let index = 1; index <= numOfPixels; index += 1) {
 firstColor.classList.add('selected');
 
 // 7.
-const colorBoxes = document.getElementsByClassName('color');
-colorPalette.addEventListener('click', function(event) {
+colorPalette.addEventListener('click', function switchColor(event) {
   const selectedColor = document.querySelector('.selected');
   selectedColor.classList.remove('selected');
   event.target.classList.add('selected');
