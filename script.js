@@ -26,11 +26,10 @@ window.onload = function () {
     color[0].classList.add('selected');
 
     for (let i = 0; i < color.length; i += 1) {
-      color[i].addEventListener('click', function() {
+      color[i].addEventListener('click', function () {
         for (let j = 0; j < color.length; j += 1) {
           color[j].className = 'color';
         }
-        
         if (color[i].className !== 'color selected') {
           color[i].classList.add('selected');
         }
@@ -38,6 +37,18 @@ window.onload = function () {
     }
   }
 
+  function colorPixel() {
+    let pixelCell = document.getElementsByClassName('pixel');
+
+    for (let i = 0; i < pixelCell.length; i += 1) {
+      pixelCell[i].addEventListener('click', function () {
+        let selectedColor = document.querySelector('.selected');
+        pixelCell[i].style.backgroundColor = selectedColor.style.backgroundColor;
+      });
+    }
+  }
+
   createBoard();
   colorSelect();
+  colorPixel();
 };
