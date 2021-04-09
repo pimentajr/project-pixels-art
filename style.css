@@ -52,6 +52,56 @@ h1 {
   padding: 30px;
 }
 
+.AliceBlue {
+  background-color: AliceBlue;
+  padding: 30px;
+}
+
+.Aquamarine {
+  background-color: Aquamarine;
+  padding: 30px;
+}
+.Chartreuse {
+  background-color: Chartreuse;
+  padding: 30px;
+}
+.CadetBlue {
+  background-color: CadetBlue;
+  padding: 30px;
+}
+.BurlyWood {
+  background-color: BurlyWood;
+  padding: 30px;
+}
+.BlueViolet {
+  background-color: BlueViolet;
+  padding: 30px;
+}
+.BlanchedAlmond {
+  background-color: BlanchedAlmond;
+  padding: 30px;
+}
+.Bisque {
+  background-color: Bisque;
+  padding: 30px;
+}
+.Beige {
+  background-color: Beige;
+  padding: 30px;
+}
+.Azure {
+  background-color: Azure;
+  padding: 30px;
+}
+.Aqua {
+  background-color: Aqua;
+  padding: 30px;
+}
+.AntiqueWhite {
+  background-color: AntiqueWhite;
+  padding: 30px;
+}
+
 .pixel {
   background-color: white;
   border: 1px black solid;

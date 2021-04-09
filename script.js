@@ -4,8 +4,28 @@ const color3 = color2.nextElementSibling;
 const color4 = color3.nextElementSibling;
 
 function generateRandomColor() {
-  const arr = ['red', 'blue', 'green', 'pink', 'yellow', 'brown', 'grey'];
-  const randomNumber = Math.round(Math.random() * 6);
+  const arr = [
+    'red',
+    'blue',
+    'green',
+    'pink',
+    'yellow',
+    'brown',
+    'grey',
+    'AliceBlue',
+    'AntiqueWhite',
+    'Aqua',
+    'Aquamarine',
+    'Azure',
+    'Beige',
+    'Bisque',
+    'BlanchedAlmond',
+    'BlueViolet',
+    'BurlyWood',
+    'CadetBlue',
+    'Chartreuse',
+  ];
+  const randomNumber = Math.round(Math.random() * 18);
   return arr[randomNumber];
 }
 
@@ -49,9 +69,7 @@ board.addEventListener('click', (event) => {
   const color = itemColor.classList[1];
   pixel.style.backgroundColor = color;
 });
-
 const clear = document.querySelector('#clear-board');
-
 clear.addEventListener('click', () => {
   const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
@@ -62,11 +80,11 @@ clear.addEventListener('click', () => {
 //  ---------------------- EX 10
 
 const newBoard = document.createElement('div');
+newBoard.id = 'pixel-board';
 const btn = document.querySelector('#generate-board');
 
 btn.addEventListener('click', () => {
   board.remove();
-  newBoard.id = 'pixel-board';
   document.querySelector('.board-container').appendChild(newBoard);
   const input = document.querySelector('#board-size');
   let value = input.value;
