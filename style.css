@@ -5,6 +5,8 @@
 
 body {
   background-color: #ccc;
+  color: #444;
+  font-family: Montserrat, sans-serif;
 }
 
 nav {
@@ -21,7 +23,6 @@ nav {
   display: inline-block;
   width: 40px;
   height: 40px;
-  color: white;
 }
 
 #pixel-board h2 {
@@ -32,6 +33,7 @@ nav {
 #pixel-board {
   margin: auto;
   max-width: 210px;
+  min-height: 300px;
 }
 
 /* .color {
@@ -41,7 +43,6 @@ nav {
 .pixel {
   width: 40px;
   height: 40px;
-  background-color: white;
 }
 
 #footer {
