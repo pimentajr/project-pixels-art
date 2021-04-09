@@ -16,6 +16,7 @@ colorGrid();
 function giveColor() {
   const colorDivsArray = document.getElementsByClassName('color');
   colorDivsArray[0].style.backgroundColor = 'black';
+  colorDivsArray[0].classList.add('selected');
   colorDivsArray[1].style.backgroundColor = 'maroon';
   colorDivsArray[2].style.backgroundColor = 'darkolivegreen';
   colorDivsArray[3].style.backgroundColor = 'darkcyan';
