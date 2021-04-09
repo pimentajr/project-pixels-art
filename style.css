@@ -1,8 +1,11 @@
 .color {
-  border: 1px solid black;
-  height: 50px;
-  width: 50px;
   display: inline-block;
+}
+
+.color, .pixel {
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
 }
 
 #black {
@@ -19,4 +22,16 @@
 
 #red {
   background-color: red;
+}
+
+#pixel-board {
+  display: table;
+}
+
+.row {
+  display: table-row;
+}
+
+.pixel {
+  display: table-cell;
 }
