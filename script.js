@@ -51,7 +51,7 @@ function selectColor() {
   });
 }
 
-// Pinta o quadrado selecionado
+// Pinta o quadrado selecionado!
 function paintPixel() {
   pixelBoard.addEventListener('click', (event) => {
     const selectedElement = document.querySelector('.selected');
@@ -108,3 +108,4 @@ window.onload = () => {
   const clearPixelBoard = document.getElementById('clear-board');
   clearPixelBoard.addEventListener('click', clearBoard);
 };
+
