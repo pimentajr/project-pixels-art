@@ -4,7 +4,7 @@ function primaryColors(colors) {
   for (let index = 0; index < colors.length; index += 1) {
     colorBox[index].style.backgroundColor = colors[index];
     if (index === 0) {
-      colorBox[index].className = 'selected';
+      colorBox[index].classList.add('selected');
     }
   }
 }
