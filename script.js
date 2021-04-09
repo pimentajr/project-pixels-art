@@ -25,6 +25,18 @@ function selectColor() {
   liColors[0].classList.add('selected');
 }
 
+const colorsList = document.getElementsByClassName('color');
+function lookForSelectedColor(event) {
+  for (let index = 0; index < colorsList.length; index += 1) {
+    colorsList[index].classList.remove('selected');
+  }
+  event.target.classList.add('selected');
+}
+
+for (let index = 0; index < colorsList.length; index += 1) {
+  colorsList[index].addEventListener('click', lookForSelectedColor);
+}
+
 function initialize() {
   selectColor();
   makeLiColors(liColors);
