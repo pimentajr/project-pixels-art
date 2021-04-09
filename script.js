@@ -1,24 +1,31 @@
 const pixelBoard = document.getElementById('pixel-board');
 const colorPalette = document.getElementById('color-palette');
 const clearBtn = document.getElementById('clear-board');
+const addBtn = document.getElementById('generate-board');
 let colorToPaint = document.getElementsByClassName('selected')[0];
-function createPixels(line) {
-  for (let column = 1; column <= 5; column += 1) {
+function createPixels(line, diagonal) {
+  for (let column = 1; column <= diagonal; column += 1) {
     const pixel = document.createElement('div');
     pixel.className = 'pixel';
     pixel.classList.add('empty');
     line.appendChild(pixel);
   }
 }
-function createRows() {
-  for (let row = 1; row <= 5; row += 1) {
+function createRows(diagonal) {
+  for (let row = 1; row <= diagonal; row += 1) {
     const line = document.createElement('div');
     line.className = 'line';
     pixelBoard.appendChild(line);
-    createPixels(line);
+    createPixels(line, diagonal);
   }
 }
-createRows();
+createRows(5);
+
+function deletePixelBoard() {
+  while (pixelBoard.firstChild) {
+    pixelBoard.removeChild(pixelBoard.firstChild);
+  }
+}
 
 function selectColor(event) {
   colorToPaint.classList.remove('selected');
@@ -41,3 +48,40 @@ function clearPixels() {
   }
 }
 clearBtn.addEventListener('click', clearPixels);
+
+function setInputAttributes() {
+  const input = document.getElementsByTagName('input');
+  input.min = 5;
+  input.max = 50;
+}
+setInputAttributes();
+
+function makeNewPixelBoard(diagonal) {
+  deletePixelBoard();
+  createRows(diagonal);
+}
+
+function verifyIfInputIsWithinRange(inputTest) {
+  const diagonal = parseInt(inputTest, 10);
+  if (diagonal < 5 || diagonal > 50) {
+    alert('Por favor coloque um número entre 5 e 50');
+    return;
+  }
+  makeNewPixelBoard(diagonal);
+}
+function verifyIfInputIsEmpty(inputTest) {
+  if (inputTest === '') {
+    alert('Board inválido');
+    return;
+  }
+  verifyIfInputIsWithinRange(inputTest);
+}
+function verifyIfInputIsLetter() {
+  const inputTest = document.getElementById('board-size').value;
+  if (inputTest.toUpperCase() !== inputTest.toLowerCase()) {
+    alert('Não coloque letras por favor');
+    return;
+  }
+  verifyIfInputIsEmpty(inputTest);
+}
+addBtn.addEventListener('click', verifyIfInputIsLetter);

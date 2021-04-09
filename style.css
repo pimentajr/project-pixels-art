@@ -24,7 +24,7 @@
 }
 
 .pixel {
-  display: inline-block;
+  display: table-cell;
   width: 40px;
   height: 40px;
   border-style: solid;
@@ -38,10 +38,19 @@
 
 .line {
   width: fit-content;
+  display: table-row;
 }
 
 #pixel-board {
   width: fit-content;
   height: fit-content;
+  display: table;
 }
 
+#clear-board {
+  margin: 10px;
+}
+
+#generate-board {
+  margin: 10px;
+}
