@@ -41,8 +41,14 @@ const size = document.querySelector('#board-size');
 
 button.addEventListener('click', function () {
   const value = size.value;
-  if (value === '' || value < 6 || value > 51) {
+  if (value === '') {
     alert('Board inválido!');
+  }
+  if (value < 5) {
+    value = 5;
+  }
+  if (value > 50) {
+    value = 50;
   }
   board.remove();
   const newBoard = document.createElement('div');
@@ -57,4 +63,13 @@ button.addEventListener('click', function () {
     pixel.className = 'pixel';
     newBoard.appendChild(pixel);
   }
+});
+
+const secondBoard = documenr.querySelector('#pixel-board');
+
+secondBoard.addEventListener('click', function (event) {
+  const pixel = event.target;
+  const itemColor = document.querySelector('.selected');
+  const color = itemColor.classList[1];
+  pixel.style.backgroundColor = color;
 });
