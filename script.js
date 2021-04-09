@@ -41,7 +41,7 @@ function paintPixel(event) {
 
 pixelBoard.addEventListener('click', paintPixel);
 
-const resetButton = document.querySelector('#btn-reset');
+const resetButton = document.querySelector('#clear-board');
 function resetBoard() {
   for (let lineIndex = 0; lineIndex < lines; lineIndex += 1) {
     const currentLine = pixelBoard.childNodes[lineIndex];

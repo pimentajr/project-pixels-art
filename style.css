@@ -22,14 +22,3 @@
   border: 1px black solid;
   border-collapse: collapse;
 }
-
-#color-palette {
-  display: inline-block;
-}
-
-#btn-reset {
-  vertical-align: top;
-  margin-top: 15px;
-  margin-left: 20px;
-  height: 20px;
-}
