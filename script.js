@@ -14,4 +14,9 @@ window.onload = function () {
 
   let pixelBoard = document.querySelector('#pixel-board');
   makePixelBoard(pixelBoard, 5, 5);
+
+  document.querySelector('#color-palette').addEventListener('click', function (event) {
+    document.querySelector('.selected').classList.remove('selected');
+    event.target.classList.add('selected');
+  } );
 };
