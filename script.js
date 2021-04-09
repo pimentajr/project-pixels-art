@@ -3,6 +3,9 @@ const colors = ['black', 'blue', 'yellow', 'magenta'];
 for (let index = 0; index < 4; index += 1) {
   const colorBox = document.createElement('div');
   colorBox.className = 'color';
+  if (index === 0) {
+    colorBox.classList.add('selected');
+  }
   colorBox.style.backgroundColor = colors[index];
   colorPalette.appendChild(colorBox);
 }
