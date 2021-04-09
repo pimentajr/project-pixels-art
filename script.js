@@ -21,9 +21,10 @@ function pixelBoard(){
         let pixelBox = document.createElement('div');
         pixelBox.className = 'pixel box';
         pixelBox.style.backgroundColor = 'white';
-        lineBoard[i].appendChild(pixelBox)
+        lineBoard[i].appendChild(pixelBox);
     }
 }
-pixelBoard();
-
+for (let i = 0; i < lines; i++){
+    pixelBoard();
+}
 }
