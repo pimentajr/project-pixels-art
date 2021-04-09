@@ -37,12 +37,12 @@ createPixels(5);
 function clickPalette() {
   const eventPalette = document.getElementById('color-palette');
   eventPalette.addEventListener('click', (e) => {
-    const target = e.target;
+    const eventTarget = e.target;
     const color = document.getElementsByClassName('color');
     for (let index = 0; index < color.length; index += 1) {
       color[index].classList.remove('selected');
-      if (target.className === 'color') {
-        target.classList.add('selected');
+      if (eventTarget.className === 'color') {
+        eventTarget.classList.add('selected');
       }
     }
   });
@@ -52,10 +52,10 @@ clickPalette();
 function paintPixels() {
   const board = document.getElementById(pixelIdentification);
   board.addEventListener('click', (e) => {
-    const target = e.target;
+    const eventTarget = e.target;
     const multipleTarget = document.querySelector('.selected');
-    if (target.className === 'pixel') {
-      target.style.backgroundColor = multipleTarget.style.backgroundColor;
+    if (eventTarget.className === 'pixel') {
+      eventTarget.style.backgroundColor = multipleTarget.style.backgroundColor;
     }
   });
 }
