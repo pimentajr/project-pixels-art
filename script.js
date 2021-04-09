@@ -59,9 +59,19 @@ btn.addEventListener('click', function () {
   document.querySelector('.board-container').appendChild(newBoard);
   let input = document.querySelector('#board-size');
   let value = input.value;
+
   if (value === '') {
     alert('Board inválido!');
   }
+
+  if (value < 5) {
+    value = 5;
+  }
+
+  if (value > 50) {
+    value = 50;
+  }
+
   for (let i = 0; i < parseInt(value * value); i += 1) {
     if (i % value === 0) {
       let br = document.createElement('br');
