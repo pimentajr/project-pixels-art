@@ -1,9 +1,28 @@
 .color {
-  border: solid black;
   padding: 50px;
   display: inline-block;
 }
 
 body {
   text-align: center;
+}
+
+#black {
+  border: solid black;
+  width: 1px;
+}
+
+#red {
+  border: solid black;
+  width: 1px;
+}
+
+#orange {
+  border: solid black;
+  width: 1px;
+}
+
+#yellow {
+  border: solid black;
+  width: 1px;
 }
