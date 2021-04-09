@@ -1,5 +1,8 @@
-body {
-	text-align: center;
+main {
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #color-palette {
@@ -28,3 +31,16 @@ body {
 #green-selector {
 	background-color: green;
 }
+
+#pixel-board {
+	margin-top: 25px;
+}
+
+.pixel {
+	background-color:white;
+	width: 40px;
+	height: 40px;
+	border: 1px solid black;
+	display: table-cell;
+}
+
