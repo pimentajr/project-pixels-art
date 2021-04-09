@@ -1,5 +1,5 @@
-const colorDivs = document.querySelectorAll('.color');
-const pixelBoard = document.querySelector('#pixel-board');
+let colorDivs = document.querySelectorAll('.color');
+let pixelBoard = document.querySelector('#pixel-board');
 // Requisito 2
 function setColorToPalete() {
   for (let index = 0; index < colorDivs.length; index += 1) {
@@ -9,7 +9,7 @@ function setColorToPalete() {
 }
 setColorToPalete();
 // Requisito 4
-const pixelBoardSize = 5;
+let pixelBoardSize = 5;
 
 for (let lineIndex = 1; lineIndex <= pixelBoardSize; lineIndex += 1) {
   const createLineDivs = document.createElement('div');
@@ -21,3 +21,17 @@ for (let lineIndex = 1; lineIndex <= pixelBoardSize; lineIndex += 1) {
   }
   pixelBoard.appendChild(createLineDivs);
 }
+// Requisito 7
+let colorPaleteDiv = document.querySelector('#color-palette');
+
+function selectColor() {
+  colorPaleteDiv.addEventListener('click', function(event){
+    let colorDiv = document.querySelector('.selected');
+    if (event.target.id !== 'color-palette'){
+      colorDiv.classList.remove('selected');
+      event.target.classList.add('selected');
+    }
+  }); 
+}
+
+selectColor();
