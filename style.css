@@ -1,0 +1,48 @@
+#title {
+  font-family: New Tegomin;
+  text-align: center;
+  color: darkblue;
+}
+
+#color-palette {
+  margin-left: 39%;
+  margin-right: 30%;
+  align-items: center;
+}
+
+.color {
+  width: 70px;
+  height: 70px;
+}
+
+#salmon {
+  display: inline-block;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #e76f51;
+}
+
+#cocoa {
+    display: inline-block;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #f4a261;
+  }
+
+  #yellow {
+    display: inline-block;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #e9c46a;
+  }
+
+  #aquaGren {
+    display: inline-block;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #2a9d8f;
+  }
