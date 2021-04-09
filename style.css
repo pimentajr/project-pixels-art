@@ -23,9 +23,16 @@
 
 /* Main */
 #pixel-board {
+  display: inline-block;
   border: 1px solid black;
 }
 
 .pixel {
   color: white;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  height: 50px;
 }
