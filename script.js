@@ -1,4 +1,3 @@
-window.onload = function(){
 const lines = 5;
 
 function colorBoxes(){
@@ -18,13 +17,21 @@ colorBoxes();
 function pixelBoard(){
     let lineBoard = document.querySelectorAll('.line');
     for (let i = 0; i < lines; i++){
-        let pixelBox = document.createElement('div');
+        const pixelBox = document.createElement('div');
         pixelBox.className = 'pixel';
         pixelBox.style.backgroundColor = 'white';
         lineBoard[i].appendChild(pixelBox);
     }
 }
+
 for (let i = 0; i < lines; i++){
     pixelBoard();
 }
+
+window.onload = function() {
+    let locateBlack = document.querySelector('.color');
+    locateBlack.classList.add('selected')
+    locateBlack.addEventListener('click',function() {
+        //document.body.style.backgroundColor =  'black';
+    })
 }
