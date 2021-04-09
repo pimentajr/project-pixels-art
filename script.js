@@ -1,1 +1,7 @@
-ler pixels = 45;
+window.onload = function() {
+    let blackColor = document.getElementById('black');
+    blackColor.className += ' selected';
+}
+function setBoarSize () {
+    
+}
