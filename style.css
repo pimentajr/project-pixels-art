@@ -31,3 +31,16 @@ header {
 .green {
   background-color: green;
 }
+
+.white {
+  background-color: white;
+}
+
+main {
+  margin: 0 auto;
+}
+
+#pixel-board {
+  width: 500px;
+  margin: 0 auto;
+}
