@@ -10,26 +10,21 @@ h1 {
 .black {
   background-color: black;
   padding: 20px;
-  margin-left: 394px;
-  margin-bottom: 50px;
 }
 
 .green {
   background-color: green;
   padding: 20px;
-  margin-bottom: 50px;
 }
 
 .magenta {
   background-color: magenta;
   padding: 20px;
-  margin-bottom: 50px;
 }
 
 .grey {
   background-color: grey;
   padding: 20px;
-  margin-bottom: 50px;
 }
 
 .pixel {
@@ -48,4 +43,12 @@ h1 {
 .container {
   max-width: 960px;
   margin: 0 auto;
+}
+
+#color-palette {
+  background: blue;
+  margin-left: 390px;
+  margin-bottom: 20px;
+  width: 180px;
+  height: 40px;
 }
