@@ -1,8 +1,28 @@
 const color = document.getElementsByClassName('color');
-color[0].style.backgroundColor = 'black';
-color[1].style.backgroundColor = 'pink';
-color[2].style.backgroundColor = 'yellow';
-color[3].style.backgroundColor = 'lightblue';
+
+
+function randomColor() {
+  let randomColor1 = Math.floor(Math.random() * 255);
+  let randomColor2 = Math.floor(Math.random() * 255);
+  let randomColor3 = Math.floor(Math.random() * 255);
+
+  if (randomColor1 === 0 && randomColor2 === 0 && randomColor3 === 0) {
+    randomColor1 = Math.floor(Math.random() * 255);
+    randomColor2 = Math.floor(Math.random() * 255);
+    randomColor3 = Math.floor(Math.random() * 255);
+  } else if (randomColor1 === 255 && randomColor2 === 255 && randomColor3 === 255) {
+    randomColor1 = Math.floor(Math.random() * 255);
+    randomColor2 = Math.floor(Math.random() * 255);
+    randomColor3 = Math.floor(Math.random() * 255);
+  }
+  return `rgb(${randomColor1}, ${randomColor2}, ${randomColor3})`;
+}
+
+color[0].style.backgroundColor = 'black'
+color[1].style.backgroundColor = randomColor();
+color[2].style.backgroundColor = randomColor();
+color[3].style.backgroundColor = randomColor();
+
 
 window.onload = function () {
   function createBoard(size) {
@@ -78,19 +98,20 @@ window.onload = function () {
       }
     });
 
-    input.addEventListener('keyup', function(event) {
+    input.addEventListener('keyup', function (event) {
       if (event.keyCode === 13) {
         if (input.value.length === 0) {
-          alert('Board inválido!');      
+          alert('Board inválido!');    
         } else {
           if (input.value < 5) {
-          input.value = 5;
-        } else if (input.value > 50) {
-          input.value = 50;
+            input.value = 5;
+          } else if (input.value > 50) {
+            input.value = 50;
+          }
+          pixelTable.innerHTML = '';
+          createBoard(input.value);
         }
-        pixelTable.innerHTML = '';
-        createBoard(input.value);
-      }}
+      }
     });
   }
 
