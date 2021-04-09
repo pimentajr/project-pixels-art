@@ -42,13 +42,20 @@ window.onload = function () {
 
   function addColorPixel() {
     const pixelSection = document.querySelector('#pixel-board');
+    const classOff = document.querySelector('.off')
     pixelSection.addEventListener('click', function (event) {
       for (let index = 0; index < color.length; index += 1) {
         if (color[index].className === 'color selected') {
           event.target.style.backgroundColor = color[index].style.backgroundColor;
+        } if (classOff.style.backgroundColor === color[index].style.backgroundColor) {
+          classOff.style.backgroundColor = 'white'
         }
       }
     });
   }
   addColorPixel();
+
+  function cleanButton() {
+    const getButton = document.querySelector('#clean')
+  }
 };
