@@ -5,7 +5,7 @@ firstSelectedColor.classList = ('color selected');
 // Seleciona a cor mudando a classe da div clicada
 function colorSelection() {
   const tableColor = document.querySelector('#color-palette');
-  tableColor.addEventListener('click', function (event) {
+  tableColor.addEventListener('click', (event) => {
     const actualColor = document.querySelector('.selected');
     actualColor.className = 'color';
     event.target.className = 'color selected';
