@@ -4,9 +4,11 @@
   height: 50px;
   margin: 5px;
   display: inline-block;
+  padding: 20px;
 }
 
 .pixel {
+  background-color: white;
   border: 1px solid black;
   width: 50px;
   height: 50px;
@@ -14,6 +16,8 @@
 }
 
 #pixel-board {
+  background-color: black;
   display: inline-grid;
   grid-template-columns: auto auto auto auto auto;
+  padding: 1px;
 }
