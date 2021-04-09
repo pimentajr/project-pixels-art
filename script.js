@@ -5,7 +5,7 @@ function createColor(boxColor) {
 
   box.style.backgroundColor = boxColor;
   box.className = ('color');
-
+  if (boxColor === 'black') box.classList.add('selected');
   palette.appendChild(box);
 }
 
