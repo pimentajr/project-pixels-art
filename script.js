@@ -15,22 +15,22 @@ colorSelection();
 
 // Pinta os pixels em branco com a cor selecionada
 function printBoard() {
-  document.getElementById('pixel-board')addEventListener('click', (event) => {
-  const printBox = event.target;
-  switch (document.querySelector('.selected').id) {
-  case 'black-box':
-    printBox.style.backgroundColor = 'black';
-    break;
-  case 'red-box':
-    printBox.style.backgroundColor = 'red';
-    break;
-  case 'green-box':
-    printBox.style.backgroundColor = 'green';
-    break;
-  case 'yellow-box':
-    printBox.style.backgroundColor = 'yellow';
-    break;
-  default:
+  document.getElementById('pixel-board').addEventListener('click', (event) => {
+    const printBox = event.target;
+    switch (document.querySelector('.selected').id) {
+    case 'black-box':
+      printBox.style.backgroundColor = 'black';
+      break;
+    case 'red-box':
+      printBox.style.backgroundColor = 'red';
+      break;
+    case 'green-box':
+      printBox.style.backgroundColor = 'green';
+      break;
+    case 'yellow-box':
+      printBox.style.backgroundColor = 'yellow';
+      break;
+    default:
     }
   });
 }
