@@ -1,4 +1,4 @@
-function teste(event) {
+function selectedTarget(event) {
   const colorList = document.querySelectorAll('.color');
 
   for (let index = 0; index < colorList.length; index += 1) {
@@ -11,4 +11,15 @@ function teste(event) {
 }
 
 const colorPallete = document.querySelector('#color-palette');
-colorPallete.addEventListener('click', teste);
+colorPallete.addEventListener('click', selectedTarget);
+
+function selectColor(event) {
+  const color = document.querySelector('.selected').id;
+
+  const evento = event;
+
+  evento.target.style.backgroundColor = color;
+}
+
+const pixelBoard = document.querySelector('#pixel-board');
+pixelBoard.addEventListener('click', selectColor);
