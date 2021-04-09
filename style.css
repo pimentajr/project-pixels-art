@@ -1,17 +1,21 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   display: block;
   margin: 0;
   padding: 15px;
 }
+
 header {
   display: block;
   text-align: center;
+  font-family: Train One, Cursive, sans-serif;
+  font-size: 30px;
 }
 
-#color-pallete{
+#color-palette {
   display: table;
   width: 60%;
   height: 40px;
@@ -26,24 +30,24 @@ header {
   display: table-cell;
   border-style: solid;
   border-color: black;
-  border-width: 5px;
+  border-width: 1px;
   width: 25%;
   height: 100%;
 }
 
 #color-1 {
-  background-color: aquamarine;  
+  background-color: black;
 }
 
 #color-2 {
-  background-color: red;  
+  background-color: red;
 }
 
 #color-3 {
-  background-color: magenta;  
+  background-color: magenta;
 }
 
 #color-4 {
-  background-color: orange;  
+  background-color: orange;
 }
 
