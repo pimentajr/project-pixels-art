@@ -1,12 +1,3 @@
-// Desafio 1
-function creatH1(tag, id, Name) {
-  const create = document.createElement(tag);
-  create.id = id;
-  create.innerText = Name;
-  document.body.appendChild(create);
-}
-creatH1('h1', 'title', 'Paleta de Cores');
-
 // Desafio 2
 function createDiv(tag, id) {
   const createP = document.createElement(tag);
@@ -22,7 +13,11 @@ function createDiv1(tag, classN) {
   const Father = document.querySelector('#color-palette');
   Father.appendChild(CreatDiv);
 }
+createDiv1('div', 'black color');
 createDiv1('div', 'red color');
 createDiv1('div', 'green color');
-createDiv1('div', 'black color');
 createDiv1('div', 'blue color');
+
+function toCheck () {
+
+}
