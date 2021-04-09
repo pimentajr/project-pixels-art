@@ -1,0 +1,25 @@
+#color-palette {
+  display: block;
+}
+
+.color {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.magenta {
+  background-color: magenta;
+}
