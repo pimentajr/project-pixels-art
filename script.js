@@ -1,7 +1,7 @@
 const arrayColors = ['aqua', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'orange', 'purple', 'red', 'silver', 'teal', 'yellow', 'magenta', 'salmon'];
 
 function getRandomColors(colors) {
-  let randomColor = colors[Math.floor((Math.random() * colors.length))];
+  customElements randomColor = colors[Math.floor((Math.random() * colors.length))];
   return randomColor;
 }
 
@@ -11,7 +11,6 @@ function createMatrix() {
     const line = document.createElement('div');
     line.classList.add('line');
     board.appendChild(line);
-    
     for (let secondIndex = 0; secondIndex < 5; secondIndex += 1) {
       const pixel = document.createElement('div');
       pixel.classList.add('pixel');
@@ -30,4 +29,4 @@ window.onload = function () {
     getColors[index].style.backgroundColor = colorRemove;
   }
   createMatrix();
-}
+};
