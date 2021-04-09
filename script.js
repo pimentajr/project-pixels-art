@@ -12,12 +12,21 @@ setColorPalette();
 
 function generatePixels() {
   const board = document.querySelector('#pixel-board');
+  const table = document.createElement('table');
+  board.appendChild(table);
 
-  for (let index = 0; index < 25; index += 1) {
-    const div = document.createElement('div');
-    div.classList.add('pixel');
-    board.appendChild(div);
+  for (let index = 0; index < 5; index += 1) {
+    const tr = document.createElement('tr');
+    for (let index = 0; index < 5; index += 1) {
+      const td = document.createElement('td');
+      const div = document.createElement('div');
+      div.classList.add('pixel');
+      td.appendChild(div);
+      tr.appendChild(td);
+    }
+    table.appendChild(tr);
   }
+
 }
 
 generatePixels();
