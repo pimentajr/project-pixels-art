@@ -1,8 +1,8 @@
 /* req 2 + 3 + 12 */
 function randomColor() {
-  let randomColor1 = Math.floor(Math.random() * 255);
-  let randomColor2 = Math.floor(Math.random() * 255);
-  let randomColor3 = Math.floor(Math.random() * 255);
+  const randomColor1 = Math.floor(Math.random() * 255);
+  const randomColor2 = Math.floor(Math.random() * 255);
+  const randomColor3 = Math.floor(Math.random() * 255);
   let msg = `rgb(${randomColor1}, ${randomColor2}, ${randomColor3})`;
 
   if (msg === 'rgb(255, 255, 255)' || msg === 'rgb(0, 0, 0)') {
@@ -14,17 +14,29 @@ function randomColor() {
 
 function colorOptions() {
   const color = document.getElementsByClassName('color');
-  color[0].style.backgroundColor = 'black'
+  color[0].style.backgroundColor = 'black';
   color[1].style.backgroundColor = randomColor();
   color[2].style.backgroundColor = randomColor();
   color[3].style.backgroundColor = randomColor();
 
   for (let i = 0; i < color.length; i += 1) {
-    for (let j = 1; j < color.length; j += 1) {
-      if (color[i].style.backgroundColor === color[j].style.backgroundColor) {
-        color[i].style.backgroundColor = randomColor();
-      }
+    let j = 1;
+    if (color[i].style.backgroundColor === color[j].style.backgroundColor) {
+      color[i].style.backgroundColor = randomColor();
     }
+    j += 1;
+  }
+}
+
+/* req 8 */
+function colorPixel() {
+  const pixelCell = document.getElementsByClassName('pixel');
+
+  for (let i = 0; i < pixelCell.length; i += 1) {
+    pixelCell[i].addEventListener('click', function () {
+      const selectedColor = document.querySelector('.selected');
+      pixelCell[i].style.backgroundColor = selectedColor.style.backgroundColor;
+    });
   }
 }
 
@@ -46,7 +58,7 @@ function createBoard(size) {
   }
 }
 
-function createInputBoard() {
+function inputBoardButton() {
   const pixelTable = document.getElementById('pixel-board');
   const input = document.getElementById('board-size');
   const button = document.getElementById('generate-board');
@@ -65,6 +77,11 @@ function createInputBoard() {
       colorPixel();
     }
   });
+}
+
+function inputBoardEnter() {
+  const pixelTable = document.getElementById('pixel-board');
+  const input = document.getElementById('board-size');
 
   input.addEventListener('keyup', function (event) {
     if (event.keyCode === 13) {
@@ -84,6 +101,11 @@ function createInputBoard() {
   });
 }
 
+function createInputBoard() {
+  inputBoardButton();
+  inputBoardEnter();
+}
+
 /* req 6 + 7 */
 function colorSelect() {
   const color = document.getElementsByClassName('color');
@@ -97,18 +119,6 @@ function colorSelect() {
       if (color[i].className !== 'color selected') {
         color[i].classList.add('selected');
       }
-    });
-  }
-}
-
-/* req 8 */
-function colorPixel() {
-  const pixelCell = document.getElementsByClassName('pixel');
-
-  for (let i = 0; i < pixelCell.length; i += 1) {
-    pixelCell[i].addEventListener('click', function () {
-      const selectedColor = document.querySelector('.selected');
-      pixelCell[i].style.backgroundColor = selectedColor.style.backgroundColor;
     });
   }
 }
