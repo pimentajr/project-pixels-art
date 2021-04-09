@@ -29,3 +29,13 @@ function fillPixelBoard(boardSize) {
 }
 
 fillPixelBoard(5);
+
+function iniciateColorPalette() {
+  for (let element of colorPalette.children) {
+    if (element.style.backgroundColor === 'black') {
+      element.classList.add('selected');
+    }
+  }
+}
+
+iniciateColorPalette();
