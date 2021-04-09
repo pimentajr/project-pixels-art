@@ -21,3 +21,14 @@
 #blue {
   background-color: blue;
 }
+
+.pixel {
+  height: 37px;
+  width: 37px;
+  border-color: black;
+  border: 1px solid;
+}
+
+.table {
+  border-collapse: collapse;
+}
