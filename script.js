@@ -6,14 +6,14 @@ colorPaletteContainer.addEventListener('click', (event) => {
   colorPaletteSelected.classList.add('selected');
 });
 
+// Para adicionar a logica abaixo de trocar as cores dos pixels eu utilizei o metodo getComputedStyle
+// acessado por este link: https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
+
 const pixelBoardSquare = document.querySelector('#pixel-board');
 pixelBoardSquare.addEventListener('click', (event2) => {
   const colorSelected = document.querySelector('.selected');
-  console.log(colorSelected);
   const pixelToPrint = event2.target;
-  console.log(pixelToPrint);
   pixelToPrint.style.backgroundColor = window.getComputedStyle(colorSelected).backgroundColor;
-  console.log(window.getComputedStyle(colorSelected));  
 });
 
 // const buttonClearColor = document.querySelector('#clear-board');
