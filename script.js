@@ -10,5 +10,5 @@ color3.style.backgroundColor = 'gold';
 color4.style.backgroundColor = 'red';
 
 // criando o botão na paleta
-window.onload = 'selected';
-let selected = document.getElementById('color black');
+window.onload = '.selected';
+document.getElementById('color black').className = '.selected';
