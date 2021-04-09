@@ -3,15 +3,15 @@ const color2 = document.querySelector('.black').nextElementSibling;
 const color3 = color2.nextElementSibling;
 const color4 = color3.nextElementSibling;
 
+function generateRandomColor() {
+  const arr = ['red', 'blue', 'green', 'pink', 'yellow', 'brown', 'grey'];
+  const randomNumber = Math.round(Math.random() * 6);
+  return arr[randomNumber];
+}
+
 color2.className += ` ${generateRandomColor()}`;
 color3.className += ` ${generateRandomColor()}`;
 color4.className += ` ${generateRandomColor()}`;
-
-function generateRandomColor() {
-  arr = ['red', 'blue', 'green', 'pink', 'yellow', 'brown', 'grey'];
-  let randomNumber = Math.round(Math.random() * 6);
-  return arr[randomNumber];
-}
 
 const magenta = document.querySelector('.magenta');
 const paleta = document.querySelector('#color-palette');
@@ -20,7 +20,7 @@ const board = document.querySelector('#pixel-board');
 function generateDiv() {
   for (let i = 0; i < 25; i += 1) {
     if (i % 5 === 0) {
-      let br = document.createElement('br');
+      const br = document.createElement('br');
       board.appendChild(br);
     }
     let newDiv = document.createElement('div');
@@ -63,15 +63,14 @@ clear.addEventListener('click', function () {
 //  ---------------------- EX 10
 
 const newBoard = document.createElement('div');
-let btn = document.querySelector('#generate-board');
+const btn = document.querySelector('#generate-board');
 
 btn.addEventListener('click', function () {
-  const board = document.querySelector('#pixel-board');
   board.remove();
   newBoard.id = 'pixel-board';
   document.querySelector('.board-container').appendChild(newBoard);
-  let input = document.querySelector('#board-size');
-  let value = input.value;
+  const input = document.querySelector('#board-size');
+  const value = input.value;
 
   if (value === '') {
     alert('Board inválido!');
@@ -87,18 +86,11 @@ btn.addEventListener('click', function () {
 
   for (let i = 0; i < parseInt(value * value); i += 1) {
     if (i % value === 0) {
-      let br = document.createElement('br');
+      const br = document.createElement('br');
       newBoard.appendChild(br);
     }
-    let newDiv = document.createElement('div');
+    const newDiv = document.createElement('div');
     newDiv.className = 'pixel';
     newBoard.appendChild(newDiv);
   }
-});
-
-newBoard.addEventListener('click', function (event) {
-  const pixel = event.target;
-  const itemColor = document.querySelector('.selected');
-  const color = itemColor.classList[1];
-  pixel.style.backgroundColor = color;
 });
