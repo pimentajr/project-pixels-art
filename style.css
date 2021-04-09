@@ -12,21 +12,19 @@ h1 {
   margin-bottom: 1.2em;
 }
 
-h3{
+h3 {
   text-align: center;
   font-size: 1.3em;
-  margin: .5em;
+  margin: 0.5em;
 }
 
 h5 {
   text-align: center;
-  margin: .1em;
+  margin: 0.1em;
   font-size: 1.1em;
 }
 
-table,
-tr,
-td {
+table, tr, td {
   border: #0e0d0d 1px solid;
 }
 
@@ -72,14 +70,14 @@ td {
   text-align: center;
 }
 
-input[type=number] {
-  border: 1px solid #000;
+input[ type = "number" ] {
+  border: 1px solid black;
   padding: 4px;
   text-align: center;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
-input[type=submit] {
+input[ type = "submit" ] {
   width: 100%;
   height: 42px;
   color: #fffbfe;
@@ -104,7 +102,7 @@ input[type=submit] {
   width: 34px;
   height: 34px;
   border: 1px solid black;
-  margin: .5em;
+  margin: 0.5em;
 }
 
 .color-selected {
@@ -116,7 +114,7 @@ input[type=submit] {
 }
 
 .black {
-  background-color: #000;
+  background-color: black;
 }
 
 .red {
@@ -128,7 +126,7 @@ input[type=submit] {
 }
 
 .orange {
-  background-color: #ff9900;
+  background-color: #f90;
 }
 
 .yellow {
