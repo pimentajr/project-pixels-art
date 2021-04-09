@@ -1,0 +1,29 @@
+.body {
+  background-color: antiquewhite;
+}
+
+#title {
+  font-family: cursive;
+}
+
+#color-palette{
+  width: 100%;
+}
+
+#color, #color-matriz, #table {
+  table-layout: fixed;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#color {
+  width: 25%;
+}
+
+#color-matriz {
+  width: 20%;
+}
+
+#table {
+  width: 100%;
+}
