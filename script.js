@@ -62,3 +62,15 @@ function clearBoard () {
     }
   })
 }
+function makeBoard () {
+  for (index5 = 0; index5 < 5; index5 += 1) {
+    let line2 = document.createElement('tr');
+    let pixelBoard = document.getElementById('pixel-board');
+    pixelBoard.appendChild(line2);
+    for (index6 = index6 < 5; index6 += 1) {
+      let colum2 = document.createElement('td')
+      colum2.className = 'pixel';
+      document.getElementById('pixel-board').appendChild(colum2);
+    }
+  }
+}
