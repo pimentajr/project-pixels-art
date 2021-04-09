@@ -6,9 +6,9 @@ window.onload = function () {
 const colors = ['black', 'red', 'blue', 'green'];
 const pixel = 5;
 const pixelBoard = document.querySelector('#pixel-board');
+const colorPalette = document.querySelector('#color-palette');
 
 function createPalette(colorTitle) {
-  const colorPalette = document.querySelector('#color-palette');
   for (let index = 0; index < colorTitle.length; index += 1) {
     const colorBox = document.createElement('div');
     colorBox.id = colorTitle[index];
@@ -35,6 +35,20 @@ function numberOfLines(lines) {
     createPixelLine(pixel);
   }
 }
+
+function colorSelection(originEvent) {
+  const colorSeleted = originEvent.target.id;
+  const classColorList = document.querySelectorAll('.color');
+
+  if (colorSeleted !== 'color-palette') {
+    for (let index = 0; index < classColorList.length; index += 1) {
+      classColorList[index].className = 'color';
+    }
+    originEvent.target.className = 'color selected';
+  }
+}
+
+colorPalette.addEventListener('click', colorSelection);
 
 createPalette(colors);
 numberOfLines(pixel);
