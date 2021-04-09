@@ -17,7 +17,7 @@ function generatePixels() {
 
   for (let index = 0; index < 5; index += 1) {
     const tr = document.createElement('tr');
-    for (let index = 0; index < 5; index += 1) {
+    for (let secondIndex = 0; secondIndex < 5; secondIndex += 1) {
       const td = document.createElement('td');
       const div = document.createElement('div');
       div.classList.add('pixel');
@@ -26,7 +26,6 @@ function generatePixels() {
     }
     table.appendChild(tr);
   }
-
 }
 
 generatePixels();
