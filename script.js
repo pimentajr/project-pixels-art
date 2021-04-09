@@ -1,3 +1,8 @@
+window.onload = function () {
+  const initialColor = document.querySelector('#black');
+  initialColor.className += ' selected';
+};
+
 const colors = ['black', 'red', 'blue', 'green'];
 const pixel = 5;
 const pixelBoard = document.querySelector('#pixel-board');
@@ -6,7 +11,8 @@ function createPalette(colorTitle) {
   const colorPalette = document.querySelector('#color-palette');
   for (let index = 0; index < colorTitle.length; index += 1) {
     const colorBox = document.createElement('div');
-    colorBox.className = `${colorTitle[index]} color`;
+    colorBox.id = colorTitle[index];
+    colorBox.className = 'color';
     colorBox.style.backgroundColor = colorTitle[index];
     colorPalette.appendChild(colorBox);
   }
