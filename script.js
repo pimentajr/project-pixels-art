@@ -15,31 +15,30 @@ function creatPallete() {
 }
 creatPallete();
 
-function pixelBoard() {
+function pixelBoard(num) {
   const pixelBoard = document.querySelector('#pixel-board');
 
-  for (let i = 0; i < 5; i += 1) {
-    const lines = document.createElement('div');
-    // lines.className = 'pixel';
-    pixelBoard.appendChild(lines);
+  for (let i = 0; i < num; i += 1) {
+    const columns = document.createElement('div');
+    pixelBoard.appendChild(columns);
 
-    for (let j = 0; j < 5; j += 1) {
-      const columns = document.createElement('div');
-      columns.className = 'pixel';
-      lines.appendChild(columns);
+    for (let j = 0; j < num; j += 1) {
+      const lines = document.createElement('div');
+      lines.className = 'pixel';
+      columns.appendChild(lines);
     }
   }
 }
-pixelBoard();
+pixelBoard(5);
 
 function addClassSelect() {
   const selectColor = document.querySelector('#color-palette')
   selectColor.addEventListener('click', (event) => {
     let select = document.querySelector('.selected');
     event.target.classList.add('selected');
-    if (select) {
+    if (event.target.classList == 'color selected') {
       select.classList.remove('selected');
-      select = document.querySelector('.selected');
+      event.target.classList.add('selected');
     }
   });
 }
@@ -64,3 +63,29 @@ function clearPixel() {
   });
 }
 clearPixel();
+
+// function createGrid() {
+//   const boardSize = document.querySelector('#board-size').value;
+//   const pixelCanvas = document.querySelector('#pixel-board');
+
+//   while (pixelCanvas.firstChild) {
+//     pixelCanvas.removeChild(pixelCanvas.firstChild);
+//   }
+  
+//   for (let i = 0; i < boardSize; i += 1) {
+//     let createLines = document.createElement('div');
+//     pixelCanvas.appendChild(createLines);
+    
+//     for (let j = 0; j < boardSize; j += 1) {
+//       let createColumns = document.createElement('div');
+//       createLines.appendChild(createColumns);
+//     }
+//   }
+// }
+// createGrid()
+
+// const sizePicker = document.querySelector('#size-picker');
+// sizePicker.addEventListener('submit', function(event) {
+//   event.preventDefault(); //Cancela o evento se for cancelável, sem parar a propagação do mesmo.
+//   createGrid();
+// });
