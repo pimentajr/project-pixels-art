@@ -1,8 +1,8 @@
-let pixelBoard = document.getElementById('pixel-board');
-let boardLength = 25;
+const pixelBoard = document.getElementById('pixel-board');
+const boardLength = 25;
 
 for (let index = 0; index < boardLength; index += 1) {
-  let pixelDiv = document.createElement('div');
+  const pixelDiv = document.createElement('div');
 
   pixelDiv.className = 'pixel';
   pixelDiv.style.backgroundColor = 'white';
