@@ -13,8 +13,14 @@ const differentColors = 4;
 for (let index = 1; index <= differentColors; index += 1) {
   const colorBox = document.createElement('div');
   colorBox.classList.add('color');
-  const maxColorValue = 16777215;
-  const randomColor = Math.floor(Math.random() * maxColorValue).toString(16);
+  const maxColorValue = 16777216;
+  const digits = 6;
+  let randomColor = Math.floor(Math.random() * maxColorValue).toString(16);
+  if (randomColor.length < digits) {
+    const zeroString = '0';
+    const diff = digits - randomColor.length;
+    randomColor = `${zeroString.repeat(diff)}${randomColor}`;
+  }
   colorBox.style.backgroundColor = `#${randomColor}`;
   colorPalette.appendChild(colorBox);
 }
@@ -50,6 +56,7 @@ colorPalette.addEventListener('click', switchColor);
 // 8.
 function printColorPixel(event) {
   const color = document.querySelector('.selected').style.backgroundColor;
-  event.target.style.backgroundColor = color;
+  let evento = event;
+  evento.target.style.backgroundColor = color;
 }
 pixelBoard.addEventListener('click', printColorPixel);
