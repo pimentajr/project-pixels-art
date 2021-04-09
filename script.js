@@ -1,6 +1,7 @@
 const colorPalette = document.querySelector('#color-palette');
 const colorBox = document.querySelectorAll('.color');
 const pixelBoard = document.querySelector('#pixel-board');
+const clearButton = document.querySelector('#clear-board');
 
 function primaryColors(colors) {
   for (let index = 0; index < colors.length; index += 1) {
@@ -30,6 +31,7 @@ function pixelsTable(width, height) {
 }
 
 pixelsTable(5, 5);
+const allPixels = document.querySelectorAll('.pixel');
 
 colorPalette.addEventListener('click', function (event) {
   for (let index = 0; index < colorBox.length; index += 1) {
@@ -39,7 +41,14 @@ colorPalette.addEventListener('click', function (event) {
 });
 
 pixelBoard.addEventListener('click', function (event) {
-  const colorSelected = document.querySelector('.selected');
-  const colorSelectedString = window.getComputedStyle(colorSelected, null).getPropertyValue("background-color");
-  event.target.style.backgroundColor = colorSelectedString;
+  const selected = document.querySelector('.selected');
+  const selectedString = window.getComputedStyle(selected, null).getPropertyValue('background-color');
+  const changeColor = event.target;
+  changeColor.style.backgroundColor = selectedString;
+});
+
+clearButton.addEventListener('click', function () {
+  for (let index = 0; index < allPixels.length; index += 1) {
+    allPixels[index].style.backgroundColor = 'white';
+  }
 });
