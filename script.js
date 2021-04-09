@@ -13,8 +13,8 @@ window.onload = function() {
   pixelBoard.addEventListener('click', function(event) {
     let selectedElement = document.querySelector('.selected');
     let color = selectedElement.classList[1];
-    if(event.target.classList[0] === 'color') {
-      event.target.className = 'color';
+    if(event.target.classList[0] === 'pixel') {
+      event.target.className = 'pixel color';
       event.target.classList.add(`${color}`);
     }
   });
