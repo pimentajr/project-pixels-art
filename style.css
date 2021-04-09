@@ -12,39 +12,27 @@
   width: 300px;
 }
 
-.black{
+.color {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#black{
   background-color:black;
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  border-style: solid;
-  border-width: 1px;
 }
-.rose{
+#rose{
   background-color: #F32F92;
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  border-style: solid;
-  border-width: 1px;
 }
 
-.blue{
+#blue{
   background-color:#03989E;
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  border-style: solid;
-  border-width: 1px;
 }
 
-.yellow{
+#yellow{
   background-color: #FFAA17;
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  border-style: solid;
-  border-width: 1px;
 }
 
 #pixel-board{
