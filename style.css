@@ -17,3 +17,15 @@
 #black{
     background-color: black;
 }
+.pixel{
+    border: 1px solid;
+    padding-bottom: 2%;
+    width: 2%;
+    display: inline-block;
+    background-color: white;
+    margin: -2px;
+  
+}
+br{
+    margin: -2px;
+}
