@@ -9,28 +9,32 @@ function add(father, son) {
 const { body } = document;
 const palette = document.querySelector('#color-palette');
 
-for (let i = 0; i < palette.childElementCount; i += 1) {
-  palette.children[i].className = 'color';
+for (let index = 0; index < palette.childElementCount; index += 1) {
+  palette.children[index].className = 'color';
 }
 
 const colors = document.querySelectorAll('.color');
 
 function randomColors() {
-  for (let i = 0; i < colors.length; i += 1) {
+  for (let index = 0; index < colors.length; index += 1) {
     const random = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
-    colors[i].style.background = random;
+    colors[index].style.background = random;
   }
   colors[0].style.background = 'black';
 }
 
-for (let i = 0; i < 5; i += 1) {
-  const pixelBoard = create('section');
-  pixelBoard.className = 'pixel-board';
-  add(body, pixelBoard);
+const mainContainer = create('container');
+mainContainer.id = 'pixel-board';
+add(body, mainContainer);
 
-  for (let j = 0; j < 5; j += 1) {
+for (let index = 0; index < 5; index += 1) {
+  const pixelBoard = create('section');
+  pixelBoard.className = 'pixel-vector';
+  add(mainContainer, pixelBoard);
+
+  for (let index2 = 0; index2 < 5; index2 += 1) {
     const pixels = create('div');
-    pixels.className = 'pixels';
+    pixels.className = 'pixel';
     add(pixelBoard, pixels);
   }
 }
