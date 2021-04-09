@@ -1,3 +1,4 @@
 window.onload=function(){
-    colorOnClik = document.querySelector('color').style.backgroundColor = "black"
+ let starBlack = document.getElementsById('black');
+ starBlack.classlist = ('color selected ');
 }
