@@ -1,0 +1,29 @@
+h1 {
+  text-align: center;
+}
+
+.color {
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 100px;
+  width: 200px;
+  inline-size: auto;
+  display:inline-block;
+}
+
+#blue {
+  margin-left: 920px;
+  background-color: blue;
+}
+
+#red {
+  background-color: red;
+}
+
+#green {
+  background-color: green;
+}
+
+#yellow {
+  background-color: yellow;
+}
