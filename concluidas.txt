@@ -1,0 +1,4 @@
+1 - Adicione à página o título "Paleta de Cores".
+2 - Adicione à página uma paleta de quatro cores distintas.
+3 - Adicione a cor preta como a primeira cor da paleta de cores.
+
