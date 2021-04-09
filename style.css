@@ -20,6 +20,8 @@
 
 #pixel-board{
   display: table;
+  width: 200px;
+  height: 200px;
 }
 .column {
   display: table-column;
