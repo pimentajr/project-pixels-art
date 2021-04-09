@@ -2,6 +2,8 @@ var actualMouseColor = "Black"
 const colorPallete = document.getElementById("color-pallete")
 const pixelBoard = document.getElementById("pixel-board")
 const palleteColors = document.getElementsByClassName("color");
+const pixels = document.getElementsByClassName("pixel")
+const button = document.getElementById("clear-board")
 
 for(let index = 0; index < palleteColors.length; index += 1){
 	if(index === 0){
@@ -19,8 +21,8 @@ function getColor(element){
 	if(pencil.parentNode === colorPallete){
 		actualMouseColor = color;
 		const actualSelected = document.querySelector(".selected");
-		actualSelected.classList.remove("selected")
-		pencil.classList.add("selected")
+		actualSelected.classList.remove("selected");
+		pencil.classList.add("selected");
 	}
 };
 
@@ -36,3 +38,12 @@ function paint(element){
 }
 
 addEventListener("click", paint);
+
+function clearBoard(){
+	for(let index = 0; index < pixels.length; index += 1){
+		pixels[index].style.backgroundColor = "white";
+	}
+} 
+
+button.addEventListener("click", clearBoard);
+
