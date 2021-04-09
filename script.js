@@ -12,7 +12,7 @@ function makePixelBoard(line, column) {
 }
 
 function makeColorPalette(colors) {
-  for(let index = 1; index < colors.length; index += 1) {
+  for (let index = 1; index < colors.length; index += 1) {
     const divColor = document.createElement('div');
     divColor.style.backgroundColor = colors[index];
     divColor.className = 'color';
@@ -23,7 +23,7 @@ function makeColorPalette(colors) {
 }
 
 window.onload = function () {
-  makeColorPalette(['white', 'black', 'red', 'green', 'blue']);  
+  makeColorPalette(['white', 'black', 'red', 'green', 'blue']);
   makePixelBoard(5, 5);
 };
 
@@ -36,9 +36,8 @@ document.querySelector('#color-palette').addEventListener('click', (event) => {
 
 document.querySelector('#pixel-board').addEventListener('click', (event) => {
   if (event.target.classList.contains('pixel')) {
-    let element = document.querySelector('.selected');
-    let color = element.style.backgroundColor;
-    console.log(element);
-    event.target.style.backgroundColor = color;
+    const color = document.querySelector('.selected').style.backgroundColor;
+    const styleOfElement = event.target.style;
+    styleOfElement.backgroundColor = color;
   }
-})
+});
