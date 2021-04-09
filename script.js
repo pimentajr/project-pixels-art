@@ -3,7 +3,7 @@ const firstSelectedColor = document.getElementById('black-box');
 firstSelectedColor.classList = ('color selected');
 
 // Seleciona a cor mudando a classe da div clicada
-function colorSelection(event) {
+function colorSelection() {
   const tableColor = document.querySelector('#color-palette');
   tableColor.addEventListener('click', (event) => {
     const actualColor = document.querySelector('.selected');
@@ -13,30 +13,34 @@ function colorSelection(event) {
 }
 colorSelection();
 
-// Pinta os pixels em branco com a cor selecionada
-function printBoard() {
+// Seleciona o pixel clicando nele, e se for um píxel e não a seção, chama o evento
+function selectPixel() {
   document.getElementById('pixel-board').addEventListener('click', (event) => {
     const printBox = event.target;
     if (printBox.id !== 'pixel-board') {
-      switch (document.querySelector('.selected').id) {
-      case 'black-box':
-        printBox.style.backgroundColor = 'black';
-        break;
-      case 'red-box':
-        printBox.style.backgroundColor = 'red';
-        break;
-      case 'green-box':
-        printBox.style.backgroundColor = 'green';
-        break;
-      case 'yellow-box':
-        printBox.style.backgroundColor = 'yellow';
-        break;
-      default:
-      }
+      printing(printBox)
     }
   });
 }
 printBoard();
+
+function printBox(printBox) {
+  switch (document.querySelector('.selected').id) {
+  case 'black-box':
+    printBox.style.backgroundColor = 'black';
+    break;
+  case 'red-box':
+    printBox.style.backgroundColor = 'red';
+    break;
+  case 'green-box':
+    printBox.style.backgroundColor = 'green';
+    break;
+  case 'yellow-box':
+    printBox.style.backgroundColor = 'yellow';
+    break;
+  default:
+  }
+}
 
 // Cria o botão limpar e insere na div
 function createButton() {
