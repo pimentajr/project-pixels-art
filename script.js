@@ -41,8 +41,8 @@ const size = document.querySelector('#board-size');
 
 button.addEventListener('click', function () {
   const value = size.value;
-  if (value === '') {
-    alert('Board inválido');
+  if (value === '' || value < 1) {
+    alert('Board inválido!');
   }
   board.remove();
   const newBoard = document.createElement('div');
