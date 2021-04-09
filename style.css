@@ -24,13 +24,14 @@
 }
 
 .pixel {
-   border-color: black;
-   border: 1px solid;
-   height: 41px;
-   width: 41px;
-   background-color: white;
+  border-color: black;
+  border: 1px solid;
+  height: 41px;
+  width: 41px;
+  background-color: white;
 }
 
 .table {
-   border-collapse: collapse;
+  border-collapse: collapse;
 }
+
