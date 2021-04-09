@@ -1,5 +1,6 @@
 *{
   margin: 0;
+  padding: 10px;
 }
 
 #title{
@@ -11,6 +12,14 @@
   width: 300px;
 }
 
+.black{
+  background-color:black;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border-style: solid;
+  border-width: 1px;
+}
 .rose{
   background-color: #F32F92;
   display: inline-block;
@@ -38,11 +47,20 @@
   border-width: 1px;
 }
 
-.black{
-  background-color: #242424;
+#pixel-board{
   display: inline-block;
-  height: 50px;
-  width: 50px;
+  padding-left: 12px;
+  padding-top: 12px;
+  background-color: blue;
+  width: 330px;
+  height:330px;
+}
+
+.pixel{
+  display: inline-block;
+  background-color: white;
+  height: 40px;
+  width: 40px;
   border-style: solid;
   border-width: 1px;
-}
+ }
