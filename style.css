@@ -3,30 +3,28 @@
 }
 
 body {
-    font-family: sans-serif;
-    background-color: #eee;
+  font-family: sans-serif;
+  background-color: #eee;
 }
 
 .title_container {
-    color: black;
-    font-size: large;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    display: block;
+  color: black;
+  font-size: large;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  display: block;
 }
-.pallet_container {
 
-}
 .color {
-    height: 70px;
-    width: 70px;
-    margin: 3px;
-    display: inline-block;
-    text-align: center;
-    border-style: solid;
-    border-width: 1px;
+  height: 70px;
+  width: 70px;
+  margin: 3px;
+  display: inline-block;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
 }
-.interactive_container {
-    display: block;
 
+.interactive_container {
+  display: block;
 }
