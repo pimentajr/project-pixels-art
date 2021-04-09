@@ -3,7 +3,7 @@ const firstSelectedColor = document.getElementById('black-box');
 firstSelectedColor.classList = ('color selected');
 
 // Seleciona a cor mudando a classe da div clicada
-function colorSelection() {
+function colorSelection(event) {
   const tableColor = document.querySelector('#color-palette');
   tableColor.addEventListener('click', (event) => {
     const actualColor = document.querySelector('.selected');
