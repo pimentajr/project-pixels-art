@@ -18,14 +18,16 @@
   border-width: 1px;
 }
 
-#pixel-board{
+#pixel-board {
   display: table;
   width: 200px;
   height: 200px;
 }
+
 .column {
   display: table-column;
 }
+
 .pixel {
   display: table-cell;
   width: 40px;
