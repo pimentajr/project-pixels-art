@@ -26,3 +26,12 @@ board.addEventListener('click', function (event) {
   let color = itemColor.classList[1];
   pixel.style.backgroundColor = color;
 });
+
+let clear = document.querySelector('#clear-board');
+
+clear.addEventListener('click', function () {
+  let pixels = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixels; i += 1) {
+    pixels[i].className = 'pixel white';
+  }
+});
