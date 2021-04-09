@@ -17,7 +17,13 @@
         <div class="color grey"></div>
       </div>
 
-      <input min="5" max="50" id="board-size" type="number" />
+      <input
+        min="5"
+        max="50"
+        id="board-size"
+        type="number"
+        onkeypress="return event.charCode >= 49 && event.charCode <= 57"
+      />
       <button id="generate-board">VQV</button>
 
       <button id="clear-board">Limpar</button>

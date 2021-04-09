@@ -41,7 +41,7 @@ const size = document.querySelector('#board-size');
 
 button.addEventListener('click', function () {
   const value = size.value;
-  if (value === '' || value < 1) {
+  if (value === '' || value < 6 || value > 51) {
     alert('Board inválido!');
   }
   board.remove();
