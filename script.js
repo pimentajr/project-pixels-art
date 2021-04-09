@@ -34,9 +34,9 @@ black.className = 'color black selected';
 paleta.addEventListener('click', function (event) {
   const color = event.target;
   black.classList.remove('selected');
-  green.classList.remove('selected');
-  grey.classList.remove('selected');
-  magenta.classList.remove('selected');
+  color2.classList.remove('selected');
+  color3.classList.remove('selected');
+  color4.classList.remove('selected');
   const colorName = color.classList[1];
   color.className = `color ${colorName} selected`;
   return colorName;
