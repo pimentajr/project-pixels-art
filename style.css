@@ -1,0 +1,25 @@
+#header {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background-color: #F8F8FF;
+  background-size: cover;
+}
+
+#collor-palette {
+  width: 410px;
+  position: relative;
+  margin: 120px auto;
+}
+.color {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  
+}
