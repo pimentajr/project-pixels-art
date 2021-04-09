@@ -1,15 +1,20 @@
 function createTableColor(colorPixel) {
-  for (index = 0; index < colorPixel; index += 1) {
-    const colorPallete = document.getElementById('color-palette');
-    const tableColor = document.createElement('div');
+  for (let index = 0; index < colorPixel; index += 1) {
+    let colorPallete = document.getElementById('color-palette');
+    let tableColor = document.createElement('div');
     colorPallete.appendChild(tableColor);
     tableColor.className = 'color';
-  }
-  colorPicker = document.getElementsByClassName('color');
+  }  
+}
+
+  createTableColor(4);
+
+function boxColor() {
+  let colorPicker = document.getElementsByClassName('color');
   colorPicker[0].style.backgroundColor = 'black';
   colorPicker[1].style.backgroundColor = '#edf5e1';
   colorPicker[2].style.backgroundColor = '#5cdb95';
-  colorPicker[3].style.backgroundColor = '#379663';
-
+  colorPicker[3].style.backgroundColor = '#379663'; 
 }
-createTableColor(4);
+
+  boxColor();
