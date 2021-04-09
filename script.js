@@ -18,8 +18,8 @@ pixelBoardSquare.addEventListener('click', (event2) => {
 
 const buttonClearColor = document.querySelector('#clear-board');
 buttonClearColor.addEventListener('click', () => {
-  const pixelsColored = document.querySelectorAll('.pixel')
+  const pixelsColored = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixelsColored.length; index += 1) {
-    pixelsColored[index].style.backgroundColor = 'white';
-}
+    pixelsColored[index].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
 });
