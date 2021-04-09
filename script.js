@@ -49,9 +49,20 @@ function removeSelected() {
   }
 }
 
-colorPalette.addEventListener('click', function(event) {
+function selectColor(event) {
   if (event.target.id !== 'color-palette') {
     removeSelected();
     event.target.classList.add('selected');
   }
-});
+}
+
+colorPalette.addEventListener('click', selectColor);
+
+function paintPixel(event) {
+  if (event.target.className === 'pixel') {
+    let selected = document.querySelector('.selected');
+    event.target.style.backgroundColor = selected.style.backgroundColor;
+  }
+}
+
+pixelBoard.addEventListener('click', paintPixel);
