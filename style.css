@@ -2,5 +2,19 @@
   height: 100px;
   width: 100px;
   display: inline-block;
-  border: 1px solid black;  
+  border: 1px solid black;
+}
+
+#pixel-board td {
+  height: 100px;
+  width: 100px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid black;
+}
+
+.pixels {
+  
+  width: 25px;
+  border: 1px solid black;
 }
