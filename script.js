@@ -23,6 +23,8 @@ for (let lineIndex = 0; lineIndex < lines; lineIndex += 1) {
   }
 }
 
+pixelBoard.style.maxWidth = `${(columns * 40) + (columns * 2)}px`;
+
 function selectColor(event) {
   const selectedColor = document.querySelector('.selected');
   selectedColor.classList.remove('selected');
@@ -38,3 +40,15 @@ function paintPixel(event) {
 }
 
 pixelBoard.addEventListener('click', paintPixel);
+
+const resetButton = document.querySelector('#btn-reset');
+function resetBoard() {
+  for (let lineIndex = 0; lineIndex < lines; lineIndex += 1) {
+    const currentLine = pixelBoard.childNodes[lineIndex];
+    for (let columnIndex = 0; columnIndex < columns; columnIndex += 1) {
+      currentLine.childNodes[columnIndex].style.backgroundColor = 'white';
+    }
+  }
+}
+
+resetButton.addEventListener('click', resetBoard);
