@@ -38,17 +38,29 @@ window.onload = function () {
   }
 
   function colorPixel() {
-    let pixelCell = document.getElementsByClassName('pixel');
+    const pixelCell = document.getElementsByClassName('pixel');
 
     for (let i = 0; i < pixelCell.length; i += 1) {
       pixelCell[i].addEventListener('click', function () {
-        let selectedColor = document.querySelector('.selected');
+        const selectedColor = document.querySelector('.selected');
         pixelCell[i].style.backgroundColor = selectedColor.style.backgroundColor;
       });
     }
   }
 
+  function clearButton() {
+    const button = document.getElementById('clear-board');
+    const pixelCell = document.getElementsByClassName('pixel');
+
+    button.addEventListener('click', function () {
+      for (let i = 0; i < pixelCell.length; i += 1) {
+        pixelCell[i].style.backgroundColor = 'white';
+      }
+    });
+  }
+
   createBoard();
   colorSelect();
   colorPixel();
+  clearButton();
 };
