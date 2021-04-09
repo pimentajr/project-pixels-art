@@ -9,3 +9,19 @@
     width: 50px;
     height: 50px;
 }
+
+.black {
+    background: #000;
+}
+
+.orange {
+    background: #ffb52c;
+}
+
+.pink {
+    background: #ff7b91;
+}
+
+.green {
+    background: #008300;
+}
