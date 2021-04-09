@@ -8,6 +8,7 @@ for (let index = 1; index <= (boardHeight * boardWidth); index += 1) {
   board.appendChild(square);
 }
 
-const colorButton = document.getElementsByClassName('color');
-
-console.log(colorButton);
+function selectColor() {
+  if (class = '')
+  alert('Fui clicado!');
+}
