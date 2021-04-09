@@ -1,0 +1,44 @@
+body {
+    align-items: center;
+    background-color: rgba(36, 33, 30, 0.479);
+    color: white;
+    display: flex;
+    flex-flow: column wrap;
+    font-family: Montserrat, sans-serif;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+#color-palette {
+    display: flex;
+    flex-flow: row wrap;
+} 
+#color-palette li {
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+    height: 80px;
+    justify-content: center;
+    margin: 2px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.25s ease;
+    width: 80px;
+    border: 100px black;
+}
+#color-palette #black {
+    background-color: #000000;
+}
+#color-palette #red {
+    background-color: #c90606bb;
+}
+#color-palette #yellow {
+    background-color: #ffed4ae7;
+    color: #333;
+}
+#color-palette  #blue {
+    background-color: #4070f3;
+    color: #333;
+}
