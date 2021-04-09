@@ -1,6 +1,6 @@
 const pixelBoard = document.getElementById('pixel-board');
 const colorPalette = document.getElementById('color-palette');
-var colorToPaint = 'black';
+var colorToPaint = document.getElementsByClassName('selected')[0];
 function createPixels(line) {
   for (let column = 1; column <= 5; column += 1) {
     const pixel = document.createElement('div');
@@ -19,5 +19,13 @@ function createRows() {
 createRows();
 
 colorPalette.addEventListener('click', function(event) {
-  colorToPaint  = event.target.style.backgroundColor;
+  colorToPaint.classList.remove('selected');
+  colorToPaint = event.target;
+  colorToPaint.classList.add('selected');
+})
+
+pixelBoard.addEventListener('click', function(event) {
+  console.log(colorToPaint);
+  console.log(event.target);
+  event.target.style.backgroundColor = colorToPaint.style.backgroundColor;
 })
