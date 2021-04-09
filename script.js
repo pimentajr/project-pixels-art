@@ -7,6 +7,10 @@ const inputBoardSize = document.getElementById('board-size');
 const buttonGenerateBoard = document.getElementById('generate-board');
 const pixelBoard = document.getElementById('pixel-board');
 
+/*
+  Ideia de gerar as cores aleatorias do seguinte link.
+  Source: https://stackoverflow.com/questions/58325771/how-to-generate-random-hex-string-in-javascript
+*/
 function generateRandomHexColor() {
   const array = [...Array(6)];
   const hexArray = array.map(() => (Math.floor(Math.random() * 16).toString(16)));
