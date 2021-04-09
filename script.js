@@ -3,6 +3,25 @@ const colorPalette = document.getElementById('color-palette');
 const clearBtn = document.getElementById('clear-board');
 const addBtn = document.getElementById('generate-board');
 let colorToPaint = document.getElementsByClassName('selected')[0];
+
+function randomColor(randomNumber, squareToPaint) {
+  const selectedSquareToPaint = document.getElementsByClassName('color')[squareToPaint];
+  if (randomNumber === 0) selectedSquareToPaint.classList.add('red');
+  if (randomNumber === 1) selectedSquareToPaint.classList.add('green');
+  if (randomNumber === 2) selectedSquareToPaint.classList.add('blue');
+}
+
+function generateRandomNumber() {
+  return Math.floor(Math.random() * 3);
+}
+
+function generateColorPalette() {
+  for (let squareToPaint = 1; squareToPaint <= 3; squareToPaint += 1) {
+    const randomNumber = generateRandomNumber();
+    randomColor(randomNumber, squareToPaint);
+  }
+}
+
 function createPixels(line, diagonal) {
   for (let column = 1; column <= diagonal; column += 1) {
     const pixel = document.createElement('div');
@@ -19,7 +38,9 @@ function createRows(diagonal) {
     createPixels(line, diagonal);
   }
 }
+
 createRows(5);
+generateColorPalette();
 
 function deletePixelBoard() {
   while (pixelBoard.firstChild) {
@@ -65,7 +86,6 @@ function verifyIfInputIsWithinRange(inputTest) {
   let diagonal = parseInt(inputTest, 10);
   if (diagonal < 5) diagonal = 5;
   if (diagonal > 50) diagonal = 50;
-  console.log(diagonal);
   makeNewPixelBoard(diagonal);
 }
 function verifyIfInputIsEmpty(inputTest) {
