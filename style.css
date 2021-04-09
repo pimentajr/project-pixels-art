@@ -3,10 +3,9 @@
 }
 
 #color-palette {    
-  width: 420px;
+  width: 240px;  
   margin: auto;
   padding-top: 30px;
-
 }
 
 .colorBoxDimensions {
@@ -21,24 +20,12 @@
   background-color: black;  
 }
 
-#red {
-  background-color: red;
-}
-
 #blue {
   background-color: blue;
 }
 
-#orange {
-  background-color: orange;
-}
-
 #yellow {
   background-color: yellow;
-}
-
-#green {
-  background-color: green;
 }
 
 #violet {
