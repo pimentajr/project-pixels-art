@@ -16,3 +16,6 @@ for (let index = 1; index <= differentColors; index += 1) {
   colorBox.style.backgroundColor = `#${randomColor}`;
   colorPalette.appendChild(colorBox);
 }
+
+const firstColor = document.querySelector('.color');
+firstColor.style.backgroundColor = 'black';
