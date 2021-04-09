@@ -19,8 +19,6 @@ h1 {
 .pixel-matrix {
   margin: 50px auto;
   border-collapse: collapse;
-  width: 400px;
-  height: 400px;
 }
 
 #color-palette {
