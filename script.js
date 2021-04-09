@@ -27,8 +27,6 @@ for (let index = 0; index < 5; index += 1) {
 
 function paintPixelBoard(color) {
   const initialcolor = document.querySelectorAll('.pixel');
-  let color = 'black'
-  color.className = 'selected'
   for (let index = 0; index < initialcolor.length; index += 1) {
     initialcolor[index].addEventListener('click', colorblack);
     function colorblack() {
@@ -36,4 +34,5 @@ function paintPixelBoard(color) {
     }
   }
 }
-
+localStorage.setItem('color','black')
+paintPixelBoard(localStorage.getItem('color'))
