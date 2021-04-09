@@ -62,3 +62,16 @@ function selectColor() {
 }
 
 selectColor();
+
+function paintPixel() {
+  const pixelDivsArray = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixelDivsArray.length; index += 1) {
+    const pixel = pixelDivsArray[index];
+    pixel.addEventListener('click', () => {
+      const selectedColor = document.querySelector('.selected').style.backgroundColor;
+      pixel.style.backgroundColor = selectedColor;
+    });
+  }
+}
+
+paintPixel();
