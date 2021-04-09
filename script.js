@@ -11,7 +11,7 @@ for (let index = 0; index < 5; index += 1) {
   for (let jndex = 0; jndex < 5; jndex += 1) {
     const makeTd = document.createElement('td');
     makeTr.appendChild(makeTd);
-    makeTd.className = 'pixel branco';
+    makeTd.className = 'pixel';
   }
 }
 // npm run lint
