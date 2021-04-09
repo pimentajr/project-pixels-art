@@ -34,3 +34,14 @@ function colorizePixel(event) {
 
   event.target.style.backgroundColor = color;
 }
+
+
+// requisito 9
+let button = document.querySelector('#clear-board');
+button.addEventListener('click', clearBoard);
+
+function clearBoard(event) {
+  for (const pixel of pixels) {
+    pixel.style.backgroundColor = 'white';
+  }
+}
