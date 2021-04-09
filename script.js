@@ -66,10 +66,10 @@ function choiceSizeOfPixelBox() {
   const rstBtn = document.getElementById('generate-board');
   rstBtn.addEventListener('click', () => {
     const pixelBoard = document.getElementById(pixelIdentification);
-    if(input.value === '') {
-      alert('Board Inválido!')
+    if (input.value === '') {
+      alert('Board Inválido!');
     } else if (input.value < 5) {
-      input.value =5;
+      input.value = 5;
     } else if (input.value > 50) {
       input.value = 50;
     }
@@ -82,7 +82,7 @@ choiceSizeOfPixelBox();
 function resetColorsButton() {
   const resetButton = document.createElement('button');
   const interfaceHtml = document.getElementById('userPainel');
-  interfaceHtml.appendChild(resetButton)
+  interfaceHtml.appendChild(resetButton);
   resetButton.innerHTML = 'Limpar';
   resetButton.id = 'clear-board';
   resetButton.addEventListener('click', () => {
@@ -92,16 +92,16 @@ function resetColorsButton() {
     }
   });
 }
-resetColorsButton()
+resetColorsButton();
 
 function randomColor() {
   const paletteColor = document.getElementsByClassName('color');
   for (let index = 1; index < paletteColor.length; index += 1) {
-  let r = parseInt(Math.random() * 255);
-  let g = parseInt(Math.random() * 255);
-  let b = parseInt(Math.random() * 255);
+    const r = parseInt(Math.random() * 255, 10);
+    const g = parseInt(Math.random() * 255, 10);
+    const b = parseInt(Math.random() * 255, 10);
 
-  paletteColor[index].style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
+    paletteColor[index].style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
   }
 }
 randomColor();
