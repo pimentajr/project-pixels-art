@@ -1,4 +1,4 @@
-window.onload=function(){
- let starBlack = document.getElementsById('black');
- starBlack.classlist = ('color selected ');
+let corPincel = String;
+window.onload = function(){
+  corPincel = document.getElementsByClassName('color').select("background-color=black");
 }
