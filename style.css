@@ -5,16 +5,21 @@
 
 #cor1 {
   background-color: black;
+  border: 1px solid black;
 }
 
 #cor2 {
   background-color: orange;
+  border: 1px solid black;
 }
 
 #cor3 {
   background-color: red;
+  border: 1px solid black;
 }
 
 #cor4 {
   background-color: brown;
+  border: 1px solid black;
 }
+
