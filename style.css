@@ -1,0 +1,19 @@
+.color{
+    border: 1px solid;
+    height: 0;
+    padding-bottom: 2%;
+    width: 2%;
+    display: inline-block;
+}
+#red{
+    background-color: red;
+}
+#green{
+    background-color: green;
+}
+#blue{
+    background-color: blue;
+}
+#black{
+    background-color: black;
+}
