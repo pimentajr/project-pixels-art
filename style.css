@@ -1,3 +1,29 @@
 h1 {
   text-align: center;
 }
+
+.color {
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.cor1 {
+  background-color: blue;
+}
+
+.cor2 {
+  background-color: red;
+}
+
+.cor3 {
+  background-color: green;
+}
+
+.cor4 {
+  background-color: yellow;
+}
