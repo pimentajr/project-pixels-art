@@ -4,18 +4,28 @@
   display: inline-block;
   border: solid black 1px;
 }
+
+
 .black {
   background-color: black;
 }
+
+
 .blue {
   background-color: blue;
 }
+
+
 .red {
   background-color: red;
 }
+
+
 .yellow {
   background-color: yellow;
 }
+
+
 .pixel {
   display: inline-block;
   background-color: white;
@@ -26,6 +36,8 @@
   margin-left: 5px;
   border: solid black 1px;
 }
+
+
 #pixel-board {
     border: solid black 3px;
     width: 260px;
