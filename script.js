@@ -41,3 +41,11 @@ document.querySelector('#pixel-board').addEventListener('click', (event) => {
     styleOfElement.backgroundColor = color;
   }
 });
+
+document.querySelector('#clear-board').addEventListener('click', () => {
+  const pixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    const pixel = pixels[index];
+    pixel.style.backgroundColor = 'white';
+  }
+});
