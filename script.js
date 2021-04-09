@@ -1,8 +1,8 @@
-let colors = document.querySelectorAll('.color');
-let color1 = document.querySelectorAll('.color')[0];
-let color2 = document.querySelectorAll('.color')[1];
-let color3 = document.querySelectorAll('.color')[2];
-let color4 = document.querySelectorAll('.color')[3];
+//let colors = document.querySelectorAll('.color');
+const color1 = document.querySelectorAll('.color')[0];
+const color2 = document.querySelectorAll('.color')[1];
+const color3 = document.querySelectorAll('.color')[2];
+const color4 = document.querySelectorAll('.color')[3];
 color1.style.backgroundColor = 'black';
 color2.style.backgroundColor = 'purple';
 color3.style.backgroundColor = 'gold';
