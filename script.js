@@ -4,13 +4,14 @@ function colorPallet(color) {
   spanPallet.className = 'color';
   spanBlock.appendChild(spanPallet);
   spanPallet.style.backgroundColor = color;
+  const firstColor = document.querySelector('.color');
+  firstColor.classList.add(['selected']);
 }
 colorPallet('black');
 colorPallet('red');
 colorPallet('green');
 colorPallet('blue');
-let firstColor = document.querySelector('.color')
-firstColor.classList.add(['selected'])
+
 
 function pixelBoard(lines) {
   const divPixel = document.createElement('div');
