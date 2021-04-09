@@ -14,7 +14,7 @@ createDiv(25);
 
 let selectedColorPosition = document.querySelectorAll('selected');
 
-selectedColorPosition.addEventListener('click', function() {
+selectedColorPosition.addEventListener('click', function(event) {
   selectedColorPosition[0].classList.remove('selected');
   event.target.className = 'selected';
 })
