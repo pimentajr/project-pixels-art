@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 header {
   height: 110px;
 }
@@ -46,8 +52,8 @@ h1:hover:after {
 
 #color-palette ul li {
   margin: 0 auto;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   display: inline-block;
   border: solid 1px black;
   transition: 0.6s;
@@ -71,27 +77,27 @@ h1:hover:after {
 
 #color-palette ul li:active {
   transform: scale(0.9);
-  background-color: white;
   transition: 0.1s;
 }
 
 #pixel-board table {
   margin: 20px auto;
-  background-color: black;
+  background-color: white;
 }
 
 #pixel-board tr td {
   padding: 0;
-  height: 50px;
-  width: 50px;
-  background-color: black;
+  height: 40px;
+  width: 40px;
+  background-color: white;
 }
 
 #pixel-board tr td div {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   background-color: white;
   transition: 0.6s;
+  border: solid 1px black;
 }
 
 #pixel-board tr td div:active {
