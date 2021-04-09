@@ -5,15 +5,15 @@ color[2].style.backgroundColor = 'yellow';
 color[3].style.backgroundColor = 'lightblue';
 
 window.onload = function () {
-  function createBoard() {
+  function createBoard(size) {
     const pixelTable = document.getElementById('pixel-board');
 
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < size; i += 1) {
       const pixelRow = document.createElement('div');
       pixelRow.className = 'pixel-row';
       pixelTable.appendChild(pixelRow);
 
-      for (let j = 0; j < 5; j += 1) {
+      for (let j = 0; j < size; j += 1) {
         const pixelCell = document.createElement('div');
         pixelCell.className = 'pixel';
         pixelRow.appendChild(pixelCell);
@@ -59,8 +59,27 @@ window.onload = function () {
     });
   }
 
-  createBoard();
+  function createInputBoard() {
+    const pixelTable = document.getElementById('pixel-board');
+    let input = document.getElementById('board-size');
+    let button = document.getElementById('generate-board');
+
+    button.addEventListener('click', function () {
+      if (input.value > 0) {
+        if (input.value >= 5 && input.value <= 50) {
+          pixelTable.innerHTML = '';
+          createBoard(input.value);
+        }
+      } else {
+        alert('Board inválido!');
+      }
+      
+    })
+  }
+
+  createBoard(5);
   colorSelect();
   colorPixel();
   clearButton();
+  createInputBoard()
 };
