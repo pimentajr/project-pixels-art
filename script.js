@@ -1,28 +1,42 @@
 function handleColorSelect(event) {
-  console.log('fui clicado', event.target);
-  let colorSelected = document.getElementsByClassName('selected')[0];
+  const colorSelected = document.getElementsByClassName('selected')[0];
   colorSelected.classList.remove('selected');
   event.target.classList.add('selected');
 }
 
-let arrayColors = document.getElementsByClassName('color');
+const arrayColors = document.getElementsByClassName('color');
 console.log(arrayColors);
 for (let i = 0; i < arrayColors.length; i += 1) {
-  let currentColorElement = arrayColors[i];
+  const currentColorElement = arrayColors[i];
   currentColorElement.addEventListener('click', handleColorSelect);
 }
 
 function handlePixelSelected(event) {
-  console.log('fui clicado', event.target);
-  let colorSelected = document.getElementsByClassName('selected')[0];
-  let compStyles = window.getComputedStyle(colorSelected);
-  let backgroundColor = compStyles.getPropertyValue('background-color');
+  const colorSelected = document.getElementsByClassName('selected')[0];
+  const compStyles = window.getComputedStyle(colorSelected);
+  const backgroundColor = compStyles.getPropertyValue('background-color');
   event.target.style.backgroundColor = backgroundColor;
 }
 
-let arrayPixel = document.getElementsByClassName('pixel');
+const arrayPixel = document.getElementsByClassName('pixel');
 console.log(arrayPixel);
 for (let i = 0; i < arrayPixel.length; i += 1) {
-  let currentPixelElement = arrayPixel[i];
+  const currentPixelElement = arrayPixel[i];
   currentPixelElement.addEventListener('click', handlePixelSelected);
+}
+
+const button = document.createElement('button');
+const buttonContainer = document.getElementById('button-container');
+buttonContainer.appendChild(button);
+button.setAttribute('id', 'clear-board');
+button.innerText = 'Limpar';
+button.addEventListener('click', clean);
+
+function clean(event) {
+  const pixelColored = document.querySelectorAll('.pixel');
+  //if (pixelColored tiver uma classe de background color ){
+  // troca o background para branco
+  //}
+  console.log(pixelColored);
+  event.pixelColored.style.backgroundColor = 'white';
 }
