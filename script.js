@@ -13,3 +13,5 @@ function setClassColor() {
   const classColor = document.querySelector('.black');
   classColor.classList.add('selected');
 }
+
+setClassColor();
