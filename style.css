@@ -1,0 +1,61 @@
+/* resoluçao 1366 x 768 */
+body {
+  text-align:center;
+  margin: 0;
+}
+
+.pallete-wrapper{
+  display:inline;
+  margin:0;
+  text-align: center;;
+}
+
+ul#color-pallete {
+  list-style-type: none;
+  display:inline-block;
+  padding-inline-start:0;
+}
+
+li.color {
+  display:inline-block;
+  border: black solid 1px;
+  padding: 25px;
+}
+
+.black {
+  background-color: black;
+}
+
+.yellow {
+  background-color:yellow;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.table-wrapper {
+  text-align: center;
+  margin:0;
+}
+
+#pixel-board {
+  display: inline-block;
+  padding: 5px;
+}
+.tr {
+  display: table-row;
+  padding: 10px;
+}
+.pixel {
+  display: table-cell;
+  width: 50px;
+  height: 50px;
+  border: black solid 1px;
+  margin: 5px;
+  background-color:white;
+}
