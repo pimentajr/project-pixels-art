@@ -26,8 +26,8 @@
 .pixel {
    border-color: black;
    border: 1px solid;
-   height: 40px;
-   width: 40px;
+   height: 37px;
+   width: 37px;
    border-collapse: collapse;
    background-color: white;
 }
