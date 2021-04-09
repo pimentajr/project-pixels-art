@@ -15,3 +15,8 @@ function setClassColor() {
 }
 
 setClassColor();
+
+const setClassAll = document.getElementById('#color-pelette');
+function setColor () {
+  setClassColor.classList
+}
