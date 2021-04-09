@@ -10,3 +10,18 @@ li {
   border-radius: 3px;
   border: 1px solid black;
 }
+
+#pixel-board {
+  display: table;
+}
+
+.line {
+  display: table-row;
+}
+
+.pixel {
+  display: table-cell;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
