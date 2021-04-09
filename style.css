@@ -17,22 +17,22 @@ nav {
   list-style: none;
 }
 
-#color-pallete li {
+#color-palette li{
   display: inline;
   width: 25px;
   height: 25px;
   color: white;
 }
 
-/* .color {
+.color {
 
-} */
+}
 
 #black {
   background-color: black;
 }
 
-#red {
+#red { 
   background-color: red;
 }
 
