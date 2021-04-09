@@ -1,6 +1,11 @@
 *{
 	margin: 0;
+	padding: 0;
 	text-align: center;
+}
+
+#board-creation {
+	margin: 50px 0px;
 }
 
 .color {
@@ -23,17 +28,28 @@
 	height: 40px;
 	width: 40px;
 	background-color: white;
+	text-align: center;
+	margin-bottom: -5px;
+	margin-right: -1px;
+}
+
+.pixelOld {
+	margin-bottom: -5px;
+	margin-right: -4px;
+	margin-left: -0px;
 }
 
 #pixel-board {
-	border: 3px blue solid;
-	padding: 10px;
-	border-radius: 5px;
 	margin-left: auto;
 	margin-right: auto;
-	height: 226px;
-	width: 226px;
 	text-align: center;
+}
+
+main {
+	position: relative;
+	/* background-color: blueviolet; */
+	height: 500px;
+	/* background-color: brown; */
 }
 
 #clear-board {
