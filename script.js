@@ -1,7 +1,7 @@
 const arrayColors = ['aqua', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'orange', 'purple', 'red', 'silver', 'teal', 'yellow', 'magenta', 'salmon'];
 
 function getRandomColors(colors) {
-  customElements randomColor = colors[Math.floor((Math.random() * colors.length))];
+  const randomColor = colors[Math.floor((Math.random() * colors.length))];
   return randomColor;
 }
 
