@@ -7,3 +7,7 @@ for (let index = 1; index <= (boardHeight * boardWidth); index += 1) {
   square.classList.add('pixel');
   board.appendChild(square);
 }
+
+const colorButton = document.getElementsByClassName('color');
+
+console.log(colorButton);
