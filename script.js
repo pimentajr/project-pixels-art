@@ -25,12 +25,15 @@ for (let index = 0; index < 5; index += 1) {
   pixelBoard('#lines_5');
 }
 
-function paintPixelBoard() {
-  const initialcolor = document.querySelectorAll('.pixel')
+function paintPixelBoard(color) {
+  const initialcolor = document.querySelectorAll('.pixel');
+  let color = 'black'
+  color.className = 'selected'
   for (let index = 0; index < initialcolor.length; index += 1) {
-    initialcolor[index].addEventListener('click', function () {
-      initialcolor[index].style.backgroundColor = 'black'
-    })
+    initialcolor[index].addEventListener('click', colorblack);
+    function colorblack() {
+      initialcolor[index].style.backgroundColor = color;
+    }
   }
 }
-paintPixelBoard()
+
