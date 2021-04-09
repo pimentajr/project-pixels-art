@@ -5,22 +5,21 @@ firstSelectedColor.classList = ('color selected');
 // Seleciona a cor mudando a classe da div clicada
 function colorSelection() {
   const tableColor = document.querySelector('#color-palette');
-  function selectingNewColor(evnt) {
+  function selectingNewColor(event) {
     const actualColor = document.querySelector('.selected');
     actualColor.className = 'color';
-    evnt.target.className = 'color selected';
+    event.target.className = 'color selected';
   }
-  tableColor.addEventListener('click', selectingNewColor);  
+  tableColor.addEventListener('click', selectingNewColor);
 }
 colorSelection();
 
 // Pinta os pixels em branco com a cor selecionada
 function printBoard() {
   const pixelBoard = document.getElementById('pixel-board');
-  pixelBoard.addEventListener('click', function(evnt) {
-    const selectedDiv = document.querySelector('.selected').id;
-    const printBox = evnt.target;
-    switch (selectedDiv) {
+  pixelBoard.addEventListener('click', function(event) {
+    const printBox = event.target;
+    switch (document.querySelector('.selected').id) {
       case 'black-box':
         printBox.style.backgroundColor = 'black';
         break;
@@ -32,7 +31,6 @@ function printBoard() {
         break;
       case 'yellow-box':
         printBox.style.backgroundColor = 'yellow';
-        break;
     }
   })
 }
@@ -43,7 +41,7 @@ function createButton() {
   let clearButton = document.createElement('input');
   clearButton.style.margin = '20px 120px' ;
   clearButton.id = 'clear-board';
-  clearButton.value = '\'Limpar\'';
+  clearButton.innerHTML = 'Limpar';
   clearButton.type = 'button';
   let buttonDiv = document.getElementById('button');
   buttonDiv.appendChild(clearButton);
@@ -61,3 +59,7 @@ function buttonAction() {
   })
 }
 buttonAction();
+
+xco.addEventListener('click', function() {
+  sasdsadadadada
+})
