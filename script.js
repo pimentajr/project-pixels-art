@@ -63,10 +63,8 @@ function makeNewPixelBoard(diagonal) {
 
 function verifyIfInputIsWithinRange(inputTest) {
   const diagonal = parseInt(inputTest, 10);
-  if (diagonal < 5 || diagonal > 50) {
-    alert('Por favor coloque um número entre 5 e 50');
-    return;
-  }
+  if (diagonal < 5) diagonal = 5;
+  if (diagonal > 50) diagonal = 50;
   makeNewPixelBoard(diagonal);
 }
 function verifyIfInputIsEmpty(inputTest) {
