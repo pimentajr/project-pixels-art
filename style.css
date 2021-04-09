@@ -38,6 +38,8 @@ h1 {
 
 #pixel-board {
   margin-left: 260px;
+  width: 426px;
+  height: 1px;
 }
 
 .container {
@@ -52,12 +54,6 @@ h1 {
   height: 1px;
 }
 
-#pixel-board {
-  background: blue;
-  width: 426px;
-  height: 1px;
-}
-
 #clear-board {
   padding: 5px 20px;
   display: block;
@@ -67,7 +63,7 @@ h1 {
   border: 0px;
   border-radius: 5px;
   text-transform: uppercase;
-  color: #fff;
+  color: white;
 }
 
 .white {
