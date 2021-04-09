@@ -1,35 +1,40 @@
 
 
-.color{ 
+.color { 
     display: inline-flex;
-   width: 50px;  
-   height: 50px;
+   width: 50px; 
+   height: 50px; 
+   border: black;
+    border-width: 1px;
+    border: solid; 
+}
+
+.black {
+    background-color: black;
+    border: black;
+    border-width: 1px;
+    border: solid; 
+}
+
+   
+
+.magenta {
+    background-color: magenta;
+    border: black;
+    border-width: 1px;
+    border: solid; 
 }
 
 .green {
     background-color: green;
     border: black;
     border-width: 1px;
-    border:solid; 
+    border: solid; 
 }
 
-.magenta{
-    background-color: magenta;
-    border: black;
-    border-width: 1px;
-    border:solid; 
-}
-
-.blue{
-    background-color: blue;
-    border: black;
-    border-width: 1px;
-    border:solid; 
-}
-
-.yellow{
+.yellow {
     background-color: yellow;
     border: black;
     border-width: 1px;
-    border:solid; 
+    border: solid; 
 }
