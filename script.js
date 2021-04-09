@@ -45,7 +45,8 @@ selectColor();
 function addColor(event) {
   const colorselected = document.querySelector('.selected');
   const newClass = colorselected.classList[1];
-  event.target.className = `pixel ${newClass}`;
+  const x = event.target;
+  x.className = `pixel ${newClass}`;
 }
 
 function changeColor() {
@@ -54,3 +55,19 @@ function changeColor() {
 }
 
 changeColor();
+
+// 9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
+
+function clearAll() {
+  let pixels = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].className = 'pixel white';
+  }
+}
+
+function clearColor (){
+  const clearButton = document.getElementById('clear-board');
+  clearButton.addEventListener('click', clearAll)
+}
+
+clearColor();
