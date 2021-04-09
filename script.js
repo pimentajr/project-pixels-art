@@ -36,3 +36,5 @@ for (let index = 1; index <= numOfPixels; index += 1) {
 }
 
 // 5.
+// 6.
+firstColor.classList.add('selected');
