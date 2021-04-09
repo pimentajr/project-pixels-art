@@ -27,3 +27,30 @@ h1 {
 #yellow {
   background-color: yellow;
 }
+
+#pixel-board {
+  display: table;
+  padding: 5px;
+}
+
+.tr {
+  display: table-row;
+  padding: 5px;
+}
+
+.pixel {
+  display: table-cell;
+  padding: 80px;
+  width: 100px;
+  border: black solid 1px;
+  margin: 5px;
+}
+
+/* 
+#pixel-table {
+  border: 1px solid black;
+  display: inline-grid;
+  grid-template-columns: 50px 50px 50px 50px 50px;
+  grid-auto-rows: 20px;
+
+} */
