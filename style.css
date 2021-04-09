@@ -1,7 +1,7 @@
 #title {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-style: italic;
-  color: crimson;  
+  color: crimson;
 }
 
 section {
@@ -47,7 +47,7 @@ section {
   display: table;
   border: 1px solid black;
   width: 200px;
-  height:200px;
+  height: 200px;
   position: absolute;
   top: 200px;
   margin-left: 180px;
@@ -62,4 +62,6 @@ section {
   background-color: white;
 }
 
-
+.black {
+  background-color: black;
+}
