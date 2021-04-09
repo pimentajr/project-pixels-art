@@ -16,14 +16,14 @@ colorSelection();
 // Seleciona o pixel clicando nele, e se for um píxel e não a seção, chama o evento
 function selectPixel() {
   document.getElementById('pixel-board').addEventListener('click', (event) => {
-    const printBox = event.target;
-    if (printBox.id !== 'pixel-board') {
-      printing(printBox)
+    const boxTarget = event.target;
+    if (boxTarget.id !== 'pixel-board') {
+      printBox(boxTarget);
     }
   });
 }
-printBoard();
 
+// Pinta a box selecionada com a cor correta
 function printBox(printBox) {
   switch (document.querySelector('.selected').id) {
   case 'black-box':
@@ -41,6 +41,7 @@ function printBox(printBox) {
   default:
   }
 }
+selectPixel();
 
 // Cria o botão limpar e insere na div
 function createButton() {
