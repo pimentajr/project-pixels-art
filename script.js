@@ -22,6 +22,15 @@ function makeColorPalette(colors) {
   }
 }
 
+function clearBoardPixels() {
+  const pixelBoard = document.querySelector('#pixel-board');
+  const pixels = pixelBoard.children;
+  for (let index = 0; index < pixels.length; index += 1) {
+    console.log(pixels[index]);
+    pixelBoard.removeChild(pixels[index]);
+  }
+}
+
 window.onload = function () {
   makeColorPalette(['white', 'black', 'red', 'green', 'blue']);
   makePixelBoard(5, 5);
@@ -48,4 +57,13 @@ document.querySelector('#clear-board').addEventListener('click', () => {
     const pixel = pixels[index];
     pixel.style.backgroundColor = 'white';
   }
+});
+
+document.querySelector('#generate-board').addEventListener('click', () => {
+  // let input = document.querySelector('#board-size');
+  // if (input.value == '') alert('Board inválido!');
+  // else {
+  //   let numberInput = input.value;
+  clearBoardPixels();
+  // }
 });
