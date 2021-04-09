@@ -7,9 +7,21 @@ const inputBoardSize = document.getElementById('board-size');
 const buttonGenerateBoard = document.getElementById('generate-board');
 const pixelBoard = document.getElementById('pixel-board');
 
+function generateRandomHexColor() {
+  const array = [...Array(6)];
+  const hexArray = array.map(() => (Math.floor(Math.random() * 16).toString(16)));
+  return hexArray.join('') === '000000' ? '000001' : hexArray.join('');
+}
+
 function setColors() {
   for (let index = 0; index < colors.length; index += 1) {
-    colors[index].setAttribute('style', `background-color: ${colors[index].dataset.color};`);
+    if (index === 0) {
+      colors[index].setAttribute('style', `background-color: ${colors[index].dataset.color};`);
+    } else {
+      const randomHexColor = `#${generateRandomHexColor()}`;
+      colors[index].setAttribute('style', `background-color: ${randomHexColor};`);
+      colors[index].setAttribute('data-color', randomHexColor);
+    }
   }
 }
 
