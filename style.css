@@ -36,9 +36,9 @@
 }
 
 table , tr , td {
-  width: 40px;
-  height: 40px;
-  border: 1px solid black;
+  width: 37px;
+  height: 37px;
+  border: solid black 1px;
   border-collapse: collapse;
 }
 
