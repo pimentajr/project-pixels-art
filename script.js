@@ -94,8 +94,8 @@ clearBtn.addEventListener('click', clearPixels);
 
 function setInputAttributes() {
   const input = document.getElementsByTagName('input');
-  input.min = 1;
-  input.max = 50;
+  input.min = '1';
+  input.max = '50';
 }
 setInputAttributes();
 
