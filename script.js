@@ -1,6 +1,7 @@
 const pixelBoard = document.getElementById('pixel-board');
 const pixelLine = document.querySelector('#pixel-board').children;
 const colorPalette = document.querySelectorAll('#color-palette div');
+const clearButton = document.getElementById('clear-board');
 
 function createStorage() {}
 createStorage();
@@ -38,12 +39,22 @@ function selectPalette() {
 }
 selectPalette();
 
-function paintBlocks() {}
+function paintBlocks() {
+  pixelBoard.addEventListener('click', (event) => {
+    const el = event;
+    el.target.style.backgroundColor = sessionStorage.color;
+  });
+}
 
-pixelBoard.addEventListener('click', (event) => {
-  const el = event;
-  el.target.style.backgroundColor = sessionStorage.color;
-});
 paintBlocks();
 
-console.log(sessionStorage.color);
+function ClearBoard() {
+  clearButton.addEventListener('click', () => {
+    for (let i = 0; i < pixelLine.length; i += 1) {
+      for (let j = 0; j < pixelLine[i].children.length; j += 1) {
+        pixelLine[i].children[j].style.backgroundColor = 'white';
+      }
+    }
+  });
+}
+ClearBoard();
