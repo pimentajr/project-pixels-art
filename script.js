@@ -28,7 +28,7 @@ function creatingBoard() {
 creatingBoard();
 
 // 5 -
-let newBorder = document.getElementsByClassName('pixel');
+let newBorder = document.getElementById('color-palette').nextElementSibling;
 newBorder.classList.add('border-pixel');
 
 // 6 -
@@ -36,6 +36,18 @@ let pixelBlack = document.querySelector('.color');
 pixelBlack.classList.add('selected')
 
 // 7
+document.getElementById('color-palette').addEventListener('click', selected);
+
+function selected() {
+	let whosSelected = document.querySelector('.selected');
+	if (event.target !== whosSelected) {				
+		whosSelected.classList.remove('selected');
+		event.target.classList.add('selected');		
+	}
+	console.log(event.target)
+}
+
+
 
 
 
