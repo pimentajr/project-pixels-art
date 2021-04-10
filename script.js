@@ -4,6 +4,15 @@ const pixelBoard = '#pixel-board';
 const selectedBoardDiv = document.querySelector(pixelBoard);
 const btnVQV = document.querySelector('#generate-board');
 
+function clearBoardPixels() {
+  const fatherChilds = document.querySelector(pixelBoard);
+  const fatherLength = fatherChilds.childNodes.length;
+
+  for (let index = 0; index < fatherLength; index += 1) {
+    fatherChilds.removeChild(fatherChilds.firstChild);
+  }
+}
+
 function createPaletteColorDiv(color) {
   const palletColorDiv = document.createElement('div');
   if (color === 'black') {
@@ -56,34 +65,49 @@ function paintPixel(event) {
   }
 }
 
+function checkInputValue(value) {
+  if (value < 5) {
+    return 5;
+  }
+
+  if (value > 50) {
+    return 50;
+  }
+  return value;
+}
+
 createPaletteColorDiv('black');
 createPaletteColorDiv('yellow');
 createPaletteColorDiv('red');
 createPaletteColorDiv('green');
 
+createBoardPixels(25);
+
 selectedColorDiv.addEventListener('click', selectedColor);
 
 btnClear.addEventListener('click', () => {
   for (let index = 0; index < 25; index += 1) {
-    document.querySelectorAll('div.pixel')[index].style.backgroundColor = 'white';
+    document.querySelectorAll('div.pixel')[index].style.backgroundColor =
+      'white';
   }
 });
 
 selectedBoardDiv.addEventListener('click', paintPixel);
 
 btnVQV.addEventListener('click', () => {
-  const inputValue = document.querySelector('#board-size').value;
-  if (inputValue === '' || inputValue < 5) {
+  let inputValue = document.querySelector('#board-size').value;
+
+  if (inputValue === '') {
     alert('Board inválido!');
   } else {
+    clearBoardPixels();
+    inputValue = checkInputValue(inputValue);
     const valuePow = inputValue ** 2;
     let gridColumns = '';
     for (let index = 0; index < inputValue; index += 1) {
       gridColumns += 'auto ';
     }
-    document.querySelector(
-      pixelBoard,
-    ).style.gridTemplateColumns = gridColumns;
+    document.querySelector(pixelBoard).style.gridTemplateColumns = gridColumns;
     createBoardPixels(valuePow);
   }
 });

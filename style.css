@@ -18,6 +18,7 @@
 #pixel-board {
   background-color: black;
   display: inline-grid;
+  grid-template-columns: auto auto auto auto auto;
 }
 
 .selected {
@@ -56,3 +57,4 @@ input {
 #generate-board {
   display: inline-block;
 }
+
