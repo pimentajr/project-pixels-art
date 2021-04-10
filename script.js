@@ -8,6 +8,7 @@ const pixel = 5;
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
 let colorSeleted = 'black';
+const button = document.querySelector('#clear-board');
 
 console.log(colorSeleted); // --------------------------------------------------------------seleção cor
 
@@ -58,10 +59,17 @@ function coloringPixel(originEvent) {
   const event = originEvent;
   const chosenPixel = event.target;
   chosenPixel.style.backgroundColor = colorSeleted;
-  console.log(chosenPixel);
+  console.log(chosenPixel); // -------------------------------------------seleção cor
 }
 
 createPalette(colors);
 numberOfLines(pixel);
 colorPalette.addEventListener('click', colorSelection);
 pixelBoard.addEventListener('click', coloringPixel);
+
+button.addEventListener('click', function () {
+  const pixelBoxList = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixelBoxList.length; index += 1) {
+    pixelBoxList[index].style.backgroundColor = 'white';
+  }
+});

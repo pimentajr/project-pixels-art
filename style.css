@@ -21,6 +21,10 @@
   display: inline-block;
 }
 
+#clear-board {
+ display: block;
+}
+
 .lineBox {
   height: var(--box);
 }
