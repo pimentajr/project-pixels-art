@@ -13,13 +13,25 @@ function colorGrid() {
 
 colorGrid();
 
+function generateRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let randomColor = '#';
+  for (let index = 0; index < 6; index += 1) {
+    randomColor += letters[Math.floor(Math.random() * 16)];
+  }
+  if (randomColor === '#ffffff' || randomColor === '#000000') {
+    randomColor = generateRandomColor();
+  }
+  return randomColor;
+}
+
 function giveColor() {
   const colorDivsArray = document.getElementsByClassName('color');
   colorDivsArray[0].style.backgroundColor = 'black';
   colorDivsArray[0].classList.add('selected');
-  colorDivsArray[1].style.backgroundColor = 'maroon';
-  colorDivsArray[2].style.backgroundColor = 'darkolivegreen';
-  colorDivsArray[3].style.backgroundColor = 'darkcyan';
+  colorDivsArray[1].style.backgroundColor = generateRandomColor();
+  colorDivsArray[2].style.backgroundColor = generateRandomColor();
+  colorDivsArray[3].style.backgroundColor = generateRandomColor();
 }
 
 giveColor();
