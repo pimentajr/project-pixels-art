@@ -39,8 +39,8 @@
 #board-size {
   display: inline-block;
   vertical-align: top;
-  width: 25px;
-  margin: 0 10px 0 61px;
+  width: 32px;
+  margin: 0 10px 0 57.5px;
 }
 
 #generate-board {
