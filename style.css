@@ -7,8 +7,8 @@ body {
   border-color: black;
   border-width: 1px;
   display: inline-block;
-  height: 70px;
-  width: 70px;
+  height: 37px;
+  width: 37px;
 }
 
 #color-palette {
@@ -23,12 +23,16 @@ body {
 
 .pixel {
   background-color: white;
-  height: 37px;
-  width: 37px;
+  height: 40px;
+  width: 40px;
 }
 
 td {
   border: solid;
   border-width: 1px;
   border-color: black;
+}
+
+tr {
+  height: 40px;
 }
