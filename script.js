@@ -37,10 +37,10 @@ function selectedColor() {
     }
   }
 }
-colorPalette.addEventListener('click', function (event) {
-  if (event.target.id !== 'color-palette') {
+colorPalette.addEventListener('click', function (events) {
+  if (events.target.id !== 'color-palette') {
     selectedColor();
-    event.target.classList.add('selected');
+    events.target.classList.add('selected');
   }
 });
 
@@ -49,9 +49,22 @@ colorPalette.addEventListener('click', function (event) {
 
 const board = document.getElementById('pixel-board');
 
-function pixel(event) {
+function pixel(events) {
   const selected = document.querySelector('.selected');
   const css = window.getComputedStyle(selected).getPropertyValue('background-color');
-  event.target.style.backgroundColor = css;
+  events.target.style.backgroundColor = css;
 }
 board.addEventListener('click', pixel);
+
+// 9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco:
+
+const pixels = document.querySelectorAll('.pixel');
+
+function buttonClear() {
+  for (let thirdIndex = 0; thirdIndex < pixels.length; thirdIndex += 1) {
+    pixels[thirdIndex].style.backgroundColor = 'white';
+  }
+}
+const button = document.getElementById('clear-board');
+button.addEventListener('click', buttonClear);
+
