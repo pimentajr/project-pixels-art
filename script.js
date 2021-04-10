@@ -21,7 +21,8 @@ document.getElementById('color-palette').addEventListener('click', changeSelecte
 function changeColorPixel(event) {
   let classColor = document.querySelectorAll('.selected')[0].classList[1];
   if (event.target.classList.length !== 1) {
-    event.target.classList[1].toggle(classColor);
+    event.target.classList.remove(event.target.classList[1]);
+    event.target.className +=' ' + classColor;
   } else {
     event.target.className +=' ' + classColor;
   }
