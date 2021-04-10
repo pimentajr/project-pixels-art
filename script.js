@@ -34,6 +34,12 @@ function selectedColor(event) {
   }
 }
 
+document.querySelector('#clear-board').addEventListener('click', () => {
+  for (let index = 0; index < 25; index += 1) {
+    document.querySelectorAll('div.pixel')[index].style.backgroundColor = 'white';
+  }
+});
+
 createPaletteColorDiv('black');
 createPaletteColorDiv('yellow');
 createPaletteColorDiv('red');
