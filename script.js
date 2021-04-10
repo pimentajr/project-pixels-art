@@ -1,7 +1,8 @@
+const pixelBoard = document.getElementById('pixel-board');
+
 // Reseta o tabuleiro
 function boardRemove() {
-  const oldBoard = document.querySelector('#pixel-board');
-  oldBoard.innerHTML = '';
+  pixelBoard.innerHTML = '';
 }
 
 // Cria os elementos do quadro de acordo com o número de pixels
@@ -25,7 +26,6 @@ window.onload = () => {
   firstSelectedColor.classList = ('color selected');
   boardMaker(5);
 };
-const pixelBoard = document.getElementById('pixel-board');
 
 // Seleciona a cor mudando a classe da div clicada
 function colorSelection() {
@@ -98,6 +98,7 @@ function createButtonResize() {
   const boardSize = document.createElement('input');
   boardSize.id = 'board-size';
   boardSize.type = 'number';
+  boardSize.min = '1'
   boardSize.placeholder = 'Tabuleiro de quantos pixels?';
   document.getElementById('buttons').appendChild(boardSize);
   const generateBoard = document.createElement('input');
@@ -121,8 +122,10 @@ BoardSize();
 
 // Inspeciona se o valor inserido é válido
 function inspectBoardSize(boardSize) {
-  if (!boardSize || boardSize <= 0) {
+  if (!boardSize) {
     return alert('Board inválido!');
+  } else if (boardSize < 0) {
+    return alert('O número inserido deve ser maior que 0')
   } else if (boardSize < 5) {
     boardSize = 5;
   } else if (boardSize > 50) {
