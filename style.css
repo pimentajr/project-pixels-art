@@ -31,3 +31,20 @@
   margin: 0 5px 6px 76.623px;
   display: block;
 }
+
+#dimDiv {
+  margin: 0 0 6px 0;
+}
+
+#board-size {
+  display: inline-block;
+  vertical-align: top;
+  width: 25px;
+  margin: 0 10px 0px 61px;
+}
+
+#generate-board {
+  display: inline-block;
+  vertical-align: top;
+  width: 45px;
+}

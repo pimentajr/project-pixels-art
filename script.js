@@ -6,6 +6,7 @@ title.innerText = 'Paleta de Cores';
 body.appendChild(title);
 
 // 2.
+// 12.
 const colorPalette = document.createElement('div');
 colorPalette.setAttribute('id', 'color-palette');
 body.appendChild(colorPalette);
@@ -24,6 +25,21 @@ for (let index = 1; index <= differentColors; index += 1) {
   colorBox.style.backgroundColor = `#${randomColor}`;
   colorPalette.appendChild(colorBox);
 }
+
+// 10.1
+const dimensionsDiv = document.createElement('div');
+dimensionsDiv.setAttribute('id', 'dimDiv');
+body.appendChild(dimensionsDiv);
+const boardSizeInput = document.createElement('input');
+boardSizeInput.setAttribute('id', 'board-size');
+boardSizeInput.setAttribute('placeholder', 'num');
+boardSizeInput.setAttribute('type', 'number');
+boardSizeInput.setAttribute('min', '1');
+dimensionsDiv.appendChild(boardSizeInput);
+const boardSizeBtn = document.createElement('button');
+boardSizeBtn.setAttribute('id', 'generate-board');
+boardSizeBtn.innerText = 'VQV';
+dimensionsDiv.appendChild(boardSizeBtn);
 
 // 3.
 const firstColor = document.querySelector('.color');
@@ -75,4 +91,31 @@ function printColorPixel(event) {
 }
 pixelBoard.addEventListener('click', printColorPixel);
 
-// 10.
+// 10.2
+// 11.
+const initialInput = boardSizeInput.value;
+const minimum = 5;
+const maximum = 50;
+function generateBoard(numOfRowsColumns) {
+  if (boardSizeInput.value === initialInput) {
+    return alert('Board inválido!');
+  }
+  while (pixelBoard.firstChild) {
+    pixelBoard.removeChild(pixelBoard.firstChild);
+  }
+  numOfRowsColumns = boardSizeInput.value;
+  if (numOfRowsColumns < minimum) {
+    numOfRowsColumns = minimum;
+  }
+  if (numOfRowsColumns > maximum) {
+    numOfRowsColumns = maximum;
+  }
+  let numOfPix = numOfRowsColumns * numOfRowsColumns;
+  for (let index = 1; index <= numOfPix; index += 1) {
+    const pixelBox = document.createElement('div');
+    pixelBox.classList.add('pixel');
+    pixelBox.style.backgroundColor = 'white';
+    pixelBoard.appendChild(pixelBox);
+  }
+}
+boardSizeBtn.addEventListener('click', generateBoard);
