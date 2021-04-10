@@ -37,9 +37,18 @@ function removeSelected() {
 }
 
 function clickColor() {
-		palette.addEventListener('click', function(event){
+		palette.addEventListener('click', function(event) {
 			removeSelected();
 			event.target.classList.add('selected');
 			})
 }
 clickColor();
+
+const tabela = document.querySelector('tbody');
+function addColor() {
+	tabela.addEventListener('click', function(event) {
+		let select = document.querySelector('.selected');
+		event.target.style.backgroundColor = select.style.backgroundColor;
+	})
+}
+addColor();
