@@ -22,3 +22,9 @@ function createPixels() {
   }
 }
 createPixels();
+
+window.onload = function() {
+  const div = document.querySelector('.color');
+  div.classList.add('selected');
+}
+
