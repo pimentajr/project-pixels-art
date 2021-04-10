@@ -94,14 +94,6 @@ function boardRemove() {
   oldBoard.innerHTML = '';
 }
 
-function inspectBoardSize(pixels) {
-  const pixelXY = pixels;
-  console.log(pixelXY)
-  if (!pixelXY) {
-    alert('Board inválido');
-  }
-}
-
 // Cria os elementos do quadro de acordo com o número de pixels
 function boardMaker(pixels) {
   boardRemove();
