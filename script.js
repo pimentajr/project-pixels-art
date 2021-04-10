@@ -14,9 +14,10 @@ defineInitialSelectedColor();
 
 function colorChange(event) {
   const selecionedColor = document.querySelector('#color-palette').children;
+  const selectedClassEvent = event;
   for (let index = 0; index < selecionedColor.length; index += 1) {
     selecionedColor[index].setAttribute('class', 'color');
   }
-  event.target.className += ' selected';
+  selectedClassEvent.target.className += ' selected';
 }
 colorPalete.addEventListener('click', colorChange);
