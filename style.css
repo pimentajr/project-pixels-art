@@ -2,9 +2,7 @@
 body{
 background-color: bisque;
 }
-#title{
 
-}
 
 .color{
     display: inline-block;
@@ -50,7 +48,4 @@ background-color: bisque;
     border-color: black;
     border-style: solid;
     background-color: white;
-}
-.selected{
-
 }
