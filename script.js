@@ -100,15 +100,20 @@ function createInputBoard() {
 }
 
 /* req 6 + 7 */
+function colorReset() {
+  const color = document.getElementsByClassName('color');
+
+  for (let i = 0; i < color.length; i += 1) {
+    color[i].className = 'color';
+  }
+}
 function colorSelect() {
   const color = document.getElementsByClassName('color');
   color[0].classList.add('selected');
 
   for (let i = 0; i < color.length; i += 1) {
-    let index = 0;
     color[i].addEventListener('click', () => {
-      color[index].className = 'color';
-      index += 1;
+      colorReset();
       if (color[i].className !== 'color selected') {
         color[i].classList.add('selected');
       }

@@ -1,23 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap') ;
-
+/** GENERAL **/
 * {
   padding: 0;
   margin: 0;
 }
 
 body {
-  color: #333;
-  font-family: Roboto, sans-serif;
+  background-image: url('imagens/background.png');
+  text-align: center;
 }
 
+a {
+  color: rgb(190, 190, 190);
+  -webkit-text-stroke: 2px rgb(151, 151, 151);
+  text-decoration: none;
+}
+
+h1 {
+  font-family: 'VT323', monospace;
+  font-size: 90px;
+  font-weight: normal;
+  margin: 20px;
+  text-shadow: 2px 1px 1px rgb(68, 68, 68);
+}
+
+button, input {
+  font-size: 15px;
+  padding: 5px;
+  margin-bottom: 25px;
+}
+
+/** COLOR OPTIONS **/
 .color {
   display: inline-block;
+  padding: 30px;
+  margin: 10px;
+  margin-bottom: 30px;
   border: 1px solid black;
-  padding: 20px;
+  border-radius: 50%;
+  box-shadow: 2px 1px 1px rgba(68, 68, 68, 0.486);
+  cursor: pointer;
 }
 
+/** PIXEL BOARD **/
 #pixel-board {
   display: table;
+  margin: auto;
+  margin-bottom: 100px;
 }
 
 .pixel {
@@ -25,6 +53,7 @@ body {
   width: 40px;
   height: 40px;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 .pixel-row {
