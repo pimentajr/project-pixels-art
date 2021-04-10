@@ -109,20 +109,22 @@ function yourBoard() {
     createBoard(size.value);
     clearBoard();
     pixelBoard.innerHTML = '';
+    // Zerar Board antes de construir novo!!!!
     createBoard(size.value);
   });
 }
 yourBoard();
 
 // Requisito 12 - cores diferentes a cada carregamento de página
-function randomColors () {
+function randomColors() {
   const colors = document.querySelectorAll('.color');
   for (let index = 1; index < colors.length; index += 1) {
-    let x = parseInt(Math.floor(Math.random() * 256));
-    let y = parseInt(Math.floor(Math.random() * 256))
-    let z = parseInt(Math.floor(Math.random() * 256))
-    // Não se esquecer de transformar valores em inteiros
-    // Referência - sistema de mudança de cores rgb - https://dev.to/devlorenzo/js-random-background-color-change-4pof 
+    const x = Number(Math.floor(Math.random() * 256));
+    const y = Number(Math.floor(Math.random() * 256));
+    const z = Number(Math.floor(Math.random() * 256));
+    // Missing radix - colocar 10 no segundo parametro do parseInt
+    // Não se esquecer de transformar valores em inteiros!!!!
+    // Referência - sistema de mudança de cores rgb - https://dev.to/devlorenzo/js-random-background-color-change-4pof
     colors[index].style.backgroundColor = `rgb( ${x}, ${y}, ${z} )`;
   }
 }
