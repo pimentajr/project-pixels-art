@@ -44,6 +44,10 @@ function createGrid() { //melhorar criando igual html
     let tbl = document.createElement('table');
     tbl.id = 'table';
     let gridSize = document.getElementById('board-size').value;
+    if (gridSize === '') {
+      alert('Board inválido!');
+    }
+    initTable.appendChild(tbl);
     if (gridSize < 5) {
       gridSize = 5;
     }
@@ -57,11 +61,6 @@ function createGrid() { //melhorar criando igual html
         td.className = 'pixel';
       }
     }
-    
-    if (gridSize === '') {
-      alert('Board inválido!');
-    }
-    initTable.appendChild(tbl);
   });
 }
 createGrid();
