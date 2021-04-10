@@ -3,7 +3,7 @@ addTitle.id = 'title';
 addTitle.innerHTML = 'Paleta de Cores';
 document.body.appendChild(addTitle);
 
-function createPaletteDiv (){
+function createPaletteDiv () {
   const addColorPalette = document.createElement('div');
   addColorPalette.id = 'color-palette';
   document.body.appendChild(addColorPalette);
@@ -11,7 +11,7 @@ function createPaletteDiv (){
 }
 createPaletteDiv();
 
-function createBoxesDiv(){
+function createBoxesDiv () {
   const selectPalette = document.querySelector('#color-palette');
   for (let index = 0; index < 4; index += 1) {
     const createDivs = document.createElement('div');
@@ -21,11 +21,11 @@ function createBoxesDiv(){
 }
 createBoxesDiv();
 
-function addColor (){
+function addColor () {
   const arrayOfColors = ['black', 'blue', 'purple', 'violet'];
   const selectDivs = document.querySelectorAll('.color');
   selectDivs.forEach((box, index) => {
-    box.style.backgroundColor = arrayOfColors[index];
+    const div = box; div.style.backgroundColor = arrayOfColors[index];
   });
 }
 addColor();
