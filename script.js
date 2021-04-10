@@ -30,17 +30,36 @@ function initialBlack() {
 initialBlack();
 
 //Requisito 7 - mudança de pincel de acordo com o click (addEventListener)
-const theColors = document.querySelector('#color-palette');
-function clickSelector() {
-  theColors.addEventListener('click', function(selectedColor) {
-    const eventTarget = selectedColor.target;
-    const color = document.getElementsByClassName('color');
-    for (let index = 0; index < color.length; index += 1) {
-      color[index].classList.remove('selected');
-      if (eventTarget.className === 'color') {
-        eventTarget.classList.add('selected');
-      }
-    }
-  });
-}
-clickSelector();
+let firstColor = document.getElementsByClassName('color')[0];
+let secondColor = document.getElementsByClassName('color')[1];
+let thirdColor = document.getElementsByClassName('color')[2];
+let fourthColor = document.getElementsByClassName('color')[3];
+
+firstColor.addEventListener('click', function (element) {
+  element.target.classList.add('selected');
+  secondColor.classList.remove('selected');
+  thirdColor.classList.remove('selected');
+  fourthColor.classList.remove('selected');
+});
+
+secondColor.addEventListener('click', function (element) {
+  element.target.classList.add('selected');
+  firstColor.classList.remove('selected');
+  thirdColor.classList.remove('selected');
+  fourthColor.classList.remove('selected');
+});
+
+thirdColor.addEventListener('click', function (element) {
+  element.target.classList.add('selected');
+  firstColor.classList.remove('selected');
+  secondColor.classList.remove('selected');
+  fourthColor.classList.remove('selected');
+});
+
+fourthColor.addEventListener('click', function (element) {
+  element.target.classList.add('selected');
+  secondColor.classList.remove('selected');
+  thirdColor.classList.remove('selected');
+  firstColor.classList.remove('selected');
+});
+
