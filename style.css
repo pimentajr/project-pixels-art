@@ -91,3 +91,9 @@ h1:hover:after {
 .selected {
   color: black;
 }
+
+#clear-board {
+  display: block;
+  margin: 20px auto 0;
+  padding: 2px 30px;
+}

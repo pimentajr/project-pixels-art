@@ -25,5 +25,22 @@ function applyColor() {
   pixelBoard.addEventListener('click', printBoard);
 }
 
+function clearBoard() {
+  const containerButton = document.querySelector('#containerButton');
+  const button = document.createElement('button');
+  button.id = 'clear-board';
+  button.innerText = 'Limpar';
+  containerButton.appendChild(button);
+
+  function clear() {
+    const color = document.querySelectorAll('.pixel');
+    for (let index = 0; index < color.length; index += 1) {
+      color[index].className = 'pixel';
+    }
+  }
+  button.addEventListener('click', clear);
+}
+
 selectColor();
 applyColor();
+clearBoard();
