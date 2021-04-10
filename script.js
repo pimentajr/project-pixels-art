@@ -20,7 +20,7 @@ function setBoardSize(pixels) {
       createLineDivs.appendChild(createDivs);
     }
     pixelBoard.appendChild(createLineDivs);
-  } 
+  }
 }
 setBoardSize(pixelBoardSize);
 // Requisito 7
@@ -56,9 +56,21 @@ clearButton.addEventListener('click', () => {
   }
 });
 
-// Requisito 10
+// Requisito 10 e 11
 const inputElement = document.getElementById('board-size');
 const generateBoard = document.querySelector('#generate-board');
+
+function fixBoxSize() {
+  if (inputElement.value < 5) {
+    inputElement.value = 5;
+    setBoardSize(inputElement.value);
+  } else if (inputElement.value > 50) {
+    inputElement.value = 50;
+    setBoardSize(inputElement.value);
+  } else {
+    setBoardSize(inputElement.value);
+  }
+}
 
 generateBoard.addEventListener('click', () => {
   if (!inputElement.value) {
@@ -66,5 +78,5 @@ generateBoard.addEventListener('click', () => {
   } else {
     pixelBoard.innerHTML = '';
   }
-  setBoardSize(inputElement.value);
+  fixBoxSize();
 });
