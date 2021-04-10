@@ -80,6 +80,19 @@ function paintCaller() {
 
 paintCaller();
 
+function RandomColorApply() {
+  function RandomColor() {
+    const randomNumber = Math.ceil(Math.random() * 4);
+    const colors = { 1: 'black', 2: 'red', 3: 'green', 4: 'blue' };
+    return colors[randomNumber];
+  }
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = RandomColor();
+  }
+}
+
+RandomColorApply();
+
 function ClearBoard() {
   clearButton.addEventListener('click', () => {
     for (let i = 0; i < pixelLine.length; i += 1) {
