@@ -30,12 +30,9 @@
 
 #pixel-board {
   display: table;
+  border-collapse: collapse;
 }
 
 .margin {
   margin-top: 40px;
-}
-
-#pixel-board {
-  border-collapse: collapse;
 }
