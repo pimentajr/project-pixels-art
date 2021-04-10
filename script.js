@@ -1,16 +1,42 @@
 const colorPalette = document.querySelector('#color-palette');
 const paletteColors = colorPalette.children;
-const colors = ['black', 'red', 'green', 'blue'];
 
-function createColorPalette() {
-  for (let index = 0; index < paletteColors.length; index += 1) {
-    paletteColors[index].innerHTML = colors[index];
-    paletteColors[index].style.backgroundColor = colors[index];
-    paletteColors[index].style.color = colors[index];
+function createRandomColor() {
+  const r = Math.round(Math.random() * 255);
+  const g = Math.round(Math.random() * 255);
+  const b = Math.round(Math.random() * 255);
+
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+function createColors(paletteSize) {
+  const colors = ['black'];
+
+  for (let index = 1; index < paletteSize; index += 1) {
+    const randomColor = createRandomColor();
+    colors.push(randomColor);
+  }
+
+  return colors;
+}
+
+function createColorPalette(paletteSize) {
+  const colors = createColors(paletteSize);
+
+  for (let index = 0; index < paletteSize; index += 1) {
+    const color = document.createElement('li');
+
+    color.className = 'color';
+    color.innerHTML = colors[index];
+    color.style.backgroundColor = colors[index];
+    color.style.color = colors[index];
+    color.style.fontSize = '0px';
+
+    colorPalette.appendChild(color);
   }
 }
 
-createColorPalette();
+createColorPalette(4);
 
 const pixelBoard = document.querySelector('#pixel-board');
 const boardSizeInput = document.querySelector('#board-size');
@@ -72,19 +98,23 @@ function removeSelected() {
 }
 
 function selectColor(event) {
-  if (event.target.id !== 'color-palette') {
+  const element = event.target;
+
+  if (element.id !== 'color-palette') {
     removeSelected();
-    event.target.classList.add('selected');
+    element.classList.add('selected');
   }
 }
 
 colorPalette.addEventListener('click', selectColor);
 
 function paintPixel(event) {
-  if (event.target.className === 'pixel') {
+  const element = event.target;
+
+  if (element.className === 'pixel') {
     const selected = document.querySelector('.selected');
     const color = selected.style.backgroundColor;
-    event.target.style.backgroundColor = color;
+    element.style.backgroundColor = color;
   }
 }
 
