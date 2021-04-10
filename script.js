@@ -46,7 +46,6 @@ function applySelectedColor() {
 
 applySelectedColor();
 
-
 // remove a classe selected de um determinado elemento
 function removeSelectedClass() {
   let countSelectClass = document.getElementsByClassName('selected');
@@ -91,7 +90,7 @@ function generateHeightDivs(number) {
   }
 }
 
-generateHeightDivs(7);
+
 
 // quantidade de divs.pixel existentes dentro de um div.tr
 function generateWidthDivs(number) {
@@ -104,8 +103,17 @@ function generateWidthDivs(number) {
       getHeightDiv[index].appendChild(widthDiv);
     }
   }
-  console.log(getHeightDiv.length);
 }
 
-generateWidthDivs(7);
+
+
+// puxa informação do input para o botão
+function getInputData() {
+  let inputData = document.getElementById('board-size');
+  let pixelAmount = inputData.value;
+
+  return pixelAmount;
+}
+
+
 

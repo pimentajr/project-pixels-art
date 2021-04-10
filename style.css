@@ -60,4 +60,18 @@ li.color {
 
 #clear-board {
   margin-bottom: 15px;
+  display:inline-block;
+}
+
+.size-form {
+  display: inline-block;
+}
+
+#board-size {
+  width: 100px;
+  margin-left:5px;
+}
+
+#generate-board {
+  margin-left: 5px;
 }
