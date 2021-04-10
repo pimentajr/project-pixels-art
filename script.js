@@ -47,6 +47,8 @@ secondColor.addEventListener('click', function () {
   firstColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
   fourthColor.classList.remove('selected');
+  secondColor.style.backgroundColor = 'yellow';
+
 });
 
 thirdColor.addEventListener('click', function () {
@@ -54,6 +56,7 @@ thirdColor.addEventListener('click', function () {
   firstColor.classList.remove('selected');
   secondColor.classList.remove('selected');
   fourthColor.classList.remove('selected');
+  thirdColor.style.backgroundColor = 'red';
 });
 
 fourthColor.addEventListener('click', function () {
@@ -61,5 +64,17 @@ fourthColor.addEventListener('click', function () {
   secondColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
   firstColor.classList.remove('selected');
+  fourthColor.style.backgroundColor = 'blue';
 });
 
+// Colore o pixel individual
+function coloredPixel() {
+  const allBoard = document.querySelector('#pixel-board');
+  allBoard.addEventListener('click', function (eventoDeOrigem) {
+    const pincelColor = document.querySelector('.selected').style.backgroundColor;
+    const clickedPixel = eventoDeOrigem.target;
+    if (clickedPixel.className === 'pixel')
+      clickedPixel.style.backgroundColor = pincelColor;
+  });
+}
+coloredPixel();
