@@ -9,7 +9,7 @@ function setColorToPalete() {
 }
 setColorToPalete();
 // Requisito 4
-const pixelBoardSize = 5;
+let pixelBoardSize = 5;
 
 for (let lineIndex = 1; lineIndex <= pixelBoardSize; lineIndex += 1) {
   const createLineDivs = document.createElement('div');
@@ -54,4 +54,29 @@ clearButton.addEventListener('click', () => {
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
+});
+
+// Requisito 10
+const inputElement = document.getElementById('board-size');
+const generateBoard = document.querySelector('#generate-board');
+
+generateBoard.addEventListener('click', () => {
+  if (!inputElement.value) {
+    alert('Board inválido!');
+  } else {
+    const lineP = document.querySelectorAll('.line-pixel');
+    for (let j = 0; j < lineP.length; j += 1) {
+      lineP[j].remove();
+    }
+      for (let lineIndex = 1; lineIndex <= inputElement.value; lineIndex += 1) {
+        const createLineDivs = document.createElement('div');
+        createLineDivs.className = 'line-pixel';
+        for (let columnIndex = 1; columnIndex <= inputElement.value; columnIndex += 1) {
+          const createDivs = document.createElement('div');
+          createDivs.className = 'pixel';
+          createLineDivs.appendChild(createDivs);
+        }
+        pixelBoard.appendChild(createLineDivs);
+      }
+    }
 });
