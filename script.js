@@ -1,7 +1,5 @@
 window.onload = function() {
-  
 
-let pixelBoard = document.getElementById('pixel-board');
 let colors = document.querySelectorAll('.color');
 let black = document.getElementById('black');
 let rose = document.getElementById('rose');
@@ -36,8 +34,29 @@ function changeSelectColor(){
 
   })
 }
-
 changeSelectColor();
 
+//ref:https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle:
+
+function toPaint() {
+
+  let pixelBoard = document.getElementById('pixel-board');
+
+  pixelBoard.addEventListener('click',function(event){
+    
+    let selected = document.querySelector('.selected');
+
+    let styles = window.getComputedStyle(selected);  
+    let colorPixel = styles.getPropertyValue('background-color')
+    
+    console.log(colorPixel);
+    
+    let localPixel = event.target;
+    localPixel.style.backgroundColor = colorPixel;
+    
+  })
+}
+
+toPaint();
 
 }
