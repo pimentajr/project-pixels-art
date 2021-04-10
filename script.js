@@ -165,14 +165,27 @@ function initializePalette(randomColors) {
   initializePaletteListeners();
 }
 
+function validateBoardSizeInput(userBoardSideSize) {
+  if (userBoardSideSize < 5) {
+    return 5;
+  }
+
+  if (userBoardSideSize > 50) {
+    return 50;
+  }
+
+  return userBoardSideSize;
+}
+
 function fillBoardWithUserInput() {
-  const userBoardSideSize = document.getElementById('board-size').value;
+  let userBoardSideSize = document.getElementById('board-size').value;
 
   if (userBoardSideSize === '') {
     alert('Board inválido!');
     return;
   }
 
+  userBoardSideSize = validateBoardSizeInput(userBoardSideSize);
   boardSideSize = userBoardSideSize;
   PIXEL_BOARD.innerHTML = '';
 
