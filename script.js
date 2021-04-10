@@ -12,12 +12,7 @@ function createDiv(number) {
 }
 createDiv(25);
 
-const colorbox = document.getElementById('color-palette');
-const selectedColorPosition = document.querySelectorAll('selected');
-
-function eventClick(event) {
-    selectedColorPosition.classList.remove('selected');
+document.getElementById('color-palette').addEventListener('click', function (event) {
+    document.querySelectorAll('.selected')[0].classList.remove('selected');
     event.target.className += ' selected';
-  }
-
-colorbox.addEventListener('click', eventClick);
+})
