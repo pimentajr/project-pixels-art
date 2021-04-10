@@ -15,9 +15,24 @@
   display: inline-block;
   margin: 0 2px;
 }
+
 #blackC {
   background-color: black;
 }
+
+#blueC {
+  background-color: blue;
+}
+
+#yellowC {
+  background-color: yellow;
+}
+
+#violetC {
+  background-color: violet;
+}
+
+
 .pixel {
   display: table-cell;
   border: solid black 1px;
@@ -42,7 +57,7 @@ padding: 50px;
 }
 
 #input-size {
-  width: 17%;
+  width: 23%;
   margin: auto;
   padding-bottom: 30px;
 }
