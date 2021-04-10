@@ -8,3 +8,5 @@ function selecionaClasse(event) {
   }
   event.target.classList.add('selected');
 }
+const paleta = document.querySelector('#color-palette');
+paleta.addEventListener('click', selecionaClasse);
