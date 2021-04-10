@@ -1,6 +1,6 @@
 function initColor() {
   const startColor = document.querySelector('#black');
-  startColor.classList.add('selected');
+  startColor.className = 'selected';
 }
 
 initColor();
