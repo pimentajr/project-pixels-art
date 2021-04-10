@@ -1,6 +1,8 @@
+// Título
 const title = document.getElementById('title');
 title.style = 'font-family: New Tegomin';
 
+// Adiciona background-color em todos os quadrados da paleta de cores
 const blackSquare = document.getElementById('black');
 blackSquare.style = 'background-color: black';
 
@@ -12,3 +14,20 @@ orangeSquare.style = 'background-color: orange';
 
 const yellowSquare = document.getElementById('yellow');
 yellowSquare.style = 'background-color: yellow';
+
+// Criando tabela
+
+const divPixels = document.createElement('div');
+divPixels.id = 'pixel-board';
+document.body.appendChild(divPixels);
+
+for (let index = 1; index <= 5; index += 1) {
+  const tableLines = document.createElement('tr');
+  divPixels.appendChild(tableLines);
+
+  for (let indice = 1; indice <= 5; indice += 1) {
+    const columnLines = document.createElement('td');
+    columnLines.classList = 'pixel';
+    tableLines.appendChild(columnLines);
+  }
+}
