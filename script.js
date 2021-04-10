@@ -41,7 +41,7 @@ function addBox() {
 }
 
 function addBoxValueCaller() {
-  const boardButton = document.querySelector('#boardButton');
+  const boardButton = document.querySelector('#generate-board');
   boardButton.addEventListener('click', addBox);
 }
 addBoxValueCaller();
