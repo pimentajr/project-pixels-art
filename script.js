@@ -14,7 +14,7 @@ function showColorSelected() {
 
 // adiciona fundo branco para pixel da paintBoard
 function addWhiteToBoard() {
-  let paintBoardPixel= document.querySelectorAll('.pixel');
+  let paintBoardPixel = document.querySelectorAll('.pixel');
   for (let index = 0; index < paintBoardPixel.length; index += 1) {
     paintBoardPixel[index].style.backgroundColor = 'rgb(255, 255, 255)';
   }
@@ -58,7 +58,7 @@ function removeSelectedClass() {
 // Altera a clor que será utilizada no preenchimento do pixel
 function changeColorSelected() {
   let getColorsPallete = document.querySelector('#color-palette');
-  getColorsPallete.addEventListener('click', function(event) {
+  getColorsPallete.addEventListener('click', function (event) {
     removeSelectedClass();
     event.target.classList.add('selected');
     applySelectedColor()
@@ -69,7 +69,43 @@ changeColorSelected();
 
 function clearButton() {
   let getClearButton = document.getElementById('clear-board');
-  getClearButton.addEventListener('click', addWhiteToBoard); 
+  getClearButton.addEventListener('click', addWhiteToBoard);
 }
 
 clearButton();
+
+// o que define a altura: quantidade de divs.tr
+// o que define a largura: quantidade de divs.pixel existentes dentro de um div.tr
+
+// botao de input que recebe um valor N
+// reflexo do valor: gerar N divs.tr e N divs.pixel
+
+// gerar quantidade N de divs.tr (altura)
+function generateHeightDivs(number) {
+  let getPaintBoard = document.querySelector('#pixel-board');
+
+  for (let index = 0; index < number; index += 1) {
+    let heightDiv = document.createElement('div');
+    heightDiv.className = 'tr';
+    getPaintBoard.appendChild(heightDiv);
+  }
+}
+
+generateHeightDivs(7);
+
+// quantidade de divs.pixel existentes dentro de um div.tr
+function generateWidthDivs(number) {
+  let getHeightDiv = document.querySelectorAll('.tr');
+
+  for (let index = 0; index < getHeightDiv.length; index += 1) {
+    for (let index2 = 0; index2 < number; index2 += 1) {
+      let widthDiv = document.createElement('div');
+      widthDiv.className = 'pixel';
+      getHeightDiv[index].appendChild(widthDiv);
+    }
+  }
+  console.log(getHeightDiv.length);
+}
+
+generateWidthDivs(7);
+
