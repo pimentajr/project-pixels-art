@@ -1,7 +1,6 @@
 // Finaliza requisito 6, adicionando preto como selected.
  window.onload = function() {
-   let firstPixel = document.querySelector('.black');
-   firstPixel.classList.add('selected')
+   document.querySelector('.black').classList.add('selected');
 }
 
 const lineWidth = 5;
@@ -41,6 +40,7 @@ function createPixels() {
 }
 createPixels();
 
+//07 me baseei pelo código do alberto para entender.
 function removeClass(event) {
   const deleteClass = document.getElementsByClassName('color');
   for (let index = 0; index < deleteClass.length; index += 1) {
