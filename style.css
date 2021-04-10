@@ -2,8 +2,8 @@
   border: solid black 1px;
   display: inline-block;
   cursor: pointer;
-  width: 50px;
   height: 50px;
+  width: 50px;
   margin: 5px;
 }
 
@@ -13,9 +13,15 @@
 }
 
 .pixel {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: -5px;
+  display: inline-block;
   border: solid black 1px;
-  border-collapse: collapse;
   background-color: white;
+}
+
+#clear-board {
+  font-size: 20px;
+  margin: 10px;
 }

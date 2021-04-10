@@ -1,11 +1,11 @@
 const palette = ['black', 'red', 'blue', 'yellow'];
-const colorPalette = document.querySelector('#color-palette');
 const clearBoard = document.querySelector('#clear-board');
 sessionStorage.color = 'black';
 
 function colorSelectEvent(e) {
-  for (let i = 0; i < colorPalette.children.length; i += 1) {
-    const element = colorPalette.children[i];
+  const colorPalette = document.querySelectorAll('.color');
+  for (let i = 0; i < colorPalette.length; i += 1) {
+    const element = colorPalette[i];
     if (element.className === 'color selected') {
       element.className = 'color';
     }
@@ -22,7 +22,7 @@ function clearEvent() {
   const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
     const element = pixels[i];
-    element.style.backgroundColor = 'white';
+    element.removeAttribute('style');
   }
 }
 
@@ -35,20 +35,17 @@ function createPalette() {
 }
 
 function createPixels(x, y) {
-  const table = document.createElement('table');
-  table.id = 'pixel-board';
-
   for (let xi = 0; xi <= x; xi += 1) {
-    const tr = document.createElement('tr');
-    table.appendChild(tr);
+    const line = document.createElement('div');
+    line.id = 'pixel-board';
     for (let yi = 0; yi <= y; yi += 1) {
-      const td = document.createElement('td');
-      td.onclick = colorSetEvent;
-      td.className = 'pixel';
-      tr.appendChild(td);
+      const pixel = document.createElement('span');
+      pixel.onclick = colorSetEvent;
+      pixel.className = 'pixel';
+      line.appendChild(pixel);
     }
+    document.body.appendChild(line);
   }
-  document.body.appendChild(table);
 }
 
 createPalette();
