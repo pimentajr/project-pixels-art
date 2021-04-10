@@ -1,26 +1,45 @@
-.color{
+
+#pixel-board{
+    width: 208px;
+    height: 208px;
+}
+
+#cube1{
+    background-color: black;
     border: 1px solid;
     height: 0;
     padding-bottom: 2%;
     width: 2%;
     display: inline-block;
 }
-#cube1{
-    background-color: black;
-}
 #cube2{
     background-color: green;
+    border: 1px solid;
+    height: 0;
+    padding-bottom: 2%;
+    width: 2%;
+    display: inline-block;
 }
 #cube3{
     background-color: blue;
+    border: 1px solid;
+    height: 0;
+    padding-bottom: 2%;
+    width: 2%;
+    display: inline-block;
 }
 #cube4{
     background-color: red;
+    border: 1px solid;
+    height: 0;
+    padding-bottom: 2%;
+    width: 2%;
+    display: inline-block;
 }
 .pixel{
     border: 1px solid;
-    padding-bottom: 40px;
     width: 40px;
+    height: 40px;
     display: inline-block;
     background-color: white;
     margin: -2px;
