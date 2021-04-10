@@ -4,10 +4,10 @@ function square(roww, column) {
   const tbl = document.getElementById('pixel-board');
 
   for (let index = 0; index < roww; index += 1) {
-    let line = document.createElement('tr');
+    const line = document.createElement('tr');
 
     for (let secondIndex = 0; secondIndex < column; secondIndex += 1) {
-      let cells = document.createElement('td');
+    const cells = document.createElement('td');
       cells.classList.add('pixel');
       line.appendChild(cells);
     }
