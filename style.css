@@ -9,16 +9,16 @@
 
 #black {
   border: black solid 1px;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   background-color: black;
   display: inline-block;
 }
 
 #red {
   border: black solid 1px;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   background-color: red;
   display: inline-block;
   margin-left: 10px;
@@ -26,8 +26,8 @@
 
 #yellow {
   border: black solid 1px;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   background-color: yellow;
   display: inline-block;
   margin-left: 10px;
@@ -35,8 +35,8 @@
 
 #blue {
   border: black solid 1px;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   background-color: blue;
   display: inline-block;
   margin-left: 10px;
