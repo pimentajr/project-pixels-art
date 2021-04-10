@@ -25,6 +25,10 @@ function initializeClearButtonListener() {
   clearButton.addEventListener('click', clearBoard);
 }
 
+function resetLastClickedPixelColor() {
+  lastClickedPixelColor = '';
+}
+
 function fillPixelFromMouseEnter(e) {
   if (lastClickedPixelColor === '') {
     return;
@@ -56,6 +60,7 @@ function fillRowsWithPixels() {
       pixel.classList.add('pixel');
       pixel.addEventListener('mousedown', fillPixelFromMouseDown);
       pixel.addEventListener('mouseenter', fillPixelFromMouseEnter);
+      pixel.addEventListener('mouseup', resetLastClickedPixelColor);
       pixelRows[rowIndex].appendChild(pixel);
     }
   }
@@ -153,6 +158,7 @@ function initializePalette() {
 
   fixedColorBox.style.backgroundColor = FIXED_COLOR;
   fixedColorBox.classList.add('color', 'fixed', 'selected');
+  fixedColorBox.addEventListener('click', selectColor);
   colorPalette.appendChild(fixedColorBox);
 
   fillPaletteWithBoxes(colorPalette);
@@ -235,4 +241,5 @@ window.onload = () => {
   initializePixelBoard();
   initializeClearButtonListener();
   initializeBoardSizeButtonListener();
+  document.body.addEventListener('mouseup', resetLastClickedPixelColor);
 };
