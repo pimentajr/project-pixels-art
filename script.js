@@ -24,6 +24,12 @@ function makeColorPalette(colors) {
   }
 }
 
+// Font https://css-tricks.com/snippets/javascript/random-hex-color/
+// Font https://www.w3schools.com/jsref/jsref_tostring_number.asp radix
+function makeRandomColor() {
+  return randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+}
+
 // Font https://www.javascripttutorial.net/dom/manipulating/remove-all-child-nodes/
 function clearBoardPixels() {
   // Tirar a dúvida de porque não funciona
@@ -45,7 +51,7 @@ function validateNumber(number) {
 }
 
 window.onload = function () {
-  makeColorPalette(['white', 'black', 'red', 'green', 'blue']);
+  makeColorPalette(['white', 'black', makeRandomColor(), makeRandomColor(), makeRandomColor()]);
   makePixelBoard(5, 5);
 };
 
