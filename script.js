@@ -27,8 +27,6 @@ function aleatoryColor() {
   return rgb;
 }
 
-primaryColors(['black', aleatoryColor(), aleatoryColor(), aleatoryColor()]);
-
 function pixelsTable(width, height) {
   const table = document.querySelector('#pixel-board');
   table.style.width = [width * 42, 'px'].join('');
@@ -46,36 +44,27 @@ function pixelsTable(width, height) {
   allPixels = document.querySelectorAll('.pixel');
 }
 
-pixelsTable(5, 5);
-
-colorPalette.addEventListener('click', function (event) {
+function colorPaletteListener(originalEvent) {
   for (let index = 0; index < colorBox.length; index += 1) {
     colorBox[index].classList.remove('selected');
   }
-  event.target.classList.add('selected');
-});
+  originalEvent.target.classList.add('selected');
+}
 
-pixelBoard.addEventListener('click', function (event) {
+function pixelBoardListener(originalEvent) {
   const select = document.querySelector('.selected');
   const selectString = window.getComputedStyle(select, null).getPropertyValue('background-color');
-  const changeColor = event.target;
+  const changeColor = originalEvent.target;
   changeColor.style.backgroundColor = selectString;
-});
+}
 
-clearButton.addEventListener('click', function () {
+function clearButtonListener() {
   for (let index = 0; index < allPixels.length; index += 1) {
     allPixels[index].style.backgroundColor = 'white';
   }
-});
+}
 
-pixelBoard.addEventListener('click', function (event) {
-  const select = document.querySelector('.selected');
-  const selectString = window.getComputedStyle(select, null).getPropertyValue('background-color');
-  const changeColor = event.target;
-  changeColor.style.backgroundColor = selectString;
-});
-
-vqvButton.addEventListener('click', function () {
+function vqvButtonListener() {
   if (boardSize.value === '') {
     alert('Board inválido!')
   } else {
@@ -90,4 +79,22 @@ vqvButton.addEventListener('click', function () {
       pixelsTable(boardSize.value, boardSize.value);
     }
   }
-});
+}
+
+[colorPalette, pixelBoard, clearButton, vqvButton].forEach(item => {
+  item.addEventListener('click', event => {
+    if (item === colorPalette) {
+      colorPaletteListener(event);
+    } else if (item === pixelBoard) {
+      pixelBoardListener(event);
+    } else if (item === clearButton) {
+      clearButtonListener();
+    } else if (item === vqvButton) {
+      vqvButtonListener();
+    }
+  })
+})
+
+primaryColors(['black', aleatoryColor(), aleatoryColor(), aleatoryColor()]);
+
+pixelsTable(5, 5);
