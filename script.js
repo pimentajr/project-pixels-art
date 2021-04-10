@@ -29,6 +29,24 @@
 createGrid();
 */
 
+function randomColors() {
+  let blackBox = document.createElement('div');
+  blackBox.style.backgroundColor = 'black';
+  blackBox.classList.add('color', 'selected');
+  let colorSection = document.getElementById('color-palette');
+  colorSection.appendChild(blackBox);
+  for (let index = 0; index < 3; index += 1) {
+    console.log('olá');
+    let colorBox = document.createElement('div');
+    colorBox.className = 'color';
+    let randColor = '#'+(0x1000000+Math.random()*0xffffff).toString(16).substr(1,6)
+    colorBox.style.backgroundColor = randColor;
+    colorSection.appendChild(colorBox);
+    
+  }
+}
+randomColors();
+
 function newBoard () {
   let containerNewTable = document.getElementById('new-pixel-board');
   let newTable = document.createElement('div');
@@ -87,8 +105,6 @@ function updateBoard (){
 updateBoard();
 
 function colorSelector() {
-  let initialColor = document.getElementById('black');
-  initialColor.classList.add('selected');
   let colorOptions = document.getElementsByClassName('color');
   for (let index = 0; index < colorOptions.length; index += 1) {
     colorOptions[index].addEventListener('click', function (event) {
@@ -107,7 +123,7 @@ colorSelector()
 function fillPixels() {
   let table = document.querySelector('.tabela');
   table.addEventListener('click', function (event) {
-    event.target.style.backgroundColor = document.querySelector('.selected').id;
+    event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
   })
 }
 fillPixels();
