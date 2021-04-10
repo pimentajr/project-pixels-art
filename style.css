@@ -13,3 +13,7 @@
   display: inline-block;
   background-color: white;
 }
+
+.rowline {
+  height: 40px;
+}

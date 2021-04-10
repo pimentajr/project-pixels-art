@@ -15,7 +15,7 @@ function createBoard() {
 
   for (let row = 0; row < 5; row += 1) {
     const rowLine = document.createElement('div');
-
+    rowLine.className = 'rowline';
     for (let column = 0; column < 5; column += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
@@ -44,6 +44,18 @@ function colorSelect() {
       colorSelection[i].classList.add('selected');
     });
   }
-  console.log(colorSelection);
 }
 colorSelect();
+
+function createReset() {
+  const pixel = document.querySelectorAll('.pixel');
+  const btnReset = document.querySelector('#clear-board');
+  btnReset.addEventListener('click', () => {
+    for (let cell = 0; cell < pixel.length; cell += 1) {
+      if (pixel[cell].style.backgroundColor !== 'white') {
+        pixel[cell].style.backgroundColor = 'white';
+      }
+    }
+  });
+}
+createReset();
