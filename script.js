@@ -33,7 +33,7 @@ function colorPixel() {
   const pixelCell = document.getElementsByClassName('pixel');
 
   for (let i = 0; i < pixelCell.length; i += 1) {
-    pixelCell[i].addEventListener('click', function () {
+    pixelCell[i].addEventListener('click', () => {
       const selectedColor = document.querySelector('.selected');
       pixelCell[i].style.backgroundColor = selectedColor.style.backgroundColor;
     });
