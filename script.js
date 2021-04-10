@@ -52,17 +52,7 @@ function selectedColor(event) {
 function paintPixel(event) {
   const element = event.target;
   const selectedElement = document.querySelector('.selected');
-  const selectedColorIndex = indexOfNode(selectedElement);
-
-  if (selectedColorIndex === 0) {
-    element.style.backgroundColor = 'black';
-  } else if (selectedColorIndex === 1) {
-    element.style.backgroundColor = 'yellow';
-  } else if (selectedColorIndex === 2) {
-    element.style.backgroundColor = 'red';
-  } else if (selectedColorIndex === 3) {
-    element.style.backgroundColor = 'green';
-  }
+  element.style.backgroundColor = selectedElement.style.backgroundColor;
 }
 
 function checkInputValue(value) {
@@ -76,10 +66,17 @@ function checkInputValue(value) {
   return value;
 }
 
+function randomColor() {
+  const colorCode = parseInt(Math.random() * 0xffffff, 10)
+    .toString(16)
+    .padStart(6, '0');
+  return `#${colorCode}`;
+}
+
 createPaletteColorDiv('black');
-createPaletteColorDiv('yellow');
-createPaletteColorDiv('red');
-createPaletteColorDiv('green');
+createPaletteColorDiv(randomColor());
+createPaletteColorDiv(randomColor());
+createPaletteColorDiv(randomColor());
 
 createBoardPixels(25);
 
@@ -87,8 +84,7 @@ selectedColorDiv.addEventListener('click', selectedColor);
 
 btnClear.addEventListener('click', () => {
   for (let index = 0; index < 25; index += 1) {
-    document.querySelectorAll('div.pixel')[index].style.backgroundColor =
-      'white';
+    document.querySelectorAll('div.pixel')[index].style.backgroundColor = 'white';
   }
 });
 
