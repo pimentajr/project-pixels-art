@@ -29,5 +29,5 @@ function addColorPixel(event) {
   const changeColor = getComputedStyle(color).backgroundColor;
   const coloringTableEvent = event.target;
   coloringTableEvent.style.backgroundColor = changeColor;
-}  
+}
 coloringTable.addEventListener('click', addColorPixel);
