@@ -1,33 +1,32 @@
 const linesUsed = 5;
 
 function colorBoxes() {
-    const boxes = document.querySelectorAll('.color');
-    const black = boxes[0];
-    black.style.backgroundColor = 'black';
-    const blue = boxes[1];
-    blue.style.backgroundColor = 'lightblue';
-    const grey = boxes[2];
-    grey.style.backgroundColor = 'lightgrey';
-    const green = boxes[3];
-    green.style.backgroundColor = 'lightgreen';
-
+  const boxes = document.querySelectorAll('.color');
+  const black = boxes[0];
+  black.style.backgroundColor = 'black';
+  const blue = boxes[1];
+  blue.style.backgroundColor = 'lightblue';
+  const grey = boxes[2];
+  grey.style.backgroundColor = 'lightgrey';
+  const green = boxes[3];
+  green.style.backgroundColor = 'lightgreen';
 }
 
 colorBoxes();
 
-function pixelBoard(){
-    let lineBoard = document.querySelectorAll('.line');
-    for (let i = 0; i < linesUsed; i++){
-        const pixelBox = document.createElement('div');
-        pixelBox.className = 'pixel';
-        pixelBox.style.backgroundColor = 'white';
-        lineBoard[i].appendChild(pixelBox);
-    }
+function pixelBoard() {
+  const lineBoard = document.querySelectorAll('.line');
+  for (let i = 0; i < linesUsed; i += 1){
+    const pixelBox = document.createElement('div');
+    pixelBox.className = 'pixel';
+    pixelBox.style.backgroundColor = 'white';
+    lineBoard[i].appendChild(pixelBox);
+  }
 }
 
-// for (let i = 0; i < linesUsed; i++){
-//     pixelBoard();
-// }
+for (let i = 0; i < linesUsed; i += 1) {
+  pixelBoard();
+}
 
 // window.onload = function() {
 //     let locateBlack = document.querySelector('.color');
@@ -38,35 +37,34 @@ function pixelBoard(){
 //     })
 // }
 
-
-// function giveAndRemoveSelec() {
-//     function removeSelected() {
-//         let boxes = document.querySelectorAll('.color');
-//         for (let i = 0; i < boxes.length; i +=1) {
-//             boxes[i].addEventListener('click', function() {
+function giveAndRemoveSelec() {
+    function removeSelected() {
+        let boxes = document.querySelectorAll('.color');
+        for (let i = 0; i < boxes.length; i +=1) {
+            boxes[i].addEventListener('click', function() {
             
-//                 let boxWithSelec = document.querySelector('.selected');
-//                 boxWithSelec.classList.remove('selected');
+                let boxWithSelec = document.querySelector('.selected');
+                boxWithSelec.classList.remove('selected');
                 
-//             })
-//         }
+            })
+        }
         
-//     }
-//     removeSelected();
+    }
+    removeSelected();
 
-//     function giveSelected() {
-//         let boxes = document.querySelectorAll('.color');
-//         for (let i = 0; i < boxes.length; i +=1) {
-//             boxes[i].addEventListener('click', function() {
-//                 boxes[i].classList.add('selected');
-//             })
-//         }
+    function giveSelected() {
+        let boxes = document.querySelectorAll('.color');
+        for (let i = 0; i < boxes.length; i +=1) {
+            boxes[i].addEventListener('click', function() {
+                boxes[i].classList.add('selected');
+            })
+        }
  
-//     }
-//     giveSelected();
+    }
+    giveSelected();
 
-// }
-// giveAndRemoveSelec();
+}
+giveAndRemoveSelec();
 
 // // let locateSelected = document.querySelector('.')
 // let locatePixel = document.querySelectorAll('.pixel');
