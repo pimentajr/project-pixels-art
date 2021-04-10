@@ -1,7 +1,7 @@
 #title {
   text-align: center;
   color: antiquewhite;
-  font-size: 50px;
+  font-size: 70px;
   font-family: VT323, monospace, serif;
 }
 
@@ -37,8 +37,8 @@
 }
 
 #button-section {
-  width: 90px;
-  margin: auto;
+  align-content: center;
+  text-align: center;
   padding: 50px;
 }
 
@@ -47,13 +47,18 @@
 }
 
 #input-size {
-  width: 18%;
-  margin: auto;
   padding-bottom: 30px;
+  align-content: center;
+  text-align: center;
 }
 
-#board-size {
-  width: 200px;
+#generate-board {
+  display: inline-block;
+  text-align: center;
+}
+
+#board-size { 
+  width: 100px;
   border-radius: 10px;
   font-weight: 900;
   font-size: 20px;
@@ -83,6 +88,6 @@ body {
   font-family: VT323, monospace, serif;
   text-align: center;
   margin-top: 150px;
-  font-weight: 900;  
+  font-weight: 900;
   font-size: 25px;
 }
