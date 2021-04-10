@@ -1,9 +1,8 @@
 #title {
   text-align: center;
   color: antiquewhite;
-  font-weight: 600;
   font-size: 50px;
-  font-family: 'New Tegomin', serif;
+  font-family: VT323, monospace, serif;
 }
 
 #color-palette {
@@ -48,13 +47,12 @@
 }
 
 #input-size {
-  width: 13%;
+  width: 25%;
   margin: auto;
   padding-bottom: 30px;
 }
 
 #board-size {
-  width: 120px;
   border-radius: 10px;
   font-weight: 900;
   font-size: 20px;
@@ -81,8 +79,9 @@ body {
 
 #credits {
   color: antiquewhite;
-  font-family: 'New Tegomin', serif;
+  font-family: VT323, monospace, serif;
   text-align: center;
   margin-top: 150px;
   font-weight: 900;  
 }
+
