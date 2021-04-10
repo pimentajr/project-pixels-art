@@ -1,3 +1,20 @@
+// Requisito 2 e 3
+const colorsPalette = document.querySelector('#color-palette');
+const colorNames = ['black', 'green', 'blue', 'red'];
+
+function createColorDivs() {
+  for (let index = 0; index < 4; index += 1) {
+    const color = document.createElement('div');
+    color.className = 'color';
+    color.style.backgroundColor = colorNames[index];
+    colorsPalette.appendChild(color);
+  }
+}
+
+createColorDivs();
+
+// Requisito 4
+
 const pixelBoard = document.querySelector('#pixel-board');
 
 function PixelBoardMaker(boardSize) {
