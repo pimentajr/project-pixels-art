@@ -43,3 +43,10 @@ for (let indice = 1; indice <= 5; indice += 1) {
   }
   contaneinerCores.appendChild(createLinha);
 }
+
+secaoSelecionaCor.addEventListener('click', function CreateEvents(event) {
+  if (document.querySelector('.selected') !== null) {
+    document.querySelector('.selected').classList.remove('selected');
+  }
+  event.target.classList.add('selected');
+});
