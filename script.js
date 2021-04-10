@@ -17,16 +17,16 @@ const boardSizeInput = document.querySelector('#board-size');
 const generateBoardButton = document.querySelector('#generate-board');
 
 function fillPixelBoard(boardSize) {
-  for (let lineIndex = 0; lineIndex < boardSize; lineIndex += 1) {
-    const line = document.createElement('div');
-    line.className = 'line';
-    pixelBoard.appendChild(line);
+  for (let rowIndex = 0; rowIndex < boardSize; rowIndex += 1) {
+    const row = document.createElement('div');
+    row.className = 'row';
+    pixelBoard.appendChild(row);
 
     for (let pixelIndex = 0; pixelIndex < boardSize; pixelIndex += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       pixel.style.backgroundColor = 'white';
-      line.appendChild(pixel);
+      row.appendChild(pixel);
     }
   }
 }
