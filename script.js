@@ -19,8 +19,27 @@ function createTable() {
 }
 createTable();
 
-function colorSelection() {
+function blackColorSelection() {
   const elemento = document.querySelectorAll('.color');
   elemento[0].classList.add('selected');
 }
-colorSelection();
+blackColorSelection();
+
+
+const palette = document.querySelector('#color-palette');
+
+function removeSelected() {
+	let select = document.querySelector('.selected');
+	while (select) {
+		select.classList.remove('selected');
+		select = document.querySelector('.selected');
+	}
+}
+
+function clickColor() {
+		palette.addEventListener('click', function(event){
+			removeSelected();
+			event.target.classList.add('selected');
+			})
+}
+clickColor();
