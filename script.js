@@ -15,7 +15,7 @@ getColorsPallete.addEventListener('click', function(event) {
 // adiciona fundo branco para pixel da paintBoard
 function addWhiteToBoard() {
   let paintBoardContainer = document.querySelector('#pixel-board');
-  paintBoardContainer.style.backgroundColor = 'white';
+  paintBoardContainer.style.backgroundColor = 'rgb(255, 255, 255)';
 }
 
 addWhiteToBoard();
@@ -46,6 +46,7 @@ applySelectedColor();
 
 
 // remove a classe selected de um determinado elemento e aplica em outro
+// altera a classe selected de elemento
 function removeSelectedClass() {
   let countSelectClass = document.getElementsByClassName('selected')
   if (countSelectClass.length !== 0) {
