@@ -40,7 +40,6 @@ colorSelection();
 
 // Pinta a box selecionada com a cor correta
 function printingPixels(printBox) {
-  let printBoxBColor = printBox.style.backgroundColor
   switch (document.querySelector('.selected').id) {
   case 'black-box':
     printBox.style.backgroundColor = 'black';
@@ -113,13 +112,13 @@ createButtonResize();
 
 // Inspeciona se o valor inserido é válido
 function inspectBoardSize(boardSize) {
-  let validSize = boardSize
+  let validSize = boardSize;
   if (!validSize) {
     return alert('Board inválido!');
   }
   if (validSize < 0) {
-    return alert('O número inserido deve ser maior que 0')
-  } 
+    return alert('O número inserido deve ser maior que 0');
+  }
   if (validSize < 5) {
     validSize = 5;
   } else if (validSize > 50) {
@@ -137,5 +136,3 @@ function BoardSize() {
   });
 }
 BoardSize();
-
-
