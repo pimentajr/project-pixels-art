@@ -1,6 +1,18 @@
+body {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color:  rgb(147, 182, 214);
+  margin: 0;
+}
+
 h1 {
   color: rgb(30, 116, 119);
-  text-align: center;
+}
+
+div {
+  width: 100%;
 }
 
 .color {
@@ -9,5 +21,24 @@ h1 {
   height: 80px;
   display: inline-block;
   border-radius: 10px;
-  margin: 20px, 20px;
+  margin: 20px;
+}
+
+.pixel {
+  background-color: rgb(226, 106, 37);
+  width: 80px;
+  height: 80px;
+  border: 1px solid black;
+  justify-content: center;
+  display: inline-block;
+}
+
+#pixel-board {
+  background: rgb(189, 140, 189);
+  flex-wrap: wrap;
+  display: flex;
+  width: 410px;
+  height: 410px;
+  justify-content: center;
+  align-items: center;
 }
