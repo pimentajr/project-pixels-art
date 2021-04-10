@@ -1,5 +1,4 @@
 
-
 let palselected = document.getElementById('color-palette');
 let pixelboard = document.getElementById('pixel-board');
 let clean = document.getElementById('clean');
@@ -7,27 +6,13 @@ let pixels = document.getElementsByClassName('pixel')
 let backcolor = document.getElementsByClassName('selected')
 
 
-document.getElementById("cube1").className = "selected";
-
-
-
-
-
 palselected.addEventListener('click',function(event){
    let colorSelected = document.querySelector('.selected');
     colorSelected.classList.remove('selected');
     colorSelected.classList.add('color');
-    event.target.classList.remove('color');
     event.target.classList.add('selected');
 }
 ) 
-
-    
-
-
-
-
-
 
 pixelboard.addEventListener('click',function(event) {
     let selectedpixel = event.target
