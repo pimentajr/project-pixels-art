@@ -47,6 +47,28 @@ function colorSelect() {
 }
 colorSelect();
 
+/* 8- Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
+O que será verificado:
+
+Verifica se ao carregar a página deve ser possível pintar os pixels de preto
+
+Verifica se após selecionar uma outra cor na paleta, é possível pintar os pixels com essa cor
+
+Verifica se somente o pixel que foi clicado foi preenchido com a cor selecionada, sem influenciar na cor dos demais pixels. */
+
+function palletSelectColor() {
+  const selectedPixel = document.querySelectorAll('.pixel');
+  for (let i = 0; i < selectedPixel.length; i += 1) {
+    selectedPixel[i].addEventListener('click', (event) => {
+      const selectColor = document.querySelector('.selected');
+      const selectedColor = selectColor.style.backgroundColor;
+      const element = event.target;
+      element.style.backgroundColor = selectedColor;
+    });
+  }
+}
+palletSelectColor();
+
 function createReset() {
   const pixel = document.querySelectorAll('.pixel');
   const btnReset = document.querySelector('#clear-board');
