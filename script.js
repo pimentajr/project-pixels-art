@@ -3,7 +3,7 @@ const darkgreen = document.getElementById('darkgreen');
 const blue = document.getElementById('blue');
 const red = document.getElementById('red');
 const table = document.getElementById('color-palette');
-const clearButton = document.getElementById('clearButton');
+const clearButton = document.getElementById('clear-board');
 
 const arrayTable = [];
 for (let i = 0; table.rows[i]; i += 1) {
