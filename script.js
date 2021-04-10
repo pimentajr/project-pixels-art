@@ -14,15 +14,17 @@ createPaletteDiv();
 function createBoxesDiv() {
   const selectPalette = document.querySelector('#color-palette');
   for (let index = 0; index < 4; index += 1) {
-  const createDivs = document.createElement('div');
-  selectPalette.appendChild(createDivs);
-  createDivs.classList.add('color');
+    const createDivs = document.createElement('div');
+    selectPalette.appendChild(createDivs);
+    createDivs.classList.add('color');
   }
-  const arrayOfColors = ['black', 'blue', 'purple', 'violet'];
-  const selectDivs = document.querySelectorAll('.color');
-  selectDivs.forEach((box, index) => {
-  const div = box; div.style.backgroundColor = arrayOfColors[index];
-  });
+  
+  const getColors = document.querySelectorAll('.color')
+  getColors[0].style.backgroundColor = 'black';
+  getColors[1].style.backgroundColor = 'rgb(189 172 216)';
+  getColors[2].style.backgroundColor = 'violet';
+  getColors[3].style.backgroundColor = 'purple';
+ 
   const firstColor = document.querySelector('.color');
   firstColor.classList.add('selected');
 }
