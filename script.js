@@ -37,8 +37,7 @@ let tableElements = document.getElementById('pixel-board');
 tableElements.addEventListener('click', paintTable)
 
 
-let clearButton = documet.getElementById('clear-board');
-clearButton.addEventListener('click', clearTable)
+
 
 
 
