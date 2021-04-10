@@ -3,7 +3,6 @@ window.onload = function() {
   select.className = 'color selected'
 }
 
-
 function colorPallete(){
   let allPallete = document.querySelectorAll('.color')
   for (let c = 0; c < allPallete.length; c += 1){
@@ -16,12 +15,6 @@ function selectColor(){
   let color = document.getElementById(cor)
   colorPallete()
   color.className = 'color selected'
-}
-
-
-
-function fundo(cores){
-
 }
 
 function colorPaint(){
@@ -47,12 +40,3 @@ function clear() {
     squares[square].style.backgroundColor = 'white'
   }
 }
-
-// function clear(){
-//  let trDivs = document.querySelectorAll('.tr')
-//  for (let i = 0; i < trDivs.length; i += 1){
-//    console.log(trDivs[i])
-//  }
-// }
-
-// clear()
