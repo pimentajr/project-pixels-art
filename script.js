@@ -117,14 +117,13 @@ yourBoard();
 // Requisito 12 - cores diferentes a cada carregamento de página
 function randomColors () {
   const colors = document.querySelectorAll('.color');
-  for (let index = 1; colors.length; index += 1) {
-    let x = Math.floor(Math.random() * 256);
-    let y = Math.floor(Math.random() * 256);
-    let z = Math.floor(Math.random() * 256);
+  for (let index = 1; index < colors.length; index += 1) {
+    let x = parseInt(Math.floor(Math.random() * 256));
+    let y = parseInt(Math.floor(Math.random() * 256))
+    let z = parseInt(Math.floor(Math.random() * 256))
+    // Não se esquecer de transformar valores em inteiros
     // Referência - sistema de mudança de cores rgb - https://dev.to/devlorenzo/js-random-background-color-change-4pof 
-    colors[index].style.backgroundColor = `rgb( ${x}, ${y}, ${z} )`;'
+    colors[index].style.backgroundColor = `rgb( ${x}, ${y}, ${z} )`;
   }
 }
-
-
 randomColors();
