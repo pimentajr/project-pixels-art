@@ -50,8 +50,10 @@ h1 {
 
 #pixel-board {
   display: inline-block;
-  height: 250px;
-  width: 250px;
+  height: 210px;
+  width: 210px;
+  padding: 0;
+  margin-top: 5px;
 }
 
 main {
@@ -66,8 +68,12 @@ main {
   background-color: white;
   border-color: black;
   border-style: solid;
-  display: inline-block;
-  height: 40px;
+  display: table-cell;
+  height: 43px;
   width: 40px;
   border-width: 1px;
+}
+
+#color-palette {
+  padding: 0;
 }

@@ -28,7 +28,7 @@ for (let i = 0; i < color.length; i += 1) {
   });
 }
 
-pixelBoard.addEventListener('click', function(event) {
+pixelBoard.addEventListener('click', function (event) {
   const selected = document.querySelector('.selected');
   event.target.style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
 });
