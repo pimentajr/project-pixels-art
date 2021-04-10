@@ -23,9 +23,10 @@ body {
   align-items: center;
 }
 
-/* #userPainel {
-  margin: 50px;
+button {
+  margin: 50px 65px;
 }
+
 
 #board-size {
   width: 120px;

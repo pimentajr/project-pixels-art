@@ -29,7 +29,7 @@ populateGrid(5);
 
 // Muda a classe selected
 function clickPalette() {
-  const eventPalette = document.getElementById('color-palette');
+  const eventPalette = document.querySelector('#color-palette');
   eventPalette.addEventListener('click', (selectedColor) => {
     const eventTarget = selectedColor.target;
     const color = document.getElementsByClassName('color');
@@ -45,7 +45,7 @@ clickPalette();
 
 // Colore o pixel
 function colorGrid() {
-  const eventGrid = document.getElementById('pixel-board');
+  const eventGrid = document.querySelector('#pixel-board');
   eventGrid.addEventListener('click', (paintPixel) => {
     const colorSelected = document.querySelector('.selected').style.backgroundColor;
     const eventTarget = paintPixel.target;
@@ -55,3 +55,38 @@ function colorGrid() {
   });
 }
 colorGrid();
+
+// Limpa o grid
+function addBtn() {
+  const container = document.querySelector('#pixel-board');
+  const btnClear = document.createElement('button');
+  btnClear.id = 'clearBtn';
+  btnClear.innerText = 'Limpar';
+  container.appendChild(btnClear);
+}
+
+function clearGrid() {
+  const eventBtn = document.querySelector('#clearBtn');
+  eventBtn.addEventListener('click', () => {
+    const pixel = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixel.length; index += 1) {
+      pixel[index].style.backgroundColor = 'white';
+    }
+  });
+}
+addBtn();
+clearGrid();
+
+/*
+Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
+
+O que será verificado:
+
+    Verifica se o botão tem o id denominado clear-board
+
+    Verifica se o botão está posicionado entre a paleta de cores e o quadro de pixels
+
+    Verifica se o texto do botão é 'Limpar'
+
+    Verifica se ao clicar no botão, o quadro de pixels é totalmente preenchido de branco
+*/
