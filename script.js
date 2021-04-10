@@ -26,7 +26,7 @@ window.onload = function initial() {
     clearButton.addEventListener('click', function () {
       let pixelStyle = document.querySelectorAll('.pixel');
       for (let index = 0; index < pixelStyle.length; index += 1) {
-        pixelStyle[index].style.backgroundColor = null;
+        pixelStyle[index].style.backgroundColor = 'white';
       }
     });
   }
