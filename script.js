@@ -7,8 +7,10 @@ addBlackColor();
 
 // Requisito 4 - Criação do Pixel Board
 // 5 linhas div com 5 divs dentro - inline
+
+const pixelBoard = document.getElementById('pixel-board'); 
+// Essa constante foi declarada fora do function para ser usada no requisito 11
 function createBoard(number) {
-  const pixelBoard = document.getElementById('pixel-board');
   for (let index = 0; index < number; index += 1) {
     const lines = document.createElement('div');
     lines.className = 'boardline';
@@ -91,3 +93,26 @@ function clearBoard() {
   });
 }
 clearBoard();
+
+// Requisito 10 e Requisito 11(colocando padrão de 5 e 50) - Bónus - botão de tamanho do board e restrições para o usuário
+function yourBoard() {
+  let size = document.querySelector('#board-size');
+  let clickVQV = document.getElementById('generate-board');
+  clickVQV.addEventListener('click', () => {
+    if (size.value === '') {
+      alert('Board Inválido!');
+    }
+    else if (size.value < 5) {
+      size.value = 5;
+    } else if (size.value > 50) {
+      size.value = 50;
+    }
+    createBoard(size.value);
+    clearBoard();
+    pixelBoard.innerHTML = '';
+    createBoard(size.value);
+
+
+  });
+}
+yourBoard()
