@@ -28,41 +28,38 @@ for (let i = 0; i < linesUsed; i += 1) {
   pixelBoard();
 }
 
-// window.onload = function() {
-//     let locateBlack = document.querySelector('.color');
-//     locateBlack.classList.add('selected');
-//     let selectedColor = document.querySelector('.selected');
-//     selectedColor.addEventListener('click',function() {
-//         //document.body.style.backgroundColor =  'black';
-//     })
-// }
+window.onload = function() {
+  let locateBlack = document.querySelector('.color');
+  locateBlack.classList.add('selected');
+  let selectedColor = document.querySelector('.selected');
+  selectedColor.addEventListener('click',function() {
+    //document.body.style.backgroundColor =  'black';
+  })
+}
 
 function giveAndRemoveSelec() {
-    function removeSelected() {
-        let boxes = document.querySelectorAll('.color');
-        for (let i = 0; i < boxes.length; i +=1) {
-            boxes[i].addEventListener('click', function() {
-            
-                let boxWithSelec = document.querySelector('.selected');
-                boxWithSelec.classList.remove('selected');
-                
-            })
-        }
-        
+  function removeSelected() {
+    let boxes = document.querySelectorAll('.color');
+    for (let i = 0; i < boxes.length; i += 1) {
+      boxes[i].addEventListener('click', function() {
+        let boxWithSelec = document.querySelector('.selected');
+        boxWithSelec.classList.remove('selected');
+          
+      })
     }
-    removeSelected();
+      
+  }
+  removeSelected();
 
-    function giveSelected() {
-        let boxes = document.querySelectorAll('.color');
-        for (let i = 0; i < boxes.length; i +=1) {
-            boxes[i].addEventListener('click', function() {
-                boxes[i].classList.add('selected');
-            })
-        }
- 
+  function giveSelected() {
+    let boxes = document.querySelectorAll('.color');
+    for (let i = 0; i < boxes.length; i +=1) {
+      boxes[i].addEventListener('click', function() {
+        boxes[i].classList.add('selected');
+      })
     }
-    giveSelected();
-
+  }
+  giveSelected();
 }
 giveAndRemoveSelec();
 
