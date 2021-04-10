@@ -1,5 +1,5 @@
 // Seleciona a cor preta como primária e também cria um tabuleiro padrão
-window.onload = function () {
+window.onload = () => {
   const firstSelectedColor = document.getElementById('black-box');
   firstSelectedColor.classList = ('color selected');
   boardMaker(5);
@@ -61,7 +61,7 @@ function createButton() {
 createButton();
 
 // Ao clicar no botão, limpa a tela
-function buttonAction() {
+function clearBoard() {
   const button = document.getElementById('clear-board');
   button.addEventListener('click', () => {
     const pixels = document.getElementsByClassName('pixel');
@@ -70,10 +70,10 @@ function buttonAction() {
     }
   });
 }
-buttonAction();
+clearBoard();
 
 // Cria um botão e um campo de input
-function buttonResize() {
+function createButtonResize() {
   const boardSize = document.createElement('input');
   boardSize.id = 'board-size';
   boardSize.type = 'number';
@@ -86,12 +86,20 @@ function buttonResize() {
   generateBoard.innerHTML = 'VQV';
   document.getElementById('buttons').appendChild(generateBoard);
 }
-buttonResize();
+createButtonResize();
 
 // Reseta o tabuleiro
 function boardRemove() {
   const oldBoard = document.querySelector('#pixel-board');
   oldBoard.innerHTML = '';
+}
+
+function inspectBoardSize(pixels) {
+  const pixelXY = pixels;
+  console.log(pixelXY)
+  if (!pixelXY) {
+    alert('Board inválido');
+  }
 }
 
 // Cria os elementos do quadro de acordo com o número de pixels
@@ -109,12 +117,20 @@ function boardMaker(pixels) {
   }
 }
 
-// Cria um quadro utilizando o tamanho inserido no input
+// Cria um quadro utilizando o tamanho inserido no input, se não inserir valor, apresentar uma mensagem de erro
 function BoardSize() {
   const generateBoard = document.getElementById('generate-board');
   generateBoard.addEventListener('click', () => {
-    const boardSize = document.getElementById('board-size').value;
-    boardMaker(boardSize);
+    let boardSize = document.getElementById('board-size').value;
+    if (!boardSize) {
+      alert('Board inválido')
+      console.log(boardSize);
+    } else if (boardSize < 5) {
+      boardSize = 5;
+    } else if (boardSize > 50) {
+      boardSize = 50;
+    }
+    boardMaker(boardSize); 
   });
 }
 BoardSize();
