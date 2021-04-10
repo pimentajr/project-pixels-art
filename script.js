@@ -60,14 +60,14 @@ thirdColor.addEventListener('click', function () {
 });
 
 fourthColor.addEventListener('click', function () {
-  firstColor.classList.add('selected');
+  fourthColor.classList.add('selected');
   secondColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
   firstColor.classList.remove('selected');
   fourthColor.style.backgroundColor = 'blue';
 });
 
-// Colore o pixel individual
+// Requisito 8 - Colore o pixel individual
 function coloredPixel() {
   const allBoard = document.querySelector('#pixel-board');
   allBoard.addEventListener('click', function (eventoDeOrigem) {
@@ -78,3 +78,16 @@ function coloredPixel() {
   });
 }
 coloredPixel();
+
+// Requisito 9 - Criação do botão
+// Adiciona um botão e limpa o grid
+function clearBoard() {
+  const cleanButton = document.getElementById('clear-board');
+  cleanButton.addEventListener('click', function() {
+    const pixel = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixel.length; index += 1) {
+      pixel[index].style.backgroundColor = 'white';
+    }
+  });
+}
+clearBoard();
