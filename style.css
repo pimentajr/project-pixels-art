@@ -14,3 +14,12 @@ body {
   background-color: rgb(147, 182, 214);
   margin: 0;
 }
+
+.color {
+  border: black, solid, 1px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 10px;
+  margin: 20px;
+}
