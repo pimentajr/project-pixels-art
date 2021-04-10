@@ -4,6 +4,7 @@ const blue = document.getElementById('blue');
 const red = document.getElementById('red');
 const table = document.getElementById('color-palette');
 const clearButton = document.getElementById('clear-board');
+const btnGenerateBoard = document.getElementById('generate-board');
 
 const arrayTable = [];
 for (let i = 0; table.rows[i]; i += 1) {
@@ -45,7 +46,34 @@ function clearBoard() {
   }
 }
 
+document.getElementById('board-size').addEventListener('change', function validateInput() {
+  const inputNumber = this.value;
+  if (inputNumber < 5) this.value = 5;
+  if (inputNumber > 50) this.value = 50;
+});
+
+function createBoard() {
+  const inputSizeBoard = document.getElementById('board-size');
+  if (inputSizeBoard.value === '') {
+    alert('Board inválido!');
+    return null;
+  }
+  const tableOfPixel = document.getElementById('pixel-board');
+  tableOfPixel.innerHTML = '';
+  for (let i = 0; i < inputSizeBoard.value; i += 1) {
+    const pixelTable = document.createElement('tr');
+    tableOfPixel.appendChild(pixelTable);
+    for (let j = 0; j < inputSizeBoard.value; j += 1) {
+      const cell = document.createElement('td');
+      cell.classList.add('pixel');
+      pixelTable.appendChild(cell);
+    }
+  }
+  paintingRange();
+}
+
 paintingRange();
+btnGenerateBoard.addEventListener('click', createBoard);
 black.addEventListener('click', selectColor);
 darkgreen.addEventListener('click', selectColor);
 blue.addEventListener('click', selectColor);
