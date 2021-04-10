@@ -23,6 +23,8 @@
 
 #pixel-board {
   margin-top: 10px;
+  width: 200px;
+  height: 200px;
   display: inline-block;
 }
 
@@ -31,7 +33,7 @@
   width: 40px;
   height: 40px;
   background-color: white;
-  margin: -2px;
+  margin: -3px;
   display: inline-block;
 }
 

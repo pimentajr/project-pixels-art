@@ -1,19 +1,3 @@
-// criar o quadro com de pixels
-function createBoxAndPixelBoard() {
-  let pixelBoard = document.createElement('div'); // cria uma div será o pixel board e armazenará os pixels
-  pixelBoard.id = 'pixel-board'; // adiciona classe
-  document.body.appendChild(pixelBoard); // insere no body
-  pixelBoard.style.width = 5 * 40 + 'px'; // define a largura do quadro
-  pixelBoard.style.height = 5 * 40 + 'px'; // define a altura do quadro
-  pixelBoard.style.marginTop = '10px'; // define a margem top
-  for (let index = 0; index < 5 * 5; index += 1) { // executa o comando abaixo multiplas vezes
-    let pixel = document.createElement('div'); // cria uma div, e cada div criada será cada pixels
-    pixel.className = 'pixel'; // adiciona classe
-    pixelBoard.appendChild(pixel); // insere no pixel board
-  }
-}
-createBoxAndPixelBoard();
-
 // Seleciona a cor desejada
 function selectColor() {
   let colorToSelect = document.querySelectorAll('.color');// captura a palleta de cores
