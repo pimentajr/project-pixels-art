@@ -32,3 +32,14 @@ for (let index = 1; index <= 5; index += 1) {
     tableLines.appendChild(columnLines);
   }
 }
+
+// Criando botão
+
+const eventButton = document.getElementById('color-palette');
+
+eventButton.addEventListener('click', function createButton(event) {
+  if (document.querySelector('.selected') !== null) {
+    (document.querySelector('.selected').classList.remove('selected'));
+  }
+  event.target.classList.add('selected');
+});
