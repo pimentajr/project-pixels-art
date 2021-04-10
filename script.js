@@ -1,5 +1,6 @@
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
+const userPainel = document.querySelector('#user-painel');
 
 // Cria e colore a paleta
 function createColor(boxColor) {
@@ -9,6 +10,7 @@ function createColor(boxColor) {
   if (boxColor === 'black') box.classList.add('selected');
   colorPalette.appendChild(box);
 }
+
 createColor('black');
 createColor('red');
 createColor('blue');
@@ -26,6 +28,7 @@ function populateGrid(size) {
     }
   }
 }
+
 populateGrid(5);
 
 // Muda a classe selected
@@ -41,6 +44,7 @@ function clickPalette() {
     }
   });
 }
+
 clickPalette();
 
 // Colore o pixel
@@ -53,14 +57,15 @@ function colorGrid() {
     }
   });
 }
+
 colorGrid();
 
-// Limpa o grid
-function addBtn() {
+// Adiciona um botão e limpa o grid
+function addBtn(container, text, idButton) {
   const btnClear = document.createElement('button');
-  btnClear.id = 'clearBtn';
-  btnClear.innerText = 'Limpar';
-  pixelBoard.appendChild(btnClear);
+  btnClear.id = idButton;
+  btnClear.innerText = text;
+  container.appendChild(btnClear);
 }
 
 function clearGrid() {
@@ -72,5 +77,30 @@ function clearGrid() {
     }
   });
 }
-addBtn();
+
+addBtn(pixelBoard, 'Limpar', 'clearBtn');
 clearGrid();
+
+// Addiciona input, botão e faz grid ter tamanho definido por user
+function addInput() {
+  const input = document.createElement('input');
+  input.id = 'board-size';
+  userPainel.appendChild(input);
+}
+
+addInput();
+addBtn(userPainel, 'VQV', 'generate-board');
+
+function generateBoard() {
+  const input = document.querySelector('#board-size');
+  const grtBtn = document.querySelector('#generate-board');
+  grtBtn.addEventListener('click', () => {
+    if (input.value === '') alert('Board Inválido!');
+    else if (input.value < 5) input.value = 5;
+    else if (input.value > 50) input.value = 50;
+    pixelBoard.innerHTML = '';
+    populateGrid(input.value);
+  });
+}
+
+generateBoard();

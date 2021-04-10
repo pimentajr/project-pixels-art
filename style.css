@@ -23,12 +23,20 @@ body {
   align-items: center;
 }
 
-button {
-  margin: 50px 65px;
+#clearBtn {
+  margin: 30px 58px;
+  
 }
-
 
 #board-size {
   width: 120px;
   text-align: center;
-} 
+}
+
+#user-painel {
+  margin-bottom: 30px;
+}
+
+input {
+  margin-right: 20px;
+}
