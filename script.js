@@ -1,3 +1,24 @@
+// Reseta o tabuleiro
+function boardRemove() {
+  const oldBoard = document.querySelector('#pixel-board');
+  oldBoard.innerHTML = '';
+}
+
+// Cria os elementos do quadro de acordo com o número de pixels
+function boardMaker(pixels) {
+  boardRemove();
+  const pixelXY = pixels;
+  const numberOfPixels = pixelXY * pixelXY;
+  for (let index = 1; index <= numberOfPixels; index += 1) {
+    const pixelElement = document.createElement('div');
+    pixelBoard.appendChild(pixelElement).className = 'pixel';
+    if (index % pixelXY === 0) {
+      const breakLine = document.createElement('br');
+      pixelBoard.appendChild(breakLine);
+    }
+  }
+}
+
 // Seleciona a cor preta como primária e também cria um tabuleiro padrão
 window.onload = () => {
   const firstSelectedColor = document.getElementById('black-box');
@@ -88,27 +109,6 @@ function createButtonResize() {
 }
 createButtonResize();
 
-// Reseta o tabuleiro
-function boardRemove() {
-  const oldBoard = document.querySelector('#pixel-board');
-  oldBoard.innerHTML = '';
-}
-
-// Cria os elementos do quadro de acordo com o número de pixels
-function boardMaker(pixels) {
-  boardRemove();
-  const pixelXY = pixels;
-  const numberOfPixels = pixelXY * pixelXY;
-  for (let index = 1; index <= numberOfPixels; index += 1) {
-    const pixelElement = document.createElement('div');
-    pixelBoard.appendChild(pixelElement).className = 'pixel';
-    if (index % pixelXY === 0) {
-      const breakLine = document.createElement('br');
-      pixelBoard.appendChild(breakLine);
-    }
-  }
-}
-
 // Cria um quadro utilizando o tamanho inserido no input, se não inserir valor, apresentar uma mensagem de erro
 function BoardSize() {
   const generateBoard = document.getElementById('generate-board');
@@ -121,8 +121,8 @@ BoardSize();
 
 // Inspeciona se o valor inserido é válido
 function inspectBoardSize(boardSize) {
-  if (!boardSize || boardSize < 0) {
-    return alert('Board inválido');
+  if (!boardSize || boardSize <= 0) {
+    return alert('Board inválido!');
   } else if (boardSize < 5) {
     boardSize = 5;
   } else if (boardSize > 50) {
