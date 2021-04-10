@@ -1,5 +1,5 @@
 window.onload = function initial() {
-  let initialColor = document.querySelector('#black');
+  let initialColor = document.querySelector('.black');
   initialColor.classList.add('selected');
  
   let colorPalette = document.querySelectorAll('.color');
@@ -10,4 +10,16 @@ window.onload = function initial() {
       event.target.classList.add('selected');
     });
   }
+
+  function pixelColor() {
+  let pixel = document.getElementById('pixel-board');
+    pixel.addEventListener('click', function (event) {
+    let selected = document.querySelector('.selected');
+    pixel = event.target
+    pixel.style.backgroundColor = selected.classList[1];
+    });
+  }
+
+  pixelColor();
+  
 };
