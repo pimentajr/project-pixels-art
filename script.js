@@ -64,4 +64,21 @@ window.onload = function () {
     });
   }
   clearButton();
+
+  function userDefineBlockWidth() {
+    const getButton = document.querySelector('#generate-board');
+    const getInput = document.querySelector('#board-size');
+    getButton.addEventListener('click', function () {
+      if (getInput.value === '') {
+        alert('Board Inválido!');
+      } else if (getInput.value < 5) {
+        getInput.value = 5;
+      } else if (getInput.value > 50) {
+        getInput.value = 50;
+      }
+      section.innerHTML = '';
+      blockPixel(getInput.value);
+    });
+  }
+  userDefineBlockWidth();
 };
