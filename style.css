@@ -41,12 +41,13 @@ h1:hover:after {
 
 #color-palette {
   margin: 0 auto;
+  height: 42px;
+  width: 180px;
 }
 
 #color-palette ul {
   text-align: center;
   margin: 0;
-  padding: 10px 0;
 }
 
 #color-palette ul li {
@@ -56,19 +57,23 @@ h1:hover:after {
   border: solid 1px black;
 }
 
-#color-palette ul li:nth-child( 1 ) {
+.pixel {
+  background-color: white;
+}
+
+.colorBlack {
   background-color: black;
 }
 
-#color-palette ul li:nth-child( 2 ) {
+.colorRed {
   background-color: red;
 }
 
-#color-palette ul li:nth-child( 3 ) {
+.colorBlue {
   background-color: blue;
 }
 
-#color-palette ul li:nth-child( 4 ) {
+.colorGreen {
   background-color: green;
 }
 
@@ -80,6 +85,9 @@ h1:hover:after {
 #pixel-board tr td {
   height: 40px;
   width: 40px;
-  background-color: white;
   border: solid 1px black;
+}
+
+.selected {
+  color: black;
 }

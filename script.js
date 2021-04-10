@@ -10,4 +10,20 @@ function selectColor() {
   colorPalette.addEventListener('click', addSelected);
 }
 
+function applyColor() {
+  const pixelBoard = document.querySelector('#pixel-board');
+  function printBoard(event) {
+    const colorPrint = document.querySelector('.selected');
+    const boxSelected = event.target;
+    const color = colorPrint.classList[1];
+    if (boxSelected.classList.length >= 2) {
+      boxSelected.className = 'pixel';
+    }
+    console.log(color);
+    boxSelected.classList.add(color);
+  }
+  pixelBoard.addEventListener('click', printBoard);
+}
+
 selectColor();
+applyColor();
