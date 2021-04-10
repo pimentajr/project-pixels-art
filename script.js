@@ -8,11 +8,14 @@ function createColunnLines() {
     for (let indice = 0; indice < 5; indice += 1) {
       const lines = document.createElement('div');
       lines.className = 'pixel';
-      colunn.appendChild(lines); 
+      colunn.appendChild(lines);
     }
   }
 } createColunnLines();
 function inicialColor() {
   const preto = document.querySelector('#black');
-  preto.className = 'selected';
-} inicialColor()
+  preto.className = 'color selected';
+} inicialColor();
+function name(params) {
+  
+}
