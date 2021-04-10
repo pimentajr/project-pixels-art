@@ -18,13 +18,12 @@ let pixels = document.getElementsByClassName('pixel')
 // tableSize > 50 || tableSize < 5 || 
 function createTable(tableSize) {
   tableSize = document.getElementById('board-size').value;
-  let tableBody = document.querySelector('tbody')
-  pixelBoard.removeChild(tableBody);
-  let newTBody = document.createElement('tbody');
   if (tableSize === '') {
     alert('Board inválido!')
-    pixelBoard.appendChild(newTBody);
  } else {
+  let tableBody = document.querySelector('tbody')
+    pixelBoard.removeChild(tableBody);
+    let newTBody = document.createElement('tbody');
     pixelBoard.appendChild(newTBody);
     for (let i = 0; i < tableSize; i +=1) {
       let newRow = document.createElement('tr')
