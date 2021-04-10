@@ -41,9 +41,9 @@ function colorPixel() {
 }
 
 /* req 4 + 10 + 11 */
-function createBoard(size) {
-  const pixelTable = document.getElementById('pixel-board');
+const pixelTable = document.getElementById('pixel-board');
 
+function createBoard(size) {
   for (let i = 0; i < size; i += 1) {
     const pixelRow = document.createElement('div');
     pixelRow.className = 'pixel-row';
@@ -59,7 +59,6 @@ function createBoard(size) {
 }
 
 function inputBoardButton() {
-  const pixelTable = document.getElementById('pixel-board');
   const input = document.getElementById('board-size');
   const button = document.getElementById('generate-board');
 
@@ -80,13 +79,12 @@ function inputBoardButton() {
 }
 
 function inputBoardEnter() {
-  const pixelTable = document.getElementById('pixel-board');
   const input = document.getElementById('board-size');
 
   input.addEventListener('keyup', function (event) {
     if (event.keyCode === 13) {
       if (input.value.length === 0) {
-        alert('Board inválido!'); 
+        alert('Board inválido!');
       } else {
         if (input.value < 5) {
           input.value = 5;
