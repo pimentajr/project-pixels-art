@@ -5,8 +5,20 @@
   text-align: left;
 }
 
-.black {
+#black {
   background-color: black;
+}
+
+#green {
+  background-color: green;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#red {
+  background-color: red;
 }
 
 .Pixel {
