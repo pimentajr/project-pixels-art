@@ -34,7 +34,7 @@ function fillPixelBoard(boardSize) {
 fillPixelBoard(5);
 
 function generateBoard() {
-  boardSize = boardSizeInput.value;
+  let boardSize = boardSizeInput.value;
 
   for (let index = pixelBoard.children.length - 1; index >= 0; index -= 1) {
     pixelBoard.children[index].remove();
