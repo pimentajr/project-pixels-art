@@ -9,9 +9,8 @@ let redRepeated = false;
 let greenRepeated = false;
 let blueRepeated = false;
 let colorToPaint = document.getElementsByClassName('selected')[0];
-const input = document.getElementsByTagName('input');
+const input = document.getElementById('board-size');
 input.min = '1';
-input.max = '50';
 
 function generateRandomNumber() {
   return Math.floor(Math.random() * 3);
