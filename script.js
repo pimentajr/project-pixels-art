@@ -1,6 +1,5 @@
 // Create table on load
 window.onload = function() {
-document.getElementById('board-size').value = '5'
 createTable()
 }
 
@@ -16,12 +15,13 @@ let pixelBoard = document.getElementById('pixel-board')
 let pixels = document.getElementsByClassName('pixel')
 
 // Create table
+// tableSize > 50 || tableSize < 5 || 
 function createTable(tableSize) {
   tableSize = document.getElementById('board-size').value;
   let tableBody = document.querySelector('tbody')
   pixelBoard.removeChild(tableBody);
   let newTBody = document.createElement('tbody');
-  if (tableSize > 50 || tableSize < 5 || tableSize === '') {
+  if (tableSize === '') {
     alert('Board inválido!')
     pixelBoard.appendChild(newTBody);
  } else {
