@@ -91,8 +91,14 @@ function changeBoardSize() {
   const inputBox = document.querySelector('#board-size');
   const sizeButton = document.getElementById('generate-board');
   sizeButton.addEventListener('click', () => {
-    if (inputBox.value === '') {
+    let newValue = inputBox.value;
+    if (newValue === '') {
       alert('Board inválido!');
+    } else if (newValue < 5) {
+      newValue = 5;
+      lines = newValue;
+      squareLines(lines);
+      squareColuns();
     } else {
       lines = inputBox.value;
       squareLines(lines);
