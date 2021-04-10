@@ -1,4 +1,4 @@
-let colors = document.querySelectorAll('.color');
+const colors = document.querySelectorAll('.color');
 function changesToBlack() {
   if (colors[0].style.backgroundColor !== 'black') {
     colors[0].style.backgroundColor = 'black';
