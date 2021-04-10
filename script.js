@@ -3,6 +3,7 @@ const title = document.getElementById('title');
 title.style = 'font-family: New Tegomin';
 
 // Adiciona background-color em todos os quadrados da paleta de cores
+
 const blackSquare = document.getElementById('black');
 blackSquare.style = 'background-color: black';
 
