@@ -42,3 +42,16 @@ function clickPalette() {
   });
 }
 clickPalette();
+
+// Colore o pixel
+function colorGrid() {
+  const eventGrid = document.getElementById('pixel-board');
+  eventGrid.addEventListener('click', (paintPixel) => {
+    const colorSelected = document.querySelector('.selected').style.backgroundColor;
+    const eventTarget = paintPixel.target;
+    if (eventTarget.className === 'pixel') {
+      eventTarget.style.backgroundColor = colorSelected;
+    }
+  });
+}
+colorGrid();
