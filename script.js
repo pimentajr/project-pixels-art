@@ -1,8 +1,5 @@
-function randomColors(){
-  let colors = document.getElementsByClassName('color');
-  for (let color of colors) {
-    if (color.id === 'color-1') {
-      color.style.b
-    }
-  }
+function pageStarter() {
+  document.getElementById('color-1').className = 'color selected';
 }
+
+window.onload = pageStarter;

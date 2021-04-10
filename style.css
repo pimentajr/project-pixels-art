@@ -6,6 +6,7 @@ body {
   display: block;
   margin: 0;
   padding: 0;
+  background-color: rgba(111, 247, 183, 0.644);
 }
 
 header {
@@ -68,5 +69,9 @@ header {
   border-color: black;
   height: 40px;
   width: 40px;
-  background-color:white;
+  background-color: white;
+}
+
+.selected {
+  outline: 8px solid white;
 }
