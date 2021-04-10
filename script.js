@@ -1,6 +1,5 @@
 window.onload = () => {
-  pixelTableCreate(5);
-  
+  pixelTableCreate(5);  
   function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let pixColor = '#';
@@ -9,7 +8,6 @@ window.onload = () => {
     }
     return pixColor;
   }
-
   const colorPixels = document.querySelectorAll('#color');
   for (let index = 0; index < colorPixels.length; index += 1) {
     const colorGenerated = getRandomColor();
@@ -41,6 +39,8 @@ const btnSize = document.querySelector('#generate-board');
 btnSize.addEventListener('click', () => {
   const inputSize = document.querySelector('#board-size');
   const pixelSize = inputSize.value;
+  const pixelExist = document.querySelector('#pixel-board')
+  pixelExist.innerHTML = '';
   if (pixelSize === '') {
     alert('Board inválido!');
   } else {

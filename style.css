@@ -28,13 +28,13 @@
 
 #pixel-board {
   display: table;
-  margin: auto;  
+  margin: auto;
 }
 
 #button-section {
-width: 90px;
-margin: auto;
-padding: 50px;
+  width: 90px;
+  margin: auto;
+  padding: 50px;
 }
 
 .column {
