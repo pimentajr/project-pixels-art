@@ -29,10 +29,14 @@
   background-color: red;
 }
 
-#showSelection {
+#showColorSelected {
   width: 40px;
   height: 40px;
   border: 1px solid black;
   padding: 1px;
   background-color: black;
+}
+
+#button-container {
+  padding-top: 12px;
 }

@@ -10,54 +10,62 @@
     <h1 id="title">Paleta de Cores</h1>
   </header>
   <main>
-    <table id="color-palette">
-      <tr>
-        <td class="color selected"></td>
-        <td class="color"></td>
-        <td class="color"></td>
-        <td class="color"></td>
-      </tr>
-    </table>
-    <br>
-    <table id="pixel-board">
-      <tr>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-      </tr>
-      <tr>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-      </tr>
-      <tr>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-      </tr>
-      <tr>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-      </tr>
-      <tr>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-        <td class="pixel"></td>
-      </tr>
-    </table>
-    <p id="colorSelect">Cor selecionada:</p>
-    <div id="showSelection"></div>
+    <section>
+      <table id="color-palette">
+        <tr>
+          <td class="color selected" id="black"></td>
+          <td class="color" id="darkgreen"></td>
+          <td class="color" id="blue"></td>
+          <td class="color" id="red"></td>
+        </tr>
+      </table>
+    </section>
+    <section id="pixels">
+      <table id="pixel-board">
+        <tr>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+        </tr>
+        <tr>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+        </tr>
+        <tr>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+        </tr>
+        <tr>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+        </tr>
+        <tr>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+          <td class="pixel"></td>
+        </tr>
+      </table>
+    </section>
+    <p>Cor selecionada:</p>
+    <section>
+      <div id="showColorSelected"></div>
+    </section>
+    <section id="button-container">
+      <button id="clearButton">Limpar</button>
+    </section>
   </main>
   <script src="script.js"></script>
 </body>
