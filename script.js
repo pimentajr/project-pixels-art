@@ -97,15 +97,15 @@ const initialInput = boardSizeInput.value;
 const minimum = 5;
 const maximum = 50;
 function generateBoard() {
-  if (boardSizeInput.value === initialInput)
-    return alert('Board inválido!');
-  while (pixelBoard.firstChild)
-    pixelBoard.removeChild(pixelBoard.firstChild);
+  if (boardSizeInput.value === initialInput) {
+    return alert('Board inválido!');}
+  while (pixelBoard.firstChild) {
+    pixelBoard.removeChild(pixelBoard.firstChild);}
   let rowsColumns = boardSizeInput.value;
-  if (rowsColumns < minimum) 
-    rowsColumns = minimum;
-  if (rowsColumns > maximum)
-    rowsColumns = maximum;
+  if (rowsColumns < minimum) {
+    rowsColumns = minimum;}
+  if (rowsColumns > maximum) {
+    rowsColumns = maximum;}
   for (let index = 1; index <= rowsColumns * rowsColumns; index += 1) {
     const pixelBox = document.createElement('div');
     pixelBox.classList.add('pixel');
