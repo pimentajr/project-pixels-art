@@ -86,7 +86,7 @@ function checkSize() {
 
 function eventResize() {
   const button = document.getElementById('generate-board');
-  button.addEventListener('click', checkSize);
+  button.addEventListener('submit', checkSize);
 }
 
 window.onload = function load() {
