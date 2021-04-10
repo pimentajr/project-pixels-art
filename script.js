@@ -24,3 +24,22 @@ function classColor() {
   selectedColor.classList.add('selected');
 }
 classColor();
+
+// 7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+
+const colorPalette = document.querySelector('#color-palette');
+const paletteList = colorPalette.children;
+
+function selectedColor() {
+  for(let fourthIndex = 0; fourthIndex < paletteList.length; fourthIndex += 1) {
+    if (paletteList[fourthIndex].className.includes('selected')) {
+      paletteList[fourthIndex].classList.remove('selected');
+      }
+    }
+  }
+  colorPalette.addEventListener('click', function(event) {
+    if (event.target.id !== 'color-palette') {
+      selectedColor();
+      event.target.classList.add('selected');
+    }
+});

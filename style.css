@@ -22,8 +22,7 @@
   margin: 1px;
 }
 
-/* 5 - Cada pixels possua 40 pixels de largura e 4 altura e seja delimitado por uma borda preta de 1 pixel. */
-
+/* 5 - pixels possua 40 pixels de largura e 4 altura e borda preta de 1 pixel. */
 .pixel {
   background-color: white;
   width: 40px;
