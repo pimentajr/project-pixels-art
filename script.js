@@ -1,8 +1,18 @@
-const arrayColors = ['aqua', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'orange', 'purple', 'red', 'silver', 'teal', 'yellow', 'magenta', 'salmon'];
+const arrayColors = [];
 
-function getRandomColors(colors) {
-  const randomColor = colors[Math.floor((Math.random() * colors.length))];
-  return randomColor;
+function getRandomColors() {
+  // const numberColor = document.getElementsByClassName('color').length;
+  for (let index = 0; index < 4; index += 1) {
+    const rgbColor = {
+      r: parseInt((Math.random() * 255), 10),
+      g: parseInt((Math.random() * 255), 10),
+      b: parseInt((Math.random() * 255), 10)
+    }
+    const randomRGB = `rgb(${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b})`;
+    arrayColors.push(randomRGB);
+  }
+  console.log(arrayColors);
+  return arrayColors;
 }
 
 function createMatrix() {
@@ -19,18 +29,6 @@ function createMatrix() {
   }
 }
 
-window.onload = function () {
-  const getColors = document.getElementsByClassName('color');
-  getColors[0].style.backgroundColor = 'black';
-  getColors[0].classList.add('selected');
-  let colorRemove;
-  for (let index = 1; index < getColors.length; index += 1) {
-    colorRemove = getRandomColors(arrayColors);
-    getColors[index].style.backgroundColor = colorRemove;
-  }
-  createMatrix();
-};
-
 function setSelected(event) {
   const selectedElement = document.querySelector('.selected');
   selectedElement.classList.remove('selected');
@@ -44,8 +42,6 @@ function getPaletteColor() {
     selectColor[index].addEventListener('click', setSelected);
   }
 }
-
-getPaletteColor();
 
 function getColorPixel(event) {
   const selectedColor = document.querySelector('.selected');
@@ -62,5 +58,17 @@ function pixelColor() {
   }
   console.log('pixelColor');
 }
-pixelColor();
+window.onload = function load() {
+  const getColors = document.getElementsByClassName('color');
+  getColors[0].style.backgroundColor = 'black';
+  getColors[0].classList.add('selected');
+  let colorRemove;
+  colorRemove = getRandomColors();
+  for (let index = 1; index < getColors.length; index += 1) {
+    getColors[index].style.backgroundColor = colorRemove[index];
+  }
+  createMatrix();
+  getPaletteColor();
+  pixelColor();
+};
 
