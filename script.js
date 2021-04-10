@@ -1,4 +1,4 @@
-const colors = document.querySelectorAll('.color'); // atribui um array com as classes color
+const colors = document.querySelectorAll('.color'); // atribuindo array com as classes color
 
 // seleciona cor
 function selectColor(event) {
@@ -8,3 +8,5 @@ function selectColor(event) {
 for (let index = 0; index < colors.length; index += 1) {
   colors[index].addEventListener('click', selectColor);
 }
+
+// pinta a tabela

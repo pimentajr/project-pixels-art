@@ -42,6 +42,11 @@
   margin-left: 10px;
 }
 
+#clear-board {
+  display: block;
+  margin: 0 auto;
+}
+
 table {
   margin: auto;
 }
