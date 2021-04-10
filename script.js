@@ -90,8 +90,9 @@ btn.addEventListener('click', function () {
   if (value === '') {
     alert('Board inválido!');
   }
-  for (let i = 0; i < parseInt(value * value); i += 1) {
-    if (i % value === 0) {
+  let newValue = checkValue(value);
+  for (let i = 0; i < parseInt(newValue * newValue); i += 1) {
+    if (i % newValue === 0) {
       let br = document.createElement('br');
       newBoard.appendChild(br);
     }
@@ -100,3 +101,12 @@ btn.addEventListener('click', function () {
     newBoard.appendChild(newDiv);
   }
 });
+
+function checkValue(i) {
+  if (i < 5) {
+    return 5;
+  } else if (i > 50) {
+    return 50;
+  }
+  return i;
+}
