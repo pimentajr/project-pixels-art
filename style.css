@@ -25,6 +25,7 @@
   height: 50px;
 }
 .pixel {
+  background-color: white;
   border: solid 1px black;
   display: inline-block;
   width: 40px;
