@@ -81,4 +81,17 @@ window.onload = function () {
     });
   }
   userDefineBlockWidth();
+
+  function mathRandom() {
+    return parseInt(Math.random() * 255, 10);
+  }
+
+  function randomColor() {
+    for (let index = 0; index < color.length; index += 1) {
+      mathRandom();
+      color[index].style.backgroundColor = `rgb(${mathRandom()}, ${mathRandom()}, ${mathRandom()})`;
+      color[0].style.backgroundColor = 'rgb(0, 0, 0)';
+    }
+  }
+  randomColor();
 };
