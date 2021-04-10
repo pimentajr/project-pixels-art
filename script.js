@@ -1,32 +1,17 @@
-// 1 - Adicione à página o título "Paleta de Cores":
+// 4. O quadro de "pixels" deve ter 5 elementos de largura e 5 elementos de comprimento
 
-  const tagH1 = document.createElement('h1');
-  tagH1.innerText = 'Paleta de Cores';
-  document.body.appendChild(tagH1);
+function square(roww, column) {
+  const tbl = document.getElementById('pixel-board');
 
-  const idTitle = document.querySelector('h1');
-  idTitle.id = 'title';
+  for (let index = 0; index < roww; index += 1) {
+    let line = document.createElement('tr');
 
-  // 2 - Adicione à página uma paleta de quatro cores distintas:
-
-  // A paleta de cores deve ser um elemento com id denominado color-palette: 
-
-  function divs(tag, id) {
-    const element = document.createElement(tag);
-    element.id = id;
-    document.body.appendChild(element);
+    for (let secondIndex = 0; secondIndex < column; secondIndex += 1) {
+      let cells = document.createElement('td');
+      cells.classList.add('pixel');
+      line.appendChild(cells);
+    }
+    tbl.appendChild(line);
   }
-  divs('div', 'color-palette');
-
-  // Ao passo que cada cor individual da paleta de cores deve possuir a classe color:
-
-  function classes(tag, classes) {
-    const element2 = document.createElement(tag);
-    element2.className = classes;
-    const element3 = document.querySelector('#color-palette');
-    element3.appendChild(element2);
-  }
-  classes('div', 'black color');
-  classes('div', 'turquoise color');
-  classes('div', 'purple color');
-  classes('div', 'darkorange color');
+}
+square(5, 5);
