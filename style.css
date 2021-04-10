@@ -2,6 +2,11 @@
   display: inline-block;
 }
 
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .color , .pixel {
   border: 1px solid black;
   height: 40px;
@@ -10,6 +15,11 @@
 
 #pixel-board {
   display: table;
+  margin: auto;
+}
+
+#setButtons {
+  padding: 10px;
 }
 
 .row {
