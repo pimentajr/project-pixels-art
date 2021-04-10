@@ -10,8 +10,6 @@ for (let i = 0; i < colorsPalette.length; i += 1) {
   });
 }
 
-const testPixel = document.getElementsByClassName('pixel');
-
 const pixelTable = document.getElementById('pixel-board');
 
 for (let i = 0; i < pixelTable.children[0].children.length; i += 1) {
@@ -24,10 +22,4 @@ for (let i = 0; i < pixelTable.children[0].children.length; i += 1) {
       tableElements[j].style.backgroundColor = selectedColor;
     });
   }
-
 }
-
-// pixelTable.addEventListener('click', () => {
-//   const selectedColor = document.querySelector('.selected').style.backgroundColor;
-//   testPixel[0].style.backgroundColor = selectedColor;
-// });
