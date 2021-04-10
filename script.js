@@ -63,8 +63,8 @@ const pixelBoard = document.createElement('div');
 pixelBoard.setAttribute('id', 'pixel-board');
 body.appendChild(pixelBoard);
 const numOfPixels = 25;
-function generateBoxes(numOfPixels) {
-  for (let index = 1; index <= numOfPixels; index += 1) {
+function generateBoxes(pixels) {
+  for (let index = 1; index <= pixels; index += 1) {
     const pixelBox = document.createElement('div');
     pixelBox.classList.add('pixel');
     pixelBox.style.backgroundColor = 'white';
@@ -109,7 +109,7 @@ function generateBoard() {
   let rowsColumns = boardSizeInput.value;
   if (rowsColumns < minimum) { rowsColumns = minimum; }
   if (rowsColumns > maximum) { rowsColumns = maximum; }
-  let inputNumOfPix = rowsColumns * rowsColumns;
+  const inputNumOfPix = rowsColumns * rowsColumns;
   generateBoxes(inputNumOfPix);
 }
 boardSizeBtn.addEventListener('click', generateBoard);
