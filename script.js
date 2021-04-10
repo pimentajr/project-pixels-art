@@ -9,10 +9,18 @@ colorTable.addEventListener('click', function (event){
     colorSelected.classList.remove('selected');
     event.target.classList.add('selected')
 })
+
 let pixelBoard = document.querySelector('#pixel-board')
 pixelBoard.addEventListener('click', function (event){
-    let colorSelected = document.querySelector('.selected')
-    let sectedColor = window.getComputedStyle(colorSelected, null).getPropertyValue("background-color");
+    let sectedColor = window.getComputedStyle(document.querySelector('.selected'), null).getPropertyValue("background-color");
     let pixelPaint = event.target
     pixelPaint.style.backgroundColor = sectedColor 
     })
+
+let clearButton = document.querySelector('#clear-board')
+clearButton.addEventListener('click', function(){
+let allPixel = document.querySelectorAll('.pixel')
+for(let index = 0; index < allPixel.length; index += 1){
+allPixel[index].style.backgroundColor = 'white';
+}
+})
