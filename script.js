@@ -29,29 +29,28 @@ function initialBlack() {
 }
 initialBlack();
 
-//Requisito 7 - mudança de pincel de acordo com o click (addEventListener)
-let firstColor = document.getElementsByClassName('color')[0];
-let secondColor = document.getElementsByClassName('color')[1];
-let thirdColor = document.getElementsByClassName('color')[2];
-let fourthColor = document.getElementsByClassName('color')[3];
+// Requisito 7 - mudança de pincel de acordo com o click (addEventListener)
+const firstColor = document.getElementsByClassName('color')[0];
+const secondColor = document.getElementsByClassName('color')[1];
+const thirdColor = document.getElementsByClassName('color')[2];
+const fourthColor = document.getElementsByClassName('color')[3];
 
-firstColor.addEventListener('click', function () {
+firstColor.addEventListener('click', function firstPincel () {
   firstColor.classList.add('selected');
   secondColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
   fourthColor.classList.remove('selected');
 });
 
-secondColor.addEventListener('click', function () {
+secondColor.addEventListener('click', function secondPincel () {
   secondColor.classList.add('selected');
   firstColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
   fourthColor.classList.remove('selected');
   secondColor.style.backgroundColor = 'yellow';
-
 });
 
-thirdColor.addEventListener('click', function () {
+thirdColor.addEventListener('click', function thirdPincel () {
   thirdColor.classList.add('selected');
   firstColor.classList.remove('selected');
   secondColor.classList.remove('selected');
@@ -59,7 +58,7 @@ thirdColor.addEventListener('click', function () {
   thirdColor.style.backgroundColor = 'red';
 });
 
-fourthColor.addEventListener('click', function () {
+fourthColor.addEventListener('click', function fourthPincel () {
   fourthColor.classList.add('selected');
   secondColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
@@ -70,11 +69,12 @@ fourthColor.addEventListener('click', function () {
 // Requisito 8 - Colore o pixel individual
 function coloredPixel() {
   const allBoard = document.querySelector('#pixel-board');
-  allBoard.addEventListener('click', function (eventoDeOrigem) {
+  allBoard.addEventListener('click', function colorPixel (eventoDeOrigem) {
     const pincelColor = document.querySelector('.selected').style.backgroundColor;
     const clickedPixel = eventoDeOrigem.target;
-    if (clickedPixel.className === 'pixel')
+    if (clickedPixel.className === 'pixel') {
       clickedPixel.style.backgroundColor = pincelColor;
+    }
   });
 }
 coloredPixel();
@@ -83,7 +83,7 @@ coloredPixel();
 // Adiciona um botão e limpa o grid
 function clearBoard() {
   const cleanButton = document.getElementById('clear-board');
-  cleanButton.addEventListener('click', function() {
+  cleanButton.addEventListener('click', function allWhite () {
     const pixel = document.querySelectorAll('.pixel');
     for (let index = 0; index < pixel.length; index += 1) {
       pixel[index].style.backgroundColor = 'white';
