@@ -1,14 +1,29 @@
-// PARTE 2 - A FAZER
+// 2 -
 function coloringPalette() {	
-	palette = document.getElementsByClassName('color');
-	for (let color in palette) {
-		if (palette[color].style.backgroundColor === '') {
-			palette[color].style.backgroundColor = String(palette[color].innerText);
-			palette[color].style.color = String(palette[color].innerText);
+	let palette = document.getElementsByClassName('color');	
+	for (let color = 0; color < palette.length; color += 1) {				
+		palette[color].style.backgroundColor = palette[color].innerText;
+		palette[color].style.color = palette[color].innerText;
+	}
+}	
+
+coloringPalette();
+
+// 3 -
+// document.querySelector('.color').style.backgroundColor = 'black';
+
+// 4 - 
+function creatingBoard() {		
+	for (let index = 1; index <= 5; index += 1) {
+		let newDiv = document.createElement('div');
+		for (j = 1; j <= 5; j += 1) {
+			let newPixel = document.createElement('div');			
+			newPixel.classList.add('pixel');
+			document.getElementById('pixel-board').appendChild(newDiv);
+			newDiv.appendChild(newPixel);			
 		}
 	}
 }
 
-coloringPalette();
+creatingBoard();
 
-document.querySelector('.color').style.backgroundColor = 'black';
