@@ -1,7 +1,12 @@
+let colors = document.querySelectorAll('.color');
 function changesToBlack() {
-  const blackColor = document.querySelectorAll('.color');
-  if (blackColor[0].style.backgroundColor !== 'black') {
-    blackColor[0].style.backgroundColor = 'black';
+  if (colors[0].style.backgroundColor !== 'black') {
+    colors[0].style.backgroundColor = 'black';
   }
 }
 changesToBlack();
+
+function defineSelectedColor() {
+  colors[0].className = 'color selected';
+}
+defineSelectedColor();
