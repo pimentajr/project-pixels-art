@@ -3,6 +3,9 @@
     width: 208px;
     height: 208px;
 }
+#clean{
+    border-radius: 20px;
+}
 
 #cube1{
     background-color: black;

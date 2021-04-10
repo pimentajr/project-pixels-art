@@ -3,6 +3,8 @@
 let palselected = document.getElementById('color-palette');
 let pixelboard = document.getElementById('pixel-board');
 let color = 'black'
+let clean = document.getElementById('clean');
+let pixels = document.getElementsByClassName('pixel')
 
 palselected.addEventListener('click',function(event){
     let selectedcolor = event.target.id
@@ -31,6 +33,14 @@ selectedpixel.style.backgroundColor = color
 
 })
 
+clean.addEventListener('click', function() {
+for (let index = 0; index < 25; index++) {
+   pixels[index].style.backgroundColor = 'white'
+    
+}
+        
+    }
+)
 
 
 
