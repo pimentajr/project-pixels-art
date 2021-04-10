@@ -4,6 +4,7 @@ function createDiv1(tag, classN) {
   const Father = document.querySelector('#color-palette');
   Father.appendChild(CreatDiv);
 }
+
 createDiv1('div', 'black color');
 createDiv1('div', 'red color');
 createDiv1('div', 'green color');
@@ -33,35 +34,34 @@ colorPalette.addEventListener('click', setColorPalette);
 
 const Father2 = document.querySelector('#pixel-board');
 
-function colorPixel (event) {
+function colorPixel(event) {
   const actualColor = document.querySelector('.selected');
   const color = getComputedStyle(actualColor).backgroundColor;
   const pixel = event.target;
   pixel.style.backgroundColor = color;
 }
 
-Father2.addEventListener('click',colorPixel);
-
-// Desafio 9
+Father2.addEventListener('click', colorPixel);
 
 //butonn
-function createButton () {
-  const qetClassTable = document.querySelector('#button')
+
+function createButton() {
+  const qetClassTable = document.querySelector('#button');
   const bStart = document.createElement('button');
   bStart.id = 'clear-board';
-  bStart.innerHTML = 'Vamos Limpar!'
+  bStart.innerHTML = 'Vamos Limpar!';
   qetClassTable.appendChild(bStart);
 }
 
 createButton();
 
-function clearALL () {
+function clearALL() {
   const cALL = document.querySelectorAll('.pixel');
-  for (let index = 0; index < cALL.length; index += 1){
+  for (let index = 0; index < cALL.length; index += 1) {
     cALL[index].style.backgroundColor = 'rgb(255, 255, 255)';
-  }
- 
+  } 
 }
+
 const clear = document.querySelector('#clear-board');
 
 clear.addEventListener('click', clearALL);
