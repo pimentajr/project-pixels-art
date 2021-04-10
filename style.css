@@ -39,6 +39,15 @@ h1:hover:after {
   transition: 0.5s;
 }
 
+li {
+  transition: 0.9s;
+}
+
+li:hover {
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+
 #color-palette {
   margin: 0 auto;
   height: 42px;
@@ -55,15 +64,6 @@ h1:hover:after {
   width: 40px;
   display: inline-block;
   border: solid 1px black;
-}
-
-li {
-  transition: 0.9s;
-}
-
-li:hover {
-  transform: scale(0.9);
-  transition: 0.3s;
 }
 
 .pixel {
@@ -107,7 +107,12 @@ li:hover {
 }
 
 #clear-board {
+  background-color: black;
+  color: white;
+  border: none;
   display: block;
-  margin: 20px auto 0;
-  padding: 2px 30px;
+  margin: 21px auto 0;
+  padding: 5px 32px;
+  text-align: center;
+  font-size: 12px;
 }
