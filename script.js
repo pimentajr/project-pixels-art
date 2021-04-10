@@ -1,16 +1,12 @@
+const pixelBoard = document.querySelector('#pixel-board');
+
 function pixelTableCreate(size) {
-  if (size < 5) {
-    size = 5;
-  } else if (size > 50) {
-    size = 50;
-  }
   for (let index = 0; index < size; index += 1) {
     const pixelContainer = document.createElement('div');
     pixelContainer.classList.add('column');
     for (let index2 = 0; index2 < size; index2 += 1) {
       const pixelBox = document.createElement('div');
       pixelBox.classList.add('pixel');
-      const pixelBoard = document.querySelector('#pixel-board');
       pixelBoard.appendChild(pixelContainer);
       pixelContainer.appendChild(pixelBox);
     }
@@ -38,14 +34,16 @@ const btnSize = document.querySelector('#generate-board');
 
 btnSize.addEventListener('click', () => {
   const inputSize = document.querySelector('#board-size');
-  const pixelSize = inputSize.value;
-  const pixelExist = document.querySelector('#pixel-board');
-  pixelExist.innerHTML = '';
+  let pixelSize = inputSize.value;
+  pixelBoard.innerHTML = '';
   if (pixelSize === '') {
     alert('Board inválido!');
-  } else {
-    pixelTableCreate(pixelSize);
+  } else if (pixelSize < 5) {
+    pixelSize = 5;
+  } else if (pixelSize > 50) {
+    pixelSize = 50;
   }
+  pixelTableCreate(pixelSize);
 });
 
 // Gerar cor aleatoria, resposta no StackOverflow: https://stackoverflow.com/questions/1484506/random-color-generator;
