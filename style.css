@@ -79,3 +79,12 @@ a:hover {
 .pixel-row .pixel:not( :last-child ) {
   margin-right: -1px;
 }
+
+#clear-board {
+  margin-bottom: 15px;
+}
+
+#board-size {
+  width: 200px;
+}
+
