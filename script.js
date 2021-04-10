@@ -22,6 +22,10 @@ window.onload = function () {
       const pixel = document.createElement('div');
       pixelRow.style.display = 'table-row';
       pixel.className = 'pixel';
+
+      pixel.style.width = '40px';
+      pixel.style.height = '40px';
+
       pixel.style.display = 'table-cell';
 
       pixel.style.border = 'solid 1px black';
