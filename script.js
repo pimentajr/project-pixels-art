@@ -41,7 +41,7 @@ function removeBoxAndPixelBoard() { // cria o comando que deleta o atual pixel b
   pixelBoard.remove();
 }
 
-function createNewBoxAndPixelBoard(n) { // delete o atual pixel board e seus pixels, e cria um novo com seu tamanho definido por n
+function createNewBoxAndPixelBoard(n) { // deleta o atual pixel board e seus pixels, e cria um novo com seu tamanho definido por n
   removeBoxAndPixelBoard();
   let newPixelBoard = document.createElement('div');
   newPixelBoard.id = 'pixel-board';
