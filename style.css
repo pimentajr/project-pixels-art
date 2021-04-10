@@ -31,3 +31,13 @@
   margin: 0px;
   line-height: 41px;
 }
+
+#clear-board {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+  background-color: royalblue;
+  color: white;
+  font-weight: 800;
+  border-radius: 5px;
+}

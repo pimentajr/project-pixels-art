@@ -47,7 +47,7 @@ boxColorSelect.addEventListener('click', function(event) {
   colorUnselected[0].className = 'color';
   event.target.classList.add('selected');
   }
-})
+});
 
 let board = document.getElementById('pixel-board');
 board.addEventListener('click', function(event) {
@@ -55,4 +55,12 @@ board.addEventListener('click', function(event) {
     colorPaint = document.getElementsByClassName('selected');
     event.target.style.backgroundColor = colorPaint[0].id;
   }
-})
+});
+
+let clearButton = document.getElementById('clear-board');
+clearButton.addEventListener('click', function(event) {
+  let clearPixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < clearPixel.length; index +=1) {
+    clearPixel[index].style.backgroundColor = 'white';
+  }
+});
