@@ -1,3 +1,6 @@
+// Create table on load
+createTable(5);
+
 
 // get Color Palette
 let colorPalette = document.getElementById('color-palette')
@@ -7,6 +10,7 @@ let colors = document.getElementsByClassName('color')
 let selectedColor = document.querySelector('.selected')
 // get Color Board 
 let pixelBoard = document.getElementById('pixel-board')
+console.log(pixelBoard)
 // get Pixels
 let pixels = document.getElementsByClassName('pixel')
 
@@ -25,10 +29,34 @@ pixelBoard.addEventListener('click', function(event){
   event.target.style.backgroundColor = selectedColorStyle;
   })
 
+// Clear Board
   function clearBoard() {
     for (let key of pixels) {
       key.style.backgroundColor = 'white';
     }
   }
 
+// Create table
+function createTable(tableSize) {
+  tableSize = document.getElementById('board-size').value;
+  let tableBody = document.querySelector('tbody')
+  pixelBoard.removeChild(tableBody);
+  let newTBody = document.createElement('tbody');
+  if (tableSize > 50 || tableSize < 5 || tableSize === '') {
+    alert('Board inválido')
+    pixelBoard.appendChild(newTBody);
+ } else {
+    pixelBoard.appendChild(newTBody);
+    for (let i = 0; i < tableSize; i +=1) {
+      let newRow = document.createElement('tr')
+      newTBody.appendChild(newRow);
+      let tableRow = document.getElementsByTagName('tr');
+      for (let j = 0; j < tableSize; j +=1) {
+        let newPixel = document.createElement('td')
+        tableRow[i].appendChild(newPixel);
+        newPixel.className = 'pixel';
+      }
+    }
+  }
+}
 
