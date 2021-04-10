@@ -1,3 +1,16 @@
+// Pinta o pixel!
+function changePixelColor(event) {
+  const eventElement = event;
+  const computedStyle = window.getComputedStyle(document.querySelector('.selected'));
+  const colorSelected = computedStyle.backgroundColor;
+  if (eventElement.target.style.backgroundColor === colorSelected) {
+    eventElement.target.style.backgroundColor = 'white';
+  } else {
+  eventElement.target.style.backgroundColor = colorSelected;
+  }
+}
+
+
 window.onload = function startBoard() {
   const boardSection = document.getElementById('pixel-board');
 
@@ -9,6 +22,7 @@ window.onload = function startBoard() {
     for (let pixel = 0; pixel < 5; pixel += 1) {
       const everyPixel = document.createElement('div');
       everyPixel.setAttribute('class', 'pixel');
+      everyPixel.addEventListener('click', changePixelColor);
       everyPixelRow.appendChild(everyPixel);
     }
   }
@@ -19,6 +33,7 @@ const colorPalette = document.getElementById('color-palette');
 const btnRest = document.getElementById('clear-board');
 const btnResize = document.getElementById('generate-board');
 const last3Colors = document.getElementsByClassName('color');
+const allPixelsOnBoard = document.getElementsByClassName('pixel')
 
 function generateRandomColor() {
   return Math.floor(Math.random() * 26987215).toString(16);
@@ -44,15 +59,6 @@ function changeSelectedColorClass(event) {
 }
 colorPalette.addEventListener('click', changeSelectedColorClass);
 
-// Pinta o pixel!
-function changePixelColor(event) {
-  const eventElement = event;
-  const computedStyle = window.getComputedStyle(document.querySelector('.selected'));
-  const colorSelected = computedStyle.backgroundColor;
-  eventElement.target.style.backgroundColor = colorSelected;
-}
-boardSection.addEventListener('click', changePixelColor);
-
 // Limpa o pixel!
 function clearPixels() {
   const AllDivsPixels = document.getElementsByClassName('pixel');
@@ -74,6 +80,7 @@ function boardResize(num) {
     for (let newPixelsSize = 0; newPixelsSize < num; newPixelsSize += 1) {
       const everyPixel = document.createElement('div');
       everyPixel.setAttribute('class', 'pixel');
+      everyPixel.addEventListener('click', changePixelColor);
       everyPixelRow.appendChild(everyPixel);
     }
   }
