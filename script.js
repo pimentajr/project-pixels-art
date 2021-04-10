@@ -11,8 +11,48 @@ function colorPallete(){
     }
 }
 
-function selectColor(slColor){
-  let color = document.getElementById(slColor)
+function selectColor(){
+  let cor = event.target.id
+  let color = document.getElementById(cor)
   colorPallete()
   color.className = 'color selected'
 }
+
+
+
+function fundo(cores){
+
+}
+
+function colorPaint(){
+  let linha = event.target.id
+  return linha
+}
+
+var pixelPannel = document.getElementById('pixel-board')
+pixelPannel.addEventListener('click', () => {
+  var linha = colorPaint()
+  var cor = document.querySelector('.selected').style.backgroundColor
+  document.getElementById(linha).style.backgroundColor = cor
+})
+
+var buttonClear = document.getElementById('clear-board')
+buttonClear.addEventListener('click', () => {
+  clear()
+})
+
+function clear() {
+  var squares = document.getElementsByClassName('pixel')
+  for (let square = 0; square < squares.length; square += 1){
+    squares[square].style.backgroundColor = 'white'
+  }
+}
+
+// function clear(){
+//  let trDivs = document.querySelectorAll('.tr')
+//  for (let i = 0; i < trDivs.length; i += 1){
+//    console.log(trDivs[i])
+//  }
+// }
+
+// clear()

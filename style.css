@@ -44,6 +44,7 @@ h1 {
   height: 40px;
   border: black solid 1px;
   margin: 5px;
+  background-color: unset;
 }
 
 /* 
