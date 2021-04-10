@@ -25,7 +25,15 @@ function initializeClearButtonListener() {
   clearButton.addEventListener('click', clearBoard);
 }
 
-function fillPixel(e) {
+function fillPixelFromMouseEnter(e) {
+  if (lastClickedPixelColor === '') {
+    return;
+  }
+
+  e.target.style.backgroundColor = lastClickedPixelColor;
+}
+
+function fillPixelFromMouseDown(e) {
   const clickedPixel = e.target;
   const selectedColor = document.querySelector('.color.selected').style.backgroundColor;
 
@@ -46,7 +54,8 @@ function fillRowsWithPixels() {
     for (let colIndex = 0; colIndex < boardSideSize; colIndex += 1) {
       pixel = document.createElement('div');
       pixel.classList.add('pixel');
-      pixel.addEventListener('mousedown', fillPixel);
+      pixel.addEventListener('mousedown', fillPixelFromMouseDown);
+      pixel.addEventListener('mouseenter', fillPixelFromMouseEnter);
       pixelRows[rowIndex].appendChild(pixel);
     }
   }
