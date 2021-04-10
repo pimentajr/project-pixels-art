@@ -2,18 +2,12 @@ function selectInitialColor() {
   document.getElementById('color-1').className = 'color selected';
 }
 
-// function getTargetElementById(targetElement) {
-//   const targetId = targetElement.id;
-//   const element = document.getElementById(targetId);
-//   return element;
-// }
-
-function classSwaper(targetElement) {
+function setSelectedColor(event) {
   const palette = document.getElementsByClassName('color');
 
   for (let index = 0; index < palette.length; index += 1) {
     const object = palette[index];
-    if (object === targetElement) {
+    if (object === event.target) {
       object.classList.add('selected');
     } else {
       object.classList.remove('selected');
@@ -21,15 +15,11 @@ function classSwaper(targetElement) {
   }
 }
 
-function colorSelector(targetElement) {
-  const selectedElementColor = getComputedStyle(targetElement).backgroundColor;
-  return selectedElementColor;
-}
-
-function setSelectedColor(event) {
-  const targetElement = event.target;
-  classSwaper(targetElement);
-  colorSelector(targetElement);
+function pencil(event) {
+  const colorElement = document.querySelector('.selected');
+  const color = getComputedStyle(colorElement).backgroundColor;
+  const pixel = event.target;
+  pixel.style.backgroundColor = color;
 }
 
 function pageStarter() {
@@ -37,6 +27,7 @@ function pageStarter() {
   document
     .getElementById('color-palette')
     .addEventListener('click', setSelectedColor);
+  document.getElementById('pixel-board').addEventListener('click', pencil);
 }
 
 window.onload = pageStarter;
