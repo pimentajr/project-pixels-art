@@ -44,7 +44,7 @@ function fillLine(value) {
   }
 }
 
-function fillBoard (value) {
+function fillBoard(value) {
   for (let index = 0; index < value; index += 1) {
     let lineBox = document.createElement('div');
     lineBox.className = 'line';
@@ -56,23 +56,22 @@ function fillBoard (value) {
 let boxColorSelect = document.getElementById('color-palette');
 boxColorSelect.addEventListener('click', function(event) {
   if (event.target.className === 'color') {
-  let colorUnselected = document.getElementsByClassName('selected');
-  colorUnselected[0].className = 'color';
-  event.target.classList.add('selected');
+    let colorUnselected = document.getElementsByClassName('selected');
+    colorUnselected[0].className = 'color';
+    event.target.classList.add('selected');
   }
 });
 
 let board = document.getElementById('pixel-board');
 board.addEventListener('click', function(event) {
   if (event.target.className === 'pixel') {
-    colorPaint = document.getElementsByClassName('selected');
+    let colorPaint = document.getElementsByClassName('selected');
     event.target.style.backgroundColor = colorPaint[0].id;
   }
 });
 
 let clearButton = document.getElementById('clear-board');
-clearButton.addEventListener('click', cleaningPixels
-);
+clearButton.addEventListener('click', cleaningPixels);
 
 let generateBoardButton = document.getElementById('generate-board');
 generateBoardButton.addEventListener('click', generateBoad);
@@ -82,7 +81,7 @@ function cleaningPixels() {
   for (let index = 0; index < clearPixel.length; index += 1) {
     clearPixel[index].style.backgroundColor = 'white';
   }
-};
+}
 
 function limitsMaxMin(number) {
   let size;
@@ -94,13 +93,13 @@ function limitsMaxMin(number) {
     size = number;
   }
   return size;
-  };
+  }
 
 function generateBoad() {
   let inputSize = document.getElementById('board-size');
   // console.log(inputSize.value);
   if (inputSize.value === '') {
-    alert('Board inválido');
+    alert('Board inválido!');
   } else {
     deleteBoard();
     let choiceNumberOfLines = limitsMaxMin(parseInt(inputSize.value,10));
@@ -114,4 +113,4 @@ function deleteBoard() {
   for (let index = pixels.length - 1; index >= 0; index -= 1) {
     pixels[index].remove();
   }
-};
+}
