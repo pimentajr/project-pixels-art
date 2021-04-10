@@ -1,3 +1,9 @@
+// Finaliza requisito 6, adicionando preto como selected.
+window.onload = function() {
+  let firstPixel = document.querySelector('.black');
+  firstPixel.classList.add('selected')
+}
+
 const lineWidth = 5;
 const pixelQuant = 5;  
 //Cria o quadro onde ficarão alocados os pixels a serem modificados
@@ -34,7 +40,6 @@ function createPixels() {
   }
 }
 createPixels();
-
 
 
 
