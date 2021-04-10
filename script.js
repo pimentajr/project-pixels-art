@@ -48,7 +48,6 @@ function clearBoard() {
 
 document.getElementById('board-size').addEventListener('change', function validateInput() {
   const inputNumber = this.value;
-  if (inputNumber === '') alert('Board inválido!');
   if (inputNumber < 5) this.value = 5;
   if (inputNumber > 50) this.value = 50;
 });
@@ -56,6 +55,10 @@ document.getElementById('board-size').addEventListener('change', function valida
 function createBoard() {
   const inputSizeBoard = document.getElementById('board-size');
   const tableOfPixel = document.getElementById('pixel-board');
+  if (inputSizeBoard.value === '') {
+    alert('Board inválido!');
+    return null;
+  }
   tableOfPixel.innerHTML = '';
   for (let i = 0; i < inputSizeBoard.value; i += 1) {
     const pixelTable = document.createElement('tr');
