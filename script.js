@@ -29,6 +29,19 @@ for (let index = 1; index <= differentColors; index += 1) {
 const firstColor = document.querySelector('.color');
 firstColor.style.backgroundColor = 'black';
 
+// 9.
+const clearButton = document.createElement('button');
+clearButton.setAttribute('id', 'clear-board');
+clearButton.innerText = 'Limpar';
+body.appendChild(clearButton);
+function clearBoard() {
+  const pixelBoxes = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixelBoxes.length; index += 1) {
+    pixelBoxes[index].style.backgroundColor = 'white';
+  }
+}
+clearButton.addEventListener('click', clearBoard);
+
 // 4.
 const pixelBoard = document.createElement('div');
 pixelBoard.setAttribute('id', 'pixel-board');
@@ -62,15 +75,4 @@ function printColorPixel(event) {
 }
 pixelBoard.addEventListener('click', printColorPixel);
 
-// 9.
-const clearButton = document.createElement('button');
-clearButton.setAttribute('id', 'clear-board');
-clearButton.innerText = 'Limpar';
-body.appendChild(clearButton);
-function clearBoard(event) {
-  let pixelBoxes = document.getElementsByClassName('pixel');
-  for (let index = 0; index < pixelBoxes.length; index += 1) {
-    pixelBoxes[index].style.backgroundColor = 'transparent';
-  }
-}
-clearButton.addEventListener('click', clearBoard);
+// 10.
