@@ -6,7 +6,9 @@ let color = 'black'
 
 palselected.addEventListener('click',function(event){
     let selectedcolor = event.target.id
-
+if (selectedcolor == 'cube1') {
+    color = 'black'
+}
 if (selectedcolor == 'cube2') {
     color = 'green'
 }
