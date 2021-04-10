@@ -1,6 +1,8 @@
 // Create table on load
-
-
+window.onload = function() {
+document.getElementById('board-size').value = '5'
+createTable()
+}
 
 // get Color Palette
 let colorPalette = document.getElementById('color-palette')
