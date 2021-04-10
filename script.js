@@ -1,9 +1,10 @@
 // Seleciona a cor preta como primária e também cria um tabuleiro padrão
-window.onload = function() {
+window.onload = function () {
   const firstSelectedColor = document.getElementById('black-box');
   firstSelectedColor.classList = ('color selected');
   boardMaker(5);
 };
+const pixelBoard = document.getElementById('pixel-board');
 
 // Seleciona a cor mudando a classe da div clicada
 function colorSelection() {
@@ -34,18 +35,17 @@ function printBox(printBox) {
   default:
   }
 }
-selectPixel();
 
 // Seleciona o pixel clicando nele, e se for um píxel e não a seção, chama o evento
 function selectPixel() {
-  document.getElementById('pixel-board').addEventListener('click', (event) => {
+  pixelBoard.addEventListener('click', (event) => {
     const boxTarget = event.target;
     if (boxTarget.id !== 'pixel-board') {
       printBox(boxTarget);
     }
   });
 }
-
+selectPixel();
 
 // Cria o botão limpar e insere na div
 function createButton() {
@@ -98,7 +98,6 @@ function boardRemove() {
 function boardMaker(pixels) {
   boardRemove();
   const pixelXY = pixels;
-  const pixelBoard = document.getElementById('pixel-board');
   const numberOfPixels = pixelXY * pixelXY;
   for (let index = 1; index <= numberOfPixels; index += 1) {
     const pixelElement = document.createElement('div');
