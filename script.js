@@ -85,8 +85,8 @@ function vqvButtonListener() {
   }
 }
 
-[colorPalette, pixelBoard, clearButton, vqvButton].forEach(item => {
-  item.addEventListener('click', event => {
+[colorPalette, pixelBoard, clearButton, vqvButton].forEach(item => ({
+  item.addEventListener('click', (event => {
     if (item === colorPalette) {
       colorPaletteListener(event);
     } else if (item === pixelBoard) {
