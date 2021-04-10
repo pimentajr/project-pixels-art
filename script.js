@@ -22,13 +22,24 @@ function makeColorPalette(colors) {
   }
 }
 
+// Font https://www.javascripttutorial.net/dom/manipulating/remove-all-child-nodes/
 function clearBoardPixels() {
   const pixelBoard = document.querySelector('#pixel-board');
-  const pixels = pixelBoard.children;
-  for (let index = 0; index < pixels.length; index += 1) {
-    console.log(pixels[index]);
-    pixelBoard.removeChild(pixels[index]);
+  // Tirar a dúvida de porque não funciona
+  // const pixels = pixelBoard.children;
+  // for (let index = 0; index < pixels.length; index += 1) {
+  //   console.log(pixels[index]);
+  //   pixelBoard.removeChild(pixels[index]);
+  // }
+  while (pixelBoard.firstChild) {
+    pixelBoard.removeChild(pixelBoard.firstChild);
   }
+}
+
+function validateNumber(number) {
+  if (number < 5) number = 5;
+  if (number > 50) number = 50;
+  return number;
 }
 
 window.onload = function () {
@@ -60,10 +71,11 @@ document.querySelector('#clear-board').addEventListener('click', () => {
 });
 
 document.querySelector('#generate-board').addEventListener('click', () => {
-  // let input = document.querySelector('#board-size');
-  // if (input.value == '') alert('Board inválido!');
-  // else {
-  //   let numberInput = input.value;
-  clearBoardPixels();
-  // }
+  let input = document.querySelector('#board-size');
+  if (input.value == '') alert('Board inválido!');
+  else {
+    let numberInput = input.value;
+    clearBoardPixels();
+    makePixelBoard(validateNumber(numberInput), validateNumber(numberInput));
+  }
 });
