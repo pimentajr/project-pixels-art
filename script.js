@@ -81,5 +81,5 @@ window.onload = function load() {
   createMatrix();
   getPaletteColor();
   pixelColor();
-  gettingPixels()
+  gettingPixels();
 };
