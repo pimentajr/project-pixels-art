@@ -23,7 +23,6 @@ function createBoxesDiv() {
   selectDivs.forEach((box, index) => {
     const div = box; div.style.backgroundColor = arrayOfColors[index];
   });
-  window.onload = 'white'
 }
 createBoxesDiv();
 
@@ -45,6 +44,6 @@ function addPixels() {
       createPixelsColumn.innerText = 'Column';
     }
   }
-  window.onload = 'white';
+  window.onload.style.addPixels = 'white';
 }
 addPixels();
