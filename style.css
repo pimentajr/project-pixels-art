@@ -57,8 +57,22 @@ h1:hover:after {
   border: solid 1px black;
 }
 
+li {
+  transition: 0.9s;
+}
+
+li:hover {
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+
 .pixel {
   background-color: white;
+}
+
+.pixel:hover {
+  transform: scale(0.95);
+  transition: 0.3s;
 }
 
 .colorBlack {
