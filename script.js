@@ -90,8 +90,6 @@ function generateHeightDivs(number) {
   }
 }
 
-
-
 // quantidade de divs.pixel existentes dentro de um div.tr
 function generateWidthDivs(number) {
   let getHeightDiv = document.querySelectorAll('.tr');
@@ -105,8 +103,6 @@ function generateWidthDivs(number) {
   }
 }
 
-
-
 // puxa informação do input para o botão
 function getInputData() {
   let inputData = document.getElementById('board-size');
@@ -115,5 +111,20 @@ function getInputData() {
   return pixelAmount;
 }
 
+// gera paintboard conforme número do input
+function generatePaintBoard() {
+  let boardSizeButton = document.getElementById('generate-board');
 
+  boardSizeButton.addEventListener('click', function() {
+     if (getInputData() > 0) {
+      generateHeightDivs(0);
+      generateWidthDivs(0);
+      generateHeightDivs(getInputData());
+      generateWidthDivs(getInputData());
+    } else if (getInputData() === 0) {
+      window.alert('Board inválido!');
+    }
+  })
+}
 
+generatePaintBoard();
