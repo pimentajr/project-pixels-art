@@ -27,11 +27,11 @@ allPixel[index].style.backgroundColor = 'white';
 let genBoardButton = document.querySelector('#generate-board')
 genBoardButton.addEventListener('click', function (){
 let boardTable = document.querySelector('#board-size').value
-if(boardTable > 0){
 while (pixelBoard.firstChild) {
 pixelBoard.removeChild(pixelBoard.lastChild);
 }
 
+if(boardTable > 5 && boardTable < 50){
 for(let index = 0; index < boardTable; index += 1){
 let tr = document.createElement('div')
 tr.classList.add('tr')
@@ -42,6 +42,31 @@ newPixel.classList.add('pixel')
 tr.appendChild(newPixel)  
 }      
 }
+}
+else if(boardTable >= 50){
+    for(let index = 0; index < 50; index += 1){
+        let tr = document.createElement('div')
+        tr.classList.add('tr')
+        pixelBoard.appendChild(tr)
+        for(let index = 0; index < 50; index += 1){
+        let newPixel = document.createElement('div')
+        newPixel.classList.add('pixel')
+        tr.appendChild(newPixel)  
+        }
+    }
+}
+
+else if(boardTable > 0 && boardTable <= 5){
+    for(let index = 0; index < 5; index += 1){
+        let tr = document.createElement('div')
+        tr.classList.add('tr')
+        pixelBoard.appendChild(tr)
+        for(let index = 0; index < 5; index += 1){
+        let newPixel = document.createElement('div')
+        newPixel.classList.add('pixel')
+        tr.appendChild(newPixel) 
+        }
+    }
 }
 else{
     alert('Board inválido!')
