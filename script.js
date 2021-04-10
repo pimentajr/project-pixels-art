@@ -1,5 +1,6 @@
 const pixelsBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
+const resetButton = document.querySelector('#clear-board');
 const DEFAULT_TABLE_VALUE = 5;
 const DEFAULT_COLOR = 'white';
 
@@ -40,4 +41,13 @@ const createTable = () => {
 
 createTable();
 
+resetButton.addEventListener('click', () => {
+  for (let lines = 0; lines < DEFAULT_TABLE_VALUE; lines += 1) {
+    for (let column = 0; column < DEFAULT_TABLE_VALUE; column += 1) {
+      pixelsBoard.children[lines].children[column].style.backgroundColor = DEFAULT_COLOR
+    }
 
+    // console.log(pixelsBoard.children[lines])
+  }
+  // console.log(pixelsBoard)
+})
