@@ -1,6 +1,9 @@
-// Seleciona a cor preta como primária
-const firstSelectedColor = document.getElementById('black-box');
-firstSelectedColor.classList = ('color selected');
+// Seleciona a cor preta como primária e também cria um tabuleiro padrão
+window.onload = function() {
+  const firstSelectedColor = document.getElementById('black-box');
+  firstSelectedColor.classList = ('color selected');
+  boardMaker();
+}
 
 // Seleciona a cor mudando a classe da div clicada
 function colorSelection() {
@@ -46,12 +49,12 @@ selectPixel();
 // Cria o botão limpar e insere na div
 function createButton() {
   const clearButton = document.createElement('input');
-  clearButton.style.margin = '20px 120px';
+  clearButton.style.margin = '20px 10px';
   clearButton.id = 'clear-board';
   clearButton.value = 'Limpar';
   clearButton.innerHTML = 'Limpar';
   clearButton.type = 'button';
-  const buttonDiv = document.getElementById('button');
+  const buttonDiv = document.getElementById('buttons');
   buttonDiv.appendChild(clearButton);
 }
 createButton();
@@ -69,6 +72,50 @@ function buttonAction() {
 buttonAction();
 
 // Cria um botão e um campo de input
-function pixelChanger() {
+function buttonResize() {
+  let boardSize = document.createElement('input');
+  boardSize.id = 'board-size';
+  boardSize.type = 'number';
+  boardSize.placeholder = 'Tabuleiro de quantos pixels?';
+  document.getElementById('buttons').appendChild(boardSize);
+  let generateBoard = document.createElement('input');
+  generateBoard.id = 'generate-board';
+  generateBoard.type = 'button';
+  generateBoard.value = 'VQV';
+  generateBoard.innerHTML = 'VQV';
+  document.getElementById('buttons').appendChild(generateBoard);
+}
+buttonResize();
 
+//Cria os elementos do quadro de acordo com o número de pixels
+function boardMaker(pixels) {
+  boardRemove()
+  const pixelXY = pixels;
+  const pixelBoard = document.getElementById('pixel-board');
+  const numberOfPixels = pixelXY * pixelXY;
+  for (let index = 1; index <= numberOfPixels; index += 1) {
+    
+    const pixelElement = document.createElement('div');
+    pixelBoard.appendChild(pixelElement).className = 'pixel';
+    if (index % pixelXY === 0) {
+      const breakLine = document.createElement('br');
+      pixelBoard.appendChild(breakLine);
+    }
+  }
+}
+
+//Cria um quadro utilizando o tamanho inserido no input
+function BoardSize() {
+  const generateBoard = document.getElementById('generate-board');
+  generateBoard.addEventListener('click', () => {
+    const boardSize = document.getElementById('board-size').value;
+    boardMaker(boardSize);
+  })
+}
+BoardSize();
+
+//Reseta o tabuleiro 
+function boardRemove() {
+  let oldBoard = document.querySelector('#pixel-board');
+  oldBoard.innerHTML = '';
 }
