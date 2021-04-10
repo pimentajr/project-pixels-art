@@ -35,14 +35,14 @@ const secondColor = document.getElementsByClassName('color')[1];
 const thirdColor = document.getElementsByClassName('color')[2];
 const fourthColor = document.getElementsByClassName('color')[3];
 
-firstColor.addEventListener('click', function firstPincel () {
+firstColor.addEventListener('click', () => {
   firstColor.classList.add('selected');
   secondColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
   fourthColor.classList.remove('selected');
 });
 
-secondColor.addEventListener('click', function secondPincel () {
+secondColor.addEventListener('click', () => {
   secondColor.classList.add('selected');
   firstColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
@@ -50,7 +50,7 @@ secondColor.addEventListener('click', function secondPincel () {
   secondColor.style.backgroundColor = 'yellow';
 });
 
-thirdColor.addEventListener('click', function thirdPincel () {
+thirdColor.addEventListener('click', () => {
   thirdColor.classList.add('selected');
   firstColor.classList.remove('selected');
   secondColor.classList.remove('selected');
@@ -58,7 +58,7 @@ thirdColor.addEventListener('click', function thirdPincel () {
   thirdColor.style.backgroundColor = 'red';
 });
 
-fourthColor.addEventListener('click', function fourthPincel () {
+fourthColor.addEventListener('click', () => {
   fourthColor.classList.add('selected');
   secondColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
@@ -69,7 +69,7 @@ fourthColor.addEventListener('click', function fourthPincel () {
 // Requisito 8 - Colore o pixel individual
 function coloredPixel() {
   const allBoard = document.querySelector('#pixel-board');
-  allBoard.addEventListener('click', function colorPixel (eventoDeOrigem) {
+  allBoard.addEventListener('click', (eventoDeOrigem) => {
     const pincelColor = document.querySelector('.selected').style.backgroundColor;
     const clickedPixel = eventoDeOrigem.target;
     if (clickedPixel.className === 'pixel') {
@@ -83,7 +83,7 @@ coloredPixel();
 // Adiciona um botão e limpa o grid
 function clearBoard() {
   const cleanButton = document.getElementById('clear-board');
-  cleanButton.addEventListener('click', function allWhite () {
+  cleanButton.addEventListener('click', () => {
     const pixel = document.querySelectorAll('.pixel');
     for (let index = 0; index < pixel.length; index += 1) {
       pixel[index].style.backgroundColor = 'white';
