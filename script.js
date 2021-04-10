@@ -34,3 +34,14 @@ function addPixels(size) {
   }
 }
 addPixels(5);
+
+function colorSelectedByClick() {
+  const palette = document.querySelector('#color-palette');
+  palette.addEventListener('click', (selectColor) => {
+    const eventTarget = selectColor.target;
+    const color = document.querySelectorAll('.color');
+    color.forEach((element) => element.classList.remove('selected'));
+    eventTarget.classList.add('selected');
+  });
+}
+colorSelectedByClick();
