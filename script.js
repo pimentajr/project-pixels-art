@@ -33,25 +33,27 @@ function colorSelection() {
   tableColor.addEventListener('click', (event) => {
     const actualColor = document.querySelector('.selected');
     actualColor.className = 'color';
-    event.target.classList = 'color selected';
+    const elementSelected = event.target
+    elementSelected.classList = 'color selected';
   });
 }
 colorSelection();
 
 // Pinta a box selecionada com a cor correta
 function printingPixels(printBox) {
+  let pixelSelected = printBox
   switch (document.querySelector('.selected').id) {
   case 'black-box':
-    printBox.style.backgroundColor = 'black';
+    pixelSelected.style.backgroundColor = 'black';
     break;
   case 'red-box':
-    printBox.style.backgroundColor = 'red';
+    pixelSelected.style.backgroundColor = 'red';
     break;
   case 'green-box':
-    printBox.style.backgroundColor = 'green';
+    pixelSelected.style.backgroundColor = 'green';
     break;
   case 'yellow-box':
-    printBox.style.backgroundColor = 'yellow';
+    pixelSelected.style.backgroundColor = 'yellow';
     break;
   default:
   }
