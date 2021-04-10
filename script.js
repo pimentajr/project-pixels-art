@@ -1,18 +1,24 @@
 const linesUsed = 5;
-
-function colorBoxes() {
-  const boxes = document.querySelectorAll('.color');
-  const black = boxes[0];
-  black.style.backgroundColor = 'black';
-  const blue = boxes[1];
-  blue.style.backgroundColor = 'lightblue';
-  const grey = boxes[2];
-  grey.style.backgroundColor = 'lightgrey';
-  const green = boxes[3];
-  green.style.backgroundColor = 'lightgreen';
+const colors = {
+  black: 'black',
+  blue: 'lightblue',
+  grey: 'lightgrey',
+  green: 'lightgreen'
 }
 
-colorBoxes();
+function colorBoxes(colors) {
+  const boxes = document.querySelectorAll('.color');
+  const boxBlack = boxes[0];
+  boxBlack.style.backgroundColor = colors.black;
+  const blue = boxes[1];
+  blue.style.backgroundColor = colors.blue;
+  const grey = boxes[2];
+  grey.style.backgroundColor = colors.grey;
+  const green = boxes[3];
+  green.style.backgroundColor = colors.green;
+}
+
+colorBoxes(colors);
 
 function pixelBoard() {
   const lineBoard = document.querySelectorAll('.line');
@@ -32,10 +38,15 @@ window.onload = function() {
   let locateBlack = document.querySelector('.color');
   locateBlack.classList.add('selected');
   let selectedColor = document.querySelector('.selected');
-  selectedColor.addEventListener('click',function() {
-    //document.body.style.backgroundColor =  'black';
-  })
-}
+  let locatePixel = document.querySelectorAll('.pixel');
+    for (let i = 0; i < locatePixel.length; i += 1){
+      locatePixel[i].addEventListener('click', function() {
+        locatePixel[i].style.backgroundColor = 'black';
+        }
+        )
+    }
+  }
+
 
 function giveAndRemoveSelec() {
   function removeSelected() {
@@ -63,19 +74,20 @@ function giveAndRemoveSelec() {
 }
 giveAndRemoveSelec();
 
-// let locateSelected = document.querySelector('.')
-// let locatePixel = document.querySelectorAll('.pixel');
-// let locateLine = document.querySelectorAll('.line');
-// for (let i = 0; i < locatePixel.length; i +=1) {
-//     for (let i = 0; i < locatePixel.length; i +=1) {
-//             for (let i = 0; i <= locatePixel.length; i += 1){
-//                 locatePixel[i].addEventListener('click', function() {
-//                     locatePixel[i].style.backgroundColor = 'red';
-//                 }
-//             )
-//         }
+let locateSelectedClass = document.querySelectorAll('.color');
+let locatePixel = document.querySelectorAll('.pixel');
+let locateLine = document.querySelectorAll('.line');
 
-//     }
-// }
-
-// //locateSelected.style.backgroundColor = 'red';
+for (let i = 0; i < locateSelectedClass.length; i += 1 ){
+  locateSelectedClass[i].addEventListener('click', function () {
+    var colorNumber = i;
+    for (let i = 0; i < locatePixel.length; i += 1){
+      locatePixel[i].addEventListener('click', function() {
+        let colorsSelected = Object.values(colors);
+        locatePixel[i].style.backgroundColor = colorsSelected[colorNumber];
+        }
+        )
+    }
+  }
+  )
+}
