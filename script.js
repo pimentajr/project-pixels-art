@@ -20,12 +20,9 @@ function pixel(event) {
 }
 tabela.addEventListener('click', pixel);
 
-// eslint-disable-next-line no-unused-vars
-
 const botao = document.getElementById('clear-board');
 const quadrados = document.querySelectorAll('.pixel');
 const backgroundColor = 'white';
-
 function reset() {
   for (let index = 0; index < quadrados.length; index += 1) {
     while (quadrados[index].style.backgroundColor !== backgroundColor) {
