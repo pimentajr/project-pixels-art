@@ -1,9 +1,5 @@
 let palselected = document.getElementById('color-palette');
 
-pixelboard.addEventListener('click',function(event) {
-    let pixelboard = document.getElementById('pixel-board')
- 
-})
 
 palselected.addEventListener('click',function(event){
     let selectedcolor = event.target.id
