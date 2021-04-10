@@ -6,6 +6,8 @@ let numberOfLines = 5;
 const colorSelected = document.getElementById('black');
 const colorMenu = document.getElementById('color-palette');
 const colors = ['black', 'red', 'green', 'blue'];
+// const colors = ['black', 'red', 'green', 'blue', 'aqua', 'magenta', 'royalblue', 'rosybrown', 'greenyellow', 'yellow', 'blueviolet', 'coral', 'darkgray', 'fuchsia', 'grey', 'hotpink']
+
 for (let index = 0; index < colors.length; index += 1) {
   const colorSelector = document.createElement('div');
   colorSelector.className = 'color';
