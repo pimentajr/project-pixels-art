@@ -53,7 +53,6 @@ header {
 
 #pixel-board {
   display: table;
-  background-color: aqua;
   margin: 35px auto;
 }
 
@@ -67,6 +66,7 @@ header {
   border: 1px;
   border-style: solid;
   border-color: black;
-  height: 42px;
-  width: 42px;
+  height: 40px;
+  width: 40px;
+  background-color:white;
 }
