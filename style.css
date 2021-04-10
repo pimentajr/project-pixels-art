@@ -4,8 +4,8 @@
   display: inline;
   margin: 5px;
   padding: 0 5px;
-  
 }
+
 #lime {
   background-color: lime;
   border: 1px solid black;
@@ -13,8 +13,8 @@
   margin: 5px;
   padding: 0 5px;
   color: lime;
-
 }
+
 #dimgray {
   background-color: dimgray;
   border: 1px solid black;
@@ -22,8 +22,8 @@
   margin: 5px;
   padding: 0 5px;
   color: dimgray;
-
 }
+
 #deepskyblue {
   background-color: deepskyblue;
   border: 1px solid black;
@@ -32,6 +32,22 @@
   padding: 0 5px;
   color: deepskyblue;
 }
-li {
+
+.color {
   list-style: none;
+}
+
+.pixel {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: white;
+  margin: -2px -2px -2px -8px;
+  border: 1px solid black;
+}
+
+#pixel-board {
+  max-width: 300px;
+  max-height: 300px;
 }
