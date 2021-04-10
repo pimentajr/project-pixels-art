@@ -78,8 +78,13 @@ function paintPixel() {
 paintPixel();
 
 function changeGridSizeComplemnt(inputSize) {
-  const newValue = inputSize.value;
+  let newValue = inputSize.value;
   if (newValue !== '' && newValue !== null) {
+    if (newValue < 5) {
+      newValue = 5;
+    } else if (newValue > 50) {
+      newValue = 50;
+    }
     gridX = newValue;
     gridY = newValue;
     createLines();
