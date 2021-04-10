@@ -37,6 +37,7 @@ function paintPixelBoard(color) {
   }
 }
 paintPixelBoard('black')
+
 function selectColor() {
   const selectedcolor = document.querySelectorAll('.color');
   for (let index = 0; index < selectedcolor.length; index += 1) {
