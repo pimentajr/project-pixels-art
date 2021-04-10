@@ -7,9 +7,10 @@ function createDiv(number) {
 }
 createDiv(25);
 
+const eventTarget = event.target;
+
 function changeSelectedClass(event) {
   document.querySelectorAll('.selected')[0].classList.remove('selected');
-  let eventTarget = event.target;
   eventTarget.className += ' selected';
 }
 document.getElementById('color-palette').addEventListener('click', changeSelectedClass);
@@ -17,10 +18,10 @@ document.getElementById('color-palette').addEventListener('click', changeSelecte
 function changeColorPixel(event) {
   const classColor = document.querySelectorAll('.selected')[0].classList[1];
   if (event.target.classList.length !== 1) {
-    event.target.classList.remove(event.target.classList[1]);
-    event.target.className += ' ' + classColor; //usar classlist pra add e tirar erro lint
+    eventTarget.classList.remove(event.target.classList[1]);
+    eventTarget.className += ' ' + classColor;
   } else {
-    event.target.className += ' ' + classColor; //usar classlist pra add e tirar erro lint
+    eventTarget.className += ' ' + classColor;
   }
 }
 document.getElementById('pixel-board').addEventListener('click', changeColorPixel);
