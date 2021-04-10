@@ -12,9 +12,10 @@ function createDiv(number) {
 }
 createDiv(25);
 
-let selectedColorPosition = document.querySelectorAll('selected');
+const selectedColorPosition = document.querySelectorAll('selected');
+function eventClick(event) {
+    selectedColorPosition[0].classList.remove('selected');
+    event.target.className = 'selected';
+  }
 
-selectedColorPosition.addEventListener('click', function(event) {
-  selectedColorPosition[0].classList.remove('selected');
-  event.target.className = 'selected';
-})
+selectedColorPosition.addEventListener('click', eventClick)
