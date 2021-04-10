@@ -2,6 +2,13 @@ body {
   background-color: grey;
 }
 
+button {
+  width: 90px;
+  display: block;
+  align-items: center;
+  /* margin:0 auto; */
+}
+
 .color {
   border: solid;
   border-color: black;

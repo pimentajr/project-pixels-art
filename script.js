@@ -52,3 +52,16 @@ function addColor() {
 	})
 }
 addColor();
+
+const button = document.querySelector('#clear-board');
+
+function benjaminButton() {
+	button.addEventListener('click', function() {
+		const tableElements = document.querySelectorAll('.pixel');
+		for (let index = 0; index < tableElements.length; index += 1) {
+			console.log('teste');
+				tableElements[index].style.backgroundColor = 'white';
+			}
+	})
+}
+benjaminButton();
