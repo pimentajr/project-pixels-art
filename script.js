@@ -1,6 +1,6 @@
 function createBoxesDiv() {
-  const selectPalette = document.querySelector('#color-palette');
   for (let index = 0; index < 4; index += 1) {
+    const selectPalette = document.querySelector('#color-palette');
     const createDivs = document.createElement('div');
     selectPalette.appendChild(createDivs);
     createDivs.classList.add('color');
@@ -34,4 +34,3 @@ function addPixels(size) {
   }
 }
 addPixels(5);
-  

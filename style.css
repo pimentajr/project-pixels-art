@@ -27,7 +27,7 @@ body {
   justify-content: center;
   display: inline-block;
 }
-  
+
 #pixel-board {
   flex-wrap: wrap;
   display: flex;
@@ -37,4 +37,3 @@ body {
   align-items: center;
   margin-top: 20px;
 }
-  
