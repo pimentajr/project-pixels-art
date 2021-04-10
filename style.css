@@ -1,9 +1,11 @@
 #title {
-  /* text-align: center; */
+  width: 90%;
+  text-align: center;
 }
 
 #color-palette {
-  /* text-align: center; */
+  width: 90%;
+  text-align: center;
 }
 
 .color {
@@ -16,10 +18,10 @@
 }
 
 #pixel-board {
-  width: 405px;
-  height: 405px;
+  width: 90%;
+  height: 90%;
   line-height: 0px;
-  /* text-align: center; */
+  text-align: center;
 }
 
 .pixel {
@@ -41,3 +43,18 @@
   font-weight: 800;
   border-radius: 5px;
 }
+
+#board-size {
+  width: 30px;
+}
+
+#generate-board {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+  background-color: royalblue;
+  color: white;
+  font-weight: 800;
+  border-radius: 5px;
+}
+

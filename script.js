@@ -3,7 +3,6 @@ window.onload = function() {
 };
 
 let numberOfLines = 5;
-let numberOfBox = numberOfLines;
 const colorSelected = document.getElementById('black');
 const colorMenu = document.getElementById('color-palette');
 const colors = ['black', 'red', 'green', 'blue'];
@@ -23,7 +22,7 @@ const boxsLine = document.getElementsByClassName('line');
 
 function fillLine(value) {
   for (let index = 0; index < value; index += 1) {
-    for (let boxIndex = 0; boxIndex < numberOfBox; boxIndex += 1) {
+    for (let boxIndex = 0; boxIndex < value; boxIndex += 1) {
       let createdBox = document.createElement('div');
       createdBox.className = 'pixel';
       boxsLine[index].appendChild(createdBox);
@@ -37,7 +36,7 @@ function fillBoard (value) {
     lineBox.className = 'line';
     pixelBoard.appendChild(lineBox);
   }
-  fillLine(numberOfBox);
+  fillLine(value);
 }
 
 let boxColorSelect = document.getElementById('color-palette');
@@ -58,9 +57,47 @@ board.addEventListener('click', function(event) {
 });
 
 let clearButton = document.getElementById('clear-board');
-clearButton.addEventListener('click', function(event) {
+clearButton.addEventListener('click', cleaningPixels
+);
+
+let generateBoardButton = document.getElementById('generate-board');
+generateBoardButton.addEventListener('click', generateBoad);
+
+function cleaningPixels() {
   let clearPixel = document.querySelectorAll('.pixel');
-  for (let index = 0; index < clearPixel.length; index +=1) {
+  for (let index = 0; index < clearPixel.length; index += 1) {
     clearPixel[index].style.backgroundColor = 'white';
   }
-});
+};
+
+function limitsMaxMin(number) {
+  let size;
+  if (number < 5) {
+    size = 5;
+  } else if (number > 50) {
+    size = 50;
+  } else {
+    size = number;
+  }
+  return size;
+  };
+
+function generateBoad() {
+  let inputSize = document.getElementById('board-size');
+  // console.log(inputSize.value);
+  if (inputSize.value === '') {
+    alert('Board inválido');
+  } else {
+    deleteBoard();
+    let choiceNumberOfLines = limitsMaxMin(parseInt(inputSize.value,10));
+    fillBoard(choiceNumberOfLines);
+  }
+};
+
+function deleteBoard() {
+  let pixels = document.getElementsByClassName('line');
+  console.log(pixels);
+  for (let index = pixels.length - 1; index >= 0; index -= 1) {
+    pixels[index].remove();
+  }
+};
