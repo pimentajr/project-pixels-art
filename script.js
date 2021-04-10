@@ -4,7 +4,12 @@ const color3 = color2.nextElementSibling;
 const color4 = color3.nextElementSibling;
 
 function generateRandomColor() {
-  const arr = ['red', 'blue', 'green', 'pink', 'yellow',
+  const arr = [
+    'red',
+    'blue',
+    'green',
+    'pink',
+    'yellow',
     'brown',
     'grey',
     'aliceBlue',
@@ -77,31 +82,20 @@ newBoard.id = 'pixel-board';
 const btn = document.querySelector('#generate-board');
 const input = document.querySelector('#board-size');
 
-function valued(value) {
-  if (value < 5) {
-    return 5;
-  }
-  if (value > 50) {
-    return 50;
-  }
-  return value;
-}
-
-btn.addEventListener('click', () => {
-  const valor = input.value;
-  if (valor === '') {
-    return alert('Board inválido');
-   }
+btn.addEventListener('click', function () {
   board.remove();
   document.querySelector('.board-container').appendChild(newBoard);
-  const numberValued = valued(valor);
-  const valueXvalue = Number(numberValued * numberValued);
-  for (let i = 0; i < valueXvalue; i += 1) {
-    if (i % numberValued === 0) {
-      const br = document.createElement('br');
+  let input = document.querySelector('#board-size');
+  let value = input.value;
+  if (value === '') {
+    alert('Board inválido!');
+  }
+  for (let i = 0; i < parseInt(value * value); i += 1) {
+    if (i % value === 0) {
+      let br = document.createElement('br');
       newBoard.appendChild(br);
     }
-    const newDiv = document.createElement('div');
+    let newDiv = document.createElement('div');
     newDiv.className = 'pixel';
     newBoard.appendChild(newDiv);
   }
