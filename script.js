@@ -99,7 +99,7 @@ function initializePaletteListeners() {
   }
 }
 
-function fillPaletteWithDefaultColors() {
+function generatePaletteWithDefaultColors() {
   for (let index = 0; index < NUM_OF_COLORS; index += 1) {
     CURRENT_COLORS[index] = DEFAULT_COLORS[index];
   }
@@ -117,7 +117,7 @@ function getRandomInt(min, max) {
   return Math.floor(inclusiveRandom() * (max - min) + min);
 }
 
-function fillPaletteWithRandomColors() {
+function generatePaletteWithRandomColors() {
   let redValue;
   let greenValue;
   let blueValue;
@@ -134,9 +134,9 @@ function fillPaletteBoxesWithColors() {
   const colorBoxes = document.querySelectorAll('.color:not(.fixed)');
 
   if (randomColors === 'true') {
-    fillPaletteWithRandomColors();
+    generatePaletteWithRandomColors();
   } else {
-    fillPaletteWithDefaultColors();
+    generatePaletteWithDefaultColors();
   }
 
   for (let index = 0; index < NUM_OF_COLORS; index += 1) {
@@ -198,8 +198,10 @@ function fillBoardWithUserInput() {
 
 function initializeBoardSizeButtonListener() {
   const boardSizeButton = document.getElementById('generate-board');
+  const boardSizeUserInput = document.getElementById('board-size');
 
   boardSizeButton.addEventListener('click', fillBoardWithUserInput);
+  boardSizeUserInput.addEventListener('input', fillBoardWithUserInput);
 }
 
 function resetSelected() {
