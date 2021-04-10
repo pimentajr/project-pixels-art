@@ -6,7 +6,7 @@ function getRandomColors() {
     const rgbColor = {
       r: parseInt((Math.random() * 255), 10),
       g: parseInt((Math.random() * 255), 10),
-      b: parseInt((Math.random() * 255), 10)
+      b: parseInt((Math.random() * 255), 10),
     };
     const randomRGB = `rgb(${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b})`;
     arrayColors.push(randomRGB);
@@ -56,13 +56,24 @@ function pixelColor() {
   for (let i = 0; i < getPixel.length; i += 1) {
     getPixel[i].addEventListener('click', getColorPixel);
   }
-  console.log('pixelColor');
 }
+function clearPixels() {
+  const blankPixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < blankPixels.length; index += 1) {
+    blankPixels[index].style.backgroundColor = 'white';
+  }
+}
+
+function gettingPixels() {
+  const capturePixels = document.getElementById('clear-board');
+  capturePixels.addEventListener('click', clearPixels);
+}
+
 window.onload = function load() {
   const getColors = document.getElementsByClassName('color');
   getColors[0].style.backgroundColor = 'black';
   getColors[0].classList.add('selected');
-  const colorRemove;
+  let colorRemove = null;
   colorRemove = getRandomColors();
   for (let index = 1; index < getColors.length; index += 1) {
     getColors[index].style.backgroundColor = colorRemove[index];
@@ -70,5 +81,5 @@ window.onload = function load() {
   createMatrix();
   getPaletteColor();
   pixelColor();
+  gettingPixels()
 };
-// teste
