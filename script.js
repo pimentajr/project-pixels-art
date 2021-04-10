@@ -45,3 +45,13 @@ function colorSelectedByClick() {
   });
 }
 colorSelectedByClick();
+
+function addSelecteColordByClick() {
+  const board = document.querySelector('#pixel-board');
+  board.addEventListener('click', (paintPixel) => {
+    const selectedColor = document.querySelector('.selected');
+    const eventTarget = paintPixel.target;
+    eventTarget.style.backgroundColor = getComputedStyle(selectedColor).backgroundColor;
+  });
+}
+addSelecteColordByClick();
