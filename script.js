@@ -19,18 +19,8 @@ square(5, 5);
 // 6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels:
 // Verifica se o elemento da cor preta possui, inicialmente, a classe selected
 
-function definedColor(colors) {
-  const palette = document.getElementById('color-palette');
-  const boxClass = document.createElement('div');
-
-  boxClass.style.backgroundColor = colors;
-  boxClass.className = 'color';
-    if (colors === 'black') {
-      boxClass.classList.add('selected');
-      palette.appendChild(boxClass);
-    } 
+function classColor() {
+  const selectedColor = document.querySelector('.black');
+  selectedColor.classList.add('selected');
 }
-definedColor('black');
-definedColor('turquoise');
-definedColor('purple');
-definedColor('darkorange');
+classColor();
