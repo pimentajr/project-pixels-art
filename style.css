@@ -2,8 +2,9 @@
 .color {
   border: 1px solid black;
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
 }
 
 /* Finaliza requisito 2, estilizando asclasses de cores --> */
@@ -21,4 +22,20 @@
 
 #purple {
   background-color: rgb(62, 9, 206);
+}
+
+.line {
+  display: table-row;
+  border: 2px solid black;
+}
+
+.pixel {
+  display: table-cell;
+  border: 2px solid black;
+  height: 40px;
+  width: 40px;
+}
+
+.white {
+  background-color: white;
 }
