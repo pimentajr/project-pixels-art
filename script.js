@@ -1,21 +1,23 @@
 // função para mostrar a cor selecionada
 function showColorSelected() {
-let getColorsPallete = document.querySelector('#color-pallete')
+  let getColorsPallete = document.querySelector('#color-pallete')
 
-getColorsPallete.addEventListener('click', function(event) {
-  if (event.target.style.border === 'black solid 1px' ) {
-    event.target.style.border = 'blue solid 2px';
-  } else {
-    event.target.style.border = 'black solid 1px';
-  }
-  console.log(event.target.style.border)
-})
+  getColorsPallete.addEventListener('click', function (event) {
+    if (event.target.style.border === 'black solid 1px') {
+      event.target.style.border = 'blue solid 2px';
+    } else {
+      event.target.style.border = 'black solid 1px';
+    }
+    console.log(event.target.style.border)
+  })
 }
 
 // adiciona fundo branco para pixel da paintBoard
 function addWhiteToBoard() {
-  let paintBoardContainer = document.querySelector('#pixel-board');
-  paintBoardContainer.style.backgroundColor = 'rgb(255, 255, 255)';
+  let paintBoardContainer = document.querySelectorAll('.pixel');
+  for (let index = 0; index < paintBoardContainer.length; index += 1) {
+  paintBoardContainer[index].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
 }
 
 addWhiteToBoard();
@@ -37,7 +39,7 @@ function applySelectedColor() {
   let getSelectedColor = document.querySelector('.selected');
   let compStyles = window.getComputedStyle(getSelectedColor);
 
-  getPaintTable.addEventListener('click', function(event) {
+  getPaintTable.addEventListener('click', function (event) {
     event.target.style.backgroundColor = compStyles.getPropertyValue('background-color');
   });
 }
@@ -56,7 +58,9 @@ function removeSelectedClass() {
   }
 }
 
-
+function changePaletteColor() {
+  let getColorsPallete = document.querySelector('#color-palette');
+}
 
 // ao clicar em uma nova cor:
 // remover class selected do array da palheta
