@@ -88,9 +88,10 @@ function clearBoard() {
   }
 }
 
-colorPalletDefinition();
+
 button.addEventListener('click', clearBoard);
 window.onload = function () {
+  colorPalletDefinition();
   boardGenerator(5);
 };
 createBoardButton.addEventListener('click', function () {
