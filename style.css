@@ -9,7 +9,7 @@ body {
   display: inline-block;
   width: 40px;
   height: 40px;
-  margin: 5px;
+  padding: 0px;
 }
 
 /* Finaliza requisito 2, estilizando asclasses de cores --> */

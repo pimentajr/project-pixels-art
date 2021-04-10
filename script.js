@@ -1,25 +1,25 @@
-// Finaliza requisito 6, adicionando preto como selected.
- window.onload = function() {
-   document.querySelector('.black').classList.add('selected');
-}
+//  Finaliza requisito 6, adicionando preto como selected.
+window.onload = function addSelect() {
+  document.querySelector('.black').classList.add('selected');
+};
 
 const lineWidth = 5;
-const pixelQuant = 5;  
-//Cria o quadro onde ficarão alocados os pixels a serem modificados
+const pixelQuant = 5;
+//  Cria o quadro onde ficarão alocados os pixels a serem modificados
 function cratePixelBoard() {
-  let pixelTable = document.createElement('div');
-  pixelTable.id = 'pixel-board';
-  document.body.appendChild(pixelTable);
+  const pixelTables = document.createElement('div');
+  pixelTables.id = 'pixel-board';
+  document.body.appendChild(pixelTables);
 }
 cratePixelBoard();
 
-//Cria as linhas para alocação dos 5 quadrados de cores por linha.
+//  Cria as linhas para alocação dos 5 quadrados de cores por linha.
 
 function createLine() {
   const pixelTable = document.getElementById('pixel-board');
-  for (line = 0; line < lineWidth; line += 1) {
-    let lines = document.createElement('div');
-    lines.classList.add('line')
+  for (let line = 0; line < lineWidth; line += 1) {
+    const lines = document.createElement('div');
+    lines.classList.add('line');
     pixelTable.appendChild(lines);
   }
 }
@@ -29,10 +29,10 @@ createLine();
 // Foi consultado um negócio:
 // https://stackoverflow.com/questions/29229523/how-and-why-to-use-display-table-cell-css
 function createPixels() {
-  let pixelLine = document.getElementsByClassName('line');
-  for (index = 0; index < 5; index += 1) {
+  const pixelLine = document.getElementsByClassName('line');
+  for (let index = 0; index < 5; index += 1) {
     for (let pixels = 0; pixels < pixelQuant; pixels += 1) {
-      let createPixels = document.createElement('div');
+      const createPixels = document.createElement('div');
       createPixels.classList.add('pixel', 'white');
       pixelLine[pixels].appendChild(createPixels);
     }
@@ -40,8 +40,10 @@ function createPixels() {
 }
 createPixels();
 
-//07 me baseei pelo código do alberto para entender.
+//  07 me baseei pelo código do alberto para entender.
 function removeClass(event) {
+  // Essa linha corrige o 'selected' que iria para a ID #color-palette;
+  document.querySelector('#color-palette').classList.remove('selected');
   const deleteClass = document.getElementsByClassName('color');
   for (let index = 0; index < deleteClass.length; index += 1) {
     deleteClass[index].classList.remove('selected');
@@ -50,37 +52,21 @@ function removeClass(event) {
 }
 
 function selectColor() {
-let colorPallete = document.getElementById('color-palette');
-colorPallete.addEventListener('click', removeClass);
+  const colorPallete = document.getElementById('color-palette');
+  colorPallete.addEventListener('click', removeClass);
 }
 selectColor();
 
+//  08 para resolver esta questão, foi consultada a informação sobre window.getComputedStyle
+//  Source: https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
+function myFunction(event) {
+  const selColor = window.getComputedStyle(document.querySelector('.selected')).backgroundColor;
+  event.target.style.backgroundColor = selColor;
+  console.log(selColor);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function createIndividualPixel() {
-//   let divPixelTable = document.getElementById('pixel-board');
-//   let AuxDiv = document.createElement('div');
-//   divPixelTable.appendChild(AuxDiv);
-
-//   for (let line = 0; line < lineWidth; line += 1){
-//     let individualPixel = document.createElement('div');
-//     individualPixel.classList.add('pixel');
-//     divPixelTable.appendChild(individualPixel)
-
-//   }
-  
-//   divPixelTable.appendChild(individualPixel);
-// }
-// createIndividualPixel();
+function addColor() {
+  const toColorize = document.getElementById('pixel-board');
+  toColorize.addEventListener('click', myFunction);
+}
+addColor();
