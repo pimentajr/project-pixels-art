@@ -19,7 +19,7 @@ function generateRandomColor() {
     'blanchedAlmond',
     'blueViolet',
     'burlyWood',
-    'cadetBlue',];
+    'cadetBlue'];
   const randomNumber = Math.round(Math.random() * 15);
   return arr[randomNumber];
 }
