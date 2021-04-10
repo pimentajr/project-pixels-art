@@ -45,20 +45,16 @@ function clearBoard() {
     pixels[i].style.backgroundColor = 'rgb(255, 255, 255)';
   }
 }
-/*
-Funcional, mas o exercício pede que seja apenas com atributos html do button.
+
 document.getElementById('board-size').addEventListener('change', function validateInput() {
   const inputNumber = this.value;
+  if (inputNumber === '') alert('Board inválido!');
   if (inputNumber < 5) this.value = 5;
   if (inputNumber > 50) this.value = 50;
 });
-*/
+
 function createBoard() {
   const inputSizeBoard = document.getElementById('board-size');
-  if (inputSizeBoard.value === '') {
-    alert('Board inválido!');
-    return null;
-  }
   const tableOfPixel = document.getElementById('pixel-board');
   tableOfPixel.innerHTML = '';
   for (let i = 0; i < inputSizeBoard.value; i += 1) {
