@@ -3,7 +3,7 @@ const colorBox = document.querySelectorAll('.color');
 const pixelBoard = document.querySelector('#pixel-board');
 const clearButton = document.querySelector('#clear-board');
 const vqvButton = document.querySelector('#generate-board');
-let boardSize = document.querySelector('#board-size');
+const boardSize = document.querySelector('#board-size');
 let allPixels = document.querySelectorAll('.pixel');
 
 function primaryColors(colors) {
@@ -64,6 +64,16 @@ function clearButtonListener() {
   }
 }
 
+function vqvButtonLimits() {
+  if (parseInt(boardSize.value) < 5) {
+    pixelsTable(5, 5);  
+  } else if (parseInt(boardSize.value) > 50) {
+    pixelsTable(50, 50);
+  } else {
+    pixelsTable(boardSize.value, boardSize.value);
+  }
+}
+
 function vqvButtonListener() {
   if (boardSize.value === '') {
     alert('Board inválido!')
@@ -71,13 +81,7 @@ function vqvButtonListener() {
     for (let child = pixelBoard.firstChild; child !== null; child = pixelBoard.firstChild) {
       pixelBoard.removeChild(pixelBoard.firstChild);
     }
-    if (parseInt(boardSize.value) < 5) {
-      pixelsTable(5, 5);  
-    } else if (parseInt(boardSize.value) > 50) {
-      pixelsTable(50, 50);
-    } else {
-      pixelsTable(boardSize.value, boardSize.value);
-    }
+    vqvButtonLimits();    
   }
 }
 
