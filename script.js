@@ -74,20 +74,39 @@ function giveAndRemoveSelec() {
 }
 giveAndRemoveSelec();
 
-let locateSelectedClass = document.querySelectorAll('.color');
-let locatePixel = document.querySelectorAll('.pixel');
-let locateLine = document.querySelectorAll('.line');
+function PixelColorSelected(colors) {
+  let locateSelectedClass = document.querySelectorAll('.color');
+  let locatePixel = document.querySelectorAll('.pixel');
+  let locateLine = document.querySelectorAll('.line');
 
-for (let i = 0; i < locateSelectedClass.length; i += 1 ){
-  locateSelectedClass[i].addEventListener('click', function () {
-    var colorNumber = i;
-    for (let i = 0; i < locatePixel.length; i += 1){
-      locatePixel[i].addEventListener('click', function() {
-        let colorsSelected = Object.values(colors);
-        locatePixel[i].style.backgroundColor = colorsSelected[colorNumber];
-        }
-        )
+  for (let i = 0; i < locateSelectedClass.length; i += 1 ){
+    locateSelectedClass[i].addEventListener('click', function () {
+      var colorNumber = i;
+      for (let i = 0; i < locatePixel.length; i += 1){
+        locatePixel[i].addEventListener('click', function() {
+          let colorsSelected = Object.values(colors);
+          locatePixel[i].style.backgroundColor = colorsSelected[colorNumber];
+          }
+          )
+      }
     }
+    )
   }
-  )
 }
+
+PixelColorSelected(colors);
+
+function buttonCleaner(){
+  const buttonCleaner = document.createElement('button')
+  let locateButtonSection = document.querySelector('#button-section');
+  buttonCleaner.id = 'clear-board';
+  buttonCleaner.innerHTML = 'Limpar';
+  buttonCleaner.addEventListener('click', function () {
+    let locatePixel = document.querySelectorAll('.pixel');
+    for ( let i = 0 ; i < locatePixel.length; i += 1) {
+      locatePixel[i].style.backgroundColor = 'white';
+    }
+  })
+  locateButtonSection.appendChild(buttonCleaner);
+}
+buttonCleaner();
