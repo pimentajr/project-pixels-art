@@ -21,6 +21,22 @@
   background-color: blue;
 }
 
+#pink {
+  background-color: pink;
+}
+
+#orange {
+  background-color: orange;
+}
+
+#yellowgreen {
+  background-color: yellowgreen;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
 .pixel {
   background-color: white;
   border: solid black 1px;

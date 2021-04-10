@@ -20,9 +20,19 @@ function pixel(event) {
 }
 tabela.addEventListener('click', pixel);
 
-const botao = document.querySelector('#clear-board');
-function limpar() {
-  const quadrados = document.querySelectorAll('.pixels');
-  quadrados.style.backgroundColor = 'white';
+// eslint-disable-next-line no-unused-vars
+
+const botao = document.getElementById('clear-board');
+const quadrados = document.querySelectorAll('.pixel');
+const backgroundColor = 'white';
+const setNewColor = 'white';
+function reset() {
+  for (let index = 0; index < quadrados.length; index += 1) {
+    if (quadrados[index].style.backgroundColor === setNewColor) {
+      quadrados[index].style.backgroundColor = backgroundColor;
+    } else {
+      quadrados[index].style.backgroundColor = setNewColor;
+    }
+  }
 }
-botao.addEventListener('click', limpar);
+botao.addEventListener('click', reset);
