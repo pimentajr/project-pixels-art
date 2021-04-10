@@ -1,6 +1,8 @@
 const selectedColorDiv = document.querySelector('#color-palette');
 const btnClear = document.querySelector('#clear-board');
-const selectedBoardDiv = document.querySelector('#pixel-board');
+const pixelBoard = '#pixel-board';
+const selectedBoardDiv = document.querySelector(pixelBoard);
+const btnVQV = document.querySelector('#generate-board');
 
 function createPaletteColorDiv(color) {
   const palletColorDiv = document.createElement('div');
@@ -13,10 +15,12 @@ function createPaletteColorDiv(color) {
   document.querySelector('#color-palette').appendChild(palletColorDiv);
 }
 
-function createBoardPixels() {
-  const boardPixelsDiv = document.createElement('div');
-  boardPixelsDiv.className = 'pixel';
-  document.querySelector('#pixel-board').appendChild(boardPixelsDiv);
+function createBoardPixels(value) {
+  for (let index = 1; index <= value; index += 1) {
+    const boardPixelsDiv = document.createElement('div');
+    boardPixelsDiv.className = 'pixel';
+    document.querySelector(pixelBoard).appendChild(boardPixelsDiv);
+  }
 }
 
 function indexOfNode(element) {
@@ -57,10 +61,6 @@ createPaletteColorDiv('yellow');
 createPaletteColorDiv('red');
 createPaletteColorDiv('green');
 
-for (let index = 1; index <= 25; index += 1) {
-  createBoardPixels();
-}
-
 selectedColorDiv.addEventListener('click', selectedColor);
 
 btnClear.addEventListener('click', () => {
@@ -70,3 +70,20 @@ btnClear.addEventListener('click', () => {
 });
 
 selectedBoardDiv.addEventListener('click', paintPixel);
+
+btnVQV.addEventListener('click', () => {
+  const inputValue = document.querySelector('#board-size').value;
+  if (inputValue === '' || inputValue < 5) {
+    alert('Board inválido!');
+  } else {
+    const valuePow = inputValue ** 2;
+    let gridColumns = '';
+    for (let index = 0; index < inputValue; index += 1) {
+      gridColumns += 'auto ';
+    }
+    document.querySelector(
+      pixelBoard,
+    ).style.gridTemplateColumns = gridColumns;
+    createBoardPixels(valuePow);
+  }
+});
