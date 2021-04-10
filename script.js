@@ -39,16 +39,13 @@ function applySelectedColor() {
 
   getPaintTable.addEventListener('click', function(event) {
     event.target.style.backgroundColor = compStyles.getPropertyValue('background-color');
-    console.log(event.target);
-      console.log(getSelectedColor);
-  console.log(getPaintTable);
   });
 }
 
 applySelectedColor();
 
 
-// remove a classe selected de um determinado elemento
+// remove a classe selected de um determinado elemento e aplica em outro
 function removeSelectedClass() {
   let countSelectClass = document.getElementsByClassName('selected')
   if (countSelectClass.length !== 0) {
