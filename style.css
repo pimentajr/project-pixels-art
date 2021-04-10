@@ -16,14 +16,14 @@ a {
 }
 
 h1 {
-  font-family: 'VT323', monospace;
+  font-family: VT323, monospace;
   font-size: 90px;
-  font-weight: normal;
+  font-weight: 200;
   margin: 20px;
   text-shadow: 2px 1px 1px rgb(68, 68, 68);
 }
 
-button, input {
+button , input {
   font-size: 15px;
   padding: 5px;
   margin-bottom: 25px;
