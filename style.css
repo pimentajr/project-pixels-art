@@ -33,14 +33,14 @@
 }
 
 #dimDiv {
-  margin: 0 0 6px 0;
+  margin: 0 0 6px;
 }
 
 #board-size {
   display: inline-block;
   vertical-align: top;
   width: 25px;
-  margin: 0 10px 0px 61px;
+  margin: 0 10px 0 61px;
 }
 
 #generate-board {

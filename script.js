@@ -96,22 +96,21 @@ pixelBoard.addEventListener('click', printColorPixel);
 const initialInput = boardSizeInput.value;
 const minimum = 5;
 const maximum = 50;
-function generateBoard(numOfRowsColumns) {
+function generateBoard() {
   if (boardSizeInput.value === initialInput) {
     return alert('Board inválido!');
   }
   while (pixelBoard.firstChild) {
     pixelBoard.removeChild(pixelBoard.firstChild);
   }
-  numOfRowsColumns = boardSizeInput.value;
-  if (numOfRowsColumns < minimum) {
-    numOfRowsColumns = minimum;
+  let rowsColumns = boardSizeInput.value;
+  if (rowsColumns < minimum) {
+    rowsColumns = minimum;
   }
-  if (numOfRowsColumns > maximum) {
-    numOfRowsColumns = maximum;
+  if (rowsColumns > maximum) {
+    rowsColumns = maximum;
   }
-  let numOfPix = numOfRowsColumns * numOfRowsColumns;
-  for (let index = 1; index <= numOfPix; index += 1) {
+  for (let index = 1; index <= rowsColumns * rowsColumns; index += 1) {
     const pixelBox = document.createElement('div');
     pixelBox.classList.add('pixel');
     pixelBox.style.backgroundColor = 'white';
