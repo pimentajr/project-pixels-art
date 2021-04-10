@@ -135,6 +135,11 @@ function initializePalette() {
 function fillBoardWithUserInput() {
   const userBoardSideSize = document.getElementById('board-size').value;
 
+  if (userBoardSideSize === '') {
+    alert('Board inválido!');
+    return;
+  }
+
   boardSideSize = userBoardSideSize;
   PIXEL_BOARD.innerHTML = '';
 
