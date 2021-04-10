@@ -4,6 +4,7 @@ const pixelBoard = document.querySelector('#pixel-board');
 const clearButton = document.querySelector('#clear-board');
 const vqvButton = document.querySelector('#generate-board');
 let boardSize = document.querySelector('#board-size');
+let allPixels = document.querySelectorAll('.pixel');
 
 function primaryColors(colors) {
   for (let index = 0; index < colors.length; index += 1) {
@@ -14,7 +15,19 @@ function primaryColors(colors) {
   }
 }
 
-primaryColors(['black', 'yellow', 'green', 'blue']);
+function aleatoryColor() {
+  let red = 0;
+  let green = 0;
+  let blue = 0;
+  let rgb = '';
+  red = Math.ceil(Math.random() * 256);
+  green = Math.ceil(Math.random() * 256);
+  blue = Math.ceil(Math.random() * 256);
+  rgb = ['rgb(', red, ',', green, ',', blue, ')'].join('');
+  return rgb;
+}
+
+primaryColors(['black', aleatoryColor(), aleatoryColor(), aleatoryColor()]);
 
 function pixelsTable(width, height) {
   const table = document.querySelector('#pixel-board');
@@ -30,10 +43,10 @@ function pixelsTable(width, height) {
     }
     table.appendChild(newColumn);
   }
+  allPixels = document.querySelectorAll('.pixel');
 }
 
 pixelsTable(5, 5);
-const allPixels = document.querySelectorAll('.pixel');
 
 colorPalette.addEventListener('click', function (event) {
   for (let index = 0; index < colorBox.length; index += 1) {
@@ -69,9 +82,9 @@ vqvButton.addEventListener('click', function () {
     for (let child = pixelBoard.firstChild; child !== null; child = pixelBoard.firstChild) {
       pixelBoard.removeChild(pixelBoard.firstChild);
     }
-    if (boardSize.value < 5) {
+    if (parseInt(boardSize.value) < 5) {
       pixelsTable(5, 5);  
-    } else if (boardSize.value > 50) {
+    } else if (parseInt(boardSize.value) > 50) {
       pixelsTable(50, 50);
     } else {
       pixelsTable(boardSize.value, boardSize.value);
