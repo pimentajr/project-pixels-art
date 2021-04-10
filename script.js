@@ -16,7 +16,7 @@ function showColorSelected() {
 function addWhiteToBoard() {
   let paintBoardContainer = document.querySelectorAll('.pixel');
   for (let index = 0; index < paintBoardContainer.length; index += 1) {
-  paintBoardContainer[index].style.backgroundColor = 'rgb(255, 255, 255)';
+    paintBoardContainer[index].style.backgroundColor = 'rgb(255, 255, 255)';
   }
 }
 
@@ -50,17 +50,22 @@ applySelectedColor();
 // remove a classe selected de um determinado elemento e aplica em outro
 // altera a classe selected de elemento
 function removeSelectedClass() {
-  let countSelectClass = document.getElementsByClassName('selected')
-  if (countSelectClass.length !== 0) {
-    for (let index = 0; index < countSelectClass.length; index += 1) {
-      countSelectClass[index].classList.remove('selected');
-    }
+  let countSelectClass = document.getElementsByClassName('selected');
+  for (let index = 0; index < countSelectClass.length; index += 1) {
+    countSelectClass[index].classList.remove('selected');
   }
 }
 
 function changePaletteColor() {
   let getColorsPallete = document.querySelector('#color-palette');
+  getColorsPallete.addEventListener('click', function(event) {
+    removeSelectedClass();
+    event.target.classList.add('selected');
+    applySelectedColor()
+  })
 }
+
+changePaletteColor();
 
 // ao clicar em uma nova cor:
 // remover class selected do array da palheta
