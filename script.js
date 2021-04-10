@@ -1,4 +1,4 @@
-// Requisito 2 e 3
+// Requisitos 2 e 3
 const colorsPalette = document.querySelector('#color-palette');
 const colorNames = ['black', 'green', 'blue', 'red'];
 
@@ -14,7 +14,6 @@ function createColorDivs() {
 createColorDivs();
 
 // Requisito 4
-
 const pixelBoard = document.querySelector('#pixel-board');
 
 function PixelBoardMaker(boardSize) {
@@ -33,3 +32,11 @@ function PixelBoardMaker(boardSize) {
 }
 
 PixelBoardMaker(5);
+
+// Requisito 5
+function selectBlackColor() {
+  const colorPalette = document.querySelector('#color-palette');
+  colorPalette.firstElementChild.classList.add('selected');
+}
+
+window.onload = selectBlackColor;
