@@ -42,6 +42,7 @@ function colorPixel() {
 
 /* req 4 + 10 + 11 */
 const pixelTable = document.getElementById('pixel-board');
+const input = document.getElementById('board-size');
 
 function createBoard(size) {
   for (let i = 0; i < size; i += 1) {
@@ -58,42 +59,36 @@ function createBoard(size) {
   }
 }
 
+function validateBoardSize() {
+  if (input.value < 5) {
+    input.value = 5;
+  } else if (input.value > 50) {
+    input.value = 50;
+  }
+  pixelTable.innerHTML = '';
+  createBoard(input.value);
+  colorPixel();
+}
+
 function inputBoardButton() {
-  const input = document.getElementById('board-size');
   const button = document.getElementById('generate-board');
 
-  button.addEventListener('click', function () {
+  button.addEventListener('click', () => {
     if (input.value.length === 0) {
       alert('Board inválido!');
     } else {
-      if (input.value < 5) {
-        input.value = 5;
-      } else if (input.value > 50) {
-        input.value = 50;
-      }
-      pixelTable.innerHTML = '';
-      createBoard(input.value);
-      colorPixel();
+      validateBoardSize()
     }
   });
 }
 
 function inputBoardEnter() {
-  const input = document.getElementById('board-size');
-
-  input.addEventListener('keyup', function (event) {
+  input.addEventListener('keyup', (event) => {
     if (event.keyCode === 13) {
       if (input.value.length === 0) {
         alert('Board inválido!');
       } else {
-        if (input.value < 5) {
-          input.value = 5;
-        } else if (input.value > 50) {
-          input.value = 50;
-        }
-        pixelTable.innerHTML = '';
-        createBoard(input.value);
-        colorPixel();
+        validateBoardSize()
       }
     }
   });
@@ -108,14 +103,15 @@ function createInputBoard() {
 function colorSelect() {
   const color = document.getElementsByClassName('color');
   color[0].classList.add('selected');
+  let j = 0;
 
   for (let i = 0; i < color.length; i += 1) {
-    color[i].addEventListener('click', function () {
-      for (let j = 0; j < color.length; j += 1) {
-        color[j].className = 'color';
-      }
+    color[i].addEventListener('click', () => {
+      color[j].className = 'color';
+      j += 1;
+      
       if (color[i].className !== 'color selected') {
-        color[i].classList.add('selected');
+      color[i].classList.add('selected');
       }
     });
   }
@@ -126,14 +122,14 @@ function clearButton() {
   const button = document.getElementById('clear-board');
   const pixelCell = document.getElementsByClassName('pixel');
 
-  button.addEventListener('click', function () {
+  button.addEventListener('click', () => {
     for (let i = 0; i < pixelCell.length; i += 1) {
       pixelCell[i].style.backgroundColor = 'white';
     }
   });
 }
 
-window.onload = function () {
+window.onload = () => {
   colorOptions();
   createBoard(5);
   colorSelect();
