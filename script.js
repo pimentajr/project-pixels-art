@@ -9,15 +9,13 @@ const boardInput = document.getElementById('board-size');
 let color = 'black';
 document.getElementById('black').style.backgroundColor = 'black';
 
-const randomNumber = Math.floor(Math.random() * 16777215).toString(16);
-
 function RandomColorApply() {
   function RandomColor() {
     const x = Math.floor(Math.random() * 16777215).toString(16);
     return x;
   }
   for (let i = 0; i < palette.length; i += 1) {
-    palette[i].style.backgroundColor = '#' + RandomColor();
+    palette[i].style.backgroundColor = `#${RandomColor()}`;
   }
 }
 RandomColorApply();
