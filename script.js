@@ -12,7 +12,18 @@ function createDiv(number) {
 }
 createDiv(25);
 
-document.getElementById('color-palette').addEventListener('click', function (event) {
-    document.querySelectorAll('.selected')[0].classList.remove('selected');
-    event.target.className += ' selected';
-})
+function changeSelectedClass(event) {
+  document.querySelectorAll('.selected')[0].classList.remove('selected');
+  event.target.className += ' selected';
+  }
+document.getElementById('color-palette').addEventListener('click', changeSelectedClass);
+
+function changeColorPixel(event) {
+  let classColor = document.querySelectorAll('.selected')[0].classList[1];
+  if (event.target.classList.length !== 1) {
+    event.target.classList[1].toggle(classColor);
+  } else {
+    event.target.className +=' ' + classColor;
+  }
+}
+document.getElementById('pixel-board').addEventListener('click', changeColorPixel);

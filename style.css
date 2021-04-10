@@ -5,6 +5,17 @@
   border: solid black 1px;
 }
 
+.pixel {
+    display: inline-block;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border: solid black 1px;
+  }
+
 
 .black {
   background-color: black;
@@ -23,18 +34,6 @@
 
 .yellow {
   background-color: yellow;
-}
-
-
-.pixel {
-  display: inline-block;
-  background-color: white;
-  width: 40px;
-  height: 40px;
-  margin-right: 5px;
-  margin-top: 5px;
-  margin-left: 5px;
-  border: solid black 1px;
 }
 
 
