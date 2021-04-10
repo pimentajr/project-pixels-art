@@ -8,19 +8,19 @@
 }
 
 /* Finaliza requisito 2, estilizando asclasses de cores --> */
-#black {
+.black {
   background-color: black;
 }
 
-#green {
+.green {
   background-color: green;
 }
 
-#red {
+.red {
   background-color: red;
 }
 
-#purple {
+.purple {
   background-color: rgb(62, 9, 206);
 }
 
