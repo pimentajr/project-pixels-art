@@ -1,5 +1,3 @@
-document.body.style.backgroundImage = 'background.jpg';
-
 const pixelBoard = document.querySelector('#pixel-board');
 
 function pixelTableCreate(size) {
