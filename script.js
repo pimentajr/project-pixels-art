@@ -7,7 +7,7 @@ function getRandomColors() {
       r: parseInt((Math.random() * 255), 10),
       g: parseInt((Math.random() * 255), 10),
       b: parseInt((Math.random() * 255), 10)
-    }
+    };
     const randomRGB = `rgb(${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b})`;
     arrayColors.push(randomRGB);
   }
@@ -62,7 +62,7 @@ window.onload = function load() {
   const getColors = document.getElementsByClassName('color');
   getColors[0].style.backgroundColor = 'black';
   getColors[0].classList.add('selected');
-  let colorRemove;
+  const colorRemove;
   colorRemove = getRandomColors();
   for (let index = 1; index < getColors.length; index += 1) {
     getColors[index].style.backgroundColor = colorRemove[index];
@@ -71,4 +71,4 @@ window.onload = function load() {
   getPaletteColor();
   pixelColor();
 };
-
+// teste
