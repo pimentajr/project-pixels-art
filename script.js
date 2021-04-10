@@ -20,8 +20,8 @@ square(5, 5);
 // Verifica se o elemento da cor preta possui, inicialmente, a classe selected
 
 function classColor() {
-  const selectedColor = document.querySelector('.black');
-  selectedColor.classList.add('selected');
+  const color = document.querySelector('.black');
+  color.classList.add('selected');
 }
 classColor();
 
@@ -31,15 +31,27 @@ const colorPalette = document.querySelector('#color-palette');
 const paletteList = colorPalette.children;
 
 function selectedColor() {
-  for(let fourthIndex = 0; fourthIndex < paletteList.length; fourthIndex += 1) {
+  for (let fourthIndex = 0; fourthIndex < paletteList.length; fourthIndex += 1) {
     if (paletteList[fourthIndex].className.includes('selected')) {
       paletteList[fourthIndex].classList.remove('selected');
-      }
     }
   }
-  colorPalette.addEventListener('click', function(event) {
-    if (event.target.id !== 'color-palette') {
-      selectedColor();
-      event.target.classList.add('selected');
-    }
+}
+colorPalette.addEventListener('click', function (event) {
+  if (event.target.id !== 'color-palette') {
+    selectedColor();
+    event.target.classList.add('selected');
+  }
 });
+
+// 8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
+// https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
+
+const board = document.getElementById('pixel-board');
+
+function pixel(event) {
+  const selected = document.querySelector('.selected');
+  const css = window.getComputedStyle(selected).getPropertyValue('background-color');
+  event.target.style.backgroundColor = css;
+}
+board.addEventListener('click', pixel);
