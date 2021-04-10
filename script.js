@@ -10,3 +10,17 @@ function selectColor() {
   }
 }
 selectColor();
+// Pinta com a cor selecionada
+function paint() {
+  let pixelToPaint = document.querySelectorAll('.pixel'); // Captura e armazena todos os pixels
+  for (let index = 0; index < pixelToPaint.length; index +=1) { // adiciona o evento a todos os pixels através de um loop
+    pixelToPaint[index].addEventListener('click',function () { // função click e abre o que ela realiza
+      let selectedColor = document.querySelector('.selected'); // captura a div com a cor selecionada
+      let paintColor = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color'); // captura a cor selecionada
+      pixelToPaint[index].style.backgroundColor = paintColor // atribui ao pixel a cor desejada
+    });
+  }
+
+
+}
+paint ()
