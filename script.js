@@ -1,5 +1,5 @@
 // Create table on load
-createTable(5);
+
 
 
 // get Color Palette
@@ -10,7 +10,6 @@ let colors = document.getElementsByClassName('color')
 let selectedColor = document.querySelector('.selected')
 // get Color Board 
 let pixelBoard = document.getElementById('pixel-board')
-console.log(pixelBoard)
 // get Pixels
 let pixels = document.getElementsByClassName('pixel')
 
@@ -59,4 +58,3 @@ function createTable(tableSize) {
     }
   }
 }
-
