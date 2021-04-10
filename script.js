@@ -37,12 +37,13 @@ clearBoard();
 
 
 function createGrid() { //melhorar criando igual html
-  //let gridSize = 10;
   let gridButton = document.getElementById('generate-board');
   let tblSection = document.getElementById('section-teste')
-  let tbl = document.createElement('table');
-  tbl.id = 'table';
+  let initTable = document.getElementById('pixel-board')
   gridButton.addEventListener('click', function() {
+    initTable.removeChild(document.getElementById('table'))
+    let tbl = document.createElement('table');
+    tbl.id = 'table';
     let gridSize = document.getElementById('board-size').value;
     if (gridSize > 0) {
       for (let indexRow = 0; indexRow < gridSize; indexRow += 1) {
@@ -56,8 +57,7 @@ function createGrid() { //melhorar criando igual html
     if (gridSize === '') {
       alert('Board inválido!')
     }
-
-    tblSection.appendChild(tbl)
+    initTable.appendChild(tbl)
   })
 }
 createGrid();
