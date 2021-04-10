@@ -77,7 +77,7 @@ function inputBoardButton() {
     if (input.value.length === 0) {
       alert('Board inválido!');
     } else {
-      validateBoardSize()
+      validateBoardSize();
     }
   });
 }
@@ -88,7 +88,7 @@ function inputBoardEnter() {
       if (input.value.length === 0) {
         alert('Board inválido!');
       } else {
-        validateBoardSize()
+        validateBoardSize();
       }
     }
   });
@@ -103,15 +103,14 @@ function createInputBoard() {
 function colorSelect() {
   const color = document.getElementsByClassName('color');
   color[0].classList.add('selected');
-  let j = 0;
+  let index = 0;
 
   for (let i = 0; i < color.length; i += 1) {
     color[i].addEventListener('click', () => {
-      color[j].className = 'color';
-      j += 1;
-      
+      color[index].className = 'color';
+      index += 1;
       if (color[i].className !== 'color selected') {
-      color[i].classList.add('selected');
+        color[i].classList.add('selected');
       }
     });
   }
