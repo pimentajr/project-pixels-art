@@ -31,7 +31,7 @@ window.onload = function selecteDivs() {
 function switchSelectedColor() {
   const colorDiv = document.querySelectorAll('.color');
   for (let i = 0; i < colorDiv.length; i += 1) {
-    colorDiv[i].addEventListener('click', function(){
+    colorDiv[i].addEventListener('click', function() {
       if (!colorDiv[i].classList.contains('selected')) {
         for (let j = 0; j < colorDiv.length; j += 1) {
           colorDiv[j].classList.remove('selected');
