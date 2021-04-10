@@ -2,6 +2,9 @@ const pixelBoard = document.getElementById('pixel-board');
 const pixelLine = document.querySelector('#pixel-board').children;
 const colorPalette = document.querySelectorAll('#color-palette div');
 
+function createStorage() {}
+createStorage();
+
 function CreateLineBox() {
   for (let i = 0; i < 5; i += 1) {
     const box = document.createElement('div');
@@ -24,22 +27,23 @@ createAllBoxes();
 
 function selectPalette() {
   for (let i = 0; i < colorPalette.length; i += 1) {
-    colorPalette[i].addEventListener('click', (event) => {
+    colorPalette[i].addEventListener('click', (el) => {
       for (let j = 0; j < colorPalette.length; j += 1) {
         colorPalette[j].classList.remove('selected');
       }
-      event.target.classList.add('selected');
+      el.target.classList.add('selected');
+      sessionStorage.color = el.target.getAttribute('id');
     });
   }
 }
 selectPalette();
 
 function paintBlocks() {}
-const currentColor = document.querySelector('.pixel-line');
 
 pixelBoard.addEventListener('click', (event) => {
-  event.target.style.backgroundColor = currentColor;
+  const el = event;
+  el.target.style.backgroundColor = sessionStorage.color;
 });
 paintBlocks();
 
-console.log(currentColor);
+console.log(sessionStorage.color);
