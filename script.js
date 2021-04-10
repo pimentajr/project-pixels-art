@@ -10,13 +10,13 @@ function createColor(array) {
 }
 createColor(['black', 'red', 'blue', 'green']);
 
-function createBoard() {
+function createBoard(n) {
   const board = document.querySelector('#pixel-board');
 
-  for (let row = 0; row < 5; row += 1) {
+  for (let row = 0; row < n; row += 1) {
     const rowLine = document.createElement('div');
     rowLine.className = 'rowline';
-    for (let column = 0; column < 5; column += 1) {
+    for (let column = 0; column < n; column += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       rowLine.appendChild(pixel);
@@ -24,7 +24,7 @@ function createBoard() {
     board.appendChild(rowLine);
   }
 }
-createBoard();
+createBoard(5);
 
 function blackSelected() {
   const black = document.querySelector('.color');
@@ -72,3 +72,24 @@ function createReset() {
   });
 }
 createReset();
+
+/* 10 - Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária.
+Crie um input e um botão que permitam definir um quadro de pixels com tamanho entre 5 e 50. Ao clicar no botão, deve ser gerado um quadro de N pixels de largura e N pixels de altura, onde N é o número inserido no input;
+Ou seja, se o valor passado para o input for 7, ao clicar no botão, vai ser gerado um quadro de 49 pixels (7 pixels de largura x 7 pixels de altura);
+Se nenhum valor for colocado no input ao clicar no botão, mostre um alert com o texto: "Board inválido!";
+O novo quadro deve ter todos os pixels preenchidos com a cor branca. */
+
+function setBoard() {
+  const inputBox = document.querySelector('#board-size');
+  const btnVqv = document.querySelector('#generate-board');
+  const pxBoard = document.querySelector('#pixel-board');
+  btnVqv.addEventListener('click', () => {
+    if (inputBox.value < 1) {
+      alert('Board inválido!');
+    } else {
+      pxBoard.innerHTML = '';
+      createBoard(inputBox.value);
+    }
+  });
+}
+setBoard();
