@@ -1,10 +1,10 @@
 const listOfColors = ['black', 'lightsalmon', 'lightskyblue', 'khaki'];
-const colorsPalette = document.querySelector('#color-palette');
+const colorsPalette = document.getElementById('color-palette');
 const linePixelBoard = document.querySelectorAll('.line');
 const basePixelBoard = 5;
 const pixelBoard = document.getElementById('pixel-board');
-const color = document.getElementsByClassName('color')
-const pixel = document.getElementsByClassName('pixel')
+// const color = document.getElementsByClassName('color');
+const pixel = document.getElementsByClassName('pixel');
 
 document.getElementById('title').innerText = 'Paleta de Cores';
 
@@ -43,20 +43,16 @@ function createPixelBoard(lines) {
 createPalette(listOfColors);
 createPixelBoard(linePixelBoard);
 
-let clickedColor = 'black'
+let clickedColor = 'black';
 
-color[0].addEventListener('click', function() {
-  clickedColor = color[0].style.background;
-})
+function getColor(colorX) {
+  clickedColor = colorX.target.style.background;
+ }
 
-color[1].addEventListener('click', function() {
-  clickedColor = color[1].style.background;
-})
+function colorPixel(pixelX) {
+  pixelX.target.style.background = clickedColor;
+}
 
-pixel[0].addEventListener('click', function() {
-  pixel[0].style.background = clickedColor;
-})
+colorsPalette.addEventListener('click', getColor);
 
-pixel[1].addEventListener('click', function() {
-  pixel[1].style.background = clickedColor;
-})
+pixelBoard.addEventListener('click', colorPixel);
