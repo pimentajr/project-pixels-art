@@ -2,12 +2,12 @@ const pixelBoard = document.getElementById('pixel-board');
 const pixelLine = document.querySelector('#pixel-board').children;
 const colorPalette = document.querySelectorAll('#color-palette div');
 const clearButton = document.getElementById('clear-board');
+let boardSizeValue = 3;
+const boardInput = document.getElementById('board-size');
 
-function createStorage() {}
-createStorage();
-
+// Criando as linhas:
 function CreateLineBox() {
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 0; i < boardSizeValue; i += 1) {
     const box = document.createElement('div');
     box.setAttribute('class', 'pixel-line');
     pixelBoard.appendChild(box);
@@ -17,7 +17,7 @@ CreateLineBox();
 
 function createAllBoxes() {
   for (let i = 0; i < pixelLine.length; i += 1) {
-    for (let j = 0; j < 5; j += 1) {
+    for (let j = 0; j < boardSizeValue; j += 1) {
       const box = document.createElement('div');
       box.setAttribute('class', 'pixel');
       pixelLine[i].appendChild(box);
@@ -25,6 +25,25 @@ function createAllBoxes() {
   }
 }
 createAllBoxes();
+
+function addBoxValue() {
+  const boardButton = document.querySelector('#boardButton');
+  boardButton.addEventListener('click', () => {
+    pixelBoard.innerHTML = '';
+    boardSizeValue = boardInput.value;
+    if (boardSizeValue.value === '') {
+      alert('ERRO');
+    }
+    boardInput.value = '';
+    boardInput.focus();
+    CreateLineBox();
+    createAllBoxes();
+  });
+}
+addBoxValue();
+
+function createStorage() {}
+createStorage();
 
 function selectPalette() {
   for (let i = 0; i < colorPalette.length; i += 1) {

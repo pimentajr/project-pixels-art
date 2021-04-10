@@ -22,8 +22,7 @@
 }
 
 .pixel-line {
-  width: 250px;
-  height: 50px;
+  line-height: 0;
 }
 
 .pixel {
@@ -32,9 +31,14 @@
   display: inline-block;
   width: 40px;
   height: 40px;
-  padding: 4px;
+  margin-left: -1px;
+  margin-top: -1px;
 }
 
-#pixel-board {
-  width: 250px;
+#board-size {
+  margin: 5px;
+}
+
+#clear-board {
+  margin: 5px;
 }
