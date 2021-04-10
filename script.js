@@ -88,7 +88,6 @@ function clearBoard() {
   }
 }
 
-
 button.addEventListener('click', clearBoard);
 window.onload = function () {
   colorPalletDefinition();
