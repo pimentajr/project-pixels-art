@@ -94,7 +94,7 @@ clearBtn.addEventListener('click', clearPixels);
 
 function setInputAttributes() {
   const input = document.getElementsByTagName('input');
-  input.min = 5;
+  input.min = 1;
   input.max = 50;
 }
 setInputAttributes();
@@ -112,7 +112,7 @@ function verifyIfInputIsWithinRange(inputTest) {
 }
 function verifyIfInputIsEmpty(inputTest) {
   if (inputTest === '') {
-    alert('Board inválido');
+    alert('Board inválido!');
     return;
   }
   verifyIfInputIsWithinRange(inputTest);
