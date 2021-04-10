@@ -2,6 +2,7 @@
   display: inline-block;
   width: 50px;
   height: 50px;
+  border: black solid 1px;
 }
 
 #black {
@@ -11,17 +12,14 @@
 
 #green {
   background-color: green;
-  border: black solid 1px;
 }
 
 #magenta {
   background-color: magenta;
-  border: black solid 1px;
 }
 
 #blue {
   background-color: blue;
-  border: black solid 1px;
 }
 
 #table {
@@ -46,4 +44,14 @@ table {
   border-collapse: unset;
   text-indent: 0%;
   border: black solid 1px;
+}
+
+#new-table {
+  border: black solid 1px;
+  display: table;
+}
+
+#newer-table {
+  border: black solid 1px;
+  display: table;
 }
