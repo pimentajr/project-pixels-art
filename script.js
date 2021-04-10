@@ -2,6 +2,8 @@ const colorPalette = document.querySelector('#color-palette');
 const colorBox = document.querySelectorAll('.color');
 const pixelBoard = document.querySelector('#pixel-board');
 const clearButton = document.querySelector('#clear-board');
+const vqvButton = document.querySelector('#generate-board');
+let boardSize = document.querySelector('#board-size');
 
 function primaryColors(colors) {
   for (let index = 0; index < colors.length; index += 1) {
@@ -41,14 +43,32 @@ colorPalette.addEventListener('click', function (event) {
 });
 
 pixelBoard.addEventListener('click', function (event) {
-  const selected = document.querySelector('.selected');
-  const selectedString = window.getComputedStyle(selected, null).getPropertyValue('background-color');
+  const select = document.querySelector('.selected');
+  const selectString = window.getComputedStyle(select, null).getPropertyValue('background-color');
   const changeColor = event.target;
-  changeColor.style.backgroundColor = selectedString;
+  changeColor.style.backgroundColor = selectString;
 });
 
 clearButton.addEventListener('click', function () {
   for (let index = 0; index < allPixels.length; index += 1) {
     allPixels[index].style.backgroundColor = 'white';
+  }
+});
+
+pixelBoard.addEventListener('click', function (event) {
+  const select = document.querySelector('.selected');
+  const selectString = window.getComputedStyle(select, null).getPropertyValue('background-color');
+  const changeColor = event.target;
+  changeColor.style.backgroundColor = selectString;
+});
+
+vqvButton.addEventListener('click', function () {
+  if (boardSize.value === '') {
+    alert('Board inválido!')
+  } else {
+    for (let child = pixelBoard.firstChild; child !== null; child = pixelBoard.firstChild) {
+      pixelBoard.removeChild(pixelBoard.firstChild);
+    }
+    pixelsTable(boardSize.value, boardSize.value);
   }
 });
