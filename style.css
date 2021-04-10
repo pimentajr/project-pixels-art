@@ -26,7 +26,6 @@
 
 #table {
   display: table;
-  background-color: red;
   border: black solid 1px;
 }
 
@@ -40,4 +39,11 @@
   height: 40px;
   width: 40px;
   background-color: white;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: unset;
+  text-indent: 0%;
+  border: black solid 1px;
 }

@@ -13,11 +13,6 @@ function selectColor() {
       }
     });
   }
-  let selectedColor = document.querySelector('.selected').id;
-  const pixelGrid = document.getElementById('table');
-  table.addEventListener('click', function(event) {
-  event.target.style.backgroundColor = selectedColor;
-  })
 };
 selectColor();
 
@@ -31,10 +26,6 @@ fillPixels()
 
 function clearBoard() {
   let clearButton = document.querySelector('#clear-board');
-  //let pixelGrid = document.getElementById('table');
-  //clearButton.addEventListener('click', function() {
-   // pixelGrid.style.backgroundColor = 'white';
-  //});
   let pixels = document.querySelectorAll('.pixel');
   clearButton.addEventListener('click', function() {
     for (let index = 0; index < pixels.length; index += 1) {
@@ -43,3 +34,30 @@ function clearBoard() {
   })
 }
 clearBoard();
+
+
+function createGrid() { //melhorar criando igual html
+  //let gridSize = 10;
+  let gridButton = document.getElementById('generate-board');
+  let tblSection = document.getElementById('section-teste')
+  let tbl = document.createElement('table');
+  tbl.id = 'table';
+  gridButton.addEventListener('click', function() {
+    let gridSize = document.getElementById('board-size').value;
+    if (gridSize > 0) {
+      for (let indexRow = 0; indexRow < gridSize; indexRow += 1) {
+        let tr = tbl.insertRow();
+        for (let indexColumn = 0; indexColumn < gridSize; indexColumn += 1) {
+          let td = tr.insertCell();
+          td.className = 'pixel';
+        }
+      }
+    }
+    if (gridSize === '') {
+      alert('Board inválido!')
+    }
+
+    tblSection.appendChild(tbl)
+  })
+}
+createGrid();
