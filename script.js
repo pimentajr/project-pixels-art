@@ -1,3 +1,4 @@
+const palette = document.getElementsByClassName('random');
 const pixelBoard = document.getElementById('pixel-board');
 const pixelLine = document.querySelector('#pixel-board').children;
 const colorPalette = document.querySelectorAll('#color-palette div');
@@ -6,6 +7,20 @@ const pixel = document.getElementsByClassName('pixel');
 let boardSizeValue = 5;
 const boardInput = document.getElementById('board-size');
 let color = 'black';
+document.getElementById('black').style.backgroundColor = 'black';
+
+const randomNumber = Math.floor(Math.random() * 16777215).toString(16);
+
+function RandomColorApply() {
+  function RandomColor() {
+    const x = Math.floor(Math.random() * 16777215).toString(16);
+    return x;
+  }
+  for (let i = 0; i < palette.length; i += 1) {
+    palette[i].style.backgroundColor = '#' + RandomColor();
+  }
+}
+RandomColorApply();
 
 // Criando as linhas:
 function CreateLineBox() {
@@ -17,6 +32,7 @@ function CreateLineBox() {
 }
 CreateLineBox();
 
+// Criando os pixels:
 function createAllBoxes() {
   for (let i = 0; i < pixelLine.length; i += 1) {
     for (let j = 0; j < boardSizeValue; j += 1) {
@@ -28,6 +44,7 @@ function createAllBoxes() {
 }
 createAllBoxes();
 
+// Adicionando os pixels pelo input:
 function addBox() {
   pixelBoard.innerHTML = '';
   if (boardInput.value === '') {
@@ -45,7 +62,7 @@ function addBox() {
   CreateLineBox();
   createAllBoxes();
 }
-
+// Chamando função addBox
 function addBoxValueCaller() {
   const boardButton = document.querySelector('#generate-board');
   boardButton.addEventListener('click', addBox);
@@ -57,7 +74,8 @@ function selectPalette(event) {
     colorPalette[j].classList.remove('selected');
   }
   event.target.classList.add('selected');
-  color = event.target.getAttribute('id');
+  const bgColor = event.target.style.backgroundColor;
+  color = bgColor;
 }
 
 function selectPaletteCaller() {
@@ -79,19 +97,6 @@ function paintCaller() {
 }
 
 paintCaller();
-
-function RandomColorApply() {
-  function RandomColor() {
-    const randomNumber = Math.ceil(Math.random() * 4);
-    const colors = { 1: 'black', 2: 'red', 3: 'green', 4: 'blue' };
-    return colors[randomNumber];
-  }
-  for (let i = 0; i < pixel.length; i += 1) {
-    pixel[i].style.backgroundColor = RandomColor();
-  }
-}
-
-RandomColorApply();
 
 function ClearBoard() {
   clearButton.addEventListener('click', () => {
