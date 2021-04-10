@@ -63,12 +63,15 @@ const pixelBoard = document.createElement('div');
 pixelBoard.setAttribute('id', 'pixel-board');
 body.appendChild(pixelBoard);
 const numOfPixels = 25;
-for (let index = 1; index <= numOfPixels; index += 1) {
-  const pixelBox = document.createElement('div');
-  pixelBox.classList.add('pixel');
-  pixelBox.style.backgroundColor = 'white';
-  pixelBoard.appendChild(pixelBox);
+function generateBoxes(numOfPixels) {
+  for (let index = 1; index <= numOfPixels; index += 1) {
+    const pixelBox = document.createElement('div');
+    pixelBox.classList.add('pixel');
+    pixelBox.style.backgroundColor = 'white';
+    pixelBoard.appendChild(pixelBox);
+  }
 }
+generateBoxes(numOfPixels);
 
 // 5.
 // 6.
@@ -106,11 +109,7 @@ function generateBoard() {
   let rowsColumns = boardSizeInput.value;
   if (rowsColumns < minimum) { rowsColumns = minimum; }
   if (rowsColumns > maximum) { rowsColumns = maximum; }
-  for (let index = 1; index <= rowsColumns * rowsColumns; index += 1) {
-    const pixelBox = document.createElement('div');
-    pixelBox.classList.add('pixel');
-    pixelBox.style.backgroundColor = 'white';
-    pixelBoard.appendChild(pixelBox);
-  }
+  let inputNumOfPix = rowsColumns * rowsColumns;
+  generateBoxes(inputNumOfPix);
 }
 boardSizeBtn.addEventListener('click', generateBoard);
