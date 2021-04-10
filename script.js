@@ -14,7 +14,7 @@ createDiv(25);
 
 const selectedColorPosition = document.querySelectorAll('selected');
 function eventClick(event) {
-    selectedColorPosition[0].classList.remove('selected');
+    selectedColorPosition.classList.remove('selected');
     event.target.className = 'selected';
   }
 
