@@ -5,17 +5,17 @@
     width: 2%;
     display: inline-block;
 }
-#red{
-    background-color: red;
+#cube1{
+    background-color: black;
 }
-#green{
+#cube2{
     background-color: green;
 }
-#blue{
+#cube3{
     background-color: blue;
 }
-#black{
-    background-color: black;
+#cube4{
+    background-color: red;
 }
 .pixel{
     border: 1px solid;
