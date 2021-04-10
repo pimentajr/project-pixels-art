@@ -23,6 +23,7 @@
 
 .pixel-line {
   line-height: 0;
+  display: block;
 }
 
 .pixel {

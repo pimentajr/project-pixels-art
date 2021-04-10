@@ -2,8 +2,10 @@ const pixelBoard = document.getElementById('pixel-board');
 const pixelLine = document.querySelector('#pixel-board').children;
 const colorPalette = document.querySelectorAll('#color-palette div');
 const clearButton = document.getElementById('clear-board');
-let boardSizeValue = 3;
+const pixel = document.getElementsByClassName('pixel');
+let boardSizeValue = 5;
 const boardInput = document.getElementById('board-size');
+let color = 'black';
 
 // Criando as linhas:
 function CreateLineBox() {
@@ -26,46 +28,51 @@ function createAllBoxes() {
 }
 createAllBoxes();
 
-function addBoxValue() {
-  const boardButton = document.querySelector('#boardButton');
-  boardButton.addEventListener('click', () => {
-    pixelBoard.innerHTML = '';
-    boardSizeValue = boardInput.value;
-    if (boardSizeValue.value === '') {
-      alert('ERRO');
-    }
-    boardInput.value = '';
-    boardInput.focus();
-    CreateLineBox();
-    createAllBoxes();
-  });
+function addBox() {
+  pixelBoard.innerHTML = '';
+  boardSizeValue = boardInput.value;
+  if (boardSizeValue.value === '') {
+    alert('ERRO');
+  }
+  boardInput.value = '';
+  boardInput.focus();
+  CreateLineBox();
+  createAllBoxes();
 }
-addBoxValue();
 
-function createStorage() {}
-createStorage();
+function addBoxValueCaller() {
+  const boardButton = document.querySelector('#boardButton');
+  boardButton.addEventListener('click', addBox);
+}
+addBoxValueCaller();
 
-function selectPalette() {
+function selectPalette(event) {
+  for (let j = 0; j < colorPalette.length; j += 1) {
+    colorPalette[j].classList.remove('selected');
+  }
+  event.target.classList.add('selected');
+  color = event.target.getAttribute('id');
+}
+
+function selectPaletteCaller() {
   for (let i = 0; i < colorPalette.length; i += 1) {
-    colorPalette[i].addEventListener('click', (el) => {
-      for (let j = 0; j < colorPalette.length; j += 1) {
-        colorPalette[j].classList.remove('selected');
-      }
-      el.target.classList.add('selected');
-      sessionStorage.color = el.target.getAttribute('id');
-    });
+    colorPalette[i].addEventListener('click', selectPalette);
   }
 }
-selectPalette();
+selectPaletteCaller();
 
-function paintBlocks() {
-  pixelBoard.addEventListener('click', (event) => {
-    const el = event;
-    el.target.style.backgroundColor = sessionStorage.color;
-  });
+function paintBlocks(event) {
+  const el = event;
+  el.target.style.backgroundColor = color;
 }
 
-paintBlocks();
+function paintCaller() {
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].addEventListener('click', paintBlocks);
+  }
+}
+
+paintCaller();
 
 function ClearBoard() {
   clearButton.addEventListener('click', () => {
@@ -76,4 +83,5 @@ function ClearBoard() {
     }
   });
 }
+
 ClearBoard();
