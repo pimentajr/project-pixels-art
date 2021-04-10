@@ -9,9 +9,8 @@ body {
 }
 
 #color-palette {
-  display: flex;
   
-
+  display: flex;
 } 
 #color-palette div {
   align-items: center;

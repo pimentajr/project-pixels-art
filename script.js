@@ -1,20 +1,18 @@
+/* eslint-disable editorconfig/editorconfig */
 function createColunnLines() {
-for (let index = 0; index < 5; index += 1) {
-    let colunn = document.createElement('div');
-    colunn.className = 'colunn'
-    document.querySelector('#pixel-board').appendChild(colunn)
-    let table = document.querySelectorAll('.colunn')
-        for (let index = 0; index < 5; index += 1) {
-            let lines = document.createElement('div');
-            lines.className = 'pixel';
-            colunn.appendChild(lines)
-            
-        }
+  for (let index = 0; index < 5; index += 1) {
+    const colunn = document.createElement('div');
+    colunn.className = 'colunn';
+    document.querySelector('#pixel-board').appendChild(colunn);
+    document.querySelectorAll('.colunn');
+    for (let indice = 0; indice < 5; indice += 1) {
+      const lines = document.createElement('div');
+      lines.className = 'pixel';
+      colunn.appendChild(lines); 
     }
-
-    
-}createColunnLines()
-
-/* function selected() {
-    if
-} */
+  }
+} createColunnLines();
+function inicialColor() {
+  const preto = document.querySelector('#black');
+  preto.className = 'selected';
+} inicialColor()
