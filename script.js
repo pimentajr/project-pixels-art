@@ -69,6 +69,23 @@ function addLinePixels(string) {
   }
 }
 
+// função para adicionar pixels
+
+function addPixels(string) {
+  const number = parseFloat(string);
+
+  for (let index = 0; index < number; index += 1) {
+    for (let index2 = 0; index2 < number; index2 += 1) {
+      const pixels = document.createElement('div');
+      pixels.className = 'pixel';
+      const pixelLine = document.querySelectorAll('.pixel-line');
+      pixelLine[index].appendChild(pixels);
+    }
+  }
+}
+
+// Adiciona botao interativo para usuário
+
 function changePixelBoard() {
   const BoardSizevalue = document.getElementById('board-size').value;
   if (BoardSizevalue === '') {
@@ -78,6 +95,8 @@ function changePixelBoard() {
   removePixelBoardChild();
 
   addLinePixels(BoardSizevalue);
+
+  addPixels(BoardSizevalue);
 }
 
 const generateBoardButton = document.getElementById('generate-board');
