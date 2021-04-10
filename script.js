@@ -65,9 +65,9 @@ function clearButtonListener() {
 }
 
 function vqvButtonLimits() {
-  if (parseInt(boardSize.value) < 5) {
-    pixelsTable(5, 5);  
-  } else if (parseInt(boardSize.value) > 50) {
+  if (parseInt(boardSize.value, 10) < 5) {
+    pixelsTable(5, 5);
+  } else if (parseInt(boardSize.value, 10) > 50) {
     pixelsTable(50, 50);
   } else {
     pixelsTable(boardSize.value, boardSize.value);
@@ -76,12 +76,12 @@ function vqvButtonLimits() {
 
 function vqvButtonListener() {
   if (boardSize.value === '') {
-    alert('Board inválido!')
+    alert('Board inválido!');
   } else {
     for (let child = pixelBoard.firstChild; child !== null; child = pixelBoard.firstChild) {
       pixelBoard.removeChild(pixelBoard.firstChild);
     }
-    vqvButtonLimits();    
+    vqvButtonLimits();
   }
 }
 
@@ -96,8 +96,8 @@ function vqvButtonListener() {
     } else if (item === vqvButton) {
       vqvButtonListener();
     }
-  })
-})
+  });
+});
 
 primaryColors(['black', aleatoryColor(), aleatoryColor(), aleatoryColor()]);
 
