@@ -1,6 +1,18 @@
-const lines = 5;
+let lines = 5;
+
+function cleanBoard() {
+  const pixelBoard = document.querySelector('#pixel-board');
+  // pixelBoard.querySelectorAll('.lineSquare').forEach((lineSquare=>{
+  //   pixelBoard.removeChild(lineSquare)
+  // }))
+  const linesSquare = document.querySelectorAll('.lineSquare');
+  for (let index = 0; index < linesSquare.length; index += 1) {
+    pixelBoard.removeChild(linesSquare[index]);
+  }
+}
 
 function squareLines(value) {
+  cleanBoard();
   const square = document.getElementById('pixel-board');
   for (let index = 1; index <= value; index += 1) {
     const newLine = document.createElement('div');
@@ -25,6 +37,7 @@ function squareColuns() {
 squareColuns();
 
 // 7
+
 function changeClass(event) {
   const classToRemove = document.getElementsByClassName('color');
   for (let index = 0; index < classToRemove.length; index += 1) {
@@ -59,15 +72,33 @@ changeColor();
 // 9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
 
 function clearAll() {
-  let pixels = document.querySelectorAll('.pixel');
+  const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].className = 'pixel white';
   }
 }
 
-function clearColor (){
+function clearColor() {
   const clearButton = document.getElementById('clear-board');
-  clearButton.addEventListener('click', clearAll)
+  clearButton.addEventListener('click', clearAll);
 }
 
 clearColor();
+
+// 10 Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária.
+
+function changeBoardSize() {
+  const inputBox = document.querySelector('#board-size');
+  const sizeButton = document.getElementById('generate-board');
+  sizeButton.addEventListener('click', () => {
+    if (inputBox.value === '') {
+      alert('Board inválido!');
+    } else {
+      lines = inputBox.value;
+      squareLines(lines);
+      squareColuns();
+    }
+  });
+}
+
+changeBoardSize();
