@@ -23,11 +23,11 @@ function pixelColor() {
 pixelColor();
 
 function clearbutton() {
-  const clearButton = document.querySelector('.clear');
+  const clearButton = document.querySelector('.clear-board');
   clearButton.addEventListener('click', function styleremove() {
     const pixelStyle = document.querySelectorAll('.pixel');
     for (let index = 0; index < pixelStyle.length; index += 1) {
-      pixelStyle[index].style.backgroundColor = 'white';
+      pixelStyle[index].style.backgroundColor = null;
     }
   });
 }
