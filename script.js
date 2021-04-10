@@ -1,3 +1,4 @@
+
 function changeClassDiv(event){
 let selectDiv = document.querySelector('.selected');
 selectDiv.classList.remove('selected')
@@ -18,7 +19,7 @@ let pixel = event.target
 pixel.style.backgroundColor = colorPixel
 }
 
-function ClearTable() {
+function clearTable() {
   let allPixels = document.getElementsByClassName('pixel')
   for (let index = 0; index < allPixels.length; index += 1) {
     allPixels[index].style.backgroundColor = 'white'
@@ -37,4 +38,7 @@ tableElements.addEventListener('click', paintTable)
 
 
 let clearButton = documet.getElementById('clear-board');
-clearButton.addEventListener('click', ClearTable)
+clearButton.addEventListener('click', clearTable)
+
+
+
