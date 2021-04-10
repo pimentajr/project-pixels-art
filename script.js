@@ -16,7 +16,7 @@ function setClassColor() {
 
 setClassColor();
 
-// Desafio 7
+//Desafio 7
 function setColorPalette(event) {
   const setColor = document.querySelectorAll('.selected');
   for (let index = 0; index < setColor.length; index += 1) {
@@ -28,3 +28,14 @@ function setColorPalette(event) {
 const colorPalette = document.querySelector('#color-palette');
 
 colorPalette.addEventListener('click', setColorPalette);
+
+//Desafio 8
+
+const Father2 = document.querySelector('#pixel-board');
+function colorPixel (event) {
+  const actualColor = document.querySelector('.selected');
+  const color = getComputedStyle(actualColor).backgroundColor;  
+  const pixel = event.target;
+  pixel.style.backgroundColor = color;
+}
+Father2.addEventListener('click',colorPixel)
