@@ -10,8 +10,7 @@ body {
 }
 
 a {
-  color: rgb(190, 190, 190);
-  -webkit-text-stroke: 2px rgb(151, 151, 151);
+  color: rgb(241, 229, 58);
   text-decoration: none;
 }
 
@@ -20,7 +19,7 @@ h1 {
   font-size: 90px;
   font-weight: 200;
   margin: 20px;
-  text-shadow: 2px 1px 1px rgb(68, 68, 68);
+  text-shadow: 1px 2px 2px rgba(68, 68, 68, 0.623);
 }
 
 button , input {
