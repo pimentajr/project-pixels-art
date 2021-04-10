@@ -9,6 +9,12 @@ body {
   font-family: Montserrat, sans-serif;
 }
 
+body h3 {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 15px;
+}
+
 nav {
   text-align: center;
 }
@@ -33,8 +39,10 @@ nav {
 
 #pixel-board {
   margin: auto;
-  max-width: 210px;
-  min-height: 315px;
+
+  /* max-width: 210px; */
+
+  /* min-height: 10px; */
 }
 
 .pixel {
@@ -72,8 +80,24 @@ nav {
 }
 
 #clear-board {
-  display: block;
-  margin: auto;
+
+  /* display: block; */
+
+  /* margin: auto; */
   margin-top: 5px;
   margin-bottom: 15px;
+}
+
+.setup {
+  max-width: 100px;
+}
+
+#button-section {
+  text-align: center;
+
+  /* margin: auto; */
+}
+
+.mouse-over {
+  transform: translateY(-50px);
 }
