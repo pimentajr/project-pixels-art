@@ -42,6 +42,10 @@ function generateBoard() {
 
   if (boardSize < 5) {
     alert('Board inválido!');
+    fillPixelBoard(5);
+  } else if (boardSize > 50) {
+    alert('Board inválido!');
+    fillPixelBoard(50);
   } else {
     fillPixelBoard(boardSize);
   }
