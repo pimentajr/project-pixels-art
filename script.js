@@ -30,10 +30,16 @@ createAllBoxes();
 
 function addBox() {
   pixelBoard.innerHTML = '';
-  boardSizeValue = boardInput.value;
-  if (boardSizeValue.value === '') {
-    alert('ERRO');
+  if (boardInput.value === '') {
+    alert('Board inválido!');
   }
+
+  if (boardInput.value < 5) {
+    boardSizeValue = 5;
+  } else if (boardInput.value > 50) {
+    boardSizeValue = 50;
+  } else boardSizeValue = boardInput.value;
+
   boardInput.value = '';
   boardInput.focus();
   CreateLineBox();
