@@ -1,6 +1,6 @@
-const lines = 5;
+const linesUsed = 5;
 
-function colorBoxes(){
+function colorBoxes() {
     const boxes = document.querySelectorAll('.color');
     const black = boxes[0];
     black.style.backgroundColor = 'black';
@@ -10,21 +10,22 @@ function colorBoxes(){
     grey.style.backgroundColor = 'lightgrey';
     const green = boxes[3];
     green.style.backgroundColor = 'lightgreen';
-    
+
 }
+
 colorBoxes();
 
-// function pixelBoard(){
-//     let lineBoard = document.querySelectorAll('.line');
-//     for (let i = 0; i < lines; i++){
-//         const pixelBox = document.createElement('div');
-//         pixelBox.className = 'pixel';
-//         pixelBox.style.backgroundColor = 'white';
-//         lineBoard[i].appendChild(pixelBox);
-//     }
-// }
+function pixelBoard(){
+    let lineBoard = document.querySelectorAll('.line');
+    for (let i = 0; i < linesUsed; i++){
+        const pixelBox = document.createElement('div');
+        pixelBox.className = 'pixel';
+        pixelBox.style.backgroundColor = 'white';
+        lineBoard[i].appendChild(pixelBox);
+    }
+}
 
-// for (let i = 0; i < lines; i++){
+// for (let i = 0; i < linesUsed; i++){
 //     pixelBoard();
 // }
 
