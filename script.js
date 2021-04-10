@@ -14,3 +14,24 @@ function createBoxesDiv() {
   firstColor.classList.add('selected');
 }
 createBoxesDiv();
+
+function addPixels(size) {
+  const createPixels = document.createElement('section');
+  createPixels.id = 'pixel-board';
+  document.body.appendChild(createPixels);
+  const selectPixels = document.querySelector('#pixel-board');
+  for (let index = 0; index < size; index += 1) {
+    const createPixelsRow = document.createElement('div');
+    selectPixels.appendChild(createPixelsRow);
+    createPixelsRow.classList.add('pixel');
+    createPixelsRow.innerText = 'Row';
+    for (let indice = 1; indice < size; indice += 1) {
+      const createPixelsColumn = document.createElement('div');
+      selectPixels.appendChild(createPixelsColumn);
+      createPixelsColumn.classList.add('pixel');
+      createPixelsColumn.innerText = 'Column';
+    }
+  }
+}
+addPixels(5);
+  

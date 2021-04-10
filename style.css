@@ -2,19 +2,12 @@ h1 {
   color: rgb(30, 116, 119);
 }
 
-section {
-  width: 100%;
-  background-color: rgb(30, 116, 119);
-  display: inline-block;
-}
-
 body {
   text-align: center;
   display: flex;
   flex-flow: column;
   align-items: center;
   background-color: rgb(147, 182, 214);
-  margin: 0;
 }
 
 .color {
@@ -25,3 +18,23 @@ body {
   border-radius: 10px;
   margin: 20px;
 }
+
+.pixel {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  justify-content: center;
+  display: inline-block;
+}
+  
+#pixel-board {
+  flex-wrap: wrap;
+  display: flex;
+  width: 210px;
+  height: 210px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+  
