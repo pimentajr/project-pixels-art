@@ -75,3 +75,9 @@ header {
 .selected {
   outline: 8px solid white;
 }
+
+#clear-board {
+  display:block;
+  margin: 30px auto;
+  padding: 5px 25px;
+}

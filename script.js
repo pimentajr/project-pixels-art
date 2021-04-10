@@ -22,12 +22,21 @@ function pencil(event) {
   pixel.style.backgroundColor = color;
 }
 
+function clearBoard() {
+  const boardItems = document.getElementsByClassName('pixel');
+  for (let index = 0; index < boardItems.length; index += 1) {
+    const element = boardItems[index];
+    element.style.backgroundColor = 'white';
+  }
+}
+
 function pageStarter() {
   selectInitialColor();
   document
     .getElementById('color-palette')
     .addEventListener('click', setSelectedColor);
   document.getElementById('pixel-board').addEventListener('click', pencil);
+  document.getElementById('clear-board').addEventListener('click', clearBoard);
 }
 
 window.onload = pageStarter;
