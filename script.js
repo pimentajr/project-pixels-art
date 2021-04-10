@@ -1,19 +1,19 @@
-function createBoxesDiv(numberOfColors) {
-  const selectPalette = document.querySelector('#color-palette');
-  for (let index = 0; index < numberOfColors; index += 1) {
-    const createDivs = document.createElement('div');
-    selectPalette.appendChild(createDivs);
-    createDivs.classList.add('color');
-  }
+const selectPalette = document.querySelector('#color-palette');
+function createBoxesDiv() {
   const arrayOfColors = ['black', 'blue', 'purple', 'red'];
+  for (let index = 0; index < arrayOfColors.length; index += 1) {
+    const createDivs = document.createElement('div');
+    createDivs.classList.add('color');
+    selectPalette.appendChild(createDivs);
+  }  
   const selectDivs = document.querySelectorAll('.color');
-  selectDivs.forEach((box, index) => {
-    const div = box; div.style.backgroundColor = arrayOfColors[index];
+  selectDivs.forEach((element, index) => {
+    const div = element; div.style.backgroundColor = arrayOfColors[index];
   });
   const firstColor = document.querySelector('.color');
   firstColor.classList.add('selected');
 }
-createBoxesDiv(4);
+createBoxesDiv();
 
 function addPixels(size) {
   const selectPixels = document.querySelector('#pixel-board');
@@ -53,11 +53,13 @@ function addSelecteColordByClick() {
 }
 addSelecteColordByClick();
 
-function clearBoard () {
+function clearBoard() {
   const selectButton = document.querySelector('#clear-board');
   selectButton.addEventListener('click', () => {
     const selectPixel = document.querySelectorAll('.pixel');
-    selectPixel.forEach((element) => element.style.backgroundColor = 'white');
+    selectPixel.forEach((element) => {
+      element.style.backgroundColor = 'white';
+    });
   });
 }
 clearBoard();
