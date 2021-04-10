@@ -34,9 +34,14 @@ button.addEventListener('click', clean);
 
 function clean(event) {
   const pixelColored = document.querySelectorAll('.pixel');
-  //if (pixelColored tiver uma classe de background color ){
-  // troca o background para branco
-  //}
-  console.log(pixelColored);
-  event.pixelColored.style.backgroundColor = 'white';
+  for (let i = 0; i < pixelColored.length; i += 1) {
+    let currentElement = pixelColored[i];
+    const compStylesPixel = window.getComputedStyle(currentElement);
+    const backgroundColorPixel = compStylesPixel.getPropertyValue(
+      'background-color'
+    );
+    if (backgroundColorPixel !== 'white') {
+      currentElement.style.backgroundColor = 'white';
+    }
+  }
 }
