@@ -1,7 +1,6 @@
-window.onload = function () {
+window.onload = () => {
   const numberOfBlock = 5;
   const section = document.querySelector('#pixel-board');
-  const selected = document.querySelector('.selected');
   const color = document.getElementsByClassName('color');
 
   function addColorPalette() {
@@ -28,7 +27,7 @@ window.onload = function () {
 
   function clickEventColor() {
     const sectionColor = document.querySelector('#color-palette');
-    sectionColor.addEventListener('click', function (event) {
+    sectionColor.addEventListener('click', (event) => {
       for (let index = 0; index < color.length; index += 1) {
         color[index].classList.remove('selected');
         if (event.target.className === 'color') {
@@ -42,7 +41,7 @@ window.onload = function () {
   function addColorPixel() {
     const pixelSection = document.querySelector('#pixel-board');
     const classOff = document.querySelector('.off');
-    pixelSection.addEventListener('click', function (event) {
+    pixelSection.addEventListener('click', (event) => {
       for (let index = 0; index < color.length; index += 1) {
         if (color[index].className === 'color selected') {
           event.target.style.backgroundColor = color[index].style.backgroundColor;
@@ -56,7 +55,7 @@ window.onload = function () {
 
   function clearButton() {
     const getButton = document.querySelector('#clear-board');
-    getButton.addEventListener('click', function () {
+    getButton.addEventListener('click', () => {
       const pixelClear = document.querySelectorAll('.pixel');
       for (let index = 0; index < pixelClear.length; index += 1) {
         pixelClear[index].style.backgroundColor = 'white';
@@ -68,7 +67,7 @@ window.onload = function () {
   function userDefineBlockWidth() {
     const getButton = document.querySelector('#generate-board');
     const getInput = document.querySelector('#board-size');
-    getButton.addEventListener('click', function () {
+    getButton.addEventListener('click', () => {
       if (getInput.value === '') {
         alert('Board Inválido!');
       } else if (getInput.value < 5) {
