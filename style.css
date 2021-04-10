@@ -1,3 +1,16 @@
 h1 {
   color: rgb(30, 116, 119);
 }
+
+div {
+  width: 100%;
+}
+
+body {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: rgb(147, 182, 214);
+  margin: 0;
+}
