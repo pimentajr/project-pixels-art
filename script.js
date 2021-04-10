@@ -16,7 +16,8 @@ function paint() {
   for (let index = 0; index < pixelToPaint.length; index += 1) { // adiciona o evento a todos os pixels através de um loop
     pixelToPaint[index].addEventListener('click', function () { // função click e abre o que ela realiza
       let selectedColor = document.querySelector('.selected'); // captura a div com a cor selecionada
-      let paintColor = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color'); // captura a cor selecionada
+      let paintColor = window.getComputedStyle(selectedColor, null)
+      .getPropertyValue('background-color'); // captura a cor selecionada
       pixelToPaint[index].style.backgroundColor = paintColor; // atribui ao pixel a cor desejada
     });
   }
@@ -26,11 +27,11 @@ paint();
 
 function clear() {
   let pixels = document.querySelectorAll('.pixel'); // captura e armazena todos os pixels do quadro
-  let clearButton = document.querySelector('#clear-board'); //captura o botão que irá limpar o quadro
-  clearButton.addEventListener('click', function(){
+  let clearButton = document.querySelector('#clear-board'); // captura o botão que irá limpar o quadro
+  clearButton.addEventListener('click', function () {
     for (let index = 0; index < pixels.length; index += 1) { 
-      pixels[index].style.backgroundColor = 'white'
+      pixels[index].style.backgroundColor = 'white';
     }
-  })
+  });
 }
 clear();
