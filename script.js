@@ -1,3 +1,5 @@
+const pixelBoard = document.querySelector('#pixel-board');
+
 function makePixelBoard(line, column) {
   for (let index = 1; index <= line; index += 1) {
     const divLine = document.createElement('div');
@@ -7,7 +9,7 @@ function makePixelBoard(line, column) {
       divPixel.className = 'pixel';
       divLine.appendChild(divPixel);
     }
-    document.querySelector('#pixel-board').appendChild(divLine);
+    pixelBoard.appendChild(divLine);
   }
 }
 
@@ -24,7 +26,6 @@ function makeColorPalette(colors) {
 
 // Font https://www.javascripttutorial.net/dom/manipulating/remove-all-child-nodes/
 function clearBoardPixels() {
-  const pixelBoard = document.querySelector('#pixel-board');
   // Tirar a dúvida de porque não funciona
   // const pixels = pixelBoard.children;
   // for (let index = 0; index < pixels.length; index += 1) {
@@ -37,9 +38,10 @@ function clearBoardPixels() {
 }
 
 function validateNumber(number) {
-  if (number < 5) number = 5;
-  if (number > 50) number = 50;
-  return number;
+  let result = number;
+  if (number < 5) result = 5;
+  if (number > 50) result = 50;
+  return result;
 }
 
 window.onload = function () {
@@ -54,7 +56,7 @@ document.querySelector('#color-palette').addEventListener('click', (event) => {
   }
 });
 
-document.querySelector('#pixel-board').addEventListener('click', (event) => {
+pixelBoard.addEventListener('click', (event) => {
   if (event.target.classList.contains('pixel')) {
     const color = document.querySelector('.selected').style.backgroundColor;
     const styleOfElement = event.target.style;
@@ -71,10 +73,10 @@ document.querySelector('#clear-board').addEventListener('click', () => {
 });
 
 document.querySelector('#generate-board').addEventListener('click', () => {
-  let input = document.querySelector('#board-size');
-  if (input.value == '') alert('Board inválido!');
+  const input = document.querySelector('#board-size');
+  if (input.value === '') alert('Board inválido!');
   else {
-    let numberInput = input.value;
+    const numberInput = input.value;
     clearBoardPixels();
     makePixelBoard(validateNumber(numberInput), validateNumber(numberInput));
   }
