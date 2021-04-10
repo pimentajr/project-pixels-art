@@ -13,7 +13,6 @@ window.onload = function () {
     colorPixel.style.border = 'solid 1px black';
     colorPalette.appendChild(colorPixel);
   }
-
   for (let index = 0; index < Math.sqrt(pixelSquareSize); index += 1) {   
     pixelSquare.style.display = 'table';
     const pixelRow = document.createElement('div');
@@ -34,5 +33,42 @@ window.onload = function () {
     }
 
     pixelSquare.appendChild(pixelRow);
+  }
+
+  let colorBlack = document.querySelector('.color.black');
+  colorBlack.classList.add('selected');
+
+  let colors = document.getElementById('color-palette').children;
+
+  let colorState = 0;
+  
+  function selectColor(event) {
+
+    if (colorState === 0) {
+      for (let index = 0; index < colors.length; index += 1) {
+        event.target.classList.add('selected');
+
+        for (let index1 = 0; index1 < colors.length; index1 += 1) {
+          if (colors[index1] !== event.target) {
+            colors[index1].classList.remove('selected');
+          }
+        }
+      }
+    }
+  }
+
+  for(let index = 0; index < colors.length; index += 1) {
+    colors[index].addEventListener('click', selectColor);
+  }
+
+  let pixelCollection = document.querySelectorAll('.pixel');
+  
+  function matchColor(event) {
+    let selectedColor = document.querySelector('.selected').style.backgroundColor;
+    event.target.style.backgroundColor = selectedColor;
+  };
+
+  for (let index = 0; index < pixelCollection.length; index +=1) {
+    pixelCollection[index].addEventListener('click', matchColor);
   }
 };
