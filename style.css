@@ -1,0 +1,33 @@
+h3 {
+  color: red;
+}
+
+#color-pallete .color {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+.black {
+  border: 1px solid black;
+  background-color: black;
+}
+
+.white {
+  background-color: white;
+}
+
+.red {
+  border: 1px solid black;
+  background-color: red;
+}
+
+.green {
+  border: 1px solid black;
+  background-color: green;
+}
+
+.blue {
+  border: 1px solid black;
+  background-color: blue;
+}
