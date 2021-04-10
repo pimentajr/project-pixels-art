@@ -3,7 +3,7 @@ body {
   display: flex;
   flex-flow: column;
   align-items: center;
-  background-color:  rgb(147, 182, 214);
+  background-color: rgb(147, 182, 214);
   margin: 0;
 }
 
@@ -25,7 +25,7 @@ div {
 }
 
 .pixel {
-  background-color:'white';
+  background-color: 'white';
   width: 40px;
   height: 40px;
   border: 1px solid black;
