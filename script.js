@@ -44,3 +44,27 @@ function clearPixels() {
 
 const button = document.querySelector('#clear-board');
 button.addEventListener('click', clearPixels);
+
+// 10.
+
+// função para remover os containers
+function removePixelBoardChild() {
+  const pixelBoardChildren = document.querySelector('#pixel-board').children;
+  const pixelBoardSize = pixelBoardChildren.length;
+
+  for (let index = pixelBoardSize - 1; index < pixelBoardSize && index >= 0; index -= 1) {
+    pixelBoard.removeChild(pixelBoardChildren[index]);
+  }
+}
+
+function changePixelBoard() {
+  const BoardSizevalue = document.getElementById('board-size').value;
+  if (BoardSizevalue === '') {
+    window.alert('Board inválido!');
+  }
+
+  removePixelBoardChild();
+}
+
+const generateBoardButton = document.getElementById('generate-board');
+generateBoardButton.addEventListener('click', changePixelBoard);
