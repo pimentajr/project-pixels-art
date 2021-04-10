@@ -46,17 +46,31 @@ for (let index = 1; index <= numOfPixels; index += 1) {
 firstColor.classList.add('selected');
 
 // 7.
-function switchColor(event) {
+function switchSelectedColor(event) {
   const selectedColor = document.querySelector('.selected');
   selectedColor.classList.remove('selected');
   event.target.classList.add('selected');
 }
-colorPalette.addEventListener('click', switchColor);
+colorPalette.addEventListener('click', switchSelectedColor);
 
 // 8.
 function printColorPixel(event) {
   const color = document.querySelector('.selected').style.backgroundColor;
-  let evento = event;
+  const evento = event;
   evento.target.style.backgroundColor = color;
+  pixelBoard.style.backgroundColor = '';
 }
 pixelBoard.addEventListener('click', printColorPixel);
+
+// 9.
+const clearButton = document.createElement('button');
+clearButton.setAttribute('id', 'clear-board');
+clearButton.innerText = 'Limpar';
+body.appendChild(clearButton);
+function clearBoard(event) {
+  let pixelBoxes = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixelBoxes.length; index += 1) {
+    pixelBoxes[index].style.backgroundColor = 'transparent';
+  }
+}
+clearButton.addEventListener('click', clearBoard);
