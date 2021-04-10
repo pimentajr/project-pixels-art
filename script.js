@@ -1,3 +1,3 @@
 window.onload = function carregar() {
-  console.log(document.getElementById('color1'));
+  document.getElementById('black').classList('selected');
 };
