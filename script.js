@@ -8,7 +8,7 @@ const DEFAULT_COLORS = [
 const CURRENT_COLORS = [];
 // Doesn't count the fixed color.
 const NUM_OF_COLORS = DEFAULT_COLORS.length;
-let randomColors;
+let randomColors = 'true';
 
 // Pixel board parameters:
 const PIXEL_BOARD = document.createElement('div');
@@ -216,14 +216,11 @@ function resetSelected() {
 
 function updateRandomColorsCheckbox(e) {
   const defaultPaletteIndicator = document.getElementById('default-palette-indicator');
-  console.log(defaultPaletteIndicator);
 
   if (e.target.value === 'true') {
-    console.log('entered IF');
     e.target.value = 'false';
     defaultPaletteIndicator.style.display = 'block';
   } else {
-    console.log('entered ELSE');
     e.target.value = 'true';
     defaultPaletteIndicator.style.display = 'none';
   }
