@@ -2,9 +2,11 @@
 #pixel-board{
     width: 208px;
     height: 208px;
+   
 }
 #clean{
-    border-radius: 20px;
+    width: 44px;
+    border: 1px solid;
 }
 
 #cube1{
