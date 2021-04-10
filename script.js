@@ -1,15 +1,19 @@
 const a = 5;
 
+function randomBgCcolor() {
+  const x = Math.floor(Math.random() * 256);
+  const y = Math.floor(Math.random() * 256);
+  const z = Math.floor(Math.random() * 256);
+  const bgColor = `rgb(${x}, ${y}, ${z})`;
+  return bgColor;
+}
+
 window.onload = function start() {
   document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
+  const teste = document.getElementsByClassName('color')[0];
+  teste.classList.add('selected');
 
-  function randomBgCcolor() {
-    const x = Math.floor(Math.random() * 256);
-    const y = Math.floor(Math.random() * 256);
-    const z = Math.floor(Math.random() * 256);
-    const bgColor = `rgb(${x}, ${y}, ${z})`;
-    return bgColor;
-  }
+  randomBgCcolor();
 
   document.getElementsByClassName('color')[1].style.backgroundColor = randomBgCcolor();
   document.getElementsByClassName('color')[2].style.backgroundColor = randomBgCcolor();
