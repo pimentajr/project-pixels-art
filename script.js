@@ -27,15 +27,10 @@ function clearEvent() {
 }
 
 function createPalette() {
+  const color = document.querySelectorAll('.color');
   for (let i = 0; i < palette.length; i += 1) {
-    const color = document.createElement('div');
-    color.style.backgroundColor = palette[i];
-    color.onclick = colorSelectEvent;
-    color.className = 'color';
-    if (i === 0) {
-      color.className += ' selected';
-    }
-    colorPalette.appendChild(color);
+    color[i].style.backgroundColor = palette[i];
+    color[i].onclick = colorSelectEvent;
   }
 }
 
