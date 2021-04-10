@@ -24,10 +24,15 @@ function makeColorPalette(colors) {
   }
 }
 
-// Font https://css-tricks.com/snippets/javascript/random-hex-color/
-// Font https://www.w3schools.com/jsref/jsref_tostring_number.asp radix
+function makeRandomInt() {
+  return Math.floor(Math.random() * 255);
+}
+
 function makeRandomColor() {
-  return randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+  const red = makeRandomInt();
+  const green = makeRandomInt();
+  const blue = makeRandomInt();
+  return `rgb(${red}, ${green}, ${blue})`;
 }
 
 // Font https://www.javascripttutorial.net/dom/manipulating/remove-all-child-nodes/
