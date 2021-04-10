@@ -21,3 +21,7 @@
   grid-template-columns: auto auto auto auto auto;
   padding: 2px 2px 1px 1px;
 }
+
+.selected {
+  background-color: black;
+}

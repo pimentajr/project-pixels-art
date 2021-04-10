@@ -1,5 +1,4 @@
-const selectedColorDiv = document.querySelector('.color');
-let flag1 = false;
+const selectedColorDiv = document.querySelector('#color-palette');
 
 function createPaletteColorDiv(color) {
   const palletColorDiv = document.createElement('div');
@@ -11,10 +10,28 @@ function createPaletteColorDiv(color) {
   palletColorDiv.style.backgroundColor = color;
   document.querySelector('#color-palette').appendChild(palletColorDiv);
 }
+
 function createBoardPixels() {
   const boardPixelsDiv = document.createElement('div');
   boardPixelsDiv.className = 'pixel';
   document.querySelector('#pixel-board').appendChild(boardPixelsDiv);
+}
+
+function indexOfNode(element) {
+  const index = [].indexOf.call(element.parentNode.childNodes, element);
+  return index;
+}
+
+function selectedColor(event) {
+  const element = event.target;
+  const nodeIndex = indexOfNode(element);
+
+  element.className = 'color selected';
+  for (let index = 0; index < 4; index += 1) {
+    if (index !== nodeIndex) {
+      document.querySelectorAll('.color')[index].className = 'color';
+    }
+  }
 }
 
 createPaletteColorDiv('black');
@@ -26,4 +43,4 @@ for (let index = 1; index <= 25; index += 1) {
   createBoardPixels();
 }
 
-selectedColorDiv.addEventListener('click', () => {});
+selectedColorDiv.addEventListener('click', selectedColor);
