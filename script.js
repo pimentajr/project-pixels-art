@@ -36,18 +36,21 @@ let pixelBlack = document.querySelector('.color');
 pixelBlack.classList.add('selected')
 
 // 7
-document.getElementById('color-palette').addEventListener('click', selected);
-
-function selected() {
-	let whosSelected = document.querySelector('.selected');
+let whosSelected = document.querySelector('.selected');
+document.getElementById('color-palette').addEventListener('click', function() {	
 	if (event.target !== whosSelected) {				
 		whosSelected.classList.remove('selected');
 		event.target.classList.add('selected');		
-	}
-	console.log(event.target)
-}
+	}		
+});
 
-
+// 8 - 
+document.getElementById('pixel-board')addEventListener('click', function() {
+	let color = document.querySelector('.selected').innerText;	
+	if (event.target.backgroundColor !== color){	
+		event.target.style.backgroundColor = color;
+	}	
+});
 
 
 
