@@ -39,14 +39,6 @@ function fillPixel(e) {
   }
 }
 
-function initializeBoardListeners() {
-  const pixels = document.getElementsByClassName('pixel');
-
-  for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].addEventListener('click', fillPixel);
-  }
-}
-
 function fillRowsWithPixels() {
   const pixelRows = document.getElementsByClassName('pixel-row');
   let pixel;
@@ -55,6 +47,7 @@ function fillRowsWithPixels() {
     for (let colIndex = 0; colIndex < boardSideSize; colIndex += 1) {
       pixel = document.createElement('div');
       pixel.classList.add('pixel');
+      pixel.addEventListener('click', fillPixel);
       pixelRows[rowIndex].appendChild(pixel);
     }
   }
@@ -78,25 +71,6 @@ function initializePixelBoard() {
 
   fillBoardWithRows();
   fillRowsWithPixels();
-  initializeBoardListeners();
-}
-
-function selectColor(e) {
-  const targetColorBox = e.target;
-  const currentlySelectedColorBox = document.querySelector('.color.selected');
-
-  if (targetColorBox !== currentlySelectedColorBox) {
-    currentlySelectedColorBox.classList.remove('selected');
-    targetColorBox.classList.add('selected');
-  }
-}
-
-function initializePaletteListeners() {
-  const colorBoxes = document.getElementsByClassName('color');
-
-  for (let index = 0; index < NUM_OF_COLORS + 1; index += 1) {
-    colorBoxes[index].addEventListener('click', selectColor);
-  }
 }
 
 function generatePaletteWithDefaultColors() {
@@ -144,12 +118,23 @@ function fillPaletteBoxesWithColors() {
   }
 }
 
+function selectColor(e) {
+  const targetColorBox = e.target;
+  const currentlySelectedColorBox = document.querySelector('.color.selected');
+
+  if (targetColorBox !== currentlySelectedColorBox) {
+    currentlySelectedColorBox.classList.remove('selected');
+    targetColorBox.classList.add('selected');
+  }
+}
+
 function fillPaletteWithBoxes(colorPalette) {
   let colorBox;
 
   for (let index = 0; index < NUM_OF_COLORS; index += 1) {
     colorBox = document.createElement('div');
     colorBox.classList.add('color');
+    colorBox.addEventListener('click', selectColor);
     colorPalette.appendChild(colorBox);
   }
 }
@@ -164,7 +149,6 @@ function initializePalette() {
 
   fillPaletteWithBoxes(colorPalette);
   fillPaletteBoxesWithColors();
-  initializePaletteListeners();
 }
 
 function validateBoardSizeInput(userBoardSideSize) {
@@ -193,7 +177,6 @@ function fillBoardWithUserInput() {
 
   fillBoardWithRows();
   fillRowsWithPixels();
-  initializeBoardListeners();
 }
 
 function initializeBoardSizeButtonListener() {
