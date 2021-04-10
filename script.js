@@ -1,6 +1,6 @@
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
-const userPainel = document.querySelector('#user-painel');
+// const userPainel = document.querySelector('#user-painel');
 
 // Cria e colore a paleta
 function createColor(boxColor) {
@@ -61,15 +61,8 @@ function colorGrid() {
 colorGrid();
 
 // Adiciona um botão e limpa o grid
-function addBtn(container, text, idButton) {
-  const btnClear = document.createElement('button');
-  btnClear.id = idButton;
-  btnClear.innerText = text;
-  container.appendChild(btnClear);
-}
-
 function clearGrid() {
-  const eventBtn = document.querySelector('#clearBtn');
+  const eventBtn = document.querySelector('#clear-board');
   eventBtn.addEventListener('click', () => {
     const pixel = document.querySelectorAll('.pixel');
     for (let index = 0; index < pixel.length; index += 1) {
@@ -78,19 +71,9 @@ function clearGrid() {
   });
 }
 
-addBtn(pixelBoard, 'Limpar', 'clearBtn');
 clearGrid();
 
 // Addiciona input, botão e faz grid ter tamanho definido por user
-function addInput() {
-  const input = document.createElement('input');
-  input.id = 'board-size';
-  userPainel.appendChild(input);
-}
-
-addInput();
-addBtn(userPainel, 'VQV', 'generate-board');
-
 function generateBoard() {
   const input = document.querySelector('#board-size');
   const grtBtn = document.querySelector('#generate-board');
@@ -98,9 +81,23 @@ function generateBoard() {
     if (input.value === '') alert('Board Inválido!');
     else if (input.value < 5) input.value = 5;
     else if (input.value > 50) input.value = 50;
+    pixelBoard.style.backgroundColor = 'white';
     pixelBoard.innerHTML = '';
     populateGrid(input.value);
   });
 }
 
 generateBoard();
+
+// Cores randomicas
+function randomColor() {
+  const paletteColor = document.querySelectorAll('.color');
+  for (let index = 1; index < paletteColor.length; index += 1) {
+    const r = parseInt(Math.random() * 255, 10);
+    const g = parseInt(Math.random() * 255, 10);
+    const b = parseInt(Math.random() * 255, 10);
+    paletteColor[index].style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
+  }
+}
+
+randomColor();

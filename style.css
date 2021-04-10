@@ -23,9 +23,8 @@ body {
   align-items: center;
 }
 
-#clearBtn {
-  margin: 30px 58px;
-  
+#clear-board{
+  margin: 20px 58px;
 }
 
 #board-size {
@@ -34,7 +33,7 @@ body {
 }
 
 #user-painel {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 
 input {
