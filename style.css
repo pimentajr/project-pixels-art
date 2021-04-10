@@ -36,3 +36,7 @@
   margin: -3px;
   display: inline-block;
 }
+
+#clear-board {
+  width: 200px;
+}
