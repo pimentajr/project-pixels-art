@@ -1,6 +1,6 @@
 const colorPalette = document.getElementById('color-palette');
 let colorToPaint = document.getElementsByClassName('selected')[0];
-let pixelBoard = document.getElementById('pixel-board');
+
 
 
 function createPixelsSize (size) {
