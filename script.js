@@ -5,18 +5,30 @@ window.onload = function() {
 let numberOfLines = 5;
 const colorSelected = document.getElementById('black');
 const colorMenu = document.getElementById('color-palette');
-const colors = ['black', 'red', 'green', 'blue'];
-// const colors = ['black', 'red', 'green', 'blue', 'aqua', 'magenta', 'royalblue', 'rosybrown', 'greenyellow', 'yellow', 'blueviolet', 'coral', 'darkgray', 'fuchsia', 'grey', 'hotpink']
+// const colors = ['black', 'red', 'green', 'blue'];
+const colors = ['black', 'red', 'green', 'blue', 'aqua', 'magenta', 'royalblue', 'rosybrown', 'greenyellow', 'yellow', 'blueviolet', 'coral', 'darkgray', 'fuchsia', 'grey', 'hotpink']
 
-for (let index = 0; index < colors.length; index += 1) {
+
+
+for (let index = 0; index < 4; index += 1) {
+  if (index === 0) {
   const colorSelector = document.createElement('div');
-  colorSelector.className = 'color';
+  colorSelector.className = 'color selected';
   colorSelector.id = colors[index];
   colorSelector.style.backgroundColor = colors[index];
   colorMenu.appendChild(colorSelector);
-  if  (colors[index] === 'black') {
-    colorSelector.classList.add('selected');
+  } else {
+    const colorSelector = document.createElement('div');
+    colorSelector.className = 'color';
+    let randomColor = Math.ceil(Math.random() * 15);
+    console.log(randomColor);
+    colorSelector.id = colors[randomColor];
+    colorSelector.style.backgroundColor = colors[randomColor];
+    colorMenu.appendChild(colorSelector);
   }
+  // if  (colors[index] === 'black') {
+  //   colorSelector.classList.add('selected');
+  // }
 }
 
 const pixelBoard = document.getElementById('pixel-board');

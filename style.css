@@ -35,6 +35,7 @@
 }
 
 #clear-board {
+  display: inline-block;
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 30px;
@@ -45,10 +46,12 @@
 }
 
 #board-size {
+  display: inline-block;
   width: 30px;
 }
 
 #generate-board {
+  display: inline-block;
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 30px;
