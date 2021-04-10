@@ -1,4 +1,6 @@
 const selectedColorDiv = document.querySelector('#color-palette');
+const btnClear = document.querySelector('#clear-board');
+const selectedBoardDiv = document.querySelector('#pixel-board');
 
 function createPaletteColorDiv(color) {
   const palletColorDiv = document.createElement('div');
@@ -34,11 +36,21 @@ function selectedColor(event) {
   }
 }
 
-document.querySelector('#clear-board').addEventListener('click', () => {
-  for (let index = 0; index < 25; index += 1) {
-    document.querySelectorAll('div.pixel')[index].style.backgroundColor = 'rgb(255, 255, 255)';
+function paintPixel(event) {
+  const element = event.target;
+  const selectedElement = document.querySelector('.selected');
+  const selectedColorIndex = indexOfNode(selectedElement);
+
+  if (selectedColorIndex === 0) {
+    element.style.backgroundColor = 'black';
+  } else if (selectedColorIndex === 1) {
+    element.style.backgroundColor = 'yellow';
+  } else if (selectedColorIndex === 2) {
+    element.style.backgroundColor = 'red';
+  } else if (selectedColorIndex === 3) {
+    element.style.backgroundColor = 'green';
   }
-});
+}
 
 createPaletteColorDiv('black');
 createPaletteColorDiv('yellow');
@@ -50,3 +62,11 @@ for (let index = 1; index <= 25; index += 1) {
 }
 
 selectedColorDiv.addEventListener('click', selectedColor);
+
+btnClear.addEventListener('click', () => {
+  for (let index = 0; index < 25; index += 1) {
+    document.querySelectorAll('div.pixel')[index].style.backgroundColor = 'white';
+  }
+});
+
+selectedBoardDiv.addEventListener('click', paintPixel);
