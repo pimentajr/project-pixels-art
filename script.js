@@ -42,10 +42,17 @@ function fillBoard (value) {
 
 let boxColorSelect = document.getElementById('color-palette');
 boxColorSelect.addEventListener('click', function(event) {
-  console.log(event.target.className)
   if (event.target.className === 'color') {
   let colorUnselected = document.getElementsByClassName('selected');
   colorUnselected[0].className = 'color';
   event.target.classList.add('selected');
+  }
+})
+
+let board = document.getElementById('pixel-board');
+board.addEventListener('click', function(event) {
+  if (event.target.className === 'pixel') {
+    colorPaint = document.getElementsByClassName('selected');
+    event.target.style.backgroundColor = colorPaint[0].id;
   }
 })
