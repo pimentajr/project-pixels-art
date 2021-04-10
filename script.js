@@ -39,19 +39,20 @@ function colorSelection() {
 colorSelection();
 
 // Pinta a box selecionada com a cor correta
-function printBox(printBox) {
+function printingPixels(printBox) {
+  let printBoxBColor = printBox.style.backgroundColor
   switch (document.querySelector('.selected').id) {
   case 'black-box':
-    printBox.style.backgroundColor = 'black';
+    printBox.className += ' black';
     break;
   case 'red-box':
-    printBox.style.backgroundColor = 'red';
+    printBox.className += ' red';
     break;
   case 'green-box':
-    printBox.style.backgroundColor = 'green';
+    printBox.className += ' green';
     break;
   case 'yellow-box':
-    printBox.style.backgroundColor = 'yellow';
+    printBox.className += ' yellow';
     break;
   default:
   }
@@ -62,7 +63,7 @@ function selectPixel() {
   pixelBoard.addEventListener('click', (event) => {
     const boxTarget = event.target;
     if (boxTarget.id !== 'pixel-board') {
-      printBox(boxTarget);
+      printingPixels(boxTarget);
     }
   });
 }
@@ -98,7 +99,7 @@ function createButtonResize() {
   const boardSize = document.createElement('input');
   boardSize.id = 'board-size';
   boardSize.type = 'number';
-  boardSize.min = '1'
+  boardSize.min = '1';
   boardSize.placeholder = 'Tabuleiro de quantos pixels?';
   document.getElementById('buttons').appendChild(boardSize);
   const generateBoard = document.createElement('input');
@@ -110,26 +111,31 @@ function createButtonResize() {
 }
 createButtonResize();
 
+// Inspeciona se o valor inserido é válido
+function inspectBoardSize(boardSize) {
+  let validSize = boardSize
+  if (!validSize) {
+    return alert('Board inválido!');
+  }
+  if (validSize < 0) {
+    return alert('O número inserido deve ser maior que 0')
+  } 
+  if (validSize < 5) {
+    validSize = 5;
+  } else if (validSize > 50) {
+    validSize = 50;
+  }
+  boardMaker(validSize);
+}
+
 // Cria um quadro utilizando o tamanho inserido no input, se não inserir valor, apresentar uma mensagem de erro
 function BoardSize() {
   const generateBoard = document.getElementById('generate-board');
   generateBoard.addEventListener('click', () => {
-  let boardSize = document.getElementById('board-size').value;
-  inspectBoardSize(boardSize);
+    const boardSize = document.getElementById('board-size').value;
+    inspectBoardSize(boardSize);
   });
 }
 BoardSize();
 
-// Inspeciona se o valor inserido é válido
-function inspectBoardSize(boardSize) {
-  if (!boardSize) {
-    return alert('Board inválido!');
-  } else if (boardSize < 0) {
-    return alert('O número inserido deve ser maior que 0')
-  } else if (boardSize < 5) {
-    boardSize = 5;
-  } else if (boardSize > 50) {
-    boardSize = 50;
-  }
-  boardMaker(boardSize);
-}
+
