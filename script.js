@@ -49,7 +49,6 @@ secondColor.addEventListener('click', () => {
   firstColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
   fourthColor.classList.remove('selected');
-  secondColor.style.backgroundColor = 'yellow';
 });
 
 thirdColor.addEventListener('click', () => {
@@ -57,7 +56,6 @@ thirdColor.addEventListener('click', () => {
   firstColor.classList.remove('selected');
   secondColor.classList.remove('selected');
   fourthColor.classList.remove('selected');
-  thirdColor.style.backgroundColor = 'red';
 });
 
 fourthColor.addEventListener('click', () => {
@@ -65,7 +63,6 @@ fourthColor.addEventListener('click', () => {
   secondColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
   firstColor.classList.remove('selected');
-  fourthColor.style.backgroundColor = 'blue';
 });
 
 // Requisito 8 - Colore o pixel individual
