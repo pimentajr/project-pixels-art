@@ -30,10 +30,10 @@ const palette = document.querySelector('#color-palette');
 
 function removeSelected() {
 	let select = document.querySelector('.selected');
-	while (select) {
+	/* while (select) { */
 		select.classList.remove('selected');
-		select = document.querySelector('.selected');
-	}
+		/* select = document.querySelector('.selected'); */
+	/* } */
 }
 
 function clickColor() {
