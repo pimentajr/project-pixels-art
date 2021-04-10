@@ -18,3 +18,9 @@ function createTable() {
 }
 }
 createTable();
+
+function colorSelection() {
+  const elemento = document.querySelectorAll('.color');
+  elemento[0].classList.add('selected');
+}
+colorSelection();
