@@ -64,18 +64,18 @@ function giveAndRemoveSelec() {
 giveAndRemoveSelec();
 
 // let locateSelected = document.querySelector('.')
-let locatePixel = document.querySelectorAll('.pixel');
-let locateLine = document.querySelectorAll('.line');
-for (let i = 0; i < locatePixel.length; i +=1) {
-    for (let i = 0; i < locatePixel.length; i +=1) {
-            for (let i = 0; i <= locatePixel.length; i += 1){
-                locatePixel[i].addEventListener('click', function() {
-                    locatePixel[i].style.backgroundColor = 'red';
-                }
-            )
-        }
+// let locatePixel = document.querySelectorAll('.pixel');
+// let locateLine = document.querySelectorAll('.line');
+// for (let i = 0; i < locatePixel.length; i +=1) {
+//     for (let i = 0; i < locatePixel.length; i +=1) {
+//             for (let i = 0; i <= locatePixel.length; i += 1){
+//                 locatePixel[i].addEventListener('click', function() {
+//                     locatePixel[i].style.backgroundColor = 'red';
+//                 }
+//             )
+//         }
 
-    }
-}
+//     }
+// }
 
 // //locateSelected.style.backgroundColor = 'red';
