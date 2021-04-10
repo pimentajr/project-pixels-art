@@ -1,10 +1,19 @@
+function generateColor() {
+  const red = Math.floor(Math.random() * 255) + 1;
+  const green = Math.floor(Math.random() * 255) + 1;
+  const blue = Math.floor(Math.random() * 255) + 1;
+  const rgb = `rgb(${red}, ${green}, ${blue})`;
+  return rgb;
+}
+
 function createColorPalette() {
-  const colors = ['blue', 'red', 'green'];
   const palettelist = document.getElementsByClassName('color');
   palettelist[0].style.backgroundColor = 'black';
   palettelist[0].classList.add('selected');
+  let randColor;
   for (let index = 1; index < palettelist.length; index += 1) {
-    palettelist[index].style.backgroundColor = colors[index - 1];
+    randColor = generateColor();
+    palettelist[index].style.backgroundColor = randColor;
   }
 }
 function paintPixel(event) {
