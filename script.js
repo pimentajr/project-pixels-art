@@ -103,9 +103,9 @@ function createInputBoard() {
 function colorSelect() {
   const color = document.getElementsByClassName('color');
   color[0].classList.add('selected');
-  let index = 0;
 
   for (let i = 0; i < color.length; i += 1) {
+    let index = 0;
     color[i].addEventListener('click', () => {
       color[index].className = 'color';
       index += 1;
