@@ -82,7 +82,7 @@ function boardResize(num) {
 // aumenta ou diminui o board chamando a funçao acima.
 function changeBoardSize() {
   const numberRows = parseInt(document.getElementById('board-size').value, 10);
-  if (numberRows === undefined) {
+  if (Number.isNaN(numberRows)) {
     return alert('Board inválido!');
   } if (numberRows < 5) {
     boardResize(5);
