@@ -20,3 +20,14 @@ color1.addEventListener('click', caughtedColor);
 color2.addEventListener('click', caughtedColor);
 color3.addEventListener('click', caughtedColor);
 color4.addEventListener('click', caughtedColor);
+
+function addPixelColor() {
+  const p = document.getElementsByClassName('pixel');
+  for (let i = 0; i < p.length; i += 1) {
+    p[i].addEventListener('click', () => {
+      const sColor = document.querySelector('.selected');
+      p[i].style.background = window.getComputedStyle(sColor).getPropertyValue('background-color');
+    });
+  }
+}
+addPixelColor();
