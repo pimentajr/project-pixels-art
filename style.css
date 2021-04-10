@@ -3,11 +3,16 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: aqua;
+}
+
 header {
   padding: 20px;
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
   font-family: Geneva, sans-serif;
+  text-shadow: 1px 1px 50px;
 }
 
 #color-palette {
@@ -15,11 +20,23 @@ header {
   margin-right: auto;
 }
 
+#clear-board {
+  display: block;
+  position: relative;
+  left: 615px;
+  bottom: 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+  background-color: bisque;
+  border-radius: 10%;
+}
+
 .color {
   width: 40px;
   height: 40px;
   border: 1px solid black;
   display: inline-block;
+  border-radius: 10%;
 }
 
 #pixel-board {

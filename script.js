@@ -35,3 +35,12 @@ function paintPixel() {
   });
 }
 paintPixel();
+
+function buttonCleanSquare() {
+  const bodyTableColor = document.querySelectorAll('.pixel');
+  for (let index = 0; index < bodyTableColor.length; index += 1) {
+    bodyTableColor[index].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
+}
+const button = document.getElementById('clear-board');
+button.addEventListener('click', buttonCleanSquare);
