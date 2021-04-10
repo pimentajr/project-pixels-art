@@ -43,16 +43,16 @@ function printingPixels(printBox) {
   let printBoxBColor = printBox.style.backgroundColor
   switch (document.querySelector('.selected').id) {
   case 'black-box':
-    printBox.className += ' black';
+    printBox.style.backgroundColor = 'black';
     break;
   case 'red-box':
-    printBox.className += ' red';
+    printBox.style.backgroundColor = 'red';
     break;
   case 'green-box':
-    printBox.className += ' green';
+    printBox.style.backgroundColor = 'green';
     break;
   case 'yellow-box':
-    printBox.className += ' yellow';
+    printBox.style.backgroundColor = 'yellow';
     break;
   default:
   }
