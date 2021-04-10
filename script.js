@@ -43,8 +43,7 @@ function colorPixel(event) {
 
 Father2.addEventListener('click', colorPixel);
 
-//butonn
-
+// buttons
 function createButton() {
   const qetClassTable = document.querySelector('#button');
   const bStart = document.createElement('button');
@@ -59,7 +58,7 @@ function clearALL() {
   const cALL = document.querySelectorAll('.pixel');
   for (let index = 0; index < cALL.length; index += 1) {
     cALL[index].style.backgroundColor = 'rgb(255, 255, 255)';
-  } 
+  }
 }
 
 const clear = document.querySelector('#clear-board');
