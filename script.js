@@ -10,3 +10,19 @@ function selecionaClasse(event) {
 }
 const paleta = document.querySelector('#color-palette');
 paleta.addEventListener('click', selecionaClasse);
+
+const tabela = document.querySelector('#pixel-board');
+function pixel(event) {
+  const actualColor = document.querySelector('.selected');
+  const cor = getComputedStyle(actualColor).backgroundColor;
+  const evento = event.target;
+  evento.style.backgroundColor = cor;
+}
+tabela.addEventListener('click', pixel);
+
+const botao = document.querySelector('#clear-board');
+function limpar() {
+  const quadrados = document.querySelectorAll('.pixels');
+  quadrados.style.backgroundColor = 'white';
+}
+botao.addEventListener('click', limpar);

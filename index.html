@@ -9,14 +9,16 @@
 </head>
 <body>
   <h1 id = 'title'>Paleta de Cores</h1>
-  <div id = 'color-palette'>
+  <section id = 'color-palette'>
     <div class = 'color' id = 'black'></div>
-    <div class = 'color' id = 'color2'></div>
-    <div class = 'color' id = 'color3'></div>
-    <div class = 'color' id = 'color4'></div>
-  </div>
+    <div class = 'color' id = 'red'></div>
+    <div class = 'color' id = 'green'></div>
+    <div class = 'color' id = 'blue'></div>
+  </section>
 
-  <table id = 'pixel-board'>
+<button id = 'clear-board'>Limpar</button>
+
+  <table id = 'pixel-board' class = 'color-pixel'>
   
     <tr>
       <td class="pixel"></td>
@@ -58,6 +60,7 @@
       <td class="pixel"></td>
     </tr>
   </table>
+
   <script src="script.js"></script>
 </body>
 </html>
