@@ -1,4 +1,3 @@
-// Palette parameters:
 const FIXED_COLOR = 'black';
 const DEFAULT_COLORS = [
   'rgb(191, 97, 106)',
@@ -6,13 +5,11 @@ const DEFAULT_COLORS = [
   'rgb(163, 190, 140)',
 ];
 const CURRENT_COLORS = [];
-// Doesn't count the fixed color.
-const NUM_OF_COLORS = DEFAULT_COLORS.length;
+const NUM_OF_COLORS = DEFAULT_COLORS.length; // Doesn't count the fixed color.
 let randomColors = 'true';
-
-// Pixel board parameters:
 const PIXEL_BOARD = document.createElement('div');
 let boardSideSize = 5;
+let lastClickedPixelColor = '';
 
 function clearBoard() {
   const pixels = document.getElementsByClassName('pixel');
@@ -37,6 +34,8 @@ function fillPixel(e) {
   } else {
     clickedPixel.style.backgroundColor = 'white';
   }
+
+  lastClickedPixelColor = clickedPixel.style.backgroundColor;
 }
 
 function fillRowsWithPixels() {
