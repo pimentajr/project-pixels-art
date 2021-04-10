@@ -9,6 +9,7 @@ const COLORS = [
 const NUM_OF_COLORS = COLORS.length;
 
 // Pixel board parameters:
+const PIXEL_BOARD = document.createElement('section');
 let boardSideSize = 5;
 
 function clearBoard() {
@@ -58,22 +59,20 @@ function fillRowsWithPixels() {
 }
 
 function fillBoardWithRows() {
-  const pixelBoard = document.getElementById('pixel-board');
   let pixelRow;
 
   for (let index = 0; index < boardSideSize; index += 1) {
     pixelRow = document.createElement('div');
     pixelRow.classList.add('pixel-row');
-    pixelBoard.appendChild(pixelRow);
+    PIXEL_BOARD.appendChild(pixelRow);
   }
 }
 
 function initializePixelBoard() {
-  const pixelBoard = document.createElement('section');
   const contentContainer = document.querySelector('.content-container');
 
-  pixelBoard.id = 'pixel-board';
-  contentContainer.appendChild(pixelBoard);
+  PIXEL_BOARD.id = 'pixel-board';
+  contentContainer.appendChild(PIXEL_BOARD);
 
   fillBoardWithRows();
   fillRowsWithPixels();
@@ -133,8 +132,26 @@ function initializePalette() {
   initializePaletteListeners();
 }
 
+function fillBoardWithUserInput() {
+  const userBoardSideSize = document.getElementById('board-size').value;
+
+  boardSideSize = userBoardSideSize;
+  PIXEL_BOARD.innerHTML = '';
+
+  fillBoardWithRows();
+  fillRowsWithPixels();
+  initializeBoardListeners();
+}
+
+function initializeBoardSizeButtonListener() {
+  const boardSizeButton = document.getElementById('board-size-button');
+
+  boardSizeButton.addEventListener('click', fillBoardWithUserInput);
+}
+
 window.onload = () => {
   initializePalette();
   initializePixelBoard();
   initializeClearButtonListener();
+  initializeBoardSizeButtonListener();
 };
