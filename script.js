@@ -1,6 +1,23 @@
 window.onload = function() {
     let blackColor = document.querySelector('#preto')
     blackColor.classList.add("selected");
+    function getRandomColor() {
+        let letters = "0123456789ABCDEF";
+        let color = "#";
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    function changeBg(obj) {
+        obj.style.background = getRandomColor();
+    }
+    let verde = document.querySelector('#verde')
+    let rosa = document.querySelector('#rosa')
+    let azul = document.querySelector('#azul')
+    changeBg(verde)
+    changeBg(rosa)
+    changeBg(azul)
 }
  
 let colorTable = document.querySelector('#color-palette')
