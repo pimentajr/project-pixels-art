@@ -2,7 +2,7 @@
 window.onload = function() {
   const firstSelectedColor = document.getElementById('black-box');
   firstSelectedColor.classList = ('color selected');
-  boardMaker();
+  boardMaker(5);
 }
 
 // Seleciona a cor mudando a classe da div clicada
