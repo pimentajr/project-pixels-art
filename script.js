@@ -11,10 +11,10 @@ setColorToPalete();
 // Requisito 4
 const pixelBoardSize = 5;
 function setBoardSize(pixels) {
-for (let lineIndex = 1; lineIndex <= pixels; lineIndex += 1) {
-  const createLineDivs = document.createElement('div');
-  createLineDivs.className = 'line-pixel';
-  for (let columnIndex = 1; columnIndex <= pixels; columnIndex += 1) {
+  for (let lineIndex = 1; lineIndex <= pixels; lineIndex += 1) {
+    const createLineDivs = document.createElement('div');
+    createLineDivs.className = 'line-pixel';
+      for (let columnIndex = 1; columnIndex <= pixels; columnIndex += 1) {
     const createDivs = document.createElement('div');
     createDivs.className = 'pixel';
     createLineDivs.appendChild(createDivs);
@@ -46,7 +46,6 @@ pixelBoard.addEventListener('click', (event) => {
     evTarget.style.backgroundColor = storageColor;
   }
 });
-
 // Requisito 9
 const clearButton = document.querySelector('#clear-board');
 
