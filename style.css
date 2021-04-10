@@ -18,10 +18,17 @@ h1 {
   margin: auto;
 }
 
-.pixel {
-  border: 1px solid black;
-  width: 5em;
-  height: 5em;
+.pixel {  
+  width: 40px;
+  height: 40px;
   background-color: white;
   display: table-cell;
 }
+
+.border-pixel {
+  border: 1px solid black;
+}
+
+/* .selected {
+
+} */

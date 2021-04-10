@@ -28,5 +28,14 @@ function creatingBoard() {
 creatingBoard();
 
 // 5 -
+let newBorder = document.getElementsByClassName('pixel');
+newBorder.classList.add('border-pixel');
+
+// 6 -
+let pixelBlack = document.querySelector('.color');
+pixelBlack.classList.add('selected')
+
+// 7
+
 
 
