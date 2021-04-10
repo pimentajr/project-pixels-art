@@ -38,17 +38,5 @@
 }
 
 #button-container {
-  position: absolute;
-  bottom: 480px;
-  padding-top: 12px;
-}
-
-#selected-color {
-  position: absolute;
-  top: 400px;
-}
-
-#pixels {
-  position: absolute;
-  top: 166px;
+  padding: 10px 10px 10px 0;
 }
