@@ -14,9 +14,9 @@ function showColorSelected() {
 
 // adiciona fundo branco para pixel da paintBoard
 function addWhiteToBoard() {
-  let paintBoardContainer = document.querySelectorAll('.pixel');
-  for (let index = 0; index < paintBoardContainer.length; index += 1) {
-    paintBoardContainer[index].style.backgroundColor = 'rgb(255, 255, 255)';
+  let paintBoardPixel= document.querySelectorAll('.pixel');
+  for (let index = 0; index < paintBoardPixel.length; index += 1) {
+    paintBoardPixel[index].style.backgroundColor = 'rgb(255, 255, 255)';
   }
 }
 
@@ -47,8 +47,7 @@ function applySelectedColor() {
 applySelectedColor();
 
 
-// remove a classe selected de um determinado elemento e aplica em outro
-// altera a classe selected de elemento
+// remove a classe selected de um determinado elemento
 function removeSelectedClass() {
   let countSelectClass = document.getElementsByClassName('selected');
   for (let index = 0; index < countSelectClass.length; index += 1) {
@@ -56,7 +55,8 @@ function removeSelectedClass() {
   }
 }
 
-function changePaletteColor() {
+// Altera a clor que será utilizada no preenchimento do pixel
+function changeColorSelected() {
   let getColorsPallete = document.querySelector('#color-palette');
   getColorsPallete.addEventListener('click', function(event) {
     removeSelectedClass();
@@ -65,7 +65,11 @@ function changePaletteColor() {
   })
 }
 
-changePaletteColor();
+changeColorSelected();
 
-// ao clicar em uma nova cor:
-// remover class selected do array da palheta
+function clearButton() {
+  let getClearButton = document.getElementById('clear-board');
+  getClearButton.addEventListener('click', addWhiteToBoard); 
+}
+
+clearButton();

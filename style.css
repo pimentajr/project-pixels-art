@@ -58,3 +58,7 @@ li.color {
   border: black solid 1px;
   margin: 5px;
 }
+
+#clear-board {
+  display: absolute;
+}
