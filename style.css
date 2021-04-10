@@ -5,9 +5,18 @@ body {
   background-color: rgb(236, 239, 244);
 }
 
+h2 {
+  font-size: 1.4em;
+}
+
 a {
   color: rgb(163, 190, 140);
   text-decoration: none;
+}
+
+label {
+  font-size: 1.1em;
+  font-weight: 700;
 }
 
 a:hover {
@@ -81,18 +90,19 @@ a:hover {
   margin-right: -1px;
 }
 
-#clear-board {
-  margin-bottom: 15px;
+#board-size-container , #random-colors-container , #board-title {
+  margin: 15px 0;
+}
+
+#random-colors-container {
+  margin-top: 0;
 }
 
 #board-size {
   width: 200px;
 }
 
-#random-colors-container {
-  margin-bottom: 15px;
-}
-
-#random-colors-container label {
+#default-palette-indicator {
   font-size: 1.1em;
+  display: none;
 }

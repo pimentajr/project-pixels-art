@@ -99,31 +99,6 @@ function initializePaletteListeners() {
   }
 }
 
-function setColors() {
-  const colorBoxes = document.querySelectorAll('.color:not(.fixed)');
-
-  for (let index = 0; index < NUM_OF_COLORS; index += 1) {
-    colorBoxes[index].style.backgroundColor = CURRENT_COLORS[index];
-  }
-}
-
-function setFixedColor() {
-  const fixedColorBox = document.querySelector('.color.fixed');
-
-  fixedColorBox.style.backgroundColor = FIXED_COLOR;
-}
-
-function fillPaletteBoxesWithColors(colorPalette) {
-  let colorBox;
-
-  for (let index = 0; index < NUM_OF_COLORS; index += 1) {
-    colorBox = document.createElement('div');
-    colorBox.classList.add('color');
-    colorBox.style.backgroundColor = CURRENT_COLORS[index];
-    colorPalette.appendChild(colorBox);
-  }
-}
-
 function fillPaletteWithDefaultColors() {
   for (let index = 0; index < NUM_OF_COLORS; index += 1) {
     CURRENT_COLORS[index] = DEFAULT_COLORS[index];
@@ -155,14 +130,8 @@ function fillPaletteWithRandomColors() {
   }
 }
 
-function initializePalette() {
-  const colorPalette = document.getElementById('color-palette');
-  const fixedColorBox = document.createElement('div');
-
-  colorPalette.innerHTML = '';
-  fixedColorBox.style.backgroundColor = FIXED_COLOR;
-  fixedColorBox.classList.add('color', 'fixed', 'selected');
-  colorPalette.appendChild(fixedColorBox);
+function fillPaletteBoxesWithColors() {
+  const colorBoxes = document.querySelectorAll('.color:not(.fixed)');
 
   if (randomColors === 'true') {
     fillPaletteWithRandomColors();
@@ -170,9 +139,31 @@ function initializePalette() {
     fillPaletteWithDefaultColors();
   }
 
-  fillPaletteBoxesWithColors(colorPalette);
-  setFixedColor();
-  setColors();
+  for (let index = 0; index < NUM_OF_COLORS; index += 1) {
+    colorBoxes[index].style.backgroundColor = CURRENT_COLORS[index];
+  }
+}
+
+function fillPaletteWithBoxes(colorPalette) {
+  let colorBox;
+
+  for (let index = 0; index < NUM_OF_COLORS; index += 1) {
+    colorBox = document.createElement('div');
+    colorBox.classList.add('color');
+    colorPalette.appendChild(colorBox);
+  }
+}
+
+function initializePalette() {
+  const colorPalette = document.getElementById('color-palette');
+  const fixedColorBox = document.createElement('div');
+
+  fixedColorBox.style.backgroundColor = FIXED_COLOR;
+  fixedColorBox.classList.add('color', 'fixed', 'selected');
+  colorPalette.appendChild(fixedColorBox);
+
+  fillPaletteWithBoxes(colorPalette);
+  fillPaletteBoxesWithColors();
   initializePaletteListeners();
 }
 
@@ -211,15 +202,33 @@ function initializeBoardSizeButtonListener() {
   boardSizeButton.addEventListener('click', fillBoardWithUserInput);
 }
 
+function resetSelected() {
+  const fixedColorPaletteBox = document.querySelector('.color.fixed');
+  const currentlySelectedColorBox = document.querySelector('.selected.color');
+
+  if (fixedColorPaletteBox !== currentlySelectedColorBox) {
+    currentlySelectedColorBox.classList.remove('selected');
+    fixedColorPaletteBox.classList.add('selected');
+  }
+}
+
 function updateRandomColorsCheckbox(e) {
+  const defaultPaletteIndicator = document.getElementById('default-palette-indicator');
+  console.log(defaultPaletteIndicator);
+
   if (e.target.value === 'true') {
+    console.log('entered IF');
     e.target.value = 'false';
+    defaultPaletteIndicator.style.display = 'block';
   } else {
+    console.log('entered ELSE');
     e.target.value = 'true';
+    defaultPaletteIndicator.style.display = 'none';
   }
   randomColors = e.target.value;
 
-  initializePalette();
+  fillPaletteBoxesWithColors();
+  resetSelected();
   clearBoard();
 }
 
