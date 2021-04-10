@@ -14,13 +14,13 @@ function setBoardSize(pixels) {
   for (let lineIndex = 1; lineIndex <= pixels; lineIndex += 1) {
     const createLineDivs = document.createElement('div');
     createLineDivs.className = 'line-pixel';
-      for (let columnIndex = 1; columnIndex <= pixels; columnIndex += 1) {
-    const createDivs = document.createElement('div');
-    createDivs.className = 'pixel';
-    createLineDivs.appendChild(createDivs);
-  }
-  pixelBoard.appendChild(createLineDivs);
-}
+    for (let columnIndex = 1; columnIndex <= pixels; columnIndex += 1) {
+      const createDivs = document.createElement('div');
+      createDivs.className = 'pixel';
+      createLineDivs.appendChild(createDivs);
+    }
+    pixelBoard.appendChild(createLineDivs);
+  } 
 }
 setBoardSize(pixelBoardSize);
 // Requisito 7
