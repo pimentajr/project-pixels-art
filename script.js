@@ -1,7 +1,7 @@
 // Finaliza requisito 6, adicionando preto como selected.
-window.onload = function() {
-  let firstPixel = document.querySelector('.black');
-  firstPixel.classList.add('selected')
+ window.onload = function() {
+   let firstPixel = document.querySelector('.black');
+   firstPixel.classList.add('selected')
 }
 
 const lineWidth = 5;
@@ -40,6 +40,20 @@ function createPixels() {
   }
 }
 createPixels();
+
+function removeClass(event) {
+  const deleteClass = document.getElementsByClassName('color');
+  for (let index = 0; index < deleteClass.length; index += 1) {
+    deleteClass[index].classList.remove('selected');
+  }
+  event.target.classList.add('selected');
+}
+
+function selectColor() {
+let colorPallete = document.getElementById('color-palette');
+colorPallete.addEventListener('click', removeClass);
+}
+selectColor();
 
 
 
