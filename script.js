@@ -59,8 +59,10 @@ function createRows(diagonal) {
   }
 }
 
-createRows(5);
-createColorPalette();
+window.onload = function() {
+  createRows(5);
+  createColorPalette();
+}
 
 function deletePixelBoard() {
   while (pixelBoard.firstChild) {
