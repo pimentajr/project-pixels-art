@@ -19,9 +19,7 @@ function generateRandomColor() {
     'blanchedAlmond',
     'blueViolet',
     'burlyWood',
-    'cadetBlue',
-    'chartreuse',
-  ];
+    'cadetBlue',];
   const randomNumber = Math.round(Math.random() * 15);
   return arr[randomNumber];
 }
@@ -82,31 +80,31 @@ newBoard.id = 'pixel-board';
 const btn = document.querySelector('#generate-board');
 const input = document.querySelector('#board-size');
 
-btn.addEventListener('click', function () {
-  board.remove();
-  document.querySelector('.board-container').appendChild(newBoard);
-  let input = document.querySelector('#board-size');
-  let value = input.value;
-  if (value === '') {
-    alert('Board inválido!');
-  }
-  let newValue = checkValue(value);
-  for (let i = 0; i < parseInt(newValue * newValue); i += 1) {
-    if (i % newValue === 0) {
-      let br = document.createElement('br');
-      newBoard.appendChild(br);
-    }
-    let newDiv = document.createElement('div');
-    newDiv.className = 'pixel';
-    newBoard.appendChild(newDiv);
-  }
-});
-
 function checkValue(i) {
   if (i < 5) {
     return 5;
-  } else if (i > 50) {
+  }
+  if (i > 50) {
     return 50;
   }
   return i;
 }
+
+btn.addEventListener('click', () => {
+  board.remove();
+  document.querySelector('.board-container').appendChild(newBoard);
+  const valor = input.value;
+  if (valor === '') {
+    alert('Board inválido!');
+  }
+  const newValue = checkValue(valor);
+  for (let i = 0; i < Number(newValue * newValue); i += 1) {
+    if (i % newValue === 0) {
+      const br = document.createElement('br');
+      newBoard.appendChild(br);
+    }
+    const newDiv = document.createElement('div');
+    newDiv.className = 'pixel';
+    newBoard.appendChild(newDiv);
+  }
+});
