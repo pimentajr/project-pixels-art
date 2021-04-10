@@ -1,12 +1,12 @@
 // Palette parameters:
 const FIXED_COLOR = 'black';
-const COLORS = [
+const PALETTE_COLORS = [
   'rgb(191, 97, 106)',
   'rgb(235, 203, 139)',
   'rgb(163, 190, 140)',
 ];
 // Doesn't count the fixed color.
-const NUM_OF_COLORS = COLORS.length;
+const NUM_OF_COLORS = PALETTE_COLORS.length;
 
 // Pixel board parameters:
 const PIXEL_BOARD = document.createElement('section');
@@ -101,7 +101,7 @@ function setColors() {
   const colorBoxes = document.querySelectorAll('.color:not(.fixed)');
 
   for (let index = 0; index < NUM_OF_COLORS; index += 1) {
-    colorBoxes[index].style.backgroundColor = COLORS[index];
+    colorBoxes[index].style.backgroundColor = PALETTE_COLORS[index];
   }
 }
 
@@ -111,22 +111,55 @@ function setFixedColor() {
   fixedColorBox.style.backgroundColor = FIXED_COLOR;
 }
 
-function initializePalette() {
+function fillPaletteBoxesWithColors(colorPalette) {
+  let colorBox;
+
+  for (let index = 0; index < NUM_OF_COLORS; index += 1) {
+    colorBox = document.createElement('div');
+    colorBox.classList.add('color');
+    colorBox.style.backgroundColor = PALETTE_COLORS[index];
+    colorPalette.appendChild(colorBox);
+  }
+}
+
+// Get random number between 0 and 1, including both.
+function inclusiveRandom() {
+  return Math.ceil(Math.random() * 1000000000000) / 1000000000000;
+}
+
+// Get random integer between min and max, including both.
+// Adapted from:
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function getRandomInt(min, max) {
+  return Math.floor(inclusiveRandom() * (max - min) + min);
+}
+
+function fillPaletteWithRandomColors() {
+  let redValue;
+  let greenValue;
+  let blueValue;
+
+  for (let index = 0; index < NUM_OF_COLORS; index += 1) {
+    redValue = getRandomInt(0, 255);
+    greenValue = getRandomInt(0, 255);
+    blueValue = getRandomInt(0, 255);
+    PALETTE_COLORS[index] = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+  }
+}
+
+function initializePalette(randomColors) {
   const colorPalette = document.getElementById('color-palette');
   const fixedColorBox = document.createElement('div');
-  let colorBox;
 
   fixedColorBox.style.backgroundColor = FIXED_COLOR;
   fixedColorBox.classList.add('color', 'fixed', 'selected');
   colorPalette.appendChild(fixedColorBox);
 
-  for (let index = 0; index < NUM_OF_COLORS; index += 1) {
-    colorBox = document.createElement('div');
-    colorBox.classList.add('color');
-    colorBox.style.backgroundColor = COLORS[index];
-    colorPalette.appendChild(colorBox);
+  if (randomColors) {
+    fillPaletteWithRandomColors();
   }
 
+  fillPaletteBoxesWithColors(colorPalette);
   setFixedColor();
   setColors();
   initializePaletteListeners();
@@ -149,13 +182,13 @@ function fillBoardWithUserInput() {
 }
 
 function initializeBoardSizeButtonListener() {
-  const boardSizeButton = document.getElementById('board-size-button');
+  const boardSizeButton = document.getElementById('generate-board');
 
   boardSizeButton.addEventListener('click', fillBoardWithUserInput);
 }
 
 window.onload = () => {
-  initializePalette();
+  initializePalette(true);
   initializePixelBoard();
   initializeClearButtonListener();
   initializeBoardSizeButtonListener();
