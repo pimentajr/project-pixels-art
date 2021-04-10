@@ -21,16 +21,16 @@ function paint() {
     });
   }
 }
-paint()
+paint();
 // Cria um botão que ao ser ativado, limpa o quadro
 
 function clear() {
-  let pixels = document.querySelectorAll('.pixel') // captura e armazena todos os pixels do quadro
-  let clearButton = document.querySelector('#clear-board') //captura o botão que irá limpar o quadro
+  let pixels = document.querySelectorAll('.pixel'); // captura e armazena todos os pixels do quadro
+  let clearButton = document.querySelector('#clear-board'); //captura o botão que irá limpar o quadro
   clearButton.addEventListener('click', function(){
     for (let index = 0; index < pixels.length; index += 1) { 
       pixels[index].style.backgroundColor = 'white'
     }
   })
 }
-clear()
+clear();
