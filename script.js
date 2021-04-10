@@ -19,7 +19,7 @@ pixel.style.backgroundColor = colorPixel
 }
 
 function ClearTable() {
-  let allPixels =  document.getElementsByClassName('pixel')
+  let allPixels = document.getElementsByClassName('pixel')
   for (let index = 0; index < allPixels.length; index += 1) {
     allPixels[index].style.backgroundColor = 'white'
  
