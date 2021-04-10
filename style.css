@@ -1,58 +1,59 @@
-*{
-	margin: 0;
-	padding: 0;
-	text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 #board-creation {
-	margin: 50px 0px;
+  margin: 50px 0;
 }
 
 .color {
-	border: 1px black solid;
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	vertical-align: middle;
+  border: 1px black solid;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  vertical-align: middle;
 }
 
 #color-palette {
-	/* background-color: violet;; */
-	text-align: center;
-	margin: 50px 0;
+  text-align: center;
+  margin: 50px 0;
 }
 
 .pixel {
-	border: 1px black solid;
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	background-color: white;
-	text-align: center;
-	margin-bottom: -5px;
-	margin-right: -1px;
+  border: 1px black solid;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  text-align: center;
+  margin-bottom: -5px;
+  margin-right: -1px;
 }
 
 .pixelOld {
-	margin-bottom: -5px;
-	margin-right: -4px;
-	margin-left: -0px;
+  margin-bottom: -5px;
+  margin-right: -4px;
+  margin-left: 0;
 }
 
 #pixel-board {
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 main {
-	position: relative;
-	/* background-color: blueviolet; */
-	height: 500px;
-	/* background-color: brown; */
+  position: relative;
+  height: 500px;
 }
 
 #clear-board {
-	
-	margin-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+.selected {
+  width: 45px;
+  height: 45px;
 }
