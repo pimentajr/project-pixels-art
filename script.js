@@ -26,24 +26,6 @@ function selectedColor (event) {
 }
 colorPalette.addEventListener('click', selectedColor);
 
-function printBoard() {
-  document.getElementById('pixel-board').addEventListener('click', (event) => {
-    const printBox = event.target;
-    switch (document.querySelector('.selected').id) {
-    case 'black-selector':
-      printBox.style.backgroundColor = 'black';
-      break;
-    case 'red-selector':
-      printBox.style.backgroundColor = 'red';
-      break;
-    case 'green-selector':
-      printBox.style.backgroundColor = 'green';
-      break;
-    case 'blue-selector':
-      printBox.style.backgroundColor = 'blue';
-      break;
-    default:
-    }
-  });
+function changeColor (event) {
+  
 }
-printBoard();
