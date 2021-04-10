@@ -5,7 +5,7 @@ function createBoxesDiv() {
     selectPalette.appendChild(createDivs);
     createDivs.classList.add('color');
   }
-  const arrayOfColors = ['black', 'blue', 'purple', 'violet'];
+  const arrayOfColors = ['black', 'blue', 'purple', 'red'];
   const selectDivs = document.querySelectorAll('.color');
   selectDivs.forEach((box, index) => {
     const div = box; div.style.backgroundColor = arrayOfColors[index];
