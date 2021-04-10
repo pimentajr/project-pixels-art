@@ -81,10 +81,10 @@ function initializePixelBoard() {
 
 function selectColor(e) {
   const targetColorBox = e.target;
-  const currentlySelectedColor = document.querySelector('.color.selected');
+  const currentlySelectedColorBox = document.querySelector('.color.selected');
 
-  if (targetColorBox !== currentlySelectedColor) {
-    currentlySelectedColor.classList.remove('selected');
+  if (targetColorBox !== currentlySelectedColorBox) {
+    currentlySelectedColorBox.classList.remove('selected');
     targetColorBox.classList.add('selected');
   }
 }
