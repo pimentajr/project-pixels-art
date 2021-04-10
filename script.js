@@ -2,26 +2,46 @@ const pixelBoard = document.getElementById('pixel-board');
 const colorPalette = document.getElementById('color-palette');
 const clearBtn = document.getElementById('clear-board');
 const addBtn = document.getElementById('generate-board');
+const firstRandomColor = document.getElementById('first-random');
+const secondRandomColor = document.getElementById('second-random');
+const thirdRandomColor = document.getElementById('third-random');
+let redRepeated = false;
+let greenRepeated = false;
+let blueRepeated = false;
 let colorToPaint = document.getElementsByClassName('selected')[0];
-
-function randomColor(randomNumber, squareToPaint) {
-  const selectedSquareToPaint = document.getElementsByClassName('color')[squareToPaint];
-  if (randomNumber === 0) selectedSquareToPaint.classList.add('red');
-  if (randomNumber === 1) selectedSquareToPaint.classList.add('green');
-  if (randomNumber === 2) selectedSquareToPaint.classList.add('blue');
-}
 
 function generateRandomNumber() {
   return Math.floor(Math.random() * 3);
 }
 
-function generateColorPalette() {
-  for (let squareToPaint = 1; squareToPaint <= 3; squareToPaint += 1) {
-    const randomNumber = generateRandomNumber();
-    randomColor(randomNumber, squareToPaint);
+function generateColor() {
+  while (1) {
+    const number = generateRandomNumber();
+    if (number === 0 && redRepeated === false) {
+      redRepeated = true;
+      return 'red';
+    }
+    if (number === 1 && greenRepeated === false) {
+      greenRepeated = true;
+      return 'green';
+    }
+    if (number === 2 && blueRepeated === false) {
+      blueRepeated = true;
+      return 'blue';
+    }
   }
 }
-
+function assignColor(randomColor) {
+  randomColor.classList.add(generateColor());
+}
+function createColorPalette() {
+  assignColor(firstRandomColor);
+  assignColor(secondRandomColor);
+  assignColor(thirdRandomColor);
+  redRepeated = false;
+  greenRepeated = false;
+  blueRepeated = false;
+}
 function createPixels(line, diagonal) {
   for (let column = 1; column <= diagonal; column += 1) {
     const pixel = document.createElement('div');
@@ -40,7 +60,7 @@ function createRows(diagonal) {
 }
 
 createRows(5);
-generateColorPalette();
+createColorPalette();
 
 function deletePixelBoard() {
   while (pixelBoard.firstChild) {
