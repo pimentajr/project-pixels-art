@@ -33,7 +33,7 @@ function colorSelection() {
   tableColor.addEventListener('click', (event) => {
     const actualColor = document.querySelector('.selected');
     actualColor.className = 'color';
-    const elementSelected = event.target
+    const elementSelected = event.target;
     elementSelected.classList = 'color selected';
   });
 }
@@ -41,7 +41,7 @@ colorSelection();
 
 // Pinta a box selecionada com a cor correta
 function printingPixels(printBox) {
-  let pixelSelected = printBox
+  const pixelSelected = printBox;
   switch (document.querySelector('.selected').id) {
   case 'black-box':
     pixelSelected.style.backgroundColor = 'black';
