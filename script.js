@@ -46,10 +46,11 @@ Father2.addEventListener('click',colorPixel);
 
 //butonn
 function createButton () {
+  const qetClassTable = document.querySelector('#button')
   const bStart = document.createElement('button');
   bStart.id = 'clear-board';
   bStart.innerHTML = 'Vamos Limpar!'
-  document.body.appendChild(bStart);
+  qetClassTable.appendChild(bStart);
 }
 
 createButton();
