@@ -11,10 +11,13 @@
   <h1 id="title">Paleta de Cores</h1>
   <menu id="color-palette"></menu>
   <button id="clear-board">Limpar</button>
-  <button id="generate-board">VQV</button>
-  <input id="board-size" type="number" min="0">
-  <span>Escolha a quantidade de pixels
-  </span> 
+  
+  <div>
+    <input id="board-size" type="number" min="0" oninput="validity.valid||(value='')">
+    <button id="generate-board">VQV</button>
+    <span>Escolha a quantidade de pixels</span>
+  </div> 
+  
   <section id="pixel-board"></section>
 
   <script src="script.js"></script>
