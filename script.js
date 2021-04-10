@@ -1,11 +1,7 @@
-
-//6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels
-//criar a função click e quando começar seja ja a seleção black
 window.onload = function() {
-
+  
 
 let pixelBoard = document.getElementById('pixel-board');
-let colorPallete = document.getElementById('color-pallete');
 let colors = document.querySelectorAll('.color');
 let black = document.getElementById('black');
 let rose = document.getElementById('rose');
@@ -13,33 +9,35 @@ let blue = document.getElementById('blue');
 let yellow = document.getElementById('yellow');
 
 function selectColor () {
-  
-console.log(colors);
   for(let index = 0; index < colors.length; index +=1) {
     let block = colors[index].id;
     
     if(block === 'black') {
       colors[index].classList.add('selected');
+    } else {
+
     }
   }
 }
 selectColor();
 
-//add selector
+function changeSelectColor(){
 
+  let colorPalette = document.getElementById('color-palette');
 
+  colorPalette.addEventListener('click', function(event) {
 
+    for(let index = 0; index < colors.length; index +=1) {
+      let block = colors[index].className;
+      if(block.indexOf('selected') >= 0) {
+        colors[index].classList.remove('selected');
+      }
+    } event.target.classList.add('selected');
 
-//pegar o id
-// este id preciso dizer em outra funcao:/ quando for classe x faça isso
+  })
+}
 
-//senao deixa clicado preto
-black.classList.add ='selected';
+changeSelectColor();
 
-
-
-
-
-  
 
 }
