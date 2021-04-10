@@ -16,7 +16,15 @@ function setClassColor() {
 
 setClassColor();
 
-const setClassAll = document.getElementById('#color-pelette');
-function setColor () {
-  setClassColor.classList
+// Desafio 7
+function setColorPalette(event) {
+  const setColor = document.querySelectorAll('.selected');
+  for (let index = 0; index < setColor.length; index += 1) {
+    setColor[index].classList.remove('selected');
+  }
+  event.target.classList.add('selected');
 }
+
+const colorPalette = document.querySelector('#color-palette');
+
+colorPalette.addEventListener('click', setColorPalette);
