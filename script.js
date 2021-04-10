@@ -12,7 +12,6 @@ function defineInitialSelectedColor() {
 }
 defineInitialSelectedColor();
 
-colorPalete.addEventListener('click', colorChange);
 
 function colorChange(event) {
   let selecionedColor = document.querySelector('#color-palette').children;
@@ -21,3 +20,4 @@ function colorChange(event) {
   }
   event.target.className += ' selected';
 }
+colorPalete.addEventListener('click', colorChange);
