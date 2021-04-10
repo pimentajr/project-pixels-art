@@ -25,13 +25,11 @@ tabela.addEventListener('click', pixel);
 const botao = document.getElementById('clear-board');
 const quadrados = document.querySelectorAll('.pixel');
 const backgroundColor = 'white';
-const setNewColor = 'white';
+
 function reset() {
   for (let index = 0; index < quadrados.length; index += 1) {
-    if (quadrados[index].style.backgroundColor === setNewColor) {
+    while (quadrados[index].style.backgroundColor !== backgroundColor) {
       quadrados[index].style.backgroundColor = backgroundColor;
-    } else {
-      quadrados[index].style.backgroundColor = setNewColor;
     }
   }
 }
