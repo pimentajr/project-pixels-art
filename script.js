@@ -35,29 +35,29 @@ let secondColor = document.getElementsByClassName('color')[1];
 let thirdColor = document.getElementsByClassName('color')[2];
 let fourthColor = document.getElementsByClassName('color')[3];
 
-firstColor.addEventListener('click', function (element) {
-  element.target.classList.add('selected');
+firstColor.addEventListener('click', function () {
+  firstColor.classList.add('selected');
   secondColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
   fourthColor.classList.remove('selected');
 });
 
-secondColor.addEventListener('click', function (element) {
-  element.target.classList.add('selected');
+secondColor.addEventListener('click', function () {
+  secondColor.classList.add('selected');
   firstColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
   fourthColor.classList.remove('selected');
 });
 
-thirdColor.addEventListener('click', function (element) {
-  element.target.classList.add('selected');
+thirdColor.addEventListener('click', function () {
+  thirdColor.classList.add('selected');
   firstColor.classList.remove('selected');
   secondColor.classList.remove('selected');
   fourthColor.classList.remove('selected');
 });
 
-fourthColor.addEventListener('click', function (element) {
-  element.target.classList.add('selected');
+fourthColor.addEventListener('click', function () {
+  firstColor.classList.add('selected');
   secondColor.classList.remove('selected');
   thirdColor.classList.remove('selected');
   firstColor.classList.remove('selected');
