@@ -31,6 +31,7 @@ function removeBoard() {
 function createBoard(size) {
   const board = document.getElementById('pixel-board');
   removeBoard();
+  alert('executado ' + size)
   for (let index = 0; index < size; index += 1) {
     const line = document.createElement('div');
     line.classList.add('line');
@@ -90,6 +91,7 @@ function eventResize() {
 }
 
 window.onload = function load() {
+  alert('carregando a pagina');
   createColorPalette();
   createBoard(5);
   eventColorSelect();
