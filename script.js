@@ -21,24 +21,22 @@ for (let i = 0; i < numberLines; i += 1) {
 const color = document.querySelectorAll('.color');
 
 for (let i = 0; i < color.length; i += 1) {
-  color[i].addEventListener('click', function () {
+  color[i].addEventListener('click', () => {
     const selected = document.querySelector('.selected');
     selected.classList.remove('selected');
     color[i].classList.add('selected');
   });
 }
 
-pixelBoard.addEventListener('click', function (event) {
+pixelBoard.addEventListener('click', (event) => {
   const selected = document.querySelector('.selected');
   event.target.style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
 });
 
-const buttonClear = document.getElementById('botaoLimpar');
-const pixels = document.querySelectorAll('.pixel');
-
-function botaoLimpa() {
-  for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].style.backgroundColor = 'white';
+const clear = document.querySelector('#botaoLimpar');
+clear.addEventListener('click', () => {
+  const pixels = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
   }
-}
-buttonClear.addEventListener('click', botaoLimpa);
+});
