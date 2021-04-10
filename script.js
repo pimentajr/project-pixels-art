@@ -69,6 +69,12 @@ vqvButton.addEventListener('click', function () {
     for (let child = pixelBoard.firstChild; child !== null; child = pixelBoard.firstChild) {
       pixelBoard.removeChild(pixelBoard.firstChild);
     }
-    pixelsTable(boardSize.value, boardSize.value);
+    if (boardSize.value < 5) {
+      pixelsTable(5, 5);  
+    } else if (boardSize.value > 50) {
+      pixelsTable(50, 50);
+    } else {
+      pixelsTable(boardSize.value, boardSize.value);
+    }
   }
 });
