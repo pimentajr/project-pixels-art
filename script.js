@@ -44,12 +44,23 @@ selectColor();
 function paintPixel() {
   let pixel = document.getElementById('pixel-board');
   pixel.addEventListener('click', function (event) {
-
     const selectedColor = document.querySelector('.selected');
     pixel = event.target;
-    pixel.style.backgroundColor= selectedColor.classList[1];
-    console.log(pixel)
+    pixel.style.backgroundColor = selectedColor.classList[1];
   });
 }
 
 paintPixel();
+
+function clearBoard() {
+  const button = document.getElementById('clear-board');
+  button.addEventListener('click', function () {
+    const pixel = document.querySelectorAll('.pixel');
+    for (let index = 0; index < 25; index += 1) {
+      pixel[index].style.backgroundColor = 'white';
+    }
+    console.log(pixel);
+  });
+}
+
+clearBoard();
