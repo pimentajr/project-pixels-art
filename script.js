@@ -7,10 +7,9 @@ function createDiv(number) {
 }
 createDiv(25);
 
-const eventTarget = event.target;
-
 function changeSelectedClass(event) {
   document.querySelectorAll('.selected')[0].classList.remove('selected');
+  const eventTarget = event.target;
   eventTarget.className += ' selected';
 }
 document.getElementById('color-palette').addEventListener('click', changeSelectedClass);
