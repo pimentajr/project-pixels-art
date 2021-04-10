@@ -1,5 +1,13 @@
 * {
   margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  font-size: 40px;
+  font-family: Geneva, sans-serif;
 }
 
 #color-palette {
@@ -8,8 +16,8 @@
 }
 
 .color {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
   display: inline-block;
 }
@@ -30,16 +38,18 @@
   background-color: green;
 }
 
-.tr {
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
-  display: inline-block;
+#pixel-board {
+  display: table;
+  margin: 10px auto;
 }
 
-.td {
-  width: 50px;
-  height: 50px;
+.row {
+  display: table-row;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
-  display: inline-block;
+  display: table-cell;
 }
