@@ -36,20 +36,24 @@ function paintPixelBoard(color) {
     }
   }
 }
-localStorage.setItem('color', 'black');
-paintPixelBoard(localStorage.getItem('color'));
-
+paintPixelBoard('black')
 function selectColor() {
   const selectedcolor = document.querySelectorAll('.color');
   for (let index = 0; index < selectedcolor.length; index += 1) {
-    selectedcolor[index].addEventListener('click', function () {
+    selectedcolor[index].addEventListener('click', function selectedState() {
       selectedcolor[0].classList.remove(['selected']);
       selectedcolor[1].classList.remove(['selected']);
       selectedcolor[2].classList.remove(['selected']);
       selectedcolor[3].classList.remove(['selected']);
       selectedcolor[index].classList.add(['selected']);
-      return selectedcolor[index].style.backgroundColor
-
+      selectedcolor[index].style.backgroundColor;
+        const initialcolor = document.querySelectorAll('.pixel');
+        const finalcolor = document.querySelector('.selected');
+        for (let index = 0; index < initialcolor.length; index += 1) {
+          initialcolor[index].addEventListener('click', function pixelselected() {
+            initialcolor[index].style.backgroundColor = finalcolor.style.backgroundColor;
+          });
+        }
     });
   }
 }
