@@ -3,7 +3,7 @@ window.onload = function() {
   const firstSelectedColor = document.getElementById('black-box');
   firstSelectedColor.classList = ('color selected');
   boardMaker(5);
-}
+};
 
 // Seleciona a cor mudando a classe da div clicada
 function colorSelection() {
@@ -15,16 +15,6 @@ function colorSelection() {
   });
 }
 colorSelection();
-
-// Seleciona o pixel clicando nele, e se for um píxel e não a seção, chama o evento
-function selectPixel() {
-  document.getElementById('pixel-board').addEventListener('click', (event) => {
-    const boxTarget = event.target;
-    if (boxTarget.id !== 'pixel-board') {
-      printBox(boxTarget);
-    }
-  });
-}
 
 // Pinta a box selecionada com a cor correta
 function printBox(printBox) {
@@ -45,6 +35,17 @@ function printBox(printBox) {
   }
 }
 selectPixel();
+
+// Seleciona o pixel clicando nele, e se for um píxel e não a seção, chama o evento
+function selectPixel() {
+  document.getElementById('pixel-board').addEventListener('click', (event) => {
+    const boxTarget = event.target;
+    if (boxTarget.id !== 'pixel-board') {
+      printBox(boxTarget);
+    }
+  });
+}
+
 
 // Cria o botão limpar e insere na div
 function createButton() {
@@ -73,12 +74,12 @@ buttonAction();
 
 // Cria um botão e um campo de input
 function buttonResize() {
-  let boardSize = document.createElement('input');
+  const boardSize = document.createElement('input');
   boardSize.id = 'board-size';
   boardSize.type = 'number';
   boardSize.placeholder = 'Tabuleiro de quantos pixels?';
   document.getElementById('buttons').appendChild(boardSize);
-  let generateBoard = document.createElement('input');
+  const generateBoard = document.createElement('input');
   generateBoard.id = 'generate-board';
   generateBoard.type = 'button';
   generateBoard.value = 'VQV';
@@ -87,14 +88,19 @@ function buttonResize() {
 }
 buttonResize();
 
-//Cria os elementos do quadro de acordo com o número de pixels
+// Reseta o tabuleiro
+function boardRemove() {
+  const oldBoard = document.querySelector('#pixel-board');
+  oldBoard.innerHTML = '';
+}
+
+// Cria os elementos do quadro de acordo com o número de pixels
 function boardMaker(pixels) {
-  boardRemove()
+  boardRemove();
   const pixelXY = pixels;
   const pixelBoard = document.getElementById('pixel-board');
   const numberOfPixels = pixelXY * pixelXY;
   for (let index = 1; index <= numberOfPixels; index += 1) {
-    
     const pixelElement = document.createElement('div');
     pixelBoard.appendChild(pixelElement).className = 'pixel';
     if (index % pixelXY === 0) {
@@ -104,18 +110,12 @@ function boardMaker(pixels) {
   }
 }
 
-//Cria um quadro utilizando o tamanho inserido no input
+// Cria um quadro utilizando o tamanho inserido no input
 function BoardSize() {
   const generateBoard = document.getElementById('generate-board');
   generateBoard.addEventListener('click', () => {
     const boardSize = document.getElementById('board-size').value;
     boardMaker(boardSize);
-  })
+  });
 }
 BoardSize();
-
-//Reseta o tabuleiro 
-function boardRemove() {
-  let oldBoard = document.querySelector('#pixel-board');
-  oldBoard.innerHTML = '';
-}
