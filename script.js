@@ -71,4 +71,14 @@ window.onload = function () {
   for (let index = 0; index < pixelCollection.length; index +=1) {
     pixelCollection[index].addEventListener('click', matchColor);
   }
+
+  let clearButton = document.querySelector('#clear-board');
+
+  function colorWhite() {
+    for (let index = 0; index < pixelCollection.length; index +=1) {
+      pixelCollection[index].style.backgroundColor = 'white';
+    }
+  }
+  
+  clearButton.addEventListener('click', colorWhite);
 };
