@@ -1,15 +1,17 @@
 // Palette parameters:
 const FIXED_COLOR = 'black';
-const PALETTE_COLORS = [
+const DEFAULT_COLORS = [
   'rgb(191, 97, 106)',
   'rgb(235, 203, 139)',
   'rgb(163, 190, 140)',
 ];
+const CURRENT_COLORS = [];
 // Doesn't count the fixed color.
-const NUM_OF_COLORS = PALETTE_COLORS.length;
+const NUM_OF_COLORS = DEFAULT_COLORS.length;
+let randomColors;
 
 // Pixel board parameters:
-const PIXEL_BOARD = document.createElement('section');
+const PIXEL_BOARD = document.createElement('div');
 let boardSideSize = 5;
 
 function clearBoard() {
@@ -101,7 +103,7 @@ function setColors() {
   const colorBoxes = document.querySelectorAll('.color:not(.fixed)');
 
   for (let index = 0; index < NUM_OF_COLORS; index += 1) {
-    colorBoxes[index].style.backgroundColor = PALETTE_COLORS[index];
+    colorBoxes[index].style.backgroundColor = CURRENT_COLORS[index];
   }
 }
 
@@ -117,8 +119,14 @@ function fillPaletteBoxesWithColors(colorPalette) {
   for (let index = 0; index < NUM_OF_COLORS; index += 1) {
     colorBox = document.createElement('div');
     colorBox.classList.add('color');
-    colorBox.style.backgroundColor = PALETTE_COLORS[index];
+    colorBox.style.backgroundColor = CURRENT_COLORS[index];
     colorPalette.appendChild(colorBox);
+  }
+}
+
+function fillPaletteWithDefaultColors() {
+  for (let index = 0; index < NUM_OF_COLORS; index += 1) {
+    CURRENT_COLORS[index] = DEFAULT_COLORS[index];
   }
 }
 
@@ -143,20 +151,23 @@ function fillPaletteWithRandomColors() {
     redValue = getRandomInt(0, 255);
     greenValue = getRandomInt(0, 255);
     blueValue = getRandomInt(0, 255);
-    PALETTE_COLORS[index] = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+    CURRENT_COLORS[index] = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
   }
 }
 
-function initializePalette(randomColors) {
+function initializePalette() {
   const colorPalette = document.getElementById('color-palette');
   const fixedColorBox = document.createElement('div');
 
+  colorPalette.innerHTML = '';
   fixedColorBox.style.backgroundColor = FIXED_COLOR;
   fixedColorBox.classList.add('color', 'fixed', 'selected');
   colorPalette.appendChild(fixedColorBox);
 
-  if (randomColors) {
+  if (randomColors === 'true') {
     fillPaletteWithRandomColors();
+  } else {
+    fillPaletteWithDefaultColors();
   }
 
   fillPaletteBoxesWithColors(colorPalette);
@@ -200,8 +211,28 @@ function initializeBoardSizeButtonListener() {
   boardSizeButton.addEventListener('click', fillBoardWithUserInput);
 }
 
+function updateRandomColorsCheckbox(e) {
+  if (e.target.value === 'true') {
+    e.target.value = 'false';
+  } else {
+    e.target.value = 'true';
+  }
+  randomColors = e.target.value;
+
+  initializePalette();
+  clearBoard();
+}
+
+function initializeRandomColorsCheckbox() {
+  const randomColorsCheckbox = document.getElementById('random-colors');
+
+  randomColors = randomColorsCheckbox.value;
+  randomColorsCheckbox.addEventListener('input', updateRandomColorsCheckbox);
+}
+
 window.onload = () => {
-  initializePalette(true);
+  initializeRandomColorsCheckbox();
+  initializePalette();
   initializePixelBoard();
   initializeClearButtonListener();
   initializeBoardSizeButtonListener();

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  color: rgb(46, 52, 64);
   background-color: rgb(236, 239, 244);
 }
 
@@ -88,3 +89,10 @@ a:hover {
   width: 200px;
 }
 
+#random-colors-container {
+  margin-bottom: 15px;
+}
+
+#random-colors-container label {
+  font-size: 1.1em;
+}
