@@ -6,11 +6,16 @@ function setInitialColor() {
 setInitialColor();
 
 const element = document.querySelector('#color-palette');
-element.addEventListener('click', function(event){
-let targetElement = event.target;
-  if (targetElement === 'selected')
-    targetElement.classList.remove('selected');
-  else {
-    targetElement.classList.toggle('selected');
+
+function addOrRemove(event) {
+  const targetElement = event.target;
+  const getClass = document.getElementsByClassName('selected');
+  console.log(getClass);
+
+  for (let index = 0; index < getClass.length; index += 1) {
+    getClass[index].classList.remove('selected');
   }
-});
+  targetElement.classList.add('selected');
+}
+
+element.addEventListener('click', addOrRemove);
