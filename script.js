@@ -70,3 +70,13 @@ function addColor() {
   toColorize.addEventListener('click', myFunction);
 }
 addColor();
+
+//  09. Cria um botão limpar que deixa todos os pixels brancos;
+
+function clearBoard() {
+  const paintBoart = document.getElementsByClassName('pixel');
+  for (let clear = 0; clear < paintBoart.length; clear += 1) {
+    paintBoart[clear].style.backgroundColor = 'white';
+  }
+}
+document.getElementById('clear-board').addEventListener('click', clearBoard);
