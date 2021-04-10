@@ -27,3 +27,6 @@ function creatingBoard() {
 
 creatingBoard();
 
+// 5 -
+
+

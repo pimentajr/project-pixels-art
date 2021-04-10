@@ -14,7 +14,7 @@ h1 {
 }
 
 #pixel-board {
-  display: table;  
+  display: table;
   margin: auto;
 }
 
@@ -24,5 +24,4 @@ h1 {
   height: 5em;
   background-color: white;
   display: table-cell;
-  text-align: center;
 }
