@@ -34,7 +34,7 @@ function fillPixelBoard(boardSize) {
 fillPixelBoard(5);
 
 function generateBoard() {
-  let boardSize = boardSizeInput.value;
+  const boardSize = boardSizeInput.value;
 
   for (let index = pixelBoard.children.length - 1; index >= 0; index -= 1) {
     pixelBoard.children[index].remove();
@@ -83,7 +83,8 @@ colorPalette.addEventListener('click', selectColor);
 function paintPixel(event) {
   if (event.target.className === 'pixel') {
     const selected = document.querySelector('.selected');
-    event.target.style.backgroundColor = selected.style.backgroundColor;
+    const color = selected.style.backgroundColor;
+    event.target.style.backgroundColor = color;
   }
 }
 
