@@ -49,11 +49,23 @@ button.addEventListener('click', clearPixels);
 
 // função para remover os containers
 function removePixelBoardChild() {
-  const pixelBoardChildren = document.querySelector('#pixel-board').children;
+  const pixelBoardChildren = pixelBoard.children;
   const pixelBoardSize = pixelBoardChildren.length;
 
   for (let index = pixelBoardSize - 1; index < pixelBoardSize && index >= 0; index -= 1) {
     pixelBoard.removeChild(pixelBoardChildren[index]);
+  }
+}
+
+// função para adicionar linhas
+
+function addLinePixels(string) {
+  const number = parseFloat(string);
+
+  for (let index = 0; index < number; index += 1) {
+    const lines = document.createElement('div');
+    lines.className = 'pixel-line';
+    pixelBoard.appendChild(lines);
   }
 }
 
@@ -64,7 +76,11 @@ function changePixelBoard() {
   }
 
   removePixelBoardChild();
+
+  addLinePixels(BoardSizevalue);
 }
 
 const generateBoardButton = document.getElementById('generate-board');
 generateBoardButton.addEventListener('click', changePixelBoard);
+
+// fazer loop for para adicionar containers como filho de pixel-boar de acordo com o valor de board-size
