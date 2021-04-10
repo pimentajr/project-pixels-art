@@ -14,7 +14,7 @@ defineInitialSelectedColor();
 
 
 function colorChange(event) {
-  let selecionedColor = document.querySelector('#color-palette').children;
+  const selecionedColor = document.querySelector('#color-palette').children;
   for (let index = 0; index < selecionedColor.length; index += 1) {
     selecionedColor[index].setAttribute('class', 'color');
   }
