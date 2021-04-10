@@ -15,6 +15,7 @@ function changeSelectedClass(event) {
 document.getElementById('color-palette').addEventListener('click', changeSelectedClass);
 
 function changeColorPixel(event) {
+  const eventTarget = event.target;
   const classColor = document.querySelectorAll('.selected')[0].classList[1];
   if (event.target.classList.length !== 1) {
     eventTarget.classList.remove(event.target.classList[1]);
