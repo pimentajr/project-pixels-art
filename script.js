@@ -17,8 +17,6 @@ const boardSizeInput = document.querySelector('#board-size');
 const generateBoardButton = document.querySelector('#generate-board');
 
 function fillPixelBoard(boardSize) {
-  boardSize = boardSizeInput.value;
-
   for (let lineIndex = 0; lineIndex < boardSize; lineIndex += 1) {
     const line = document.createElement('div');
     line.className = 'line';
@@ -33,13 +31,19 @@ function fillPixelBoard(boardSize) {
   }
 }
 
-function generateBoard(boardSize) {
+fillPixelBoard(5);
+
+function generateBoard() {
   boardSize = boardSizeInput.value;
+
+  for (let index = pixelBoard.children.length - 1; index >= 0; index -= 1) {
+    pixelBoard.children[index].remove();
+  }
 
   if (boardSize < 5) {
     alert('Board inválido!');
   } else {
-    fillPixelBoard();
+    fillPixelBoard(boardSize);
   }
 }
 
