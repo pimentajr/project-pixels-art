@@ -48,7 +48,7 @@ function randomColors() {
 randomColors();
 
 function newBoard () {
-  let containerNewTable = document.getElementById('new-pixel-board');
+  let containerNewTable = document.getElementById('pixel-board');
   let newTable = document.createElement('div');
   newTable.id = 'new-table'
   containerNewTable.appendChild(newTable);
@@ -69,7 +69,7 @@ newBoard();
 
 function updateBoard (){
   let button = document.getElementById('generate-board');
-  let tableSection = document.getElementById('new-pixel-board');
+  let tableSection = document.getElementById('pixel-board');
   let rawTable = document.getElementById('new-table');
   
   button.addEventListener('click', function () {
