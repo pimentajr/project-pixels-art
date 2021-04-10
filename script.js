@@ -16,9 +16,6 @@ function createBoxesDiv(numberOfColors) {
 createBoxesDiv(4);
 
 function addPixels(size) {
-  const createPixels = document.createElement('section');
-  createPixels.id = 'pixel-board';
-  document.body.appendChild(createPixels);
   const selectPixels = document.querySelector('#pixel-board');
   for (let index = 0; index < size; index += 1) {
     const createPixelsRow = document.createElement('div');
@@ -55,3 +52,12 @@ function addSelecteColordByClick() {
   });
 }
 addSelecteColordByClick();
+
+function clearBoard () {
+  const selectButton = document.querySelector('#clear-board');
+  selectButton.addEventListener('click', () => {
+    const selectPixel = document.querySelectorAll('.pixel');
+    selectPixel.forEach((element) => element.style.backgroundColor = 'white');
+  });
+}
+clearBoard();
