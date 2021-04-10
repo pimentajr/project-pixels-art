@@ -13,51 +13,55 @@ function selectColor() {
       }
     });
   }
-};
+}
 selectColor();
 
 function fillPixels() {
   let pixelGrid = document.getElementById('table');
-  pixelGrid.addEventListener('click', function(event) {
+  pixelGrid.addEventListener('click', function (event) {
     event.target.style.backgroundColor = document.querySelector('.selected').id;
   });
-};
-fillPixels()
+}
+fillPixels();
 
 function clearBoard() {
   let clearButton = document.querySelector('#clear-board');
   let pixels = document.querySelectorAll('.pixel');
-  clearButton.addEventListener('click', function() {
+  clearButton.addEventListener('click', function () {
     for (let index = 0; index < pixels.length; index += 1) {
       pixels[index].style.backgroundColor = 'white';
     }
-  })
+  });
 }
 clearBoard();
 
-
 function createGrid() { //melhorar criando igual html
   let gridButton = document.getElementById('generate-board');
-  let tblSection = document.getElementById('section-teste')
-  let initTable = document.getElementById('pixel-board')
-  gridButton.addEventListener('click', function() {
-    initTable.removeChild(document.getElementById('table'))
+  let tblSection = document.getElementById('section-teste');
+  let initTable = document.getElementById('pixel-board');
+  gridButton.addEventListener('click', function () {
+    initTable.removeChild(document.getElementById('table'));
     let tbl = document.createElement('table');
     tbl.id = 'table';
     let gridSize = document.getElementById('board-size').value;
-    if (gridSize > 0) {
-      for (let indexRow = 0; indexRow < gridSize; indexRow += 1) {
-        let tr = tbl.insertRow();
-        for (let indexColumn = 0; indexColumn < gridSize; indexColumn += 1) {
-          let td = tr.insertCell();
-          td.className = 'pixel';
-        }
+    if (gridSize < 5) {
+      gridSize = 5;
+    }
+    if (gridSize > 50) {
+      gridSize = 50;
+    }
+    for (let indexRow = 0; indexRow < gridSize; indexRow += 1) {
+      let tr = tbl.insertRow();
+      for (let indexColumn = 0; indexColumn < gridSize; indexColumn += 1) {
+        let td = tr.insertCell();
+        td.className = 'pixel';
       }
     }
+    
     if (gridSize === '') {
-      alert('Board inválido!')
+      alert('Board inválido!');
     }
-    initTable.appendChild(tbl)
-  })
+    initTable.appendChild(tbl);
+  });
 }
 createGrid();
