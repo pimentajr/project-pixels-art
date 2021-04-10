@@ -10,11 +10,30 @@ function createBoard() {
     board.appendChild(square);
   }
 }
-const colorBox = document.querySelectorAll('.color');
-for (let elem of colorBox) {
-elem.addEventListener('click', selectColor);
-}
+const colorPalette = document.querySelector('#color-palette');
 
-function selectColor(origin) {
-  alert(origin.target);
+function selectColor() {
+  colorPalette.addEventListener('click', changeId);
 }
+function changeId() {
+  const colorBlock = document.querySelector('.selected')
+  if (event.target.id !== colorPalette) {
+    colorBlock.classList.remove('selected');
+    event.target.classList.add('selected');
+  }
+}
+selectColor();
+
+const pixelBoard = document.querySelector('#pixel-board');
+
+function addColor() {
+  pixelBoard.addEventListener('click', changeColor);
+}
+function changeColor() {
+  const color = document.querySelector('.selected').id;
+  if (event.target.className === 'pixel') {
+    const pixelClick = event.target;
+    pixelClick.id = color;
+  }
+}
+addColor();
