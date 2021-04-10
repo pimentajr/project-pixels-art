@@ -1,7 +1,7 @@
 
 let palselected = document.getElementById('color-palette');
 let pixelboard = document.getElementById('pixel-board');
-let clean = document.getElementById('clean');
+let clean = document.getElementById('clear-board');
 let pixels = document.getElementsByClassName('pixel')
 let backcolor = document.getElementsByClassName('selected')
 
@@ -21,7 +21,7 @@ selectedpixel.style.backgroundColor = window.getComputedStyle(backcolor[0], null
 })
 
 clean.addEventListener('click', function() {
-for (let index = 0; index < pixels.length; index++) {
+for (let index = 0; index < pixels.length; index+=1) {
    pixels[index].style.backgroundColor = 'white'
     
 }
