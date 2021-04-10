@@ -26,3 +26,7 @@
 #pixel-board {
     max-width: 250px;
 }
+#clear-board {
+    padding: 15px;
+    margin: 10px;
+}

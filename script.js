@@ -37,3 +37,13 @@ function changeColor() {
   }
 }
 addColor();
+
+const clearButton = document.querySelector('#clear-board');
+clearButton.addEventListener('click', clearAll);
+
+function clearAll() {
+  const pixels = pixelBoard.children;
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
