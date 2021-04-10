@@ -46,3 +46,10 @@ td , tr {
 table {
   border-collapse: collapse;
 }
+
+#clear-board {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 50px;
+  padding: 1px;
+}

@@ -31,3 +31,14 @@ function addPixelColor() {
   }
 }
 addPixelColor();
+
+function clearPixel() {
+  const clearButton = document.getElementById('clear-board');
+  clearButton.addEventListener('click', () => {
+    const px = document.querySelectorAll('.pixel');
+    for (let i = 0; i < px.length; i += 1) {
+      px[i].style.backgroundColor = 'white';
+    }
+  });
+}
+clearPixel();
