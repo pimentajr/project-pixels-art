@@ -52,4 +52,9 @@ function paintPixel () {
         })
     }
 }
+
+
+window.onload = function () {
+
 paintPixel()
+}
