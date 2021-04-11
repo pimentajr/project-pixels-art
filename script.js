@@ -30,10 +30,10 @@ for (let index = 0; index < 5; index += 1) {
 function paintPixelBoard(color) {
   const initialcolor = document.querySelectorAll('.pixel');
   for (let index = 0; index < initialcolor.length; index += 1) {
-    initialcolor[index].addEventListener('click', colorblack);
     function colorblack() {
       initialcolor[index].style.backgroundColor = color;
     }
+    initialcolor[index].addEventListener('click', colorblack);
   }
 }
 paintPixelBoard('black');
@@ -49,12 +49,12 @@ function selectColor() {
       selectedcolor[3].classList.remove(['selected']);
       selectedcolor[index].classList.add(['selected']);
       selectedcolor[index].style.backgroundColor;
-        const initialcolor = document.querySelectorAll('.pixel');
-        const finalcolor = document.querySelector('.selected');
-        for (let index = 0; index < initialcolor.length; index += 1) {
-          initialcolor[index].addEventListener('click', pixelselected);
-          function pixelselected() {
-            initialcolor[index].style.backgroundColor = finalcolor.style.backgroundColor;
+      const initialcolor = document.querySelectorAll('.pixel');
+      const finalcolor = document.querySelector('.selected');
+      for (let index = 0; index < initialcolor.length; index += 1) {
+        initialcolor[index].addEventListener('click', pixelselected);
+        function pixelselected() {
+          initialcolor[index].style.backgroundColor = finalcolor.style.backgroundColor;
           };
         }
     };
