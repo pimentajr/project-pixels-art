@@ -4,13 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-	<title>Document</title>
+	<title>Projeto: Pixels Art</title>
 </head>
-<body id='body'>
-	<h1 id='title'>Paleta de Cores</h1>
+<body id="body">
+	<h1 id="title">Paleta de Cores</h1>
 
-	<section id='color-palette'></section>
-  <button id='clear-board' type="click">Limpar</button>
+	<section id="color-palette"></section>
+  <button class="border-style" id="clear-board" type="click">Limpar</button>
+  <section id="board-number">
+    <button class='border-style' id='generate-board'>VQV</button>
+    <input id="board-size" class='border-style' type="number" min='5' max='50' placeholder="5 a 50">
+  </section>
   <section id='pixel-board'></section>
   <script src="script.js"></script>
 </body>

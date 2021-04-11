@@ -8,9 +8,10 @@ const pixel = 5;
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
 let colorSeleted = 'black';
-const button = document.querySelector('#clear-board');
+const buttonCleanBoard = document.querySelector('#clear-board');
+const buttonSizeBoard = document.querySelector('#generate-board');
 
-console.log(colorSeleted); // --------------------------------------------------------------seleção cor
+// console.log(colorSeleted); // --------------------------------------------------------------seleção cor
 
 function createPalette(colorTitle) {
   for (let index = 0; index < colorTitle.length; index += 1) {
@@ -36,7 +37,7 @@ function createPixelLine(numberOfPixelsXY) {
 
 function numberOfLines(lines) {
   for (let index = 0; index < lines; index += 1) {
-    createPixelLine(pixel);
+    createPixelLine(lines);
   }
 }
 
@@ -59,17 +60,32 @@ function coloringPixel(originEvent) {
   const event = originEvent;
   const chosenPixel = event.target;
   chosenPixel.style.backgroundColor = colorSeleted;
-  console.log(chosenPixel); // -------------------------------------------seleção cor
+  // console.log(chosenPixel); // -------------------------------------------seleção cor
+}
+
+function clearBoard() {
+  const pixelBoxList = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixelBoxList.length; index += 1) {
+    pixelBoxList[index].style.backgroundColor = 'white';
+  }
+}
+
+function sizeBoard() {
+  const boardSize = document.querySelector('#board-size').value;
+  console.log(boardSize);
+  if (boardSize === '') {
+    alert('Board inválido!');
+  } else if (boardSize >= 5 && boardSize <= 50) {
+    while (pixelBoard.firstChild) {
+      pixelBoard.removeChild(pixelBoard.firstChild);
+    }
+    numberOfLines(boardSize);
+  }
 }
 
 createPalette(colors);
 numberOfLines(pixel);
 colorPalette.addEventListener('click', colorSelection);
 pixelBoard.addEventListener('click', coloringPixel);
-
-button.addEventListener('click', function () {
-  const pixelBoxList = document.querySelectorAll('.pixel');
-  for (let index = 0; index < pixelBoxList.length; index += 1) {
-    pixelBoxList[index].style.backgroundColor = 'white';
-  }
-});
+buttonCleanBoard.addEventListener('click', clearBoard);
+buttonSizeBoard.addEventListener('click', sizeBoard);
