@@ -5,10 +5,6 @@ const pixelBoard = document.querySelector('#pixel-board');
 
 let colorStorage = 'black';
 
-function int(str) {
-  return parseInt(str, 0);
-}
-
 function colorSelectEvent(e) {
   const element = e.target;
   if (element.classList.contains('color')) {
@@ -52,22 +48,11 @@ function updatePixels(x, y) {
   board.replaceWith(table);
 }
 
-function valueChecker(value, minimum, maximum) {
-  console.log(value, minimum, maximum);
-  if (minimum <= value && value <= maximum) {
-    updatePixels(value, value);
-  } else if (value <= minimum) {
-    updatePixels(value, minimum);
-  } else if (value > maximum) {
-    updatePixels(value, maximum);
-  }
-}
-
 function inputEvent(e) {
   const input = e.target.previousElementSibling;
 
   if (input.value !== '') {
-    valueChecker(int(input.value), 5, int(input.max));
+    updatePixels(input.value, input.value);
   } else {
     alert('Board inválido!');
   }
