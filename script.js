@@ -43,7 +43,7 @@ function criaTabela(line) {
   }
 }
 
-criaTabela(7);
+criaTabela(5);
 const botaoVQV = document.getElementById('generate-board');
 botaoVQV.addEventListener('click', criaTabela);
 
