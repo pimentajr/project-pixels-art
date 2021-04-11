@@ -31,3 +31,15 @@ function addColorPixel(event) {
   coloringTableEvent.style.backgroundColor = changeColor;
 }
 coloringTable.addEventListener('click', addColorPixel);
+
+const cleanButton = document.querySelector('#clear-table');
+const pixel = document.querySelectorAll('.pixel');
+const whithoutColor = 'white';
+function cleanColor() {
+  for (let index in pixel) {
+    while (pixel[index].style.backgroundColor !== whithoutColor) {
+      pixel[index].style.backgroundColor = whithoutColor;
+    }
+  }
+}
+cleanButton.addEventListener('click', cleanColor);
