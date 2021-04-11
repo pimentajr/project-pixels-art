@@ -19,7 +19,7 @@ function paintPixel(event) {
   getColors.forEach((elem) => {
     if (elem.classList[2] === 'selected') {
       const color = elem.classList[1];
-      if(color === 'black'){
+      if (color === 'black') {
         ev.style.backgroundColor = color;
       } else {
         ev.style.backgroundColor = elem.style.backgroundColor;
@@ -32,18 +32,24 @@ getpixelBoard.addEventListener('click', paintPixel);
 
 function btnClear() {
   const getPixel = document.querySelectorAll('.pixel');
-  getPixel.forEach((elem) => {
-    elem.style.removeProperty('background-color');
+  getPixel.forEach((elemCl) => {
+    elemCl.style.removeProperty('background-color');
   });
 }
 
 getclearBoard.addEventListener('click', btnClear);
 
+function creatPx(elemPx) {
+  const creatPxl = document.createElement('div');
+  creatPxl.classList.add('pixel');
+  elemPx.appendChild(creatPxl);
+}
+
 function creatLine(qtd) {
   for (let index = 0; index < qtd; index += 1) {
     const creatLn = document.createElement('div');
     creatLn.classList.add('line');
-    for(let index = 0; index < qtd; index += 1) {
+    for (let iPx = 0; iPx < qtd; iPx += 1) {
       creatPx(creatLn);
     }
     getpixelBoard.appendChild(creatLn);
@@ -51,12 +57,6 @@ function creatLine(qtd) {
 }
 
 creatLine(5);
-
-function creatPx(elem) {
-  const creatPxl = document.createElement('div');
-  creatPxl.classList.add('pixel');
-  elem.appendChild(creatPxl);
-}
 
 function remove() {
   getpixelBoard.innerHTML = '';
@@ -66,11 +66,11 @@ function addPx() {
   let nValue = getboardSize.value;
   if (nValue === '') {
     alert('Board inválido!');
-  } if (getboardSize.value < 5) { 
+  } else if (nValue < 5) {
     nValue = 5;
-  } else if (nValue > 50) { 
+  } else if (nValue > 50) {
     nValue = 50;
-  } 
+  }
   remove();
   creatLine(nValue);
 }
@@ -81,8 +81,8 @@ function randColor() {
   return Math.floor(Math.random(255) * 255);
 }
 
-getColors.forEach((elem) => {
-  if (elem.classList[1] !== 'black') {
-    elem.style.backgroundColor = 'rgb('+ randColor()+ ',' +randColor()+ ',' +randColor() +')';
+for (let index = 0; index < getColors.length; index += 1) {
+  if (getColors[index].classList[1] !== 'black') {
+    getColors[index].style.backgroundColor = `rgb(${randColor()}, ${randColor()}, ${randColor()})`;
   }
-});
+}
