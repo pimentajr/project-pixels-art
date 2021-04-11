@@ -47,17 +47,16 @@ for (let index = 0; index < 5; index += 1) {
   }
 }
 
-function selectColor(event) {
-  event.target.classList.add = 'selected';
-}
-
 // get .pixels
-const pixels = document.querySelector('.pixels');
+const pixels = document.querySelector('.pixel');
 
 // start function
 function start() {
   randomColors();
-  pixels.addEventListener('click', selectColor);
+
+  pixels.addEventListener('click', () => {
+    pixels.className = 'selected';
+  });
 }
 
 // window.onload function

@@ -24,9 +24,9 @@
 }
 
 .pixel {
+  background-color: white;
   border: 1px solid black;
   display: inline-block;
-  background-color: white;
   margin: 0;
   padding: 0;
   width: 40px;
@@ -35,4 +35,10 @@
 
 .selected {
   background-color: black;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 40px;
+  height: 40px;
 }
