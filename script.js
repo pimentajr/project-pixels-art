@@ -82,8 +82,9 @@ function randomColor(colorPalete) {
   const specRed = Math.floor(Math.random() * 256);
   const specGreen = Math.floor(Math.random() * 256);
   const specBlue = Math.floor(Math.random() * 256);
-  const rgb = 'rgb(' + specRed + ', ' + specGreen + ', ' + specBlue +')';
-  colorPalete.style.backgroundColor = rgb
+  const rgb = `rgb(${specRed}, ${specGreen}, ${specBlue})`;
+  const color = colorPalete;
+  color.style.backgroundColor = rgb;
 }
 
 randomColor(darkgreen);
