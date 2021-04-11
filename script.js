@@ -1,30 +1,41 @@
-window.onload = 
 let black = document.getElementById('black');
 black.classList.add('selected');
 
 let pixelBoard = document.getElementById('pixel-board');
 
-for (let index = 1; index <= 25; index += 1) {
+for (let index = 0; index < 25; index += 1) {
   let pixel = document.createElement('div');
   pixelBoard.appendChild(pixel);
   pixel.className = 'pixel';
 }
-console.log(pixelBoard);
 
+// Remove a classe 'seleção' de uma cor.
 function SelectRemotion() {
   let colorPalette = document.getElementsByClassName('color');
-for (colorIndex = 0; colorIndex <colorPalette.length; colorIndex += 1) {
-  colorPalette[colorIndex].classList.remove('selected');
-}
+  for (let colorIndex = 0; colorIndex <colorPalette.length; colorIndex += 1) {
+    colorPalette[colorIndex].classList.remove('selected');
+    return colorPalette;
+  }
 }
 
-// Selecionar uma cor
-// Ao clicar em uma cor, ela add a classe 'selected' 
-let colorPalette = document.getElementsByClassName('color');
-for (colorIndex = 0; colorIndex <colorPalette.length; colorIndex += 1) {
-  let colorSelected = colorPalette[colorIndex];
-  colorSelected.addEventListener('click', ColorSelection() {
-    SelectRemotion()
-    colorSelected.classList.add('selected');
+// Seleciona uma cor no palette.
+  let colorPalette = document.getElementsByClassName('color');
+  for (colorIndex = 0; colorIndex <colorPalette.length; colorIndex += 1) {
+    let colorSelected = colorPalette[colorIndex];
+    colorSelected.addEventListener('click', function() {
+      SelectRemotion();
+      colorSelected.classList.add('selected');
+    });
+  }
+
+
+// Pinta um pixel ao ser clicado.
+function PixelColor() {
+  let pixelBoard = document.getElementById('pixel-board');
+  for (index = 0; index < pixelBoard.length; index += 1) {
+    let pixel = pixelBoard[index];
+    pixel.addEventListener('click', function() {
+      pixel.style.backgroundColor = document.getElementsByClassName('selected').style.backgroundColor;
+    })
   }
 }
