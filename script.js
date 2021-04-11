@@ -16,7 +16,7 @@ function createDivBoard(param) {
     const tile = document.createElement('div');
     tile.classList.add('pixel');
     tile.style.float = 'left';
-    tile.style.border = '1px';
+    tile.style.border = '1px solid black';
     tile.style.backgroundColor = 'white';
     pixelBoard.appendChild(tile);
   }
