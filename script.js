@@ -1,6 +1,7 @@
 window.onload = function carregar() {
   document.getElementById('black').classList.add('selected');
 };
+
 function selecionaClasse(event) {
   const atribuiClasse = document.querySelectorAll('.selected');
   for (let index = 0; index < atribuiClasse.length; index += 1) {
@@ -27,6 +28,7 @@ function tags(elemento) {
 const table = document.querySelector('.color-pixel');
 const tbody = document.createElement('tbody');
 table.appendChild(tbody);
+let valor = document.getElementById('board-size').value;
 function criaTabela(line) {
   for (let index = 0; index < line; index += 1) {
     const linha = tags('tr');
@@ -36,24 +38,29 @@ function criaTabela(line) {
       celulas.className = 'pixel';
     }
   }
-  if (line < 5) {
-    criaTabela(5);
-  } else if (line > 50) {
-    criaTabela(50);
-  }
 }
 
-criaTabela(5);
-const botaoVQV = document.getElementById('generate-board');
-botaoVQV.addEventListener('click', criaTabela);
+const VQV = document.getElementById('generate-board');
+VQV.addEventListener('click', () => {
+  valor = document.getElementById('board-size').value;
+  if (valor >= 5 && valor <= 50) {
+    criaTabela(valor);
+  } else if (valor < 5) {
+    criaTabela(5);
+  } else if (valor > 50) {
+    criaTabela(50);
+  } else {
+    alert('Board inválido!');
+  }
+});
 
 const botao = document.getElementById('clear-board');
-const quadrados = document.querySelectorAll('.pixel');
-const backgroundColor = 'white';
 function reset() {
-  for (let index = 0; index < quadrados.length; index += 1) {
-    while (quadrados[index].style.backgroundColor !== backgroundColor) {
-      quadrados[index].style.backgroundColor = backgroundColor;
+  const pixels = document.querySelectorAll('.pixel');
+  const backgroundColor = 'white';
+  for (let index = 0; index < pixels.length; index += 1) {
+    while (pixels[index].style.backgroundColor !== backgroundColor) {
+      pixels[index].style.backgroundColor = backgroundColor;
     }
   }
 }
