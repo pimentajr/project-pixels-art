@@ -48,7 +48,7 @@ VQV.addEventListener('click', () => {
   valor = document.getElementById(nome).value;
   if (valor >= 5 && valor <= 50) {
     criaTabela(valor);
-  } else if (valor <= 0 || valor === undefined) {
+  } else if (document.getElementById(nome).value <= 0 || valor === undefined) {
     alert('Board inválido!');
   }
 });
