@@ -12,6 +12,15 @@
   text-align: center;
 }
 
+#clear-board {
+  text-align: center;
+  position: flex;
+  margin-left: 47%;
+  margin-bottom: 10px;
+  background-color: rgb(240, 234, 234);
+}
+
+
 #color-palette {
   text-align: center;
 }
