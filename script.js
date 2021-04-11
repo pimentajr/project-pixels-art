@@ -1,9 +1,12 @@
-window.onload = function (){
+    let black = document.getElementsByClassName("color")[0].style.backgroundColor = "black"
+    selected = true;
 
-    let black = document.getElementById("black").style.backgroundColor = "black"
-    let red = document.getElementById("red").style.backgroundColor="red"
-    let green = document.getElementById("green").style.backgroundColor="green"
-    let purple = document.getElementById("purple").style.backgroundColor="purple"
+    
+    let red = document.getElementsByClassName("color")[1].style.backgroundColor="red"
+
+    let green = document.getElementsByClassName("color")[2].style.backgroundColor="green"
+
+    let purple = document.getElementsByClassName("color")[3].style.backgroundColor="purple"
 
     let pixelTable = document.getElementById('pixel-board')
 
@@ -19,7 +22,10 @@ window.onload = function (){
         blockRow.appendChild(blockCell)
         blockCell.style.backgroundColor = 'white'
         
-
     }
 }
-}
+    function SelectBlack (){
+
+    }
+
+    black.addEventListener("select", );
