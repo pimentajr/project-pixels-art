@@ -32,7 +32,7 @@ function addColorPixel(event) {
 }
 coloringTable.addEventListener('click', addColorPixel);
 
-const cleanButton = document.querySelector('#clear-table');
+const cleanButton = document.querySelector('#clear-board');
 const pixel = document.querySelectorAll('.pixel');
 const whithoutColor = 'white';
 function cleanColor() {

@@ -57,7 +57,7 @@ body {
 #pixel-board {
   display: table;
   border: 1px solid black;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -77,16 +77,31 @@ body {
 .div-clear-table {
   width: 100%;
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 70px;
+  margin-bottom: 0;
   text-align: center;
 }
 
-#clear-table {
-  background-color: rgb(37, 108, 53);
+#clear-board {
+  background-color: rgb(37, 108, 53, 0.9);
   border-radius: 10px;
   padding: 5px;
   color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.8em;
+  border: none!important;
+}
+
+#clear-board:hover {
+  background-color: rgb(37, 108, 53);
+  color: rgba(255, 255, 255);
+  border: none!important;
+}
+
+#clear-board:focus {
+  border: none!important;
+  outline: thin dotted;
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: 0px;
 }
