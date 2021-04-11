@@ -3,21 +3,38 @@ h1 {
   margin-right: auto;
   margin-bottom: 5px;
 }
+
 .color {
   border: 1px solid black;
   display: inline-block;
   padding: 20px;
   margin: auto;
 }
+
 .red {
   background-color: red;
 }
+
 .blue {
   background-color: blue;
 }
+
 .black {
   background-color: black;
 }
+
 .green {
   background-color: green;
+}
+
+#pixel-board div {
+  padding: 20px;
+  display: inline-block;
+}
+
+#pixel-board div {
+  border: solid 1px black;
+  padding: 40px;
+  background-color: white;
+  margin-top: 0px;
 }
