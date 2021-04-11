@@ -70,17 +70,28 @@ function clearBoard() {
   }
 }
 
-function sizeBoard() {
-  const boardSize = document.querySelector('#board-size').value;
-  console.log(boardSize);
+function changeSizeBoard() {
+  let boardSize = document.querySelector('#board-size').value;
   if (boardSize === '') {
     alert('Board inválido!');
-  } else if (boardSize >= 5 && boardSize <= 50) {
-    while (pixelBoard.firstChild) {
-      pixelBoard.removeChild(pixelBoard.firstChild);
-    }
-    numberOfLines(boardSize);
+  } else {
+  boardSize =  checkSizeInput(boardSize);
+  while (pixelBoard.firstChild) {
+    pixelBoard.removeChild(pixelBoard.firstChild);
   }
+  numberOfLines(boardSize);
+  }
+  console.log(boardSize);
+} 
+
+
+function checkSizeInput (number) { 
+  if (number < 5) {
+    number = 5;
+  } else if (number > 50) {
+    number = 50;
+  }
+  return number;
 }
 
 createPalette(colors);
@@ -88,4 +99,4 @@ numberOfLines(pixel);
 colorPalette.addEventListener('click', colorSelection);
 pixelBoard.addEventListener('click', coloringPixel);
 buttonCleanBoard.addEventListener('click', clearBoard);
-buttonSizeBoard.addEventListener('click', sizeBoard);
+buttonSizeBoard.addEventListener('click', changeSizeBoard);
