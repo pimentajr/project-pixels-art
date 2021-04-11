@@ -198,7 +198,6 @@ function initializeBoardSizeButtonListener() {
   const boardSizeUserInput = document.getElementById('board-size');
 
   boardSizeButton.addEventListener('click', fillBoardWithUserInput);
-  boardSizeUserInput.addEventListener('input', fillBoardWithUserInput);
 }
 
 function resetSelected() {
