@@ -90,18 +90,18 @@ body {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.8em;
-  border: none!important;
+  border: none ! important;
 }
 
 #clear-board:hover {
   background-color: rgb(37, 108, 53);
   color: rgba(255, 255, 255);
-  border: none!important;
+  border: none ! important;
 }
 
 #clear-board:focus {
-  border: none!important;
+  border: none ! important;
   outline: thin dotted;
-  outline: 0px auto -webkit-focus-ring-color;
-  outline-offset: 0px;
+  outline: 0 auto;
+  outline-offset: 0;
 }
