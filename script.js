@@ -31,3 +31,26 @@ function choosePalette() {
     }
   });
 } choosePalette();
+
+const pixelBoard = document.querySelector('#pixel-board');
+function paintCanvas() {
+  pixelBoard.addEventListener('click', (pixel) => {
+    const e = pixel.target;
+    /* const selected = document.getElementsByClassName('selected'); */
+    if (e.className === 'pixel') {
+      e.style.backgroundColor = 'red';/* document.querySelector('.selected').style.backgroundColor;
+         */
+    }
+  });
+} paintCanvas();
+
+function boardWhite() {
+  const button = document.querySelector('#clear-board');
+  button.addEventListener('click', () => {
+    const board = document.querySelectorAll('.pixel');
+    for (let index = 0; index < board.length; index += 1) {
+      const element = board[index];
+      element.style.backgroundColor = 'white';
+    }
+  });
+} boardWhite();
