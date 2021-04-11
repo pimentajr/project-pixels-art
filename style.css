@@ -39,10 +39,9 @@ nav {
 
 #pixel-board {
   margin: auto;
-
-  /* max-width: 210px; */
-
-  /* min-height: 10px; */
+  margin-bottom: 260px;
+  width: 210px;
+  min-height: 10px;
 }
 
 .pixel {
@@ -89,7 +88,7 @@ nav {
 }
 
 .setup {
-  max-width: 100px;
+  width: 100px;
 }
 
 #button-section {

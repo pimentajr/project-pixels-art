@@ -43,6 +43,18 @@ function errorReturn() {
 }
 // ------
 
+// Remove all tiles
+function removeAllTiles() {
+  pixelList = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixelList.length; index += 1) {
+    console.log(pixelList);
+    pixelBoard.removeChild(pixelList[index]); 
+    console.log(index);   
+  }
+}
+
+// ------
+
 // Calculate board size Function
 function boardSizeCalculate(size) {
   const originalSize = size;
@@ -60,18 +72,19 @@ function boardSizeCalculate(size) {
     const minHeightSize = maxLateralSize + 100;
     pixelBoard.style.minHeight = `${minHeightSize.toString()}px`;
   }
-  updateTileListEventListener();
 }
 
 // function of events
+// utilizar o update dos event listeners aqui dentro para atualizar somente a criação do novo board
 function generateDynamicBoard() {
-  const size = inputNumber.value;
-  const tileNumber = size ** 2;
-  if (size < 1 || size > 50) {
-    return errorReturn();
-  }
-  createDivBoard(tileNumber);
-  boardSizeCalculate(size);
+  removeAllTiles();
+  // const size = inputNumber.value;
+  // const tileNumber = size ** 2;
+  // if (size < 1 || size > 50) {
+  //   return errorReturn();
+  // }
+  // createDivBoard(tileNumber);
+  // boardSizeCalculate(size);
 }
 
 function lookForSelectedColor(event) {
@@ -116,9 +129,10 @@ function updateTileListEventListener() {
 function initialize() {
   selectColor();
   makeLiColors(liColors);
-  createEventListeners();
   createDivBoard(25);
-  boardSizeCalculate(25);
+  // updateTileListEventListener();
+  createEventListeners();
+  // boardSizeCalculate(25);
 }
 
 window.onload = initialize;
