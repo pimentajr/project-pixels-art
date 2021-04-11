@@ -1,43 +1,34 @@
+function changeClassDiv(event) {
+  const selectDiv = document.querySelector('.selected');
+  selectDiv.classList.remove('selected');
 
-function changeClassDiv(event){
-let selectDiv = document.querySelector('.selected');
-selectDiv.classList.remove('selected')
-
-let newSelectDiv = event.target 
-newSelectDiv.classList.add('selected')
-}
- 
-let nextDiv = document.getElementsByClassName('color');
-for (let index =0; index < nextDiv.length; index += 1) {
-  nextDiv[index].addEventListener('click', changeClassDiv); 
+  const newSelectDiv = event.target;
+  newSelectDiv.classList.add('selected');
 }
 
-function paintTable(event){
-let addSelector = document.querySelector('.selected'); 
-let colorPixel = getComputedStyle(addSelector).backgroundColor;
-let pixel = event.target
-pixel.style.backgroundColor = colorPixel
+const nextDiv = document.getElementsByClassName('color');
+for (let index = 0; index < nextDiv.length; index += 1) {
+  nextDiv[index].addEventListener('click', changeClassDiv);
 }
 
-function clearTable() {
-  let allPixels = document.getElementsByClassName('pixel')
-  for (let index = 0; index < allPixels.length; index += 1) {
-    allPixels[index].style.backgroundColor = 'white'
- 
-  }
- }
- 
+function paintTable(event) {
+  const addSelector = document.querySelector('.selected'); 
+  const colorPixel = getComputedStyle(addSelector).backgroundColor;
+  const pixel = event.target;
+  pixel.style.backgroundColor = colorPixel;
+}
 
-let selectElements = document.getElementsByClassName('color');
+const selectElements = document.getElementsByClassName('color');
 for (let index = 0; index < selectElements.length; index += 1) {
-  selectElements[index].addEventListener('click', changeClassDiv)
+  selectElements[index].addEventListener('click', changeClassDiv);
 } 
 
-let tableElements = document.getElementById('pixel-board');
-tableElements.addEventListener('click', paintTable)
+const tableElements = document.getElementById('pixel-board');
+tableElements.addEventListener('click', paintTable);
 
-
-
-
-
-
+function clearTable() {
+  const allPixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < allPixels.length; index += 1) {
+    allPixels[index].style.backgroundColor = 'white';
+ }
+};
