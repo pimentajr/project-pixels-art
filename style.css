@@ -76,8 +76,32 @@ header {
   outline: 8px solid white;
 }
 
-#clear-board {
+#control-panel {
   display: block;
   margin: 30px auto;
+  text-align: center;
+}
+
+#clear-board {
+  display: inline-block;
+}
+
+.button {
   padding: 5px 25px;
+}
+
+#board-size {
+  display: inline-block;
+  width: 160px;
+  padding: 5px;
+  text-align: center;
+}
+
+#board-size:out-of-range {
+  border: 3px solid black;
+  background-color: yellow;
+}
+
+#size-info {
+  display: inline-block;
 }
