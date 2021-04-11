@@ -78,6 +78,17 @@ function createBoard() {
   paintingRange();
 }
 
+function randomColor(colorPalete) {
+  const specRed = Math.floor(Math.random() * 256);
+  const specGreen = Math.floor(Math.random() * 256);
+  const specBlue = Math.floor(Math.random() * 256);
+  const rgb = 'rgb(' + specRed + ', ' + specGreen + ', ' + specBlue +')';
+  colorPalete.style.backgroundColor = rgb
+}
+
+randomColor(darkgreen);
+randomColor(blue);
+randomColor(red);
 paintingRange();
 btnGenerateBoard.addEventListener('click', createBoard);
 black.addEventListener('click', selectColor);
