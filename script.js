@@ -18,8 +18,11 @@ function getPixel(event) {
   targetPrint.style.backgroundColor = selectColor;
 }
 
-function reloaded() {
-  document.location.reload(true);
+function clearPixels() {
+  const clearPixelsAll = document.querySelectorAll('.pixel');
+  for (let index = 0; index < clearPixelsAll.length; index += 1) {
+    clearPixelsAll[index].style.backgroundColor = 'white';
+  }
 }
 
 function colorPalette() {
@@ -32,7 +35,7 @@ function colorPalette() {
   clickPrint.addEventListener('click', getPixel);
 
   const resetBtn = document.querySelector('.btn-style');
-  resetBtn.addEventListener('click', reloaded);
+  resetBtn.addEventListener('click', clearPixels);
 }
 
 window.onload = colorPalette;
