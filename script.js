@@ -1,4 +1,3 @@
-/* eslint-disable editorconfig/editorconfig */
 function createColunnLines() {
   for (let index = 0; index < 5; index += 1) {
     const colunn = document.createElement('div');
@@ -12,10 +11,23 @@ function createColunnLines() {
     }
   }
 } createColunnLines();
+
 function inicialColor() {
-  const preto = document.querySelector('#black');
-  preto.className = 'color selected';
+  const black = document.querySelector('#black');
+  black.className = 'color selected';
 } inicialColor();
-function name(params) {
-  
-}
+
+const paleta = document.querySelector('#color-palette');
+
+function choosePalette() {
+  paleta.addEventListener('click', (cor) => {
+    const eventTarget = cor.target;  
+    const color = document.getElementsByClassName('color');
+    for (let index = 0; index < color.length; index += 1) {
+      color[index].classList.remove('selected');
+      if (eventTarget.className === 'color') {
+        eventTarget.classList.add('selected');
+      }
+    }
+  });
+} choosePalette();
