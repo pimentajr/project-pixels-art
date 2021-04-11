@@ -91,5 +91,5 @@ function generateColor() {
     let b = Math.random() * 255;
     color[index].style.backgroundColor = `rgba(${r}, ${g}, ${b},`;
   }
-};
+}
 generateColor();
