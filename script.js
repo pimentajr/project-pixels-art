@@ -75,5 +75,5 @@ botao.addEventListener('click', reset);
 
 window.onload = function carregar() {
   document.getElementById('black').classList.add('selected');
-  criaTabela(valor);
+  criaTabela(5);
 };
