@@ -57,7 +57,7 @@ addSelecteColordByClick();
 function clearBoard() {
   const selectButton = document.querySelector('#clear-board');
   selectButton.addEventListener('click', () => {
-    selectPixel.forEach((element) => {
+    selectPixels.forEach((element) => {
       const box = element; box.style.backgroundColor = 'white';
     });
   });
