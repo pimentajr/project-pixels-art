@@ -45,12 +45,23 @@ document.getElementById('color-palette').addEventListener('click', function() {
 });
 
 // 8 - 
-document.getElementById('pixel-board')addEventListener('click', function() {
+document.getElementById('pixel-board').addEventListener('click', function() {
 	let color = document.querySelector('.selected').innerText;	
 	if (event.target.backgroundColor !== color){	
 		event.target.style.backgroundColor = color;
 	}	
 });
 
-
+// 9 -
+let button = document.getElementById('clear-board');
+button.addEventListener('click', function(event){
+	let allPixels = document.querySelectorAll('.pixel');
+	if (button = event) {
+	for (let index = 0; index < allPixels.length; index += 1) {
+		allPixels[index].style.backgroundColor = 'white';
+	}
+}
+	console.log(event.target);
+	
+})
 
