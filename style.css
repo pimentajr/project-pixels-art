@@ -52,5 +52,6 @@ button:hover {
   height: 40px;
   border: 1px solid black;
   box-sizing: border-box;
+  background-color: white;
   float: left;
 }

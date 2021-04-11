@@ -29,6 +29,10 @@ function clearBoard() {
 
 button.addEventListener('click', clearBoard);
 
+//pintando pixels
+
+
+
 /* const colorSelected = document.querySelectorAll('.selected')[0];
 const colorFill = document.querySelectorAll('.pixel');
 
