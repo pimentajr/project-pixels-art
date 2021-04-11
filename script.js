@@ -3,31 +3,28 @@ window.onload = function addSelect() {
   document.querySelector('.black').classList.add('selected');
 };
 
-const lineWidth = 5;
+let lineWidth = 5;
+
+// Essa função foi retirada do código de Alberto Candido com a devida permissão.
+// O que basicamente este código faz é remover todos os pixels para que novos sejam criados
+// Assim, evitando conflito.
+
+function cleanBoard() {
+  const pixelBoard = document.querySelector('#pixel-board');
+  const linesSquare = document.querySelectorAll('.line');
+  for (let index = 0; index < linesSquare.length; index += 1) {
+    pixelBoard.removeChild(linesSquare[index]);
+  }
+}
 
 //  Cria o quadro onde ficarão alocados os pixels a serem modificados
-function cratePixelBoard() {
+function createPixelBoard() {
   const pixelTables = document.createElement('div');
   pixelTables.id = 'pixel-board';
   document.body.appendChild(pixelTables);
 }
-cratePixelBoard();
+createPixelBoard();
 
-//  Cria as linhas para alocação dos 5 quadrados de cores por linha.
-
-function createLine() {
-  const pixelTable = document.getElementById('pixel-board');
-  for (let line = 0; line < lineWidth; line += 1) {
-    const lines = document.createElement('div');
-    lines.classList.add('line');
-    pixelTable.appendChild(lines);
-  }
-}
-createLine();
-// Cria os píxeis individuais e os joga dentro da div criado na função anterior. Essa div é a linha.
-// Para esta questão, obtive ajuda do aluno Alberto Candido para direcionamento do que fazer
-// Foi consultado um negócio:
-// https://stackoverflow.com/questions/29229523/how-and-why-to-use-display-table-cell-css
 function createPixels() {
   const pixelLine = document.getElementsByClassName('line');
   for (let index = 0; index < pixelLine.length; index += 1) {
@@ -38,7 +35,24 @@ function createPixels() {
     }
   }
 }
-createPixels();
+
+//  Cria as linhas para alocação dos 5 quadrados de cores por linha.
+function createLine(line) {
+  cleanBoard();
+  line = lineWidth;
+  const pixelTable = document.getElementById('pixel-board');
+  for (let index = 0; index < line; index += 1) {
+    const lines = document.createElement('div');
+    lines.classList.add('line');
+    pixelTable.appendChild(lines);
+  }
+  createPixels();
+}
+createLine();
+// Cria os píxeis individuais e os joga dentro da div criado na função anterior. Essa div é a linha.
+// Para esta questão, obtive ajuda do aluno Alberto Candido para direcionamento do que fazer
+// Foi consultado um negócio:
+// https://stackoverflow.com/questions/29229523/how-and-why-to-use-display-table-cell-css
 
 //  07 me baseei pelo código do alberto para entender.
 function removeClass(event) {
@@ -81,11 +95,25 @@ function clearBoard() {
 }
 document.getElementById('clear-board').addEventListener('click', clearBoard);
 
-// 10. Implementa botão, input e funcionalidades
+// 10 e 11 Implementa botão, input e funcionalidades e limita 5:50;
 
 function receiveValue () {
-  let input = document.getElementById('border-size');
-  let button = document.getElementById('generate-board');
-
-  button.addEventListener
+  const input = document.getElementById('border-size');
+  const button = document.getElementById('generate-board');
+  button.addEventListener('click', () => {
+    const value = input.value;
+    if (value === '') {
+      alert('Board inválido');
+    } else if (value < 5) {
+      lineWidth = 5;
+      createLine(lineWidth);
+    } else if (value > 50) {
+      lineWidth = 50;
+      createLine(lineWidth);
+    } else {
+      lineWidth = input.value;
+      createLine(lineWidth); 
+    }
+  })
 }
+receiveValue();
