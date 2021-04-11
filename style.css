@@ -7,8 +7,8 @@ color: brown;
 .color {
 border: 1px solid black;
 display: inline-block;
-width: 80px;
-height: 80px;
+width: 75px;
+height: 75px;   
 }
 
 #black {
@@ -26,3 +26,10 @@ background-color: red;
 #yellow {
 background-color: yellow;
 }
+
+.pixel {
+    background-color: white;
+    border: solid black 1px;
+    width: 40px;
+    height: 40px;
+  }
