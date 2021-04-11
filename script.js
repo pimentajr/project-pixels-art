@@ -54,5 +54,17 @@ function tintTable(event) {
 
 const table = document.querySelector('#pixel-board');
 table.addEventListener('click', tintTable);
+
+function clearBoard(event) {
+  const pixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].classList.remove('branco', 'preto', 'verde', 'vermelho', 'amarelo');
+    event.target.classList.add('branco');
+  }
+}
+
+const button = document.querySelector('#clear-board');
+button.addEventListener('click', clearBoard);
+
 // npm run lint
 // npm run lint:styles
