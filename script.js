@@ -20,8 +20,8 @@ const pixelBoard = document.getElementById('pixel-board');
 
 // https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
 function printColor(event) {
-  let selectedColor = document.querySelector('.selected');
-  let theCSSprop = window.getComputedStyle(selectedColor).getPropertyValue('background-color'); 
+  const selectedColor = document.querySelector('.selected');
+  const theCSSprop = window.getComputedStyle(selectedColor).getPropertyValue('background-color');
   event.target.style.backgroundColor = theCSSprop;
 }
 
@@ -29,15 +29,15 @@ pixelBoard.addEventListener('click', printColor);
 
 // BUTTON -CLEAR
 
-let button = document.getElementById('clear-board');
+const button = document.getElementById('clear-board');
 
-function clearAllPixels () {
- var clearPixel = document.getElementsByClassName('pixel');
- for(index = 0; index < clearPixel.length; index += 1) { 
-  clearPixel[index].style.backgroundColor = 'white';
- }
- var board = document.querySelector('#pixel-board');
- board.style.backgroundColor = 'white';
+function clearAllPixels() {
+  const board = document.querySelector('#pixel-board');
+  const clearPixel = document.getElementsByClassName('pixel');
+  board.style.backgroundColor = 'white';
+  for (let index = 0; index < clearPixel.length; index += 1) {
+    clearPixel[index].style.backgroundColor = 'white';
+  }
 }
 
 button.addEventListener('click', clearAllPixels);
