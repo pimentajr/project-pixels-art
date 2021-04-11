@@ -41,14 +41,22 @@ function generateBoard(param) {
 function isVerified() {
   const valueInput = document.getElementById('board-size').value;
   let sizeTable = valueInput;
-  if (valueInput.length === 0 || valueInput < 0) {
+  if (valueInput.length === 0) {
     return true;
-  } else if (sizeTable < 5) {
+  } 
+  if (sizeTable < 5) {
     sizeTable = 5;
   } else if (sizeTable > 50) {
     sizeTable = 50;
   }
   return sizeTable;
+}
+
+function removeBoard() {
+  const removeBoardParent = document.getElementById('pixel-board');
+  while (removeBoardParent.lastElementChild) {
+    removeBoardParent.removeChild(removeBoardParent.lastElementChild);
+  }
 }
 
 function colorPalette() {
@@ -62,11 +70,9 @@ function colorPalette() {
   const btnBoard = document.getElementById('generate-board');
   generateBoard('5');
   btnBoard.addEventListener('click', () => {
-    if (isVerified() === true) {
-      return alert ('Board inválido');
-    } else {
-      generateBoard(isVerified());
-    }
+    if (isVerified () === true) { return alert ('Board inválido!'); }
+    removeBoard();
+    generateBoard(isVerified());
   });
 }
 
