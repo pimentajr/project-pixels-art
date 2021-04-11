@@ -42,3 +42,16 @@ function switchSelectedColor() {
   }
 }
 switchSelectedColor();
+
+function setColor() {
+  const pixelsArr = pixelBoard.childNodes;
+  for (let i = 0; i < pixelsArr.length; i += 1) {
+    pixelsArr[i].addEventListener('click', function() {
+      const pixels = pixelsArr[i];
+      const element = document.querySelector('.selected');
+      const propBckGrd = window.getComputedStyle(element, null).getPropertyValue('background-color');
+      pixels.style.backgroundColor = propBckGrd;
+    });
+  }
+}
+setColor();
