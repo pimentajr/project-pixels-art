@@ -83,14 +83,3 @@ function generateBoard() {
   });
 }
 generateBoard();
-
-function generateColor() {
-  const color = document.querySelectorAll('.color');
-  for (let index in color) {
-    let r = Math.random() * 255;
-    let g = Math.random() * 255;
-    let b = Math.random() * 255;
-    color[index].style.backgroundColor = `rgba(${r}, ${g}, ${b},`;
-  }
-}
-generateColor();
