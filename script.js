@@ -120,3 +120,15 @@ const generateBoardButton = document.getElementById('generate-board');
 generateBoardButton.addEventListener('click', changePixelBoard);
 
 // fazer loop for para adicionar containers como filho de pixel-boar de acordo com o valor de board-size
+
+// x
+
+function generateRgbColor() {
+  const color1 = Math.floor(Math.random() * 256);
+  const color2 = Math.floor(Math.random() * 256);
+  const color3 = Math.floor(Math.random() * 256);
+
+  const rgb = `rgb(${color1},${color2},${color3})`;
+
+  return rgb;
+}
