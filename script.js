@@ -35,8 +35,12 @@ PixelBoardMaker(5);
 
 // Requisito 5
 function selectBlackColor() {
-  const colorPalette = document.querySelector('#color-palette');
-  colorPalette.firstElementChild.classList.add('selected');
+  const colors = document.getElementsByClassName('color');
+  for (let index = 0; index < 4; index += 1) {
+    if (colors[index].style.backgroundColor === 'black') {
+      colors[index].classList.add('selected');
+    }
+  }
 }
 
 window.onload = selectBlackColor;
