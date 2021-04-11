@@ -1,39 +1,38 @@
-
 #color-pallete {
-    display: block;
+  display: block;
 }
 
 .color {
-    display: inline-block;
-    border: 1px solid black;
-    padding: 20px;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 20px;
 }
 
-.color:nth-of-type(1) {
-    background-color: black;     
+.color:nth-of-type( 1 ) {
+  background-color: black;
 }
 
-.color:nth-of-type(2) {
-    background-color: magenta;  
+.color:nth-of-type( 2 ) {
+  background-color: magenta;
 }
 
-.color:nth-of-type(3) {
-    background-color: blue; 
+.color:nth-of-type( 3 ) {
+  background-color: blue;
 }
 
-.color:nth-of-type(4) {
-    background-color: yellow;     
+.color:nth-of-type( 4 ) {
+  background-color: yellow;
 }
 
 #pixel-board {
-    display: table;
-    background-color: white; 
+  display: table;
+  background-color: white;
 }
 
 .pixel {
-    display: table-cell;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: 1px solid black;   
+  display: table-cell;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid black;
 }
