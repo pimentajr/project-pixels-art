@@ -17,24 +17,6 @@ randomColors();
 const containerTable = document.getElementById('pixel-board');
 const button = document.getElementById('generate-board');
 
-function initTable() {
-  const newTable = document.createElement('div');
-  newTable.id = 'new-table';
-  containerTable.appendChild(newTable);
-  const n = 5;
-  for (let rows = 0; rows < n; rows += 1) {
-    const tr = document.createElement('div');
-    tr.classList.add('tr');
-    newTable.appendChild(tr);
-    for (let columns = 0; columns < n; columns += 1) {
-      const td = document.createElement('div');
-      td.classList.add('pixel');
-      tr.appendChild(td);
-    }
-  }
-}
-initTable();
-
 function inputCondition() {
   let valor = document.getElementById('board-size').value;
   if (valor === '') {
