@@ -32,7 +32,7 @@ function colorPixel(event) {
 // Regras de negocio
 
 for (let item = 0; item < colors.length; item += 1) {
-  let eventItem = colors[item];
+  const eventItem = colors[item];
   eventItem.addEventListener('click', removeClass);
   eventItem.addEventListener('click', addClass);
 }
