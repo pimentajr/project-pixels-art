@@ -11,4 +11,4 @@ color4.style.backgroundColor = 'red';
 
 // criando o botão na paleta
 
-document.querySelectorAll('color')[0].className = 'selected';
+window.onload(document.querySelectorAll('color')[0].className = 'selected');
