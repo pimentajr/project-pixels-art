@@ -12,7 +12,7 @@ body {
   font-size: 35px;
 }
 
-#color-palette{
+#color-palette {
   margin: auto;
   text-align: center;
 }
@@ -40,4 +40,20 @@ body {
   margin: auto;
   width: 40px;
   height: 40px;
+}
+
+#black {
+  background-color: black;
+}
+
+#orange {
+  background-color: orangered;
+}
+
+#green {
+  background-color: greenyellow;
+}
+
+#purple {
+  background-color: purple;
 }
