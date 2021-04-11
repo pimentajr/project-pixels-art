@@ -11,7 +11,6 @@ function inputBoard() {
   originInput.appendChild(input);
   originInput.appendChild(submit);
 
-  // FALTA RESOLVER PROBLEMA DE CRIAR VARIAS VEZES SEM ATUALIZAR A PAGINA
   function defineBoard() {
     if (input.value === '') {
       alert('Board inválido!');
@@ -22,9 +21,13 @@ function inputBoard() {
       } else if (cont < 5) {
         cont = 5;
       }
-      console.log(cont);
       input.value = '';
-      originTable.childNodes[1].remove();
+
+      const newTable = document.querySelectorAll('.line');
+      for (let index = 0; index < newTable.length; index += 1) {
+        newTable[index].remove();
+      }
+
       for (let line = 0; line < cont; line += 1) {
         const lineElement = document.createElement('tr');
         lineElement.className = 'line';
