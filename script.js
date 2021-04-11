@@ -18,20 +18,20 @@ function cleanBoard() {
 }
 
 //  Cria o quadro onde ficarão alocados os pixels a serem modificados
-function createPixelBoard() {
-  const pixelTables = document.createElement('div');
-  pixelTables.id = 'pixel-board';
-  document.body.appendChild(pixelTables);
-}
-createPixelBoard();
+// function createPixelBoard() {
+//   const pixelTables = document.createElement('div');
+//   pixelTables.id = 'pixel-board';
+//   document.body.appendChild(pixelTables);
+// }
+// createPixelBoard();
 
 function createPixels() {
   const pixelLine = document.getElementsByClassName('line');
   for (let index = 0; index < pixelLine.length; index += 1) {
     for (let pixels = 0; pixels < pixelLine.length; pixels += 1) {
-      const createPixels = document.createElement('div');
-      createPixels.classList.add('pixel', 'white');
-      pixelLine[pixels].appendChild(createPixels);
+      const createPixel = document.createElement('div');
+      createPixel.classList.add('pixel', 'white');
+      pixelLine[pixels].appendChild(createPixel);
     }
   }
 }
@@ -39,9 +39,9 @@ function createPixels() {
 //  Cria as linhas para alocação dos 5 quadrados de cores por linha.
 function createLine(line) {
   cleanBoard();
-  line = lineWidth;
+  newLine = lineWidth;
   const pixelTable = document.getElementById('pixel-board');
-  for (let index = 0; index < line; index += 1) {
+  for (let index = 0; index < newLine; index += 1) {
     const lines = document.createElement('div');
     lines.classList.add('line');
     pixelTable.appendChild(lines);
@@ -75,7 +75,8 @@ selectColor();
 //  Source: https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
 function myFunction(event) {
   const selColor = window.getComputedStyle(document.querySelector('.selected')).backgroundColor;
-  event.target.style.backgroundColor = selColor;
+  const x = event.target;
+  x.style.backgroundColor = selColor;
   console.log(selColor);
 }
 
@@ -97,23 +98,23 @@ document.getElementById('clear-board').addEventListener('click', clearBoard);
 
 // 10 e 11 Implementa botão, input e funcionalidades e limita 5:50;
 
-function receiveValue () {
+function receiveValue() {
   const input = document.getElementById('border-size');
   const button = document.getElementById('generate-board');
   button.addEventListener('click', () => {
-    const value = input.value;
-    if (value === '') {
+    const newVal = input.value;
+    if (newVal === '') {
       alert('Board inválido');
-    } else if (value < 5) {
+    } else if (newVal < 5) {
       lineWidth = 5;
       createLine(lineWidth);
-    } else if (value > 50) {
+    } else if (newVal > 50) {
       lineWidth = 50;
       createLine(lineWidth);
     } else {
       lineWidth = input.value;
-      createLine(lineWidth); 
+      createLine(lineWidth);
     }
-  })
+  });
 }
 receiveValue();
