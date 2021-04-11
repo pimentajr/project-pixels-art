@@ -21,13 +21,13 @@ function paintPixel() {
 }
 paintPixel();
 
-function clearBoard() {
+function clearAllBoard() {
   buttonClear.addEventListener('click', () => {
     const clearBoard = document.querySelectorAll('.pixel');
     clearBoard.forEach((element) => {
       const cell = element;
       cell.style.backgroundColor = 'white';
-    })
+    });
   });
 }
-clearBoard();
+clearAllBoard();
