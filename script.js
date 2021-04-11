@@ -19,13 +19,13 @@ function selectedSwitch(event) {
 document.getElementById('color-palette').addEventListener('click', selectedSwitch);
 
 // criando botao de limpar o board
-let button = document.createElement("button");
+const button = document.createElement('button');
 
 function clearBoard() {
-   document.getElementById('pixel-board').style.backgroundColor = "white";
+   document.getElementById('pixel-board').style.backgroundColor = 'white';
 }
 
-button.addEventListener(click, clearBoard)
+button.addEventListener('click', clearBoard);
 
 /* const colorSelected = document.querySelectorAll('.selected')[0];
 const colorFill = document.querySelectorAll('.pixel');
