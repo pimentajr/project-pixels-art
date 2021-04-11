@@ -1,25 +1,25 @@
 #title {
-    text-align: center;
+  text-align: center;
 }
 
 .color {
-    display: inline-block;
-    padding: 50px;
-    border: 1px solid black;
+  display: inline-block;
+  padding: 50px;
+  border: 1px solid black;
 }
 
 .g1 {
-    background-color: rgb(51, 51, 0);
+  background-color: rgb(51, 51, 0);
 }
 
 .g2 {
-    background-color: rgb(204, 204, 102);
+  background-color: rgb(204, 204, 102);
 }
 
 .g3 {
-    background-color: rgb(121, 140, 53);
+  background-color: rgb(121, 140, 53);
 }
 
 .g4 {
-    background-color: rgb(72, 89, 34);
+  background-color: rgb(72, 89, 34);
 }
