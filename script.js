@@ -22,7 +22,7 @@ function clearTable() {
   const allPixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < allPixels.length; index += 1) {
     allPixels[index].style.backgroundColor = 'white';
-  } 
+  }
 }
 
 const selectElements = document.getElementsByClassName('color');
