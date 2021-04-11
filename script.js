@@ -15,27 +15,27 @@ function addClass(event) {
   event.target.classList.add('selected');
 }
 
-// ex 9 
+// ex 9
 function clearPixel() {
-  for( let pixel = 0;pixel < pixels.length; pixel += 1) {
-    pixels[pixel].style.backgroundColor = 'white'; 
+  for (let pixel = 0; pixel < pixels.length; pixel += 1) {
+    pixels[pixel].style.backgroundColor = 'white';
   }
 }
 
 // ex 8 ------ Refazer essa questão sozinho.
 function colorPixel(event) {
-  let selectedColor = document.getElementsByClassName('selected')[0];
-  let color = getComputedStyle(selectedColor).backgroundColor;
-  let pixelSelected = event.target;
+  const selectedColor = document.getElementsByClassName('selected')[0];
+  const color = getComputedStyle(selectedColor).backgroundColor;
+  const pixelSelected = event.target;
   pixelSelected.style.backgroundColor = color;
 }
 // Regras de negocio
-for (const item of colors) {
+for(const item of colors) {
   item.addEventListener('click', removeClass);
   item.addEventListener('click', addClass);
 }
 
-for (const px of pixels) {
+for(const px of pixels) {
   px.addEventListener('click', colorPixel);
 }
 
