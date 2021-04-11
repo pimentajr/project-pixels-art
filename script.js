@@ -5,6 +5,7 @@ const red = document.getElementById('red');
 const table = document.getElementById('color-palette');
 const clearButton = document.getElementById('clear-board');
 const btnGenerateBoard = document.getElementById('generate-board');
+const inputFieldValue = document.getElementById('board-size');
 
 const arrayTable = [];
 for (let i = 0; table.rows[i]; i += 1) {
@@ -46,11 +47,18 @@ function clearBoard() {
   }
 }
 
-document.getElementById('board-size').addEventListener('change', function validateInput() {
+inputFieldValue.addEventListener('change', function validateInput() {
   const inputNumber = this.value;
   if (inputNumber < 5) this.value = 5;
   if (inputNumber > 50) this.value = 50;
 });
+
+inputFieldValue.onkeydown = function notNegativeNumber(e) {
+  if (!((e.keyCode > 47 && e.keyCode < 58)
+  || e.keyCode === 8)) {
+    return false;
+  }
+};
 
 function createBoard() {
   const inputSizeBoard = document.getElementById('board-size');
