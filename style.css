@@ -33,22 +33,16 @@
   color: deepskyblue;
 }
 
-
-
-
-
 #pixel-board {
   position: absolute;
-  border: 2px solid black;
-  width: 265px;
-  height: 275px;
+  width: 210px;
+  height: 228px;
 }
 
 .pixel {
-  position: relative;
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: white;
-  border: 1px solid;
+  border: 1px solid black;
 }
