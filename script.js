@@ -5,7 +5,7 @@ function createBoxesDiv() {
     const createDivs = document.createElement('div');
     createDivs.classList.add('color');
     selectPalette.appendChild(createDivs);
-  }  
+  }
   const selectDivs = document.querySelectorAll('.color');
   selectDivs.forEach((element, index) => {
     const div = element; div.style.backgroundColor = arrayOfColors[index];
@@ -58,8 +58,27 @@ function clearBoard() {
   selectButton.addEventListener('click', () => {
     const selectPixel = document.querySelectorAll('.pixel');
     selectPixel.forEach((element) => {
-      element.style.backgroundColor = 'white';
+      const box = element; box.style.backgroundColor = 'white';
     });
   });
 }
 clearBoard();
+
+function generateBoard() {
+  const selectInput = document.querySelector('#board-size');
+  const selectButton = document.querySelector('#generate-board');
+  const selectPixels = document.querySelector('#pixel-board');
+  selectButton.addEventListener('click', () => {
+    if (selectInput.value === '') {
+      alert('Board Inválido!');
+    } else if (selectInput.value < 5) {
+      selectInput.value = 5;
+    } else if (selectInput.value > 50) {
+      selectInput.value = 50;
+    }
+    selectPixels.style.backgroundColor = 'white';
+    selectPixels.innerHTML = '';
+    addPixels(selectInput.value);
+  });
+}
+generateBoard();
