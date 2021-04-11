@@ -34,4 +34,13 @@
   border-collapse: collapse;
 }
 
+button {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
 
+.clear-board {
+  background-color: white;
+}
