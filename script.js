@@ -42,17 +42,21 @@ function removeBoxAndPixelBoard() { // cria o comando que deleta o atual pixel b
 }
 
 function createNewBoxAndPixelBoard(n) { // deleta o atual pixel board e seus pixels, e cria um novo com seu tamanho definido por n
-  removeBoxAndPixelBoard();
-  let newPixelBoard = document.createElement('div');
-  newPixelBoard.id = 'pixel-board';
-  document.body.appendChild(newPixelBoard);
-  newPixelBoard.style.width = n * 40 + 'px';
-  newPixelBoard.style.height = n * 40 + 'px';
+  removeBoxAndPixelBoard(); // deleta o atual pixel board e seus pixels
+  let newPixelBoard = document.createElement('div'); // cria uma div, nova pixel board
+  newPixelBoard.id = 'pixel-board'; // adiciona id
+  document.body.appendChild(newPixelBoard); // insere no body
+  newPixelBoard.style.display = 'table'; // adiciona propriedades
   newPixelBoard.style.marginTop = '10px';
-  for (let index = 0; index < n * n; index += 1) {
-    let pixel = document.createElement('div');
-    pixel.className = 'pixel';
-    newPixelBoard.appendChild(pixel);
+  for (let lines = 0; lines < n; lines +=1) { // cria n linhas 
+    let newLine = document.createElement ('div')
+    newLine.className = 'line';
+    newPixelBoard.appendChild(newLine) // insere as linhas no novo pixel board
+    for (let index = 0; index < n; index += 1) { // cria n pixels
+      let pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      newLine.appendChild(pixel); // insere os pixels na linha
+    }
   }
   selectColor(); // Reativa as funções no novo Pixel Board
   paint();
