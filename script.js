@@ -42,18 +42,18 @@ function selectColor() {
   const selectedcolor = document.querySelectorAll('.color');
   for (let index = 0; index < selectedcolor.length; index += 1) {
     function selectedState() {
-      for (let index = 0; index <= 3; index += 1) {
-        selectedcolor[index].classList.remove(['selected']);
+      for (let token = 0; token <= 3; token += 1) {
+        selectedcolor[token].classList.remove(['selected']);
       }
       selectedcolor[index].classList.add(['selected']);
       selectedcolor[index].style.backgroundColor;
       const initialcolor = document.querySelectorAll('.pixel');
       const finalcolor = document.querySelector('.selected');
-      for (let index = 0; index < initialcolor.length; index += 1) {
+      for (let hint = 0; hint < initialcolor.length; hint += 1) {
         function pixelselected() {
-          initialcolor[index].style.backgroundColor = finalcolor.style.backgroundColor;
+          initialcolor[hint].style.backgroundColor = finalcolor.style.backgroundColor;
         }
-        initialcolor[index].addEventListener('click', pixelselected);
+        initialcolor[hint].addEventListener('click', pixelselected);
       }
     }
     selectedcolor[index].addEventListener('click', selectedState);
