@@ -41,23 +41,22 @@ paintPixelBoard('black');
 function selectColor() {
   const selectedcolor = document.querySelectorAll('.color');
   for (let index = 0; index < selectedcolor.length; index += 1) {
-    selectedcolor[index].addEventListener('click', selectedState);
     function selectedState() {
-      selectedcolor[0].classList.remove(['selected']);
-      selectedcolor[1].classList.remove(['selected']);
-      selectedcolor[2].classList.remove(['selected']);
-      selectedcolor[3].classList.remove(['selected']);
+    for (let index = 0; index <= 3; index += 1) {
+      selectedcolor[index].classList.remove(['selected']);
+    }
       selectedcolor[index].classList.add(['selected']);
       selectedcolor[index].style.backgroundColor;
       const initialcolor = document.querySelectorAll('.pixel');
       const finalcolor = document.querySelector('.selected');
       for (let index = 0; index < initialcolor.length; index += 1) {
-        initialcolor[index].addEventListener('click', pixelselected);
         function pixelselected() {
           initialcolor[index].style.backgroundColor = finalcolor.style.backgroundColor;
-          };
+        }
+      initialcolor[index].addEventListener('click', pixelselected);
       }
     }
+    selectedcolor[index].addEventListener('click', selectedState);
   }
 }
 selectColor();
