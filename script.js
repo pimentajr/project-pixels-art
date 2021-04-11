@@ -5,9 +5,7 @@ function coloringPalette() {
 		palette[color].style.backgroundColor = palette[color].innerText;
 		palette[color].style.color = palette[color].innerText;
 	}
-}	
-
-coloringPalette();
+};	
 
 // 3 -
 // document.querySelector('.color').style.backgroundColor = 'black';
@@ -23,45 +21,57 @@ function creatingBoard() {
 			newDiv.appendChild(newPixel);			
 		}
 	}
-}
+};
 
-creatingBoard();
 
 // 5 -
 let newBorder = document.getElementById('color-palette').nextElementSibling;
 newBorder.classList.add('border-pixel');
 
-// 6 -
+// 6 - 
 let pixelBlack = document.querySelector('.color');
 pixelBlack.classList.add('selected')
 
 // 7
-let whosSelected = document.querySelector('.selected');
-document.getElementById('color-palette').addEventListener('click', function() {	
+document.getElementById('color-palette').addEventListener('click', selection);
+
+function selection () {
+	let whosSelected = document.querySelector('.selected');
 	if (event.target !== whosSelected) {				
 		whosSelected.classList.remove('selected');
 		event.target.classList.add('selected');		
 	}		
-});
+};
+
 
 // 8 - 
-document.getElementById('pixel-board').addEventListener('click', function() {
+document.getElementById('pixel-board').addEventListener('click', fillingPixels);
+
+function fillingPixels() {
 	let color = document.querySelector('.selected').innerText;	
 	if (event.target.backgroundColor !== color){	
 		event.target.style.backgroundColor = color;
 	}	
-});
+};
+
 
 // 9 -
 let button = document.getElementById('clear-board');
-button.addEventListener('click', function(event){
+button.addEventListener('click', clearButton);
+
+function clearButton(){
 	let allPixels = document.querySelectorAll('.pixel');
 	if (button = event) {
-	for (let index = 0; index < allPixels.length; index += 1) {
-		allPixels[index].style.backgroundColor = 'white';
-	}
-}
-	console.log(event.target);
-	
-})
+		for (let index = 0; index < allPixels.length; index += 1) {
+			allPixels[index].style.backgroundColor = 'white';
+		}
+	}		
+};
 
+
+
+coloringPalette();
+creatingBoard();
+selection();
+fillingPixels();
+clearButton();

@@ -9,14 +9,17 @@ h1 {
 
 .color {
   border: 1px solid black;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   display: inline-block;
 }
 
 #clear-board {
   width: 70px;
-  height: 45px;  
+  height: 45px;
+  display: block;
+  text-align: center;
+  margin: 10px auto;
 }
 
 #pixel-board {
@@ -29,9 +32,5 @@ h1 {
   height: 40px;
   background-color: white;
   display: table-cell;
-  border: 1px solid black;
-}
-
-.border-pixel {
   border: 1px solid black;
 }
