@@ -23,3 +23,12 @@ for (let i = 0; i < pixelTable.children[0].children.length; i += 1) {
     });
   }
 }
+
+const myButton = document.getElementById('clear-board');
+const tableLineClear = document.querySelectorAll('.pixel');
+
+myButton.addEventListener('click', () => {
+  for (let i = 0; i < tableLineClear.length; i += 1) {
+    tableLineClear[i].style.backgroundColor = 'white';
+  }
+});
