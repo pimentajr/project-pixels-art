@@ -12,9 +12,7 @@ function selectColor () {
     
     if(block === 'black') {
       colors[index].classList.add('selected');
-    } else {
-
-    }
+    } 
   }
 }
 selectColor();
@@ -45,14 +43,17 @@ function toPaint() {
   pixelBoard.addEventListener('click',function(event){
     
     let selected = document.querySelector('.selected');
-
     let styles = window.getComputedStyle(selected);  
-    let colorPixel = styles.getPropertyValue('background-color')
-    
-    console.log(colorPixel);
+    let colorPixel = styles.getPropertyValue('background-color');
+
+    let pixel = document.querySelector('.pixel');
+    console.log(pixel);
     
     let localPixel = event.target;
-    localPixel.style.backgroundColor = colorPixel;
+
+    if(localPixel.style.backgroundColor === colorPixel) {
+        localPixel.style.backgroundColor = 'white';
+    } else localPixel.style.backgroundColor = colorPixel;
     
   })
 }
