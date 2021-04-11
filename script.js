@@ -137,7 +137,7 @@ function generateMax() {
 
 // gera paintBoard para valores > 5 && <= 50
 function generateStandard() {
-  if (getInputData() >= 5 && getInputData <=50 ) {
+  if (getInputData() >= 5 && getInputData() <= 50 ) {
     removeBoardPaint();
     generateHeightDivs(getInputData());
     generateWidthDivs(getInputData());
