@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   function addClassPixels() {
     const pixels = document.getElementById('pixel-board').children;
     for (let index = 0; index < pixels.length; index += 1) {
@@ -8,18 +8,20 @@ window.onload = function() {
   addClassPixels();
 
   function blackSelector() {
-    let blackColor = document.getElementById('black');
+    const blackColor = document.getElementById('black');
     blackColor.classList.add('selected');
   }
   blackSelector();
 
   function classSelector() {
-    const colorSelected = document.getElementsByClassName('selected')[0];
+    const colorSelected = document.getElementsByClassName('selected');
     const colorPalette = document.getElementById('color-palette');
-    colorPalette.addEventListener('click', function(event) {
-      colorSelected.classList.remove('selected');
+    colorPalette.addEventListener('click', function (event) {
+      for (let index = 0; index < colorSelected.length; index += 1) {
+        colorSelected[index].classList.remove('selected');
+      }
       event.target.classList.add('selected');
-    })
+    });
   }
   classSelector();
 
