@@ -59,11 +59,14 @@ setColor();
 function createClrBtn() {
   const body = document.querySelector('body');
   const clearBtn = document.createElement('button');
+  const divBtns = document.createElement('div');
   body.appendChild(clearBtn);
   const divColorPalette = clearBtn.previousElementSibling.previousElementSibling;
-  body.insertBefore(clearBtn, divColorPalette);
+  body.insertBefore(divBtns, divColorPalette);
+  divBtns.id = 'main-btns'
   clearBtn.id = 'clear-board';
   clearBtn.innerHTML = 'Limpar';
+  divBtns.appendChild(clearBtn);
   clearBtn.style.marginLeft = '48%';
   clearBtn.style.marginTop = '30px';
   clearBtn.style.padding = '10px';
