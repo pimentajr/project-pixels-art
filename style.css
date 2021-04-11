@@ -1,0 +1,30 @@
+.color {
+  border: black solid 1px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 3px;
+}
+
+#green {
+  background-color: seagreen;
+}
+
+#red {
+  background-color: red;
+}
+
+#blue {
+  background-color: blue;
+}
+
+.pixel {
+  border: black solid 1px;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+
+#black {
+  background-color: black;
+}
