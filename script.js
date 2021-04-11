@@ -151,3 +151,22 @@ function generatePaintBoard() {
 }
 
 generatePaintBoard();
+
+// gera cores aleatorias
+function generateRandomColor() {
+  let randomColor = Math.floor(Math.random()*16777215).toString(16);
+  return randomColor;
+}
+
+// aplica cor aleatoria para paleta
+function applyRandomColor() {
+  const getRandomClass = document.querySelectorAll('.random-color');
+  for (let index = 0; index < getRandomClass.length; index += 1) {
+    getRandomClass[index].style.backgroundColor = `#${generateRandomColor()}`;
+    console.log(generateRandomColor());
+  }
+}
+
+applyRandomColor();
+
+
