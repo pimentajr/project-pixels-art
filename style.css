@@ -2,7 +2,7 @@ body {
   background-color: gainsboro;
 }
 
-.title-container {
+.header-title {
   margin: auto;
   text-align: center;
 }
@@ -12,6 +12,11 @@ body {
   font-size: 35px;
 }
 
+#color-palette{
+  margin: auto;
+  text-align: center;
+}
+
 .color {
   display: inline-block;
   width: 25px;
@@ -19,22 +24,6 @@ body {
   margin: 10px;
   border-radius: 50%;
   border: 1px solid black;
-}
-
-#black {
-  background-color: black;
-}
-
-#orange {
-  background-color: orangered;
-}
-
-#green {
-  background-color: greenyellow;
-}
-
-#blue {
-  background-color: blue;
 }
 
 #pixel-board {
