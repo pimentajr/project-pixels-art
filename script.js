@@ -5,9 +5,7 @@ const color4 = color3.nextElementSibling;
 
 function generateRandomColor() {
   const arr = [
-    'red',
-    'blue',
-    'green',
+    'red', 'blue', 'green',
     'pink',
     'yellow',
     'brown',
