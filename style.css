@@ -101,6 +101,6 @@ body {
 
 #clear-board:focus {
   border: none;
-  outline: thin dotted;
+  outline: 0 dotted;
   outline-offset: 0;
 }
