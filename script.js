@@ -80,3 +80,12 @@ function clearBoard() {
   }
 }
 document.getElementById('clear-board').addEventListener('click', clearBoard);
+
+// 10. Implementa botão, input e funcionalidades
+
+function receiveValue () {
+  let input = document.getElementById('border-size');
+  let button = document.getElementById('generate-board');
+
+  button.addEventListener
+}
