@@ -28,12 +28,13 @@ for (let index = 0; index < 5; index += 1) {
 }
 
 function paintPixelBoard(color) {
-  const initialcolor = document.querySelectorAll('.pixel');
-  for (let index = 0; index < initialcolor.length; index += 1) {
-    function colorblack() {
-      initialcolor[index].style.backgroundColor = color;
+  let resultcolor
+  const allcolors = document.querySelectorAll('.pixel');
+  for (let index = 0; index < allcolors.length; index += 1) {
+  resultcolor = function colorblack() {
+      allcolors[index].style.backgroundColor = color;
     }
-    initialcolor[index].addEventListener('click', colorblack);
+    allcolors[index].addEventListener('click', resultcolor);
   }
 }
 paintPixelBoard('black');
