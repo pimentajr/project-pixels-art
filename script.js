@@ -1,6 +1,6 @@
 const colorPalette = document.querySelector('#color-palette');
 const clearBoard = document.querySelector('#clear-board');
-const inputEvent = document.querySelector('#board-size')
+const inputBoard = document.querySelector('#board-size')
 const buttonBoard = document.querySelector('#generate-board');
 const pixelBoard = document.querySelector('#pixel-board');
 
