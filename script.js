@@ -13,7 +13,7 @@ function createPixelsSize (size) {
       for (let index2 = 0; index2 < size; index2 += 1) {
         let pixelLine = document.createElement('div');
         pixelBox.appendChild(pixelLine);
-        pixelLine.className = 'pixelVazio';
+        pixelLine.className = 'pixel';
       }
     }
 }
