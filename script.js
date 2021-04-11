@@ -54,8 +54,7 @@ function selectColor() {
           initialcolor[index].style.backgroundColor = finalcolor.style.backgroundColor;
         }
       initialcolor[index].addEventListener('click', pixelselected);
-      }
-    }
+      }};
     selectedcolor[index].addEventListener('click', selectedState);
   }
 }
