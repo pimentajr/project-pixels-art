@@ -34,7 +34,7 @@ background-color: yellow;
     border-width: 1px;
     border-color: black;
     border-style: solid;
-    background-color: white;
+    background-color: red;
   }
   #pixel-board{
     display: table-row ; 
@@ -42,3 +42,9 @@ background-color: yellow;
     border-color: black;
     border-style: solid;
   }
+
+  #clear-board{
+    width: 40px;
+    height: 14px;
+    font-size: 6px;
+}
