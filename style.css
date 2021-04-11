@@ -2,10 +2,37 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Nunito, sans-serif;
+}
+
+header {
+  background-color: #8338ec;
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 25px;
 }
 
 body {
-  height: 100vh;
+  background-color: #a2d2ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+/* Rainbow colors taken from StackOverflow:
+  https://stackoverflow.com/questions/40557461/rainbow-gradient-on-text-in-css/40557564 */
+
+header div {
+  width: max-content;
+  background: linear-gradient(90deg, orange, yellow, green, cyan, blue, violet);
+  background-clip: text;
+  filter: drop-shadow(1px 1px 1px);
+}
+
+header div h1 {
+  font-size: 1.4rem;
+  color: transparent;
 }
 
 #container {
@@ -22,10 +49,31 @@ body {
   user-select: none; /* prevents event bubbling from triggering event on container */
 }
 
+#title , #color-palette , #input-container , #clear-board {
+  margin-bottom: 1rem;
+}
+
+#clear-board {
+  padding: 5px 15px;
+  font-size: 1rem;
+}
+
+#layout-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#generate-board {
+  height: 100%;
+  font-weight: 900;
+}
+
 .color {
   border: 1px solid;
   width: 40px;
   height: 40px;
+  margin-right: 1px;
 }
 
 .black {
@@ -48,10 +96,38 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 40px);
   grid-template-rows: repeat(5, 40px);
-  user-select: none; /* prevents event bubbling from triggering event on container */
+  grid-gap: 1px;
+  margin-bottom: 20px;
+  user-select: none;
+  perspective: 1000px;
+  transition: 200ms;
 }
 
 .pixel {
   border: 1px solid;
   background-color: white;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 20px;
+  color: white;
+  background-color: #8338ec;
+
+}
+
+footer h2 {
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: white;
+}
+
+
+@keyframes spin {
+  to {
+    transform: rotateY(180deg);
+  }
 }

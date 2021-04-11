@@ -1,46 +1,54 @@
 const COLOR_PALETTE = document.querySelector('#color-palette');
 const COLOR_PALETTE_CHILDREN = [...COLOR_PALETTE.children];
 const PIXEL_BOARD = document.querySelector('#pixel-board');
-const PIXEL_BOARD_CHILDREN = [...PIXEL_BOARD.children];
 const CLEAR_BUTTON = document.querySelector('#clear-board');
 const BOARD_SIZE_INPUT = document.querySelector('#board-size');
 const GENERATE_BOARD_BUTTON = document.querySelector('#generate-board');
+const GRID_GAP_INPUT = document.querySelector('#gap-input');
+
+GRID_GAP_INPUT.onclick = () => {
+  if (GRID_GAP_INPUT.checked) {
+    PIXEL_BOARD.style.gridGap = '1px';
+  } else {
+    PIXEL_BOARD.style.gridGap = '0';
+  }
+};
+
 const DEFAULT_COLOR = 'black';
+const DEFAULT_PIXEL_COLOR = 'white';
+const DEFAULT_BOARD_SIZE = 25;
 let selectedColor = null;
+let lastInputSize = null;
 
-console.log(PIXEL_BOARD_CHILDREN.length);
+function formatInvalidSize(value) {
+  if (value < 5) return 5;
+  if (value > 50) return 50;
+  return value;
+}
 
-function generateBoard() {
+function mountBoardGrid(size) {
+  const VALID_SIZE = formatInvalidSize(size);
+  PIXEL_BOARD.style.gridTemplateColumns = `repeat(${VALID_SIZE}, 40px)`;
+  PIXEL_BOARD.style.gridTemplateRows = `repeat(${VALID_SIZE}, 40px)`;
+  PIXEL_BOARD.innerHTML = '<div class=\'pixel\'></div>'.repeat(VALID_SIZE * VALID_SIZE);
+}
+
+function mountBoard() {
   if (!BOARD_SIZE_INPUT.value) {
     alert('Board inválido!');
   } else {
-    const SIZE = BOARD_SIZE_INPUT.value;
-    const BOARD_SIZE_FORMULA = SIZE * SIZE - PIXEL_BOARD_CHILDREN.length;
-    PIXEL_BOARD.style.gridTemplateColumns = `repeat(${SIZE}, 40px)`;
-    PIXEL_BOARD.style.gridTemplateRows = `repeat(${SIZE}, 40px)`;
-    for (let index = 0; index < BOARD_SIZE_FORMULA; index += 1) {
-      const PIXEL = document.createElement('div');
-      PIXEL.classList.add('pixel');
-      PIXEL_BOARD.appendChild(PIXEL);
+    const size = BOARD_SIZE_INPUT.value;
+    if (lastInputSize !== size * size) {
+      mountBoardGrid(size);
+      lastInputSize = size * size;
     }
   }
-  console.log(PIXEL_BOARD_CHILDREN.length);
 }
-
-GENERATE_BOARD_BUTTON.addEventListener('click', generateBoard);
 
 function generateRandomColor() {
   const RANDOM_COLOR = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
   return RANDOM_COLOR;
 }
-
-window.onload = () => {
-  COLOR_PALETTE_CHILDREN.forEach((child) => {
-    const PALETTE_CHILD = child;
-    PALETTE_CHILD.style.backgroundColor = generateRandomColor();
-  });
-  COLOR_PALETTE_CHILDREN[0].style.backgroundColor = DEFAULT_COLOR;
-};
 
 function updateSelectedElement(e) {
   COLOR_PALETTE_CHILDREN.forEach((child) => {
@@ -50,14 +58,27 @@ function updateSelectedElement(e) {
 }
 
 function clearBoard() {
-  PIXEL_BOARD_CHILDREN.forEach((child) => {
-    const BOARD_PIXEL = child;
-    const DEFAULT_PIXEL_COLOR = 'white';
-    BOARD_PIXEL.style.backgroundColor = DEFAULT_PIXEL_COLOR;
-  });
+  for (let child = 0; child < PIXEL_BOARD.children.length; child += 1) {
+    // apply the animation for every PIXEL_BOARD child while also applying a delay
+    PIXEL_BOARD.children[child].style.animation = `spin .5s ${child * 10}ms linear`;
+    PIXEL_BOARD.children[child].style.backgroundColor = DEFAULT_PIXEL_COLOR;
+    PIXEL_BOARD.children[child].onanimationend = () => {
+      PIXEL_BOARD.children[child].style.animation = '';
+    };
+  }
+  // still working to better the animation formula
+  // and prevent the user from firing the clearBoard function
+  // while the PIXEL_BOARD's last child haven't finished its animation
 }
 
+function checkEventOrigin(e) {
+  // prevents the event from firing on parent element
+  if (e.target !== this) e.target.style.backgroundColor = selectedColor || DEFAULT_COLOR;
+}
+
+GENERATE_BOARD_BUTTON.addEventListener('click', mountBoard);
 CLEAR_BUTTON.addEventListener('click', clearBoard);
+PIXEL_BOARD.addEventListener('mousedown', checkEventOrigin);
 
 COLOR_PALETTE.addEventListener('mousedown', (e) => {
   const ELEMENT = e.target;
@@ -67,6 +88,16 @@ COLOR_PALETTE.addEventListener('mousedown', (e) => {
   updateSelectedElement(e);
 });
 
-PIXEL_BOARD.addEventListener('click', (e) => {
-  e.target.style.backgroundColor = selectedColor || DEFAULT_COLOR;
-});
+function mountDefaultBoard() {
+  // Ain't nobody got time for the for loop verbose syntax lmao
+  PIXEL_BOARD.innerHTML = '<div class=\'pixel\'></div>'.repeat(DEFAULT_BOARD_SIZE);
+}
+
+window.onload = () => {
+  COLOR_PALETTE_CHILDREN.forEach((child) => {
+    const PALETTE_CHILD = child;
+    PALETTE_CHILD.style.backgroundColor = generateRandomColor();
+  });
+  COLOR_PALETTE_CHILDREN[0].style.backgroundColor = DEFAULT_COLOR;
+  mountDefaultBoard();
+};
