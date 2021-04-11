@@ -1,16 +1,15 @@
-let titulo = document.getElementById('title');
+const titulo = document.getElementById('title');
 titulo.innerText = 'Paleta de Cores';
 
 const divColors = document.querySelectorAll('.color');
 
-function paleteColors () {
+function paleteColors() {
   for (let index = 0; index < divColors.length; index += 1) {
     const colorsValue = divColors[index].id;
     divColors[index].style.backgroundColor = colorsValue;
   }
 }
 paleteColors();
-
 
 function createBoardPixel(parent, line, column) {
   for (let indexLine = 1; indexLine <= line; indexLine += 1) {
@@ -24,34 +23,34 @@ function createBoardPixel(parent, line, column) {
   }
 }
 
-const pixelBoard = document.querySelector('#pixel-board')
+const pixelBoard = document.querySelector('#pixel-board');
 createBoardPixel(pixelBoard, 5, 5);
 
-function clickElement (event) {
+function clickElement(event) {
   const elementClick = document.querySelector('.selected');
   elementClick.classList.remove('selected');
   event.target.classList.add('selected');
 }
 
-let firstColor = document.getElementById('black');
-let secondColor = document.getElementById('blue');
-let thirdColor = document.getElementById('red');
-let fourthColor = document.getElementById('green');
+const firstColor = document.getElementById('black');
+const secondColor = document.getElementById('blue');
+const thirdColor = document.getElementById('red');
+const fourthColor = document.getElementById('green');
 
 firstColor.addEventListener('click', clickElement);
 secondColor.addEventListener('click', clickElement);
 thirdColor.addEventListener('click', clickElement);
 fourthColor.addEventListener('click', clickElement);
 
-function colorPixel () {
+function colorPixel() {
   pixelBoard.addEventListener('click', function (event) {
     const pixelColor = document.querySelector('.selected').style.backgroundColor;
     const localPaint = event.target;
     localPaint.style.backgroundColor = pixelColor;
-    if (localPaint === 'pixel'){
+    if (localPaint === 'pixel') {
       localPaint.style.backgroundColor = pixelColor;
     }
-  })
+  });
 }
 colorPixel();
 
