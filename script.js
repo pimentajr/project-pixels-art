@@ -43,3 +43,16 @@ function cleanColor() {
   }
 }
 cleanButton.addEventListener('click', cleanColor);
+
+window.onload = function () {
+  function removeTable() {
+    const table = document.querySelector('#pixel-board');
+    document.body.removeChild(table);
+  }
+  removeTable();
+
+  function reinsertTable() {
+    
+  }
+  reinsertTable();
+}

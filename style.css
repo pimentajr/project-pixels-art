@@ -104,3 +104,44 @@ body {
   outline: 0 dotted;
   outline-offset: 0;
 }
+
+#input-size {
+  width: 100%;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+#board-size {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+}
+
+#generate-board {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 5px;
+  font-weight: 600;
+  font-size: 0.8em;
+  border: none;
+}
+
+#generate-board:hover {
+  background-color: rgb(255, 255, 255);
+  border: none;
+}
+
+#generate-board:focus {
+  border: none;
+  outline: 0 dotted;
+  outline-offset: 0;
+}
+
+#board-size:focus {
+  border: none;
+  outline: 0 dotted;
+  outline-offset: 0;
+}
