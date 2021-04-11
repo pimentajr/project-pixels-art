@@ -45,9 +45,10 @@
   background: white;
   margin: -2px -2px -2px -8px;
   border: 1px solid black;
+  list-style: none;
 }
 
 #pixel-board {
   max-width: 300px;
-  max-height: 300px;
+  max-height: 350px;
 }
