@@ -39,24 +39,29 @@ function criaTabela(line) {
     }
   }
 }
+criaTabela(5);
 const VQV = document.getElementById('generate-board');
 VQV.addEventListener('click', () => {
   valor = document.getElementById('board-size').value;
   if (valor >= 5 && valor <= 50) {
+    criaTabela();
     criaTabela(valor);
   } else if (valor <= 0) {
+    criaTabela();
     alert('Board inválido!');
   }
 });
-
+criaTabela();
 VQV.addEventListener('click', () => {
   if (valor < 5) {
+    criaTabela();
     criaTabela(5);
   } else if (valor > 50) {
+    criaTabela();
     criaTabela(50);
   }
 });
-
+criaTabela();
 const botao = document.getElementById('clear-board');
 function reset() {
   const pixels = document.querySelectorAll('.pixel');

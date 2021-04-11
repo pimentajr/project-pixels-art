@@ -44,9 +44,11 @@
   height: 40px;
 }
 
-tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
-    background-color: white;
+#board {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+  background-color: white;
+  width: auto;
+  height: auto;
 }
