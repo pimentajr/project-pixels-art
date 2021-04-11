@@ -1,9 +1,3 @@
-window.onload = function carregar() {
-  document.getElementById('black').classList.add('selected');
-  // eslint-disable-next-line no-use-before-define
-  criaTabela(valor);
-};
-
 function selecionaClasse(event) {
   const atribuiClasse = document.querySelectorAll('.selected');
   for (let index = 0; index < atribuiClasse.length; index += 1) {
@@ -52,7 +46,7 @@ VQV.addEventListener('click', () => {
   valor = document.getElementById('board-size').value;
   if (valor >= 5 && valor <= 50) {
     criaTabela(valor);
-  } else if (valor <= 0) {
+  } else if (document.getElementById('board-size').value <= 0) {
     alert('Board inválido!');
   }
 });
@@ -75,3 +69,8 @@ function reset() {
   }
 }
 botao.addEventListener('click', reset);
+
+window.onload = function carregar() {
+  document.getElementById('black').classList.add('selected');
+  criaTabela(valor);
+};
