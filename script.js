@@ -21,11 +21,12 @@ document.getElementById('color-palette').addEventListener('click', selectedSwitc
 // criando botao de limpar o board
 const button = document.createElement('button');
 
-function clearBoard() {
-  document.querySelectorAll('.pixel').style.backgroundColor = 'white';
+button.addEventListener('click', () => {
+  const pixelsBoard = document.getElementsByClassName('pixel');
+    for (let index = 0; index < pixelsBoard.length; index += 1) {
+      const pixel = pixelsBoard[index];
+      pixel.style.backgroundColor = 'white';
 }
-
-button.addEventListener('click', clearBoard);
 
 /* const colorSelected = document.querySelectorAll('.selected')[0];
 const colorFill = document.querySelectorAll('.pixel');
