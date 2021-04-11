@@ -119,9 +119,7 @@ function changePixelBoard() {
 const generateBoardButton = document.getElementById('generate-board');
 generateBoardButton.addEventListener('click', changePixelBoard);
 
-// fazer loop for para adicionar containers como filho de pixel-boar de acordo com o valor de board-size
-
-// x
+// função gera cores aleatórias
 
 function generateRgbColor() {
   const color1 = Math.floor(Math.random() * 256);
@@ -132,3 +130,17 @@ function generateRgbColor() {
 
   return rgb;
 }
+
+// 12. Adiciona cores aleatórias ao iniciar a página
+
+function randomColors() {
+  const color = document.querySelectorAll('.color');
+
+  for (let index = 1; index < color.length; index += 1) {
+    const randomColor = generateRgbColor();
+    color[index].style.backgroundColor = randomColor;
+    color[index].id = randomColor;
+  }
+}
+
+window.onload = randomColors;
