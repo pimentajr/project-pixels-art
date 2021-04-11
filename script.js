@@ -110,15 +110,11 @@ function getInputData() {
 function generatePaintBoard() {
   let boardSizeButton = document.getElementById('generate-board');
 
-  boardSizeButton.addEventListener('click', function() {
-     if (getInputData() > 0) {
-      removeBoardPaint();
-      generateHeightDivs(getInputData());
-      generateWidthDivs(getInputData());
-    } else {
-      window.alert('Board inválido!');
-      
-    }
+  boardSizeButton.addEventListener('click', function () {
+    generateMin();
+    generateMax();
+    generateStandard();
+    exclaimer();
   })
 }
 
@@ -126,16 +122,43 @@ generatePaintBoard();
 
 // remove elementos div paintboard
 function removeBoardPaint() {
-  let getHeightDivs = document.querySelectorAll('.tr'); 
-  for (index = 0; index < getHeightDivs.length; index += 1 ) {
+  let getHeightDivs = document.querySelectorAll('.tr');
+  for (index = 0; index < getHeightDivs.length; index += 1) {
     getHeightDivs[index].remove();
   }
 }
 
-// estabelece limite < 5 && > 50
-function defineMaxMin() {
-  if (getInputData() < 5 || getInputData() > 50) {
+// gera paintBoard para valores < 5 && > 50
+function generateMin() {
+  if (getInputData() > 0 && getInputData() < 5) {
+    removeBoardPaint();
     generateHeightDivs(5);
     generateWidthDivs(5);
+    window.alert('mínimo: 5 | máximo: 50')
+  }
+}
+
+function generateMax() {
+  if (getInputData() > 50) {
+    removeBoardPaint();
+    generateHeightDivs(5);
+    generateWidthDivs(5);
+    window.alert('mínimo: 5 | máximo: 50')
+  }
+}
+
+// gera paintBoard para valores > 5 && < 50
+function generateStandard() {
+  if (getInputData() > 5) {
+    removeBoardPaint();
+    generateHeightDivs(getInputData());
+    generateWidthDivs(getInputData());
+  }
+}
+
+// exclaimer valor não preenchido
+function exclaimer() {
+  if (getInputData() == 0) {
+    window.alert('Board inválido!');
   }
 }
