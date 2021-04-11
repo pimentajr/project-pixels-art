@@ -46,12 +46,10 @@ function createNewBoxAndPixelBoard(n) { // deleta o atual pixel board e seus pix
   let newPixelBoard = document.createElement('div'); // cria uma div, nova pixel board
   newPixelBoard.id = 'pixel-board'; // adiciona id
   document.body.appendChild(newPixelBoard); // insere no body
-  newPixelBoard.style.display = 'table'; // adiciona propriedades
-  newPixelBoard.style.marginTop = '10px';
-  for (let lines = 0; lines < n; lines +=1) { // cria n linhas 
-    let newLine = document.createElement ('div')
+  for (let lines = 0; lines < n; lines += 1) { // cria n linhas
+    let newLine = document.createElement('div');
     newLine.className = 'line';
-    newPixelBoard.appendChild(newLine) // insere as linhas no novo pixel board
+    newPixelBoard.appendChild(newLine); // insere as linhas no novo pixel board
     for (let index = 0; index < n; index += 1) { // cria n pixels
       let pixel = document.createElement('div');
       pixel.className = 'pixel';
