@@ -34,17 +34,21 @@ let color = document.getElementsByClassName('color');
             removeSelected()
             color[index].classList.add('selected')
             localStorage.setItem('color', 'black')
-            localStorage.setItem('color', event.target.classList[1]);
+            sessionStorage.setItem('color', event.target.classList[1]);
         })
     }
 
 
-
+sessionStorage.setItem('color', 'null')
 function paintPixel () {
     let pixel = document.getElementsByClassName('pixel');
     for (let index = 0; index < pixel.length; index += 1) {
         pixel[index].addEventListener('click', function(event) {
-            pixel[index].style.backgroundColor = localStorage.getItem('color')
+            if (sessionStorage.getItem('color') === 'null') {
+                pixel[index].style.backgroundColor = localStorage.getItem('color')
+            }else {
+                pixel[index].style.backgroundColor = sessionStorage.getItem('color')
+            }
         })
     }
 }
