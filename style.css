@@ -11,6 +11,13 @@
   width: 45px;
 }
 
+.pixel {
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+}
+
 .red {
   background-color: red;
 }
@@ -27,13 +34,4 @@
   background-color: yellow;
 }
 
-#pixel-board {
-  background-color: white;
-}
 
-.pixel {
-  border: 1px solid black;
-  width: 40px;
-  height: 40px;
-  background-color: white;
-}
