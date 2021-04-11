@@ -1,7 +1,7 @@
 // Retrieve elements
 const liColors = document.getElementsByClassName('color');
 const pixelBoard = document.getElementById('pixel-board');
-const colors = ['black', 'red', 'green', 'blue'];
+// const colors = ['red', 'green', 'blue', 'magenta', 'darkgreen', 'yellow'];
 const colorsList = document.getElementsByClassName('color');
 const selectedColor = document.getElementsByClassName('selected');
 let pixelList = document.getElementsByClassName('pixel');
@@ -22,10 +22,22 @@ function createDivBoard(param) {
   }
 }
 
+function generateRandomColor() {
+  const letters = '0123456789abcdef';
+  let color = '#';
+  for (let index = 0; index < 3; index += 1) {
+    color += letters[Math.floor(Math.random() * letters.length)];
+  }
+  return color;
+}
+
 function makeLiColors(param) {
   const liProperties = param;
-  for (let index = 0; index < liColors.length; index += 1) {
-    liProperties[index].style.backgroundColor = colors[index];
+  liProperties[0].style.backgroundColor = 'black';
+  liProperties[0].style.border = '1px solid black';
+  for (let index = 1; index < liColors.length; index += 1) {
+    const randomColor = generateRandomColor();
+    liProperties[index].style.backgroundColor = randomColor;
     liProperties[index].style.border = '1px solid black';
   }
 }
@@ -53,7 +65,7 @@ function boardSizeCalculate() {
   const singleTileSize = 42;
   const maxLateralSize = Math.ceil((singleTileSize * pixelList.length ** (1 / 2)));
   pixelBoard.style.width = `${maxLateralSize.toString()}px`;
-  const minHeightSize = singleTileSize * pixelList.length ** (1 / 2) + 60;
+  const minHeightSize = singleTileSize * pixelList.length ** (1 / 2) + 40;
   pixelBoard.style.minHeight = `${minHeightSize.toString()}px`;
 }
 
