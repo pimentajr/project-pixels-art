@@ -1,3 +1,4 @@
+let valor = document.getElementById('board-size').value;
 function selecionaClasse(event) {
   const atribuiClasse = document.querySelectorAll('.selected');
   for (let index = 0; index < atribuiClasse.length; index += 1) {
@@ -24,7 +25,7 @@ function tags(elemento) {
 const table = document.querySelector('.color-pixel');
 const tbody = document.createElement('tbody');
 table.appendChild(tbody);
-let valor = document.getElementById('board-size').value;
+
 function criaTabela(line) {
   while (tbody.firstChild) {
     tbody.removeChild(tbody.lastChild);
@@ -46,12 +47,13 @@ VQV.addEventListener('click', () => {
   valor = document.getElementById('board-size').value;
   if (valor >= 5 && valor <= 50) {
     criaTabela(valor);
-  } else if (document.getElementById('board-size').value <= 0) {
+  } else if (valor <= 0 || valor === undefined) {
     alert('Board inválido!');
   }
 });
 
 VQV.addEventListener('click', () => {
+  valor = document.getElementById('board-size').value;
   if (valor < 5) {
     criaTabela(5);
   } else if (valor > 50) {
@@ -59,6 +61,7 @@ VQV.addEventListener('click', () => {
   }
 });
 criaTabela(valor);
+
 const botao = document.getElementById('clear-board');
 function reset() {
   const pixels = document.querySelectorAll('.pixel');
