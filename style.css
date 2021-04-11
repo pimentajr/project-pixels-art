@@ -1,5 +1,6 @@
 button {
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 #board-size {
@@ -41,4 +42,5 @@ button {
   height: 40px;
   border: solid black 1px;
   background-color: white;
+  cursor: pointer;
 }

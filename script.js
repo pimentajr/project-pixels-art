@@ -11,12 +11,12 @@ function int(str) {
 
 function colorSelectEvent(e) {
   const element = e.target;
-  if (element.className === 'color') {
-    const color = document.querySelector('.color.selected');
-    color.className = 'color';
+  if (element.classList.contains('color')) {
+    const color = document.querySelector('.selected');
+    color.classList.remove('selected');
 
     colorStorage = element.style.backgroundColor;
-    element.className = 'color selected';
+    element.classList.add('selected');
   }
 }
 
@@ -83,6 +83,7 @@ function ran255() {
 
 function randomColors() {
   const colors = document.querySelectorAll('.color');
+  colors[0].style.backgroundColor = 'black';
 
   for (let c = 1; c < colors.length; c += 1) {
     const color = colors[c];
