@@ -20,6 +20,33 @@ function pixel(event) {
 }
 tabela.addEventListener('click', pixel);
 
+function tags(elemento) {
+  return document.createElement(elemento);
+}
+
+const table = document.querySelector('.color-pixel');
+const tbody = document.createElement('tbody');
+table.appendChild(tbody);
+function criaTabela(line) {
+  for (let index = 0; index < line; index += 1) {
+    const linha = tags('tr');
+    tbody.appendChild(linha);
+    for (let indexCelulas = 0; indexCelulas < line; indexCelulas += 1) {
+      const celulas = linha.appendChild(tags('td'));
+      celulas.className = 'pixel';
+    }
+  }
+  if (line < 5) {
+    criaTabela(5);
+  } else if (line > 50) {
+    criaTabela(50);
+  }
+}
+
+criaTabela(7);
+const botaoVQV = document.getElementById('generate-board');
+botaoVQV.addEventListener('click', criaTabela);
+
 const botao = document.getElementById('clear-board');
 const quadrados = document.querySelectorAll('.pixel');
 const backgroundColor = 'white';
