@@ -1,5 +1,7 @@
 window.onload = function carregar() {
   document.getElementById('black').classList.add('selected');
+  // eslint-disable-next-line no-use-before-define
+  criaTabela(valor);
 };
 
 function selecionaClasse(event) {
@@ -30,38 +32,39 @@ const tbody = document.createElement('tbody');
 table.appendChild(tbody);
 let valor = document.getElementById('board-size').value;
 function criaTabela(line) {
+  while (tbody.firstChild) {
+    tbody.removeChild(tbody.lastChild);
+  }
   for (let index = 0; index < line; index += 1) {
     const linha = tags('tr');
+    linha.length = 5;
     tbody.appendChild(linha);
     for (let indexCelulas = 0; indexCelulas < line; indexCelulas += 1) {
       const celulas = linha.appendChild(tags('td'));
+      celulas.length = 5;
       celulas.className = 'pixel';
     }
   }
 }
-criaTabela(5);
+
 const VQV = document.getElementById('generate-board');
 VQV.addEventListener('click', () => {
   valor = document.getElementById('board-size').value;
   if (valor >= 5 && valor <= 50) {
-    criaTabela();
     criaTabela(valor);
   } else if (valor <= 0) {
-    criaTabela();
     alert('Board inválido!');
   }
 });
-criaTabela();
+
 VQV.addEventListener('click', () => {
   if (valor < 5) {
-    criaTabela();
     criaTabela(5);
   } else if (valor > 50) {
-    criaTabela();
     criaTabela(50);
   }
 });
-criaTabela();
+criaTabela(valor);
 const botao = document.getElementById('clear-board');
 function reset() {
   const pixels = document.querySelectorAll('.pixel');

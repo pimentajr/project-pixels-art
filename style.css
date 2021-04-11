@@ -44,7 +44,7 @@
   height: 40px;
 }
 
-#board {
+#pixel-board {
   display: table-row-group;
   vertical-align: middle;
   border-color: inherit;
