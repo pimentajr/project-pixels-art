@@ -1,34 +1,3 @@
-/*function createGrid() { //melhorar criando igual html
-  let gridButton = document.getElementById('generate-board');
-  let tblSection = document.getElementById('section-teste');
-  let initTable = document.getElementById('pixel-board');
-  gridButton.addEventListener('click', function () {
-    initTable.removeChild(document.getElementById('table'));
-    let tbl = document.createElement('table');
-    tbl.id = 'table';
-    let gridSize = document.getElementById('board-size').value;
-    if (gridSize === '') {
-      alert('Board inválido!');
-    }
-    initTable.appendChild(tbl);
-    if (gridSize < 5) {
-      gridSize = 5;
-    }
-    if (gridSize > 50) {
-      gridSize = 50;
-    }
-    for (let indexRow = 0; indexRow < gridSize; indexRow += 1) {
-      let tr = tbl.insertRow();
-      for (let indexColumn = 0; indexColumn < gridSize; indexColumn += 1) {
-        let td = tr.insertCell();
-        td.className = 'pixel';
-      }
-    }
-  });
-}
-createGrid();
-*/
-
 function randomColors() {
   let blackBox = document.createElement('div');
   blackBox.style.backgroundColor = 'black';
@@ -36,23 +5,20 @@ function randomColors() {
   let colorSection = document.getElementById('color-palette');
   colorSection.appendChild(blackBox);
   for (let index = 0; index < 3; index += 1) {
-    console.log('olá');
     let colorBox = document.createElement('div');
     colorBox.className = 'color';
     let randColor = '#'+(0x1000000+Math.random()*0xffffff).toString(16).substr(1,6)
     colorBox.style.backgroundColor = randColor;
     colorSection.appendChild(colorBox);
-    
   }
 }
 randomColors();
 
-function newBoard () {
-  let containerNewTable = document.getElementById('pixel-board');
+function defaultTable () {
+  let containerTable = document.getElementById('pixel-board');
   let newTable = document.createElement('div');
   newTable.id = 'new-table'
-  containerNewTable.appendChild(newTable);
-  newTable.className = 'tabela'
+  containerTable.appendChild(newTable);
   let n = 5;
   for (let rows = 0; rows < n; rows += 1) {
     let tr = document.createElement('div');
@@ -65,18 +31,16 @@ function newBoard () {
     }
   }
 }
-newBoard();
+defaultTable();
 
-function updateBoard (){
+function updateTable (){
   let button = document.getElementById('generate-board');
-  let tableSection = document.getElementById('pixel-board');
-  let rawTable = document.getElementById('new-table');
+  let containerTable = document.getElementById('pixel-board');
+  let defaultTable = document.getElementById('new-table');
   
   button.addEventListener('click', function () {
     let newerTable = document.createElement('div');
-    newerTable.id = 'newer-table';
-    newerTable.className = 'tabela';
-    tableSection.replaceChild(newerTable, rawTable);
+    containerTable.replaceChild(newerTable, defaultTable);
     let inputValue = document.getElementById('board-size').value;
 
     if (inputValue === '') {
@@ -99,10 +63,11 @@ function updateBoard (){
         tr.appendChild(td);
       }
     }
-    rawTable = newerTable;
+    newerTable.id = 'new-table';
+    defaultTable = newerTable;
   })
 }
-updateBoard();
+updateTable();
 
 function colorSelector() {
   let colorOptions = document.getElementsByClassName('color');
@@ -121,8 +86,9 @@ function colorSelector() {
 colorSelector()
  
 function fillPixels() {
-  let table = document.querySelector('.tabela');
-  table.addEventListener('click', function (event) {
+  let currentTable = document.getElementById('pixel-board');
+  currentTable.addEventListener('click', function (event) {
+    console.log(event.target)
     event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
   })
 }
