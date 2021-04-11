@@ -10,13 +10,13 @@ function boardRemove() {
 // Determina as cores da paleta, exceto a primeira
 function palleteBoxes() {
   for (let index = 1; index < boxes.length; index += 1) {
-    const randNumb1 = Math.ceil(Math.random()*255.);
-    const randNumb2 = Math.ceil(Math.random()*255.);
-    const randNumb3 = Math.ceil(Math.random()*255.);
+    const randNumb1 = Math.ceil(Math.random() * 255);
+    const randNumb2 = Math.ceil(Math.random() * 255);
+    const randNumb3 = Math.ceil(Math.random() * 255);
     boxes[index].style.backgroundColor = `rgb(${randNumb1},${randNumb2},${randNumb3})`;
   }
 }
-palleteBoxes()
+palleteBoxes();
 
 // Cria os elementos do quadro de acordo com o número de pixels
 function boardMaker(pixels) {
@@ -155,8 +155,8 @@ BoardSize();
 
 // Adiciona um botão na página
 function createButtonRandomColors() {
-  let buttonChangeColor = document.createElement('input');
-  const breakLine = document.createElement('br')
+  const buttonChangeColor = document.createElement('input');
+  const breakLine = document.createElement('br');
   buttonChangeColor.value = 'Cores Aleatórias';
   buttonChangeColor.type = 'button';
   buttonChangeColor.id = 'btn-change-colors';
@@ -168,9 +168,9 @@ function createButtonRandomColors() {
 createButtonRandomColors();
 
 function randomizer() {
-  let buttonChangeColor = document.getElementById('btn-change-colors');
+  const buttonChangeColor = document.getElementById('btn-change-colors');
   buttonChangeColor.addEventListener('click', () => {
     palleteBoxes();
-  })
-}  
+  });
+}
 randomizer();
