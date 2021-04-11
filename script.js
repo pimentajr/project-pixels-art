@@ -32,7 +32,6 @@ function clearBoard() {
 
 function getBoardSize() {
   const boardSize = document.getElementById('board-size').value;
-  console.log(boardSize);
   if (boardSize === '') {
     return null;
   }
