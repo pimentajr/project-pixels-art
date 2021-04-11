@@ -21,7 +21,7 @@ const paleta = document.querySelector('#color-palette');
 
 function choosePalette() {
   paleta.addEventListener('click', (cor) => {
-    const eventTarget = cor.target;  
+    const eventTarget = cor.target;
     const color = document.getElementsByClassName('color');
     for (let index = 0; index < color.length; index += 1) {
       color[index].classList.remove('selected');
