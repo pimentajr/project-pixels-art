@@ -28,8 +28,17 @@ background-color: yellow;
 }
 
 .pixel {
+    width: 60px;
+    height: 60px;
+    display:table-cell;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
     background-color: white;
-    border: solid black 1px;
-    width: 40px;
-    height: 40px;
+  }
+  #pixel-board{
+    display: table-row ; 
+    border-width: 8px;
+    border-color: black;
+    border-style: solid;
   }
