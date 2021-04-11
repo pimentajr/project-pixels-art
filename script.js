@@ -39,6 +39,12 @@ for (let indice = 1; indice <= 5; indice += 1) {
   for (let index = 1; index <= 5; index += 1) {
     const celulas = document.createElement('td');
     celulas.classList = 'pixel';
+    celulas.addEventListener('click', function CreateTwoEvents(events) {
+      if (document.querySelector('.selected') !== null) {
+        const color = document.querySelector('.selected').style.backgroundColor;
+        events.target.style.backgroundColor = color;
+      }
+    });
     createLinha.appendChild(celulas);
   }
   contaneinerCores.appendChild(createLinha);
