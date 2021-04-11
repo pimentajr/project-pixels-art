@@ -4,15 +4,19 @@
   width: 80px;
   height: 80px;
 }
+
 #black {
   background-color: black;
 }
+
 #lightPink {
   background-color: #f1c3d0;
 }
+
 #lightGreen {
   background-color: #a8c870;
 }
+
 #lightBlue {
   background-color: #97eaf4;
 }
