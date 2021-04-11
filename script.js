@@ -104,7 +104,7 @@ function receiveValue() {
   button.addEventListener('click', () => {
     const newVal = input.value;
     if (newVal === '') {
-      alert('Board inválido');
+      alert('Board inválido!');
     } else if (newVal < 5) {
       lineWidth = 5;
       createLine(lineWidth);
