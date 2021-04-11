@@ -33,7 +33,6 @@ let color = document.getElementsByClassName('color');
         color[index].addEventListener('click', function (event) {
             removeSelected()
             color[index].classList.add('selected')
-            localStorage.setItem('color', 'black')
             sessionStorage.setItem('color', event.target.classList[1]);
         })
     }
@@ -53,8 +52,19 @@ function paintPixel () {
     }
 }
 
+function buttom () {
+    let buttom = document.querySelector('#clear-board');
+    let pixel = document.getElementsByClassName('pixel');
+    buttom.innerText = 'Limpar';
+    for (let index = 0; index < pixel.length; index += 1) {
+        buttom.addEventListener('click', function () {
+            pixel[index].style.backgroundColor = 'white'
+        })
+    }
+}
+
 
 window.onload = function () {
-
+buttom()
 paintPixel()
 }
