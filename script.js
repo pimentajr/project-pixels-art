@@ -18,3 +18,14 @@ function addcolorPalette(colors) {
   }
 }
 addcolorPalette(['black', 'red', 'blue', 'yellow']);
+
+const board = document.querySelector('#pixel-board');
+
+function boardPixel() {
+  for (let index = 0; index < 25; index += 1) {
+    const pixelItem = document.createElement('li');
+    pixelItem.className = 'pixel';
+    board.appendChild(pixelItem);
+  }
+}
+boardPixel();
