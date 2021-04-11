@@ -5,12 +5,12 @@ window.onload = function initial() {
 
 function colorGenarator() {
   const number = [];
-  let color;
+  let rgbColor = '';
   for (let index = 0; index < 3; index += 1) {
     number.push(Math.ceil(Math.random() * 255));
   }
-  color = `rgb(${number.join(', ')})`;
-  return color;
+  rgbColor = `rgb(${number.join(', ')})`;
+  return rgbColor;
 }
 
 const colors = ['black', colorGenarator(), colorGenarator(), colorGenarator()];
@@ -78,12 +78,13 @@ function clearBoard() {
 }
 
 function checkSizeInput(number) {
-  if (number < 5) {
-    number = 5;
-  } else if (number > 50) {
-    number = 50;
+  let verifiedNumber = number;
+  if (verifiedNumber < 5) {
+    verifiedNumber = 5;
+  } else if (verifiedNumber > 50) {
+    verifiedNumber = 50;
   }
-  return number;
+  return verifiedNumber;
 }
 
 function changeSizeBoard() {
