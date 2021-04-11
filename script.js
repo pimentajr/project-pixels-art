@@ -1,5 +1,4 @@
 const selectPalette = document.querySelector('#color-palette');
-const selectPixels = document.querySelector('#pixel-board');
 
 function createBoxesDiv() {
   const arrayOfColors = ['black', 'blue', 'purple', 'red'];
@@ -18,6 +17,7 @@ function createBoxesDiv() {
 createBoxesDiv();
 
 function addPixels(size) {
+  const selectPixels = document.querySelector('#pixel-board');
   for (let index = 0; index < size; index += 1) {
     const createPixelsRow = document.createElement('div');
     selectPixels.appendChild(createPixelsRow);
@@ -68,6 +68,7 @@ clearBoard();
 function generateBoard() {
   const selectInput = document.querySelector('#board-size');
   const selectButton = document.querySelector('#generate-board');
+  const selectPixels = document.querySelector('#pixel-board');
   selectButton.addEventListener('click', () => {
     if (selectInput.value === '') {
       alert('Board Inválido!');
