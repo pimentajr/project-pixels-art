@@ -1,17 +1,3 @@
-// função para mostrar a cor selecionada
-function showColorSelected() {
-  let getColorsPallete = document.querySelector('#color-pallete')
-
-  getColorsPallete.addEventListener('click', function (event) {
-    if (event.target.style.border === 'black solid 1px') {
-      event.target.style.border = 'blue solid 2px';
-    } else {
-      event.target.style.border = 'black solid 1px';
-    }
-    console.log(event.target.style.border)
-  })
-}
-
 // adiciona fundo branco para pixel da paintBoard
 function addWhiteToBoard() {
   let paintBoardPixel = document.querySelectorAll('.pixel');
@@ -111,8 +97,8 @@ function generatePaintBoard() {
   let boardSizeButton = document.getElementById('generate-board');
 
   boardSizeButton.addEventListener('click', function () {
-    generateMin();
     generateMax();
+    generateMin();
     generateStandard();
     exclaimer();
   })
@@ -134,6 +120,7 @@ function generateMin() {
     removeBoardPaint();
     generateHeightDivs(5);
     generateWidthDivs(5);
+    addWhiteToBoard();
     window.alert('mínimo: 5 | máximo: 50')
   }
 }
@@ -141,8 +128,9 @@ function generateMin() {
 function generateMax() {
   if (getInputData() > 50) {
     removeBoardPaint();
-    generateHeightDivs(5);
-    generateWidthDivs(5);
+    generateHeightDivs(50);
+    generateWidthDivs(50);
+    addWhiteToBoard();
     window.alert('mínimo: 5 | máximo: 50')
   }
 }
@@ -153,6 +141,7 @@ function generateStandard() {
     removeBoardPaint();
     generateHeightDivs(getInputData());
     generateWidthDivs(getInputData());
+    addWhiteToBoard()
   }
 }
 
