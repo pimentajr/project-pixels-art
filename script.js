@@ -1,6 +1,5 @@
 const colorPalette = document.querySelector('#color-palette');
 const clearBoard = document.querySelector('#clear-board');
-const inputBoard = document.querySelector('#board-size');
 const buttonBoard = document.querySelector('#generate-board');
 const pixelBoard = document.querySelector('#pixel-board');
 
@@ -95,7 +94,6 @@ window.onload = randomColors;
 colorPalette.addEventListener('click', colorSelectEvent);
 clearBoard.addEventListener('click', clearEvent);
 
-inputBoard.addEventListener('change', inputEvent);
 buttonBoard.addEventListener('click', inputEvent);
 
 pixelBoard.addEventListener('click', colorSetEvent);
