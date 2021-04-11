@@ -54,3 +54,15 @@ function paletteSelected() {
   }
 }
 paletteSelected();
+
+function pixelColors() {
+  const boardPixels = document.querySelector('#pixel-board');
+
+  boardPixels.addEventListener('click', (colors) => {
+    const selectedColor = document.querySelector('.selected');
+    if (selectedColor !== null && colors.target.className !== 'board-pixel') {
+      colors.target.style.backgroundColor = selectedColor.style.backgroundColor;
+    }
+  });
+}
+pixelColors();
