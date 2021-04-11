@@ -84,6 +84,20 @@ function addPixels(string) {
   }
 }
 
+// 11 - Checa o limite de quadrados 5 - 50
+
+function checkBoardSizeLimit() {
+  const BoardSize = document.getElementById('board-size');
+
+  if (BoardSize.value < 5) {
+    BoardSize.value = 5;
+  } else if (BoardSize.value > 50) {
+    BoardSize.value = 50;
+  }
+
+  return BoardSize.value;
+}
+
 // Adiciona botao interativo para usuário
 
 function changePixelBoard() {
