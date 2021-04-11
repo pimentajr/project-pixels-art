@@ -1,3 +1,3 @@
 window.onload = () => {
-  document.getElementById('black').className = 'selected';
+  document.getElementById('black').classList.add('selected');
 };
