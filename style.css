@@ -27,7 +27,6 @@ h1 {
   display: inline-block;
   width: 100px;
   height: 100px;
-  margin: 10px;
 }
 
 .cor1 {
@@ -51,7 +50,7 @@ h1 {
   height: 210px;
   width: 210px;
   padding: 0;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 main {
