@@ -102,15 +102,18 @@ function checkBoardSizeLimit() {
 
 function changePixelBoard() {
   const BoardSizevalue = document.getElementById('board-size').value;
+
   if (BoardSizevalue === '') {
     window.alert('Board inválido!');
   }
 
   removePixelBoardChild();
 
-  addLinePixels(BoardSizevalue);
+  checkBoardSizeLimit();
 
-  addPixels(BoardSizevalue);
+  addLinePixels(checkBoardSizeLimit());
+
+  addPixels(checkBoardSizeLimit());
 }
 
 const generateBoardButton = document.getElementById('generate-board');
