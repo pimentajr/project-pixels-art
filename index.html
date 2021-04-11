@@ -1,19 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>Pixels Art</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <h1 id="title">Paleta de Cores</h1>
-  <div>
-    <div id="color-palette" class="color selected"></div>
-    <div id="color-palette" class="color"></div>
-    <div id="color-palette" class="color"></div>
-    <div id="color-palette" class="color"></div>
-  </div>
-  <button id="clear-board">Limpar</button>
+  <section id="color-palette">
+    <div class="color selected"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+  </section>
+  <main>
+    <div>
+      <button id="clear-board">Limpar</button>
+      <input id="board-size" min="5" max="50" type="number" value="5">
+      <button id="generate-board">VQV</button>
+    </div>
+    <table id="pixel-board">
+      <tr>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+      </tr>
+      <tr>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+      </tr>
+      <tr>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+      </tr>
+      <tr>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+      </tr>
+      <tr>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+        <td class="pixel"></td>
+      </tr>
+    </table>
+  </main>
   <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,3 +1,11 @@
+button {
+  margin-bottom: 10px;
+}
+
+#board-size {
+  width: 35px;
+}
+
 .color {
   border: solid black 1px;
   display: inline-block;
@@ -13,15 +21,10 @@
 }
 
 .pixel {
-  width: 50px;
-  height: 50px;
-  margin-bottom: -5px;
+  width: 40px;
+  height: 40px;
+  margin: -2.5px;
   display: inline-block;
   border: solid black 1px;
   background-color: white;
-}
-
-#clear-board {
-  font-size: 20px;
-  margin: 10px;
 }
