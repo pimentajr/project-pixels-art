@@ -29,7 +29,7 @@ function resetLastClickedPixelColor() {
   lastClickedPixelColor = '';
 }
 
-function fillPixelFromMouseEnter(e) {
+function fillPixelFromPointerEnter(e) {
   if (lastClickedPixelColor === '') {
     return;
   }
@@ -37,7 +37,7 @@ function fillPixelFromMouseEnter(e) {
   e.target.style.backgroundColor = lastClickedPixelColor;
 }
 
-function fillPixelFromMouseDown(e) {
+function fillPixelFromPointerDown(e) {
   const clickedPixel = e.target;
   const selectedColor = document.querySelector('.color.selected').style.backgroundColor;
 
@@ -48,6 +48,7 @@ function fillPixelFromMouseDown(e) {
   }
 
   lastClickedPixelColor = clickedPixel.style.backgroundColor;
+  e.target.releasePointerCapture(e.pointerId);
 }
 
 function fillRowsWithPixels() {
@@ -58,9 +59,8 @@ function fillRowsWithPixels() {
     for (let colIndex = 0; colIndex < boardSideSize; colIndex += 1) {
       pixel = document.createElement('div');
       pixel.classList.add('pixel');
-      pixel.addEventListener('pointerdown', fillPixelFromMouseDown);
-      pixel.addEventListener('pointerenter', fillPixelFromMouseEnter);
-      pixel.addEventListener('pointerup', resetLastClickedPixelColor);
+      pixel.addEventListener('pointerdown', fillPixelFromPointerDown);
+      pixel.addEventListener('pointerenter', fillPixelFromPointerEnter);
       pixelRows[rowIndex].appendChild(pixel);
     }
   }
@@ -245,5 +245,5 @@ window.onload = () => {
   initializePixelBoard();
   initializeClearButtonListener();
   initializeBoardSizeButtonListener();
-  document.body.addEventListener('mouseup', resetLastClickedPixelColor);
+  document.body.addEventListener('pointerup', resetLastClickedPixelColor);
 };

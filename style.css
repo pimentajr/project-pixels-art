@@ -101,6 +101,7 @@ a:hover {
   margin: 0;
   box-shadow: 0 0 8px rgb(186, 194, 209);
   transition: box-shadow 0.7s;
+  touch-action: none;
 }
 
 #pixel-board:hover {
