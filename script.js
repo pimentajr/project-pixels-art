@@ -45,7 +45,7 @@ function paintPixel () {
     for (let index = 0; index < pixel.length; index += 1) {
         pixel[index].addEventListener('click', function(event) {
             if (sessionStorage.getItem('color') === 'null') {
-                pixel[index].style.backgroundColor = localStorage.getItem('color')
+                pixel[index].style.backgroundColor = 'black'
             }else {
                 pixel[index].style.backgroundColor = sessionStorage.getItem('color')
             }
