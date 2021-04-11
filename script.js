@@ -1,12 +1,23 @@
 const colorPalette = document.querySelector('#color-palette');
-const colors = ['black', 'blue', 'yellow', 'magenta'];
+
+function randomColors() {
+  const symbols = '0123456789ABCDEF';
+  let color = '#';
+  for (let index = 0; index < 6; index += 1) {
+    color += symbols[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 for (let index = 0; index < 4; index += 1) {
   const colorBox = document.createElement('div');
   colorBox.className = 'color';
   if (index === 0) {
+    colorBox.style.backgroundColor = 'black';
     colorBox.classList.add('selected');
+  } else {
+    colorBox.style.backgroundColor = randomColors();
   }
-  colorBox.style.backgroundColor = colors[index];
   colorPalette.appendChild(colorBox);
 }
 

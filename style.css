@@ -1,3 +1,26 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+main div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#title {
+  text-align: center;
+  font-size: 3em;
+  font-style: italic;
+  color: #3f3f3f;
+  font-family: Courgette, cursive;
+}
+
 .color {
   display: inline-block;
   height: 50px;
@@ -7,7 +30,7 @@
 }
 
 #pixel-board {
-  padding: 20px 10px;
+  margin-top: 40px;
 }
 
 #pixel-board div {
@@ -24,13 +47,15 @@
 }
 
 #clear-board {
-  width: 60px;
-  margin-top: 15px;
-  margin-left: 84px;
+  width: 70px;
 }
 
 #board-size {
   display: inline-block;
-  margin-top: 15px;
   margin-right: 10px;
+}
+
+#generate-board , #board-size , #clear-board {
+  padding: 5px 10px;
+  margin-top: 30px;
 }
