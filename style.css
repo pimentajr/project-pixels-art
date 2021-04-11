@@ -1,26 +1,33 @@
 body {
   background-color: rgb(223, 201, 201);
   margin: 50px auto;
-  max-width: 300px;
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 .color {
   border: 1px solid black;
   display: inline-block;
-  height: 25px;
+  height: 35px;
   margin-right: 2px;
-  width: 25px;
+  width: 35px;
   border-radius: 5px;
 }
 
 #pixel-board {
-  max-width: 250px;
+  width: 250px;
+  margin: 20px auto;
 }
 
 .pixel {
   border: 1px solid black;
   display: inline-block;
-  height: 40px;
-  width: 40px;
+  height: 48px;
+  width: 48px;
   background-color: white;
+  border-radius: 5px;
 }

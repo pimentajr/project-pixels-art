@@ -67,3 +67,16 @@ function pixelColors() {
   });
 }
 pixelColors();
+
+function clearPixel() {
+  const pixel = document.querySelectorAll('.pixel');
+  const clear = document.querySelector('#clear-bord');
+
+  clear.addEventListener('click', () => {
+    for (let index = 0; index < pixel.length; index += 1) {
+      const pixels = pixel[index];
+      pixels.style.backgroundColor = 'white';
+    }
+  });
+}
+clearPixel();
