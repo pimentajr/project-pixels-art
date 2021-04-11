@@ -7,6 +7,7 @@ function pixelBoard(linha, coluna) {
     for (let indexJ = 0; indexJ < coluna; indexJ += 1) {
       const divPixelBoard = document.createElement('div');
       sectionPixelBoardChild.appendChild(divPixelBoard);
+      divPixelBoard.className = 'pixel';
     }
   }
 }

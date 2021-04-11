@@ -27,14 +27,12 @@ h1 {
   background-color: green;
 }
 
-#pixel-board div {
-  padding: 20px;
+.pixel {
   display: inline-block;
-}
-
-#pixel-board div {
   border: solid 1px black;
-  padding: 40px;
+  max-width: 40px;
+  max-height: 40px;
   background-color: white;
-  margin-top: 0px;
+  color: white;
+  padding: 19.5px;
 }
