@@ -11,35 +11,17 @@ function getRandomColors() {
     const randomRGB = `rgb(${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b})`;
     arrayColors.push(randomRGB);
   }
-  console.log(arrayColors);
   return arrayColors;
 }
 
-function createMatrix() {
-  const board = document.getElementById('pixel-board');
-  for (let index = 0; index < 5; index += 1) {
-    const line = document.createElement('div');
-    line.classList.add('line');
-    board.appendChild(line);
-    for (let secondIndex = 0; secondIndex < 5; secondIndex += 1) {
-      const pixel = document.createElement('div');
-      pixel.classList.add('pixel');
-      line.appendChild(pixel);
-    }
+function clearMatrix() {
+  const getPixelBoard = document.getElementById('pixel-board');
+  if (getPixelBoard.children.length === 0) {
+    return;
   }
-}
-
-function setSelected(event) {
-  const selectedElement = document.querySelector('.selected');
-  selectedElement.classList.remove('selected');
-  event.target.classList.add('selected');
-}
-
-function getPaletteColor() {
-  const selectColor = document.getElementsByClassName('color');
-
-  for (let index = 0; index < selectColor.length; index += 1) {
-    selectColor[index].addEventListener('click', setSelected);
+  const childMatrix = document.getElementsByClassName('line').length;
+  for (let index = 0; index < childMatrix; index += 1) {
+    getPixelBoard.removeChild(getPixelBoard.lastChild);
   }
 }
 
@@ -57,6 +39,37 @@ function pixelColor() {
     getPixel[i].addEventListener('click', getColorPixel);
   }
 }
+
+function createMatrix(number) {
+  clearMatrix();
+  const board = document.getElementById('pixel-board');
+  for (let index = 0; index < number; index += 1) {
+    const line = document.createElement('div');
+    line.classList.add('line');
+    board.appendChild(line);
+    for (let secondIndex = 0; secondIndex < number; secondIndex += 1) {
+      const pixel = document.createElement('div');
+      pixel.classList.add('pixel');
+      line.appendChild(pixel);
+    }
+  }
+  pixelColor();
+}
+
+function setSelected(event) {
+  const selectedElement = document.querySelector('.selected');
+  selectedElement.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+function getPaletteColor() {
+  const selectColor = document.getElementsByClassName('color');
+
+  for (let index = 0; index < selectColor.length; index += 1) {
+    selectColor[index].addEventListener('click', setSelected);
+  }
+}
+
 function clearPixels() {
   const blankPixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < blankPixels.length; index += 1) {
@@ -69,6 +82,26 @@ function gettingPixels() {
   capturePixels.addEventListener('click', clearPixels);
 }
 
+function checkInput() {
+  const userInput = document.getElementById('board-size');
+  let number = userInput.value;
+  if (userInput.value === '') {
+    alert('Board inválido!');
+    return;
+  }
+  if (number < 5) {
+    number = 5;
+  } else if (number >= 50) {
+    number = 50;
+  }
+  createMatrix(number);
+}
+
+function getSize() {
+  const vqv = document.getElementById('generate-board');
+  vqv.addEventListener('click', checkInput);
+}
+
 window.onload = function load() {
   const getColors = document.getElementsByClassName('color');
   getColors[0].style.backgroundColor = 'black';
@@ -78,8 +111,9 @@ window.onload = function load() {
   for (let index = 1; index < getColors.length; index += 1) {
     getColors[index].style.backgroundColor = colorRemove[index];
   }
-  createMatrix();
+
+  createMatrix(5);
   getPaletteColor();
-  pixelColor();
   gettingPixels();
+  getSize();
 };

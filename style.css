@@ -39,5 +39,13 @@ h1 {
 #clear-board {
   text-align: center;
   display: block;
-  margin: 12px auto;
+  margin: 15px auto;
 }
+
+#type-div {
+  text-align: center;
+  display: flex;
+  margin: 12px auto;
+  place-content: center;
+}
+
