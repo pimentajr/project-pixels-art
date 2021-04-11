@@ -34,16 +34,6 @@ window.onload = function loading() {
     eventClick.style.backgroundColor = color;
   });
 
-  const btnClear = document.getElementById('btn-clear');
-
-  function buttonClear(nameButton) {
-    const button = document.createElement('button');
-    button.appendChild(document.createTextNode(nameButton));
-    btnClear.appendChild(button);
-    button.id = 'clear-board';
-  }
-  buttonClear('Limpar');
-
   const buttonClearPixels = document.getElementById('clear-board');
 
   function buttonClearEng() {
