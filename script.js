@@ -36,7 +36,7 @@ const cleanButton = document.querySelector('#clear-table');
 const pixel = document.querySelectorAll('.pixel');
 const whithoutColor = 'white';
 function cleanColor() {
-  for (const index = 0; index < pixel.length; index += 1) {
+  for (let index = 0; index < pixel.length; index += 1) {
     while (pixel[index].style.backgroundColor !== whithoutColor) {
       pixel[index].style.backgroundColor = whithoutColor;
     }
