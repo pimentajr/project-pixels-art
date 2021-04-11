@@ -78,7 +78,6 @@ function myFunction(event) {
   const selColor = window.getComputedStyle(document.querySelector('.selected')).backgroundColor;
   const x = event.target;
   x.style.backgroundColor = selColor;
-  console.log(selColor);
 }
 
 function addColor() {
@@ -92,7 +91,7 @@ addColor();
 function clearAll() {
   const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].className = 'pixel white';
+   pixels[i].style.backgroundColor = 'white';
   }
 }
 
