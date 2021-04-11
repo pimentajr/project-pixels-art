@@ -31,7 +31,14 @@ button.addEventListener('click', clearBoard);
 
 //pintando pixels
 
-
+function pixelFilled(event) {
+  const pixelPainted = event.target;
+  pixelPainted.style.backgroundColor = document.querySelectorAll('.selected')[0].id;
+}
+const pixels = document.querySelectorAll('.pixel');
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].addEventListener('click', pixelFilled);
+}
 
 /* const colorSelected = document.querySelectorAll('.selected')[0];
 const colorFill = document.querySelectorAll('.pixel');
