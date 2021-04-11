@@ -36,14 +36,7 @@ input.addEventListener('input', numberTyped)
 
 function numberTyped(event){
   let number = event.target.value
-  if(number > 50){
-    input.value = 50
-  }else if(number < 5){
-    input.value = 5
-  }else{
-    input.value = number
-  }
-
+  input.value = number
 }
 
 const Table = document.querySelector('tbody')
@@ -54,6 +47,12 @@ const createPixels = document.querySelector('#generate-board')
 createPixels.addEventListener('click', function(){
   if(input.value === ''){
     return alert('Board inválido!')
+  }
+
+  if(input.value > 50){
+    input.value = 50
+  }else if(input.value < 5){
+    input.value = 5
   }
 
   for (let index = 0; index < tableChild.length; index += 1){
@@ -72,6 +71,7 @@ createPixels.addEventListener('click', function(){
   }
   allPixels = document.querySelectorAll('.pixel')
   tableChild = document.querySelectorAll('tr')
+  console.log(allPixels.length)
 })
 
 function clearPixels() {
