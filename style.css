@@ -23,22 +23,6 @@
   display: inline-block;
 }
 
-.black {
-  background-color: black;
-}
-
-.green {
-  background-color: green;
-}
-
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
 #pixel-board {
   display: table;
   margin-left: auto;
@@ -54,9 +38,5 @@
   border: solid black 1px;
   width: 40px;
   height: 40px;
-}
-
-.pixel {
-  background-color: white;
 }
 

@@ -33,10 +33,10 @@ function PixelBoardMaker(boardSize) {
 
 PixelBoardMaker(5);
 
-// Requisito 5
+// Requisito 6
 function selectBlackColor() {
   const colors = document.getElementsByClassName('color');
-  for (let index = 0; index < 4; index += 1) {
+  for (let index = 0; index < colors.length; index += 1) {
     if (colors[index].style.backgroundColor === 'black') {
       colors[index].classList.add('selected');
     }
@@ -44,3 +44,22 @@ function selectBlackColor() {
 }
 
 window.onload = selectBlackColor;
+
+// Requisito 7
+const colorPaleteSection = document.getElementById('color-palette');
+
+function changeClassSelected(event) {
+  const colorDiv = document.querySelector('.selected');
+  if (event.target.id !== 'color-palette') {
+    colorDiv.classList.remove('selected');
+    event.target.classList.add('selected');
+  }
+}
+
+function selectColor() {
+  colorPaleteSection.addEventListener('click', changeClassSelected);
+}
+
+selectColor();
+
+// Requisito 8
