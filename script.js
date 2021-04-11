@@ -4,8 +4,8 @@ const pixelBoard = document.querySelector('#pixel-board');
 const selectClickColor = document.querySelector('.selected');
 
 function selectColor() {
-  colorSelected.addEventListener('click', (event) => {
-    const etarget = event.target;
+  colorSelected.addEventListener('click', (events) => {
+    const etarget = events.target;
     color.forEach((element) => element.classList.remove('selected'));
     etarget.classList.add('selected');
   });
@@ -13,8 +13,8 @@ function selectColor() {
 selectColor();
 
 function paintPixel() {
-  pixelBoard.addEventListener('click', (event) => {
-    const etarget = event.target;
+  pixelBoard.addEventListener('click', (events) => {
+    const etarget = events.target;
     etarget.style.backgroundColor = getComputedStyle(selectClickColor).backgroundColor;
   });
 }
