@@ -26,6 +26,13 @@ body {
   border: 1px solid black;
 }
 
+#clear-board {
+  margin: 20px auto;
+  padding: 8px;
+  display: block;
+  background-color: rosybrown;
+}
+
 #pixel-board {
   border-collapse: collapse;
   margin-left: auto;

@@ -1,21 +1,33 @@
 const colorSelected = document.querySelector('#color-palette');
-const color = document.querySelectorAll('.color');
 const pixelBoard = document.querySelector('#pixel-board');
+const colors = document.querySelectorAll('.color');
 const selectClickColor = document.querySelector('.selected');
+const buttonClear = document.querySelector('#clear-board');
 
 function selectColor() {
-  colorSelected.addEventListener('click', (events) => {
-    const etarget = events.target;
-    color.forEach((element) => element.classList.remove('selected'));
-    etarget.classList.add('selected');
+  colorSelected.addEventListener('click', (e) => {
+    const eTarget = e.target;
+    colors.forEach((element) => element.classList.remove('selected'));
+    eTarget.classList.add('selected');
   });
 }
 selectColor();
 
 function paintPixel() {
-  pixelBoard.addEventListener('click', (events) => {
-    const etarget = events.target;
-    etarget.style.backgroundColor = getComputedStyle(selectClickColor).backgroundColor;
+  pixelBoard.addEventListener('click', (ev) => {
+    const evTarget = ev.target;
+    evTarget.style.backgroundColor = getComputedStyle(selectClickColor).backgroundColor;
   });
 }
 paintPixel();
+
+function clearBoard() {
+  buttonClear.addEventListener('click', () => {
+    const clearBoard = document.querySelectorAll('.pixel');
+    clearBoard.forEach((element) => {
+      const cell = element;
+      cell.style.backgroundColor = 'white';
+    })
+  });
+}
+clearBoard();
