@@ -41,11 +41,24 @@ function addNewPixelRows(parentElement, n) {
   }
 }
 
-function generateBoard() {
-  const boardSize = document.getElementById('board-size').value;
-  if (!boardSize) {
+function getValidBoardSize() {
+  const userInput = document.getElementById('board-size').value;
+  if (!userInput) {
     alert('Board inválido!');
-  } else {
+    return null;
+  }
+  if (userInput < 5) {
+    return 5;
+  }
+  if (userInput > 50) {
+    return 50;
+  }
+  return userInput;
+}
+
+function generateBoard() {
+  const boardSize = getValidBoardSize();
+  if (boardSize) {
     boardElement.querySelectorAll('*').forEach((e) => e.remove());
     boardElement.style.width = `${boardSize * 40}px`;
     addNewPixelRows(boardElement, boardSize);
