@@ -7,13 +7,17 @@ function linha() {
     addPixel.appendChild(pixel);
   }
 }
-function classSelect() {
-  const selected = document.getElementById('black');
-  selected.classList.add('selected');
-}
+
+const selected = document.querySelectorAll('#color-palette li');
+selected.forEach((item) => {
+  item.classList.add('selected');
+});
+
+selected.forEach((item) => {
+  item.classList.remove('selected');
+});
+selected[0].classList.add('selected');
 
 window.onload = function carregar() {
   linha();
-  classSelect()
-  console.log(black)
 };
