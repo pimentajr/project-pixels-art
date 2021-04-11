@@ -26,7 +26,7 @@ window.onload = function loading() {
   classSelector();
 
   const pixelBoard = document.getElementById('pixel-board');
-  
+
   pixelBoard.addEventListener('click', function (event) {
     const newColor = document.getElementsByClassName('color selected')[0];
     const color = getComputedStyle(newColor).backgroundColor;
@@ -34,10 +34,28 @@ window.onload = function loading() {
     eventClick.style.backgroundColor = color;
   });
 
+  function buttonClear(nameButton) {
+    const button = document.createElement('button');
+    button.appendChild(document.createTextNode(nameButton));
+    document.body.appendChild(button);
+    button.id = 'btn-clear';
+  }  
+  buttonClear('Limpar quadro de pixels');
+  
+  const buttonClearPixels = document.getElementById('btn-clear');
+
+  function buttonClearEng() {
+    buttonClearPixels.addEventListener('click', function(event) {
+      event.target;
+      const pixels = document.getElementsByClassName('pixel');
+      for (let index = 0; index < pixels.length; index += 1) {
+        pixels[index].style.backgroundColor = 'white';
+      }
+   
+
+    })
+  }
+  buttonClearEng();
 
 }
-
-
-  
-
 
