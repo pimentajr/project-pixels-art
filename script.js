@@ -46,16 +46,16 @@ function criaTabela(line) {
 const VQV = document.getElementById('generate-board');
 VQV.addEventListener('click', () => {
   valor = document.getElementById(nome).value;
-  if (valor >= 5 && valor <= 50) {
-    criaTabela(valor);
-  } else if (document.getElementById(nome).value <= 0 || valor === undefined) {
+  while (valor === 0 || valor === undefined || valor < 0) {
     alert('Board inválido!');
   }
 });
 
 VQV.addEventListener('click', () => {
   valor = document.getElementById('board-size').value;
-  if (valor < 5) {
+  if (valor >= 5 && valor <= 50) {
+    criaTabela(valor);
+  } else if (valor < 5) {
     criaTabela(5);
   } else if (valor > 50) {
     criaTabela(50);
