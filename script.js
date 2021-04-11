@@ -62,6 +62,7 @@ const clear = document.querySelector('#clear-board');
 
 clear.addEventListener('click', clearALL);
 
+// Desafio 10
 function createInputButton(tag, idN) {
   const create = document.createElement(tag);
   create.id = idN;
@@ -71,6 +72,16 @@ function createInputButton(tag, idN) {
 
 createInputButton('button', 'generate-board');
 createInputButton('input', 'board-size');
+
+// apagar a pixel board
+function clearPixelBoard() {
+  while (pixelBoardID.lastElementChild) {
+    pixelBoardID.removeChild(pixelBoardID.lastElementChild);
+  }
+}
+
+
+
 
 const sizeInput = document.getElementById('board-size');
 const button = document.getElementById('generate-board');
