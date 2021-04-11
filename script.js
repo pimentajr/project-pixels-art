@@ -34,24 +34,24 @@ window.onload = function loading() {
     eventClick.style.backgroundColor = color;
   });
 
+  const btnClear = document.getElementById('btn-clear');
+
   function buttonClear(nameButton) {
     const button = document.createElement('button');
     button.appendChild(document.createTextNode(nameButton));
-    document.body.appendChild(button);
-    button.id = 'btn-clear';
-  }  
-  buttonClear('Limpar quadro de pixels');
-  
-  const buttonClearPixels = document.getElementById('btn-clear');
+    btnClear.appendChild(button);
+    button.id = 'clear-board';
+  }
+  buttonClear('Limpar');
+
+  const buttonClearPixels = document.getElementById('clear-board');
 
   function buttonClearEng() {
-    buttonClearPixels.addEventListener('click', function(event) {
-      event.target;
+    buttonClearPixels.addEventListener('click', function() {
       const pixels = document.getElementsByClassName('pixel');
       for (let index = 0; index < pixels.length; index += 1) {
         pixels[index].style.backgroundColor = 'white';
       }
-   
 
     })
   }
