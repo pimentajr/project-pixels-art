@@ -34,5 +34,25 @@ function trocarSelected(event) {
 const paleta = document.querySelector('#color-palette');
 paleta.addEventListener('click', trocarSelected);
 
+function tintTable(event) {
+  const color = document.querySelector('.selected');
+  const colorSelected = window.getComputedStyle(color, null).getPropertyValue('background-color');
+  if (colorSelected === 'rgb(0, 0, 0)') {
+    event.target.classList.remove('branco', 'verde', 'vermelho', 'amarelo');
+    event.target.classList.add('preto');
+  } else if (colorSelected === 'rgb(0, 128, 0)') {
+    event.target.classList.remove('branco', 'preto', 'vermelho', 'amarelo');
+    event.target.classList.add('verde');
+  } else if (colorSelected === 'rgb(255, 0, 0)') {
+    event.target.classList.remove('branco', 'preto', 'verde', 'amarelo');
+    event.target.classList.add('vermelho');
+  } else {
+    event.target.classList.remove('branco', 'preto', 'verde', 'vermelho');
+    event.target.classList.add('amarelo');
+  }
+}
+
+const table = document.querySelector('#pixel-board');
+table.addEventListener('click', tintTable);
 // npm run lint
 // npm run lint:styles
