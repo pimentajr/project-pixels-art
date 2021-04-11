@@ -2,6 +2,9 @@ window.onload = function() {
 
 const colorPalette = document.getElementById('color-palette');
 const colors = document.querySelectorAll('.color');
+const pixelBoard = document.getElementById('pixel-board');
+const pixel = document.querySelectorAll('.pixel');
+    
 
 function selectColor () {
   for(let index = 0; index < colors.length; index +=1) {
@@ -33,17 +36,12 @@ changeSelectColor();
 
 function toPaint() {
 
-  let pixelBoard = document.getElementById('pixel-board');
-
   pixelBoard.addEventListener('click',function(event){
     
     let selected = document.querySelector('.selected');
     let styles = window.getComputedStyle(selected);  
     let colorPixel = styles.getPropertyValue('background-color');
-
-    let pixel = document.querySelector('.pixel');
-    console.log(pixel);
-    
+   
     let localPixel = event.target;
 
     if(localPixel.style.backgroundColor === colorPixel) {
@@ -60,10 +58,16 @@ function createButtonClear(buttonName){
   buttonClear.id = 'clear';
   buttonClear.innerText = buttonName;
 
-  colorPalette.appendChild(buttonClear);
+  let idButtonClear = document.getElementById('button-clear');
+  idButtonClear.appendChild(buttonClear);
 
-  
-
+  buttonClear.addEventListener('click', function(event){
+    for(let index = 0; index < pixel.length; index += 1) {
+      if(pixel[index].backgroundColor != 'white') {
+      pixel[index].style.backgroundColor = 'white';
+      }
+    }
+  })
 }
 
 createButtonClear('LIMPAR');
