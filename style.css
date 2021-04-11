@@ -15,18 +15,22 @@
 
 #black {
   background-color: black;
+  display: inline-block;
 }
 
 #red {
   background-color: red;
+  display: inline-block;
 }
 
 #blue {
   background-color: blue;
+  display: inline-block;
 }
 
 #green {
   background-color: green;
+  display: inline-block;
 }
 
 #pixel-board {
@@ -35,12 +39,13 @@
 
 .pixel {
   margin-right: 0;
+  background-color: white;
   width: 40px;
   height: 40px;
   border: 1px solid black;
 }
 
 .selected {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
 }
