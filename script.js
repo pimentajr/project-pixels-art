@@ -44,15 +44,30 @@ function cleanColor() {
 }
 cleanButton.addEventListener('click', cleanColor);
 
-window.onload = function () {
-  function removeTable() {
-    const table = document.querySelector('#pixel-board');
-    document.body.removeChild(table);
-  }
-  removeTable();
+// function removeTable() {
+//   const table = document.querySelector('#pixel-board');
+//   const childList = table.childNodes;
+//   for (let index = 0; index < childList.length; index += 0) {
+//     table.removeChild(table.lastChild);
+//   }
+// }
 
-  function reinsertTable() {
-    
-  }
-  reinsertTable();
-}
+// function reinsertTable(size) {
+//   const newTable = document.querySelector('#pixel-board');
+//   for (let index = 0; index < size; index += 1) {
+//     const line = document.createElement('div');
+//     line.classList.add('line');
+//     newTable.appendChild(line);
+//     for (let counter = 0; counter < size; counter += 1) {
+//       const newPixel = document.createElement('div');
+//       newPixel.classList.add('pixel');
+//       line.appendChild(newPixel);
+//     }
+//   }
+// }
+
+// window.onload = function () {
+//   removeTable();
+//   reinsertTable();
+//   addColorPixel();
+// }

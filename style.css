@@ -118,6 +118,7 @@ body {
   border-radius: 10px;
   padding: 5px;
   border: none;
+  width: 170px;
 }
 
 #generate-board {
