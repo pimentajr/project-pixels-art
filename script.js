@@ -26,6 +26,18 @@ function onLoadWindow() {
     }
     printPixel.classList.add(colorSelected);
   })
+
+  let clearButton = document.getElementById('clear-board');
+  clearButton.addEventListener('click', function(event) {
+    let allPixels = document.getElementsByClassName('pixel');
+    let boardPixel =document.getElementById('pixel-board');
+    for (let index in allPixels) {
+        allPixels[index].className = 'pixel';
+    }
+    if (boardPixel.classList) {
+      boardPixel.classList = [];
+    }
+  });
   //let varMain = document.getElementsByTagName('main');
   //varBody.addEventListener('click', getClassNameOnClick('click'));
   //addEventListener('click', getClassNameOnClick);
