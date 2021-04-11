@@ -29,17 +29,23 @@ for (let index = 1; index <= 5; index += 1) {
   for (let indice = 1; indice <= 5; indice += 1) {
     const columnLines = document.createElement('td');
     columnLines.classList = 'pixel';
-    tableLines.appendChild(columnLines);
+    columnLines.addEventListener('click', function createEvents(eventos) {
+      if (document.querySelector('.selected')) {
+        const color = document.querySelector('.selected').style.backgroundColor;
+        eventos.target.style.backgroundColor = color;
+      }
+    });
+  tableLines.appendChild(columnLines);
   }
-}
 
 // Criando botão
 
-const eventButton = document.getElementById('color-palette');
+const firstEventButton = document.getElementById('color-palette');
 
-eventButton.addEventListener('click', function createButton(event) {
+firstEventButton.addEventListener('click', function createButton1(event1) {
   if (document.querySelector('.selected') !== null) {
     (document.querySelector('.selected').classList.remove('selected'));
   }
-  event.target.classList.add('selected');
+  event1.target.classList.add('selected');
 });
+}
