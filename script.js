@@ -66,18 +66,13 @@ function changeColorSelected() {
 
 changeColorSelected();
 
+// limpa toda a boardpaint
 function clearButton() {
   let getClearButton = document.getElementById('clear-board');
   getClearButton.addEventListener('click', addWhiteToBoard);
 }
 
 clearButton();
-
-// o que define a altura: quantidade de divs.tr
-// o que define a largura: quantidade de divs.pixel existentes dentro de um div.tr
-
-// botao de input que recebe um valor N
-// reflexo do valor: gerar N divs.tr e N divs.pixel
 
 // gerar quantidade N de divs.tr (altura)
 function generateHeightDivs(number) {
@@ -103,7 +98,7 @@ function generateWidthDivs(number) {
   }
 }
 
-// puxa informação do input para o botão
+// puxa informação do input e armazena em uma variável
 function getInputData() {
   let inputData = document.getElementById('board-size');
   let pixelAmount = inputData.value;
@@ -117,14 +112,30 @@ function generatePaintBoard() {
 
   boardSizeButton.addEventListener('click', function() {
      if (getInputData() > 0) {
-      generateHeightDivs(0);
-      generateWidthDivs(0);
+      removeBoardPaint();
       generateHeightDivs(getInputData());
       generateWidthDivs(getInputData());
-    } else if (getInputData() === 0) {
+    } else {
       window.alert('Board inválido!');
+      
     }
   })
 }
 
 generatePaintBoard();
+
+// remove elementos div paintboard
+function removeBoardPaint() {
+  let getHeightDivs = document.querySelectorAll('.tr'); 
+  for (index = 0; index < getHeightDivs.length; index += 1 ) {
+    getHeightDivs[index].remove();
+  }
+}
+
+// estabelece limite < 5 && > 50
+function defineMaxMin() {
+  if (getInputData() < 5 || getInputData() > 50) {
+    generateHeightDivs(5);
+    generateWidthDivs(5);
+  }
+}

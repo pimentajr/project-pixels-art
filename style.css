@@ -44,7 +44,7 @@ li.color {
 
 #pixel-board {
   display: inline-block;
-  padding: 5px;
+  margin-top: 25px;
 }
 .tr {
   display: table-row;
