@@ -1,0 +1,31 @@
+.color{
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+}
+
+#first-color{
+    background-color: black;
+}
+
+#second-color{
+    background-color: green;
+}
+#third-color{
+    background-color: blue;
+}
+#fourth-color{
+    background-color: red;
+}
+
+div.color{
+    display: inline-block;
+}
+
+td, tr{
+    border: black solid 3px;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border: solid black 1px;
+}
