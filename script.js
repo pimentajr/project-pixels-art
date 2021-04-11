@@ -1,12 +1,15 @@
 //1
-let body = document.body;
+//feito no html
 
-let title = document.createElement('h1');
+//2 e 3
+const black = document.querySelectorAll('.color')[0];
+black.style.backgroundColor = 'black';
 
-body.appendChild(title);
+const red = document.querySelectorAll('.color')[1];
+red.style.backgroundColor = 'red';
 
-title.id = 'title';
+const yellow = document.querySelectorAll('.color')[2];
+yellow.style.backgroundColor = 'yellow';
 
-let titleText = document.createTextNode('Paleta de Cores');
-
-title.appendChild(titleText);
+const blue = document.querySelectorAll('.color')[3];
+blue.style.backgroundColor = 'blue';
