@@ -26,10 +26,14 @@ header {
 }
 
 button {
+  position: absolute;
+  top: 135px;
+  left: 50px;
   height: 20px;
   width: 60px;
   background-color: cadetblue;
 }
+
 button:hover {
   background: blueviolet;
 }
@@ -38,7 +42,7 @@ button:hover {
   width: 15%;
   height: 400px;
   position: relative;
-  top: 120px;
+  top: 160px;
   left: 42px;
 
 }
