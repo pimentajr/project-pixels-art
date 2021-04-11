@@ -1,0 +1,13 @@
+body {
+  background-color:rgb(223, 201, 201);
+  margin: 50px auto;
+  max-width: 300px;
+}
+
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  height: 25px;
+  margin-right: 2px;
+  width: 25px;
+}
