@@ -9,12 +9,12 @@ body {
   background-color: rgb(236, 239, 244);
 }
 
-h2 {
-  font-size: 1.4em;
+h1 , h2 {
+  font-size: 1.35em;
 }
 
 a {
-  color: rgb(163, 190, 140);
+  color: rgb(94, 129, 172);
   text-decoration: none;
 }
 
@@ -33,16 +33,25 @@ a:hover {
 
 .header-container , .footer-container {
   width: 100%;
-  padding: 10px 0;
   text-align: center;
-  color: rgb(236, 239, 244);
-  background-color: rgb(59, 66, 82);
 }
 
+.header-container {
+  color: rgb(236, 239, 244);
+  background-color: rgb(59, 66, 82);
+  padding: 10px 0;
+  box-shadow: 0 1px 5px rgb(186, 194, 209);
+}
+
+
 .header-container #title {
-  font-size: 1.5em;
   font-weight: 700;
   margin: 0;
+}
+
+.footer-container {
+  font-size: 0.9em;
+  padding-bottom: 20px;
 }
 
 .footer-container a {
@@ -54,7 +63,8 @@ a:hover {
 }
 
 #color-palette {
-  margin-bottom: 10px;
+  height: 50px;
+  margin: 10px 0;
 }
 
 .color {
@@ -63,6 +73,24 @@ a:hover {
   height: 40px;
   width: 40px;
   border: 1px solid black;
+  border-radius: 50%;
+  vertical-align: middle;
+  box-shadow: none;
+  transition: height 0.2s, width 0.2s, box-shadow 0.2s;
+}
+
+.color:hover {
+  height: 45px;
+  width: 45px;
+  box-shadow: none;
+  transition: height 0.1s, width 0.1s;
+}
+
+.selected.color {
+  height: 50px;
+  width: 50px;
+  box-shadow: 0 1px 5px rgb(186, 194, 209);
+  transition: height 0.2s, width 0.2s, box-shadow 0.2s;
 }
 
 .color:not( :last-child ) {
@@ -111,6 +139,6 @@ a:hover {
   display: none;
 }
 
-.footer-container {
-  display: none;
+.tips {
+  font-size: 0.9em;
 }
