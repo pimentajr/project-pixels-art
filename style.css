@@ -1,13 +1,39 @@
+body {
+  background-image: url('background-new.jpg');
+}
+
+
+header {
+  margin-top: 40px;
+  text-align: center;
+  color: white;
+}
+
+#color-palette {
+  text-align: center;
+}
+
+#board-size-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#generate-board {
+  margin-left: 5px;
+}
+
+#clear-board {
+  margin-left: 5px;
+}
+
 .color {
   display: inline-block;
   width: 50px;
   height: 50px;
   border: black solid 1px;
   margin: 2px;
-}
-
-#black {
-  background-color: black;
 }
 
 #table {
@@ -22,8 +48,8 @@
 .pixel {
   display: table-cell;
   border: black solid 1px;
-  height: 40px;
-  width: 40px;
+  height: 25px;
+  width: 25px;
   background-color: white;
 }
 
@@ -35,7 +61,10 @@ table {
 }
 
 #pixel-board {
-  margin-top: 5px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #new-table {
@@ -48,6 +77,3 @@ table {
   display: table;
 }
 
-#clear-board {
-  margin-bottom: 10px;
-}

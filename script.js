@@ -69,9 +69,11 @@ function newColorSelector() {
 newColorSelector();
 
 function fillPixels() {
-  containerTable.addEventListener('click', (event) => {
-    const selectedPixel = event.target;
-    selectedPixel.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+  document.body.addEventListener('click', (event) => {
+    if (event.target.className === 'pixel') {
+      const selecPixels = event.target;
+      selecPixels.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+    }
   });
 }
 fillPixels();
