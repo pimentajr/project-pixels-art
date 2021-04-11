@@ -42,3 +42,6 @@
   width: 260px;
   background-color: white;
 }
+.selected {
+  border: solid black 3px;
+}
