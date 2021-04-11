@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,21 +11,19 @@
     <section class="container">
       <h1 id="title">Paleta de Cores</h1>
       <div id="color-palette">
-        <div class="color first"></div>
-        <div class="color second"></div>
-        <div class="color third"></div>
-        <div class="color fourth"></div>
+        <div class="color black"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
       </div>
-      <input
-        id="board-size"
-        type="number"
-        min="1"
-        max="50"
-        placeholder="5 a 50 Pixels"
-      />
+
+      <input min="1" id="board-size" type="number" />
       <button id="generate-board">VQV</button>
+
       <button id="clear-board">Limpar</button>
-      <div id="pixel-board"></div>
+      <section class="board-container">
+        <div id="pixel-board"></div>
+      </section>
     </section>
     <script src="script.js"></script>
   </body>
