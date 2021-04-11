@@ -1,8 +1,11 @@
+const colorIdPallete = document.querySelector('#color-palette');
+const buttonId = document.querySelector('#button');
+const pixelBoardID = document.querySelector('#pixel-board');
+
 function createDiv1(tag, classN) {
   const CreatDiv = document.createElement(tag);
   CreatDiv.className = classN;
-  const Father = document.querySelector('#color-palette');
-  Father.appendChild(CreatDiv);
+  colorIdPallete.appendChild(CreatDiv);
 }
 
 createDiv1('div', 'black color');
@@ -26,14 +29,9 @@ function setColorPalette(event) {
   event.target.classList.add('selected');
 }
 
-const colorPalette = document.querySelector('#color-palette');
-
-colorPalette.addEventListener('click', setColorPalette);
+colorIdPallete.addEventListener('click', setColorPalette);
 
 // Desafio 8
-
-const Father2 = document.querySelector('#pixel-board');
-
 function colorPixel(event) {
   const actualColor = document.querySelector('.selected');
   const color = getComputedStyle(actualColor).backgroundColor;
@@ -41,15 +39,14 @@ function colorPixel(event) {
   pixel.style.backgroundColor = color;
 }
 
-Father2.addEventListener('click', colorPixel);
+pixelBoardID.addEventListener('click', colorPixel);
 
 // buttons
 function createButton() {
-  const qetClassTable = document.querySelector('#button');
   const bStart = document.createElement('button');
   bStart.id = 'clear-board';
   bStart.innerHTML = 'Vamos Limpar!';
-  qetClassTable.appendChild(bStart);
+  buttonId.appendChild(bStart);
 }
 
 createButton();
@@ -64,3 +61,31 @@ function clearALL() {
 const clear = document.querySelector('#clear-board');
 
 clear.addEventListener('click', clearALL);
+
+function createInputButton(tag, idN) {
+  const create = document.createElement(tag);
+  create.id = idN;
+  create.innerHTML = 'Mais de linhas!';
+  buttonId.appendChild(create);
+}
+
+createInputButton('button', 'generate-board');
+createInputButton('input', 'board-size');
+
+const sizeInput = document.getElementById('board-size');
+const button = document.getElementById('generate-board');
+
+button.addEventListener('click', () => {
+  let sizeBord = sizeInput.value;
+  if (!sizeBord) {
+    return alert('Board inválido!');
+  }
+
+  sizeBord = parseInt(sizeBord, 10);
+
+  if (sizeBord < 5) {
+    sizeBord = 5;
+  } else if (sizeBord > 50) {
+    sizeBord = 50;
+  }
+});
