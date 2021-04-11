@@ -1,9 +1,22 @@
+// As variáveis utilizadas com frequência para não precisar declarar em várias funções
 const pixelBoard = document.getElementById('pixel-board');
+const boxes = document.getElementsByClassName('color');
 
-// Reseta o tabuleiro
+// Remove todos os pixels do tabuleiro
 function boardRemove() {
   pixelBoard.innerHTML = '';
 }
+
+// Determina as cores da paleta, exceto a primeira
+function palleteBoxes() {
+  for (let index = 1; index < boxes.length; index += 1) {
+    const randNumb1 = Math.ceil(Math.random()*255.);
+    const randNumb2 = Math.ceil(Math.random()*255.);
+    const randNumb3 = Math.ceil(Math.random()*255.);
+    boxes[index].style.backgroundColor = `rgb(${randNumb1},${randNumb2},${randNumb3})`;
+  }
+}
+palleteBoxes()
 
 // Cria os elementos do quadro de acordo com o número de pixels
 function boardMaker(pixels) {
@@ -22,12 +35,12 @@ function boardMaker(pixels) {
 
 // Seleciona a cor preta como primária e também cria um tabuleiro padrão
 window.onload = () => {
-  const firstSelectedColor = document.getElementById('black-box');
+  const firstSelectedColor = document.getElementById('box0');
   firstSelectedColor.classList = ('color selected');
   boardMaker(5);
 };
 
-// Seleciona a cor mudando a classe da div clicada
+// Seleciona a box com a div que tiver 'selected' como class
 function colorSelection() {
   const tableColor = document.querySelector('#color-palette');
   tableColor.addEventListener('click', (event) => {
@@ -39,27 +52,28 @@ function colorSelection() {
 }
 colorSelection();
 
-// Pinta a box selecionada com a cor correta
+// Pinta a box selecionada com a cor que corresponde a box da paleta que tiver selecionada
 function printingPixels(printBox) {
   const pixelSelected = printBox;
+  const boxColor = document.getElementsByClassName('selected')[0].style.backgroundColor;
   switch (document.querySelector('.selected').id) {
-  case 'black-box':
+  case 'box0':
     pixelSelected.style.backgroundColor = 'black';
     break;
-  case 'red-box':
-    pixelSelected.style.backgroundColor = 'red';
+  case 'box1':
+    pixelSelected.style.backgroundColor = boxColor;
     break;
-  case 'green-box':
-    pixelSelected.style.backgroundColor = 'green';
+  case 'box2':
+    pixelSelected.style.backgroundColor = boxColor;
     break;
-  case 'yellow-box':
-    pixelSelected.style.backgroundColor = 'yellow';
+  case 'box3':
+    pixelSelected.style.backgroundColor = boxColor;
     break;
   default:
   }
 }
 
-// Seleciona o pixel clicando nele, e se for um píxel e não a seção, chama o evento
+// Seleciona o pixel clicando nele, não faz nada se clicar na seção
 function selectPixel() {
   pixelBoard.addEventListener('click', (event) => {
     const boxTarget = event.target;
@@ -138,3 +152,25 @@ function BoardSize() {
   });
 }
 BoardSize();
+
+// Adiciona um botão na página
+function createButtonRandomColors() {
+  let buttonChangeColor = document.createElement('input');
+  const breakLine = document.createElement('br')
+  buttonChangeColor.value = 'Cores Aleatórias';
+  buttonChangeColor.type = 'button';
+  buttonChangeColor.id = 'btn-change-colors';
+  buttonChangeColor.style.marginLeft = '10px';
+  const buttonArea = document.getElementById('buttons');
+  buttonArea.appendChild(breakLine);
+  buttonArea.appendChild(buttonChangeColor);
+}
+createButtonRandomColors();
+
+function randomizer() {
+  let buttonChangeColor = document.getElementById('btn-change-colors');
+  buttonChangeColor.addEventListener('click', () => {
+    palleteBoxes();
+  })
+}  
+randomizer();

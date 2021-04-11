@@ -9,20 +9,8 @@ body {
   border: 1px solid black;
 }
 
-#black-box {
+#box0 {
   background-color: black;
-}
-
-#red-box {
-  background-color: red;
-}
-
-#green-box {
-  background-color: green;
-}
-
-#yellow-box {
-  background-color: yellow;
 }
 
 .pixel {
