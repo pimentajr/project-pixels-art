@@ -24,7 +24,7 @@ function pixelBoard(boardSize) {
     let pBoard = document.getElementById('pixel-board');
     let pLine = document.createElement('div');
     pBoard.appendChild(pLine).className = 'line';
-    for (index1 = 0; index1 < boardSize; index1 += 1) {
+    for (let index1 = 0; index1 < boardSize; index1 += 1) {
     let pixel = document.createElement('div');
     pLine.appendChild(pixel).className = 'pixel';    
     }
@@ -32,3 +32,24 @@ function pixelBoard(boardSize) {
 }
 
   pixelBoard(5);
+
+window.onload = function selectedColor() {
+  let initialColor = document.getElementsByClassName('color');
+  initialColor[0].classList.add('selected');
+};
+
+function pickColor() {
+  const colorPicked = document.getElementById('color-palette');
+  colorPicked.addEventListener('click', (event) => {
+    const targetElement = event.target;
+    const classChange = document.getElementsByClassName('color');
+    for (let index = 0; index < classChange.length; index += 1) {
+      classChange[index].classList.remove('selected');
+      if (targetElement.className === 'color') {
+        classChange[index].classList.add('selected');
+      }    
+    }    
+  });
+}
+  pickColor();
+  
