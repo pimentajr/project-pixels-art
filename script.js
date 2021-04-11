@@ -44,11 +44,11 @@ function printingPixels(printBox) {
   case 'red-selector':
     pixelSelected.style.backgroundColor = 'red';
     break;
-  case 'green-selector':
-    pixelSelected.style.backgroundColor = 'green';
-    break;
   case 'blue-selector':
     pixelSelected.style.backgroundColor = 'rgb(0, 76, 175)';
+    break;
+  case 'green-selector':
+    pixelSelected.style.backgroundColor = 'green';
     break;
   default:
   }
