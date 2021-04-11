@@ -90,18 +90,17 @@ body {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.8em;
-  border: none ! important;
+  border: none;
 }
 
 #clear-board:hover {
   background-color: rgb(37, 108, 53);
   color: rgba(255, 255, 255);
-  border: none ! important;
+  border: none;
 }
 
 #clear-board:focus {
-  border: none ! important;
+  border: none;
   outline: thin dotted;
-  outline: 0 auto;
   outline-offset: 0;
 }
