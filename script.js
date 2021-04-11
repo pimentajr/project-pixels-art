@@ -8,7 +8,6 @@ let pixelList = document.getElementsByClassName('pixel');
 const cleanButton = document.getElementById('clear-board');
 const inputNumber = document.getElementById('board-size');
 const generateButton = document.getElementById('generate-board');
-// ------
 
 // Create elements
 function createDivBoard(param) {
@@ -35,23 +34,19 @@ function makeLiColors(param) {
 function selectColor() {
   liColors[0].classList.add('selected');
 }
-// ------
 
 // Error return
 function errorReturn() {
   window.alert('Board inválido!');
 }
-// ------
 
 // Remove all tiles
 function removeAllTiles() {
   pixelList = document.getElementsByClassName('pixel');
-  for (let index = 1; index < pixelBoard.children.length;) {
+  for (let index = 0; index < pixelBoard.children.length;) {
     pixelBoard.removeChild(pixelBoard.lastChild);
   }
 }
-
-// ------
 
 // Calculate board size Function
 function boardSizeCalculate() {
@@ -88,12 +83,24 @@ function updateTileListEventListener() {
     pixelList[index].addEventListener('click', paintSingleTile);
   }
 }
-// ------
+
+function checkForInputValue(size) {
+  let tileNumber;
+  if (size < 5) {
+    tileNumber = 5 ** 2;
+  } else {
+    tileNumber = size ** 2;
+  }
+  if (size > 50) {
+    tileNumber = 50 ** 2;
+  }
+  return tileNumber;
+}
 
 function generateDynamicBoard() {
   const size = inputNumber.value;
-  const tileNumber = size ** 2;
-  if (size < 1 || size > 50) {
+  const tileNumber = checkForInputValue(size);
+  if (size === '') {
     return errorReturn();
   }
   removeAllTiles();
