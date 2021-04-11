@@ -1,9 +1,7 @@
-function colorPalette() {
+window.onload = function colorPalette() {
   const startColor = document.getElementById('black');
   startColor.classList.add('selected');
-}
-
-window.onload = colorPalette;
+};
 
 function setClassSelect(event) {
   const setAtributte = document.querySelectorAll('.color');
@@ -12,4 +10,6 @@ function setClassSelect(event) {
   }
   event.target.classList.add('selected');
 }
-addEventListener('click', setClassSelect);
+
+const clickPalette = document.querySelector('#color-palette');
+clickPalette.addEventListener('click', setClassSelect);
