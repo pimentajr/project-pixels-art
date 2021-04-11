@@ -39,28 +39,30 @@ function criaTabela(line) {
     }
   }
 }
-
 const VQV = document.getElementById('generate-board');
 VQV.addEventListener('click', () => {
   valor = document.getElementById('board-size').value;
   if (valor >= 5 && valor <= 50) {
     criaTabela(valor);
-  } else if (valor < 5) {
+  } else if (valor <= 0) {
+    alert('Board inválido!');
+  }
+});
+
+VQV.addEventListener('click', () => {
+  if (valor < 5) {
     criaTabela(5);
   } else if (valor > 50) {
     criaTabela(50);
-  } else {
-    alert('Board inválido!');
   }
 });
 
 const botao = document.getElementById('clear-board');
 function reset() {
   const pixels = document.querySelectorAll('.pixel');
-  const backgroundColor = 'white';
   for (let index = 0; index < pixels.length; index += 1) {
-    while (pixels[index].style.backgroundColor !== backgroundColor) {
-      pixels[index].style.backgroundColor = backgroundColor;
+    while (pixels[index].style.backgroundColor !== 'white') {
+      pixels[index].style.backgroundColor = 'white';
     }
   }
 }
