@@ -29,16 +29,19 @@ function clearBoard() {
 
 button.addEventListener('click', clearBoard);
 
-//pintando pixels
+// pintando pixels
 
-function pixelFilled(event) {
-  const pixelPainted = event.target;
-  pixelPainted.style.backgroundColor = document.querySelectorAll('.selected')[0].id;
+const colorSelected = document.querySelectorAll('.selected');
+const pixelsInBoard = document.querySelectorAll('.pixel');
+const fillColor = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color');
+function paintPixels() {
+  for (let index = 0; index < pixelsInBoard.length; index += 1) {
+    pixelToPaint[index].addEventListener('click', () => {
+      pixelToPaint[index].style.backgroundColor = fillColor;
+    });
+  }
 }
-const pixels = document.querySelectorAll('.pixel');
-for (let index = 0; index < pixels.length; index += 1) {
-  pixels[index].addEventListener('click', pixelFilled);
-}
+paintPixels();
 
 /* const colorSelected = document.querySelectorAll('.selected')[0];
 const colorFill = document.querySelectorAll('.pixel');
