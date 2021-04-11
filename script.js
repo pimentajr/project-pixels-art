@@ -3,13 +3,14 @@
 const colors = document.querySelectorAll('.color');
 const pixels = document.getElementsByClassName('pixel');
 const limpar = document.getElementById('clear-board');
+
 // Funções
 function removeClass() {
   for (let index = 0; index < colors.length; index += 1) {
     colors[index].classList.remove('selected');
   }
 }
-
+// Ex 7
 function addClass(event) {
   event.target.classList.add('selected');
 }
@@ -23,12 +24,11 @@ function clearPixel() {
 
 // ex 8 ------ Refazer essa questão sozinho.
 function colorPixel(event) {
-  const selectedColor = document.querySelector('.selected');
-  const color = getComputedStyle(selectedColor).backgroundColor;
-  const pixel = event.target;
-  pixel.style.backgroundColor = color;
+  let selectedColor = document.getElementsByClassName('selected')[0];
+  let color = getComputedStyle(selectedColor).backgroundColor;
+  let pixelSelected = event.target;
+  pixelSelected.style.backgroundColor = color;
 }
-
 // Regras de negocio
 for (const item of colors) {
   item.addEventListener('click', removeClass);
