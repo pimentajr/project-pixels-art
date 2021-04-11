@@ -1,5 +1,8 @@
 let lines = 5;
 
+let red = document.querySelector('.red');
+red.style.backgroundColor = 'yellow'
+
 function cleanBoard() {
   const pixelBoard = document.querySelector('#pixel-board');
   // pixelBoard.querySelectorAll('.lineSquare').forEach((lineSquare=>{
@@ -96,6 +99,11 @@ function changeBoardSize() {
       alert('Board inválido!');
     } else if (newValue < 5) {
       newValue = 5;
+      lines = newValue;
+      squareLines(lines);
+      squareColuns();
+    } else if (newValue > 50) {
+      newValue = 50;
       lines = newValue;
       squareLines(lines);
       squareColuns();
