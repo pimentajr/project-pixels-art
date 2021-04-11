@@ -18,3 +18,14 @@ pixelBoard.addEventListener('click', function (event){
     paintPinxel.style.backgroundColor = sectedColor 
     }) 
 
+    function createButton() {
+        let getButton = document.querySelector('#clear-board')
+        getButton.innerHTML = "Reset"
+        getButton.addEventListener('click', function(){
+            let getPixel = document.querySelectorAll('#pixel-board>div')
+            for(let index =0 ; index < getPixel.length; index += 1){ 
+              getPixel[index].style.backgroundColor='white'
+              }
+            })
+        }
+        createButton()
