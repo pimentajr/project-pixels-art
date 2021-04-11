@@ -1,13 +1,13 @@
 .color {
-  border: black solid 1px;
+  border: black solid 3px;
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 90px;
+  height: 90px;
   margin: 3px;
 }
 
 #green {
-  background-color: seagreen;
+  background-color: rgb(32, 204, 106);
 }
 
 #red {
@@ -27,4 +27,15 @@
 
 #black {
   background-color: black;
+}
+
+
+@font-face{
+  font-family: adrip1;
+  src: url(fonts/adrip1.ttf);
+}
+#title {
+  font-family: adrip1;
+  letter-spacing: 2px;
+  font-size: 2cm;
 }
