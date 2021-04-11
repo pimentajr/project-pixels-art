@@ -30,13 +30,18 @@ for (let i = 0; i < color.length; i += 1) {
 
 pixelBoard.addEventListener('click', (event) => {
   const selected = document.querySelector('.selected');
-  event.target.style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
+  const evento = event.target;
+  evento.style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
 });
 
-const clear = document.querySelector('#botaoLimpar');
-clear.addEventListener('click', () => {
-  const pixels = document.querySelectorAll('.pixel');
-  for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].style.backgroundColor = 'white';
+const buttonClean = document.getElementById('botaoLimpar');
+const squares = document.querySelectorAll('.pixel');
+const backgroundColor = 'white';
+function clean() {
+  for (let index = 0; index < squares.length; index += 1) {
+    while (squares[index].style.backgroundColor !== backgroundColor) {
+      squares[index].style.backgroundColor = backgroundColor;
+    }
   }
-});
+}
+buttonClean.addEventListener('click', clean);
