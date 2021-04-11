@@ -45,8 +45,7 @@ function colorSelectedByClick() {
 colorSelectedByClick();
 
 function addSelecteColordByClick() {
-  const board = document.querySelector('#pixel-board');
-  board.addEventListener('click', (paintPixel) => {
+  selectPixels.addEventListener('click', (paintPixel) => {
     const selectedColor = document.querySelector('.selected');
     const eventTarget = paintPixel.target;
     eventTarget.style.backgroundColor = getComputedStyle(selectedColor).backgroundColor;
@@ -57,6 +56,7 @@ addSelecteColordByClick();
 function clearBoard() {
   const selectButton = document.querySelector('#clear-board');
   selectButton.addEventListener('click', () => {
+    const selectPixels = document.querySelectorAll('.pixel');
     selectPixels.forEach((element) => {
       const box = element; box.style.backgroundColor = 'white';
     });
