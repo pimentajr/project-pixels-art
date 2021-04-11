@@ -84,18 +84,15 @@ function ran255() {
 function randomColors() {
   const colors = document.querySelectorAll('.color');
 
-  for (let c = 0; c < colors.length; c += 1) {
+  for (let c = 1; c < colors.length; c += 1) {
     const color = colors[c];
-    if (c === 0) {
-      color.style.backgroundColor = 'black';
-    } else {
-      const rgb = `rgb(${ran255()}, ${ran255()}, ${ran255()})`;
-      color.style.backgroundColor = rgb;
-    }
+    const rgb = `rgb(${ran255()}, ${ran255()}, ${ran255()})`;
+    color.style.backgroundColor = rgb;
   }
 }
 
 window.onload = randomColors;
+// randomColors();
 
 colorPalette.addEventListener('click', colorSelectEvent);
 clearBoard.addEventListener('click', clearEvent);

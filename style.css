@@ -15,7 +15,23 @@ button {
   margin: 5px;
 }
 
-.selected {
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.color: .selected {
   width: 60px;
   height: 60px;
 }
@@ -23,8 +39,6 @@ button {
 .pixel {
   width: 40px;
   height: 40px;
-  margin: -2.5px;
-  display: inline-block;
   border: solid black 1px;
   background-color: white;
 }
