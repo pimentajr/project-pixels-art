@@ -10,8 +10,8 @@ const inputNumber = document.getElementById('board-size');
 const generateButton = document.getElementById('generate-board');
 
 // Create elements
-function createDivBoard(param) {
-  const numberOfTiles = param;
+function createDivBoard(size) {
+  const numberOfTiles = size;
   for (let index = 0; index < numberOfTiles; index += 1) {
     const tile = document.createElement('div');
     tile.classList.add('pixel');
