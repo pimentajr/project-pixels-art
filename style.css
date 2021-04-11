@@ -48,14 +48,12 @@
   background-color: green;
 }
 
-table, tr, td {
-  width: 38px;
-  height: 38px;
-  border: solid black 1px;
+table , tr , td {
   border-collapse: collapse;
+  border: solid black 1px;
 }
 
-table, tr {
+table , tr {
   width: auto;
   height: auto;
 }
