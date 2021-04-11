@@ -97,7 +97,7 @@ a:hover {
 
 #pixel-board {
   display: inline-block;
-  margin: 15px 0;
+  margin: 0;
   box-shadow: 0 0 8px rgb(186, 194, 209);
 }
 
@@ -142,6 +142,7 @@ a:hover {
 
 .tips {
   font-size: 0.9em;
+  margin: 20px;
 }
 
 button {

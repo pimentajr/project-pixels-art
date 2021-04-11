@@ -177,8 +177,12 @@ function validateBoardSizeInput(userBoardSideSize) {
   return userBoardSideSize;
 }
 
-function fillBoardWithUserInput() {
+function fillBoardWithUserInput(e) {
   let userBoardSideSize = document.getElementById('board-size').value;
+
+  if (e.type === 'keydown' && e.code !== 'Enter') {
+    return;
+  }
 
   if (userBoardSideSize === '') {
     alert('Board inválido!');
@@ -198,6 +202,7 @@ function initializeBoardSizeButtonListener() {
   const boardSizeUserInput = document.getElementById('board-size');
 
   boardSizeButton.addEventListener('click', fillBoardWithUserInput);
+  boardSizeUserInput.addEventListener('keydown', fillBoardWithUserInput);
 }
 
 function resetSelected() {
