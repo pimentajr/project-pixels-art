@@ -1,4 +1,4 @@
-.color:nth-child(1){
+.color:nth-child(1) {
   background-color: black;
   display: inline-block;
   border-style: solid;
@@ -29,4 +29,3 @@
   border-color: black;
   border-width: 1px;
 }
-
