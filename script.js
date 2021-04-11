@@ -82,13 +82,14 @@ generateBoard.addEventListener('click', () => {
 });
 
 // Requisito 12
-function generateRandomRGB () {
-  let rgb;
-  rgb = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
+function generateRandomRGB() {
+  const mRd = Math.random;
+  const mFl = Math.floor;
+  const rgb = `rgb(${mFl(mRd() * 256)},${mFl(mRd() * 256)},${mFl(mRd() * 256)})`;
   return rgb;
 }
 
-let colorPick = document.querySelectorAll('.color');
+const colorPick = document.querySelectorAll('.color');
 for (let index = 0; index < colorPick.length; index += 1) {
   if (colorPick[index].id !== 'black') {
     colorPick[index].style.backgroundColor = generateRandomRGB();
