@@ -28,9 +28,53 @@ function addColorToPixels(event) {
 pixels.addEventListener('click', addColorToPixels);
 
 const button = document.querySelector('#clear-board');
+let allPixels = document.querySelectorAll('.pixel');
+
+const input = document.querySelector('#board-size')
+
+input.addEventListener('input', numberTyped)
+
+function numberTyped(event){
+  let number = event.target.value
+  if(number > 50){
+    input.value = 50
+  }else if(number < 5){
+    input.value = 5
+  }else{
+    input.value = number
+  }
+
+}
+
+const Table = document.querySelector('tbody')
+let tableChild = document.querySelectorAll('tr')
+const trChild = document.querySelectorAll('td')
+const createPixels = document.querySelector('#generate-board')
+
+createPixels.addEventListener('click', function(){
+  if(input.value === ''){
+    return alert('Board inválido!')
+  }
+
+  for (let index = 0; index < tableChild.length; index += 1){
+    Table.removeChild(tableChild[index])
+  }
+  
+
+  for (let index = 1; index <= input.value; index+=1){
+    let row = document.createElement('tr')
+    Table.appendChild(row)
+    for (let index = 1; index <= input.value; index +=1){
+      let column = document.createElement('td')
+      column.className = 'pixel'
+      row.appendChild(column)
+    }
+  }
+  allPixels = document.querySelectorAll('.pixel')
+  tableChild = document.querySelectorAll('tr')
+})
 
 function clearPixels() {
-  const allPixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < allPixels.length; index += 1) {
     allPixels[index].removeAttribute('id');
   }
