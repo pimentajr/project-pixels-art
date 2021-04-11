@@ -8,11 +8,12 @@ function linha() {
   }
 }
 function classSelect() {
-  const select = document.getElementById('black');
-  select.classList.add('select');
+  const selected = document.getElementById('black');
+  selected.classList.add('selected');
 }
 
 window.onload = function carregar() {
   linha();
-  classSelect();
+  classSelect()
+  console.log(black)
 };
