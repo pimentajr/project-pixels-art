@@ -171,3 +171,21 @@ function applyRandomColor() {
 }
 
 applyRandomColor();
+
+// retorna cor selecionada
+function getSelectedColor() {
+  const selectedColorPixel = document.querySelector('.selected-color')
+  const getSelectedColor = document.querySelector('.selected');
+  const compStyles = window.getComputedStyle(getSelectedColor);
+
+  if (getSelectedColor.style.backgroundColor === 'black') {
+  selectedColorPixel.style.backgroundColor = compStyles.getPropertyValue('background-color');
+  } else {
+    selectedColorPixel.style.backgroundColor = getSelectedColor.style.backgroundColor;
+  }
+}
+
+getSelectedColor();
+// randomiza cores
+
+

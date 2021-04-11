@@ -12,7 +12,7 @@ h1 {
   letter-spacing: 2px;
   font-size: 40px;
   margin-bottom: 25px;
-  margin-top: 40px;
+  margin-top: 45px;
 }
 
 .palette-wrapper {
@@ -97,4 +97,22 @@ li.color {
   font-weight: normal;
   font-style: normal;
 
+}
+
+.authority {
+  color: rgba(240, 255, 255, 0.815);
+  font-family: minecraftmedium;
+}
+
+.selected-color {
+  display:inline-block;
+  border: black solid 1px;
+  padding: 15px;
+}
+
+.color-subtitle {
+  display:inline-block;
+  font-family: monospace;
+  font-size: 15px;
+  padding-right: 5px;
 }
