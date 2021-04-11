@@ -9,7 +9,7 @@ color2.style.backgroundColor = 'purple';
 color3.style.backgroundColor = 'gold';
 color4.style.backgroundColor = 'red';
 
-// criando o botão na paleta
+//  selecionando a cor da paleta
 
 function selectedSwitch(event) {
   document.querySelectorAll('.selected')[0].classList.remove('selected');
@@ -17,6 +17,15 @@ function selectedSwitch(event) {
   eventTarget.className += ' selected';
 }
 document.getElementById('color-palette').addEventListener('click', selectedSwitch);
+
+// criando botao de limpar o board
+let button = document.createElement("button");
+
+function clearBoard() {
+   document.getElementById('pixel-board').style.backgroundColor = "white";
+}
+
+button.addEventListener(click, clearBoard)
 
 /* const colorSelected = document.querySelectorAll('.selected')[0];
 const colorFill = document.querySelectorAll('.pixel');

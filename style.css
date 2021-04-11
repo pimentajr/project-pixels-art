@@ -25,6 +25,15 @@ header {
   float: left;
 }
 
+button {
+  height: 20px;
+  width: 60px;
+  background-color: cadetblue;
+}
+button:hover {
+  background: blueviolet;
+}
+
 #pixel-board {
   width: 15%;
   height: 400px;
