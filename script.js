@@ -47,18 +47,15 @@ function clearBoard() {
   }
 }
 
-inputFieldValue.addEventListener('change', function validateInput() {
-  const inputNumber = this.value;
-  if (inputNumber < 5) this.value = 5;
-  if (inputNumber > 50) this.value = 50;
-});
-
-inputFieldValue.onkeydown = function notNegativeNumber(e) {
-  if (!((e.keyCode > 47 && e.keyCode < 58)
-  || e.keyCode === 8)) {
-    return false;
+function validateInput(inputNumber) {
+  if (inputNumber < 5) {
+    inputFieldValue.value = 5;
   }
-};
+  if (inputNumber > 50) {
+    inputFieldValue.value = 50;
+  }
+  return inputFieldValue.value;
+}
 
 function createBoard() {
   const inputSizeBoard = document.getElementById('board-size');
@@ -67,6 +64,7 @@ function createBoard() {
     alert('Board inválido!');
     return null;
   }
+  validateInput(inputSizeBoard.value);
   tableOfPixel.innerHTML = '';
   for (let i = 0; i < inputSizeBoard.value; i += 1) {
     const pixelTable = document.createElement('tr');
