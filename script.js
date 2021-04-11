@@ -31,7 +31,7 @@ function makeLiColors(param) {
   }
 }
 
-// Select black color at start function
+// Select black color at start
 function selectColor() {
   liColors[0].classList.add('selected');
 }
@@ -46,47 +46,23 @@ function errorReturn() {
 // Remove all tiles
 function removeAllTiles() {
   pixelList = document.getElementsByClassName('pixel');
-  for (let index = 0; index < pixelList.length; index += 1) {
-    console.log(pixelList);
-    pixelBoard.removeChild(pixelList[index]); 
-    console.log(index);   
+  for (let index = 1; index < pixelBoard.children.length;) {
+    pixelBoard.removeChild(pixelBoard.lastChild);
   }
 }
 
 // ------
 
 // Calculate board size Function
-function boardSizeCalculate(size) {
-  const originalSize = size;
-  let counter = 0;
+function boardSizeCalculate() {
   const singleTileSize = 42;
-  if (counter === 0) {
-    const maxLateralSize = Math.ceil((singleTileSize * 5));
-    pixelBoard.style.width = `${maxLateralSize.toString()}px`;
-    const minHeightSize = maxLateralSize + 100;
-    pixelBoard.style.minHeight = `${minHeightSize.toString()}px`;
-    counter += 1;
-  } else {
-    const maxLateralSize = Math.ceil((singleTileSize * originalSize));
-    pixelBoard.style.width = `${maxLateralSize.toString()}px`;
-    const minHeightSize = maxLateralSize + 100;
-    pixelBoard.style.minHeight = `${minHeightSize.toString()}px`;
-  }
+  const maxLateralSize = Math.ceil((singleTileSize * pixelList.length ** (1 / 2)));
+  pixelBoard.style.width = `${maxLateralSize.toString()}px`;
+  const minHeightSize = singleTileSize * pixelList.length ** (1 / 2) + 60;
+  pixelBoard.style.minHeight = `${minHeightSize.toString()}px`;
 }
 
 // function of events
-// utilizar o update dos event listeners aqui dentro para atualizar somente a criação do novo board
-function generateDynamicBoard() {
-  removeAllTiles();
-  // const size = inputNumber.value;
-  // const tileNumber = size ** 2;
-  // if (size < 1 || size > 50) {
-  //   return errorReturn();
-  // }
-  // createDivBoard(tileNumber);
-  // boardSizeCalculate(size);
-}
-
 function lookForSelectedColor(event) {
   for (let index = 0; index < colorsList.length; index += 1) {
     colorsList[index].classList.remove('selected');
@@ -105,6 +81,27 @@ function cleanBoard() {
   }
 }
 
+// Update Function
+function updateTileListEventListener() {
+  pixelList = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixelList.length; index += 1) {
+    pixelList[index].addEventListener('click', paintSingleTile);
+  }
+}
+// ------
+
+function generateDynamicBoard() {
+  const size = inputNumber.value;
+  const tileNumber = size ** 2;
+  if (size < 1 || size > 50) {
+    return errorReturn();
+  }
+  removeAllTiles();
+  createDivBoard(tileNumber);
+  boardSizeCalculate();
+  updateTileListEventListener();
+}
+
 function createEventListeners() {
   for (let index = 0; index < colorsList.length; index += 1) {
     colorsList[index].addEventListener('click', lookForSelectedColor);
@@ -117,22 +114,12 @@ function createEventListeners() {
   generateButton.addEventListener('click', generateDynamicBoard);
 }
 
-// Update Function
-function updateTileListEventListener() {
-  pixelList = document.getElementsByClassName('pixel');
-  for (let index = 0; index < pixelList.length; index += 1) {
-    pixelList[index].addEventListener('click', paintSingleTile);
-  }
-}
-// ------
-
 function initialize() {
   selectColor();
   makeLiColors(liColors);
   createDivBoard(25);
-  // updateTileListEventListener();
   createEventListeners();
-  // boardSizeCalculate(25);
+  boardSizeCalculate();
 }
 
 window.onload = initialize;
