@@ -10,8 +10,8 @@ function randomBgCcolor() {
 
 window.onload = function start() {
   document.getElementsByClassName('color')[0].style.backgroundColor = 'black';
-  const teste = document.getElementsByClassName('color')[0];
-  teste.classList.add('selected');
+  const blackSelected = document.getElementsByClassName('color')[0];
+  blackSelected.classList.add('selected');
 
   randomBgCcolor();
 
@@ -30,3 +30,19 @@ for (let index = 0; index < a; index += 1) {
   }
   selectPixelBoard.appendChild(addDiv);
 }
+
+const color0 = document.querySelectorAll('.color')[0];
+const color1 = document.querySelectorAll('.color')[1];
+const color2 = document.querySelectorAll('.color')[2];
+const color3 = document.querySelectorAll('.color')[3];
+
+function picked(e) {
+  document.querySelectorAll('.selected')[0].classList.remove('selected');
+  e.target.classList.add('selected');
+  console.log(e.target);
+}
+
+color0.addEventListener('click', picked);
+color1.addEventListener('click', picked);
+color2.addEventListener('click', picked);
+color3.addEventListener('click', picked);
