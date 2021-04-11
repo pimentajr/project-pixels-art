@@ -3,12 +3,7 @@ window.onload = function carregar(){
 
 }
 
-colorTable = document.querySelector('#color-palette')
-colorTable.addEventListener('click', function (event){
-let colorSelected = document.querySelector('.selected')
-colorSelected.classList.remove('.selected');
-event.target.classList.add('selected')
-})
+
 
 let pixelBoard = document.querySelector('#pixel-board')
 pixelBoard.addEventListener('click', function (event){
