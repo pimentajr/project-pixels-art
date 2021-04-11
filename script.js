@@ -1,4 +1,4 @@
-onst black = document.querySelector('.black');
+const black = document.querySelector('.black');
 const color2 = document.querySelector('.black').nextElementSibling;
 const color3 = color2.nextElementSibling;
 const color4 = color3.nextElementSibling;
@@ -19,7 +19,8 @@ function generateRandomColor() {
     'blanchedAlmond',
     'blueViolet',
     'burlyWood',
-    'cadetBlue'];
+    'cadetBlue',
+  ];
   const randomNumber = Math.round(Math.random() * 15);
   return arr[randomNumber];
 }
