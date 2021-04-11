@@ -63,11 +63,11 @@ function createNewBoxAndPixelBoard(n) { // deleta o atual pixel board e seus pix
 
 // Cria um botão com input que define o tamanho do quadro de pixels
 function boardSize() {
-  vqvButton = document.querySelector('#generate-board'); // captura o botão #VQV
-  vqvButton.addEventListener('click', function() { // adiciona função click ao botão
-    n = document.querySelector('#board-size').value; // captura o valor do input
-    if(n == '') { // executa uma das operações de acordo com o valor de n
-      alert("Board inválido!"); 
+  let vqvButton = document.querySelector('#generate-board'); // captura o botão #VQV
+  vqvButton.addEventListener('click', function () { // adiciona função click ao botão
+    let n = document.querySelector('#board-size').value; // captura o valor do input
+    if (n === '') { // executa uma das operações de acordo com o valor de n
+      alert('Board inválido!');
     } else if (n < 5) {
       createNewBoxAndPixelBoard(5);
     } else if (n > 50) {
@@ -77,4 +77,4 @@ function boardSize() {
     }
   });
 }
-boardSize ();
+boardSize();
