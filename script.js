@@ -65,10 +65,35 @@ function generateBoard() {
   }
 }
 
-const selectorElements = document.getElementsByClassName('color');
-for (let index = 0; index < selectorElements.length; index += 1) {
-  selectorElements[index].addEventListener('click', setSelectedClass);
+function makeBlackPaletteColor() {
+  const blackSelector = document.createElement('div');
+  blackSelector.classList.add('color');
+  blackSelector.classList.add('selected');
+  blackSelector.style.backgroundColor = '#000';
+  return blackSelector;
 }
+
+function makeRandomPaletteColor() {
+  const newItem = document.createElement('div');
+  newItem.classList.add('color');
+  const randomHexColor = Math.floor(Math.random() * 16777215).toString(16);
+  newItem.style.backgroundColor = `#${randomHexColor}`;
+  return newItem;
+}
+
+function generateColorPalette() {
+  const paletteElement = document.getElementById('color-palette');
+  paletteElement.appendChild(makeBlackPaletteColor());
+  paletteElement.appendChild(makeRandomPaletteColor());
+  paletteElement.appendChild(makeRandomPaletteColor());
+  paletteElement.appendChild(makeRandomPaletteColor());
+  const selectorElements = document.getElementsByClassName('color');
+  for (let index = 0; index < selectorElements.length; index += 1) {
+    selectorElements[index].addEventListener('click', setSelectedClass);
+  }
+}
+
+generateColorPalette();
 
 boardElement.addEventListener('click', paintPixel);
 
