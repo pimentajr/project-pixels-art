@@ -2,3 +2,8 @@
   color: black;
 }
 
+.color {
+  border: solid black 1px;
+  padding: 5%;
+  display: inline-block;
+}
