@@ -1,10 +1,7 @@
 window.onload = function() {
 
-let colors = document.querySelectorAll('.color');
-let black = document.getElementById('black');
-let rose = document.getElementById('rose');
-let blue = document.getElementById('blue');
-let yellow = document.getElementById('yellow');
+const colorPalette = document.getElementById('color-palette');
+const colors = document.querySelectorAll('.color');
 
 function selectColor () {
   for(let index = 0; index < colors.length; index +=1) {
@@ -18,8 +15,6 @@ function selectColor () {
 selectColor();
 
 function changeSelectColor(){
-
-  let colorPalette = document.getElementById('color-palette');
 
   colorPalette.addEventListener('click', function(event) {
 
@@ -54,10 +49,23 @@ function toPaint() {
     if(localPixel.style.backgroundColor === colorPixel) {
         localPixel.style.backgroundColor = 'white';
     } else localPixel.style.backgroundColor = colorPixel;
-    
   })
 }
 
 toPaint();
+
+function createButtonClear(buttonName){
+
+  let buttonClear = document.createElement('button');
+  buttonClear.id = 'clear';
+  buttonClear.innerText = buttonName;
+
+  colorPalette.appendChild(buttonClear);
+
+  
+
+}
+
+createButtonClear('LIMPAR');
 
 }
