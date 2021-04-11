@@ -2,7 +2,7 @@
 function selectColor() {
   let colorsToSelect = document.querySelectorAll('.color'); // captura a palleta de cores
   for (let index = 0; index < colorsToSelect.length; index += 1) { // adiciona o evento a todas as cores através de um loop
-    colorsToSelect[index].addEventListener('click', function () { // função click e abre o que ela realiza
+    colorsToSelect[index].addEventListener('click', () => { // função click e abre o que ela realiza
       let currentColor = document.querySelector('.selected');// captura a cor atual e armazena
       currentColor.classList.remove('selected');// remove a classe selected da cor atual
       colorsToSelect[index].classList.add('selected');// adiciona a nova cor selecionada a classe selected
@@ -10,11 +10,12 @@ function selectColor() {
   }
 }
 selectColor();
+
 // Pinta com a cor selecionada
 function paint() {
   let pixelToPaint = document.querySelectorAll('.pixel'); // Captura e armazena todos os pixels do quadro
   for (let index = 0; index < pixelToPaint.length; index += 1) { // adiciona o evento a todos os pixels através de um loop
-    pixelToPaint[index].addEventListener('click', function () { // função click e abre o que ela realiza
+    pixelToPaint[index].addEventListener('click', () => { // função click e abre o que ela realiza
       let selectedColor = document.querySelector('.selected'); // captura a div com a cor selecionada
       let paintColor = window.getComputedStyle(selectedColor, null)
         .getPropertyValue('background-color'); // captura a cor selecionada através do getComputedStyle
@@ -23,13 +24,13 @@ function paint() {
   }
 }
 paint();
-// Cria um botão que ao ser ativado, limpa o quadro
 
+// Cria um botão que ao ser ativado, limpa o quadro
 function clear() {
   let pixels = document.querySelectorAll('.pixel'); // captura e armazena todos os pixels do quadro
   let clearButton = document.querySelector('#clear-board'); // captura o botão que irá limpar o quadro
-  clearButton.addEventListener('click', function () { // função click e abre o que ela realiza
-    for (let index = 0; index < pixels.length; index += 1) { // atribui a todos os pixels capturados atrav;es de um loop
+  clearButton.addEventListener('click', () => { // função click e abre o que ela realiza
+    for (let index = 0; index < pixels.length; index += 1) { // atribui a todos os pixels capturados através de um loop
       pixels[index].style.backgroundColor = 'white'; // atribuí a todos a cor white
     }
   });
@@ -64,7 +65,7 @@ function createNewBoxAndPixelBoard(n) { // deleta o atual pixel board e seus pix
 // Cria um botão com input que define o tamanho do quadro de pixels
 function boardSize() {
   let vqvButton = document.querySelector('#generate-board'); // captura o botão #VQV
-  vqvButton.addEventListener('click', function () { // adiciona função click ao botão
+  vqvButton.addEventListener('click', () => { // adiciona função click ao botão
     let n = document.querySelector('#board-size').value; // captura o valor do input
     if (n === '') { // executa uma das operações de acordo com o valor de n
       alert('Board inválido!');
