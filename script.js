@@ -154,16 +154,19 @@ generatePaintBoard();
 
 // gera cores aleatorias
 function generateRandomColor() {
-  let randomColor = Math.floor(Math.random()*16777215).toString(16);
-  return randomColor;
+  const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+  const r = randomBetween(1, 255);
+  const g = randomBetween(1, 255);
+  const b = randomBetween(1, 255);
+  const rgb = `rgb(${r},${g},${b})`; // Collect all to a css color string;
+  return rgb;
 }
 
 // aplica cor aleatoria para paleta
 function applyRandomColor() {
   const getRandomClass = document.querySelectorAll('.random-color');
   for (let index = 0; index < getRandomClass.length; index += 1) {
-    getRandomClass[index].style.backgroundColor = `#${generateRandomColor()}`;
-    console.log(generateRandomColor());
+    getRandomClass[index].style.backgroundColor = `${generateRandomColor()}`;
   }
 }
 
