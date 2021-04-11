@@ -2,13 +2,17 @@ const titulo = document.getElementById('title');
 titulo.innerText = 'Paleta de Cores';
 
 const divColors = document.querySelectorAll('.color');
+const colorsValue = divColors.id;
+divColors[0].style.backgroundColor = 'black';
 
 function paleteColors() {
-  for (let index = 0; index < divColors.length; index += 1) {
+  for (let index = 1; index < divColors.length; index += 1) {
     const colorsValue = divColors[index].id;
-    divColors[index].style.backgroundColor = colorsValue;
+    const colorsValueApp = '#' + (Math.random().toString(16) + '000000').substring(2,8);
+    divColors[index].style.backgroundColor = colorsValueApp; 
   }
 }
+//subString link : https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring
 paleteColors();
 
 function createBoardPixel(parent, line, column) {
@@ -33,9 +37,9 @@ function clickElement(event) {
 }
 
 const firstColor = document.getElementById('black');
-const secondColor = document.getElementById('blue');
-const thirdColor = document.getElementById('red');
-const fourthColor = document.getElementById('green');
+const secondColor = document.getElementById('box2');
+const thirdColor = document.getElementById('box3');
+const fourthColor = document.getElementById('box4');
 
 firstColor.addEventListener('click', clickElement);
 secondColor.addEventListener('click', clickElement);
@@ -47,9 +51,11 @@ function colorPixel() {
     const pixelColor = document.querySelector('.selected').style.backgroundColor;
     const localPaint = event.target;
     localPaint.style.backgroundColor = pixelColor;
-    if (localPaint === 'pixel') {
+    if (localPaint.className === 'pixel') {
       localPaint.style.backgroundColor = pixelColor;
-    }
+    } else {
+      localPaint.style.backgroundColor = 'white';
+    }  
   });
 }
 colorPixel();
@@ -65,19 +71,21 @@ function cleanGrid() {
 }
 cleanGrid();
 
-// function changeGrid () {
-//   const infoGrid = document.getElementById('board-size');
-//   const newGrid = document.getElementById('generate-board');
-//   newGrid.addEventListener('click', function () {
-//     if(infoGrid === ''){
-//       alert('Board inválido!');
-//     } else if (infoGrid < 5) {
-//       infoGrid = 5;
-//     } else if (infoGrid > 50) {
-//       infoGrid = 50
-//     }
-//     pixelBoard.style.backgroundColor = 'white';
-//     createBoardPixel(pixelBoard, infoGrid, infoGrid)    
-//   });
-// }
-// changeGrid();
+function changeGrid () {
+  const infoGrid = document.getElementById('board-size');
+  const newGrid = document.getElementById('generate-board');
+  newGrid.addEventListener('click', function () {
+    if(infoGrid.value === ''){
+      alert('Board inválido!');
+    } else if (infoGrid.value < 5) {
+      infoGrid.value = 5;
+    } else if (infoGrid.value > 50) {
+      infoGrid.value = 50
+    }
+    pixelBoard.style.backgroundColor = 'white';
+    pixelBoard.innerHTML = '';
+    createBoardPixel(pixelBoard, infoGrid.value, infoGrid.value)    
+  });
+}
+changeGrid();
+
