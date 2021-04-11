@@ -21,6 +21,7 @@ function setClassColor() {
 setClassColor();
 
 // Desafio 7
+// O Fasanaro e o Pedro Henrique (ambos Turma 9) e também Vitor Cardoso (turma 11) a Carol (instrutora) me ajudaram a completar ela.
 function setColorPalette(event) {
   const setColor = document.querySelectorAll('.selected');
   for (let index = 0; index < setColor.length; index += 1) {
@@ -32,6 +33,10 @@ function setColorPalette(event) {
 colorIdPallete.addEventListener('click', setColorPalette);
 
 // Desafio 8
+// Links que me ajudaram a resolver esse desafio!
+/** Soucer: [https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event] */
+/** Soucer: https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp */
+/** Soucer: [https://stackoverflow.com/questions/20377835/how-to-get-css-class-property-in-javascript] */
 function colorPixel(event) {
   const actualColor = document.querySelector('.selected');
   const color = getComputedStyle(actualColor).backgroundColor;
@@ -62,7 +67,8 @@ const clear = document.querySelector('#clear-board');
 
 clear.addEventListener('click', clearALL);
 
-// Desafio 10
+// Desafio 10/11
+// Jean Esteves me ajudou a concluir ele.
 function createInput(tag, idN) {
   const createI = document.createElement(tag);
   createI.id = idN;
@@ -81,13 +87,14 @@ function creatButton(tag, idN) {
 
 creatButton('button', 'generate-board');
 
-// apagar a pixel board
+// Apagar a pixel board
 function clearPixelBoard() {
   while (pixelBoardID.lastElementChild) {
     pixelBoardID.removeChild(pixelBoardID.lastElementChild);
   }
 }
 
+// Criar nova tabela!
 function createNewTable(pixels) {
   for (let index = 0; index < pixels; index += 1) {
     const newColum = document.createElement('tr');
@@ -115,7 +122,26 @@ button.addEventListener('click', () => {
     sizeBord = 50;
   }
   clearPixelBoard();
-  createNewTable(sizeBord, sizeBord);
+  createNewTable(sizeBord);
 
   sizeInput.value = '';
 });
+
+// Desafio 12 - the final countdown
+// o Jean esteves (Turma 11) Me ajudou a corrigir essa questão.
+function mathRandom() {
+  const numberRandom = parseInt(Math.random() * 255, 10);
+  return numberRandom;
+}
+
+function colorRandom() {
+  const green = document.querySelector('.green');
+  const red = document.querySelector('.red');
+  const blue = document.querySelector('.blue');
+
+  green.style.backgroundColor = `rgb(${mathRandom()}, ${mathRandom()}, ${mathRandom()})`;
+  red.style.backgroundColor = `rgb(${mathRandom()}, ${mathRandom()}, ${mathRandom()})`;
+  blue.style.backgroundColor = `rgb(${mathRandom()}, ${mathRandom()}, ${mathRandom()})`;
+}
+
+colorRandom();
