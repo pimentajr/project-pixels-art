@@ -23,9 +23,7 @@ h1 {
 }
 
 .color {
-  border-color: black;
-  border-width: 1px;
-  border-style: solid;
+  border: solid black 1px;
   display: inline-block;
   width: 100px;
   height: 100px;
@@ -66,12 +64,10 @@ main {
 
 .pixel {
   background-color: white;
-  border-color: black;
-  border-style: solid;
+  border: solid black 1px;
   display: table-cell;
   height: 40px;
   width: 40px;
-  border-width: 1px;
 }
 
 #color-palette {
