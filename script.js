@@ -59,9 +59,10 @@ function pixelColors() {
   const boardPixels = document.querySelector('#pixel-board');
 
   boardPixels.addEventListener('click', (colors) => {
+    const getColors = colors;
     const selectedColor = document.querySelector('.selected');
-    if (selectedColor !== null && colors.target.className !== 'board-pixel') {
-      colors.target.style.backgroundColor = selectedColor.style.backgroundColor;
+    if (selectedColor !== null && getColors.target.className !== 'board-pixel') {
+      getColors.target.style.backgroundColor = selectedColor.style.backgroundColor;
     }
   });
 }
