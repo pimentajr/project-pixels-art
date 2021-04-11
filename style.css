@@ -35,8 +35,12 @@
 }
 
 #pixel-board {
-  width: 230px;
   margin: 30px auto;
+  display: table;
+}
+
+.line {
+  display: table-row;
 }
 
 .pixel {
@@ -44,5 +48,5 @@
   height: 40px;
   border: 1px solid black;
   background: white;
-  display: inline-block;
+  display: table-cell;
 }
