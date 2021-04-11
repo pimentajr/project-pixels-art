@@ -3,15 +3,23 @@ window.onload = function initial() {
   initialColor.className = 'color selected';
 };
 
-const colors = ['black', 'red', 'blue', 'green'];
+function colorGenarator() {
+  const number = [];
+  let color;
+  for (let index = 0; index < 3; index += 1) {
+    number.push(Math.ceil(Math.random() * 255));
+  }
+  color = `rgb(${number.join(', ')})`;
+  return color;
+}
+
+const colors = ['black', colorGenarator(), colorGenarator(), colorGenarator()];
 const pixel = 5;
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
 let colorSeleted = 'black';
 const buttonCleanBoard = document.querySelector('#clear-board');
 const buttonSizeBoard = document.querySelector('#generate-board');
-
-// console.log(colorSeleted); // --------------------------------------------------------------seleção cor
 
 function createPalette(colorTitle) {
   for (let index = 0; index < colorTitle.length; index += 1) {
@@ -31,7 +39,6 @@ function createPixelLine(numberOfPixelsXY) {
     pixelBox.className = 'pixel';
     lineBox.appendChild(pixelBox);
     pixelBoard.appendChild(lineBox);
-    //  console.log(pixelBox);
   }
 }
 
@@ -70,28 +77,27 @@ function clearBoard() {
   }
 }
 
-function changeSizeBoard() {
-  let boardSize = document.querySelector('#board-size').value;
-  if (boardSize === '') {
-    alert('Board inválido!');
-  } else {
-  boardSize =  checkSizeInput(boardSize);
-  while (pixelBoard.firstChild) {
-    pixelBoard.removeChild(pixelBoard.firstChild);
-  }
-  numberOfLines(boardSize);
-  }
-  console.log(boardSize);
-} 
-
-
-function checkSizeInput (number) { 
+function checkSizeInput(number) {
   if (number < 5) {
     number = 5;
   } else if (number > 50) {
     number = 50;
   }
   return number;
+}
+
+function changeSizeBoard() {
+  let boardSize = document.querySelector('#board-size').value;
+  if (boardSize === '') {
+    alert('Board inválido!');
+  } else {
+    boardSize = checkSizeInput(boardSize);
+    while (pixelBoard.firstChild) {
+      pixelBoard.removeChild(pixelBoard.firstChild);
+    }
+    numberOfLines(boardSize);
+  }
+  console.log(boardSize);
 }
 
 createPalette(colors);
