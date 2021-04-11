@@ -49,17 +49,25 @@ window.onload = selectBlackColor;
 const colorPaleteSection = document.getElementById('color-palette');
 
 function changeClassSelected(event) {
-  const colorDiv = document.querySelector('.selected');
-  if (event.target.id !== 'color-palette') {
-    colorDiv.classList.remove('selected');
-    event.target.classList.add('selected');
+  const clickedColor = event;
+  const colors = colorPaleteSection.children;
+  for (let index = 0; index < colors.length; index += 1) {
+    if (colors[index].className !== 'color') {
+      colors[index].className = 'color';
+    }
+  }
+  clickedColor.target.classList.add('selected');
+}
+
+colorPaleteSection.addEventListener('click', changeClassSelected);
+
+// Requisito 8
+function paintPixel(event) {
+  const cell = event;
+  const selectedColor = document.querySelector('.selected');
+  if (cell.target.className === 'pixel') {
+    cell.target.style.backgroundColor = selectedColor.style.backgroundColor;
   }
 }
 
-function selectColor() {
-  colorPaleteSection.addEventListener('click', changeClassSelected);
-}
-
-selectColor();
-
-// Requisito 8
+pixelBoard.addEventListener('click', paintPixel);
