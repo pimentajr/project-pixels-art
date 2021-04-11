@@ -96,7 +96,7 @@ function getInputData() {
 function generatePaintBoard() {
   let boardSizeButton = document.getElementById('generate-board');
 
-  boardSizeButton.addEventListener('click', function () {
+  boardSizeButton.addEventListener('click', function() {
     generateMax();
     generateMin();
     generateStandard();
@@ -135,9 +135,9 @@ function generateMax() {
   }
 }
 
-// gera paintBoard para valores > 5 && < 50
+// gera paintBoard para valores > 5 && <= 50
 function generateStandard() {
-  if (getInputData() > 5) {
+  if (getInputData() >= 5 && getInputData <=50 ) {
     removeBoardPaint();
     generateHeightDivs(getInputData());
     generateWidthDivs(getInputData());
@@ -147,7 +147,7 @@ function generateStandard() {
 
 // exclaimer valor não preenchido
 function exclaimer() {
-  if (getInputData() == 0) {
+  if (getInputData() == '') {
     window.alert('Board inválido!');
   }
 }
