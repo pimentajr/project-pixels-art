@@ -9,14 +9,17 @@ function linha() {
 }
 
 const selected = document.querySelectorAll('#color-palette li');
-selected.forEach((item) => {
-  item.classList.add('selected');
-});
-
-selected.forEach((item) => {
-  item.classList.remove('selected');
-});
 selected[0].classList.add('selected');
+function cricar(ev) {
+  ev.currentTarget.classList.add('selected');
+  selected.forEach((item) => {
+    item.classList.remove('selected');
+    ev.currentTarget.classList.add('selected');
+  });
+}
+selected.forEach((item) => {
+  item.addEventListener('click', cricar);
+});
 
 window.onload = function carregar() {
   linha();
