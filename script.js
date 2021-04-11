@@ -18,6 +18,10 @@ function getPixel(event) {
   targetPrint.style.backgroundColor = selectColor;
 }
 
+function reloaded() {
+  document.location.reload(true);
+}
+
 function colorPalette() {
   document.getElementById('black').classList.add('selected');
 
@@ -26,6 +30,9 @@ function colorPalette() {
 
   const clickPrint = document.getElementById('pixel-board');
   clickPrint.addEventListener('click', getPixel);
+
+  const resetBtn = document.querySelector('.btn-style');
+  resetBtn.addEventListener('click', reloaded);
 }
 
 window.onload = colorPalette;
