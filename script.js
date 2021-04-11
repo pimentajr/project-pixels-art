@@ -31,24 +31,15 @@ button.addEventListener('click', clearBoard);
 
 // pintando pixels
 
-const colorSelected = document.querySelectorAll('.selected');
-const pixelsInBoard = document.querySelectorAll('.pixel');
-const fillColor = window.getComputedStyle(colorSelected, null).getPropertyValue('background-color');
-function paintPixels() {
-  for (let index = 0; index < pixelsInBoard.length; index += 1) {
-    paintPixels[index].addEventListener('click', () => {
-      paintPixels[index].style.backgroundColor = fillColor;
+function paint() {
+  const pixelToPaint = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixelToPaint.length; index += 1) {
+    pixelToPaint[index].addEventListener('click', () => {
+      const selectedColor = document.querySelector('.selected');
+      const paintColor = window.getComputedStyle(selectedColor, null)
+        .getPropertyValue('background-color');
+      pixelToPaint[index].style.backgroundColor = paintColor;
     });
   }
 }
-paintPixels();
-
-/* const colorSelected = document.querySelectorAll('.selected')[0];
-const colorFill = document.querySelectorAll('.pixel');
-
-colorSelected.addEventListener('click', colors);
-
-function fillingPixels() {
-colorFill.style.backgroundColor = colorSelected.style.backgroundColor;
-}
-colorSelected.addEventListener('click', fillingPixels); */
+paint();
