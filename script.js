@@ -1,4 +1,5 @@
-let valor = document.getElementById('board-size').value;
+const nome = 'board-size';
+let valor = document.getElementById(nome).value;
 function selecionaClasse(event) {
   const atribuiClasse = document.querySelectorAll('.selected');
   for (let index = 0; index < atribuiClasse.length; index += 1) {
@@ -44,7 +45,7 @@ function criaTabela(line) {
 
 const VQV = document.getElementById('generate-board');
 VQV.addEventListener('click', () => {
-  valor = document.getElementById('board-size').value;
+  valor = document.getElementById(nome).value;
   if (valor >= 5 && valor <= 50) {
     criaTabela(valor);
   } else if (valor <= 0 || valor === undefined) {
