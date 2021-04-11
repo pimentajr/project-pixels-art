@@ -11,19 +11,19 @@ width: 50px;
 display: inline-block;
 }
 
-#red {
+.red {
 background-color: red;
 }
 
-#blue {
+.blue {
 background-color: blue;
 }
 
-#green {
+.green {
 background-color: green;
 }
 
-#black {
+.black {
 background-color: black;
 }
 
@@ -42,8 +42,4 @@ height: 40px;
 width: 40px;
 display: inline-block;
 
-}
-
-.selected {
-	
 }

@@ -1,5 +1,3 @@
-window.onload = function() {
-
 function createPixel(tagName) {
     let element = document.createElement(tagName);
     return element
@@ -12,9 +10,15 @@ for (let index = 1; index <= 25; index += 1) {
     pixel.className = 'pixel'
     pixel[index]
     }
-let colorPalette = document.querySelector('#color-palette')
-    colorPalette.addEventListener('click', function(event){
-        let selectedColor = event.target.className;
-        
-    })
+			
+function firstColor () {
+let black = document.querySelector('.black');
+black.classList.add('selected');
+let blackClick = document.querySelector('.selected');
+blackClick.addEventListener('click', function() {
+    blackClick.backgroundColor = 'black'
+})
+return blackClick;
 }
+
+firstColor();
