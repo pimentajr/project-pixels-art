@@ -1,4 +1,4 @@
-const colorSelected = document.querySelectorAll('#color-palette');
+const colorSelected = document.querySelector('#color-palette');
 const color = document.querySelectorAll('.color');
 const pixelBoard = document.querySelector('#pixel-board');
 const selectClickColor = document.querySelector('.selected');
