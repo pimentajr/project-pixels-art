@@ -6,4 +6,12 @@ window.onload = function() {
     }
   }
   addClassPixels();
+
+  function blackSelector() {
+    blackColor = document.getElementById('black');
+    blackColor.classList.add('selected');
 }
+
+blackSelector();
+
+};
