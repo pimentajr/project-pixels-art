@@ -4,8 +4,31 @@
   box-sizing: border-box;
 }
 
-h3 {
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://image.freepik.com/free-vector/arcade-game-world-pixel-scene_24640-45865.jpg);
+  background-repeat: no-repeat;
+  background-position-y: -300px;
+  background-size: cover;
+}
+
+section {
+  text-align: center;
+}
+
+h1 {
+  font-size: ;
+  visibility: hidden;
   color: red;
+}
+
+h2 {
+  font-family: 'VT323', monospace;
+  text-align: center;
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 50px;
 }
 
 #color-palette {
@@ -42,10 +65,6 @@ h3 {
   background-color: blue;
 }
 
-#pixel-board ul {
-  display: ;
-}
-
 #pixel-board li {
   width: 40px;
   height: 40px;
@@ -55,7 +74,7 @@ h3 {
 }
 
 button {
-  margin: 15px 0 1px 0;
+  margin: 15px 1px;
   color: white;
   font-size: 1.5rem;
   border-radius: 50px 50px 10% 10%;
