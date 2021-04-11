@@ -1,11 +1,11 @@
 // Seleciona a cor desejada
 function selectColor() {
-  let colorToSelect = document.querySelectorAll('.color');// captura a palleta de cores
-  for (let index = 0; index < colorToSelect.length; index += 1) { // adiciona o evento a todas as cores através de um loop
-    colorToSelect[index].addEventListener('click', function () { // função click e abre o que ela realiza
+  let colorsToSelect = document.querySelectorAll('.color'); // captura a palleta de cores
+  for (let index = 0; index < colorsToSelect.length; index += 1) { // adiciona o evento a todas as cores através de um loop
+    colorsToSelect[index].addEventListener('click', function () { // função click e abre o que ela realiza
       let currentColor = document.querySelector('.selected');// captura a cor atual e armazena
       currentColor.classList.remove('selected');// remove a classe selected da cor atual
-      colorToSelect[index].classList.add('selected');// adiciona a nova cor selecionada a classe selected
+      colorsToSelect[index].classList.add('selected');// adiciona a nova cor selecionada a classe selected
     });
   }
 }
@@ -17,7 +17,7 @@ function paint() {
     pixelToPaint[index].addEventListener('click', function () { // função click e abre o que ela realiza
       let selectedColor = document.querySelector('.selected'); // captura a div com a cor selecionada
       let paintColor = window.getComputedStyle(selectedColor, null)
-        .getPropertyValue('background-color'); // captura a cor selecionada
+        .getPropertyValue('background-color'); // captura a cor selecionada através do getComputedStyle
       pixelToPaint[index].style.backgroundColor = paintColor; // atribui ao pixel a cor desejada
     });
   }
@@ -46,11 +46,11 @@ function createNewBoxAndPixelBoard(n) { // deleta o atual pixel board e seus pix
   let newPixelBoard = document.createElement('div'); // cria uma div, nova pixel board
   newPixelBoard.id = 'pixel-board'; // adiciona id
   document.body.appendChild(newPixelBoard); // insere no body
-  for (let lines = 0; lines < n; lines += 1) { // cria n linhas
+  for (let lines = 0; lines < n; lines += 1) { // cria n linhas com classe line
     let newLine = document.createElement('div');
     newLine.className = 'line';
     newPixelBoard.appendChild(newLine); // insere as linhas no novo pixel board
-    for (let index = 0; index < n; index += 1) { // cria n pixels
+    for (let index = 0; index < n; index += 1) { // cria n pixels para para a linha criada
       let pixel = document.createElement('div');
       pixel.className = 'pixel';
       newLine.appendChild(pixel); // insere os pixels na linha
@@ -60,3 +60,21 @@ function createNewBoxAndPixelBoard(n) { // deleta o atual pixel board e seus pix
   paint();
   clear();
 }
+
+// Cria um botão com input que define o tamanho do quadro de pixels
+function boardSize() {
+  vqvButton = document.querySelector('#generate-board'); // captura o botão #VQV
+  vqvButton.addEventListener('click', function() { // adiciona função click ao botão
+    n = document.querySelector('#board-size').value; // captura o valor do input
+    if(n == '') { // executa uma das operações de acordo com o valor de n
+      alert("Board inválido!"); 
+    } else if (n < 5) {
+      createNewBoxAndPixelBoard(5);
+    } else if (n > 50) {
+      createNewBoxAndPixelBoard(50);
+    } else {
+      createNewBoxAndPixelBoard(n);
+    }
+  });
+}
+boardSize ();

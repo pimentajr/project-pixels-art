@@ -39,5 +39,14 @@
 }
 
 #clear-board {
-  width: 200px;
+  width: 85px;
+}
+
+#board-size {
+  width: 25px;
+  text-align: center;
+}
+
+#generate-board {
+  width: 85px;
 }
