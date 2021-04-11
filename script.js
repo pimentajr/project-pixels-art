@@ -1,110 +1,95 @@
-const black = document.querySelector('.black');
-const color2 = document.querySelector('.black').nextElementSibling;
-const color3 = color2.nextElementSibling;
-const color4 = color3.nextElementSibling;
-
-function generateRandomColor() {
-  const arr = [
-    'red',
-    'blue',
-    'green',
-    'pink',
-    'yellow',
-    'brown',
-    'grey',
-    'aliceBlue',
-    'aquamarine',
-    'beige',
-    'bisque',
-    'blanchedAlmond',
-    'blueViolet',
-    'burlyWood',
-    'cadetBlue'];
-  const randomNumber = Math.round(Math.random() * 15);
-  return arr[randomNumber];
-}
-
-color2.className += ` ${generateRandomColor()}`;
-color3.className += ` ${generateRandomColor()}`;
-color4.className += ` ${generateRandomColor()}`;
-
-const paleta = document.querySelector('#color-palette');
-const board = document.querySelector('#pixel-board');
-
-function generateDiv() {
-  for (let i = 0; i < 25; i += 1) {
-    if (i % 5 === 0) {
-      const br = document.createElement('br');
-      board.appendChild(br);
-    }
-    const newDiv = document.createElement('div');
-    newDiv.className = 'pixel';
-    board.appendChild(newDiv);
-  }
-}
-generateDiv();
-
-black.className = 'color black selected';
-paleta.addEventListener('click', (event) => {
-  const color = event.target;
-  black.classList.remove('selected');
-  color2.classList.remove('selected');
-  color3.classList.remove('selected');
-  color4.classList.remove('selected');
-  const colorName = color.classList[1];
-  color.className = `color ${colorName} selected`;
-  return colorName;
-});
-
-//  ---------------------
-
-board.addEventListener('click', (event) => {
-  const pixel = event.target;
-  const itemColor = document.querySelector('.selected');
-  const color = itemColor.classList[1];
-  pixel.style.backgroundColor = color;
-});
-
-const clear = document.querySelector('#clear-board');
-clear.addEventListener('click', () => {
-  const pixels = document.querySelectorAll('.pixel');
-  for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].style.backgroundColor = 'white';
-  }
-});
-
-//  ---------------------- EX 10
-
-const newBoard = document.createElement('div');
-newBoard.id = 'pixel-board';
-const btn = document.querySelector('#generate-board');
+const pixelBoard = document.querySelector('#pixel-board');
+const colorBlack = document.querySelector('.first');
+const colorPalette = document.querySelector('#color-palette');
+const secondColor = document.querySelector('.second');
+const thirdColor = document.querySelector('.third');
+const fouthColor = document.querySelector('.fourth');
+const clearBoard = document.querySelector('#clear-board');
 const input = document.querySelector('#board-size');
+const btnGenerate = document.querySelector('#generate-board');
 
-function checkValue(i) {
-  if (i < 5) {
-    return 5;
-  }
-  if (i > 50) {
-    return 50;
-  }
-  return i;
-}
+//  Gera uma cor hexadecimal aleatória
+const generateColor = () => {
+  return String(`#${Math.floor(Math.random() * 16777215).toString(16)}`);
+};
 
-btn.addEventListener('click', () => {
-  board.remove();
-  document.querySelector('.board-container').appendChild(newBoard);
-  const valor = input.value;
-  if (valor === '') {
-    alert('Board inválido!');
-  }
-  const newValue = checkValue(valor);
-  for (let i = 0; i < Number(newValue * newValue); i += 1) {
-    if (i % newValue === 0) {
-      const br = document.createElement('br');
-      newBoard.appendChild(br);
+//  Adiciona uma cor aleatória a cada um dos 3 elementos, menos a primeira cor
+const randomColor = () => {
+  colorBlack.style.backgroundColor = 'black';
+  secondColor.style.backgroundColor = generateColor();
+  thirdColor.style.backgroundColor = generateColor();
+  fouthColor.style.backgroundColor = generateColor();
+};
+randomColor();
+
+//  Gera o quadro de pixels
+const generatePixels = (num) => {
+  for (let i = 0; i < num * num; i += 1) {
+    if (i % num === 0) {
+      const newBreak = document.createElement('br');
+      pixelBoard.appendChild(newBreak);
     }
-    const newDiv = document.createElement('div');
-    newDiv.className = 'pixel';
-    newBoard.appendChild(newDiv);
+    const newPixel = document.createElement('div');
+    newPixel.classList.add('pixel');
+    pixelBoard.appendChild(newPixel);
   }
+};
+generatePixels(5);
+
+//  Seleciona a cor black como inicial ao carregar a página
+const initialColorSelected = () => {
+  colorBlack.classList.add('selected');
+};
+initialColorSelected();
+
+//  Adiciona a classe selected quando uma cor da paleta for selecionada
+colorPalette.addEventListener('click', (event) => {
+  const colorSelected = event.target;
+  const allColorsSelected = document.querySelectorAll('.selected');
+  for (let i of allColorsSelected) {
+    i.classList.remove('selected');
+  }
+  colorSelected.classList.add('selected');
+  colorPalette.classList.remove('selected');
+});
+
+pixelBoard.addEventListener('click', (event) => {
+  const pixelClicked = event.target;
+  const color = document.querySelector('.selected').style.backgroundColor;
+  pixelClicked.style.backgroundColor = color;
+  pixelBoard.style.backgroundColor = '';
+});
+
+clearBoard.addEventListener('click', () => {
+  const allPixels = document.querySelectorAll('.pixel');
+  for (let i of allPixels) {
+    i.style.backgroundColor = 'white';
+  }
+});
+
+const removeToGenerateNewBoard = () => {
+  const allBrs = document.querySelectorAll('br');
+  const pixels = document.querySelectorAll('.pixel');
+  for (let i of pixels) {
+    i.remove();
+  }
+  for (let index of allBrs) {
+    index.remove();
+  }
+};
+
+const verifyInputValue = (value) => {
+  return value === ''
+    ? alert('Board inválido!')
+    : value < 5
+    ? (value = 5)
+    : value > 50
+    ? (value = 50)
+    : value;
+};
+
+btnGenerate.addEventListener('click', () => {
+  removeToGenerateNewBoard();
+  const value = input.value;
+  generatePixels(verifyInputValue(value));
 });

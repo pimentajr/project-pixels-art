@@ -1,135 +1,66 @@
-.color {
-  border: 1px black solid;
-  display: inline-block;
+body {
+  background-color: #f6f1e9;
+  color: #252525;
 }
 
 h1 {
-  text-align: left;
+  font-size: 40px;
 }
 
-.black {
-  background-color: black;
-  padding: 30px;
+.color {
+  border: 1px solid black;
+  width: 10px;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 20px;
 }
 
-.green {
-  background-color: green;
-  padding: 30px;
-}
-
-.magenta {
-  background-color: magenta;
-  padding: 30px;
-}
-
-.grey {
-  background-color: grey;
-  padding: 30px;
-}
-
-.red {
-  background-color: red;
-  padding: 30px;
-}
-
-.blue {
-  background-color: blue;
-  padding: 30px;
-}
-
-.pink {
-  background-color: pink;
-  padding: 30px;
-}
-
-.yellow {
-  background-color: yellow;
-  padding: 30px;
-}
-
-.brown {
-  background-color: brown;
-  padding: 30px;
-}
-
-.aliceBlue {
-  background-color: aliceblue;
-  padding: 30px;
-}
-
-.aquamarine {
-  background-color: aquamarine;
-  padding: 30px;
-}
-
-.cadetBlue {
-  background-color: cadetblue;
-  padding: 30px;
-}
-
-.burlyWood {
-  background-color: burlywood;
-  padding: 30px;
-}
-
-.blueViolet {
-  background-color: blueviolet;
-  padding: 30px;
-}
-
-.blanchedAlmond {
-  background-color: blanchedalmond;
-  padding: 30px;
-}
-
-.bisque {
-  background-color: bisque;
-  padding: 30px;
-}
-
-.beige {
-  background-color: beige;
-  padding: 30px;
-}
-
-.pixel {
-  background-color: white;
-  border: 1px black solid;
-  width: 40px;
-  height: 40px;
+input {
   display: inline-block;
 }
 
-#pixel-board {
-  height: 1px;
+.container {
+  text-align: center;
+}
+
+button {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 1.5px 20px;
+  background: none;
+  border: 2px solid #C08C1A;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #C08C1A;
+  transition: 1s;
 }
 
 #color-palette {
-  margin-bottom: 80px;
-  width: 260px;
-  height: 1px;
+  text-align: center;
 }
 
-#clear-board {
-  padding: 5px 20px;
-  display: block;
-  margin-bottom: 20px;
-  background-color: #252525;
-  border-radius: 5px;
-  text-transform: uppercase;
-  color: white;
+.color {
+  cursor: pointer;
 }
 
-#generate-board {
-  padding: 3px 20px;
+#pixel-board {
+  margin-top: 20px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
   display: inline-block;
-  margin-bottom: 20px;
-  background-color: #252525;
-  border-radius: 5px;
-  text-transform: uppercase;
-  color: white;
+  margin-top: -5px;
 }
 
-.white {
-  background-color: white;
+h1 {
+  text-align: center;
 }
