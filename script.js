@@ -37,7 +37,7 @@ function createPixels() {
 }
 
 //  Cria as linhas para alocação dos 5 quadrados de cores por linha.
-function createLine(line) {
+function createLine(newLine) {
   cleanBoard();
   newLine = lineWidth;
   const pixelTable = document.getElementById('pixel-board');
