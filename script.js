@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function loading() {
   function addClassPixels() {
     const pixels = document.getElementById('pixel-board').children;
     for (let index = 0; index < pixels.length; index += 1) {
@@ -25,4 +25,19 @@ window.onload = function () {
   }
   classSelector();
 
-};
+  const pixelBoard = document.getElementById('pixel-board');
+  
+  pixelBoard.addEventListener('click', function (event) {
+    const newColor = document.getElementsByClassName('color selected')[0];
+    const color = getComputedStyle(newColor).backgroundColor;
+    const eventClick = event.target;
+    eventClick.style.backgroundColor = color;
+  });
+
+
+}
+
+
+  
+
+
