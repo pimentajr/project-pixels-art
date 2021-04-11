@@ -1,7 +1,6 @@
     let black = document.getElementsByClassName("color")[0].style.backgroundColor = "black"
-    selected = true;
+    black.className = 'selected'
 
-    
     let red = document.getElementsByClassName("color")[1].style.backgroundColor="red"
 
     let green = document.getElementsByClassName("color")[2].style.backgroundColor="green"
@@ -24,8 +23,3 @@
         
     }
 }
-    function SelectBlack (){
-
-    }
-
-    black.addEventListener("select", );
