@@ -75,26 +75,24 @@ a:hover {
   border: 1px solid black;
   border-radius: 50%;
   vertical-align: middle;
-  box-shadow: none;
-  transition: height 0.2s, width 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 5px rgb(186, 194, 209);
+  transition: border-radius 0.5s;
 }
 
 .color:hover {
-  height: 45px;
-  width: 45px;
-  box-shadow: none;
-  transition: height 0.1s, width 0.1s;
+  border-radius: 0;
+  box-shadow: 0 1px 5px rgb(186, 194, 209);
+  transition: border-radius 0.5s;
 }
 
 .selected.color {
-  height: 50px;
-  width: 50px;
+  border-radius: 0;
   box-shadow: 0 1px 5px rgb(186, 194, 209);
-  transition: height 0.2s, width 0.2s, box-shadow 0.2s;
+  transition: border-radius 0.5s;
 }
 
 .color:not( :last-child ) {
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
 #pixel-board {
