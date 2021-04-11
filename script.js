@@ -11,9 +11,19 @@ color4.style.backgroundColor = 'red';
 
 // criando o botão na paleta
 
-/* function selectedSwitch(event) {
+function selectedSwitch(event) {
   document.querySelectorAll('.selected')[0].classList.remove('selected');
   const eventTarget = event.target;
   eventTarget.className += ' selected';
 }
-*/
+document.getElementById('color-palette').addEventListener('click', selectedSwitch);
+
+/* const colorSelected = document.querySelectorAll('.selected')[0];
+const colorFill = document.querySelectorAll('.pixel');
+
+colorSelected.addEventListener('click', colors);
+
+function fillingPixels() {
+colorFill.style.backgroundColor = colorSelected.style.backgroundColor;
+}
+colorSelected.addEventListener('click', fillingPixels); */
