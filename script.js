@@ -33,11 +33,11 @@ button.addEventListener('click', clearBoard);
 
 const colorSelected = document.querySelectorAll('.selected');
 const pixelsInBoard = document.querySelectorAll('.pixel');
-const fillColor = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color');
+const fillColor = window.getComputedStyle(colorSelected, null).getPropertyValue('background-color');
 function paintPixels() {
   for (let index = 0; index < pixelsInBoard.length; index += 1) {
-    pixelToPaint[index].addEventListener('click', () => {
-      pixelToPaint[index].style.backgroundColor = fillColor;
+    paintPixels[index].addEventListener('click', () => {
+      paintPixels[index].style.backgroundColor = fillColor;
     });
   }
 }
