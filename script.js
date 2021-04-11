@@ -18,6 +18,13 @@ function paintTable(event) {
   pixel.style.backgroundColor = colorPixel;
 }
 
+function clearTable() {
+  const allPixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < allPixels.length; index += 1) {
+    allPixels[index].style.backgroundColor = 'white';
+  } 
+}
+
 const selectElements = document.getElementsByClassName('color');
 for (let index = 0; index < selectElements.length; index += 1) {
   selectElements[index].addEventListener('click', changeClassDiv);
@@ -26,9 +33,5 @@ for (let index = 0; index < selectElements.length; index += 1) {
 const tableElements = document.getElementById('pixel-board');
 tableElements.addEventListener('click', paintTable);
 
-function clearTable() {
-  const allPixels = document.getElementsByClassName('pixel');
-  for (let index = 0; index < allPixels.length; index += 1) {
-    allPixels[index].style.backgroundColor = 'white';
-  }
-}
+const clearButton = document.getElementById('clear-board');
+clearButton.addEventListener('click', clearTable);
