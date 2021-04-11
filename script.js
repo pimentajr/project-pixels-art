@@ -76,8 +76,27 @@ function generateBoard() {
   generateCells(size);
 }
 
+function createRandomColor() {
+  const colorParameter = [];
+  for (let index = 0; index < 3; index += 1) {
+    const parameter = Math.ceil(Math.random() * 255);
+    colorParameter.push(parameter);
+  }
+  const color = `rgb(${colorParameter[0]}, ${colorParameter[1]}, ${colorParameter[2]})`;
+  return color;
+}
+
+function setInitialPalette() {
+  for (let index = 2; index <= 4; index += 1) {
+    const paletteItem = document.getElementById(`color-${index}`);
+    const randomColor = createRandomColor();
+    paletteItem.style.backgroundColor = randomColor;
+  }
+}
+
 function pageStarter() {
   selectInitialColor();
+  setInitialPalette();
   document
     .getElementById('color-palette')
     .addEventListener('click', setSelectedColor);
