@@ -31,3 +31,7 @@ ul {
   background-color: white;
   border-radius: 5px;
 }
+
+#clear-board {
+  margin-top: 20px;
+}

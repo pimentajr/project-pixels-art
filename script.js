@@ -70,7 +70,7 @@ pixelColors();
 
 function clearPixel() {
   const pixel = document.querySelectorAll('.pixel');
-  const clear = document.querySelector('#clear-bord');
+  const clear = document.querySelector('#clear-board');
 
   clear.addEventListener('click', () => {
     for (let index = 0; index < pixel.length; index += 1) {
