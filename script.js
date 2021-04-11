@@ -56,11 +56,11 @@ function selectColor() {
         function pixelselected() {
           initialcolor[index].style.backgroundColor = finalcolor.style.backgroundColor;
           };
-        }
-    };
+      }
+    }
   }
 }
-selectColor()
+selectColor();
 
 function buttonClear() {
   const button = document.createElement('button');
@@ -68,12 +68,12 @@ function buttonClear() {
   blockButton.appendChild(button);
   button.id = 'clear-board';
   button.innerHTML = 'Limpar';
-  function clearAllPixels () {
+  function clearAllPixels() {
     const pixels = document.querySelectorAll('.pixel');
     for (let index = 0; index < pixels.length; index += 1) {
       pixels[index].style.backgroundColor = 'white';
-      }
     }
-  button.addEventListener('click', clearAllPixels);
   }
+  button.addEventListener('click', clearAllPixels);
+}
 buttonClear();
