@@ -1,5 +1,5 @@
 const paletteColors = document.querySelectorAll('.color');
-const colors = ['black', 'red', 'blue', 'green'];
+const colors = ['black', 'red', 'green', 'blue'];
 const buttonGenerateBoard = document.getElementById('generate-board');
 const pixelBoard = document.getElementById('pixel-board');
 const valueInput = document.getElementById('board-size');
@@ -13,38 +13,6 @@ for (let indexPalette = 0; indexPalette < paletteColors.length; indexPalette += 
 function clearBoard() {
   pixelBoard.innerHTML = '';
 }
-
-function createPixels(inputValue) {
-  inputValue = valueInput.value;
-  if (inputValue === '') {
-    alert('Board inválido!');
-  }
-
-  if (inputValue < 5) {
-    inputValue = 5;
-  }
-  if (inputValue > 50) {
-    inputValue = 50;
-  }
-
-  if (inputValue !== '') {
-    clearBoard();
-    for (let index = 0; index < inputValue; index += 1) {
-      const tr = document.createElement('tr');
-      pixelBoard.appendChild(tr);
-      for (let indexx = 0; indexx < inputValue; indexx += 1) {
-        const td = document.createElement('td');
-        tr.appendChild(td);
-        td.className = 'pixel';
-      }
-    }
-  }
-  selectColor();
-  paintPixel();
-  clear();
-}
-
-buttonGenerateBoard.addEventListener('click', createPixels);
 
 function removeSelected() {
   const selected = document.querySelector('.selected');
@@ -79,6 +47,35 @@ function clear() {
     }
   });
 }
+
+function createPixels(inputValue) {
+  clearBoard();
+  for (let index = 0; index < inputValue; index += 1) {
+    const tr = document.createElement('tr');
+    pixelBoard.appendChild(tr);
+    for (let indexx = 0; indexx < inputValue; indexx += 1) {
+      const td = document.createElement('td');
+      tr.appendChild(td);
+      td.className = 'pixel';
+    }
+  }
+  selectColor();
+  paintPixel();
+  clear();
+}
+
+function checkInput() {
+  if (valueInput.value === '') {
+    alert('Board inválido!');
+  } else if (valueInput.value < 5) {
+    valueInput.value = 5;
+  } else if (valueInput.value > 50) {
+    valueInput.value = 50;
+  }
+  createPixels(valueInput.value);
+}
+
+buttonGenerateBoard.addEventListener('click', checkInput);
 
 function randomColors() {
   for (let indexColors = 1; indexColors < paletteColors.length; indexColors += 1) {
