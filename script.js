@@ -1,6 +1,6 @@
 // Objetos HTML
 // ex 7.
-const colors = document.querySelectorAll('.color');
+const colors = document.getElementsByClassName('color');
 const pixels = document.getElementsByClassName('pixel');
 const limpar = document.getElementById('clear-board');
 
@@ -30,13 +30,15 @@ function colorPixel(event) {
   pixelSelected.style.backgroundColor = color;
 }
 // Regras de negocio
-for(const item of colors) {
-  item.addEventListener('click', removeClass);
-  item.addEventListener('click', addClass);
+
+for (let item = 0; item < colors.length; item += 1) {
+  let eventItem = colors[item];
+  eventItem.addEventListener('click', removeClass);
+  eventItem.addEventListener('click', addClass);
 }
 
-for(const px of pixels) {
-  px.addEventListener('click', colorPixel);
+for (let px = 0; px < pixels.length; px += 1) {
+  pixels[px].addEventListener('click', colorPixel);
 }
 
 limpar.addEventListener('click', clearPixel);
