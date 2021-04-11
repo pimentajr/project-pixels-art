@@ -11,10 +11,10 @@ function coloringPalette() {
 // document.querySelector('.color').style.backgroundColor = 'black';
 
 // 4 - 
-function creatingBoard() {		
-	for (let index = 1; index <= 5; index += 1) {
+function creatingBoard(size = 5) {			
+	for (let index = 1; index <= size; index += 1) {
 		const newDiv = document.createElement('div');
-		for (j = 1; j <= 5; j += 1) {
+		for (let j = 1; j <= size; j += 1) {
 			const newPixel = document.createElement('div');			
 			newPixel.classList.add('pixel');
 			document.getElementById('pixel-board').appendChild(newDiv);
@@ -61,7 +61,22 @@ button.addEventListener('click', function(event) {
 		}
 	}	
 });
-		
+
+// 10 - Usada essa thread no stackoverflow para funcionalidade da remoção dos pixels:
+// https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+document.querySelector('#generate-board').addEventListener('click', function() {
+	let userBoard = document.querySelector('#board-size').value;	
+	if (userBoard >= 5 && userBoard <= 50) {
+		let currentBoard = document.getElementById('pixel-board');
+		while (currentBoard.firstChild) {
+			currentBoard.removeChild(currentBoard.lastChild);
+		}
+		creatingBoard(userBoard);
+	} else {
+		return alert('Board inválido!');
+	}
+})
+
 
 
 coloringPalette();
