@@ -4,7 +4,7 @@ window.onload = function addSelect() {
 };
 
 const lineWidth = 5;
-const pixelQuant = 5;
+
 //  Cria o quadro onde ficarão alocados os pixels a serem modificados
 function cratePixelBoard() {
   const pixelTables = document.createElement('div');
@@ -30,8 +30,8 @@ createLine();
 // https://stackoverflow.com/questions/29229523/how-and-why-to-use-display-table-cell-css
 function createPixels() {
   const pixelLine = document.getElementsByClassName('line');
-  for (let index = 0; index < 5; index += 1) {
-    for (let pixels = 0; pixels < pixelQuant; pixels += 1) {
+  for (let index = 0; index < pixelLine.length; index += 1) {
+    for (let pixels = 0; pixels < pixelLine.length; pixels += 1) {
       const createPixels = document.createElement('div');
       createPixels.classList.add('pixel', 'white');
       pixelLine[pixels].appendChild(createPixels);
