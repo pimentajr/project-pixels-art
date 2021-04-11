@@ -37,16 +37,12 @@ function clearEvent() {
 
 function updatePixels(x, y) {
   const board = document.querySelector('table');
-  if (x === y) {
-    const input = document.querySelector('#board-size');
-    input.value = x;
-  }
   const table = document.createElement('table');
   table.id = 'pixel-board';
-  for (let xi = 0; xi <= x; xi += 1) {
+  for (let xi = 0; xi < x; xi += 1) {
     const tr = document.createElement('tr');
     table.appendChild(tr);
-    for (let yi = 0; yi <= y; yi += 1) {
+    for (let yi = 0; yi < y; yi += 1) {
       const td = document.createElement('td');
       td.onclick = colorSetEvent;
       td.className = 'pixel';
@@ -61,17 +57,17 @@ function valueChecker(value, minimum, maximum) {
   if (minimum <= value && value <= maximum) {
     updatePixels(value, value);
   } else if (value <= minimum) {
-    updatePixels(minimum, minimum);
+    updatePixels(value, minimum);
   } else if (value > maximum) {
-    updatePixels(maximum, maximum);
+    updatePixels(value, maximum);
   }
 }
 
-function inputEvent() {
-  const input = document.querySelector('#board-size');
+function inputEvent(e) {
+  const input = e.target.previousElementSibling;
 
   if (input.value !== '') {
-    valueChecker(int(input.value), int(input.min), int(input.max));
+    valueChecker(int(input.value), 5, int(input.max));
   } else {
     alert('Board inválido!');
   }

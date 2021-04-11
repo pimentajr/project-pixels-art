@@ -1,19 +1,9 @@
-button {
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-#board-size {
-  width: 35px;
-}
-
 .color {
   border: solid black 1px;
   display: inline-block;
   cursor: pointer;
   height: 50px;
   width: 50px;
-  margin: 5px;
 }
 
 .black {
@@ -42,5 +32,4 @@ button {
   height: 40px;
   border: solid black 1px;
   background-color: white;
-  cursor: pointer;
 }
