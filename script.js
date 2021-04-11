@@ -22,7 +22,7 @@ document.getElementById('color-palette').addEventListener('click', selectedSwitc
 const button = document.createElement('button');
 
 function clearBoard() {
-  document.getElementById('pixel-board').style.backgroundColor = 'white';
+  document.querySelectorAll('.pixel').style.backgroundColor = 'white';
 }
 
 button.addEventListener('click', clearBoard);
