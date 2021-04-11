@@ -1,3 +1,46 @@
+function inputBoard() {
+  const originInput = document.querySelector('#containerButton');
+  const originTable = document.querySelector('#pixel-board');
+  const input = document.createElement('input');
+  const submit = document.createElement('button');
+  input.type = 'number';
+  input.id = 'board-size';
+  input.min = '1';
+  submit.id = 'generate-board';
+  submit.innerText = 'VQV';
+  originInput.appendChild(input);
+  originInput.appendChild(submit);
+
+  // FALTA RESOLVER PROBLEMA DE CRIAR VARIAS VEZES SEM ATUALIZAR A PAGINA
+  function defineBoard() {
+    if (input.value === '') {
+      alert('Board inválido!');
+    } else {
+      let cont = input.value;
+      if (cont > 50) {
+        cont = 50;
+      } else if (cont < 5) {
+        cont = 5;
+      }
+      console.log(cont);
+      input.value = '';
+      originTable.childNodes[1].remove();
+      for (let line = 0; line < cont; line += 1) {
+        const lineElement = document.createElement('tr');
+        lineElement.className = 'line';
+        originTable.appendChild(lineElement);
+        for (let coluns = 0; coluns < cont; coluns += 1) {
+          const originLine = document.getElementsByClassName('line');
+          const colunsElement = document.createElement('td');
+          colunsElement.className = 'pixel';
+          originLine[line].appendChild(colunsElement);
+        }
+      }
+    }
+  }
+  submit.addEventListener('click', defineBoard);
+}
+
 function selectColor() {
   const colorPalette = document.querySelector('#color-palette ul');
   function addSelected(event) {
@@ -19,7 +62,6 @@ function applyColor() {
     if (boxSelected.classList.length >= 2) {
       boxSelected.className = 'pixel';
     }
-    console.log(color);
     boxSelected.classList.add(color);
   }
   pixelBoard.addEventListener('click', printBoard);
@@ -41,6 +83,7 @@ function clearBoard() {
   button.addEventListener('click', clear);
 }
 
+inputBoard();
 selectColor();
 applyColor();
 clearBoard();
