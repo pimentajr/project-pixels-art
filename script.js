@@ -1,3 +1,21 @@
+// Cria funcao para gerar cores aletórias
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return (color);
+}
+
+// Cria funcao que insere cores aleatórias nos últimos quadro de cores
+function insertColors() { 
+  for (let index = 1; index < 4; index += 1){
+    document.querySelectorAll('.color')[index].style.backgroundColor = getRandomColor();
+  }
+}
+insertColors ();
+
 // Seleciona a cor desejada
 function selectColor() {
   let colorsToSelect = document.querySelectorAll('.color'); // captura a palleta de cores
@@ -79,3 +97,4 @@ function boardSize() {
   });
 }
 boardSize();
+
