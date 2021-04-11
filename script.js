@@ -55,3 +55,29 @@ function setColor() {
   }
 }
 setColor();
+
+function createClrBtn() {
+  const body = document.querySelector('body');
+  const clearBtn = document.createElement('button');
+  body.appendChild(clearBtn);
+  const divColorPalette = clearBtn.previousElementSibling.previousElementSibling;
+  body.insertBefore(clearBtn, divColorPalette);
+  clearBtn.id = 'clear-board';
+  clearBtn.innerHTML = 'Limpar';
+  clearBtn.style.marginLeft = '48%';
+  clearBtn.style.marginTop = '30px';
+  clearBtn.style.padding = '10px';
+  clearBtn.style.width = '100px';
+}
+createClrBtn();
+
+function clearPxlBoard() {
+  const clrBtn = document.querySelector('#clear-board');
+  clrBtn.addEventListener('click', function() {
+    const pxl = pixelBoard.childNodes;
+    for (let i = 0; i < pxl.length; i += 1) {
+      pxl[i].style.backgroundColor = 'rgb(255, 255, 255)';
+    }
+  });
+}
+clearPxlBoard();
