@@ -60,4 +60,5 @@ function selectColor() {
     };
   }
 }
+
 selectColor()
