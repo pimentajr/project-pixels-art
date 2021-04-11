@@ -22,7 +22,7 @@
   margin: 1px;
 }
 
-/* 5 - pixels possua 40 pixels de largura e 4 altura e borda preta de 1 pixel. */
+/* 5 - pixels com 40 pixels de largura e altura, borda preta de 1 px */
 .pixel {
   background-color: white;
   width: 40px;

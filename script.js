@@ -68,3 +68,4 @@ function buttonClear() {
 const button = document.getElementById('clear-board');
 button.addEventListener('click', buttonClear);
 
+// 10 - Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária.
