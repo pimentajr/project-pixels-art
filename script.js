@@ -11,6 +11,9 @@ function createPixels() {
             frame.appendChild(box);
             box.style.backgroundColor = 'white';
             box.style.display = 'inline-block';
+            box.style.height = '38px';
+            box.style.width = '38px';
+            box.style.border = 'solid 1px black';
         }
     }
 }
