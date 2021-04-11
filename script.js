@@ -171,5 +171,3 @@ function applyRandomColor() {
 }
 
 applyRandomColor();
-
-

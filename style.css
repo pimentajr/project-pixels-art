@@ -1,15 +1,15 @@
 /* resoluçao 1366 x 768 */
 body {
-  text-align:center;
+  text-align: center;
   margin: 0;
 }
 
-.palette-wrapper{
+.palette-wrapper {
   margin: 0;
   text-align: center;
 }
 
-ul#color-palette {
+#color-palette {
   list-style-type: none;
   display: inline-block;
   padding-inline-start: 0;
@@ -27,7 +27,7 @@ li.color {
 
 .table-wrapper {
   text-align: center;
-  margin:0;
+  margin: 0;
 }
 
 #pixel-board {
@@ -48,7 +48,7 @@ li.color {
 
 #clear-board {
   margin-bottom: 15px;
-  display:inline-block;
+  display: inline-block;
 }
 
 .size-form {
@@ -57,7 +57,7 @@ li.color {
 
 #board-size {
   width: 100px;
-  margin-left:5px;
+  margin-left: 5px;
 }
 
 #generate-board {
