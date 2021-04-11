@@ -1,14 +1,14 @@
 * {
   box-sizing: border-box;
   padding: 0;
-  margin: 0%
+  margin: 0%;
 }
 
 body {
   background-image: url('https://i.pinimg.com/originals/89/52/38/8952383f97eaf04f1ee755931bcaca39.jpg');
-  height: 500px; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -30,7 +30,7 @@ body {
   margin: 25px;
 }
 
-#generate-board, #clear-board {
+#generate-board , #clear-board {
   width: 100px;
   height: 30px;
   border-radius: 10%;
@@ -79,5 +79,4 @@ table {
 
 #container {
   text-align: center;
-  
 }

@@ -63,15 +63,6 @@ const clear = document.querySelector('#clear-board');
 clear.addEventListener('click', clearALL);
 
 // Desafio 10
-function creatButton(tag, idN) {
-  const create = document.createElement(tag);
-  create.id = idN;
-  create.innerHTML = 'VQV';
-  buttonId.appendChild(create);
-}
-
-creatButton('button', 'generate-board');
-
 function createInput(tag, idN) {
   const createI = document.createElement(tag);
   createI.id = idN;
@@ -81,6 +72,15 @@ function createInput(tag, idN) {
 }
 createInput('input', 'board-size');
 
+function creatButton(tag, idN) {
+  const create = document.createElement(tag);
+  create.id = idN;
+  create.innerHTML = 'VQV';
+  buttonId.appendChild(create);
+}
+
+creatButton('button', 'generate-board');
+
 // apagar a pixel board
 function clearPixelBoard() {
   while (pixelBoardID.lastElementChild) {
@@ -88,10 +88,10 @@ function clearPixelBoard() {
   }
 }
 
-function createNewTable(colum, line) {
-  for (let index = 0; index <= colum; index += 1) {
+function createNewTable(pixels) {
+  for (let index = 0; index < pixels; index += 1) {
     const newColum = document.createElement('tr');
-    for (let index2 = 0; index <= line; index2 += 1) {
+    for (let index2 = 0; index2 < pixels; index2 += 1) {
       const newLine = document.createElement('td');
       newLine.className = 'pixel';
       newColum.appendChild(newLine);
@@ -108,8 +108,6 @@ button.addEventListener('click', () => {
   if (!sizeBord) {
     return alert('Board inválido!');
   }
-
-  sizeBord = parseInt(sizeBord, 10);
 
   if (sizeBord < 5) {
     sizeBord = 5;
