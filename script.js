@@ -1,3 +1,7 @@
+const boardElement = document.getElementById('pixel-board');
+const clearBoardButton = document.getElementById('clear-board');
+const generateBoardButton = document.getElementById('generate-board');
+
 function setSelectedClass(event) {
   const selectedElement = document.querySelector('.selected');
   selectedElement.classList.remove('selected');
@@ -20,13 +24,41 @@ function clearAllPixels() {
   }
 }
 
+function addNewPixels(parentElement, n) {
+  for (let index = 1; index <= n; index += 1) {
+    const newPixel = document.createElement('div');
+    newPixel.classList.add('pixel');
+    parentElement.appendChild(newPixel);
+  }
+}
+
+function addNewPixelRows(parentElement, n) {
+  for (let rowIndex = 1; rowIndex <= n; rowIndex += 1) {
+    const newRow = document.createElement('div');
+    newRow.classList.add('board-row');
+    addNewPixels(newRow, n);
+    parentElement.appendChild(newRow);
+  }
+}
+
+function generateBoard() {
+  const boardSize = document.getElementById('board-size').value;
+  if (!boardSize) {
+    alert('Board inválido!');
+  } else {
+    boardElement.querySelectorAll('*').forEach((e) => e.remove());
+    boardElement.style.width = `${boardSize * 40}px`;
+    addNewPixelRows(boardElement, boardSize);
+  }
+}
+
 const selectorElements = document.getElementsByClassName('color');
 for (let index = 0; index < selectorElements.length; index += 1) {
   selectorElements[index].addEventListener('click', setSelectedClass);
 }
 
-const boardElement = document.getElementById('pixel-board');
 boardElement.addEventListener('click', paintPixel);
 
-const clearBoardButton = document.getElementById('clear-board');
 clearBoardButton.addEventListener('click', clearAllPixels);
+
+generateBoardButton.addEventListener('click', generateBoard);
