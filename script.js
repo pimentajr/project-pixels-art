@@ -55,11 +55,11 @@ function tintTable(event) {
 const table = document.querySelector('#pixel-board');
 table.addEventListener('click', tintTable);
 
-function clearBoard(event) {
+function clearBoard() {
   const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].classList.remove('branco', 'preto', 'verde', 'vermelho', 'amarelo');
-    event.target.classList.add('branco');
+    pixels[index].classList.add('branco');
   }
 }
 
