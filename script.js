@@ -63,15 +63,23 @@ const clear = document.querySelector('#clear-board');
 clear.addEventListener('click', clearALL);
 
 // Desafio 10
-function createInputButton(tag, idN) {
+function creatButton(tag, idN) {
   const create = document.createElement(tag);
   create.id = idN;
-  create.innerHTML = 'Mais de linhas!';
+  create.innerHTML = 'VQV';
   buttonId.appendChild(create);
 }
 
-createInputButton('button', 'generate-board');
-createInputButton('input', 'board-size');
+creatButton('button', 'generate-board');
+
+function createInput(tag, idN) {
+  const createI = document.createElement(tag);
+  createI.id = idN;
+  createI.type = 'number';
+  createI.min = '1';
+  buttonId.appendChild(createI);
+}
+createInput('input', 'board-size');
 
 // apagar a pixel board
 function clearPixelBoard() {
@@ -80,8 +88,17 @@ function clearPixelBoard() {
   }
 }
 
-
-
+function createNewTable(colum, line) {
+  for (let index = 0; index <= colum; index += 1) {
+    const newColum = document.createElement('tr');
+    for (let index2 = 0; index <= line; index2 += 1) {
+      const newLine = document.createElement('td');
+      newLine.className = 'pixel';
+      newColum.appendChild(newLine);
+    }
+    pixelBoardID.appendChild(newColum);
+  }
+}
 
 const sizeInput = document.getElementById('board-size');
 const button = document.getElementById('generate-board');
@@ -99,4 +116,8 @@ button.addEventListener('click', () => {
   } else if (sizeBord > 50) {
     sizeBord = 50;
   }
+  clearPixelBoard();
+  createNewTable(sizeBord, sizeBord);
+
+  sizeInput.value = '';
 });
