@@ -15,10 +15,6 @@ function firstColor () {
 let black = document.querySelector('.black');
 black.classList.add('selected');
 let blackClick = document.querySelector('.selected');
-blackClick.addEventListener('click', function() {
-    blackClick.backgroundColor = 'black';
-})
-return blackClick;
 }
 
 firstColor();
@@ -32,12 +28,24 @@ function removeSelected () {
 }
 
 let color = document.getElementsByClassName('color');
-for (let index = 0; index < color.length; index += 1) {
-    color[index].addEventListener('click', function() {
-        removeSelected()
-        color[index].classList.add('selected')
-        
-    })
+
+    for (let index = 0; index < color.length; index += 1) {
+        color[index].addEventListener('click', function (event) {
+            removeSelected()
+            color[index].classList.add('selected')
+            localStorage.setItem('color', 'black')
+            localStorage.setItem('color', event.target.classList[1]);
+        })
+    }
+
+
+
+function paintPixel () {
+    let pixel = document.getElementsByClassName('pixel');
+    for (let index = 0; index < pixel.length; index += 1) {
+        pixel[index].addEventListener('click', function(event) {
+            pixel[index].style.backgroundColor = localStorage.getItem('color')
+        })
+    }
 }
-
-
+paintPixel()
