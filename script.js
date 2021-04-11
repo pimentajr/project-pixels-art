@@ -80,3 +80,25 @@ generateBoard.addEventListener('click', () => {
   }
   fixBoxSize();
 });
+
+// Requisito 12
+function generateRandomRGB () {
+  let rgb;
+  rgb = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
+  return rgb;
+}
+
+let colorPick = document.querySelectorAll('.color');
+for (let index = 0; index < colorPick.length; index += 1) {
+  if (colorPick[index].id !== 'black') {
+    colorPick[index].style.backgroundColor = generateRandomRGB();
+  }
+}
+
+pixelBoard.addEventListener('click', (event) => {
+  const storageColor = document.querySelector('.selected').style.backgroundColor;
+  if (event.target.className === 'pixel') {
+    const evTarget = event.target;
+    evTarget.style.backgroundColor = storageColor;
+  }
+});
