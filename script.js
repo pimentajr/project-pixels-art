@@ -1,5 +1,24 @@
 let lines = 5;
 
+const red = document.querySelector('.red');
+const blue = document.querySelector('.blue');
+const green = document.querySelector('.green');
+
+// Cógido inspirado no site:
+// https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+
+function randomColor() {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+
+  return `rgba(${r}, ${g}, ${b})`;
+}
+
+red.style.backgroundColor = randomColor();
+blue.style.backgroundColor = randomColor();
+green.style.backgroundColor = randomColor();
+
 function cleanBoard() {
   const pixelBoard = document.querySelector('#pixel-board');
   // pixelBoard.querySelectorAll('.lineSquare').forEach((lineSquare=>{
@@ -55,19 +74,18 @@ selectColor();
 
 // 8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
 
-function addColor(event) {
-  const colorselected = document.querySelector('.selected');
-  const newClass = colorselected.classList[1];
+function myFunction(event) {
+  const selColor = window.getComputedStyle(document.querySelector('.selected')).backgroundColor;
   const x = event.target;
-  x.className = `pixel ${newClass}`;
+  x.style.backgroundColor = selColor;
+  console.log(selColor);
 }
 
-function changeColor() {
-  const pixelSquare = document.getElementById('pixel-board');
-  pixelSquare.addEventListener('click', addColor);
+function addColor() {
+  const toColorize = document.getElementById('pixel-board');
+  toColorize.addEventListener('click', myFunction);
 }
-
-changeColor();
+addColor();
 
 // 9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
 
