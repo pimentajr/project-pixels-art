@@ -58,9 +58,9 @@ function fillRowsWithPixels() {
     for (let colIndex = 0; colIndex < boardSideSize; colIndex += 1) {
       pixel = document.createElement('div');
       pixel.classList.add('pixel');
-      pixel.addEventListener('mousedown', fillPixelFromMouseDown);
-      pixel.addEventListener('mouseenter', fillPixelFromMouseEnter);
-      pixel.addEventListener('mouseup', resetLastClickedPixelColor);
+      pixel.addEventListener('pointerdown', fillPixelFromMouseDown);
+      pixel.addEventListener('pointerenter', fillPixelFromMouseEnter);
+      pixel.addEventListener('pointerup', resetLastClickedPixelColor);
       pixelRows[rowIndex].appendChild(pixel);
     }
   }
