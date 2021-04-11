@@ -99,7 +99,7 @@ document.getElementById('clear-board').addEventListener('click', clearBoard);
 // 10 e 11 Implementa botão, input e funcionalidades e limita 5:50;
 
 function receiveValue() {
-  const input = document.getElementById('border-size');
+  const input = document.getElementById('board-size');
   const button = document.getElementById('generate-board');
   button.addEventListener('click', () => {
     const newVal = input.value;
