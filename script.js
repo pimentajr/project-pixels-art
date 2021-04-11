@@ -1,6 +1,5 @@
 const paletList = document.querySelector('#color-palette');
 
-//cria linha
 function addItemPalette() {
   for (let index = 0; index < 4; index += 1) {
     const colorPalet = document.createElement('li');
@@ -10,7 +9,6 @@ function addItemPalette() {
 }
 addItemPalette();
 
-//adiciona cores
 const paletteItem = document.querySelectorAll('.color');
 
 function addcolorPalette(colors) {
@@ -21,7 +19,6 @@ function addcolorPalette(colors) {
 }
 addcolorPalette(['black', 'red', 'blue', 'yellow']);
 
-//criando seção de pixels
 const board = document.querySelector('#pixel-board');
 
 function boardPixel() {
@@ -33,7 +30,6 @@ function boardPixel() {
 }
 boardPixel();
 
-//selecionando cor preta
 function selectedPaletteBlack() {
   for (let index = 0; index < paletteItem.length; index += 1) {
     const item = paletteItem[index];
