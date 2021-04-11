@@ -1,7 +1,7 @@
 const colorSelected = document.querySelectorAll('#color-palette');
 const color = document.querySelectorAll('.color');
 const pixelBoard = document.querySelector('#pixel-board')
-const selectColor = document.querySelector('.selected');
+const selectClickColor = document.querySelector('.selected');
 
 function selectColor() {
   colorSelected.addEventListener('click', (event) => {
@@ -15,7 +15,7 @@ selectColor();
 function paintPixel() {
   pixelBoard.addEventListener('click', (event) => {
     const etarget = event.target;
-    etarget.style.backgroundColor = getComputedStyle(selectColor).backgroundColor;
+    etarget.style.backgroundColor = getComputedStyle(selectClickColor).backgroundColor;
   });
 }
 paintPixel();
