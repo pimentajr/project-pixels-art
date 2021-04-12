@@ -23,8 +23,8 @@ function theChoosen(event) {
   pixel.style.backgroundColor = color;
 }
 
-function pageStarter() {
-  document.getElementById('color-palette')
+function starterPixelArt() {
+  document.getElementById('color-palette');
   document.addEventListener('click', setColor);
   document.getElementById('pixel-board').addEventListener('click', theChoosen);
 }
