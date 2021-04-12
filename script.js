@@ -1,6 +1,5 @@
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
-// const userPainel = document.querySelector('#user-painel');
 
 // Cria e colore a paleta
 function createColor(boxColor) {
