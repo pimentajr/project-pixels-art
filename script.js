@@ -5,9 +5,7 @@ const generateBoardButton = document.getElementById('generate-board');
 function setSelectedClass(event) {
   const selectedElement = document.querySelector('.selected');
   selectedElement.classList.remove('selected');
-
-  const newSelection = event.target;
-  newSelection.classList.add('selected');
+  event.target.classList.add('selected');
 }
 
 function paintPixel(event) {
@@ -24,20 +22,26 @@ function clearAllPixels() {
   }
 }
 
-function addNewPixels(parentElement, n) {
-  for (let index = 1; index <= n; index += 1) {
-    const newPixel = document.createElement('div');
-    newPixel.classList.add('pixel');
-    parentElement.appendChild(newPixel);
-  }
+function makePixel() {
+  const newPixel = document.createElement('div');
+  newPixel.classList.add('pixel');
+  return newPixel;
 }
 
-function addNewPixelRows(parentElement, n) {
-  for (let rowIndex = 1; rowIndex <= n; rowIndex += 1) {
-    const newRow = document.createElement('div');
-    newRow.classList.add('board-row');
-    addNewPixels(newRow, n);
-    parentElement.appendChild(newRow);
+function makePixelRow(n) {
+  const newRow = document.createElement('div');
+  newRow.classList.add('board-row');
+  for (let index = 1; index <= n; index += 1) {
+    newRow.appendChild(makePixel());
+  }
+  return newRow;
+}
+
+function createNewBoard(n) {
+  boardElement.querySelectorAll('*').forEach((e) => e.remove());
+  boardElement.style.width = `${n * 40}px`;
+  for (let index = 1; index <= n; index += 1) {
+    boardElement.appendChild(makePixelRow(n));
   }
 }
 
@@ -59,9 +63,7 @@ function getValidBoardSize() {
 function generateBoard() {
   const boardSize = getValidBoardSize();
   if (boardSize) {
-    boardElement.querySelectorAll('*').forEach((e) => e.remove());
-    boardElement.style.width = `${boardSize * 40}px`;
-    addNewPixelRows(boardElement, boardSize);
+    createNewBoard(boardSize);
   }
 }
 
