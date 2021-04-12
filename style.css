@@ -52,3 +52,15 @@
   display: block;
 }
 
+#board-size {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+#generate-board {
+  border-color: crimson;
+  border-style: solid, 1px;
+  background-color: darkorange;
+  color: black;
+}
+
