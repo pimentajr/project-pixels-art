@@ -2,7 +2,6 @@ const pixelRow = document.getElementById('pixel-board');
 
 // Exercicio 12, Tales me ajudou na concatenação de strings.
 
-
 function getRandomRgb() {
   const r = Math.ceil((Math.random()) * 255);
   const g = Math.ceil((Math.random()) * 255);
