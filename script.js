@@ -14,6 +14,7 @@ function addSelectedToBlack() {
   const getBlackColor = document.querySelector('.black');
   if (countSelectClass.length === 0) {
     getBlackColor.classList.add('selected');
+    getBlackColor.style.backgroundColor = 'black';
   }
 }
 
@@ -40,13 +41,14 @@ function removeSelectedClass() {
   }
 }
 
-// Altera a cor que será utilizada no preenchimento do pixel
+// adiciona classe selected a um determinado elemento
 function changeColorSelected() {
   const getColorsPallete = document.querySelector('#color-palette');
   getColorsPallete.addEventListener('click', function (event) {
     removeSelectedClass();
     event.target.classList.add('selected');
     applySelectedColor()
+    getSelectedColor()
   })
 }
 
@@ -100,7 +102,7 @@ function removeBoardPaint() {
   }
 }
 
-// gera paintBoard para valores < 5 && > 50
+// gera paintBoard para valores > 0 && < 5
 function generateMin() {
   if (getInputData() > 0 && getInputData() < 5) {
     removeBoardPaint();
@@ -111,6 +113,7 @@ function generateMin() {
   }
 }
 
+// gera paintBoard para valores > 50
 function generateMax() {
   if (getInputData() > 50) {
     removeBoardPaint();
@@ -172,17 +175,14 @@ function applyRandomColor() {
 
 applyRandomColor();
 
-// retorna cor selecionada
+// armazena selected color em uma variável
 function getSelectedColor() {
   const selectedColorPixel = document.querySelector('.selected-color')
   const getSelectedColor = document.querySelector('.selected');
   const compStyles = window.getComputedStyle(getSelectedColor);
+  const selectedBackground = compStyles.getPropertyValue('background-color');
 
-  if (getSelectedColor.style.backgroundColor === 'black') {
   selectedColorPixel.style.backgroundColor = compStyles.getPropertyValue('background-color');
-  } else {
-    selectedColorPixel.style.backgroundColor = getSelectedColor.style.backgroundColor;
-  }
 }
 
 getSelectedColor();

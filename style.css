@@ -32,10 +32,6 @@ li.color {
   padding: 25px;
 }
 
-.black {
-  background-color:  black;
-}
-
 .table-wrapper {
   text-align: center;
   margin: 0;
@@ -108,6 +104,7 @@ li.color {
   display:inline-block;
   border: black solid 1px;
   padding: 15px;
+  margin-top:20px;
 }
 
 .color-subtitle {
