@@ -1,6 +1,10 @@
 .color {
   border: black 1px solid;
   display: inline-block;
+  height: 80px;
+  width: 80px;
+  padding: 15px;
+  padding-left: 10px;
 }
 
 #Black {
@@ -21,6 +25,9 @@
 
 #pixel-board {
   display: table;
+  padding-inline: 670px;
+  height: 450px;
+  width: 450px;
 }
 
 .line {
