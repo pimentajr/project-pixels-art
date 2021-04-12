@@ -18,35 +18,36 @@ pixelBoard.addEventListener('click', function (event){
         getButton.innerHTML = "Reset"
         getButton.addEventListener('click', function(){
             let getPixel = document.querySelectorAll('#pixel-board>div')
-            for(let index =0 ; index < getPixel.length; index += 1){ 
+            let genBoardButton = document.querySelector('#generate-board')
+            genBoardButton.addEventListener('click', function (){
+            let boardTable = document.querySelector('#board-size').value
+            if(boardTable > 0){
+            while (pixelBoard.firstChild) {
+            pixelBoard.removeChild(pixelBoard.lastChild);
+            }
+            
+            for(let index = 0; index < boardTable; index += 1){
+            let tr = document.createElement('div')
+            tr.classList.add('tr')
+            pixelBoard.appendChild(tr)
+            for(let index = 0; index < boardTable; index += 1){
+            let newPixel = document.createElement('div')
+            newPixel.classList.add('pixel')
+            tr.appendChild(newPixel)  
+            }      
+            }
+            }
+            else{
+                alert('Board inválido!')
+            }
+            })  
+              for(let index =0 ; index < getPixel.length; index += 1){ 
               getPixel[index].style.backgroundColor= 'white'
               }
             })
         }
         createButton()
 
-        let genBoardButton = document.querySelector('#generate-board')
-genBoardButton.addEventListener('click', function (){
-let boardTable = document.querySelector('#board-size').value
-if(boardTable > 0){
-while (pixelBoard.firstChild) {
-pixelBoard.removeChild(pixelBoard.lastChild);
-}
-
-for(let index = 0; index < boardTable; index += 1){
-let tr = document.createElement('div')
-tr.classList.add('tr')
-pixelBoard.appendChild(tr)
-for(let index = 0; index < boardTable; index += 1){
-let newPixel = document.createElement('div')
-newPixel.classList.add('pixel')
-tr.appendChild(newPixel)  
-}      
-}
-}
-else{
-    alert('Board inválido!')
-}
-})
+        
 
         
