@@ -29,38 +29,49 @@ function generatePixels() {
 
 generatePixels();
 
+function getColorPalette(event) {
+  const selected = document.querySelector('.selected');
+  selected.classList.remove('selected');
+  const selectedColor = event.target.classList[1];
+  return document
+    .getElementsByClassName(selectedColor)[0]
+    .classList.add('selected');
+}
+
 function selectColor() {
   const colorSelection = document.getElementById('color-palette');
-  colorSelection.addEventListener('click', function (event) {
-    const selected = document.querySelector('.selected');
-    selected.classList.remove('selected');
-    const selectedColor = event.target.classList[1];
-    document.getElementsByClassName(selectedColor)[0].classList.add('selected');
-  });
+  colorSelection.addEventListener('click', getColorPalette);
 }
 
 selectColor();
 
+function getPixel(event, pixel) {
+  const selectedColor = document.querySelector('.selected');
+  let currentPixel = pixel;
+  currentPixel = event.target;
+  const color = selectedColor.classList[1];
+  currentPixel.style.backgroundColor = color;
+}
+
 function paintPixel() {
-  let pixel = document.getElementById('pixel-board');
-  pixel.addEventListener('click', function (event) {
-    const selectedColor = document.querySelector('.selected');
-    pixel = event.target;
-    pixel.style.backgroundColor = selectedColor.classList[1];
-  });
+  const pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].addEventListener('click', getPixel);
+  }
 }
 
 paintPixel();
 
+function clearPixel() {
+  const pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < 25; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
+  }
+}
+
 function clearBoard() {
   const button = document.getElementById('clear-board');
-  button.addEventListener('click', function () {
-    const pixel = document.querySelectorAll('.pixel');
-    for (let index = 0; index < 25; index += 1) {
-      pixel[index].style.backgroundColor = 'white';
-    }
-    console.log(pixel);
-  });
+  button.addEventListener('click', clearPixel);
 }
 
 clearBoard();
