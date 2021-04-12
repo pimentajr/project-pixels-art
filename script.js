@@ -3,6 +3,8 @@ function selectInitialColor() {
 }
 selectInitialColor();
 
+const pixelBoard = document.getElementById('pixel-board');
+
 function setSelectColor(targetColor) {
   const palette = document.getElementsByClassName('color');
 
@@ -15,20 +17,18 @@ function setSelectColor(targetColor) {
     }
   }
 }
-function colorSelector(targetColor) {
-  const selectedColor = getComputedStyle(targetColor).backgroundColor;
-  return selectedColor;
-}
 
-function setColor(event) {
-  const targetColor = event.target;
-  setSelectColor(targetColor);
-  colorSelector(targetColor);
+function colorSelector(targetColor) {
+  const colorElement = document.querySelector('.selected');
+  const color = getComputedStyle(colorElement).backgroundColor;
+  const pixel = targetColor.target;
+  pixel.style.backgroundColor = color;
 }
 
 function starterPixelArt() {
   document.getElementById('color-palette');
-  document.addEventListener('click', setColor);
+  document.addEventListener('click', setSelectColor);
+  pixelBoard.addEventListener('click', colorSelector);
 }
 
 window.onload = starterPixelArt;
