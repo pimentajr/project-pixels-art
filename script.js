@@ -27,8 +27,9 @@ function changeColorPixel(event) {
 document.getElementById('pixel-board').addEventListener('click', changeColorPixel);
 
 function clearPixel() {
-  for (let contador = 0; contador < 25; contador += 1){
-    document.querySelectorAll('.pixel')[contador].classList.remove(document.querySelectorAll('.pixel')[contador].classList[1]);
+  for (let contador = 0; contador < 25; contador += 1) {
+    const selector = document.querySelectorAll('.pixel')[contador];
+    selector.classList.remove(selector.classList[1]);
   }
 }
 document.getElementById('clear-board').addEventListener('click', clearPixel);

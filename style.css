@@ -42,9 +42,11 @@
   width: 260px;
   background-color: white;
 }
+
 .selected {
-  border: solid black 3px;
+  border-radius: 25%;
 }
+
 #clear-board {
   margin-bottom: 5px;
   margin-top: 5px;
