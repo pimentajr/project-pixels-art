@@ -18,7 +18,7 @@ function createTable(numberRows, unityNumbers) {
     createLine.className = 'row';
     table.appendChild(createLine);
 
-    for (let index = 0; index < unityNumbers; index += 1) {
+    for (let count = 0; count < unityNumbers; count += 1) {
       const createUnityPixel = document.createElement('th');
       createUnityPixel.className = 'pixel';
       createUnityPixel.style.backgroundColor = 'white';
@@ -39,13 +39,13 @@ function addOrRemoveClass() {
   for (let index = 0; index < addOrRemove.length; index += 1) {
     const item = addOrRemove[index];
 
-    item.addEventListener('click', function (event) {
+    item.addEventListener('click', function (e) {
       const selected = document.querySelector('.selected');
       if (item.className === 'color') {
-        event.target.classList.add('selected');
+        e.target.classList.add('selected');
         selected.classList.remove('selected');
       }
     });
   }
-};
+}
 addOrRemoveClass();
