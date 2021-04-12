@@ -75,6 +75,7 @@
 }
 
 #clear-board {
+  display: inline-block;
   margin-left: 50%;
   margin-top: 1%;
   margin-bottom: 1%;
