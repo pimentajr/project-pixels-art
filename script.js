@@ -18,5 +18,14 @@ function changeSelectedColor(event) {
 }
 
 document.querySelectorAll('.color').forEach((item) => {
-  item.addEventListener('click', changeSelectedColor);
+  item.addEventListener('click', changeSelectedColor)
 });
+
+function pixelColor(eventColor) {
+  const square = eventColor.target;
+  square.style.background = selectedColor;
+}
+
+document.querySelectorAll('.pixel').forEach((item) => {
+  item.addEventListener('click', pixelColor)
+})
