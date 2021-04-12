@@ -70,27 +70,24 @@ function colorRemovalEvent() {
   clearButton.addEventListener('click', removeColorFromTable);
 }
 
-function checkSize() {
-    const input = document.getElementById('board-size');
-    if (input.value.length === 0) {
-      alert('Board inválido!');
-      return;
-    }
-    let size = parseInt(input.value, 10);
-    if (size <= 5) {
-      size = 5;
-    } else if (size >= 50) {
-      size = 50;
-    }
-    reinsertTable(size);
+function changesTableSize() {
+  const inputDimensionalTable = document.querySelector('#board-size');
+  if (inputDimensionalTable.value.length === 0) {
+    alert('Board inválido!');
+    return;
   }
-  function eventResize() {
-    const button = document.getElementById('generate-board');
-    button.addEventListener('click', checkSize);
+  let sizeTable = parseInt(inputDimensionalTable.value, 10);
+  if (sizeTable <= 5) {
+    sizeTable = 5;
+  } else if (sizeTable >= 50) {
+    sizeTable = 50;
   }
+  reinsertTable(sizeTable);
+}
 
-function generateScaledTable() {
-  
+function generateDimensionalTable() {
+  const buttonVQV = document.getElementById('generate-board');
+  buttonVQV.addEventListener('click', changesTableSize);
 }
 
 window.onload = function reloadBrowser() {
@@ -98,5 +95,5 @@ window.onload = function reloadBrowser() {
   reinsertTable(5);
   changeTheColor();
   colorRemovalEvent();
-  eventResize();
+  generateDimensionalTable();
 };
