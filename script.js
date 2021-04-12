@@ -11,20 +11,20 @@ function colorRandom() {
   if (color === '#0000') {
     colorRandom();
   }
-  console.log(color)
+  console.log(color);
   return color;
 }
 
 function setColor() {
   const root = document.documentElement;
-  let secondColor = colorRandom();
-  let thirdColor = colorRandom();
-  let fourthColor = colorRandom();
-  
+  const secondColor = colorRandom();
+  const thirdColor = colorRandom();
+  const fourthColor = colorRandom();
+
   if (secondColor !== thirdColor && thirdColor !== fourthColor) {
-  root.style.setProperty('--second-color', secondColor);
-  root.style.setProperty('--third-color', thirdColor);
-  root.style.setProperty('--fourth-color', fourthColor);
+    root.style.setProperty('--second-color', secondColor);
+    root.style.setProperty('--third-color', thirdColor);
+    root.style.setProperty('--fourth-color', fourthColor);
   } else {
     setColor();
   }
