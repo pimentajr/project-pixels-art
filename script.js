@@ -67,7 +67,7 @@ function createClrBtn() {
   clearBtn.id = 'clear-board';
   clearBtn.innerHTML = 'Limpar';
   divBtns.appendChild(clearBtn);
-  clearBtn.style.marginLeft = '48%';
+  clearBtn.style.marginLeft = '39%';
   clearBtn.style.marginTop = '30px';
   clearBtn.style.padding = '10px';
   clearBtn.style.width = '100px';
@@ -76,11 +76,43 @@ createClrBtn();
 
 function clearPxlBoard() {
   const clrBtn = document.querySelector('#clear-board');
+  const pxl = pixelBoard.childNodes;
   clrBtn.addEventListener('click', function() {
-    const pxl = pixelBoard.childNodes;
     for (let i = 0; i < pxl.length; i += 1) {
       pxl[i].style.backgroundColor = 'rgb(255, 255, 255)';
     }
   });
 }
 clearPxlBoard();
+
+function createInput() {
+  const input = document.createElement('input');
+  const divBtns = document.querySelector('#main-btns');
+  input.id = 'board-size';
+  input.type = 'number';
+  input.min = '5';
+  input.max = '50';
+  input.style.padding = '10px';
+  input.style.marginLeft = '250px';
+  divBtns.appendChild(input);
+  console.log(input);
+
+}
+createInput();
+
+function createResizeBtn() {
+  const resizeBtn = document.createElement('button');
+  const divBtns = document.querySelector('#main-btns');
+  resizeBtn.style.width = '100px';
+  resizeBtn.id = 'generate-board';
+  resizeBtn.style.padding = '10px';
+  resizeBtn.style.marginLeft = '5px'
+  resizeBtn.innerHTML = 'VQV';
+  divBtns.appendChild(resizeBtn);
+}
+createResizeBtn();
+
+function resizePxls() {
+  
+}
+resizePxls();
