@@ -55,6 +55,8 @@ pixelBoard.addEventListener('click', (event) => {
 //9
 const clearButton = document.getElementById('clear-board');
 
+clearButton.innerText = 'Limpar';
+
 clearButton.addEventListener('click', () => {
     const pixels = document.querySelectorAll('.pixel')
     for (let i = 0; i < pixels.length; i += 1) {
