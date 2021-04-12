@@ -57,9 +57,6 @@ body {
 }
 
 #clear-board, #generate-board {
-  background-color: white; 
-  color: black;
-  border: 2px solid #008cba;
   display: inline-block;
   padding: 8px;
   font-size: 13px;
@@ -72,4 +69,3 @@ body {
   height: 22px;
   font-size: 13px;
 }
-

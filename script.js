@@ -9,23 +9,23 @@ const blueColor = document.getElementById('blue');
 const greenColor = document.getElementById('green');
 
 // https://www.codecademy.com/forum_questions/525e864c80ff338580001a53
-let safeColors = ['00','33','66','99','cc','ff'];
-let rand = function() {
-  return Math.floor(Math.random()*6);
+const safeColors = ['00', '33', '66', '99', 'cc', 'ff'];
+const makeColors = function () {
+  return Math.floor(Math.random() * 6);
 };
 
-let randomColor = function() {
-  let r = safeColors[rand()];
-  let g = safeColors[rand()];
-  let b = safeColors[rand()];
-  return "#"+r+g+b;
+const randomColor = function () {
+  const r = safeColors[makeColors()];
+  const g = safeColors[makeColors()];
+  const b = safeColors[makeColors()];
+  return `#${r + g + b}`;
 };
 
 // https://www.w3schools.com/howto/howto_js_active_element.asp
 function selectedColor() {
   for (let i = 0; i < colorPalette.length; i += 1) {
     colorPalette[i].className = 'color';
-    colorPalette[i].addEventListener('click', function() {
+    colorPalette[i].addEventListener('click', function () {
       currentColor[0].className = currentColor[0].className.replace('selected', '');
       this.className = 'selected color';
     });
@@ -50,15 +50,15 @@ function colorPixel(event) {
 pixelBoards.addEventListener('click', colorPixel);
 
 function clearPixel() {
-  const clearPixel = document.querySelectorAll('.pixel');
-  for (let i = 0; i < clearPixel.length; i += 1) {
-    clearPixel[i].style.backgroundColor = 'white';
+  const clearAllPixels = document.querySelectorAll('.pixel');
+  for (let i = 0; i < clearAllPixels.length; i += 1) {
+    clearAllPixels[i].style.backgroundColor = 'white';
   }
 }
 
 btnClear.addEventListener('click', clearPixel);
 
-function boardsValue () {
+function boardsValue() {
   const boardSize = document.getElementById('board-size').value;
   if (boardSize > 50 || boardSize < 5) {
     alert('Board inválido!');
@@ -76,4 +76,3 @@ makeDivs();
 
 const colorBlack = document.getElementsByClassName('color')[0];
 colorBlack.className = 'selected color';
-
