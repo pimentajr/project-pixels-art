@@ -14,7 +14,7 @@ yellow.style.backgroundColor = 'yellow';
 const blue = document.querySelectorAll('.color')[3];
 blue.style.backgroundColor = 'blue';
 
-//4
+//4 e 5
 const pixelBoard = document.getElementById('pixel-board');
 for (let i = 0; i < 5; i += 1) {
    let pixelRow =  document.createElement('div');
@@ -29,3 +29,10 @@ for (let i = 0; i < 5; i += 1) {
     }
 }
 
+//6
+window.onload = blackSelected;
+
+// function blackSelected() {
+//     let black = document.querySelector('.color');
+//     black.className = 'selected';
+// }
