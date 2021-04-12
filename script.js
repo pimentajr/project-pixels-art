@@ -1,4 +1,4 @@
-window.onload = function pageLoad () {
+window.onload = function pageLoad() {
   document.getElementById('black').classList.add('selected');
 };
 
