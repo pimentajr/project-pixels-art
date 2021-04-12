@@ -63,6 +63,13 @@ function removeTable() {
 let getVqv = document.querySelector('#generate-board');
 let getInputValue = document.querySelector('#board-size')
 getVqv.addEventListener('click', function() {
+  if (getInputValue.value === '') {
+    alert('Board inválido!');
+  } else if (getInputValue.value < 5) {
+    getInputValue.value = 5;
+  } else if (getInputValue.value > 50) {
+    getInputValue.value = 50;
+  }
   removeTable();
   createNewTable(getInputValue.value);
 })
