@@ -2,11 +2,11 @@
 
   --first-color: black;
 
-  --second-color: red;
+  --second-color: rgba(0, 0, 0);
 
-  --third-color: blue;
+  --third-color: rgba(0, 0, 0);
 
-  --fourth-color: green;
+  --fourth-color: rgba(0, 0, 0);
 }
 
 * {
@@ -48,10 +48,6 @@ h1:hover {
 h1:hover:after {
   opacity: 0;
   transition: 0.5s;
-}
-
-li {
-  transition: 0.9s;
 }
 
 li:hover {

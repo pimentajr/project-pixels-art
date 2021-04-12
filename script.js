@@ -1,16 +1,14 @@
 // Função de cores aleatórias baseadas nos links:
 // https://stackoverflow.com/questions/1484506/random-color-generator
 // https://pt.stackoverflow.com/questions/348981/como-colocar-valor-da-variavel-javascript-no-css
+// https://thisinterestsme.com/random-color-javascript/
 
 function colorRandom() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let index = 0; index < 4; index += 1) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  if (color === '#0000' || color === '#ffff') {
-    colorRandom();
-  }
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  const random = `${r}, ${g}, ${b}`;
+  const color = `rgb(${random})`;
   return color;
 }
 
