@@ -52,11 +52,11 @@ window.onload = function loading() {
       for (let index = 0; index < pixels.length; index += 1) {
         pixels[index].style.backgroundColor = 'white';
       }
-    })
+    });
   }
   buttonClearEng();
 
-  //  realizado com o auxílio de: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript#:~:text=Gerando%20cores%20RGBA&text=A%20fun%C3%A7%C3%A3o%20Math.,ser%C3%A1%20a%20opacidade%20da%20cor.  
+    //realizado com o auxílio de: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript#:~:text=Gerando%20cores%20RGBA&text=A%20fun%C3%A7%C3%A3o%20Math.,ser%C3%A1%20a%20opacidade%20da%20cor.  
   function colorSort() {
     const colors = document.getElementsByClassName('color');
     for (let index = 1; index < colors.length; index += 1) {
