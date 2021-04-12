@@ -28,7 +28,7 @@ function onLoadWindow() {
   });
 
   const pixelSelected = document.getElementById('pixel-board');
-  pixelSelected.addEventListener ('click', function(event) {
+  pixelSelected.addEventListener ('click', function (event) {
     const printPixel = event.target;
     if (printPixel.classList.length > 1) {
       printPixel.classList.remove(printPixel.classList[1]);
@@ -36,12 +36,12 @@ function onLoadWindow() {
     printPixel.style.backgroundColor = colorSelected;
   });
 
-  const clearButton = document.getElementById ('clear-board');
-  clearButton.addEventListener('click', function() {
+  const clearButton = document.getElementById('clear-board');
+  clearButton.addEventListener('click', function () {
     const allPixels = document.getElementsByClassName('pixel');
     const boardPixel = document.getElementById('pixel-board');
     for (let index = 0; index < allPixels.length; index += 1) {
-        allPixels[index].style = [];
+      allPixels[index].style = [];
     }
     if (boardPixel.classList) {
       boardPixel.classList = [];
@@ -49,11 +49,11 @@ function onLoadWindow() {
     }
   });
 
-  let pixelBoard = document.getElementById('pixel-board');
-  let resizeButton = document.getElementById('generate-board');
-  let size = document.getElementById('board-size');
-  resizeButton.addEventListener('click', function(event) {
-    let count = parseInt(size.value);
+  const pixelBoard = document.getElementById('pixel-board');
+  const resizeButton = document.getElementById('generate-board');
+  const size = document.getElementById('board-size');
+  resizeButton.addEventListener('click', function () {
+    let count = parseInt(size.value, 10);
     if (count < 5) {
       count = 5;
     } if (count > 50) {
@@ -64,15 +64,15 @@ function onLoadWindow() {
     } else {
       pixelBoard.innerText = '';
       for (let index = 0; index < count; index += 1) {
-        let element = document.createElement('tr');
+        const element = document.createElement('tr');
         pixelBoard.appendChild(element);
         for (let indexy = 0; indexy < count; indexy += 1) {
-          let pixelElement = document.createElement('td');
+          const pixelElement = document.createElement('td');
           pixelElement.className = 'pixel';
           element.appendChild(pixelElement);
         }
       }
     }
-  })
-};
-window.onload = onLoadWindow();
+  });
+}
+window.onload = onLoadWindow;
