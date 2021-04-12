@@ -7,6 +7,8 @@ function setPixelColor(color) {
   });
 }
 
+setPixelColor('black');
+
 function selectThis(e) {
   if (e.target.classList[0] === 'color') {
     document.getElementsByClassName('selected')[0].classList.remove('selected');
