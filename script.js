@@ -11,7 +11,7 @@ function getPixel(event) {
   let selectColor = '';
   for (let index = 0; index < getColor.length; index += 1) {
     if (getColor[index].classList[1] === 'selected') {
-      selectColor = getColor[index].id;
+      selectColor = getColor[index].style.backgroundColor;
     }
   }
   const targetPrint = event.target;
@@ -59,8 +59,23 @@ function removeBoard() {
   }
 }
 
+function randomNumberColor(min, max) {
+  return Number(Math.floor(Math.random() * (max - min + 1)) + min);
+}
+function randomPaletteColor(min, max) {
+  const colorBlack = document.getElementById('black');
+  const colorRandom1 = document.getElementById('red');
+  const colorRandom2 = document.getElementById('blue');
+  const colorRandom3 = document.getElementById('green');
+  colorBlack.style.backgroundColor = 'rgb(0, 0, 0)'
+  colorRandom1.style.backgroundColor = `rgb(${randomNumberColor(min, max)}, ${randomNumberColor(min, max)}, ${randomNumberColor(min, max)})`;
+  colorRandom2.style.backgroundColor = `rgb(${randomNumberColor(min, max)}, ${randomNumberColor(min, max)}, ${randomNumberColor(min, max)})`;
+  colorRandom3.style.backgroundColor = `rgb(${randomNumberColor(min, max)}, ${randomNumberColor(min, max)}, ${randomNumberColor(min, max)})`;
+}
+
 function colorPalette() {
   document.getElementById('black').classList.add('selected');
+  randomPaletteColor(0, 255);
   const clickPalette = document.getElementById('color-palette');
   clickPalette.addEventListener('click', setClassSelect);
   const clickPrint = document.getElementById('pixel-board');
