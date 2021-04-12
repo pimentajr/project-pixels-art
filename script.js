@@ -119,10 +119,6 @@ function resizePxls() {
     const pxlValue = inputResize.value;
     if (inputResize.value.length === 0) {
       alert('Board inválido!');
-    } else if (pxlValue < 5) {
-      pxlValue = 5;
-    } else if (pxlValue > 50) {
-      pxlValue = 50;
     }
     for (let i = 0; i < pxlBoard.length; i += 1) {
       pxlBoard[i].style.width = pxlValue + 'px';
@@ -132,3 +128,15 @@ function resizePxls() {
   });
 }
 resizePxls();
+
+function gerateRandomColor() {
+  const o = Math.round, r = Math.random, s = 255;
+  return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+}
+
+window.onload = function() {
+  const colors = colorPalette.childNodes;
+  for (let i = 1; i < colors.length; i += 1) {
+    colors[i].style.backgroundColor = gerateRandomColor();
+  }
+}
