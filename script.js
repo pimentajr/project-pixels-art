@@ -72,7 +72,7 @@ function inputBoard(boardValue) {
     alert('Board Inválido!');
   } else if (input.value > 50) {
     input.value = 50;
-    alert('Board Inválido!');
+    alert('Board Inválido');
   }
 }
 generateBoard.addEventListener('click', inputBoard);
