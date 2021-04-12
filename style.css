@@ -32,22 +32,15 @@
 }
 
 #pixel-board {
-  padding: 20px;
+  padding-top: 20px;
   width: 200px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.pixelLine {
-  height: 40px;
-  width: 40px;
-  border: 1px solid black;
-  display: table-row;
-}
-
 .pixel {
   height: 40px;
   width: 40px;
-  border: 1px solid black;
   display: table-cell;
+  border: 1px solid black;
 }
