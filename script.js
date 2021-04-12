@@ -4,6 +4,7 @@ const colors = document.getElementsByClassName('color');
 const pixels = document.getElementsByClassName('pixel');
 const limpar = document.getElementById('clear-board');
 let board = document.querySelector('#generate-board');
+const mainPage = document.getElementById('main');
 
 // Funções
 function removeClass() {
@@ -54,15 +55,46 @@ function validationNumber(number) {
     return 50;
   }
 }
-function boardGenerate() {
+// Criar uma função que deleta o board.
+function deleteByID(id) {
+  const tagToDelete = document.getElementById(id);
+  const parentNode = tagToDelete.parentNode;
+  parentNode.removeChild(tagToDelete);
+  return tagToDelete;
+}
+console.log(deleteByID('pixel-board'));
+
+// Criar uma função que cria um board novo
+function boardGenerate(size) {
+  let newBoar = document.createElement('table');
+  newBoar.id = 'pixel-board';
+  for (let lines = 0; lines < size; lines += 1) {
+    let line = document.createElement('tr');
+    for (let rows = 0; rows < size; rows += 1) {
+      let row = document.createElement('td');
+      row.className = 'pixel';
+      line.appendChild(row);
+    }
+    newBoar.appendChild(line);
+  }
+  return newBoar;
+}
+console.log(boardGenerate(8));
+mainPage.appendChild(boardGenerate(8))
+// Adicionar a boardGenerate ao DOM com todas os pixels brancos - 
+// Criar uma função que adiciona eventos e classes em um element criado
+// Criar uma funcção que adciona o codigo no dom
+// Criar evento que reage ao click do botão VQV
+
+/* function boardGenerate() {
   const input = document.querySelector('#board-size');
   const table = document.getElementById('pixel-board');
   if (input.value === '') {
     alert('Board inválido!');
     return null;
   }
-  validationNumber(input.value);
-  for (let index = 0; index < input.length; index += 1) {
+ 
+  for (let index = 0; index <  validationNumber(input.value); index += 1) {
     const newTable = document.createElement('tr');
     newTable.setAttribute('id','pixel-board');
     table.appendChild(newTable);
@@ -75,3 +107,4 @@ function boardGenerate() {
 }
 
 board.addEventListener('click', boardGenerate);
+ */
