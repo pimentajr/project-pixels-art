@@ -3,6 +3,13 @@ function ApplyColor() {
   this.id = selectedColor;
 }
 
+function clearBoard() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].id = ('white');
+  }
+}
+
 function createBoard(boardTable) {
   let row;
   let cell;
@@ -12,6 +19,7 @@ function createBoard(boardTable) {
     for (let boardColumn = 0; boardColumn < 5; boardColumn += 1) {
       cell = document.createElement('td');
       cell.className = ('pixel');
+      cell.id = ('white');
       row.appendChild(cell);
       cell.addEventListener('click', ApplyColor);
     }
@@ -35,4 +43,6 @@ window.onload = function () {
   for (let index = 0; index < colors.length; index += 1) {
     colors[index].addEventListener('click', selectColor);
   }
+  const clearButton = document.getElementById('clear-board');
+  clearButton.addEventListener('click', clearBoard);
 };
