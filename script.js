@@ -90,7 +90,7 @@ function createInput() {
   const divBtns = document.querySelector('#main-btns');
   input.id = 'board-size';
   input.type = 'number';
-  input.min = '0';
+  input.min = '1';
   input.max = '50';
   input.style.padding = '10px';
   input.style.marginLeft = '250px';
@@ -113,11 +113,19 @@ createResizeBtn();
 function resizePxls() {
   const resizeBtn = document.querySelector('#generate-board');
   const inputResize = document.querySelector('#board-size');
+  const pxlBoard = pixelBoard.childNodes;
 
   resizeBtn.addEventListener('click', function() {
+    const pxlValue = inputResize.value * inputResize.value;
     if (inputResize.value.length === 0) {
       alert('Board inválido!')
-    } 
+    }
+    
+    for (let i = 0; i < pxlBoard.length; i += 1) {
+      pxlBoard[i].style.width = pxlValue + 'px';
+      pxlBoard[i].style.height = pxlValue + 'px';
+      pxlBoard[i].style.backgroundColor = 'white';
+    }
   });
 
 }
