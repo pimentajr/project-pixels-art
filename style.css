@@ -2,10 +2,16 @@
   margin: 0;
   border: 0;
   padding: 0;
+  text-align: center;
 }
 
 #title {
-    margin: 5px;
+  padding: 20px 0;
+}
+
+#color-palette {
+  padding: 20px 0;
+  margin: 0 auto;
 }
 
 .color {
@@ -14,6 +20,10 @@
   width: 70px;
   height: 70px;
   margin: 5px;
+}
+
+#pixel-board {
+  margin: 0 auto;
 }
 
 .pixel {
