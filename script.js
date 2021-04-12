@@ -15,33 +15,16 @@ window.onload = setBlack;
 
 function setBlack() {
   const elementBlack = document.getElementById('black');
-  elementBlack.className.add('selected');
+  elementBlack.classList.add('selected');
 }
 
-function colorSelection() {
-const tableColor = document.querySelector('#color-palette');
-  tableColor.addEventListener('click', (event) => {
-    const elementTableColor = document.querySelector('#black' || '#red' || '#green' || '#blue');
-    elementTableColor.className = 'color';
-    elementTableColor.className = 'color selected';
-
-    switch (true) {
-      case elementTableColor === '#black':
-        document.querySelector('#black')
-        break;
-      case elementTableColor === '#red':
-        document.querySelector('#red')
-        break;
-      case elementTableColor === '#green':
-        document.querySelector('#green')
-        break;
-      case elementTableColor === '#blue':
-        document.querySelector('#blue')
-        break;
-      default:
-        elementTableColor === '#black'
-        document.querySelector('#black')    
-      }
-  });
+function getColor(event) {
+  let colorSelected = document.querySelector('.selected');
+  for (let index = 0; index < colorSelected.length; index += 1) {
+    colorSelected[index].classList.remove('selected');    
+  }
+  event.target.classList.add('selected');
 }
-colorSelection();
+
+const colorPalette = document.querySelector('#color-palette');
+colorPalette.addEventListener('click', getColor);
