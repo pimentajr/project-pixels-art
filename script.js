@@ -11,7 +11,7 @@ function setColorAll (event) {
   event.target.classList.add('selected');
 }
 
-const colorPalettes = document.querySelector('#colorPalettte');
+const colorPalettes = document.querySelector('#color-palette');
 colorPalettes.addEventListener('click', setColorAll);
 
 const pixelBoard = document.querySelector('#pixel-board');
