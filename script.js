@@ -1,12 +1,26 @@
 const pixelRow = document.getElementById('pixel-board');
 
+// Exercicio 12, foi utilizada essa função que achei no stackOverflow
+// Segue o link https://stackoverflow.com/questions/23095637/how-do-you-get-random-rgb-in-javascript
+
+function getRandomRgb() {
+  const r = Math.ceil((Math.random()) * 255);
+  const g = Math.ceil((Math.random()) * 255);
+  const b = Math.ceil((Math.random()) * 255);
+  return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+}
+
+for (let i = 0; i < 10; i += 1) {
+  console.log(getRandomRgb());
+}
+
 function colorPallet() {
   const paletteColor = document.getElementsByClassName('color');
   paletteColor[0].style.backgroundColor = 'black';
-  paletteColor[1].style.backgroundColor = 'red';
-  paletteColor[2].style.backgroundColor = 'blue';
-  paletteColor[3].style.backgroundColor = 'green';
   paletteColor[0].classList.add('selected');
+  paletteColor[1].style.backgroundColor = getRandomRgb();
+  paletteColor[2].style.backgroundColor = getRandomRgb();
+  paletteColor[3].style.backgroundColor = getRandomRgb();
 }
 colorPallet();
 
