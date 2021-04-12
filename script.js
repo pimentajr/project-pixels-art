@@ -3,12 +3,12 @@ function selectInitialColor() {
 }
 selectInitialColor();
 
-function setColor(evento) {
+function setColor(event) {
   const palette = document.getElementsByClassName('color');
 
   for (let index = 0; index < palette.length; index += 1) {
     const object = palette[index];
-    if (object === evento.target) {
+    if (object === event.target) {
       object.classList.add('selected');
     } else {
       object.classList.remove('selected');
@@ -16,17 +16,17 @@ function setColor(evento) {
   }
 }
 
-function choose(evento) {
+function theChoosen(event) {
   const colorElement = document.querySelector('.selected');
   const color = getComputedStyle(colorElement).backgroundColor;
-  const pixel = evento.target;
+  const pixel = event.target;
   pixel.style.backgroundColor = color;
 }
 
-function starterPixelArt() {
-  document.getElementById('color-palette');
+function pageStarter() {
+  document.getElementById('color-palette')
   document.addEventListener('click', setColor);
-  document.getElementById('pixel.board').addEventListener('click', choose);
+  document.getElementById('pixel-board').addEventListener('click', theChoosen);
 }
 
 window.onload = starterPixelArt;
