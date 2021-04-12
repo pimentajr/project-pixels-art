@@ -1,8 +1,7 @@
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
 
-// Cria e colore a paleta
-function createColor(boxColor) {
+function color(boxColor) {
   const box = document.createElement('div');
   box.style.backgroundColor = boxColor;
   box.className = ('color');
@@ -10,12 +9,11 @@ function createColor(boxColor) {
   colorPalette.appendChild(box);
 }
 
-createColor('black');
-createColor('red');
-createColor('blue');
-createColor('yellow');
+color('black');
+color('red');
+color('blue');
+color('yellow');
 
-// Preenche uma grid
 function populateGrid(size) {
   for (let index = 0; index < size; index += 1) {
     const pixelColumn = document.createElement('div');
