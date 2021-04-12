@@ -14,16 +14,23 @@ function criadorDePixels() {
 criadorDePixels()
 
 let selectPalette = document.querySelector('#color-palette');
-
 function selectColor() {
-  const selectedColor = document.querySelector('.selected');
-  selectPalette.addEventListener('click', function(e) {
-  if (e.target.id !== 'color-palette') {
-    selectedColor.classList.remove('selected');
-    e.target.classList.add('selected');
-  }
-})
+  selectPalette.addEventListener('click', function (e) {
+    const selectedColor = document.querySelector('.selected');
+    if (e.target.classList !== 'selected') {
+      selectedColor.classList.remove('selected');
+      e.target.classList.add('selected');
+    }
+  })
 }
-
 selectColor()
 
+// function paintPixel() {
+//   let selectPixel = selectPixel.addEventListener('click', function (e) {
+//     const colorSelected = document.querySelector('.selected');
+//     if (e.target.className === 'pixel') {
+//       const colorPixel = colorPixel.e.target.
+//   }
+//   })
+// }
+// paintPixel()
