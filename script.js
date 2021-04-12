@@ -16,17 +16,17 @@ secaoSelecionaCor.appendChild(divColor1);
 
 const divColor2 = document.createElement('div');
 divColor2.classList.add('color');
-divColor2.style.backgroundColor = 'pink';
+divColor2.style.backgroundColor = 'yellow';
 secaoSelecionaCor.appendChild(divColor2);
 
 const divColor3 = document.createElement('div');
 divColor3.classList.add('color');
-divColor3.style.backgroundColor = 'blue';
+divColor3.style.backgroundColor = 'goldenrod';
 secaoSelecionaCor.appendChild(divColor3);
 
 const divColor4 = document.createElement('div');
 divColor4.classList.add('color');
-divColor4.style.backgroundColor = 'magenta';
+divColor4.style.backgroundColor = 'darkred';
 secaoSelecionaCor.appendChild(divColor4);
 
 const contaneinerCores = document.createElement('div');
@@ -39,7 +39,7 @@ for (let indice = 1; indice <= 5; indice += 1) {
   for (let index = 1; index <= 5; index += 1) {
     const celulas = document.createElement('td');
     celulas.classList = 'pixel';
-    celulas.addEventListener('click', function CreateTwoEvents(events) {
+    celulas.addEventListener('click', (events) => {
       if (document.querySelector('.selected') !== null) {
         const color = document.querySelector('.selected').style.backgroundColor;
         events.target.style.backgroundColor = color;
@@ -50,9 +50,31 @@ for (let indice = 1; indice <= 5; indice += 1) {
   contaneinerCores.appendChild(createLinha);
 }
 
-secaoSelecionaCor.addEventListener('click', function CreateEvents(event) {
+secaoSelecionaCor.addEventListener('click', (event) => {
   if (document.querySelector('.selected') !== null) {
     document.querySelector('.selected').classList.remove('selected');
   }
   event.target.classList.add('selected');
+});
+
+const storeButton = document.createElement('section');
+storeButton.id = 'button';
+secaoSelecionaCor.appendChild(storeButton);
+
+const button = document.createElement('button');
+button.id = 'clear-board';
+button.innerText = 'Limpar';
+storeButton.appendChild(button);
+
+function CleanPaletas() {
+  const pixels = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < pixels.length; index += 1) {
+    const clean = pixels[index];
+    clean.style.backgroundColor = 'white';
+  }
+}
+
+button.addEventListener('click', (event) => {
+  CleanPaletas();
 });

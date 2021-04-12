@@ -40,3 +40,14 @@
   border-color: black;
 }
 
+#button {
+  background-color: cornsilk;
+}
+
+#clear-board {
+  border-color: crimson;
+  border-style: solid, 1px;
+  background-color: darkorange;
+  color: black;
+}
+
