@@ -19,11 +19,13 @@ function setBlack() {
 }
 
 function getColor(event) {
-  let colorSelected = document.querySelector('.selected');
+  if(event.target.classList[0] === 'color'){
+    let colorSelected = document.querySelectorAll('.selected');
   for (let index = 0; index < colorSelected.length; index += 1) {
     colorSelected[index].classList.remove('selected');    
-  }
+   }
   event.target.classList.add('selected');
+  }
 }
 
 const colorPalette = document.querySelector('#color-palette');
