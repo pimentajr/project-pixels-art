@@ -26,12 +26,10 @@ function changeColorPixel(event) {
 }
 document.getElementById('pixel-board').addEventListener('click', changeColorPixel);
 
-const targetButton = document.getElementById('clear-board');
-
-
-targetButton.addEventListener("click",function() {
-  const targetPixelClass = document.querySelectorAll('.pixel');
-  for (let index = 0, index < 25; index += 1) {
-    targetPixelClass[index].classList.remove(targetPixelClass[1]);
+document.getElementById('clear-board').addEventListener('click', function() {
+  document.querySelectorAll('.pixel');
+  for (let index15 = 0, index15 < document.querySelectorAll('.pixel').length; index15 += 1) {
+    document.querySelectorAll('.pixel')[index15].classList.remove(targetPixelClass[1]);
   }
 })
+
