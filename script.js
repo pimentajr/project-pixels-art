@@ -1,6 +1,5 @@
     
     let black = document.getElementsByClassName("color")[0].style.backgroundColor = "black"
-    black.className = 'selected'
 
     let red = document.getElementsByClassName("color")[1].style.backgroundColor="red"
 
@@ -23,11 +22,12 @@
         blockCell.style.backgroundColor = 'white'
         
     }
-
-    window.onload = blackSelected
-
-    function blackSelected () {
-        let black = document.getElementsByClassName("color")
-        black.className = 'selected'
-    }
+    
 }
+
+function blackSelector(){
+    let black = document.getElementsByClassName("color")[0].classList.add("selected")
+
+}
+
+window.onload = function() { blackSelector() }
