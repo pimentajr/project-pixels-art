@@ -15,12 +15,11 @@ function removeDivPixel() {
 }
 
 function removeAndAddDivPixel(count) {
-    const quantidadeDePixel = document.querySelectorAll('.pixel').length;
+  const quantidadeDePixel = document.querySelectorAll('.pixel').length;
     for (let contador2 = 0; contador2 <= quantidadeDePixel; contador2 += 1) {
       removeDivPixel();
     }
-    createDiv(count);
-  
+  createDiv(count); 
 }
 
 function changeSelectedClass(event) {
@@ -50,12 +49,13 @@ function clearPixel() {
   }
 }
 document.getElementById('clear-board').addEventListener('click', clearPixel);
-
-document.getElementById('generate-board').addEventListener('click', function() {
+function resizezPixels() {
   let inputValue = document.getElementById('board-size').value;
   if (inputValue >= 5 && inputValue <= 50) {
     removeAndAddDivPixel(inputValue)
   } else {
     alert("Board inválido!");
   }
-})
+}
+
+document.getElementById('generate-board').addEventListener('click', resizezPixels);
