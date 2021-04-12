@@ -38,7 +38,7 @@
   background-color: crimson;
 }
 
-#btnReset {
+#clear-board {
   background-color: red;
   color: white;
   margin-top: 10px;
@@ -56,6 +56,6 @@ table {
   margin-bottom: 10px;
 }
 
-h3 {
+h4 {
   margin-bottom: 7px;
 }

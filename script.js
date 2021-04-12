@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function pageLoad () {
   document.getElementById('black').classList.add('selected');
 };
 
@@ -18,11 +18,12 @@ const pixelBoard = document.querySelector('#pixel-board');
 function pxBoard(event) {
   const colorPixel = document.querySelector('.selected');
   const color = window.getComputedStyle(colorPixel).backgroundColor;
-  event.target.style.backgroundColor = color;
+  const eventPxBoard = event.target;
+  eventPxBoard.style.backgroundColor = color;
 }
 pixelBoard.addEventListener('click', pxBoard);
 
-const btn = document.getElementById('btnReset');
+const btn = document.getElementById('clear-board');
 
 function clearBoard() {
   const clPixel = document.getElementsByClassName('pixel');
