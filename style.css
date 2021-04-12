@@ -5,6 +5,7 @@
   display: inline-block;
   height: 35px;
   margin-left: 10px;
+	margin-bottom: 20px;
   vertical-align: middle;
   width: 35px;
 }
@@ -15,7 +16,7 @@
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 0;
   height: 208px;
-  width: 208px;   
+  width: 208px;
 }
 
 .pixel {
@@ -26,22 +27,27 @@
   width: 40px;
 }
 
-.selected{
+.selected {
+	height: 45px;
+  width: 45px;
+}
+
+.black {
   background-color: black;
 }
 
-.blue{
+.blue {
   background-color: blue;
 }
 
-.green{
+.green {
   background-color: green;
 }
 
-.red{
+.red {
   background-color: red;
 }
 
-.yellow{
+.yellow {
   background-color: yellow;
 }
