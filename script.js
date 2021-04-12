@@ -53,16 +53,25 @@ const Table = document.querySelector('tbody');
 let tableChild = document.querySelectorAll('tr');
 const createPixels = document.querySelector('#generate-board');
 
-createPixels.addEventListener('click', function () {
+function alertBox() {
   if (input.value === '') {
     return alert('Board inválido!');
   }
+}
 
+function validationNumber() {
   if (input.value > 50) {
     input.value = 50;
-  } else if (input.value < 5) {
+    return input.value;
+  } if (input.value < 5) {
     input.value = 5;
+    return input.value;
   }
+}
+
+function creatingPixelBox() {
+  alertBox();
+  validationNumber();
 
   for (let index = 0; index < tableChild.length; index += 1) {
     Table.removeChild(tableChild[index]);
@@ -79,8 +88,9 @@ createPixels.addEventListener('click', function () {
   }
   allPixels = document.querySelectorAll('.pixel');
   tableChild = document.querySelectorAll('tr');
-  console.log(allPixels.length);
-});
+}
+
+createPixels.addEventListener('click', creatingPixelBox);
 
 function clearPixels() {
   for (let index = 0; index < allPixels.length; index += 1) {
