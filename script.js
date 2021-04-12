@@ -1,10 +1,11 @@
 function inicio() {
-  const corPincel = document.getElementsByClassName('color');
-  corPincel[0].classList.add('.selected');
-  //corPincel.addEventListener("click",altCor)
-}
+  let corPincel = document.getElementsByClassName('color');
+  corPincel[0].classList.add('selected');
+  //console.log(corPincel);
+  // //corPincel.addEventListener("click",altCor)
+//}
 // function oQueFazer(e){
-// }
+}
 // function altCor(e) {
 //   switch {
 //     case corPincel[0].addEventListener("click")
@@ -24,4 +25,4 @@ function inicio() {
 
 // function mudaCor(e);{
 //   document.getElementById("pixel").addEventListener("click", mudaCor);
-window.onload = inicio();
+window.onload = inicio;
