@@ -1,6 +1,22 @@
 window.onload = onLoadWindow();
 
 function onLoadWindow() {
+  /* os valores de referência RGB foram obtidos em https://www.homehost.com.br/blog/tutoriais/tabela-de-cores-html/#:~:text=Os%20RGB%20%C3%A9%20declarado%20com,RGB%20das%20cores%20mais%20utilizadas. */
+  function randomColor() {
+    let color1 = Math.ceil(Math.random() * 255);
+    let color2 = Math.ceil(Math.random() * 255);
+    let color3 = Math.ceil(Math.random() * 255);
+    return 'rgb(' + color1 + ', ' + color2 + ', ' + color3 + ')';
+  }
+
+  let firstColor = document.querySelector('.red');
+  firstColor.style.backgroundColor = randomColor();
+  let secondColor = document.querySelector('.blue');
+  secondColor.style.backgroundColor = randomColor();
+  let thirdColor = document.querySelector('.yellow');
+  thirdColor.style.backgroundColor = randomColor();
+  let blackColor = document.querySelector('.black');
+  blackColor.style.backgroundColor = 'black';
 
   let divColorSelected = document.getElementById('color-palette');
   let divColorSelectedUpdate = document.querySelector('.selected');
@@ -9,7 +25,7 @@ function onLoadWindow() {
     divColorSelectedUpdate.classList.remove('selected');
     divColorSelectedUpdate = event.target;
     divColorSelectedUpdate.classList.add('selected');
-    colorSelected = divColorSelectedUpdate.classList[1];
+    colorSelected = divColorSelectedUpdate.style.backgroundColor;
   });
   
   let pixelSelected = document.getElementById('pixel-board');
@@ -18,7 +34,7 @@ function onLoadWindow() {
     if (printPixel.classList.length > 1) {
       printPixel.classList.remove(printPixel.classList[1]);
     }
-    printPixel.classList.add(colorSelected);
+    printPixel.style.backgroundColor = colorSelected;
   })
 
   let clearButton = document.getElementById('clear-board');
@@ -26,10 +42,11 @@ function onLoadWindow() {
     let allPixels = document.getElementsByClassName('pixel');
     let boardPixel =document.getElementById('pixel-board');
     for (let index in allPixels) {
-        allPixels[index].className = 'pixel';
+        allPixels[index].style = [];
     }
     if (boardPixel.classList) {
       boardPixel.classList = [];
+      boardPixel.style = [];
     }
   });
 
