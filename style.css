@@ -1,0 +1,28 @@
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#black , .black {
+  background-color: black;
+}
+
+#lightPink , .lightPink {
+  background-color: #f1c3d0;
+}
+
+#lightGreen , .lightGreen {
+  background-color: #a8c870;
+}
+
+#lightBlue , .lightBlue {
+  background-color: #97eaf4;
+}
+
+.pixel {
+  width: 39px;
+  height: 40px;
+  border: 1px solid black;
+}
