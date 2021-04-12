@@ -1,19 +1,32 @@
 const pixelBoards = document.getElementById('pixel-board');
-const btn = document.getElementById('clear-board');
-const title = document.querySelector('#title');
-const current = document.getElementsByClassName('selected');
+const btnClear = document.getElementById('clear-board');
+const currentColor = document.getElementsByClassName('selected');
 const colorPalette = document.querySelectorAll('#color-palette>button');
+const btnSize = document.getElementById('generate-board');
+const blackColor = document.getElementById('black');
+const redColor = document.getElementById('red');
+const blueColor = document.getElementById('blue');
+const greenColor = document.getElementById('green');
 
-function makeTitle() {
-  title.innerHTML = 'Paleta de Cores';
-}
+// https://www.codecademy.com/forum_questions/525e864c80ff338580001a53
+let safeColors = ['00','33','66','99','cc','ff'];
+let rand = function() {
+  return Math.floor(Math.random()*6);
+};
+
+let randomColor = function() {
+  let r = safeColors[rand()];
+  let g = safeColors[rand()];
+  let b = safeColors[rand()];
+  return "#"+r+g+b;
+};
 
 // https://www.w3schools.com/howto/howto_js_active_element.asp
 function selectedColor() {
   for (let i = 0; i < colorPalette.length; i += 1) {
     colorPalette[i].className = 'color';
     colorPalette[i].addEventListener('click', function() {
-      current[0].className = current[0].className.replace('selected', '');
+      currentColor[0].className = currentColor[0].className.replace('selected', '');
       this.className = 'selected color';
     });
   }
@@ -43,12 +56,22 @@ function clearPixel() {
   }
 }
 
-btn.addEventListener('click', clearPixel);
+btnClear.addEventListener('click', clearPixel);
 
+function boardsValue () {
+  const boardSize = document.getElementById('board-size').value;
+  if (boardSize > 50 || boardSize < 5) {
+    alert('Board inválido!');
+  }
+}
 
+blackColor.style.backgroundColor = 'black';
+redColor.style.backgroundColor = randomColor();
+blueColor.style.backgroundColor = randomColor();
+greenColor.style.backgroundColor = randomColor();
 
+boardsValue();
 selectedColor();
-makeTitle();
 makeDivs();
 
 const colorBlack = document.getElementsByClassName('color')[0];
