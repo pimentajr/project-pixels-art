@@ -4,6 +4,19 @@ for (let index = 0; index < getPixels.length; index += 1) {
 }
 
 window.onload = function () {
-  const getColorBlack = document.getElementById('cor1');
-  getColorBlack.className += ' selected';
+  const getColor = document.getElementById('cor1');
+  getColor.className += ' selected';
 };
+
+function addClassSelected() {
+  const paletaCores = document.querySelector('#color-palette');
+  paletaCores.addEventListener('click', function (getEvt) {
+    if (getEvt.target.className === 'color') {
+      const newClass = document.querySelector('.selected');
+      newClass.className = 'color';
+      getEvt.target.className += ' selected';
+    }
+  });
+}
+
+addClassSelected();
