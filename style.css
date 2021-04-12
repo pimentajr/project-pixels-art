@@ -4,7 +4,6 @@
   margin-left: 5%;
   text-align: center;
   color: darkblue;
-  font-weight: bold;
 }
 
 #body {
@@ -80,4 +79,24 @@
   margin-top: 1%;
   margin-bottom: 1%;
   padding: 0.5%;
+}
+
+.pixel:active {
+  width: 41px;
+}
+
+.color:hover {
+  width: 55px;
+}
+
+.color:active {
+  padding: 0.5%;
+}
+
+#clear-board:hover {
+  padding: 0.8%;
+}
+
+#clear-board:active {
+  padding: 1%;
 }
