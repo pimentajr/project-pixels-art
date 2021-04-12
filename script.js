@@ -17,16 +17,32 @@ function clearSelectedColor() {
   selectedColor.classList.remove('selected');
 }
 
-function selectColor(color) {
+function defineNewSelectedColor(targetID) {
   clearSelectedColor();
-  const colorToSelect = document.getElementById(color);
-  colorToSelect.classList.add('selected');
+  const htmlElementToUpdate = document.getElementById(targetID);
+  htmlElementToUpdate.classList.add('selected');
 }
+
+// N sei resolver os erros do ESLint!
+function paintElement(elementToBePainted, colorToPaint) {
+  elementToBePainted.className = 'pixel';
+  elementToBePainted.classList.add(colorToPaint);
+}
+
+const pixels = document.getElementsByClassName('pixel');
 
 const allColors = document.getElementsByClassName('color');
 
-for (const color of allColors) {
-  color.addEventListener('click', () => {
-    selectColor(color.id);
+for (const colorPickerElement of allColors) {
+  colorPickerElement.addEventListener('click', () => {
+    const newColor = colorPickerElement.id;
+    defineNewSelectedColor(newColor);
+  });
+}
+
+for (const pixel of pixels) {
+  pixel.addEventListener('click', () => {
+    const newColor = getActualColor();
+    paintElement(pixel, newColor);
   });
 }

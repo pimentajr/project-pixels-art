@@ -5,24 +5,23 @@
   height: 40px;
 }
 
-#black {
+#black , .black {
   background-color: black;
 }
 
-#lightPink {
+#lightPink , .lightPink {
   background-color: #f1c3d0;
 }
 
-#lightGreen {
+#lightGreen , .lightGreen {
   background-color: #a8c870;
 }
 
-#lightBlue {
+#lightBlue , .lightBlue {
   background-color: #97eaf4;
 }
 
 .pixel {
-  background-color: white;
   width: 39px;
   height: 40px;
   border: 1px solid black;
