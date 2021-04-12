@@ -2,11 +2,23 @@ body {
   background-color: rgb(223, 201, 201);
   margin: 50px auto;
   text-align: center;
+  font-family: Courgette, sans-serif;
+  color: rgb(51, 1, 1);
+  font-style: italic;
+  font-size: 25px;
 }
 
 ul {
   margin: 0;
   padding: 0;
+}
+header {
+  background-color: rgb(209, 143, 143);
+  border-radius: 10px;
+  padding: 15px;
+  width: 75%;
+  margin: auto;
+  box-shadow: 5px 5px 10px rgb(51, 47, 47);
 }
 
 .color {
@@ -16,6 +28,12 @@ ul {
   margin-right: 2px;
   width: 35px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.color:hover {
+  transform: scale(1.2);
+  transition-duration: 0.2s;
 }
 
 #pixel-board {
@@ -30,8 +48,28 @@ ul {
   width: 40px;
   background-color: white;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.pixel:hover {
+  transform: scale(1.2);
+  transition-duration: 0.2s;
 }
 
 #clear-board {
   margin-top: 20px;
+  cursor: pointer;
+  font-family: Courgette, serif;
+  border: solid 2px grey;
+  border-radius: 5px;
+  width: 15%;
+  font-size: 20px;
+  transition-duration: 0.2s;
+  outline: none;
+}
+
+#clear-board:hover {
+  color: grey;
+  background-color: white;
+  transform: scale(1.2);
 }
