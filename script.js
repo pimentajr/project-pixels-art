@@ -32,12 +32,12 @@ function colorPixel(event) {
   pixelSelected.style.backgroundColor = color;
 }
 // Regras de negocio
-
 for (let item = 0; item < colors.length; item += 1) {
   const eventItem = colors[item];
   eventItem.addEventListener('click', removeClass);
   eventItem.addEventListener('click', addClass);
 }
+
 
 for (let px = 0; px < pixels.length; px += 1) {
   pixels[px].addEventListener('click', colorPixel);
@@ -81,6 +81,8 @@ function boardGenerate(size) {
 }
 console.log(boardGenerate(8));
 mainPage.appendChild(boardGenerate(8))
+// Adicionar aos pixels reação ao click para serem pintados.
+
 // Adicionar a boardGenerate ao DOM com todas os pixels brancos - 
 // Criar uma função que adiciona eventos e classes em um element criado
 // Criar uma funcção que adciona o codigo no dom
@@ -108,3 +110,4 @@ mainPage.appendChild(boardGenerate(8))
 
 board.addEventListener('click', boardGenerate);
  */
+// Voce parou na linha 35 colocando os loops for em funções para poder reutiliza-las na função que irá remodelar o board na tela com as reações e estilizações..............
