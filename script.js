@@ -3,7 +3,7 @@ window.onload = function(inicio);
 
 function inicio() {
   let corPincel = document.getElementsByClassName('color');
-  corPincel[0].classList.selected;
+  corPincel[0].classList.add('.selected');
   corPincel.addEventListener("click",altCor)
 
 }
