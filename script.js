@@ -1,34 +1,30 @@
-let x=0;
 
 function inicio() {
   let corPincel = document.getElementsByClassName('color');
   corPincel[0].classList.add('selected');
-  altCor;
-
-}
- function oQueFazer(e) {
-
-}
- function altCor(e) {
-   switch (corPincel[e].addEventListener("click")) {
-     case corPincel[0].addEventListener("click"):
-     corPincel[0].classList.add('selected');
-     break;
-     case corPincel[1].addEventListener("click"):
-     corPincel[1].classList.add('selected');
-     break;
-     case corPincel[2].addEventListener("click"):
-     corPincel[2].classList.add('selected');
-     break;
-     case corPincel[3].addEventListener("click"):
-     corPincel[3].classList.add('selected');
-     break;
-   }
- }
-
- function mudaCor(e){
-  for(pixel.addEventListener("click") in object){
-
+  
+  addEventListener("click", altCor, false);
+  
+  function altCor(e) {
+    const corEscolhida = e.target;
+    const corAtual = document.querySelector('.color.selected');
+    if (corEscolhida !== corAtual) {
+      corEscolhida.classList.remove('selected');
+      corEscolhida.classList.add('selected');
+    }
   }
+
+  //  for(let index=0; index<=corPincel.length; index += 1){
+  //     (corPincel[index].addEventListener("click"))
+  //     corPincel[index].classList.add('selected');
+  //   }
+   //    document.getElementById('teste').style.backgroundColor(x.tagname);
  }
+}
+
+//  function mudaCor(e){
+//   for(pixel.addEventListener("click") in object){
+
+//   }
+//  }
 window.onload = inicio;
