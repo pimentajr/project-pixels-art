@@ -7,7 +7,6 @@ const pixel = document.getElementsByClassName('pixel');
 const clearBoard = document.getElementById('clear-board');
 const button = document.getElementsByTagName('button')[0];
 
-
 document.getElementById('title').innerText = 'Paleta de Cores';
 clearBoard.innerText = 'Limpar';
 
@@ -65,7 +64,7 @@ pixelBoard.addEventListener('click', colorPixel);
 
 button.addEventListener('click', function() {
   for (let index = 1; index < pixel.length; index += 1) {
-    pixel[index].style.background = 'white'
+    pixel[index].style.background = 'rgb(255, 255, 255)';
   }
 })
 
