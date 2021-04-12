@@ -1,6 +1,44 @@
+function deleteBoard() {
+  const newTable = document.querySelectorAll('.line');
+  for (let index = 0; index < newTable.length; index += 1) {
+    newTable[index].remove();
+  }
+}
+
+function createElementsForTable(cont) {
+  const originTable = document.querySelector('#pixel-board');
+  for (let line = 0; line < cont; line += 1) {
+    const lineElement = document.createElement('tr');
+    lineElement.className = 'line';
+    originTable.appendChild(lineElement);
+    for (let coluns = 0; coluns < cont; coluns += 1) {
+      const originLine = document.getElementsByClassName('line');
+      const colunsElement = document.createElement('td');
+      colunsElement.className = 'pixel';
+      originLine[line].appendChild(colunsElement);
+    }
+  }
+}
+
+function defineBoard() {
+  const input = document.querySelector('#board-size');
+  if (input.value === '') {
+    alert('Board inválido!');
+  } else {
+    let cont = input.value;
+    if (cont > 50) {
+      cont = 50;
+    } else if (cont < 5) {
+      cont = 5;
+    }
+    input.value = '';
+    deleteBoard();
+    createElementsForTable(cont);
+  }
+}
+
 function inputBoard() {
   const originInput = document.querySelector('#containerButton');
-  const originTable = document.querySelector('#pixel-board');
   const input = document.createElement('input');
   const submit = document.createElement('button');
   input.type = 'number';
@@ -10,39 +48,6 @@ function inputBoard() {
   submit.innerText = 'VQV';
   originInput.appendChild(input);
   originInput.appendChild(submit);
-
-  function clearBoard() {
-    const newTable = document.querySelectorAll('.line');
-    for (let index = 0; index < newTable.length; index += 1) {
-      newTable[index].remove();
-    }
-  }
-
-  function defineBoard() {
-    if (input.value === '') {
-      alert('Board inválido!');
-    } else {
-      let cont = input.value;
-      if (cont > 50) {
-        cont = 50;
-      } else if (cont < 5) {
-        cont = 5;
-      }
-      input.value = '';
-      clearBoard();
-      for (let line = 0; line < cont; line += 1) {
-        const lineElement = document.createElement('tr');
-        lineElement.className = 'line';
-        originTable.appendChild(lineElement);
-        for (let coluns = 0; coluns < cont; coluns += 1) {
-          const originLine = document.getElementsByClassName('line');
-          const colunsElement = document.createElement('td');
-          colunsElement.className = 'pixel';
-          originLine[line].appendChild(colunsElement);
-        }
-      }
-    }
-  }
   submit.addEventListener('click', defineBoard);
 }
 
