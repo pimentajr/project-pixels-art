@@ -13,7 +13,8 @@ function makeTables() {
     for (let jndex = 0; jndex < numberLines; jndex += 1) {
       const makeTd = document.createElement('td');
       makeTr.appendChild(makeTd);
-      makeTd.className = 'pixel branco';
+      makeTd.className = 'pixel';
+      makeTd.style.backgroundColor = 'white';
     }
   }
 }
@@ -25,10 +26,14 @@ function alteraTamanhoTable() {
   const pixelBoard = document.querySelector('#pixel-board');
   if (numberLines.length === 0) {
     window.alert('Board inválido!');
-  } else if (numberLines > 4 && numberLines < 51) {
-    pixelBoard.innerHTML = '';
-    makeTables();
+    numberLines = 5;
+  } else if (numberLines < 5) {
+    numberLines = 5;
+  } else if (numberLines > 50) {
+    numberLines = 50;
   }
+  pixelBoard.innerHTML = '';
+  makeTables();
 }
 
 const AddSquareButton = document.querySelector('#generate-board');
@@ -54,20 +59,9 @@ paleta.addEventListener('click', trocarSelected);
 
 function tintTable(event) {
   const color = document.querySelector('.selected');
-  const colorSelected = window.getComputedStyle(color, null).getPropertyValue('background-color');
-  if (colorSelected === 'rgb(0, 0, 0)') {
-    event.target.classList.remove('branco', 'verde', 'vermelho', 'amarelo');
-    event.target.classList.add('preto');
-  } else if (colorSelected === 'rgb(0, 128, 0)') {
-    event.target.classList.remove('branco', 'preto', 'vermelho', 'amarelo');
-    event.target.classList.add('verde');
-  } else if (colorSelected === 'rgb(255, 0, 0)') {
-    event.target.classList.remove('branco', 'preto', 'verde', 'amarelo');
-    event.target.classList.add('vermelho');
-  } else {
-    event.target.classList.remove('branco', 'preto', 'verde', 'vermelho');
-    event.target.classList.add('amarelo');
-  }
+  const colorSelected = getComputedStyle(color).backgroundColor;
+  const evento = event.target;
+  evento.style.backgroundColor = colorSelected;
 }
 
 const table = document.querySelector('#pixel-board');
@@ -76,8 +70,7 @@ table.addEventListener('click', tintTable);
 function clearBoard() {
   const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].classList.remove('branco', 'preto', 'verde', 'vermelho', 'amarelo');
-    pixels[index].classList.add('branco');
+    pixels[index].style.backgroundColor = 'white';
   }
 }
 
