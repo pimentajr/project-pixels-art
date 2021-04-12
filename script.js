@@ -25,7 +25,7 @@ function createPixelBoard() {
 
   if (size === '' || size <= 0) {
     window.alert('Board inválido!');
-  } 
+  }
   if (size < 5) {
     size = 5;
   }
@@ -35,7 +35,7 @@ function createPixelBoard() {
 
   for (let i = 0; i < size; i += 1) {
     const columns = document.createElement('div');
-     pixelBoard.appendChild(columns);
+    pixelBoard.appendChild(columns);
     for (let j = 0; j < size; j += 1) {
       const lines = document.createElement('div');
       lines.classList.add('pixel');
