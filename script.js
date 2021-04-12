@@ -29,10 +29,14 @@ function buttonInput() {
   myButton.addEventListener('click', () => {
     const myValue = document.getElementById('board-size');
     pixelRow.innerHTML = '';
-    createSquare(myValue.value);
     if (myValue.value <= 0) {
       alert('Board inválido!');
+    } else if (myValue.value < 5) {
+      myValue.value = 5;
+    } else if (myValue.value > 50) {
+      myValue.value = 50;
     }
+    createSquare(myValue.value);
   });
 }
 buttonInput();
