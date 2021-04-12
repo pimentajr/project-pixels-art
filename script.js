@@ -51,10 +51,10 @@ function getColor(colorX) {
   document.getElementsByClassName('selected')[0].classList.remove('selected');
   colorX.target.classList.add('selected');
   console.log(colorX.target);
- }
+}
 
 function colorPixel(pixelX) {
-  let newColor = document.getElementsByClassName('selected')[0].style.background;
+  const newColor = document.getElementsByClassName('selected')[0].style.background;
   pixelX.target.style.background = newColor;
 }
 
@@ -62,20 +62,8 @@ colorsPalette.addEventListener('click', getColor);
 
 pixelBoard.addEventListener('click', colorPixel);
 
-button.addEventListener('click', function() {
-  for (let index = 1; index < pixel.length; index += 1) {
-    pixel[index].style.background = 'rgb(255, 255, 255)';
+button.addEventListener('click', function () {
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
   }
 })
-
-// function getColor(colorX) {
-//   clickedColor = colorX.target.style.background;
-//  }
-
-// function colorPixel(pixelX) {
-//   pixelX.target.style.background = clickedColor;
-// }
-
-// colorsPalette.addEventListener('click', getColor);
-
-// pixelBoard.addEventListener('click', colorPixel);
