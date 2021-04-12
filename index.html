@@ -16,6 +16,13 @@
       <div class="color green" onclick="colorSelectedGreen()"></div>
     </section>
     <button id="clear-board" onclick="clear()">Limpar</button>
+    <button
+      id="generate-board"
+      onclick="createPixelBoard(document.querySelector('#board-size').value)"
+    >
+      VQV
+    </button>
+    <input type="number" max="50" min="5" id="board-size" value="5" />
     <section id="pixel-board"></section>
 
     <script src="script.js"></script>
