@@ -2,17 +2,19 @@ window.onload = function(inicio);
 
 
 function inicio() {
-  const corPincel = document.getElementsByClassName('color');
-  corPincel[0].classList.add('selected');
-  document.onclick = oQueFazer(e);
+  let corPincel = document.getElementsByClassName('color');
+  corPincel[0].classList.selected;
+  corPincel.addEventListener("click",altCor)
+
 }
- function oQueFazer(){
-   if ()
+
+function oQueFazer(e){
+  
  }
 function altCor(e) { 
   switch corPincel[].addEventListener("click") {
     case corPincel[0].addEventListener("click")
-    corPincel = getComputedStyle(corPincel[0]);
+    corPincel = getComputedStyle(co rPincel[0]);
     break;
     case corPincel[1].addEventListener("click")
     corPincel = getComputedStyle(corPincel[1]);
