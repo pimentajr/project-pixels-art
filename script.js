@@ -60,9 +60,19 @@ function onClickPixelBoard(event) {
   setPixelColor(event.target);
 }
 
+function onClickButtonClearBoard() {
+  getPixelBoard().querySelectorAll('.pixel')
+    .forEach((element) => {
+      // Como resolver este lint warning?
+      // eslint-disable-next-line no-param-reassign
+      element.style.backgroundColor = '';
+    });
+}
+
 function bindListeners() {
   getColorPallet().onclick = onClickColorPallet;
   getPixelBoard().onclick = onClickPixelBoard;
+  document.querySelector('#clear-board').onclick = onClickButtonClearBoard;
 }
 
 window.onload = () => {
