@@ -9,7 +9,7 @@ function add(father, son) {
 }
 
 // get body and #color-palette
-const { body } = document;
+const { body } = document; // EsLint quickfix solution for body = document.body
 const palette = document.querySelector('#color-palette');
 
 // set color class for color-palettes's childrens
@@ -18,7 +18,7 @@ for (let i = 0; i < palette.childElementCount; i += 1) {
 }
 
 // get all .color
-const colors = document.querySelectorAll('#color');
+const colors = document.querySelectorAll('.color');
 
 // set random colors
 function randomColors() {
@@ -26,9 +26,7 @@ function randomColors() {
     const random = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
     colors[i].style.background = random;
   }
-  colors[0].removeAttribute('className');
   colors[0].style.background = 'black';
-  colors[0].className = 'selected';
 }
 
 // create and set mainContainer
@@ -45,19 +43,32 @@ for (let j = 0; j < tableSize; j += 1) {
   add(mainContainer, pixels);
 }
 
-// const pixels = document.querySelectorAll('.pixel');
+// get all class pixel
+const pixels = document.querySelectorAll('.pixel');
 
-// to Selected class function
-function classSelected() {
-  if (event.target.className === 'pixel') {
-    event.target.className = 'selected';
-  }
+// Selected Color class (in navigation) function
+function classSelected(element) {
+  // forEach element in colors (line 21) remove class if selected or add class selected
+  colors.forEach((x) => x.classList.remove('selected'));
+  element.classList.add('selected');
+}
+
+// draw pixels in the pixelboard
+function drawPixels(px) {
+  const aux = px; // I had to use an aux variable to fix a ESlint problem
+  const pixelSelected = document.querySelector('.selected');
+  // takes the style.background of element of selected class
+  aux.style.backgroundColor = pixelSelected.style.backgroundColor;
 }
 
 // start function
 function start() {
+  // Call functions
   randomColors();
-  mainContainer.addEventListener('click', classSelected);
+  // EventListeners
+  // How is a lot of pixels to work, I had to use ForEach, the normal For loop don't work propelly
+  colors.forEach((element) => element.addEventListener('click', (e) => classSelected(e.target)));
+  pixels.forEach((px) => px.addEventListener('click', (e) => drawPixels(e.target)));
 }
 
 // window.onload function
