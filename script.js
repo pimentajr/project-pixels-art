@@ -67,7 +67,11 @@ function inputBoard(boardValue) {
   if (input.value !== '') {
     sizingBoard(input.value, input.value);
   }
-  if (input.value < 1) {
+  if (input.value < 5) {
+    input.value = 5;
+    alert('Board Inválido!');
+  } else if (input.value > 50) {
+    input.value = 50;
     alert('Board Inválido!');
   }
 }
