@@ -25,3 +25,13 @@ function changeColorPixel(event) {
   }
 }
 document.getElementById('pixel-board').addEventListener('click', changeColorPixel);
+
+const targetButton = document.getElementById('clear-board');
+
+
+targetButton.addEventListener("click",function() {
+  const targetPixelClass = document.querySelectorAll('.pixel');
+  for (let index = 0, index < 25; index += 1) {
+    targetPixelClass[index].classList.remove(targetPixelClass[1]);
+  }
+})
