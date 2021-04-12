@@ -1,4 +1,4 @@
-#color-palette {
+.color {
   border: black solid 1px;
   width: 40px;
   height: 40px;
@@ -7,7 +7,7 @@
 }
 
 #blue {
-  background-color: blue
+  background-color: blue;
 }
 
 #green {
