@@ -55,10 +55,17 @@ function classSelected(element) {
 
 // draw pixels in the pixelboard
 function drawPixels(px) {
-  const aux = px; // I had to use an aux variable to fix a ESlint problem
+  const aux = px; // I had to use an aux variable to fix an ESlint problem about parameter assingment
   const pixelSelected = document.querySelector('.selected');
-  // takes the style.background of element of selected class
+  // takes the style.background of element in selected class
   aux.style.backgroundColor = pixelSelected.style.backgroundColor;
+}
+
+const clearButton = document.querySelector('#clear-board');
+
+// function Clear Button
+function clearBoard() {
+  pixels.forEach((e) => {e.style.background = 'white'; });
 }
 
 // start function
@@ -69,6 +76,7 @@ function start() {
   // How is a lot of pixels to work, I had to use ForEach, the normal For loop don't work propelly
   colors.forEach((element) => element.addEventListener('click', (e) => classSelected(e.target)));
   pixels.forEach((px) => px.addEventListener('click', (e) => drawPixels(e.target)));
+  clearButton.addEventListener('click', clearBoard);
 }
 
 // window.onload function
