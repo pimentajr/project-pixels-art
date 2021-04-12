@@ -1,12 +1,11 @@
-const bodyElement = document.body;
+// Variables
+const colorPalette = document.getElementById('color-palette');
+const colors = document.getElementsByClassName('color');
+console.log(colorPalette);
+// Assignments
 
-const title = document.createElement('h1');
-bodyElement.appendChild(title);
-title.innerText = "Paleta de Cores"
-title.id = 'title'
+// Functions
 
-// (function colorMatriz(selectColorMatriz) {
-//   for(let index = 0; index < 25; index += 1) {
-//     document.createElement('td')
-//   }
-// })();
+for (let index = 0; index < colors.length; index += 1) {
+  colors[index].style.backgroundColor = colors[index].id;
+}
