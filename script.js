@@ -8,6 +8,14 @@ const secaoSelecionaCor = document.createElement('section');
 secaoSelecionaCor.id = 'color-palette';
 textBody.appendChild(secaoSelecionaCor);
 
+const storeButtom = document.createElement('section');
+textBody.appendChild(storeButtom);
+
+const button = document.createElement('button');
+button.id = 'clear-board';
+button.innerText = 'Limpar';
+storeButtom.appendChild(button);
+
 const divColor1 = document.createElement('div');
 divColor1.classList.add('selected');
 divColor1.classList.add('color');
@@ -29,14 +37,9 @@ divColor4.classList.add('color');
 divColor4.style.backgroundColor = 'darkred';
 secaoSelecionaCor.appendChild(divColor4);
 
-const button = document.createElement('button');
-button.id = 'clear-board';
-button.innerText = 'Limpar';
-secaoSelecionaCor.appendChild(button);
-
 const contaneinerCores = document.createElement('div');
 contaneinerCores.id = 'pixel-board';
-secaoSelecionaCor.appendChild(contaneinerCores);
+textBody.appendChild(contaneinerCores);
 
 for (let indice = 1; indice <= 5; indice += 1) {
   const createLinha = document.createElement('tr');
