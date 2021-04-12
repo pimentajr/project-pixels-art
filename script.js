@@ -1,5 +1,9 @@
+function ApplyColor() {
+  const selectedColor = document.querySelector('.selected').id;
+  this.id = selectedColor;
+}
+
 function createBoard(boardTable) {
-  // let board;
   let row;
   let cell;
   for (let boardRow = 0; boardRow < 5; boardRow += 1) {
@@ -7,9 +11,9 @@ function createBoard(boardTable) {
     boardTable.appendChild(row);
     for (let boardColumn = 0; boardColumn < 5; boardColumn += 1) {
       cell = document.createElement('td');
-      // content = document.createTextNode('');
       cell.className = ('pixel');
       row.appendChild(cell);
+      cell.addEventListener('click', ApplyColor);
     }
   }
 }
