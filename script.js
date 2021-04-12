@@ -58,7 +58,7 @@ board.addEventListener('click', pixel);
 
 // 9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco:
 
-const pixels = document.querySelectorAll('.pixel');
+const pixels = document.getElementsByClassName('pixel');
 
 function buttonClear() {
   for (let thirdIndex = 0; thirdIndex < pixels.length; thirdIndex += 1) {
@@ -69,3 +69,24 @@ const button = document.getElementById('clear-board');
 button.addEventListener('click', buttonClear);
 
 // 10 - Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária.
+
+function createBoard() {
+const buttVqv = document.querySelector('#generate-board');
+let boardSize = document.querySelector('#board-size');
+
+buttVqv.addEventListener('click', () => {
+  board.innerHTML = '';
+  let size = boardSize.value;
+  if (!size) {
+    return alert ('Board inválido!');
+  }
+  if (size < 5) {
+    size = 5;
+  } else if (size > 50) {
+    size = 50;
+  }
+  square(size, size);
+});
+}
+createBoard();
+buttonClear(createBoard);
