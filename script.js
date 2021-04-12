@@ -19,6 +19,7 @@ function changeSelectedColor(event) {
 
 document.querySelectorAll('.color').forEach((item) => {
   item.addEventListener('click', changeSelectedColor)
+
 });
 
 function pixelColor(eventColor) {
@@ -28,4 +29,16 @@ function pixelColor(eventColor) {
 
 document.querySelectorAll('.pixel').forEach((item) => {
   item.addEventListener('click', pixelColor)
+
 })
+
+function clearPixels () {
+  for (let index = 0; index < pixels.length; index +=1) {
+    pixels[index].style.background = 'white';
+  }
+}
+
+const button = document.getElementById('clear-board');
+let pixels = document.querySelectorAll('.pixel');
+
+button.addEventListener('click', clearPixels);
