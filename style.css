@@ -47,4 +47,6 @@
 #clear-board {
   margin-top: 5%;
   margin-left: 7.5%;
+  display: block;
+  margin-bottom: 5%;
 }

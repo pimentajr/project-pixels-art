@@ -1,6 +1,5 @@
-
 function criadorDePixels() {
-  let quadro = document.getElementById('pixel-board');
+  const quadro = document.getElementById('pixel-board');
   for (let coluna = 0; coluna < 5; coluna += 1) {
     const createDadPixel = document.createElement('div');
     quadro.appendChild(createDadPixel);
@@ -12,15 +11,14 @@ function criadorDePixels() {
   }
 }
 criadorDePixels();
-let corSelecionada = '';
-let selectPalette = document.querySelector('#color-palette');
+const corSelecionada = '';
+const selectPalette = document.querySelector('#color-palette');
 function selectColor() {
   selectPalette.addEventListener('click', function (e) {
     const selectedColor = document.querySelector('.selected');
     if (e.target.classList !== 'selected') {
       selectedColor.classList.remove('selected');
       e.target.classList.add('selected');
-
     }
   });
 }
@@ -39,9 +37,9 @@ function paintPixel() {
 }
 paintPixel();
 
-let button = document.getElementById('clear-board');
+const button = document.getElementById('clear-board');
 function clear() {
-  let pixels = document.querySelectorAll('.pixel');
+  const pixels = document.querySelectorAll('.pixel');
   button.addEventListener('click', function (e) {
     if (e.target.id === 'clear-board') {
       for (const pixel of pixels) {
