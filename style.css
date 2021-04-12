@@ -30,6 +30,5 @@
   border: black solid 1px;
   width: 40px;
   height: 40px;
-  display: inline-block;
-  margin: 0;
+  display: table-cell
 }
