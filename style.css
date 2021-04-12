@@ -1,5 +1,4 @@
 #title {
-  color: black;
   text-align: center;
 }
 
@@ -14,28 +13,15 @@
 
 .color {
   border: solid black 1px;
-  padding: 40px;
+  padding: 50px;
   display: inline-block;
-}
-
-.black {
-  background-color: black;
-}
-
-.green {
-  background-color: green;
-}
-
-.purple {
-  background-color: purple;
-}
-
-.blue {
-  background-color: blue;
+  cursor: pointer;
 }
 
 .selected {
   text-align: center;
+  width: 10px;
+  height: 10px;
 }
 
 .pixel {
