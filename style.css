@@ -108,8 +108,25 @@ li.color {
 }
 
 .color-subtitle {
-  display:inline-block;
+  display: inline-block;
   font-family: monospace;
   font-size: 15px;
   padding-right: 5px;
+}
+
+.paint-all {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.erase-pixel {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.white-pixel {
+  background-color: white;
+}
 }

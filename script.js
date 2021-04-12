@@ -23,10 +23,10 @@ addSelectedToBlack();
 // evento click para aplicar cor - ocorrer dentro de #pixel-board
 function applySelectedColor() {
   const getPaintTable = document.querySelector('#pixel-board');
-  const getSelectedColor = document.querySelector('.selected');
-  const compStyles = window.getComputedStyle(getSelectedColor);
 
   getPaintTable.addEventListener('click', function (event) {
+    const getSelectedColor = document.querySelector('.selected');
+    const compStyles = window.getComputedStyle(getSelectedColor);
     event.target.style.backgroundColor = compStyles.getPropertyValue('background-color');
   });
 }
@@ -41,7 +41,7 @@ function removeSelectedClass() {
   }
 }
 
-// adiciona classe selected a um determinado elemento
+// adiciona classe selected a um determinado elemento da paleta
 function changeColorSelected() {
   const getColorsPallete = document.querySelector('#color-palette');
   getColorsPallete.addEventListener('click', function (event) {
@@ -182,10 +182,38 @@ function getSelectedColor() {
   const compStyles = window.getComputedStyle(getSelectedColor);
   const selectedBackground = compStyles.getPropertyValue('background-color');
 
-  selectedColorPixel.style.backgroundColor = compStyles.getPropertyValue('background-color');
+  selectedColorPixel.style.backgroundColor = selectedBackground;
 }
 
 getSelectedColor();
-// randomiza cores
+
+// pinta todos os pixels com a cor ativa
+function paintAllPixels() {
+  const paintAllTool = document.querySelector('.paint-all');
+
+  paintAllTool.addEventListener('click', function() {
+    const getPixels = document.querySelectorAll('.pixel');
+    const selectedColor = document.querySelector('.selected-color');
+
+    for (let index = 0; index < getPixels.length; index += 1) {
+      getPixels[index].style.backgroundColor = selectedColor.style.backgroundColor;
+    }
+  })
+}
+
+paintAllPixels();
+
+// pinta pixel de branco
+function erasePixelColor() {
+  let eraserTool = document.querySelector('.erase-pixel');
+  let whitePixel = document.querySelector('.white-pixel');
+
+  eraserTool.addEventListener('click', function() {
+    removeSelectedClass();
+    whitePixel.classList.add('selected');
+  })
+}
+
+erasePixelColor();
 
 
