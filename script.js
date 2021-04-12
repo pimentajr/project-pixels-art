@@ -4,8 +4,12 @@ const linePixelBoard = document.querySelectorAll('.line');
 const basePixelBoard = 5;
 const pixelBoard = document.getElementById('pixel-board');
 const pixel = document.getElementsByClassName('pixel');
+const clearBoard = document.getElementById('clear-board');
+const button = document.getElementsByTagName('button')[0];
+
 
 document.getElementById('title').innerText = 'Paleta de Cores';
+clearBoard.innerText = 'Limpar';
 
 // Cria paleta de cores
 function createPalette(arrayColors) {
@@ -42,32 +46,28 @@ function createPixelBoard(lines) {
 createPalette(listOfColors);
 createPixelBoard(linePixelBoard);
 
-// function chooseTheFirst(colorX) {
-//   document.getElementsByClassName('color')[0].innerText = colorX.target.value;
-// }
-
-// chooseTheFirst(color[0])
-
-
-
-let clickedColor = 'black';
-
-document.getElementsByClassName('color')[0].classList.add('selected')
+document.getElementsByClassName('color')[0].classList.add('selected');
 
 function getColor(colorX) {
   document.getElementsByClassName('selected')[0].classList.remove('selected');
-  colorX.target.classList.add('selected')
-  console.log(colorX.target)
+  colorX.target.classList.add('selected');
+  console.log(colorX.target);
  }
 
 function colorPixel(pixelX) {
-  let newColor = document.getElementsByClassName('selected')[0].style.background
+  let newColor = document.getElementsByClassName('selected')[0].style.background;
   pixelX.target.style.background = newColor;
 }
 
 colorsPalette.addEventListener('click', getColor);
 
 pixelBoard.addEventListener('click', colorPixel);
+
+button.addEventListener('click', function() {
+  for (let index = 1; index < pixel.length; index += 1) {
+    pixel[index].style.background = 'white'
+  }
+})
 
 // function getColor(colorX) {
 //   clickedColor = colorX.target.style.background;
