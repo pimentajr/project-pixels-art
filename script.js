@@ -75,12 +75,14 @@ function newNumberInput(number) {
 
 vqvButton.addEventListener('click', () => {
   const numberValue = numberInput.value;
+  if (numberValue === '') {
+    alert('Board inválido!');
+  }
   if (numberValue >= 5 && numberValue <= 50) {
     newTable(numberValue);
   } else {
     const newNumber = newNumberInput(numberValue);
     newTable(newNumber);
-    alert('Board inválido!');
   }
 });
 
