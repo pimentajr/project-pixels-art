@@ -4,7 +4,7 @@ function creatPallete() {
 
   for (let index = 0; index < colors.length; index += 1) {
     const createDiv = document.createElement('div');
-    createDiv.className = 'color';
+    createDiv.classList.add('color');
     createDiv.style.backgroundColor = colors[index];
     colorPalette.appendChild(createDiv);
 
@@ -15,26 +15,36 @@ function creatPallete() {
 }
 creatPallete();
 
-function pixelBoard(num) {
+function pixelBoard() {
   const pixelBoard = document.querySelector('#pixel-board');
+  const inputLines = document.querySelector('#board-size').value;
 
-  for (let i = 0; i < num; i += 1) {
+  while (pixelBoard.firstChild) {
+    pixelBoard.removeChild(pixelBoard.firstChild);
+  }
+  
+  for (let i = 0; i < inputLines; i += 1) {
     const columns = document.createElement('div');
     pixelBoard.appendChild(columns);
-
-    for (let j = 0; j < num; j += 1) {
+    for (let j = 0; j < inputLines; j += 1) {
       const lines = document.createElement('div');
-      lines.className = 'pixel';
+      lines.classList.add('pixel');
       columns.appendChild(lines);
     }
   }
 }
-pixelBoard(5);
+pixelBoard();
+
+const generateBoard = document.querySelector('#generate-board');
+generateBoard.addEventListener('click', function(event) {
+  event.preventDefault();
+  pixelBoard();
+});
 
 function addClassSelect() {
-  const selectColor = document.querySelector('#color-palette')
+  const selectColor = document.querySelector('#color-palette');
   selectColor.addEventListener('click', (event) => {
-    let select = document.querySelector('.selected');
+    const select = document.querySelector('.selected');
     event.target.classList.add('selected');
     if (event.target.classList == 'color selected') {
       select.classList.remove('selected');
@@ -44,12 +54,13 @@ function addClassSelect() {
 }
 addClassSelect();
 
-function addColorPixel(){
-  let pixelSelect = document.querySelector('#pixel-board');
-  pixelSelect.addEventListener('click', (event) => {
-    let colorSelect = document.querySelector('.selected')
-    event.target.style.backgroundColor = colorSelect.style.backgroundColor;
-  });
+function addColorPixel() {
+  const pixelSelect = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixelSelect.length; i += 1) {
+    pixelSelect[i].addEventListener('click', function () {
+      pixelSelect[i].style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+    });
+  }
 }
 addColorPixel();
 
@@ -67,15 +78,12 @@ clearPixel();
 // function createGrid() {
 //   const boardSize = document.querySelector('#board-size').value;
 //   const pixelCanvas = document.querySelector('#pixel-board');
-
 //   while (pixelCanvas.firstChild) {
 //     pixelCanvas.removeChild(pixelCanvas.firstChild);
 //   }
-  
 //   for (let i = 0; i < boardSize; i += 1) {
 //     let createLines = document.createElement('div');
 //     pixelCanvas.appendChild(createLines);
-    
 //     for (let j = 0; j < boardSize; j += 1) {
 //       let createColumns = document.createElement('div');
 //       createLines.appendChild(createColumns);
@@ -83,7 +91,6 @@ clearPixel();
 //   }
 // }
 // createGrid()
-
 // const sizePicker = document.querySelector('#size-picker');
 // sizePicker.addEventListener('submit', function(event) {
 //   event.preventDefault(); //Cancela o evento se for cancelável, sem parar a propagação do mesmo.
