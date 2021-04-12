@@ -6,6 +6,7 @@ body {
   background-size: 135%;
   font-family: 'VT323', monospace;
 }
+
 .color {
   border: solid black 1px;
   width: 45px;
@@ -18,7 +19,6 @@ body {
 }
 
 #pixel-board {
-  margin-top: 10px;
   display: table;
   margin: auto;
 
@@ -38,6 +38,9 @@ body {
 
 #clear-board {
   width: 82px;
+  background-color: rgb(77, 185, 204);
+  font-family: 'VT323', monospace;
+  font-size: 120%;
 }
 
 #board-size {
@@ -52,6 +55,9 @@ body {
 
 #generate-board {
   width: 82px;
+  background-color: rgb(77, 185, 204);
+  font-family: 'VT323', monospace;
+  font-size: 120%;
 }
 
 #title {
@@ -59,23 +65,9 @@ body {
   margin-bottom: 50px;
   margin-top: 6%;
   font-size: 400%;
-
 }
 
 #buttons-container {
   margin-bottom: 20px;
   margin-top: 5px;
-}
-
-#clear-board {
-  background-color: rgb(77, 185, 204);
-  font-family: 'VT323', monospace;
-  font-size: 120%;
-}
-
-
-#generate-board {
-  background-color: rgb(77, 185, 204);
-  font-family: 'VT323', monospace;
-  font-size: 120%;
 }
