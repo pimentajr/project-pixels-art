@@ -1,7 +1,8 @@
 window.onload = function () {
   const pixelBoard = document.querySelector('#pixel-board').children;
-  const pixelTocolor = document.querySelector('#pixel-board');
+  const pixelToColor = document.querySelector('#pixel-board');
   const colorPalette = document.querySelector('#color-palette');
+  const clearBoard = document.getElementById('clear-board');
   let black = document.querySelector('#black');
   black.classList.add('selected');
   var color = 'black';
@@ -14,17 +15,22 @@ window.onload = function () {
       pixelBoard[index].appendChild(pixel);
     }
   }
+
+  clearBoard.addEventListener('click', function(){
+    window.location.reload();
+    }
+  )
+
   colorPalette.addEventListener('click', function(c) {
     document.querySelector('.selected').classList.remove('selected');
     c.target.classList.add('selected');
     color = document.querySelector('.selected').id;
   })
 
-  pixelTocolor.addEventListener('click', function(d){
-    console.log(color);
+  pixelToColor.addEventListener('click', function(d) {
     let pixel = d.target;
     pixel.classList.add(color);
-  })
+  })  
 
 }
 
