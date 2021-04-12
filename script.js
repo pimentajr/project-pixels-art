@@ -29,16 +29,17 @@ function selectColor(event) {
   sessionStorage.setItem('color', window.getComputedStyle(selectedColor).backgroundColor);
 }
 
-// Ao clicar em uma das cores da paleta, faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
-const palette = document.getElementsByClassName('color');
+// Ao clicar em uma das cores da paleta, faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.s
 const colorPalette = document.querySelector('#color-palette');
 colorPalette.addEventListener('click', selectColor);
 
-// Pinta um pixel ao ser clicado.
-pixelBoard.addEventListener('click', function (event) {
+function addColor(event) {
   const pixelColored = event.target;
   pixelColored.style.background = sessionStorage.getItem('color');
-});
+}
+
+// Pinta um pixel ao ser clicado.
+pixelBoard.addEventListener('click', addColor);
 
 // Pinta de branco todos os pixels.
 function clearPixels() {
