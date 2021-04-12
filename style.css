@@ -36,13 +36,37 @@ background-color: yellow;
     border-style: solid;
     background-color: white;
   }
+  
   #pixel-board{
     display: table-row ; 
     border-width: 8px;
-    border-color: black;
-    border-style: solid;
+    border-color: white
+  
   }
   
+  #clear-board {
+    font-size: 6px;
+  }
+  
+  #color-palette{
+    margin-right: 50px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
 
