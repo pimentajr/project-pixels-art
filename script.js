@@ -1,3 +1,4 @@
 function selectInitialColor() {
-  document.getElementById('black').className = 'selected';
-}
+  document.getElementById('Black').className = 'color selected';
+} 
+selectInitialColor();
