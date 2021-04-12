@@ -35,3 +35,22 @@ h1 {
 #randomColor3 {
   background-color: blue;
 }
+
+.pixel {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.colon {
+  display: inline-block;
+}
+
+main {
+  text-align: center;
+  margin-top: 20px;
+}
+
