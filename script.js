@@ -11,14 +11,13 @@ function createDiv(number) {
 createDiv(5);
 
 function removeDivPixel() {
-  pixelBoardLocation.firstChild.remove();
+  while(pixelBoardLocation.lastChild) {
+    pixelBoardLocation.lastChild.remove();
+  }
 }
 
 function removeAndAddDivPixel(count) {
-  const quantidadeDePixel = document.querySelectorAll('.pixel').length;
-    for (let contador2 = 0; contador2 <= quantidadeDePixel; contador2 += 1) {
-      removeDivPixel();
-    }
+  removeDivPixel();
   createDiv(count); 
 }
 
@@ -49,7 +48,8 @@ function clearPixel() {
   }
 }
 document.getElementById('clear-board').addEventListener('click', clearPixel);
-function resizezPixels() {
+
+function resizePixels() {
   let inputValue = document.getElementById('board-size').value;
   if (inputValue >= 5 && inputValue <= 50) {
     removeAndAddDivPixel(inputValue)
@@ -58,4 +58,4 @@ function resizezPixels() {
   }
 }
 
-document.getElementById('generate-board').addEventListener('click', resizezPixels);
+document.getElementById('generate-board').addEventListener('click', resizePixels); 
