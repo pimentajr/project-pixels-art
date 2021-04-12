@@ -21,6 +21,11 @@
   height: 40px;
   border: solid black 1px;
   display: inline-block;
+  border-radius: 0%;
+}
+
+.selected {
+  border-radius: 100%;
 }
 
 #pixel-board {
