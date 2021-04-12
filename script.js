@@ -32,10 +32,10 @@ selectColors.addEventListener('click', paintPixels);
 
 function clearPixel() {
   const button = document.querySelector('#clear-board');
-  
-  button.addEventListener('click', function() {
+
+  button.addEventListener('click', function clearButton() {
     const pixelBoard = document.querySelectorAll('.pixel');
-    for (let index = 0; index < pixelBoard.length; index +=1) {
+    for (let index = 0; index < pixelBoard.length; index += 1) {
       pixelBoard[index].style.backgroundColor = 'white';
     }
   });
