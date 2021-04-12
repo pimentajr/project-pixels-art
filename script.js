@@ -53,23 +53,8 @@ const contaneinerCores = document.createElement('div');
 contaneinerCores.id = 'pixel-board';
 textBody.appendChild(contaneinerCores);
 
-for (let indice = 1; indice <= 5; indice += 1) {
-  const createLinha = document.createElement('tr');
-
-  for (let index = 1; index <= 5; index += 1) {
-    const celulas = document.createElement('td');
-    celulas.classList = 'pixel';
-    celulas.addEventListener('click', (events) => {
-      if (document.querySelector('.selected') !== null) {
-        const color = document.querySelector('.selected').style.backgroundColor;
-        events.target.style.backgroundColor = color;
-      }
-    });
-    createLinha.appendChild(celulas);
-  }
-  contaneinerCores.appendChild(createLinha);
-}
-
+input.value = 5
+SelecionaNum()
 secaoSelecionaCor.addEventListener('click', (event) => {
   if (document.querySelector('.selected') !== null) {
     document.querySelector('.selected').classList.remove('selected');
@@ -91,11 +76,10 @@ button.addEventListener('click', (event) => {
 });
 
 function SelecionaNum() {
-  if (input.value === '') {
-    alert('Board inválido!');
-
-    return SelecionaNum;
+  if (input.value === ''){
+    return;
   }
+
   if (input.value <= 5) {
     input.value = 5;
   }
@@ -124,12 +108,11 @@ function SelecionaNum() {
 buttonVqv.addEventListener('click', () => {
   if (input.value === '') {
     alert('Board inválido!');
-
-    return;
+  } else {
+    limpaTd();
+    SelecionaNum();
+    CleanPaletas();
   }
-  limpaTd();
-  SelecionaNum();
-  CleanPaletas();
 });
 
 function limpaTd() {
