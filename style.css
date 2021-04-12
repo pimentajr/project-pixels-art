@@ -15,6 +15,7 @@
   height: 60px;
   background-color: black;
   display: inline-block;
+  border-radius: 50%;
 }
 
 #red {
@@ -24,6 +25,7 @@
   background-color: red;
   display: inline-block;
   margin-left: 10px;
+  border-radius: 50%;
 }
 
 #yellow {
@@ -33,6 +35,7 @@
   background-color: yellow;
   display: inline-block;
   margin-left: 10px;
+  border-radius: 50%;
 }
 
 #blue {
@@ -42,6 +45,7 @@
   background-color: blue;
   display: inline-block;
   margin-left: 10px;
+  border-radius: 50%;
 }
 
 #buttons {
