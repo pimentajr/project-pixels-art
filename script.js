@@ -44,6 +44,7 @@ function pixelBoard(boardSize) {
 
 
 
+
 function pickColor() {
   const colorPicked = document.getElementById('color-palette');
   const classChange = document.querySelectorAll('.color');
@@ -72,18 +73,48 @@ function pixelBoardPaint() {
 
   pixelBoardPaint();
 
+  function pixelBoardSize() {
+    const inputSize = document.getElementById('board-size');
+    const generateBtn = document.getElementById('generate-board');
+    generateBtn.addEventListener('click', () => {
+      if (inputSize.value === '') {
+        alert('Board inválido!');
+        inputSize.value = 5;
+      } else if (inputSize.value > 50) {
+        inputSize.value = 50;
+      } else if (inputSize.value < 5) {
+        inputSize.value = 5;
+      }
+      const pBoard = document.getElementById('pixel-board');
+      pBoard.innerHTML = '';    
+      pixelBoard(inputSize.value);
+    });
+  }
+  
+  pixelBoardSize();
+
   function clearBoard() {
-    const clearButton = document.getElementById('clear-board');
-    const catchPixel = document.querySelectorAll('.pixel');
+    const clearButton = document.getElementById('clear-board');    
     clearButton.addEventListener('click', () => {
+    const catchPixel = document.querySelectorAll('.pixel');
     for (index = 0; index < catchPixel.length; index += 1) {     
         catchPixel[index].style.backgroundColor = 'white';
       }
-    });
+    });    
   }
 
   clearBoard();
 
+  function randomPaletteColors() {
+    const newColor = document.getElementsByClassName('color');
+    for (let index = 1; index < newColor.length; index += 1) {
+      let r = Math.floor(Math.random() * 256);
+      let g = Math.floor(Math.random() * 256);
+      let b = Math.floor(Math.random() * 256);      
+      newColor[index].style.backgroundColor = `rgb(${r},${g},${b})`;
+    }
+  }
 
+randomPaletteColors();
   
   
