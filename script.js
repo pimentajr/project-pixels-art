@@ -1,7 +1,7 @@
 function selectInitialColor() {
   document.getElementById('Black').className = 'color selected';
 }
-selectInitialColor(evento);
+selectInitialColor();
 
 function setColor(evento) {
   const palette = document.getElementsByClassName('color');
