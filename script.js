@@ -11,6 +11,13 @@ function inputBoard() {
   originInput.appendChild(input);
   originInput.appendChild(submit);
 
+  function clearBoard() {
+    const newTable = document.querySelectorAll('.line');
+    for (let index = 0; index < newTable.length; index += 1) {
+      newTable[index].remove();
+    }
+  }
+
   function defineBoard() {
     if (input.value === '') {
       alert('Board inválido!');
@@ -22,12 +29,7 @@ function inputBoard() {
         cont = 5;
       }
       input.value = '';
-
-      const newTable = document.querySelectorAll('.line');
-      for (let index = 0; index < newTable.length; index += 1) {
-        newTable[index].remove();
-      }
-
+      clearBoard();
       for (let line = 0; line < cont; line += 1) {
         const lineElement = document.createElement('tr');
         lineElement.className = 'line';
