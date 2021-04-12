@@ -13,8 +13,8 @@ const { body } = document; // EsLint quickfix solution for body = document.body
 const palette = document.querySelector('#color-palette');
 
 // set color class for color-palettes's childrens
-for (let i = 0; i < palette.childElementCount; i += 1) {
-  palette.children[i].className = 'color';
+for (let index = 0; index < palette.childElementCount; index += 1) {
+  palette.children[index].className = 'color';
 }
 
 // get all .color
@@ -22,9 +22,9 @@ const colors = document.querySelectorAll('.color');
 
 // set random colors
 function randomColors() {
-  for (let i = 0; i < colors.length; i += 1) {
+  for (let index = 0; index < colors.length; index += 1) {
     const random = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
-    colors[i].style.background = random;
+    colors[index].style.background = random;
   }
   colors[0].style.background = 'black';
 }
@@ -37,7 +37,7 @@ add(body, mainContainer);
 const tableSize = 25;
 
 // create and set pixels on MainContainer
-for (let j = 0; j < tableSize; j += 1) {
+for (let index2 = 0; index2 < tableSize; index2 += 1) {
   const pixels = create('div');
   pixels.className = 'pixel';
   add(mainContainer, pixels);
@@ -53,14 +53,14 @@ colors[0].classList.add('selected');
 function classSelected(element) {
   colors[0].classList.remove('selected');
   // forEach element in colors (line 21) remove class if selected or add class selected
-  colors.forEach((x) => x.classList.remove('selected'));
+  colors.forEach((e) => e.classList.remove('selected'));
   element.classList.add('selected');
 }
 
 // draw pixels in the pixelboard
 
-function drawPixels(px) {
-  const aux = px; // I had to use an aux variable to fix an ESlint problem about parameter assignment
+function drawPixels(pxElm) {
+  const aux = pxElm; // I had to use an aux variable to fix an ESlint problem about parameter assignment
   // takes the style.background of element in selected class
   const pixelSelected = document.querySelector('.selected');
   aux.style.background = pixelSelected.style.background;
@@ -79,8 +79,8 @@ function start() {
   randomColors();
   // EventListeners
   // How is a lot of pixels to work, I had to use ForEach, the normal For loop don't work propelly
-  colors.forEach((element) => element.addEventListener('click', (e) => classSelected(e.target)));
-  pixels.forEach((px) => px.addEventListener('click', (e) => drawPixels(e.target)));
+  colors.forEach((element) => element.addEventListener('click', (ev) => classSelected(ev.target)));
+  pixels.forEach((pxElm) => pxElm.addEventListener('click', (ev) => drawPixels(ev.target)));
   clearButton.addEventListener('click', clearBoard);
 }
 
