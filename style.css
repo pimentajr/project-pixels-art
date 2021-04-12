@@ -33,14 +33,19 @@
 
 #pixel-board {
   padding-top: 20px;
-  width: 200px;
+  width: 210px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.pixelLine {
+  height: 40px;
+  width: 40px;
+  display: table-row;
+}
 .pixel {
   height: 40px;
   width: 40px;
+  border: solid black 1px;
   display: table-cell;
-  border: 1px solid black;
 }
