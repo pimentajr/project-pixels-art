@@ -1,5 +1,23 @@
-.color {
-    border-color: black;
-    background-color: blueviolet;
-    border: solid 1px;
+#color-palette {
+    border: black solid 1px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin: 3px;
+    
+}
+#blue {
+  background-color: blue;
+}
+
+#green {
+  background-color: green;
+}
+
+ #red {
+  background-color: red;
+  }
+
+#yellow {
+  background-color: yellow;
 }
