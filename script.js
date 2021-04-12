@@ -19,14 +19,9 @@ function setColor() {
   const secondColor = colorRandom();
   const thirdColor = colorRandom();
   const fourthColor = colorRandom();
-
-  if (secondColor !== thirdColor && thirdColor !== fourthColor) {
-    root.style.setProperty('--second-color', secondColor);
-    root.style.setProperty('--third-color', thirdColor);
-    root.style.setProperty('--fourth-color', fourthColor);
-  } else {
-    setColor();
-  }
+  root.style.setProperty('--second-color', secondColor);
+  root.style.setProperty('--third-color', thirdColor);
+  root.style.setProperty('--fourth-color', fourthColor);
 }
 
 function deleteBoard() {
