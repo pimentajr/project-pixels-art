@@ -26,10 +26,9 @@ function changeColorPixel(event) {
 }
 document.getElementById('pixel-board').addEventListener('click', changeColorPixel);
 
-document.getElementById('clear-board').addEventListener('click', function() {
-  document.querySelectorAll('.pixel');
-  for (let index15 = 0, index15 < document.querySelectorAll('.pixel').length; index15 += 1) {
-    document.querySelectorAll('.pixel')[index15].classList.remove(targetPixelClass[1]);
+function clearPixel() {
+  for (let contador = 0; contador < 25; contador += 1){
+    document.querySelectorAll('.pixel')[contador].classList.remove(document.querySelectorAll('.pixel')[contador].classList[1]);
   }
-})
-
+}
+document.getElementById('clear-board').addEventListener('click', clearPixel);
