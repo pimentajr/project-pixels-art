@@ -1,11 +1,12 @@
 body {
   text-align: center;
   background-image: url('/491687.jpg');
+  background-size: cover;
 }
 
 h1 {
   color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Courier, monospace;
 }
 
 .color {
@@ -31,6 +32,9 @@ h1 {
 #clear-board , #generate-board {
   padding: 0 20px;
   margin: 20px 0;
+  background-color: #231c85;
+  border-radius: 8px;
+  color: white;
 }
 
 #board-size {
