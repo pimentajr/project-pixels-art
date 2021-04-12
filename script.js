@@ -1,7 +1,7 @@
 const nome = 'board-size';
 let valor = document.getElementById(nome).value;
-'board-size'.type = Number;
-'board-size'.value = 1;
+nome.type = Number;
+nome.value = 1;
 function selecionaClasse(event) {
   const atribuiClasse = document.querySelectorAll('.selected');
   for (let index = 0; index < atribuiClasse.length; index += 1) {
