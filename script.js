@@ -11,7 +11,7 @@ function criadorDePixels() {
     }
   }
 }
-criadorDePixels()
+criadorDePixels();
 let corSelecionada = '';
 let selectPalette = document.querySelector('#color-palette');
 function selectColor() {
@@ -22,9 +22,9 @@ function selectColor() {
       e.target.classList.add('selected');
 
     }
-  })
+  });
 }
-selectColor()
+selectColor();
 
 function paintPixel() {
   let pixelBoard = document.getElementById('pixel-board');
@@ -35,19 +35,19 @@ function paintPixel() {
       const clickedPixel = e.target;
       clickedPixel.style.backgroundColor = color;
     }
-  })
+  });
 }
-paintPixel()
+paintPixel();
 
 let button = document.getElementById('clear-board');
 function clear() {
   let pixels = document.querySelectorAll('.pixel');
-  button.addEventListener('click', function (e) {    
+  button.addEventListener('click', function (e) {
     if (e.target.id === 'clear-board') {
       for (const pixel of pixels) {
-        pixel.style.backgroundColor = 'white';        
+        pixel.style.backgroundColor = 'white';
       }
     }
-  })
+  });
 }
 clear();
