@@ -44,10 +44,24 @@ function colorSelectedPixel(event) {
   pixel.style.backgroundColor = style.backgroundColor;
 }
 
+/**
+ * Adiciona um EventListener em todos os elementos da classe ecolhida (referredClass), para ao sinal de um evento (eventName), seja executada a funcao indicada (funtionToRun)
+ * Ref: https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
+ * Ref: https://www.w3schools.com/jsref/jsref_foreach.asp
+ * Ref: https://www.w3schools.com/js/js_arrow_function.asp
+ */
+
+function addEventListener(referredClass, eventName, functionToRun) {
+  const classElementsList = document.querySelectorAll(referredClass);
+  classElementsList.forEach((item) => {
+    item.addEventListener(eventName, functionToRun);
+  });
+}
+
 window.onload = function init() {
   createPixelBoard(5);
   const initialColor = document.querySelector('.color');
   initialColor.classList.add('selected');
-  // selectedColor('click');
-  // colorSelectedPixel('click');
+  addEventListener('.color', 'click', selectedColor);
+  addEventListener('.pixel', 'click', colorSelectedPixel);
 };
