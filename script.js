@@ -71,3 +71,21 @@ function paintPixel(event) {
 }
 
 pixelBoard.addEventListener('click', paintPixel);
+
+// Requisito 9
+const bunttonContainer = document.getElementById('clear-btn-container');
+bunttonContainer.style.textAlign = 'center';
+bunttonContainer.style.padding = '10px';
+const clearButton = document.createElement('button');
+clearButton.id = 'clear-board';
+clearButton.innerText = 'Limpar';
+bunttonContainer.appendChild(clearButton);
+
+function clearPixels() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+
+clearButton.addEventListener('click', clearPixels);
