@@ -15,7 +15,7 @@ function primaryColors(colors) {
   }
 }
 
-function aleatoryColor() {
+function randomColor() {
   let red = 0;
   let green = 0;
   let blue = 0;
@@ -99,6 +99,6 @@ function vqvButtonListener() {
   });
 });
 
-primaryColors(['black', aleatoryColor(), aleatoryColor(), aleatoryColor()]);
+primaryColors(['black', randomColor(), randomColor(), randomColor()]);
 
 pixelsTable(5, 5);
