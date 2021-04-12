@@ -1,3 +1,4 @@
+    
     let black = document.getElementsByClassName("color")[0].style.backgroundColor = "black"
     black.className = 'selected'
 
@@ -21,5 +22,12 @@
         blockRow.appendChild(blockCell)
         blockCell.style.backgroundColor = 'white'
         
+    }
+
+    window.onload = blackSelected
+
+    function blackSelected () {
+        let black = document.getElementsByClassName("color")
+        black.className = 'selected'
     }
 }
