@@ -20,7 +20,7 @@ function createPixelBoard(num) {
     board.appendChild(pixelRow);
   }
 }
-// createPixelBoard(5); // inicia o quadro com num=5.
+createPixelBoard(5); // inicia o quadro com num=5.
 
 /**
  * Coloca classe 'selected' no elemento através de event.target, ou seja, o alvo do evento, ou ainda, que disparou o evento.
@@ -45,23 +45,32 @@ function colorSelectedPixel(event) {
 }
 
 /**
- * Adiciona um EventListener em todos os elementos da classe ecolhida (referredClass), para ao sinal de um evento (eventName), seja executada a funcao indicada (funtionToRun)
+ * Adiciona um EventListener em todos os elementos da classe ecolhida (referredClass), para, ao sinal de um evento (eventName), seja executada a funcao indicada (funtionToRun)
  * Ref: https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
  * Ref: https://www.w3schools.com/jsref/jsref_foreach.asp
  * Ref: https://www.w3schools.com/js/js_arrow_function.asp
  */
-
-function addEventListener(referredClass, eventName, functionToRun) {
+function addEventListenerFunction(referredClass, eventName, functionToRun) {
   const classElementsList = document.querySelectorAll(referredClass);
   classElementsList.forEach((item) => {
     item.addEventListener(eventName, functionToRun);
   });
 }
 
+function clearBoard() {
+  const pixel = document.querySelectorAll('.pixel');
+  pixel.forEach((item) => {
+    const pixelElement = item;
+    pixelElement.style.backgroundColor = 'white';
+  });
+}
+
 window.onload = function init() {
-  createPixelBoard(5);
-  const initialColor = document.querySelector('.color');
-  initialColor.classList.add('selected');
-  addEventListener('.color', 'click', selectedColor);
-  addEventListener('.pixel', 'click', colorSelectedPixel);
+  // createPixelBoard(5);
+  const initialColor = document.querySelector('.color'); // busca o primeiro elemento com a classe 'color' que é o black
+  initialColor.classList.add('selected'); // adiciona a classe 'selected' na cor black
+  addEventListenerFunction('.color', 'click', selectedColor);
+  addEventListenerFunction('.pixel', 'click', colorSelectedPixel);
+  const button = document.getElementById('clear-board');
+  button.addEventListener('click', clearBoard);
 };

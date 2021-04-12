@@ -48,3 +48,8 @@ h1 {
   background-color: white;
   display: inline-block;
 }
+
+#buttons {
+  text-align: center;
+  padding: 10px;
+}
