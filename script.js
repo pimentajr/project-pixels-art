@@ -1,3 +1,5 @@
+const pixelRow = document.getElementById('pixel-board');
+
 function colorPallet() {
   const paletteColor = document.getElementsByClassName('color');
   paletteColor[0].style.backgroundColor = 'black';
@@ -7,6 +9,33 @@ function colorPallet() {
   paletteColor[0].classList.add('selected');
 }
 colorPallet();
+
+function createSquare(setNumber) {
+  for (let index = 0; index < setNumber; index += 1) {
+    const row = document.createElement('div');
+    row.className = 'row';
+    pixelRow.appendChild(row);
+    for (let indexPix = 0; indexPix < setNumber; indexPix += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      row.appendChild(pixel);
+    }
+  }
+}
+createSquare(5);
+
+function buttonInput() {
+  const myButton = document.getElementById('generate-board');
+  myButton.addEventListener('click', () => {
+    const myValue = document.getElementById('board-size');
+    pixelRow.innerHTML = '';
+    createSquare(myValue.value);
+    if (myValue.value <= 0) {
+      alert('Board inválido!');
+    }
+  });
+}
+buttonInput();
 
 function clickSelectedColor() {
   const colorSelected = document.getElementById('color-palette');
