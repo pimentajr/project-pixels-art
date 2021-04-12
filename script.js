@@ -37,14 +37,20 @@ function onLoadWindow() {
   let resizeButton = document.getElementById('generate-board');
   let size = document.getElementById('board-size');
   resizeButton.addEventListener('click', function(event) {
+    let count = parseInt(size.value);
+    if (count < 5) {
+      count = 5;
+    } if (count > 50) {
+      count = 50;
+    }
     if (size.value === '') {
       alert('Board inválido!');
     } else {
       pixelBoard.innerText = '';
-      for (let index = 0; index < size.value; index += 1) {
+      for (let index = 0; index < count; index += 1) {
         let element = document.createElement('tr');
         pixelBoard.appendChild(element);
-        for (let indexy = 0; indexy < size.value; indexy += 1) {
+        for (let indexy = 0; indexy < count; indexy += 1) {
           let pixelElement = document.createElement('td');
           pixelElement.className = 'pixel';
           element.appendChild(pixelElement);
