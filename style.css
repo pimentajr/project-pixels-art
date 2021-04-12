@@ -27,6 +27,10 @@ h1 {
   background-color: green;
 }
 
+#pixel-board{
+  margin-top: 5px;
+}
+
 .pixel {
   display: inline-block;
   border: solid 1px black;
