@@ -1,7 +1,7 @@
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
 
-function color(boxColor) {
+function generateColor(boxColor) {
   const box = document.createElement('div');
   box.style.backgroundColor = boxColor;
   box.className = ('color');
@@ -9,10 +9,10 @@ function color(boxColor) {
   colorPalette.appendChild(box);
 }
 
-color('black');
-color('red');
-color('blue');
-color('yellow');
+generateColor('black');
+generateColor('red');
+generateColor('blue');
+generateColor('yellow');
 
 function populateGrid(size) {
   for (let index = 0; index < size; index += 1) {
@@ -40,7 +40,6 @@ function clickPalette() {
     }
   });
 }
-
 clickPalette();
 
 // Colore o pixel
@@ -89,10 +88,10 @@ generateBoard();
 function randomColor() {
   const paletteColor = document.querySelectorAll('.color');
   for (let index = 1; index < paletteColor.length; index += 1) {
-    const r = parseInt(Math.random() * 255, 10);
-    const g = parseInt(Math.random() * 255, 10);
+    const a = parseInt(Math.random() * 255, 10);
     const b = parseInt(Math.random() * 255, 10);
-    paletteColor[index].style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
+    const c = parseInt(Math.random() * 255, 10);
+    paletteColor[index].style.backgroundColor = `rgba(${a}, ${b}, ${c})`;
   }
 }
 
