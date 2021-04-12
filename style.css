@@ -1,0 +1,16 @@
+#color-palette {
+    display: table;
+}
+
+#tr-palette {
+    display: table-row;
+}
+
+.color {
+    display: table-cell;
+}
+
+.color:nth-child(1) {
+    background-color: black;
+    color: white;
+}
