@@ -29,3 +29,16 @@ function paintPixels(event) {
 }
 
 selectColors.addEventListener('click', paintPixels);
+
+function clearPixel() {
+  const button = document.querySelector('#clear-board');
+  
+  button.addEventListener('click', function() {
+    const pixelBoard = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixelBoard.length; index +=1) {
+      pixelBoard[index].style.backgroundColor = 'white';
+    }
+  });
+}
+
+clearPixel();

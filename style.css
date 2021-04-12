@@ -14,11 +14,11 @@
 }
 
 .black {
-  background-color: rgb(0, 0, 0);
+  background-color: black;
 }
 
 .red {
-  background-color: rgb(255, 0, 0);
+  background-color: red;
 }
 
 .blue {
@@ -49,4 +49,8 @@
   height: 40px;
   width: 40px;
   background-color: white;
+}
+
+#clear-board {
+  margin: 10px 10px;
 }
