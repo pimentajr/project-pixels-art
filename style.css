@@ -7,10 +7,6 @@
   background-color: black;
 }
 
-#Yellow {
-  background-color: yellow;
-}
-
 #Green {
   background-color: green;
 }
@@ -21,4 +17,23 @@
 
 #Red {
   background-color: red;
+}
+
+#pixel-board {
+  display: table;
+}
+
+.line {
+  display: table-row;
+  height: auto;
+}
+
+.pixel {
+  display: table-cell;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  height: 40px;
+  width: 40px;
+  background-color: white;
 }
