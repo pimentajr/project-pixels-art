@@ -58,3 +58,14 @@ function pickedBoard(ele) {
 }
 
 pixelBoard.addEventListener('click', pickedBoard);
+
+const bt = document.querySelector('#clear-board');
+
+function wipe() {
+  const scale = document.getElementsByClassName('pixel');
+  for (let index = 0; index < scale.length; index += 1) {
+    document.getElementsByClassName('pixel')[index].style.backgroundColor = 'white';
+  }
+}
+
+bt.addEventListener('click', wipe);
