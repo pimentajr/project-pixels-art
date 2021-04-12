@@ -97,11 +97,11 @@ function removeOldBoard() {
 function incrementTable() {
 	vqv.addEventListener('click', function() {
 		removeOldBoard();
-		/* if (inputTable.valueAsNumber = '') { */
-			/* alert('Board inválido!') */
-		/* } else { */
-			newTable();
-		/* } */
+		 if (inputTable.value != '') {
+		 newTable();	
+		 } else {
+		 alert('Board inválido!')
+		 }
 	})
 }
 incrementTable();
