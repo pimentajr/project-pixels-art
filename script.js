@@ -29,14 +29,16 @@ function randomColors() {
   colors[0].style.background = 'black';
 }
 
+colors[0].className = 'selected';
+
 // create and set mainContainer
-const mainContainer = create('container');
-add(body, mainContainer);
+const mainContainer = create('div');
 mainContainer.id = 'pixel-board';
+add(body, mainContainer);
 
 // create and set pixelBoard and pixels
 for (let index = 0; index < 5; index += 1) {
-  const pixelBoard = create('section');
+  const pixelBoard = create('div');
   pixelBoard.className = 'pixel-vector';
   add(mainContainer, pixelBoard);
 
@@ -47,16 +49,17 @@ for (let index = 0; index < 5; index += 1) {
   }
 }
 
-// get .pixels
 const pixels = document.querySelector('.pixel');
+
+// to Selected class function
+function classSelected() {
+  pixels.className = 'selected';
+}
 
 // start function
 function start() {
   randomColors();
-
-  pixels.addEventListener('click', () => {
-    pixels.className = 'selected';
-  });
+  pixels.addEventListener('click', classSelected);
 }
 
 // window.onload function

@@ -5,7 +5,7 @@
 #color-palette {
   padding: 0;
   margin-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .color {
@@ -16,11 +16,14 @@
 }
 
 #pixel-board {
+  display: inline-block;
   margin-left: 10px;
 }
 
 .pixel-vector {
-  margin-left: 10px;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .pixel {
