@@ -1,3 +1,35 @@
+// Função de cores aleatórias baseadas nos links:
+// https://stackoverflow.com/questions/1484506/random-color-generator
+// https://pt.stackoverflow.com/questions/348981/como-colocar-valor-da-variavel-javascript-no-css
+
+function colorRandom() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let index = 0; index < 4; index += 1) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  if (color === '#0000') {
+    colorRandom();
+  }
+  console.log(color)
+  return color;
+}
+
+function setColor() {
+  const root = document.documentElement;
+  let secondColor = colorRandom();
+  let thirdColor = colorRandom();
+  let fourthColor = colorRandom();
+  
+  if (secondColor !== thirdColor && thirdColor !== fourthColor) {
+  root.style.setProperty('--second-color', secondColor);
+  root.style.setProperty('--third-color', thirdColor);
+  root.style.setProperty('--fourth-color', fourthColor);
+  } else {
+    setColor();
+  }
+}
+
 function deleteBoard() {
   const newTable = document.querySelectorAll('.line');
   for (let index = 0; index < newTable.length; index += 1) {
@@ -93,6 +125,7 @@ function clearBoard() {
   button.addEventListener('click', clear);
 }
 
+setColor();
 inputBoard();
 selectColor();
 applyColor();

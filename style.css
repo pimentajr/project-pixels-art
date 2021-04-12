@@ -1,3 +1,14 @@
+:root {
+
+  --first-color:black;
+
+  --second-color: undefined;
+
+  --third-color: undefined;
+
+  --fourth-color: undefined;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -107,19 +118,19 @@ li:hover {
 }
 
 .colorBlack {
-  background-color: black;
+  background-color: var(--first-color);
 }
 
 .colorRed {
-  background-color: red;
+  background-color: var(--second-color);
 }
 
 .colorBlue {
-  background-color: blue;
+  background-color: var(--third-color);
 }
 
 .colorGreen {
-  background-color: green;
+  background-color: var(--fourth-color);
 }
 
 #pixel-board {
