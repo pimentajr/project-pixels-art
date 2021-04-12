@@ -20,7 +20,7 @@ function changeSelectedColor(event) {
 document.querySelectorAll('.color').forEach((item) => {
   item.addEventListener('click', changeSelectedColor)
 
-});
+})
 
 function pixelColor(eventColor) {
   const square = eventColor.target;
@@ -32,8 +32,8 @@ document.querySelectorAll('.pixel').forEach((item) => {
 
 })
 
-function clearPixels () {
-  for (let index = 0; index < pixels.length; index +=1) {
+function clearPixels() {
+  for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.background = 'white';
   }
 }
