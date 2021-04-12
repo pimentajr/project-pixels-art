@@ -29,9 +29,14 @@ divColor4.classList.add('color');
 divColor4.style.backgroundColor = 'darkred';
 secaoSelecionaCor.appendChild(divColor4);
 
+const button = document.createElement('button');
+button.id = 'clear-board';
+button.innerText = 'Limpar';
+secaoSelecionaCor.appendChild(button);
+
 const contaneinerCores = document.createElement('div');
 contaneinerCores.id = 'pixel-board';
-textBody.appendChild(contaneinerCores);
+secaoSelecionaCor.appendChild(contaneinerCores);
 
 for (let indice = 1; indice <= 5; indice += 1) {
   const createLinha = document.createElement('tr');
@@ -56,11 +61,6 @@ secaoSelecionaCor.addEventListener('click', (event) => {
   }
   event.target.classList.add('selected');
 });
-
-const button = document.createElement('button');
-button.id = 'clear-board';
-button.innerText = 'Limpar';
-secaoSelecionaCor.appendChild(button);
 
 function CleanPaletas() {
   const pixels = document.querySelectorAll('.pixel');
