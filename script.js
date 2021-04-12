@@ -37,3 +37,17 @@ getButton.addEventListener('click', function () {
     eachPixel.style.backgroundColor = 'white';
   }
 });
+
+//Refatorando requisito 4
+function createNewTable(colum, line) {
+  for (let i = 0; i < colum; i += 1) {
+    const newColum = document.createElement('tr');
+    for (let i2 = 0; i2 < line; i2 += 1) {
+      const newLine = document.createElement('td');
+      newLine.className = 'pixel';
+      newColum.appendChild(newLine);
+    }
+    getPixelBoard.appendChild(newColum);
+  }
+}
+createNewTable(5, 5);
