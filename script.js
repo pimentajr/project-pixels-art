@@ -50,7 +50,7 @@ function clearPixel() {
 document.getElementById('clear-board').addEventListener('click', clearPixel);
 
 function resizePixels() {
-  let inputValue = document.getElementById('board-size').value;
+  const inputValue = document.getElementById('board-size').value;
   if (inputValue >= 5 && inputValue <= 50) {
     removeAndAddDivPixel(inputValue)
   } else {
