@@ -13,3 +13,19 @@ yellow.style.backgroundColor = 'yellow';
 
 const blue = document.querySelectorAll('.color')[3];
 blue.style.backgroundColor = 'blue';
+
+//4
+const pixelBoard = document.getElementById('pixel-board');
+for (let i = 0; i < 5; i += 1) {
+   let pixelRow =  document.createElement('div');
+   pixelRow.className = 'pixelRow';
+   pixelBoard.appendChild(pixelRow);
+    
+   for (let j = 0; j < 5; j += 1) {
+      let pixelCell = document.createElement('div');
+      pixelCell.className = 'pixel';
+      pixelRow.appendChild(pixelCell);
+      pixelCell.style.backgroundColor = 'white';
+    }
+}
+
