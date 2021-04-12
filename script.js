@@ -1,7 +1,7 @@
-function generateRandomColorRGB(){
-  const RGBRed = parseInt(Math.random() * 255);
-  const RGBGreen = parseInt(Math.random() * 255);
-  const RGBBlue = parseInt(Math.random() * 255)
+function generateRandomColorRGB() {
+  const RGBRed = parseInt(Math.random() * 255, 10);
+  const RGBGreen = parseInt(Math.random() * 255, 10);
+  const RGBBlue = parseInt(Math.random() * 255, 10);
   const generateRGB = `rgb(${RGBRed}, ${RGBGreen}, ${RGBBlue})`;
   return generateRGB;
 }
