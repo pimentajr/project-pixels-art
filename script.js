@@ -18,7 +18,7 @@ function removeDivPixel() {
 
 function removeAndAddDivPixel(count) {
   removeDivPixel();
-  createDiv(count); 
+  createDiv(count);
 }
 
 function changeSelectedClass(event) {
@@ -57,4 +57,4 @@ function resizePixels() {
     alert('Board inválido!');
   }
 }
-document.getElementById('generate-board').addEventListener('click', resizePixels); 
+document.getElementById('generate-board').addEventListener('click', resizePixels);
