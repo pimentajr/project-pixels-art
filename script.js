@@ -70,16 +70,21 @@ const inputTable = document.querySelector('#board-size');
 
 function newTable() {
 	const quadro = document.querySelectorAll('#pixel-board');
-		for (let linha = 1; linha <= inputTable.valueAsNumber; linha += 1) {
-			let newLine = document.createElement('tr');
-			newLine.classList.add('remove');
-			quadro[0].appendChild(newLine);
-			for (let coluna = 1; coluna <= inputTable.valueAsNumber; coluna += 1) {
-				let newColumn = document.createElement('td');
-				newColumn.classList.add('pixel');
-				newLine.appendChild(newColumn);
-			}
+		if (inputTable.valueAsNumber < 5) {
+			inputTable.valueAsNumber = 5;
+		} else if (inputTable.valueAsNumber > 50) {
+			inputTable.valueAsNumber = 50
 		}
+			for (let linha = 1; linha <= inputTable.valueAsNumber; linha += 1) {
+				let newLine = document.createElement('tr');
+				newLine.classList.add('remove');
+				quadro[0].appendChild(newLine);
+				for (let coluna = 1; coluna <= inputTable.valueAsNumber; coluna += 1) {
+					let newColumn = document.createElement('td');
+					newColumn.classList.add('pixel');
+					newLine.appendChild(newColumn);
+				}
+			}
 }
 
 function removeOldBoard() {
