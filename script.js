@@ -11,12 +11,12 @@ function color() {
 color();
 
 function changeSelectedColor(event) {
-  let ball = event.target;
+  const ball = event.target;
   selectedColor = ball.id;
   document.querySelector('.selected').classList.remove('selected');
   ball.classList.add('selected');
 }
 
-document.querySelectorAll('.color').forEach(function (item) {
+document.querySelectorAll('.color').forEach((item) => {
   item.addEventListener('click', changeSelectedColor);
 });
