@@ -13,11 +13,6 @@ document.getElementById('yellow').style.backgroundColor = 'yellow';
 document.getElementById('green').style.backgroundColor = 'green';
 document.getElementById('blue').style.backgroundColor = 'blue';
 
-let getWhitePixel = document.getElementsByClassName('pixel');
-for (let i = 0; i < getWhitePixel.length; i += 1) {
-  let eachPixel = getWhitePixel[i];
-  eachPixel.style.backgroundColor = 'white';
-}
 
 //8
 let getPixelBoard = document.querySelector('#pixel-board');
@@ -39,15 +34,38 @@ getButton.addEventListener('click', function () {
 });
 
 //Refatorando requisito 4
-//function createNewTable(colum, line) {
-  //for (let i = 0; i < colum; i += 1) {
-    //const newColum = document.createElement('div');
-    //for (let i2 = 0; i2 < line; i2 += 1) {
-      //const newLine = document.createElement('div');
-      //newLine.className = 'pixel';
-      //newColum.appendChild(newLine);
-    //}
-    //getPixelBoard.appendChild(newColum);
-  //}
-//}
-//createNewTable(5, 5);
+function createNewTable(colum) {
+  for (let i = 0; i < colum; i += 1) {
+    const newColum = document.createElement('div');
+    for (let i2 = 0; i2 < colum; i2 += 1) {
+      const newLine = document.createElement('div');
+      newLine.className = 'pixel';
+      newLine.style.backgroundColor = 'white';
+      newColum.appendChild(newLine);
+    }
+    getPixelBoard.appendChild(newColum);
+  }
+}
+createNewTable(5);
+
+//10
+// funcao remover quadro de pixel
+function removeTable() {
+  let removePixel = document.querySelector('#pixel-board')
+  for (let i = 0; i < removePixel.childElementCount;) {
+    removePixel.removeChild(removePixel.childNodes[0])
+  }
+}
+
+
+// adicionando funcao de remover pixels ao botao VQV
+// adicionando funcao de criar novo quadro ao botao VQV
+let getVqv = document.querySelector('#generate-board');
+let getInputValue = document.querySelector('#board-size')
+getVqv.addEventListener('click', function() {
+  removeTable();
+  createNewTable(getInputValue.value);
+})
+
+
+
