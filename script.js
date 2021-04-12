@@ -3,7 +3,6 @@ const colorsPalette = document.getElementById('color-palette');
 const linePixelBoard = document.querySelectorAll('.line');
 const basePixelBoard = 5;
 const pixelBoard = document.getElementById('pixel-board');
-// const color = document.getElementsByClassName('color');
 const pixel = document.getElementsByClassName('pixel');
 
 document.getElementById('title').innerText = 'Paleta de Cores';
@@ -43,16 +42,41 @@ function createPixelBoard(lines) {
 createPalette(listOfColors);
 createPixelBoard(linePixelBoard);
 
+// function chooseTheFirst(colorX) {
+//   document.getElementsByClassName('color')[0].innerText = colorX.target.value;
+// }
+
+// chooseTheFirst(color[0])
+
+
+
 let clickedColor = 'black';
 
+document.getElementsByClassName('color')[0].classList.add('selected')
+
 function getColor(colorX) {
-  clickedColor = colorX.target.style.background;
+  document.getElementsByClassName('selected')[0].classList.remove('selected');
+  colorX.target.classList.add('selected')
+  console.log(colorX.target)
  }
 
 function colorPixel(pixelX) {
-  pixelX.target.style.background = clickedColor;
+  let newColor = document.getElementsByClassName('selected')[0].style.background
+  pixelX.target.style.background = newColor;
 }
 
 colorsPalette.addEventListener('click', getColor);
 
 pixelBoard.addEventListener('click', colorPixel);
+
+// function getColor(colorX) {
+//   clickedColor = colorX.target.style.background;
+//  }
+
+// function colorPixel(pixelX) {
+//   pixelX.target.style.background = clickedColor;
+// }
+
+// colorsPalette.addEventListener('click', getColor);
+
+// pixelBoard.addEventListener('click', colorPixel);
