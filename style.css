@@ -1,3 +1,11 @@
+body {
+  text-align: center;
+  background-image: url('https://cdnb.artstation.com/p/assets/images/images/014/665/033/original/yargon-kerman-webp-net-gifmaker-39.gif?1544919451');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: 135%;
+  font-family: 'VT323', monospace;
+}
 .color {
   border: solid black 1px;
   width: 45px;
@@ -9,21 +17,11 @@
   background-color: black;
 }
 
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.green {
-  background-color: green;
-}
-
 #pixel-board {
   margin-top: 10px;
   display: table;
+  margin: auto;
+
 }
 
 .line {
@@ -39,14 +37,45 @@
 }
 
 #clear-board {
-  width: 85px;
+  width: 82px;
 }
 
 #board-size {
-  width: 25px;
+  width: 32px;
   text-align: center;
+  background-color: black;
+  color: white;
+  font-family: 'VT323', monospace;
+  font-size: 120%;
+  border-radius: 10%;
 }
 
 #generate-board {
-  width: 85px;
+  width: 82px;
+}
+
+#title {
+  color: rgb(77, 185, 204);
+  margin-bottom: 50px;
+  margin-top: 6%;
+  font-size: 400%;
+
+}
+
+#buttons-container {
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+#clear-board {
+  background-color: rgb(77, 185, 204);
+  font-family: 'VT323', monospace;
+  font-size: 120%;
+}
+
+
+#generate-board {
+  background-color: rgb(77, 185, 204);
+  font-family: 'VT323', monospace;
+  font-size: 120%;
 }
