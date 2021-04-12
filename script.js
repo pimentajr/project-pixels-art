@@ -1,11 +1,5 @@
-window.onload = function() {
-  let black = document.getElementById('black');
-  black.classList.add('selected');
-}
-
-function setColor(event) {
-  let test = event.target;
-  test.style.backgroundColor = 'black';
+window.onload = function () {
+  document.getElementById('black').classList.add('selected');
 }
 
 function setColorAll(event) {
@@ -27,3 +21,15 @@ function pxBoard(event) {
   const color = window.getComputedStyle(colorPixel).backgroundColor;
   event.target.style.backgroundColor = color;
 }
+
+const btn = document.getElementById('btnReset');
+//const tab = document.querySelectorAll('pixel');
+
+function clearBoard() {
+  const clPixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < clPixel.length; index += 1) {
+    clPixel[index].style.backgroundColor = 'white';
+  }
+}
+
+btn.addEventListener('click', clearBoard);
