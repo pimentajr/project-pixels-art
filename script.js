@@ -4,22 +4,23 @@ function onLoadWindow() {
     const color1 = Math.ceil(Math.random() * 255);
     const color2 = Math.ceil(Math.random() * 255);
     const color3 = Math.ceil(Math.random() * 255);
-    return 'rgb(' + color1 + ', ' + color2 + ', ' + color3 + ')';
+    const ret = `rgb(${color1}, ${color2}, ${color3})`;
+    return ret;
   }
 
-  let firstColor = document.querySelector('.red');
+  const firstColor = document.querySelector('.red');
   firstColor.style.backgroundColor = randomColor();
-  let secondColor = document.querySelector('.blue');
+  const secondColor = document.querySelector('.blue');
   secondColor.style.backgroundColor = randomColor();
-  let thirdColor = document.querySelector('.yellow');
+  const thirdColor = document.querySelector('.yellow');
   thirdColor.style.backgroundColor = randomColor();
-  let blackColor = document.querySelector('.black');
+  const blackColor = document.querySelector('.black');
   blackColor.style.backgroundColor = 'black';
 
-  let divColorSelected = document.getElementById('color-palette');
+  const divColorSelected = document.getElementById('color-palette');
   let divColorSelectedUpdate = document.querySelector('.selected');
   let colorSelected = document.querySelector('.selected').classList[1];
-  divColorSelected.addEventListener('click', function(event) {
+  divColorSelected.addEventListener('click', function onename (event) {
     divColorSelectedUpdate.classList.remove('selected');
     divColorSelectedUpdate = event.target;
     divColorSelectedUpdate.classList.add('selected');
