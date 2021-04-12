@@ -5,13 +5,13 @@ window.onload = function carregar(){
 
 
 
-let pixelBoard = document.querySelector('#pixel-board')
-pixelBoard.addEventListener('click', function (event){
-    let colorSelected = document.querySelector('.selected')
-    let sectedColor = window.getComputedStyle(colorSelected, null).getPropertyValue("background-color");
-    let paintPinxel = event.target
-    paintPinxel.style.backgroundColor = sectedColor 
-    }) 
+pixelBoard.addEventListener('click', (event) => {
+    const colorActual = document.querySelector('.selected').id;
+    if (event.target.className === 'pixel') {
+      const evTarget = event.target;
+      evTarget.style.backgroundColor = colorActual;
+    }
+  }); 
 
     function createButton() {
         let getButton = document.querySelector('#clear-board')
@@ -19,8 +19,9 @@ pixelBoard.addEventListener('click', function (event){
         getButton.addEventListener('click', function(){
             let getPixel = document.querySelectorAll('#pixel-board>div')
             for(let index =0 ; index < getPixel.length; index += 1){ 
-              getPixel[index].style.backgroundColor='white'
+              getPixel[index].style.backgroundColor= 'white'
               }
             })
         }
         createButton()
+

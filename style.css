@@ -32,9 +32,9 @@ background-color: yellow;
     height: 40px;
     display:table-cell;
     border-width: 1px;
-    border-color: black;
+    border-color:black;
     border-style: solid;
-    background-color: white;
+    background-color:red;
   }
   #pixel-board{
     display: table-row ; 
@@ -42,4 +42,5 @@ background-color: yellow;
     border-color: black;
     border-style: solid;
   }
+  
   
