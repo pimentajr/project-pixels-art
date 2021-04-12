@@ -1,11 +1,13 @@
 // 2 -
-function coloringPalette() {	
-	const palette = document.getElementsByClassName('color');	
-	for (let color = 0; color < palette.length; color += 1) {				
-		palette[color].style.backgroundColor = palette[color].innerText;
-		palette[color].style.color = palette[color].innerText;
-	}
-};	
+function creatingPalette() {	
+	for (let index = 0; index < 4; index += 1) {		
+		let colorDiv = document.createElement('div');
+		document.getElementById('color-palette').appendChild(colorDiv);		
+		colorDiv.classList.add('color');
+	}	
+};
+
+creatingPalette();
 
 // 3 -
 // document.querySelector('.color').style.backgroundColor = 'black';
@@ -23,14 +25,15 @@ function creatingBoard(size = 5) {
 	}
 };
 
+creatingBoard();
 
 // 5 -
 const newBorder = document.getElementById('color-palette').nextElementSibling;
 newBorder.classList.add('border-pixel');
 
 // 6 - 
-const pixelBlack = document.querySelector('.color');
-pixelBlack.classList.add('selected');
+let firstSelected = document.getElementById('color-palette').firstElementChild;
+firstSelected.classList.add('selected');
 
 // 7
 document.getElementById('color-palette').addEventListener('click', function(event) {
@@ -44,9 +47,11 @@ document.getElementById('color-palette').addEventListener('click', function(even
 
 // 8 - 
 document.getElementById('pixel-board').addEventListener('click', function(event) {
-	let color = document.querySelector('.selected').innerText;	
-	if (event.target.backgroundColor !== color){	
-		event.target.style.backgroundColor = color;
+	let color = document.querySelector('.selected').style.backgroundColor;
+	console.log(color);
+	if (event.target.style.backgroundColor !== String(color)) {	
+		event.target.style.backgroundColor = String(color);
+		console.log(event.target);
 	}	
 });
 
@@ -92,8 +97,16 @@ function userPixelBoard() {
 
 // 11 - feito no 10
 
+// 12 - 
+function randomColors() {
+	let palette = document.querySelectorAll('.color')
+	for (let index = 0; index < palette.length; index += 1) {		
+		let newColor = '#'+Math.floor(Math.random()*16777215).toString(16);			
+		if (palette[0].style.backgroundColor !== '#000000') {
+			palette[0].style.backgroundColor = '#000000';
+		}
+		palette[index].style.backgroundColor = newColor;
+	}	
+}
 
-
-
-coloringPalette();
-creatingBoard();
+randomColors();
