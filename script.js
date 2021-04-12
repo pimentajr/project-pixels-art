@@ -57,16 +57,16 @@ window.onload = function loading() {
   }
   buttonClearEng();
 
-  //realizado com o auxílio de: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript#:~:text=Gerando%20cores%20RGBA&text=A%20fun%C3%A7%C3%A3o%20Math.,ser%C3%A1%20a%20opacidade%20da%20cor.
-  function colorSort() {
-    const colors = document.getElementsByClassName('color');
-    for (let index = 0; index < colors.length; index += 1) {
-      const r = Math.floor(Math.random() * 255);
-      const g = Math.floor(Math.random() * 255);
-      const b = Math.floor(Math.random() * 255);
-      colors[index].style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${0.75})`;
-    }
+  //realizado com o auxílio de: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript#:~:text=Gerando%20cores%20RGBA&text=A%20fun%C3%A7%C3%A3o%20Math.,ser%C3%A1%20a%20opacidade%20da%20cor.  
+  //function colorSort() {
+ // const colors = document.getElementsByClassName('color');
+   // for (let index = 0; index < colors.length; index += 1) {
+     // const r = Math.floor(Math.random() * 255);
+     // const g = Math.floor(Math.random() * 255);
+     // const b = Math.floor(Math.random() * 255);
+     // colors[index].style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${0.75})`;
+   // }
   }
-  colorSort();
-  };
+  //colorSort();
+  //};
 
