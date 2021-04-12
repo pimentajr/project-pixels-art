@@ -90,13 +90,11 @@ function createInput() {
   const divBtns = document.querySelector('#main-btns');
   input.id = 'board-size';
   input.type = 'number';
-  input.min = '5';
+  input.min = '0';
   input.max = '50';
   input.style.padding = '10px';
   input.style.marginLeft = '250px';
   divBtns.appendChild(input);
-  console.log(input);
-
 }
 createInput();
 
@@ -113,6 +111,14 @@ function createResizeBtn() {
 createResizeBtn();
 
 function resizePxls() {
-  
+  const resizeBtn = document.querySelector('#generate-board');
+  const inputResize = document.querySelector('#board-size');
+
+  resizeBtn.addEventListener('click', function() {
+    if (inputResize.value.length === 0) {
+      alert('Board inválido!')
+    } 
+  });
+
 }
 resizePxls();
