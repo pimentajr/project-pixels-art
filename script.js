@@ -3,12 +3,12 @@ function selectInitialColor() {
 }
 selectInitialColor();
 
-function setSelectColor(tagetColor) {
+function setSelectColor(targetColor) {
   const palette = document.getElementsByClassName('color');
 
   for (let index = 0; index < palette.length; index += 1) {
     const object = palette[index];
-    if (object === tagetColor) {
+    if (object === targetColor) {
       object.classList.add('selected');
     } else {
       object.classList.remove('selected');
@@ -22,12 +22,14 @@ function colorSelector(targetColor) {
 }
 
 function setColor(event) {
-  const element = event.target;
+  const targetColor = event.target;
   setSelectColor(targetColor);
   colorSelector(targetColor);
 }
 
 function starterPixelArt() {
-  document.getElementById('color-palette')
+  document.getElementById('color-palette');
   document.addEventListener('click', setColor);
 }
+
+window.onload = starterPixelArt;
