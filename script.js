@@ -1,11 +1,9 @@
-window.onload = onLoadWindow();
-
 function onLoadWindow() {
   /* os valores de referência RGB foram obtidos em https://www.homehost.com.br/blog/tutoriais/tabela-de-cores-html/#:~:text=Os%20RGB%20%C3%A9%20declarado%20com,RGB%20das%20cores%20mais%20utilizadas. */
   function randomColor() {
-    let color1 = Math.ceil(Math.random() * 255);
-    let color2 = Math.ceil(Math.random() * 255);
-    let color3 = Math.ceil(Math.random() * 255);
+    const color1 = Math.ceil(Math.random() * 255);
+    const color2 = Math.ceil(Math.random() * 255);
+    const color3 = Math.ceil(Math.random() * 255);
     return 'rgb(' + color1 + ', ' + color2 + ', ' + color3 + ')';
   }
 
@@ -76,3 +74,4 @@ function onLoadWindow() {
     }
   })
 };
+window.onload = onLoadWindow();
