@@ -1,5 +1,11 @@
 #title {
   text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 40px;
+}
+
+#box-title {
+  background-color: white;
 }
 
 #color-palette {
@@ -22,6 +28,10 @@
   background-color: orange;
 }
 
+#white {
+  background-color: white;
+}
+
 .color {
   border-radius: 60px;
   border: black 1px solid;
@@ -39,12 +49,12 @@
 .pixel {
   background-color: white;
   border: black 1px solid;
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   display: inline-block;
 }
 
-.pixel-boar2 {
+.pixel-board2 {
   text-align: center;
 }
 
@@ -59,4 +69,13 @@
 #button {
   text-align: center;
   margin-top: 15px
+}
+
+#button-more {
+  text-align: center;
+  margin-top: 15px
+}
+
+body {
+  background-image: url("https://cdn.statically.io/img/i.pinimg.com/originals/12/b2/3a/12b23a7752e8a7a4464c1ff5e596237f.gif");
 }

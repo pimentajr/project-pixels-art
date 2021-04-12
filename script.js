@@ -1,4 +1,4 @@
-const colorsPalette = ['black', 'red', 'yellow', 'orange'];
+const colorsPalette = ['black', 'red', 'yellow', 'orange', 'white'];
 let selectedColor = colorsPalette[0];
 
 function color() {
@@ -7,6 +7,7 @@ function color() {
   colors[1].style.background = 'red';
   colors[2].style.background = 'yellow';
   colors[3].style.background = 'orange';
+  colors[4].style.background = 'white';
 }
 color();
 
@@ -19,7 +20,6 @@ function changeSelectedColor(event) {
 
 document.querySelectorAll('.color').forEach((item) => {
   item.addEventListener('click', changeSelectedColor)
-
 })
 
 function pixelColor(eventColor) {
@@ -29,7 +29,6 @@ function pixelColor(eventColor) {
 
 document.querySelectorAll('.pixel').forEach((item) => {
   item.addEventListener('click', pixelColor)
-
 })
 
 function clearPixels() {
