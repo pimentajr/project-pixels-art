@@ -22,6 +22,32 @@ function createPixelBoard(num) {
 }
 // createPixelBoard(5); // inicia o quadro com num=5.
 
+/**
+ * Coloca classe 'selected' no elemento através de event.target, ou seja, o alvo do evento, ou ainda, que disparou o evento.
+ */
+function selectedColor(event) {
+  const selectedElementColor = event.target;
+  const currentElementColor = document.querySelector('.selected'); // busca elemento com classe 'selected'
+  if (currentElementColor !== null) { // se existir algum elemento com classe 'selected', ela é removida
+    currentElementColor.classList.remove('selected');
+  }
+  selectedElementColor.classList.add('.selected'); // adiciona a classe 'selected' no alvo (que disparou) do evento
+}
+/**
+ * Captura o background color do elemento com a classe 'selected' e aplica no elemento que disparou o evento.
+ * Ref: https://zellwk.com/blog/css-values-in-js/
+ */
+function colorSelectedPixel(event) {
+  const pixel = event.target;
+  const currentElementColor = document.querySelector('.selected');
+  const style = getComputedStyle(currentElementColor);
+  pixel.style.backgroundColor = style.backgroundColor;
+}
+
 window.onload = function init() {
   createPixelBoard(5);
+  const initialColor = document.querySelector('.color');
+  initialColor.classList.add('selected');
+  selectedColor('click');
+  colorSelectedPixel('click');
 };
