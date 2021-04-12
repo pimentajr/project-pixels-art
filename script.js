@@ -64,18 +64,34 @@ button.addEventListener('click', function(event) {
 
 // 10 - Usada essa thread no stackoverflow para funcionalidade da remoção dos pixels:
 // https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
-document.querySelector('#generate-board').addEventListener('click', function() {
-	let userBoard = document.querySelector('#board-size').value;	
-	if (userBoard >= 5 && userBoard <= 50) {
-		let currentBoard = document.getElementById('pixel-board');
+
+document.querySelector('#generate-board').addEventListener('click', userPixelBoard);
+
+function userPixelBoard() {	
+	let userBoard = document.querySelector('#board-size').value;		
+	let currentBoard = document.getElementById('pixel-board');
+	if (userBoard > 0 && userBoard < 5) {
+		while (currentBoard.firstChild) {		
+		currentBoard.removeChild(currentBoard.lastChild);
+	}
+	creatingBoard();	
+	} else if (userBoard > 50) {
 		while (currentBoard.firstChild) {
-			currentBoard.removeChild(currentBoard.lastChild);
+		currentBoard.removeChild(currentBoard.lastChild);
+	}
+	creatingBoard(50);
+	} else {
+		while (currentBoard.firstChild) {
+		currentBoard.removeChild(currentBoard.lastChild);
 		}
 		creatingBoard(userBoard);
-	} else {
-		return alert('Board inválido!');
 	}
-})
+	return alert('Board inválido!');
+}
+
+
+// 11 - feito no 10
+
 
 
 
