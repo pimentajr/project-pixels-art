@@ -1,5 +1,15 @@
 window.onload = function load() {
   document.querySelector('#black').classList.add('selected');
+  document.querySelector('#color-palette div:first-child').style.backgroundColor = 'black'
+
+  for (let index = 2; index < 5; index += 1) {
+    const divChild = document.querySelector(`#color-palette div:nth-child(${index})`);
+    let random1 = parseInt(Math.random()*255)
+    let random2 = parseInt(Math.random()*255)
+    let random3 = parseInt(Math.random()*255)
+    divChild.id = `rgb(${random1}, ${random2}, ${random3})`
+    divChild.style.backgroundColor = `rgb(${random1}, ${random2}, ${random3})`;
+  }
 };
 
 const colorSection = document.getElementById('color-palette');
@@ -22,7 +32,7 @@ const pixels = document.querySelector('#pixel-board');
 function addColorToPixels(event) {
   const actualColor = document.querySelector('.selected');
   const pixel = event.target;
-  pixel.id = actualColor.id;
+  pixel.style.backgroundColor = actualColor.style.backgroundColor;
 }
 
 pixels.addEventListener('click', addColorToPixels);
@@ -76,7 +86,7 @@ createPixels.addEventListener('click', function(){
 
 function clearPixels() {
   for (let index = 0; index < allPixels.length; index += 1) {
-    allPixels[index].removeAttribute('id');
+    allPixels[index].removeAttribute('style');
   }
 }
 
