@@ -12,9 +12,9 @@ function add(father, son) {
 const { body } = document;
 const palette = document.querySelector('#color-palette');
 
-// set color as class for color-palettes's childrens
+// set color class for color-palettes's childrens
 for (let i = 0; i < palette.childElementCount; i += 1) {
-  palette.children[i].id = 'color';
+  palette.children[i].className = 'color';
 }
 
 // get all .color
@@ -26,7 +26,7 @@ function randomColors() {
     const random = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
     colors[i].style.background = random;
   }
-  colors[0].removeAttribute('id');
+  colors[0].removeAttribute('className');
   colors[0].style.background = 'black';
   colors[0].className = 'selected';
 }
@@ -38,7 +38,7 @@ add(body, mainContainer);
 
 const tableSize = 25;
 
-// create and set pixelBoard and pixels
+// create and set pixels on MainContainer
 for (let j = 0; j < tableSize; j += 1) {
   const pixels = create('div');
   pixels.className = 'pixel';
