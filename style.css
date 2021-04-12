@@ -1,0 +1,37 @@
+header {
+  text-align: center;
+  background-color: #2ec18c;
+  margin-top: -1.4em;
+  margin-left: -1em;
+  margin-right: -1em;
+  font-family: Mulish;
+}
+
+menu {
+  text-align: center;
+}
+
+.color {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#blackColor {
+  background-color: black;
+}
+
+#randomColor1 {
+  background-color:red;
+}
+
+#randomColor2 {
+  background-color: green;
+}
+
+#randomColor3 {
+  background-color: blue;
+}
