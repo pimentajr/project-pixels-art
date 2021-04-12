@@ -31,3 +31,13 @@ function paintPixels() {
   });
 }
 paintPixels();
+
+const clearBoard = document.querySelector('#clear-board');
+function clearPixel() {
+  const clearAll = document.querySelectorAll('.pixel');
+  for (let indexClear = 0; indexClear < clearAll.length; indexClear += 1) {
+    const selectedClear = clearAll[indexClear];
+    selectedClear.removeAttribute('style');
+  }
+}
+clearBoard.addEventListener('click', clearPixel);

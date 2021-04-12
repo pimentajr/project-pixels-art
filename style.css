@@ -11,6 +11,10 @@
   margin-top: 10px;
 }
 
+#centered-button {
+  text-align: center;
+}
+
 .color {
   border: solid black 1px;
   padding: 50px;
