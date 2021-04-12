@@ -1,4 +1,3 @@
-const listOfColors = ['black', 'lightsalmon', 'lightskyblue', 'khaki'];
 const colorsPalette = document.getElementById('color-palette');
 const linePixelBoard = document.querySelectorAll('.line');
 const basePixelBoard = 5;
@@ -9,6 +8,14 @@ const button = document.getElementsByTagName('button')[0];
 
 document.getElementById('title').innerText = 'Paleta de Cores';
 clearBoard.innerText = 'Limpar';
+
+// Gera cores da paleta aleatoriamentem, exceto a primeira
+function randomColors() {
+  return `RGB(${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.round(Math.random()*255)})`
+}
+
+const listOfColors = ['black', randomColors(), randomColors(), randomColors()];
+console.log(listOfColors)
 
 // Cria paleta de cores
 function createPalette(arrayColors) {
@@ -50,7 +57,6 @@ document.getElementsByClassName('color')[0].classList.add('selected');
 function getColor(colorX) {
   document.getElementsByClassName('selected')[0].classList.remove('selected');
   colorX.target.classList.add('selected');
-  console.log(colorX.target);
 }
 
 function colorPixel(pixelX) {
