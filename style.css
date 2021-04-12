@@ -23,17 +23,19 @@ h1 {
 
 #pixel-board {
   background: transparent;
+  display: table;
 }
 
 .line {
-  display: inline-block;
+  display: table-row;
 }
 
-#pixel-board .pixel {
-  background-color: white;
+.pixel {
   width: 40px;
   height: 40px;
   border: 1px solid black;
+  background-color: white;
+  display: table-cell;
 }
 
 .buttonLine {
