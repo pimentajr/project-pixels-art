@@ -29,6 +29,10 @@ createpx(5);
 window.onload = function selecteDivs() {
   const div = document.querySelector('.color');
   div.classList.add('selected');
+  const colors = colorPalette.childNodes;
+  for (let i = 1; i < colors.length; i += 1) {
+    colors[i].style.backgroundColor = gerateRandomColor();
+  }
 };
 
 function switchSelectedColor() {
@@ -130,17 +134,7 @@ document.querySelector('#generate-board').addEventListener('click', () => {
   createpx(input.value);
 })
 
-
-
-
 function gerateRandomColor() {
   const o = Math.round, r = Math.random, s = 255;
   return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
-}
-
-window.onload = function() {
-  const colors = colorPalette.childNodes;
-  for (let i = 1; i < colors.length; i += 1) {
-    colors[i].style.backgroundColor = gerateRandomColor();
-  }
 }
