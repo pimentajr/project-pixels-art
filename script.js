@@ -13,53 +13,51 @@ const { body } = document;
 const palette = document.querySelector('#color-palette');
 
 // set color as class for color-palettes's childrens
-for (let index = 0; index < palette.childElementCount; index += 1) {
-  palette.children[index].className = 'color';
+for (let i = 0; i < palette.childElementCount; i += 1) {
+  palette.children[i].id = 'color';
 }
 
 // get all .color
-const colors = document.querySelectorAll('.color');
+const colors = document.querySelectorAll('#color');
 
 // set random colors
 function randomColors() {
-  for (let index = 0; index < colors.length; index += 1) {
+  for (let i = 0; i < colors.length; i += 1) {
     const random = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
-    colors[index].style.background = random;
+    colors[i].style.background = random;
   }
+  colors[0].removeAttribute('id');
   colors[0].style.background = 'black';
+  colors[0].className = 'selected';
 }
-
-colors[0].className = 'selected';
 
 // create and set mainContainer
 const mainContainer = create('div');
 mainContainer.id = 'pixel-board';
 add(body, mainContainer);
 
-// create and set pixelBoard and pixels
-for (let index = 0; index < 5; index += 1) {
-  const pixelBoard = create('div');
-  pixelBoard.className = 'pixel-vector';
-  add(mainContainer, pixelBoard);
+const tableSize = 25;
 
-  for (let index2 = 0; index2 < 5; index2 += 1) {
-    const pixels = create('div');
-    pixels.className = 'pixel';
-    add(pixelBoard, pixels);
-  }
+// create and set pixelBoard and pixels
+for (let j = 0; j < tableSize; j += 1) {
+  const pixels = create('div');
+  pixels.className = 'pixel';
+  add(mainContainer, pixels);
 }
 
-const pixels = document.querySelector('.pixel');
+// const pixels = document.querySelectorAll('.pixel');
 
 // to Selected class function
 function classSelected() {
-  pixels.className = 'selected';
+  if (event.target.className === 'pixel') {
+    event.target.className = 'selected';
+  }
 }
 
 // start function
 function start() {
   randomColors();
-  pixels.addEventListener('click', classSelected);
+  mainContainer.addEventListener('click', classSelected);
 }
 
 // window.onload function
