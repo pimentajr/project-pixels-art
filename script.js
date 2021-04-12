@@ -31,7 +31,7 @@ function selectedColor(event) {
   if (currentElementColor !== null) { // se existir algum elemento com classe 'selected', ela é removida
     currentElementColor.classList.remove('selected');
   }
-  selectedElementColor.classList.add('.selected'); // adiciona a classe 'selected' no alvo (que disparou) do evento
+  selectedElementColor.classList.add('selected'); // adiciona a classe 'selected' no alvo (que disparou) do evento
 }
 /**
  * Captura o background color do elemento com a classe 'selected' e aplica no elemento que disparou o evento.
@@ -48,6 +48,6 @@ window.onload = function init() {
   createPixelBoard(5);
   const initialColor = document.querySelector('.color');
   initialColor.classList.add('selected');
-  selectedColor('click');
-  colorSelectedPixel('click');
+  // selectedColor('click');
+  // colorSelectedPixel('click');
 };
