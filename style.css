@@ -1,11 +1,20 @@
+#title {
+  text-align: center;
+}
+
+#color-palette {
+  margin: auto;
+  width: 220px;
+}
+
 .color {
-	border: 1px solid black;
+  border: 1px solid black;
   border-radius: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: inline-block;
   height: 35px;
   margin-left: 10px;
-	margin-bottom: 20px;
+  margin-bottom: 20px;
   vertical-align: middle;
   width: 35px;
 }
@@ -16,6 +25,7 @@
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 0;
   height: 208px;
+  margin: auto;
   width: 208px;
 }
 
@@ -28,16 +38,12 @@
 }
 
 .selected {
-	height: 45px;
+  height: 45px;
   width: 45px;
 }
 
 .black {
   background-color: black;
-}
-
-.blue {
-  background-color: blue;
 }
 
 .green {
