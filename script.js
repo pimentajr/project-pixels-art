@@ -1,3 +1,18 @@
+const containerBoard = document.getElementById('pixel-board');
+
+function createBoard(size) {
+  for (let index = 0; index < size; index += 1) {
+    const tableRow = document.createElement('div');
+    containerBoard.appendChild(tableRow);
+    for (let i = 0; i < size; i += 1) {
+      const addedPixel = document.createElement('div');
+      tableRow.appendChild(addedPixel);
+      addedPixel.className = 'pixel';
+    }
+  }
+}
+createBoard(5);
+
 function inputClass() {
   const element = document.getElementById('black');
   element.classList.add('selected');
@@ -9,6 +24,11 @@ const color1 = document.getElementById('black');
 const color2 = document.getElementById('red');
 const color3 = document.getElementById('blue');
 const color4 = document.getElementById('green');
+
+color1.style.backgroundColor = 'black';
+color2.style.backgroundColor = 'red';
+color3.style.backgroundColor = 'blue';
+color4.style.backgroundColor = 'green';
 
 function caughtedColor(event) {
   const selectedElement = document.querySelector('.selected');
@@ -22,13 +42,13 @@ color3.addEventListener('click', caughtedColor);
 color4.addEventListener('click', caughtedColor);
 
 function addPixelColor() {
-  const p = document.getElementsByClassName('pixel');
-  for (let i = 0; i < p.length; i += 1) {
-    p[i].addEventListener('click', () => {
-      const sColor = document.querySelector('.selected');
-      p[i].style.background = window.getComputedStyle(sColor).getPropertyValue('background-color');
-    });
-  }
+  containerBoard.addEventListener('click', (event) => {
+    const pixel = event.target;
+    const selectedColor = document.querySelector('.selected');
+    if (pixel.className === 'pixel') {
+      pixel.style.backgroundColor = selectedColor.style.backgroundColor;
+    }
+  });
 }
 addPixelColor();
 
@@ -42,3 +62,34 @@ function clearPixel() {
   });
 }
 clearPixel();
+
+const inputTab = document.getElementById('board-size');
+const inputValue = inputTab.value;
+const buttonVQV = document.getElementById('generate-board');
+
+function createInputBoard() {
+  containerBoard.innerHTML = '';
+  for (let index = 0; index < inputValue; index += 1) {
+    const tableRow = document.createElement('div');
+    containerBoard.appendChild(tableRow);
+    for (let i = 0; i < inputValue; i += 1) {
+      const addedPixel = document.createElement('div');
+      tableRow.appendChild(addedPixel);
+      addedPixel.className = 'pixel';
+    }
+  }
+}
+buttonVQV.addEventListener('click', createInputBoard);
+
+buttonVQV.addEventListener('click', () => {
+  let inputNumber = inputTab.value;
+  if (inputNumber === '') {
+    alert('Board inválido!');
+  } if (inputNumber < 5) {
+    inputNumber = 5;
+  } else if (inputNumber > 50) {
+    inputNumber = 50;
+  }
+  containerBoard.innerHTML = '';
+  createBoard(inputNumber);
+});

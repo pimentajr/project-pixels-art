@@ -1,50 +1,17 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  margin-left: 40%;
-}
-
 .color {
   border: 1px solid black;
   display: inline-block;
   width: 40px;
   height: 40px;
-}
-
-#black {
-  background-color: black;
-}
-
-#red {
-  background-color: red;
-}
-
-#blue {
-  background-color: blue;
-}
-
-#green {
-  background-color: green;
+  border-radius: 10%;
 }
 
 .pixel {
   background-color: white;
   width: 40px;
   height: 40px;
-}
-
-td , tr {
   border: 1px solid black;
-  width: 40px;
-  height: 40px;
-}
-
-table {
-  border-collapse: collapse;
+  display: table-cell;
 }
 
 #clear-board {
@@ -52,4 +19,8 @@ table {
   margin-bottom: 10px;
   width: 50px;
   padding: 1px;
+}
+
+#board-size {
+  width: 70px;
 }
