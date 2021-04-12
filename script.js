@@ -12,7 +12,7 @@ function criadorDePixels() {
   }
 }
 criadorDePixels()
-
+let corSelecionada = '';
 let selectPalette = document.querySelector('#color-palette');
 function selectColor() {
   selectPalette.addEventListener('click', function (e) {
@@ -20,17 +20,21 @@ function selectColor() {
     if (e.target.classList !== 'selected') {
       selectedColor.classList.remove('selected');
       e.target.classList.add('selected');
+
     }
   })
 }
 selectColor()
 
-// function paintPixel() {
-//   let selectPixel = selectPixel.addEventListener('click', function (e) {
-//     const colorSelected = document.querySelector('.selected');
-//     if (e.target.className === 'pixel') {
-//       const colorPixel = colorPixel.e.target.
-//   }
-//   })
-// }
-// paintPixel()
+function paintPixel() {
+  let pixelBoard = document.getElementById('pixel-board');
+  pixelBoard.addEventListener('click', function (e) {
+    const colorSelected = document.querySelector('.selected');
+    if (e.target.className === 'pixel') {
+      const color = window.getComputedStyle(colorSelected).getPropertyValue('background-color');
+      const clickedPixel = e.target;
+      clickedPixel.style.backgroundColor = color;
+    }
+  })
+}
+paintPixel()
