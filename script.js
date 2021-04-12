@@ -33,27 +33,29 @@ function inicitalColor() {
 }
 inicitalColor();
 
-const addOrRemove = document.querySelectorAll('.color');
-for (let index = 0; index < addOrRemove.length; index += 1) {
-  const item = addOrRemove[index];
-  item.addEventListener('click', function (e) {
-    const selected = document.querySelector('.selected');
-    if (item.className === 'color') {
-      e.target.classList.add('selected');
-      selected.classList.remove('selected');
-    }
-  });
-};
-
-/*
-function changeColorPixel() {
-  let colorSelect = document.querySelector('.selected').style.backgroundColor;
-  const selectPixel = document.querySelector('.pixel')
-
-  selectPixel.addEventListener('click', function(e) {
-    if (selectPixel.style.backgroundColor !== colorSelect) {
-      e.target.style.backgroundColor = colorSelect;
-    }
-  })
+function addOrRemoveClass() {
+  const addOrRemove = document.querySelectorAll('.color');
+  for (let index = 0; index < addOrRemove.length; index += 1) {
+    const item = addOrRemove[index];
+    item.addEventListener('click', function (e) {
+      const selected = document.querySelector('.selected');
+      if (item.className === 'color') {
+        e.target.classList.add('selected');
+        selected.classList.remove('selected');
+      }
+    });
+  }
 }
-changeColorPixel(); */
+addOrRemoveClass();
+
+function changeColorPixel() {
+  const selectPixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < selectPixel.length; index += 1) {
+    const pixel = selectPixel[index];
+    pixel.addEventListener('click', function (e) {
+      const colorSelect = document.querySelector('.selected').style.backgroundColor;
+      e.target.style.backgroundColor = colorSelect;
+    })
+  }
+}
+changeColorPixel();
