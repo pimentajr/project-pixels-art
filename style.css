@@ -1,5 +1,5 @@
 #color-palette {
-  display: inline-block;
+  display: inline-block; 
 }
 
 .color {
@@ -36,13 +36,15 @@
   border-color: black;
 }
 
-#pixel-board { 
-}
-
 .pixel {
   background-color: white;
   width: 40px;
   height: 40px;
   border: 1px solid black;
   display: table-cell;
+}
+
+#clear-board {
+  margin-top: 5%;
+  margin-left: 7.5%;
 }

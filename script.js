@@ -38,3 +38,16 @@ function paintPixel() {
   })
 }
 paintPixel()
+
+let button = document.getElementById('clear-board');
+function clear() {
+  let pixels = document.querySelectorAll('.pixel');
+  button.addEventListener('click', function (e) {    
+    if (e.target.id === 'clear-board') {
+      for (const pixel of pixels) {
+        pixel.style.backgroundColor = 'white';        
+      }
+    }
+  })
+}
+clear();
