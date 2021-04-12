@@ -52,4 +52,20 @@ function pickColor() {
   });
 }
   pickColor();
+
+function pixelBoardPaint() {
+  const colorPicked = document.getElementById('pixel-board');
+  colorPicked.addEventListener('click', (event) => {
+    const pixelBox = event.target;
+    const selectedColor = document.querySelector('.selected');      
+      if (pixelBox.className === 'pixel') {
+        pixelBox.style.backgroundColor = selectedColor.style.backgroundColor;
+      }         
+    });
+  }
+
+  pixelBoardPaint();
+
+
+  
   
