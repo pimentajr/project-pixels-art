@@ -1,3 +1,13 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url('https://images.alphacoders.com/925/thumb-1920-925465.png');
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+}
+
 .color {
   width: 100px;
   height: 100px;
@@ -19,9 +29,26 @@
   display: inline-block;
 }
 
-.pixel {
+#pixel-board .pixel {
   background-color: white;
   width: 40px;
   height: 40px;
   border: 1px solid black;
+}
+
+.buttonLine {
+  margin: 10px;
+}
+
+button {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  color: black;
+  font-size: 14px;
+}
+
+input {
+  height: 30px;
 }
