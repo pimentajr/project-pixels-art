@@ -5,6 +5,21 @@ makeTable.id = 'pixel-board';
 makeTable.className = 'center table';
 let numberLines = 5;
 
+function makeColor() {
+  const cor1 = (Math.ceil(Math.random() * 255));
+  const cor2 = (Math.ceil(Math.random() * 255));
+  const cor3 = (Math.ceil(Math.random() * 255));
+  return `rgb(${cor1}, ${cor2}, ${cor3})`;
+}
+
+const classCor1 = document.querySelector('#cor1');
+const classCor2 = document.querySelector('#cor2');
+const classCor3 = document.querySelector('#cor3');
+
+classCor1.style.backgroundColor = makeColor();
+classCor2.style.backgroundColor = makeColor();
+classCor3.style.backgroundColor = makeColor();
+
 function makeTables() {
   for (let index = 0; index < numberLines; index += 1) {
     const makeTr = document.createElement('tr');

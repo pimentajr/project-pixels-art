@@ -6,8 +6,9 @@
 }
 
 body {
-  background-image: url('https://i.pinimg.com/originals/fd/8f/8d/fd8f8da060afe72035e078e5fe661452.png');
-  background-position: center;
+  background-image: url('https://f.vividscreen.info/soft/debdf6e632bdea98c29619bf830b24e5/Pixel-Art-1920x1200.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 160%;
 }
 
 h1 {
@@ -17,18 +18,6 @@ h1 {
 
 .center {
   text-align: center;
-}
-
-.amarelo {
-  background-color: yellow;
-}
-
-.verde {
-  background-color: green;
-}
-
-.vermelho {
-  background-color: red;
 }
 
 .preto {
