@@ -51,7 +51,7 @@ const board = document.getElementById('pixel-board');
 
 function pixel(events) {
   const selected = document.querySelector('.selected');
-  const css = window.getComputedStyle(selected).getPropertyValue('background-color');
+  const css = getComputedStyle(selected).getPropertyValue('background-color');
   events.target.style.backgroundColor = css;
 }
 board.addEventListener('click', pixel);
@@ -71,22 +71,23 @@ button.addEventListener('click', buttonClear);
 // 10 - Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária.
 
 function createBoard() {
-const buttVqv = document.querySelector('#generate-board');
-let boardSize = document.querySelector('#board-size');
+  const buttVqv = document.querySelector('#generate-board');
+  const boardSize = document.querySelector('#board-size');
 
-buttVqv.addEventListener('click', () => {
-  board.innerHTML = '';
-  let size = boardSize.value;
-  if (!size) {
-    return alert ('Board inválido!');
-  }
-  if (size < 5) {
-    size = 5;
-  } else if (size > 50) {
-    size = 50;
-  }
-  square(size, size);
-});
+  buttVqv.addEventListener('click', () => {
+    board.innerHTML = '';
+    let size = boardSize.value;
+    if (!size) {
+      return alert('Board inválido!');
+    }
+    //11 - Limite o tamanho mínimo e máximo do board.
+    if (size < 5) {
+      size = 5;
+    } else if (size > 50) {
+      size = 50;
+    }
+    square(size, size);
+  });
 }
 createBoard();
-buttonClear(createBoard);
+buttonClear();
