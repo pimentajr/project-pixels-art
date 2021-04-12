@@ -46,3 +46,15 @@ color0.addEventListener('click', picked);
 color1.addEventListener('click', picked);
 color2.addEventListener('click', picked);
 color3.addEventListener('click', picked);
+
+const pixelBoard = document.querySelector('#pixel-board');
+
+function pickedBoard(ele) {
+  const elem = document.getElementsByClassName('selected');
+  const color = getComputedStyle(elem[0]).getPropertyValue('background-color');
+  const square = ele.target;
+  square.style.backgroundColor = color;
+  console.log(ele.target);
+}
+
+pixelBoard.addEventListener('click', pickedBoard);
