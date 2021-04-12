@@ -1,5 +1,5 @@
 body {
-  background-image:url('images/ex3C66n.jpg');
+  background-image: url('images/ex3C66n.jpg');
   font-family: 'Press Start 2P', cursive;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -56,19 +56,25 @@ body {
   text-align: center;
 }
 
-#clear-board {
+#clear-board, #generate-board {
   background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
+  color: black;
+  border: 2px solid #008cba;
   display: inline-block;
   padding: 8px;
   font-size: 13px;
   font-family: 'Press Start 2P', cursive;
-  
+}
+
+#board-size {
+  font-family: 'Press Start 2P', cursive;
+  width: 60px;
+  height: 22px;
+  font-size: 13px;
 }
 
 #black {
-  background-color:black;
+  background-color: black;
 }
 
 #red {
@@ -76,11 +82,9 @@ body {
 }
 
 #blue {
-  background-color: #008CBA;
-
+  background-color: #008cba;
 }
 
 #green {
-  background-color: #4CAF50;
-
+  background-color: #4CAf50;
 }

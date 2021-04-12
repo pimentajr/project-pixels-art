@@ -9,7 +9,7 @@ function makeTitle() {
 }
 
 // https://www.w3schools.com/howto/howto_js_active_element.asp
-function selectedColor () {
+function selectedColor() {
   for (let i = 0; i < colorPalette.length; i += 1) {
     colorPalette[i].className = 'color';
     colorPalette[i].addEventListener('click', function() {
@@ -30,24 +30,26 @@ function makeDivs() {
 function colorPixel(event) {
   const selects = document.querySelector('.selected');
   const pixeLol = event.target;
-  const selectedColor = window.getComputedStyle(selects).getPropertyValue('background-color');
-  pixeLol.style.backgroundColor = selectedColor;  
+  const selectColor = window.getComputedStyle(selects).getPropertyValue('background-color');
+  pixeLol.style.backgroundColor = selectColor;
 }
 
 pixelBoards.addEventListener('click', colorPixel);
 
 function clearPixel() {
   const clearPixel = document.querySelectorAll('.pixel');
-  for (i = 0; i < clearPixel.length; i += 1) {
+  for (let i = 0; i < clearPixel.length; i += 1) {
     clearPixel[i].style.backgroundColor = 'white';
   }
 }
+
 btn.addEventListener('click', clearPixel);
+
+
 
 selectedColor();
 makeTitle();
 makeDivs();
-
 
 const colorBlack = document.getElementsByClassName('color')[0];
 colorBlack.className = 'selected color';
