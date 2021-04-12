@@ -120,6 +120,9 @@ function removePxls() {
 
 document.querySelector('#generate-board').addEventListener('click', () => {
   const input = document.querySelector('#board-size');
+  input.value < 5 ? input.value = 5 : input.value;
+  input.value > 50 ? input.value = 50 : input.value;
+  console.log(input.value);
   if (input.value.length === 0) {
     alert('Board inválido!');
   } else {
