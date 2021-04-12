@@ -1,5 +1,7 @@
 #title {
   text-align: center;
+  font-family: 'Monoton', cursive;
+  font-size: 45px;
 }
 
 #color-palette {
@@ -42,13 +44,15 @@
   margin-left: 10px;
 }
 
-#clear-board {
+#buttons {
   display: block;
   margin: 0 auto;
+  text-align: center;
 }
 
 table {
   margin: auto;
+  margin-top: 15px;
 }
 
 .pixel {
