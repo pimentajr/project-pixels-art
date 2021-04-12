@@ -29,10 +29,16 @@ for (let i = 0; i < 5; i += 1) {
     }
 }
 
-//6
-window.onload = blackSelected;
+//6 e 7
+const paletaCores = document.querySelector('#color-palette');
 
-// function blackSelected() {
-//     let black = document.querySelector('.color');
-//     black.className = 'selected';
-// }
+function selectColor() {
+  paletaCores.addEventListener('click', (event) => {
+    const cor = document.querySelector('.selected');
+    if (event.target.id !== 'color-palette') {
+      cor.classList.remove('selected');
+      event.target.classList.add('selected');
+    }
+  });
+}
+selectedColor();
