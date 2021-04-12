@@ -7,8 +7,8 @@
   border-color: black;
   border-style: solid;
   display: inline-block;
-  height: 45px;
-  width: 45px;
+  height: 50px;
+  width: 50px;
 }
 
 .pixel {
@@ -38,4 +38,9 @@
   display: block;
   margin: 10px;
   margin-left: 85px;
+}
+
+#resize-table {
+  margin-block: 10px;
+  margin-left: 60px;
 }
