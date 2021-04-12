@@ -1,7 +1,7 @@
 body {
   background-image: url('Pixels_Columbia.jpg');
   background-position: center;
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,6 @@ body {
   color: green;
   font-size: large;
   font-family: system-ui;
-  padding: 0px;
   position: relative;
 }
 
@@ -66,6 +65,7 @@ body {
   padding: 1px 25px;
   border-radius: 7px;
 }
+
 #clear-board {
   margin: 15px;
   padding: 1px 25px;
