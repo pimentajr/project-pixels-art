@@ -9,9 +9,9 @@ getColors.addEventListener('click', function (event) {
 });
 //set colors
 document.getElementById('black').style.backgroundColor = 'black';
-document.getElementById('yellow').style.backgroundColor = 'yellow';
-document.getElementById('green').style.backgroundColor = 'green';
-document.getElementById('blue').style.backgroundColor = 'blue';
+document.getElementById('yellow').style.backgroundColor = random_bg_color();
+document.getElementById('green').style.backgroundColor = random_bg_color();
+document.getElementById('blue').style.backgroundColor = random_bg_color();
 
 
 //8
@@ -74,5 +74,14 @@ getVqv.addEventListener('click', function() {
   createNewTable(getInputValue.value);
 })
 
-
+//12
+// criando cores aleatorias
+function random_bg_color() {
+  var x = Math.floor(Math.random() * 256);
+  var y = Math.floor(Math.random() * 256);
+  var z = Math.floor(Math.random() * 256);
+  var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+  return bgColor;
+  }
+  random_bg_color(); 
 
