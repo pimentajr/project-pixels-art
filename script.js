@@ -42,3 +42,12 @@ function selectedColor() {
   });
 }
 selectedColor();
+
+//ex 8
+pixelBoard.addEventListener('click', (event) => {
+    const actualColor = document.querySelector('.selected').id;
+    if (event.target.className === 'pixel') {
+      const evTarget = event.target;
+      evTarget.style.backgroundColor = actualColor;
+    }
+  });
