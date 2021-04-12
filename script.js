@@ -2,9 +2,9 @@ window.onload = function board() {
     let height = 5;
     let width = 5;
     let pixelBoard = document.getElementById("pixel-board");
-    for (index = 0;index < height; index += 1){
+    for (index = 1;index < height; index += 1){
         let div = document.createElement('div');
-        for (jndex = 0;jndex<width; jndex += 1){
+        for (jndex = 1;jndex<width; jndex += 1){
             let pixel = document.createElement('div');
             pixel.className = 'pixel';
             div.appendChild(pixel);
