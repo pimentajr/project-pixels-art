@@ -11,7 +11,9 @@ function linha() {
 function mudaCor(ev) {
   const paintColor = document.querySelector('.selected');
   const color = window.getComputedStyle(paintColor).backgroundColor;
-  ev.target.style.backgroundColor = color;
+  let alvo = 0;
+  alvo = ev;
+  alvo.target.style.backgroundColor = color;
 }
 const addPixel = document.querySelectorAll('#pixel-board');
 addPixel.forEach((item) => {

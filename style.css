@@ -1,3 +1,13 @@
+#title {
+  text-align: center;
+  margin-left: 55px;
+  margin-top: 100px;
+}
+
+#color-palette {
+  text-align: center;
+}
+
 #black {
   background-color: black;
   border: 1px solid black;
@@ -37,6 +47,7 @@
   position: absolute;
   width: 210px;
   height: 228px;
+  margin-left: 592px;
 }
 
 .pixel {
@@ -46,4 +57,13 @@
   margin-top: -4px;
   background-color: white;
   border: 1px solid black;
+}
+
+#clear-board {
+  margin-left: 665px;
+  margin-bottom: 15px;
+}
+
+#arroz {
+  background-color: orange;
 }
