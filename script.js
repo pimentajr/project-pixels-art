@@ -14,3 +14,11 @@ function createColumnLines() {
   }
 }
 createColumnLines();
+
+const firstColorBlack = document.getElementById('g1');
+firstColorBlack.className = 'color selected';
+
+
+
+
+
