@@ -1,10 +1,17 @@
+function generateRandomColorRGB(){
+  const RGBRed = parseInt(Math.random() * 255);
+  const RGBGreen = parseInt(Math.random() * 255);
+  const RGBBlue = parseInt(Math.random() * 255)
+  const generateRGB = `rgb(${RGBRed}, ${RGBGreen}, ${RGBBlue})`;
+  return generateRGB;
+}
+
 function createColorPalette() {
-  const colors = ['red', 'yellow', 'blue'];
   const color = document.querySelectorAll('.color');
   color[0].style.backgroundColor = 'black';
   color[0].classList.add('selected');
   for (let index = 1; index < color.length; index += 1) {
-    color[index].style.backgroundColor = colors[index - 1];
+    color[index].style.backgroundColor = generateRandomColorRGB();
   }
 }
 
