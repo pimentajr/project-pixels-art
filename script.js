@@ -11,13 +11,14 @@ function createDiv(number) {
 createDiv(5);
 
 function removeDivPixel() {
-  while(pixelBoardLocation.lastChild) {
+  while (pixelBoardLocation.lastChild) {
     pixelBoardLocation.lastChild.remove();
   }
 }
 
 function removeAndAddDivPixel(count) {
   removeDivPixel();
+  
   createDiv(count); 
 }
 
@@ -52,9 +53,9 @@ document.getElementById('clear-board').addEventListener('click', clearPixel);
 function resizePixels() {
   const inputValue = document.getElementById('board-size').value;
   if (inputValue >= 5 && inputValue <= 50) {
-    removeAndAddDivPixel(inputValue)
+    removeAndAddDivPixel(inputValue);
   } else {
-    alert("Board inválido!");
+    alert('Board inválido!');
   }
 }
 
