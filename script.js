@@ -119,6 +119,10 @@ function resizePxls() {
     const pxlValue = inputResize.value;
     if (inputResize.value.length === 0) {
       alert('Board inválido!');
+    } else if (pxlValue < 5) {
+      pxlValue = 5;
+    } else if (pxlValue > 50) {
+      pxlValue = 50;
     }
     for (let i = 0; i < pxlBoard.length; i += 1) {
       pxlBoard[i].style.width = pxlValue + 'px';
