@@ -1,51 +1,54 @@
-let pixelBoards = document.getElementById('pixel-board');
-let btn = document.getElementById('clear-board');
-let title = document.querySelector('#title');
+const pixelBoards = document.getElementById('pixel-board');
+const btn = document.getElementById('clear-board');
+const title = document.querySelector('#title');
+const current = document.getElementsByClassName('selected');
+const colorPalette = document.querySelectorAll('#color-palette>button');
 
-function makeTitle () {
-title.innerHTML = 'Paleta de Cores';
+function makeTitle() {
+  title.innerHTML = 'Paleta de Cores';
 }
-makeTitle();
 
 // https://www.w3schools.com/howto/howto_js_active_element.asp
-let colorPalette = document.querySelectorAll('#color-palette>button');
-for (let i = 0; i < colorPalette.length; i += 1) {
-  colorPalette[i].className = 'color';
-  colorPalette[i].addEventListener('click', function() {
-    let current = document.getElementsByClassName('selected');
-    current[0].className = current[0].className.replace('selected', '');
-    this.className = 'selected color';
-  });
+function selectedColor () {
+  for (let i = 0; i < colorPalette.length; i += 1) {
+    colorPalette[i].className = 'color';
+    colorPalette[i].addEventListener('click', function() {
+      current[0].className = current[0].className.replace('selected', '');
+      this.className = 'selected color';
+    });
+  }
 }
 
+function makeDivs() {
+  for (let i = 1; i <= 25; i += 1) {
+    const pixelDiv = document.createElement('div');
+    pixelDiv.className = 'pixel';
+    pixelBoards.appendChild(pixelDiv);
+  }
+}
 
-function makeDivs () {
-for (let i = 1; i <= 25; i += 1) {
-  let pixelDiv = document.createElement('div');
-  pixelDiv.className = 'pixel';
-  pixelBoards.appendChild(pixelDiv);
+function colorPixel(event) {
+  const selects = document.querySelector('.selected');
+  const pixeLol = event.target;
+  const selectedColor = window.getComputedStyle(selects).getPropertyValue('background-color');
+  pixeLol.style.backgroundColor = selectedColor;  
 }
-}
-makeDivs();
 
-function colorPixel (event) {
-  selects = document.querySelector('.selected');
-  let pixeLol = event.target;
-  let selectedColor = window.getComputedStyle(selects).getPropertyValue('background-color');
-  pixeLol.style.backgroundColor = selectedColor;
-    
-}
 pixelBoards.addEventListener('click', colorPixel);
 
-
 function clearPixel() {
-  let clearPixel = document.querySelectorAll('.pixel');
+  const clearPixel = document.querySelectorAll('.pixel');
   for (i = 0; i < clearPixel.length; i += 1) {
     clearPixel[i].style.backgroundColor = 'white';
   }
 }
 btn.addEventListener('click', clearPixel);
 
+selectedColor();
+makeTitle();
+makeDivs();
 
-let colorBlack = document.getElementsByClassName('color')[0];
+
+const colorBlack = document.getElementsByClassName('color')[0];
 colorBlack.className = 'selected color';
+

@@ -1,9 +1,9 @@
 body {
-background-image:url('images/ex3C66n.jpg');
-font-family: 'Press Start 2P', cursive;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
+  background-image:url('images/ex3C66n.jpg');
+  font-family: 'Press Start 2P', cursive;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 #title {
@@ -61,7 +61,7 @@ background-position: center;
   color: black; 
   border: 2px solid #008CBA;
   display: inline-block;
-  padding: 8px 8px;
+  padding: 8px;
   font-size: 13px;
   font-family: 'Press Start 2P', cursive;
   
