@@ -1,11 +1,26 @@
 function createDiv(number) {
-  for (let index = 0; index < number; index += 1) {
+  for (let index = 0; index < number*number; index += 1) {
     const createdDiv = document.createElement('div');
     createdDiv.className = 'pixel';
     document.getElementById('pixel-board').appendChild(createdDiv);
+    document.getElementById('pixel-board').style.width = (number * 52) + 'px';
   }
 }
-createDiv(25);
+createDiv(5);
+
+function removeDivPixel() {
+    document.getElementById('pixel-board').firstChild.remove();
+}
+
+function removeAndAddDivPixel(count) {
+  let quantidadeDePixel = document.querySelectorAll('.pixel').length;
+  for (let contador2 = 0; contador2 <= quantidadeDePixel; contador2 += 1) {
+    removeDivPixel();
+  }
+  createDiv(count);
+}
+
+removeAndAddDivPixel(8);
 
 function changeSelectedClass(event) {
   document.querySelectorAll('.selected')[0].classList.remove('selected');
