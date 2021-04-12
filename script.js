@@ -19,3 +19,15 @@ function addAndRemoveColors() {
   });
 }
 addAndRemoveColors();
+
+function paintPixels() {
+  const pickPixels = document.getElementById('pixel-board');
+  pickPixels.addEventListener('click', (eventColor) => {
+    const pickColor = eventColor.target;
+    const whereIsSelected = document.querySelector('.selected');
+    if (pickColor.className === 'pixel') {
+      pickColor.style.backgroundColor = whereIsSelected.style.backgroundColor;
+    }
+  });
+}
+paintPixels();
