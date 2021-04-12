@@ -1,13 +1,10 @@
-window.onload = function() {
-
 const colorPalette = document.getElementById('color-palette');
 const colors = document.querySelectorAll('.color');
 const pixelBoard = document.getElementById('pixel-board');
 const pixelBase = document.getElementsByClassName('pixel-base');   
 const buttonLocal = document.getElementById('button');
-
+ 
 let n = 5;
-
 
 function createInput(){
   const input = document.createElement('input');
@@ -156,4 +153,25 @@ function createButtonClear(buttonName){
 }
 createButtonClear('Limpar');
 
+
+
+function randomColors() {
+
+  let r = parseInt(Math.random() * 255);
+  let g = parseInt(Math.random() * 255);
+  let b = parseInt(Math.random() * 255);
+
+  return `rgb(${r},${g},${b})`;
+   
+}
+
+window.onload = function(){
+
+  let color2 = document.getElementById('blue');
+  let color3 = document.getElementById('yellow');
+  let color4 = document.getElementById('rose');
+   
+  color2.style.backgroundColor = randomColors();
+  color3.style.backgroundColor = randomColors();
+  color4.style.backgroundColor = randomColors();
 }
