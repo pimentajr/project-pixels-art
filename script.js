@@ -42,5 +42,16 @@
                 let getSession = document.querySelector('#pixel-board')
                 let pixelSize = 5;
                }                     
-       
-
+               const botao = document.getElementById('clear-board');
+               const quadrados = document.querySelectorAll('.pixel');
+               const backgroundColor = 'white';
+               
+               function reset() {
+                 for (let index = 0; index < quadrados.length; index += 1) {
+                   while (quadrados[index].style.backgroundColor !== backgroundColor) {
+                     quadrados[index].style.backgroundColor = backgroundColor;
+                   }
+                 }
+               }
+               botao.addEventListener('click', reset);
+               
