@@ -39,15 +39,15 @@ getButton.addEventListener('click', function () {
 });
 
 //Refatorando requisito 4
-function createNewTable(colum, line) {
-  for (let i = 0; i < colum; i += 1) {
-    const newColum = document.createElement('div');
-    for (let i2 = 0; i2 < line; i2 += 1) {
-      const newLine = document.createElement('div');
-      newLine.className = 'pixel';
-      newColum.appendChild(newLine);
-    }
-    getPixelBoard.appendChild(newColum);
-  }
-}
-createNewTable(5, 5);
+//function createNewTable(colum, line) {
+  //for (let i = 0; i < colum; i += 1) {
+    //const newColum = document.createElement('div');
+    //for (let i2 = 0; i2 < line; i2 += 1) {
+      //const newLine = document.createElement('div');
+      //newLine.className = 'pixel';
+      //newColum.appendChild(newLine);
+    //}
+    //getPixelBoard.appendChild(newColum);
+  //}
+//}
+//createNewTable(5, 5);
