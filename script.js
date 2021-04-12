@@ -43,7 +43,7 @@ function isVerified() {
   let sizeTable = valueInput;
   if (valueInput.length === 0) {
     return true;
-  } 
+  }
   if (sizeTable < 5) {
     sizeTable = 5;
   } else if (sizeTable > 50) {
@@ -53,24 +53,24 @@ function isVerified() {
 }
 
 function removeBoard() {
-  const removeBoardParent = document.getElementById('pixel-board');
-  while (removeBoardParent.lastElementChild) {
-    removeBoardParent.removeChild(removeBoardParent.lastElementChild);
+  const tableFather = document.querySelector('#pixel-board');
+  while (tableFather.lastElementChild) {
+    tableFather.removeChild(tableFather.lastElementChild);
   }
 }
 
-function randomNumberColor(min, max) {
+function rColor(min, max) {
   return Number(Math.floor(Math.random() * (max - min + 1)) + min);
 }
 function randomPaletteColor(min, max) {
   const colorBlack = document.getElementById('black');
-  const colorRandom1 = document.getElementById('red');
-  const colorRandom2 = document.getElementById('blue');
-  const colorRandom3 = document.getElementById('green');
-  colorBlack.style.backgroundColor = 'rgb(0, 0, 0)'
-  colorRandom1.style.backgroundColor = `rgb(${randomNumberColor(min, max)}, ${randomNumberColor(min, max)}, ${randomNumberColor(min, max)})`;
-  colorRandom2.style.backgroundColor = `rgb(${randomNumberColor(min, max)}, ${randomNumberColor(min, max)}, ${randomNumberColor(min, max)})`;
-  colorRandom3.style.backgroundColor = `rgb(${randomNumberColor(min, max)}, ${randomNumberColor(min, max)}, ${randomNumberColor(min, max)})`;
+  const rdm1 = document.getElementById('red');
+  const rdm2 = document.getElementById('blue');
+  const rdm3 = document.getElementById('green');
+  colorBlack.style.backgroundColor = 'rgb(0, 0, 0)';
+  rdm1.style.backgroundColor = `rgb(${rColor(min, max)}, ${rColor(min, max)}, ${rColor(min, max)})`;
+  rdm2.style.backgroundColor = `rgb(${rColor(min, max)}, ${rColor(min, max)}, ${rColor(min, max)})`;
+  rdm3.style.backgroundColor = `rgb(${rColor(min, max)}, ${rColor(min, max)}, ${rColor(min, max)})`;
 }
 
 function colorPalette() {
@@ -85,7 +85,9 @@ function colorPalette() {
   const btnBoard = document.getElementById('generate-board');
   generateBoard('5');
   btnBoard.addEventListener('click', () => {
-    if (isVerified () === true) { return alert ('Board inválido!'); }
+    if (isVerified() === true) {
+      return alert('Board inválido!');
+    }
     removeBoard();
     generateBoard(isVerified());
   });
