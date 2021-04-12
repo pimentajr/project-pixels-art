@@ -1,3 +1,8 @@
+document.querySelector('#black').style.backgroundColor = 'black';
+document.querySelector('#red').style.backgroundColor = 'red';
+document.querySelector('#yellow').style.backgroundColor = 'yellow';
+document.querySelector('#blue').style.backgroundColor = 'blue';
+
 function createColunnLines() {
   for (let index = 0; index < 5; index += 1) {
     const colunn = document.createElement('div');
@@ -32,25 +37,24 @@ function choosePalette() {
   });
 } choosePalette();
 
-const pixelBoard = document.querySelector('#pixel-board');
 function paintCanvas() {
+  const pixelBoard = document.querySelector('#pixel-board');
   pixelBoard.addEventListener('click', (pixel) => {
     const e = pixel.target;
-    /* const selected = document.getElementsByClassName('selected'); */
+    const selected = document.querySelector('.selected').style.backgroundColor;
     if (e.className === 'pixel') {
-      e.style.backgroundColor = 'red';/* document.querySelector('.selected').style.backgroundColor;
-         */
+      e.style.backgroundColor = selected;
     }
   });
 } paintCanvas();
 
 function boardWhite() {
   const button = document.querySelector('#clear-board');
-  button.addEventListener('click', () => {
+  button.addEventListener('click', (use) => {
     const board = document.querySelectorAll('.pixel');
-    for (let index = 0; index < board.length; index += 1) {
+    for (let index = 0; index < board.length; index += 1) { 
       const element = board[index];
       element.style.backgroundColor = 'white';
     }
   });
-} boardWhite();
+}boardWhite();
