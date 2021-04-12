@@ -5,13 +5,13 @@ window.onload = function carregar(){
 
 
 
-pixelBoard.addEventListener('click', (event) => {
-    const colorActual = document.querySelector('.selected').id;
-    if (event.target.className === 'pixel') {
-      const evTarget = event.target;
-      evTarget.style.backgroundColor = colorActual;
-    }
-  }); 
+let pixelBoard = document.querySelector('#pixel-board')
+pixelBoard.addEventListener('click', function (event){
+    let colorSelected = document.querySelector('.selected')
+    let sectedColor = window.getComputedStyle(colorSelected, null).getPropertyValue("background-color");
+    let paintPinxel = event.target
+    paintPinxel.style.backgroundColor = sectedColor 
+    }) 
 
     function createButton() {
         let getButton = document.querySelector('#clear-board')
@@ -25,3 +25,4 @@ pixelBoard.addEventListener('click', (event) => {
         }
         createButton()
 
+        
