@@ -1,26 +1,27 @@
+const pixelBoardLocation = document.getElementById('pixel-board');
+
 function createDiv(number) {
-  for (let index = 0; index < number*number; index += 1) {
+  for (let index = 0; index < number * number; index += 1) {
     const createdDiv = document.createElement('div');
     createdDiv.className = 'pixel';
-    document.getElementById('pixel-board').appendChild(createdDiv);
-    document.getElementById('pixel-board').style.width = (number * 52) + 'px';
+    pixelBoardLocation.appendChild(createdDiv);
+    pixelBoardLocation.style.width = (number * 52) + 'px';
   }
 }
 createDiv(5);
 
 function removeDivPixel() {
-    document.getElementById('pixel-board').firstChild.remove();
+  pixelBoardLocation.firstChild.remove();
 }
 
 function removeAndAddDivPixel(count) {
-  let quantidadeDePixel = document.querySelectorAll('.pixel').length;
-  for (let contador2 = 0; contador2 <= quantidadeDePixel; contador2 += 1) {
-    removeDivPixel();
-  }
-  createDiv(count);
+    const quantidadeDePixel = document.querySelectorAll('.pixel').length;
+    for (let contador2 = 0; contador2 <= quantidadeDePixel; contador2 += 1) {
+      removeDivPixel();
+    }
+    createDiv(count);
+  
 }
-
-removeAndAddDivPixel(8);
 
 function changeSelectedClass(event) {
   document.querySelectorAll('.selected')[0].classList.remove('selected');
@@ -42,9 +43,19 @@ function changeColorPixel(event) {
 document.getElementById('pixel-board').addEventListener('click', changeColorPixel);
 
 function clearPixel() {
-  for (let contador = 0; contador < 25; contador += 1) {
+  const quantidadeDePixel = document.querySelectorAll('.pixel').length;
+  for (let contador = 0; contador < quantidadeDePixel; contador += 1) {
     const selector = document.querySelectorAll('.pixel')[contador];
     selector.classList.remove(selector.classList[1]);
   }
 }
 document.getElementById('clear-board').addEventListener('click', clearPixel);
+
+document.getElementById('generate-board').addEventListener('click', function() {
+  let inputValue = document.getElementById('board-size').value;
+  if (inputValue >= 5 && inputValue <= 50) {
+    removeAndAddDivPixel(inputValue)
+  } else {
+    alert("Board inválido!");
+  }
+})
