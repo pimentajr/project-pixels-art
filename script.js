@@ -2,9 +2,9 @@ window.onload = function board() {
     let height = 5;
     let width = 5;
     let pixelBoard = document.getElementById("pixel-board");
-    for (index = 1;index < height; index += 1){
+    for (index = 0;index < height; index += 1){
         let div = document.createElement('div');
-        for (jndex = 1;jndex<width; jndex += 1){
+        for (jndex = 0;jndex<width; jndex += 1){
             let pixel = document.createElement('div');
             pixel.className = 'pixel';
             div.appendChild(pixel);
@@ -12,8 +12,6 @@ window.onload = function board() {
         pixelBoard.appendChild(div)
     }
 }
-
-let pickedColor = 'rgb(0,0,0)';
 
 let paleta = document.getElementById('color-palette')
 paleta.addEventListener('click',selectedColor);
@@ -29,14 +27,18 @@ function selectedColor(event){
     console.log(event.target)
 }
 
+let bew = 'rgb(0,0,0)';
+
 function pickColor(event) {
     let color = document.querySelector('.selected');
     event = window.getComputedStyle(color,null).getPropertyValue('background-color');
-    pickedColor = event;
+    bew = event;
     console.log(event)
+
 }
 
+
 function setColor(event){
-     event.target.style.backgroundColor =  pickedColor;
+     event.target.style.backgroundColor =  bew;
      console.log(event.target.style)
 }

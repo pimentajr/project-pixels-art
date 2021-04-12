@@ -1,6 +1,3 @@
-div{
-    padding: 0;
-}
 .color {
     height: 70px;
     width: 70px;
@@ -40,6 +37,7 @@ div{
     height:40px;
     display: inline-block;
     border: 1px solid black;
+    background-color: white;
 }
 
 .selected{
