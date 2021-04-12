@@ -7,10 +7,9 @@ setInitialColor();
 
 const element = document.querySelector('#color-palette');
 
-function addOrRemove(event) {
+function addOrRemoveClass(event) {
   const targetElement = event.target;
   const getClass = document.getElementsByClassName('selected');
-  console.log(getClass);
 
   for (let index = 0; index < getClass.length; index += 1) {
     getClass[index].classList.remove('selected');
@@ -18,4 +17,16 @@ function addOrRemove(event) {
   targetElement.classList.add('selected');
 }
 
-element.addEventListener('click', addOrRemove);
+element.addEventListener('click', addOrRemoveClass);
+
+const selectColors = document.querySelector('#pixel-board');
+
+function paintPixels(event) {
+  const targetElement = event.target;
+  const getClass = document.getElementsByClassName('selected')[0];
+  const attColor = getComputedStyle(getClass).backgroundColor;
+  targetElement.style.backgroundColor = attColor;
+
+}
+selectColors.addEventListener('click', paintPixels);
+
