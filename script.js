@@ -3,6 +3,7 @@
 const colors = document.getElementsByClassName('color');
 const pixels = document.getElementsByClassName('pixel');
 const limpar = document.getElementById('clear-board');
+let board = document.querySelector('#generate-board');
 
 // Funções
 function removeClass() {
@@ -42,3 +43,35 @@ for (let px = 0; px < pixels.length; px += 1) {
 }
 
 limpar.addEventListener('click', clearPixel);
+
+// ex 10
+// Função feita a partir da análise do codigo do colega Jonatha Braga
+function validationNumber(number) {
+  if (number < 5) {
+    return 5;
+  }
+  if (number > 50){
+    return 50;
+  }
+}
+function boardGenerate() {
+  const input = document.querySelector('#board-size');
+  const table = document.getElementById('pixel-board');
+  if (input.value === '') {
+    alert('Board inválido!');
+    return null;
+  }
+  validationNumber(input.value);
+  for (let index = 0; index < input.length; index += 1) {
+    const newTable = document.createElement('tr');
+    newTable.setAttribute('id','pixel-board');
+    table.appendChild(newTable);
+    for (let index2 = 0; index2 < input.length; index2 += 1) {
+      const colum = document.createElement('td');
+      colum.classList.add('pixel');
+      newTable.appendChild(colum);
+    }
+  }
+}
+
+board.addEventListener('click', boardGenerate);
