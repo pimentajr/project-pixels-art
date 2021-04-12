@@ -32,7 +32,7 @@ for (let i = 0; i < 5; i += 1) {
 //6 e 7
 const paletaCores = document.querySelector('#color-palette');
 
-function selectColor() {
+function selectedColor() {
   paletaCores.addEventListener('click', (event) => {
     const cor = document.querySelector('.selected');
     if (event.target.id !== 'color-palette') {
