@@ -1,4 +1,3 @@
-
 window.onload = function board() {
     let height = 5;
     let width = 5;
@@ -14,6 +13,8 @@ window.onload = function board() {
     }
 }
 
+let pickedColor = 'rgb(0,0,0)';
+
 let paleta = document.getElementById('color-palette')
 paleta.addEventListener('click',selectedColor);
 paleta.addEventListener('click', pickColor)
@@ -28,19 +29,14 @@ function selectedColor(event){
     console.log(event.target)
 }
 
-let bew ;
-
 function pickColor(event) {
     let color = document.querySelector('.selected');
     event = window.getComputedStyle(color,null).getPropertyValue('background-color');
-    bew = event;
+    pickedColor = event;
     console.log(event)
-    
 }
-
 
 function setColor(event){
-     event.target.style.backgroundColor =  bew;
+     event.target.style.backgroundColor =  pickedColor;
      console.log(event.target.style)
 }
-
