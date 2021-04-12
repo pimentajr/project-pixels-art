@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixels Art Project</title>
   <link rel="stylesheet" type="text/css" href="/style.css">
-  <script type="text/javascript" src="/script.js"></script>
 </head>
 <body>
   <h1 id="title">Paleta de Cores</h1>
@@ -15,7 +14,15 @@
 
   <button id="clear-board">Limpar</button>
 
+  <form>
+    <!-- <p>Dimensione o Pixel Board</p> -->
+    <label for="text">Selecione um valor de 5 a 50:</label>
+    <input type="number" id="board-size">
+    <button id="generate-board">VQV</button>
+  </form>
+
   <section id="pixel-board"></section>
   
+  <script type="text/javascript" src="/script.js"></script>
 </body>
 </html>
