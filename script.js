@@ -19,9 +19,9 @@ function changeColorPixel(event) {
   const classColor = document.querySelectorAll('.selected')[0].classList[1];
   if (event.target.classList.length !== 1) {
     eventTarget.classList.remove(event.target.classList[1]);
-    eventTarget.className += ' ' + classColor;
+    eventTarget.classList.add(classColor);
   } else {
-    eventTarget.className += ' ' + classColor;
+    eventTarget.classList.add(classColor);
   }
 }
 document.getElementById('pixel-board').addEventListener('click', changeColorPixel);
