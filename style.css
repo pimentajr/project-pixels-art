@@ -1,5 +1,5 @@
 .color {
-  border: black solid 3px;
+  border: black solid 1px;
   display: inline-block;
   width: 90px;
   height: 90px;
@@ -20,8 +20,8 @@
 
 .pixel {
   border: black solid 1px;
-  width: 25px;
-  height: 25px;
+  width: 85px;
+  height: 85px;
   display: inline-block;
 }
 
@@ -30,12 +30,22 @@
 }
 
 
-@font-face{
+@font-face {
   font-family: adrip1;
   src: url(fonts/adrip1.ttf);
 }
+
 #title {
   font-family: adrip1;
   letter-spacing: 2px;
   font-size: 2cm;
 }
+
+#pixel-board {
+  display: table;
+}
+
+#color-palette {
+  display: inline-block;
+}
+
