@@ -77,3 +77,19 @@ genBoardButton.addEventListener('click', () => {
   defineBoardSize();
   console.log(genBoardSize);
 });
+
+const color1 = document.getElementsByClassName('red')[0];
+const color2 = document.getElementsByClassName('blue')[0];
+const color3 = document.getElementsByClassName('lightsalmon')[0];
+
+function genRandomColor() {
+  const randomColor1 = Math.ceil(Math.random() * 255);
+  const randomColor2 = Math.ceil(Math.random() * 255);
+  const randomColor3 = Math.ceil(Math.random() * 255);
+
+  return `rgb(${randomColor1}, ${randomColor2}, ${randomColor3})`;
+}
+
+color1.style.backgroundColor = genRandomColor();
+color2.style.backgroundColor = genRandomColor();
+color3.style.backgroundColor = genRandomColor();
