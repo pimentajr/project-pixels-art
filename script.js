@@ -22,3 +22,11 @@ function selectColor(color) {
   const colorToSelect = document.getElementById(color);
   colorToSelect.classList.add('selected');
 }
+
+const allColors = document.getElementsByClassName('color');
+
+for (const color of allColors) {
+  color.addEventListener('click', () => {
+    selectColor(color.id);
+  });
+}
