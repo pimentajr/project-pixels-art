@@ -1,3 +1,12 @@
+body {
+  background-color: darkcyan;
+}
+
+h1 {
+  color:white;
+  text-align: center;
+}
+
 .color {
   display: inline-block;
   padding: 40px;
@@ -31,4 +40,10 @@
 #pixel-board {
   border-collapse: collapse;
   margin-left: 60px;
+  margin: auto;
+}
+
+#color-palette {
+  text-align: center;
+  margin-bottom: 20px;
 }
