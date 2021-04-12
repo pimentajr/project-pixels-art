@@ -1,13 +1,13 @@
 const pixelRow = document.getElementById('pixel-board');
 
-// Exercicio 12, foi utilizada essa função que achei no stackOverflow
-// Segue o link https://stackoverflow.com/questions/23095637/how-do-you-get-random-rgb-in-javascript
+// Exercicio 12, Tales me ajudou na concatenação de strings.
+
 
 function getRandomRgb() {
   const r = Math.ceil((Math.random()) * 255);
   const g = Math.ceil((Math.random()) * 255);
   const b = Math.ceil((Math.random()) * 255);
-  return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
 for (let i = 0; i < 10; i += 1) {
