@@ -5,8 +5,6 @@ function setInitialColor() {
 
 setInitialColor();
 
-const element = document.querySelector('#color-palette');
-
 function addOrRemoveClass(event) {
   const targetElement = event.target;
   const getClass = document.getElementsByClassName('selected');
@@ -17,9 +15,8 @@ function addOrRemoveClass(event) {
   targetElement.classList.add('selected');
 }
 
+const element = document.querySelector('#color-palette');
 element.addEventListener('click', addOrRemoveClass);
-
-const selectColors = document.querySelector('#pixel-board');
 
 function paintPixels(event) {
   const targetElement = event.target;
@@ -28,12 +25,14 @@ function paintPixels(event) {
   targetElement.style.backgroundColor = attColor;
 }
 
+const selectColors = document.querySelector('#pixel-board');
 selectColors.addEventListener('click', paintPixels);
 
+// problema da funcao anonima resolvida atraves deste material: https://eslint.org/docs/rules/prefer-arrow-callback.
 function clearPixel() {
   const button = document.querySelector('#clear-board');
 
-  button.addEventListener('click', function clearButton() {
+  button.addEventListener('click', () => {
     const pixelBoard = document.querySelectorAll('.pixel');
     for (let index = 0; index < pixelBoard.length; index += 1) {
       pixelBoard[index].style.backgroundColor = 'white';
@@ -42,3 +41,39 @@ function clearPixel() {
 }
 
 clearPixel();
+
+let genBoardSize = 0;
+
+function defineBoardSize() {
+  const newTable = document.querySelector('#pixel-board');
+  newTable.innerHTML = '';
+
+  for (let index = 0; index < genBoardSize; index += 1) {
+    const tableDiv = document.createElement('div');
+    newTable.appendChild(tableDiv);
+    tableDiv.className = 'column borderBlack';
+
+    for (let lineIndex = 0; lineIndex < genBoardSize; lineIndex += 1) {
+      const linePixel = document.createElement('div');
+      tableDiv.appendChild(linePixel);
+      linePixel.className = 'pixel borderBlack';
+    }
+  }
+}
+
+const genBoardButton = document.getElementById('generate-board');
+
+genBoardButton.addEventListener('click', () => {
+  genBoardSize = document.getElementById('board-size').value;
+
+  if (genBoardSize.length === 0) {
+    alert('Board inválido!');
+    genBoardSize = 5;
+  } else if (genBoardSize < 5) {
+    genBoardSize = 5;
+  } else if (genBoardSize > 50) {
+    genBoardSize = 50;
+  }
+  defineBoardSize();
+  console.log(genBoardSize);
+});
