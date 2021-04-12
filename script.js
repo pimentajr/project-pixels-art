@@ -3,18 +3,36 @@ const makeTable = document.createElement('table');
 getBody.appendChild(makeTable);
 makeTable.id = 'pixel-board';
 makeTable.className = 'center table';
-const numberLines = 5;
+let numberLines = 5;
 
-for (let index = 0; index < numberLines; index += 1) {
-  const makeTr = document.createElement('tr');
-  makeTable.appendChild(makeTr);
-  makeTr.className = 'center';
-  for (let jndex = 0; jndex < numberLines; jndex += 1) {
-    const makeTd = document.createElement('td');
-    makeTr.appendChild(makeTd);
-    makeTd.className = 'pixel branco';
+function makeTables() {
+  for (let index = 0; index < numberLines; index += 1) {
+    const makeTr = document.createElement('tr');
+    makeTable.appendChild(makeTr);
+    makeTr.className = 'center';
+    for (let jndex = 0; jndex < numberLines; jndex += 1) {
+      const makeTd = document.createElement('td');
+      makeTr.appendChild(makeTd);
+      makeTd.className = 'pixel branco';
+    }
   }
 }
+
+makeTables();
+
+function alteraTamanhoTable() {
+  numberLines = document.querySelector('#board-size').value;
+  const pixelBoard = document.querySelector('#pixel-board');
+  if (numberLines.length === 0) {
+    window.alert('Board inválido!');
+  } else if (numberLines > 4 && numberLines < 51) {
+    pixelBoard.innerHTML = '';
+    makeTables();
+  }
+}
+
+const AddSquareButton = document.querySelector('#generate-board');
+AddSquareButton.addEventListener('click', alteraTamanhoTable);
 
 function initBlack() {
   const divBlack = document.querySelector('.preto');
