@@ -43,7 +43,7 @@ function selectedColor() {
 }
 selectedColor();
 
-//ex 8
+//8
 pixelBoard.addEventListener('click', (event) => {
     const actualColor = document.querySelector('.selected').id;
     if (event.target.className === 'pixel') {
@@ -51,3 +51,13 @@ pixelBoard.addEventListener('click', (event) => {
       evTarget.style.backgroundColor = actualColor;
     }
   });
+
+//9
+const clearButton = document.getElementById('clear-board');
+
+clearButton.addEventListener('click', () => {
+    const pixels = document.querySelectorAll('.pixel')
+    for (let i = 0; i < pixels.length; i += 1) {
+        pixels[i].style.backgroundColor = 'white';
+    }
+})
