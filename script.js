@@ -25,7 +25,6 @@ function populateGrid(size) {
     }
   }
 }
-
 populateGrid(5);
 
 // Muda a classe selected
