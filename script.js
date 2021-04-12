@@ -1,13 +1,13 @@
-function fillPixelFromPointerDown(e) {
-  const clickedPixel = e.target;
-  const selectedColor = document.querySelector('.color.selected').style.backgroundColor;
-  if (clickedPixel.style.backgroundColor !== selectedColor) {
-    clickedPixel.style.backgroundColor = selectedColor;
+function trocaCor(e) {
+  const apontador = e.target;
+  const corEscolhida = document.querySelector('.color.selected').style.backgroundColor;
+  if (apontador.style.backgroundColor !== corEscolhida) {
+    apotador.style.backgroundColor = corEscolhida;
   } else {
-    clickedPixel.style.backgroundColor = 'white';
+    apontador.style.backgroundColor = 'white';
   }
 
-  lastClickedPixelColor = clickedPixel.style.backgroundColor;
+  ultimaCorUsada = apontador.style.backgroundColor;
   e.target.releasePointerCapture(e.pointerId);
 }
 
@@ -16,14 +16,15 @@ function altCor(e) {
   const corAtual = document.querySelector('.color.selected');
   if (corEscolhida !== corAtual) {
     corEscolhida.classList.remove('selected');
-    corEscolhida.classList.add('selected');
+    corAtual.classList.add('selected');
   }
 }
 
 function inicio() {
-  const inicialBlack = document.querySelector('.color .selected');
-  addEventListener("click", altCor);
+  const corAtual = document.querySelector('.color.selected');
   
+  addEventListener("click", altCor);
+  addEventListener("click", trocaCor);
 }
 
 window.onload = inicio;
