@@ -11,7 +11,6 @@ function colorRandom() {
   if (color === '#0000') {
     colorRandom();
   }
-  console.log(color);
   return color;
 }
 
