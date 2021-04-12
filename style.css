@@ -1,8 +1,8 @@
 body {
   text-align: center;
   background-color: rgb(255, 249, 254);
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .color {
@@ -35,7 +35,7 @@ body {
 
 header {
   background-color: rgb(57, 0, 59);
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
 #title {
