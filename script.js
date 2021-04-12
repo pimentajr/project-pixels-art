@@ -57,14 +57,10 @@ secaoSelecionaCor.addEventListener('click', (event) => {
   event.target.classList.add('selected');
 });
 
-const storeButton = document.createElement('section');
-storeButton.id = 'button';
-secaoSelecionaCor.appendChild(storeButton);
-
 const button = document.createElement('button');
 button.id = 'clear-board';
 button.innerText = 'Limpar';
-storeButton.appendChild(button);
+secaoSelecionaCor.appendChild(button);
 
 function CleanPaletas() {
   const pixels = document.querySelectorAll('.pixel');

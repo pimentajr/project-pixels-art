@@ -49,5 +49,6 @@
   border-style: solid, 1px;
   background-color: darkorange;
   color: black;
+  display: block;
 }
 
