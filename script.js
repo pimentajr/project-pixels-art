@@ -70,29 +70,29 @@ function colorRemovalEvent() {
   clearButton.addEventListener('click', removeColorFromTable);
 }
 
-function checkSize() {
-  const input = document.getElementById('board-size');
-  if (input.value.length === 0) {
-    alert('Board inválido!');
-    return;
-  }
-  let size = parseInt(input.value, 10);
-  if (size <= 5) {
-    size = 5;
-  } else if (size >= 50) {
-    size = 50;
-  }
-  reinsertTable(size);
-}
-function eventResize() {
-  const button = document.getElementById('size-form');
-  button.addEventListener('submit', checkSize);
-}
+// function checkSize() {
+//   const input = document.getElementById('board-size');
+//   if (input.value.length === 0) {
+//     alert('Board inválido!');
+//     return;
+//   }
+//   let size = parseInt(input.value, 10);
+//   if (size <= 5) {
+//     size = 5;
+//   } else if (size >= 50) {
+//     size = 50;
+//   }
+//   reinsertTable(size);
+// }
+// function eventResize() {
+//   const button = document.getElementById('size-form');
+//   button.addEventListener('submit', checkSize);
+// }
 
 window.onload = function () {
   createColorPalette();
   reinsertTable(5);
   changeTheColor();
   colorRemovalEvent();
-  eventResize();
+  // eventResize();
 };
