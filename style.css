@@ -3,6 +3,11 @@ body {
   background-image: url('/491687.jpg');
 }
 
+h1 {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .color {
   display: inline-block;
   border: 1px solid black;
