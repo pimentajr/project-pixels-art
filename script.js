@@ -1,7 +1,6 @@
 // Retrieve elements
 const liColors = document.getElementsByClassName('color');
 const pixelBoard = document.getElementById('pixel-board');
-// const colors = ['red', 'green', 'blue', 'magenta', 'darkgreen', 'yellow'];
 const colorsList = document.getElementsByClassName('color');
 const selectedColor = document.getElementsByClassName('selected');
 let pixelList = document.getElementsByClassName('pixel');
@@ -15,9 +14,6 @@ function createDivBoard(size) {
   for (let index = 0; index < numberOfTiles; index += 1) {
     const tile = document.createElement('div');
     tile.classList.add('pixel');
-    tile.style.float = 'left';
-    tile.style.border = '1px solid black';
-    tile.style.backgroundColor = 'white';
     pixelBoard.appendChild(tile);
   }
 }
