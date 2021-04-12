@@ -76,6 +76,15 @@ function reset() {
 }
 botao.addEventListener('click', reset);
 
+// Consegui fazer de forma mais simples com as instruções do site https://pt.stackoverflow.com/questions/320454/cores-aleat%C3%B3rias-nos-bot%C3%B5es
+const cores = document.querySelectorAll('#cor');
+for (let index = 0; index < cores.length; index += 1) {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  cores[index].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+}
+
 window.onload = function carregar() {
   document.getElementById('black').classList.add('selected');
   criaTabela(5);
