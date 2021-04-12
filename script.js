@@ -39,8 +39,10 @@ function getColorPalette(event) {
 }
 
 function selectColor() {
-  const colorSelection = document.getElementById('color-palette');
-  colorSelection.addEventListener('click', getColorPalette);
+  const colorSelection = document.querySelectorAll('.color');
+  for (let index = 0; index < colorSelection.length; index += 1) {
+    colorSelection[index].addEventListener('click', getColorPalette);
+  }
 }
 
 selectColor();
