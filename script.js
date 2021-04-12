@@ -104,7 +104,7 @@ function createResizeBtn() {
   resizeBtn.style.width = '100px';
   resizeBtn.id = 'generate-board';
   resizeBtn.style.padding = '10px';
-  resizeBtn.style.marginLeft = '5px'
+  resizeBtn.style.marginLeft = '5px';
   resizeBtn.innerHTML = 'VQV';
   divBtns.appendChild(resizeBtn);
 }
@@ -116,17 +116,15 @@ function resizePxls() {
   const pxlBoard = pixelBoard.childNodes;
 
   resizeBtn.addEventListener('click', function() {
-    const pxlValue = inputResize.value * inputResize.value;
+    const pxlValue = inputResize.value;
     if (inputResize.value.length === 0) {
-      alert('Board inválido!')
+      alert('Board inválido!');
     }
-    
     for (let i = 0; i < pxlBoard.length; i += 1) {
       pxlBoard[i].style.width = pxlValue + 'px';
       pxlBoard[i].style.height = pxlValue + 'px';
-      pxlBoard[i].style.backgroundColor = 'white';
+      pxlBoard[i].style.backgroundColor = 'rgb(255, 255, 255)';
     }
   });
-
 }
 resizePxls();
