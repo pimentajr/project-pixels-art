@@ -80,7 +80,7 @@ function createBoard() {
     if (!size) {
       return alert('Board inválido!');
     }
-    //11 - Limite o tamanho mínimo e máximo do board.
+    // 11 - Limite o tamanho mínimo e máximo do board.
     if (size < 5) {
       size = 5;
     } else if (size > 50) {
@@ -91,3 +91,18 @@ function createBoard() {
 }
 createBoard();
 buttonClear();
+
+// 12 - Faça com que as cores da paleta sejam geradas aleatoriamente ao carregar a página:
+
+function createRandom() {
+const paletteColors = document.querySelectorAll('.color');
+for (let index6 = 1; index6 < paletteColors.length; index6 += 1) {
+  const r = parseInt(Math.random() * 255);
+  const g = parseInt(Math.random() * 255);
+  const b = parseInt(Math.random() * 255);
+  
+  paletteColors[index6].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  
+}
+}
+createRandom();
