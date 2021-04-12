@@ -1,20 +1,21 @@
+// Cria uma cor aleatória
+function createRandomColor() {
+  const colorGenerate = [0];
+  for (let index = 0; index < 3; index += 1) {
+    colorGenerate[index] = Math.ceil(Math.random() * 255);
+  }
+  return `rgba(${colorGenerate.join(', ')})`;
+}
+
 // inserindo as cores
 function colorInsert() {
   const black = document.getElementById('black');
   const blue = document.getElementById('blue');
   const green = document.getElementById('green');
   const red = document.getElementById('red');
-  const colorGenerate = [0];
-  for (let index = 0; index < 3; index += 1) {
-    const randNumber = [0];
-    for (let zindex = 0; zindex < 3; zindex += 1) {
-      randNumber[zindex] = Math.ceil(Math.random() * 255);
-    }
-    colorGenerate[index] = randNumber;
-  }
-  blue.style.backgroundColor = `rgba(${colorGenerate[0].join(', ')})`;
-  green.style.backgroundColor = `rgba(${colorGenerate[1].join(', ')})`;
-  red.style.backgroundColor = `rgba(${colorGenerate[2].join(', ')})`;
+  blue.style.backgroundColor = createRandomColor();
+  green.style.backgroundColor = createRandomColor();
+  red.style.backgroundColor = createRandomColor();
   black.style.backgroundColor = 'black';
   black.classList.add('selected');
 }
