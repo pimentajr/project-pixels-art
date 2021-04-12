@@ -1,28 +1,34 @@
+let x=0;
+
 function inicio() {
   let corPincel = document.getElementsByClassName('color');
   corPincel[0].classList.add('selected');
-  //console.log(corPincel);
-  // //corPincel.addEventListener("click",altCor)
-//}
-// function oQueFazer(e){
-}
-// function altCor(e) {
-//   switch {
-//     case corPincel[0].addEventListener("click")
-//     corPincel = getComputedStyle(co rPincel[0]);
-//     break;
-//     case corPincel[1].addEventListener("click")
-//     corPincel = getComputedStyle(corPincel[1]);
-//     break;
-//     case corPincel[2].addEventListener("click")
-//     corPincel = getComputedStyle(corPincel[2]);
-//     break;
-//     case corPincel[3].addEventListener("click")
-//     corPincel = getComputedStyle(corPincel[3]);
-//     break;
-//   }
-// }
+  altCor;
 
-// function mudaCor(e);{
-//   document.getElementById("pixel").addEventListener("click", mudaCor);
+}
+ function oQueFazer(e) {
+
+}
+ function altCor(e) {
+   switch (corPincel[e].addEventListener("click")) {
+     case corPincel[0].addEventListener("click"):
+     corPincel[0].classList.add('selected');
+     break;
+     case corPincel[1].addEventListener("click"):
+     corPincel[1].classList.add('selected');
+     break;
+     case corPincel[2].addEventListener("click"):
+     corPincel[2].classList.add('selected');
+     break;
+     case corPincel[3].addEventListener("click"):
+     corPincel[3].classList.add('selected');
+     break;
+   }
+ }
+
+ function mudaCor(e){
+  for(pixel.addEventListener("click") in object){
+
+  }
+ }
 window.onload = inicio;
