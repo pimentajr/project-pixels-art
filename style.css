@@ -14,11 +14,11 @@
 }
 
 .black {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
 }
 
 .red {
-  background-color: red;
+  background-color: rgb(255, 0, 0);
 }
 
 .blue {

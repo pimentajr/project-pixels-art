@@ -26,7 +26,6 @@ function paintPixels(event) {
   const getClass = document.getElementsByClassName('selected')[0];
   const attColor = getComputedStyle(getClass).backgroundColor;
   targetElement.style.backgroundColor = attColor;
-
 }
-selectColors.addEventListener('click', paintPixels);
 
+selectColors.addEventListener('click', paintPixels);
