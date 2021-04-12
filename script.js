@@ -44,7 +44,7 @@ function clickColor() {
 }
 clickColor();
 
-const tabela = document.querySelector('tbody');
+const tabela = document.querySelector('#pixel-board');
 function addColor() {
 	tabela.addEventListener('click', function(event) {
 		let select = document.querySelector('.selected');
@@ -59,9 +59,49 @@ function benjaminButton() {
 	button.addEventListener('click', function() {
 		const tableElements = document.querySelectorAll('.pixel');
 		for (let index = 0; index < tableElements.length; index += 1) {
-			console.log('teste');
 				tableElements[index].style.backgroundColor = 'white';
 			}
 	})
 }
 benjaminButton();
+
+const vqv = document.querySelector('#generate-board');
+const inputTable = document.querySelector('#board-size');
+
+function newTable() {
+	const quadro = document.querySelectorAll('#pixel-board');
+		for (let linha = 1; linha <= inputTable.valueAsNumber; linha += 1) {
+			let newLine = document.createElement('tr');
+			newLine.classList.add('remove');
+			quadro[0].appendChild(newLine);
+			for (let coluna = 1; coluna <= inputTable.valueAsNumber; coluna += 1) {
+				let newColumn = document.createElement('td');
+				newColumn.classList.add('pixel');
+				newLine.appendChild(newColumn);
+			}
+		}
+}
+
+function removeOldBoard() {
+	const oldBoard = document.querySelector('tbody');
+	const newBoard = document.querySelectorAll('.remove');
+	if (oldBoard) {
+		oldBoard.remove();
+	} else if (newBoard) {
+		for (let index = 0; index < newBoard.length; index += 1) {
+		 newBoard[index].remove();
+		}
+	}
+}
+
+function incrementTable() {
+	vqv.addEventListener('click', function() {
+		removeOldBoard();
+		/* if (inputTable.valueAsNumber = '') { */
+			/* alert('Board inválido!') */
+		/* } else { */
+			newTable();
+		/* } */
+	})
+}
+incrementTable();
