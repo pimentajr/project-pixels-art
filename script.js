@@ -33,19 +33,27 @@ function inicitalColor() {
 }
 inicitalColor();
 
-function addOrRemoveClass() {
-  const addOrRemove = document.querySelectorAll('.color');
+const addOrRemove = document.querySelectorAll('.color');
+for (let index = 0; index < addOrRemove.length; index += 1) {
+  const item = addOrRemove[index];
+  item.addEventListener('click', function (e) {
+    const selected = document.querySelector('.selected');
+    if (item.className === 'color') {
+      e.target.classList.add('selected');
+      selected.classList.remove('selected');
+    }
+  });
+};
 
-  for (let index = 0; index < addOrRemove.length; index += 1) {
-    const item = addOrRemove[index];
+/*
+function changeColorPixel() {
+  let colorSelect = document.querySelector('.selected').style.backgroundColor;
+  const selectPixel = document.querySelector('.pixel')
 
-    item.addEventListener('click', function (e) {
-      const selected = document.querySelector('.selected');
-      if (item.className === 'color') {
-        e.target.classList.add('selected');
-        selected.classList.remove('selected');
-      }
-    });
-  }
+  selectPixel.addEventListener('click', function(e) {
+    if (selectPixel.style.backgroundColor !== colorSelect) {
+      e.target.style.backgroundColor = colorSelect;
+    }
+  })
 }
-addOrRemoveClass();
+changeColorPixel(); */
