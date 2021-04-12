@@ -41,3 +41,11 @@ button {
   padding: 5px;
   margin-left: 5px;
 }
+
+.select-size-board {
+  display: inline-block;
+}
+
+#board-size {
+  width: 50px;
+}

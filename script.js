@@ -9,33 +9,11 @@ function setColorPalette() {
 
 setColorPalette();
 
-function generatePixels() {
-  const board = document.querySelector('#pixel-board');
-  const table = document.createElement('table');
-  board.appendChild(table);
-
-  for (let index = 0; index < 5; index += 1) {
-    const tr = document.createElement('tr');
-    for (let secondIndex = 0; secondIndex < 5; secondIndex += 1) {
-      const td = document.createElement('td');
-      const div = document.createElement('div');
-      div.classList.add('pixel');
-      td.appendChild(div);
-      tr.appendChild(td);
-    }
-    table.appendChild(tr);
-  }
-}
-
-generatePixels();
-
 function getColorPalette(event) {
   const selected = document.querySelector('.selected');
   selected.classList.remove('selected');
   const selectedColor = event.target.classList[1];
-  return document
-    .getElementsByClassName(selectedColor)[0]
-    .classList.add('selected');
+  document.getElementsByClassName(selectedColor)[0].classList.add('selected');
 }
 
 function selectColor() {
@@ -57,16 +35,51 @@ function getPixel(event, pixel) {
 
 function paintPixel() {
   const pixel = document.querySelectorAll('.pixel');
+  console.log(pixel.length);
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].addEventListener('click', getPixel);
   }
 }
 
-paintPixel();
+function generateTable(bSize, table) {
+  for (let index = 1; index <= bSize; index += 1) {
+    const tr = document.createElement('tr');
+    for (let secondIndex = 0; secondIndex < bSize; secondIndex += 1) {
+      const td = document.createElement('td');
+      const div = document.createElement('div');
+      div.classList.add('pixel');
+      td.appendChild(div);
+      tr.appendChild(td);
+    }
+    table.appendChild(tr);
+  }
+}
+
+function generatePixels() {
+  const board = document.querySelector('#pixel-board');
+
+  const table = document.createElement('table');
+  board.appendChild(table);
+  const boardSize = document.getElementById('board-size').value;
+  if (boardSize.length <= 0) {
+    alert('Board inválido!');
+  } else {
+    const bSize = parseInt(boardSize, 10);
+    generateTable(bSize, table);
+    paintPixel();
+  }
+}
+
+function generateBoard() {
+  const getBoard = document.getElementById('generate-board');
+  getBoard.addEventListener('click', generatePixels);
+}
+
+generateBoard();
 
 function clearPixel() {
   const pixel = document.querySelectorAll('.pixel');
-  for (let index = 0; index < 25; index += 1) {
+  for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = 'white';
   }
 }
