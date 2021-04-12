@@ -93,3 +93,15 @@ buttonVQV.addEventListener('click', () => {
   containerBoard.innerHTML = '';
   createBoard(inputNumber);
 });
+
+function colorGenerator() {
+  const colorRed = (Math.ceil(Math.random() * 255));
+  const colorGreen = (Math.ceil(Math.random() * 255));
+  const colorBlue = (Math.ceil(Math.random() * 255));
+
+  return `rgb(${colorRed}, ${colorGreen}, ${colorBlue})`;
+}
+
+color2.style.backgroundColor = colorGenerator();
+color3.style.backgroundColor = colorGenerator();
+color4.style.backgroundColor = colorGenerator();
