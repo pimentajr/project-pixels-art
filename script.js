@@ -129,14 +129,14 @@ function resizePxls() {
 }
 resizePxls();
 
-function gerateRandomColor() {
-  const o = Math.round, r = Math.random, s = 255;
-  return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
-}
+// function gerateRandomColor() {
+//   const o = Math.round, r = Math.random, s = 255;
+//   return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+// }
 
-window.onload = function() {
-  const colors = colorPalette.childNodes;
-  for (let i = 1; i < colors.length; i += 1) {
-    colors[i].style.backgroundColor = gerateRandomColor();
-  }
-}
+// window.onload = function() {
+//   const colors = colorPalette.childNodes;
+//   for (let i = 1; i < colors.length; i += 1) {
+//     colors[i].style.backgroundColor = gerateRandomColor();
+//   }
+// }
