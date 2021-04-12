@@ -26,7 +26,6 @@ storeButtom.appendChild(buttonVqv);
 input.type = 'number';
 input.min = 1;
 input.max = 50;
-input.value = 5;
 
 const divColor1 = document.createElement('div');
 divColor1.classList.add('selected');
@@ -53,8 +52,7 @@ const contaneinerCores = document.createElement('div');
 contaneinerCores.id = 'pixel-board';
 textBody.appendChild(contaneinerCores);
 
-input.value = 5
-SelecionaNum()
+SelecionaNum();
 secaoSelecionaCor.addEventListener('click', (event) => {
   if (document.querySelector('.selected') !== null) {
     document.querySelector('.selected').classList.remove('selected');
@@ -75,22 +73,18 @@ button.addEventListener('click', (event) => {
   CleanPaletas();
 });
 
-function SelecionaNum() {
-  if (input.value === ''){
-    return;
+function SelecionaNum(boardSize = 5) {
+  if (boardSize <= 5) {
+    boardSize = 5;
+  }
+  if (boardSize > 50) {
+    boardSize = 50;
   }
 
-  if (input.value <= 5) {
-    input.value = 5;
-  }
-  if (input.value > 50) {
-    input.value = 50;
-  }
-
-  for (let indice = 0; indice < input.value; indice += 1) {
+  for (let indice = 0; indice < boardSize; indice += 1) {
     const createLinha = document.createElement('tr');
 
-    for (let index = 0; index < input.value; index += 1) {
+    for (let index = 0; index < boardSize; index += 1) {
       const celulas = document.createElement('td');
       celulas.classList = 'pixel';
       celulas.addEventListener('click', (events) => {
@@ -110,7 +104,7 @@ buttonVqv.addEventListener('click', () => {
     alert('Board inválido!');
   } else {
     limpaTd();
-    SelecionaNum();
+    SelecionaNum(input.value);
     CleanPaletas();
   }
 });
