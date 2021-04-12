@@ -8,7 +8,6 @@ function linha() {
     addPixel.appendChild(pixel);
   }
 }
-
 function mudaCor(ev) {
   const paintColor = document.querySelector('.selected');
   const color = window.getComputedStyle(paintColor).backgroundColor;
