@@ -8,7 +8,7 @@ function colorRandom() {
   for (let index = 0; index < 4; index += 1) {
     color += letters[Math.floor(Math.random() * 16)];
   }
-  if (color === '#0000') {
+  if (color === '#0000' || color === '#ffff') {
     colorRandom();
   }
   return color;

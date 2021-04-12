@@ -2,11 +2,11 @@
 
   --first-color: black;
 
-  --second-color: undefined;
+  --second-color: red;
 
-  --third-color: undefined;
+  --third-color: blue;
 
-  --fourth-color: undefined;
+  --fourth-color: green;
 }
 
 * {
