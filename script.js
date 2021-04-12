@@ -59,11 +59,10 @@ function classSelected(element) {
 
 // draw pixels in the pixelboard
 
-const pixelSelected = document.querySelector('.selected');
-
 function drawPixels(px) {
-  const aux = px; // I had to use an aux variable to fix an ESlint problem about parameter assingment
+  const aux = px; // I had to use an aux variable to fix an ESlint problem about parameter assignment
   // takes the style.background of element in selected class
+  const pixelSelected = document.querySelector('.selected');
   aux.style.background = pixelSelected.style.background;
 }
 
