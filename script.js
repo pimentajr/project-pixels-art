@@ -26,7 +26,6 @@ function randomColors() {
     const random = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
     colors[i].style.background = random;
   }
-
   colors[0].style.background = 'black';
 }
 
@@ -48,22 +47,24 @@ for (let j = 0; j < tableSize; j += 1) {
 const pixels = document.querySelectorAll('.pixel');
 
 // initial black color selected
-colors[0].className = 'selected';
+colors[0].classList.add('selected');
 
 // Selected Color class (in navigation) function
 function classSelected(element) {
-  colors[0].className = 'color';
+  colors[0].classList.remove('selected');
   // forEach element in colors (line 21) remove class if selected or add class selected
   colors.forEach((x) => x.classList.remove('selected'));
   element.classList.add('selected');
 }
 
 // draw pixels in the pixelboard
+
+const pixelSelected = document.querySelector('.selected');
+
 function drawPixels(px) {
   const aux = px; // I had to use an aux variable to fix an ESlint problem about parameter assingment
-  const pixelSelected = document.querySelector('.selected');
   // takes the style.background of element in selected class
-  aux.style.backgroundColor = pixelSelected.style.backgroundColor;
+  aux.style.background = pixelSelected.style.background;
 }
 
 const clearButton = document.querySelector('#clear-board');
