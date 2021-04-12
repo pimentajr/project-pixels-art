@@ -1,3 +1,5 @@
+const pixelBoard = document.getElementById('pixel-board');
+
 function selectInitialColor() {
   document.getElementById('color-1').className = 'color selected';
 }
@@ -45,11 +47,10 @@ function getBoardSize() {
 }
 
 function generateLines(size) {
-  const baseBoard = document.getElementById('pixel-board');
   for (let index = 0; index < size; index += 1) {
     const line = document.createElement('div');
     line.className = 'pixel-line';
-    baseBoard.appendChild(line);
+    pixelBoard.appendChild(line);
   }
 }
 
@@ -71,7 +72,7 @@ function generateBoard() {
     window.alert('Board inválido!');
     return;
   }
-  document.getElementById('pixel-board').innerHTML = '';
+  pixelBoard.innerHTML = '';
   generateLines(size);
   generateCells(size);
 }
@@ -100,7 +101,7 @@ function pageStarter() {
   document
     .getElementById('color-palette')
     .addEventListener('click', setSelectedColor);
-  document.getElementById('pixel-board').addEventListener('click', pencil);
+  pixelBoard.addEventListener('click', pencil);
   document.getElementById('clear-board').addEventListener('click', clearBoard);
   document
     .getElementById('generate-board')
