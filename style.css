@@ -3,21 +3,22 @@
 }
 
 #color-palette {
+  display: inline-block;
   padding: 0;
   margin-left: 10px;
   margin-bottom: 5px;
 }
 
 #color {
-  border: 1px solid black;
   display: inline-block;
+  border: 1px solid black;
   width: 40px;
   height: 40px;
 }
 
 .color {
-  border: 1px solid black;
   display: inline-block;
+  border: 1px solid black;
   width: 40px;
   height: 40px;
 }
@@ -25,11 +26,12 @@
 #pixel-board {
   display: flex;
   flex-wrap: wrap;
+  width: 250px;
   margin-left: 10px;
 }
 
 .pixel {
-  display: flex;
+  display: inline-block;
   background-color: white;
   border: 1px solid black;
   margin: 0;
@@ -39,9 +41,9 @@
 }
 
 .selected {
+  display: inline-block;
   background-color: black;
   border: 1px solid black;
-  display: inline-block;
   margin: 0;
   padding: 0;
   width: 40px;
