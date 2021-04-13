@@ -14,3 +14,16 @@ function selectedColor() {
   })
 }
 selectedColor();
+
+function selectedPixel() {
+  const pixelSelected = document.getElementById('pixel-board')
+  pixelSelected.addEventListener('click', (event) => {
+    const myEvent = document.querySelector('.selected');
+      if(event.target.className === 'pixel') {
+        const color = window.getComputedStyle(myEvent).getPropertyValue('background-color');
+        const  clickedPixel = event.target;
+        clickedPixel.style.backgroundColor = color;
+      }
+    })
+}
+selectedPixel();
