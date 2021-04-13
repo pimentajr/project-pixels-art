@@ -3,23 +3,23 @@
 const black = document.getElementsByClassName('color')[0];
 black.style.backgroundColor = 'black';
 
-const green = document.getElementsByClassName('color')[0];
+const green = document.getElementsByClassName('color')[1];
 black.style.backgroundColor = 'green';
 
-const blue = document.getElementsByClassName('color')[0];
+const blue = document.getElementsByClassName('color')[2];
 black.style.backgroundColor = 'blue';
 
-const yellow = document.getElementsByClassName('color')[0];
+const yellow = document.getElementsByClassName('color')[3];
 black.style.backgroundColor = 'yellow';
 
 // CRIA TABELA DE PIXELS
 
 const pixelBoard = document.querySelector('#pixel-board');
 
-for (let indexRow = 0; indexRow < 5; indexRow += 1){
+for (let indexRow = 0; indexRow < 5; indexRow += 1) {
     let pixelLine = document.createElement('div');
-    pixelLine.className = 'pixelRow';
-    pixelBoard.appendChild(pixelRow);
+    pixelLine.className = 'pixelLine';
+    pixelBoard.appendChild(pixelLine);
     for (indexColl = 0; indexColl < 5; indexColl += 1) {
         let pixelCell = document.createElement('div');
         pixelLine.appendChild(pixelCell);
@@ -46,7 +46,8 @@ selectColor();
 pixelBoard.addEventListener('click', (event) => {
     const selectedColor = document.querySelector('.selected').id;
     if (event.target.className === 'pixel') {
-        event.target.style.backgroundColor = selectedColor;
+        const pixelSelected = event.target;
+        pixelSelected.style.backgroundColor = selectedColor;
     }
 });
 
