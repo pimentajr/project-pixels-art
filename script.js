@@ -1,3 +1,5 @@
+const { RuleTester } = require("eslint");
+
 window.onload = function pageLoad() {
   document.getElementById('black').classList.add('selected');
 };
@@ -74,5 +76,5 @@ function checkImput() {
 vqv.addEventListener('click', checkImput);
 
 function aleatoryColor() {
-
+createElm
 }
