@@ -1,11 +1,31 @@
 // Variables
-// const colorPalette = document.getElementById('color-palette');
+const colorPalette = document.getElementById('color-palette');
 const colors = document.getElementsByClassName('color');
 const pixelBoard = document.getElementById('pixel-board');
-// const pixelGet = document.getElementsByClassName('pixel');
-// Assignments
+// const pixelGet = document.querySelectorAll('.selected');
+
+window.onload = colors[0].classList.add('selected');
 
 // Functions
+
+// function getColor( {target} ) {
+//   console.log(target.classList)
+// }
+
+function removeClass() {
+  for (let index = 0; index < colors.length; index += 1) {
+    colors[index].classList.remove('selected');
+  }
+}
+
+function setClassColor({ target }) {
+  removeClass();
+  if (!target.classList.contains('selected')) {
+    target.classList.add('selected');
+  }
+}
+
+colorPalette.addEventListener('click', setClassColor);
 
 for (let index = 0; index < colors.length; index += 1) {
   colors[index].style.backgroundColor = colors[index].id;

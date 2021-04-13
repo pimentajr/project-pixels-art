@@ -6,27 +6,24 @@
   font-family: cursive;
 }
 
-#color-palette , #section , #pixel-board, .pixel-row {
+#color-palette , #section , #pixel-board , .pixel-row {
   text-align: center;
   margin: auto;
   width: auto;
   height: auto;
 }
 
-.color , #color-matriz , #table , .pixel{
+.color , #table , .pixel {
   table-layout: fixed;
   border-style: solid;
   border-width: 1px;
 }
 
 .color {
+  cursor: pointer;
   display: inline.block;
   width: 40px;
   height: 40px;
-}
-
-#color-matriz {
-  width: 20%;
 }
 
 #table {
@@ -40,4 +37,8 @@
 
 .white {
   background-color: white;
+}
+
+.selected {
+  background-color: black;
 }
