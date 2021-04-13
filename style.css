@@ -3,40 +3,40 @@ body {
 }
 
 #title {
-  color:blueviolet;
-  font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  color: blueviolet;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
   text-align: center; 
-  text-shadow: rgb(0 ,0 ,0) -2px -2px;
+  text-shadow: rgb(0, 0, 0) -2px -2px;
   font-size: 40px;
 }
 
 #color-palette {
-  width:100%;
+  width: 100%;
   height: auto;
-  display:inline-flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 }
 
 .color{
-  border: 1px solid rgb(0 ,0 ,0);
+  border: 1px solid rgb(0, 0, 0);
   width: 100px;
   height: 50px;
 }
 #pixel-board {
   width: auto;
   height: auto;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center; 
 }
 .pixel {
   width: 40px;
   height: 40px;
-  border: 1px solid rgb(0 ,0 ,0);
-  background-color: rgb(255 , 255 ,255);
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
 }
  #clear-board {
-  display:inline-block
+  display: inline-block
 }
 

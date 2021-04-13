@@ -7,8 +7,8 @@ function palette(event) {
   currentColor.classList.remove('selected');
   event.target.classList.add('selected');
 }
-function clearBoard(event){
-  const listPixels=document.getElementsByClassName('pixel');
+function clearBoard(event) {
+  const listPixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < listPixels.length; index += 1){
     listPixels[index].style.backgroundColor = 'white';
   }
