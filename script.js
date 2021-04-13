@@ -21,7 +21,6 @@ function altCor(e) {
 
 function inicio() {
   let corAtual = document.querySelector(".color.select");
-  
   document.getElementsByClassName("color").addEventListener("click", altCor);
   document.getElementsByClassName("pixel").addEventListener("click", trocaCor);
 }
