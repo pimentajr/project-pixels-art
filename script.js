@@ -1,6 +1,6 @@
 function trocaCor(e) {
-  const apontador = e.target;
-  const corEscolhida = document.querySelector('.color.selected').style.backgroundColor;
+  let apontador = e.target;
+  let corEscolhida = document.querySelector('.color.selected').style.backgroundColor;
   if (apontador.style.backgroundColor !== corEscolhida) {
     apotador.style.backgroundColor = corEscolhida;
   } else {
@@ -12,8 +12,8 @@ function trocaCor(e) {
 }
 
 function altCor(e) {
-  const corEscolhida = e.target;
-  const corAtual = document.querySelector('.color.selected');
+  let corEscolhida = e.target;
+  corAtual = document.querySelector('.color.selected');
   if (corEscolhida !== corAtual) {
     corEscolhida.classList.remove('selected');
     corAtual.classList.add('selected');
@@ -21,7 +21,7 @@ function altCor(e) {
 }
 
 function inicio() {
-  const corAtual = document.querySelector(".select.color");
+  let corAtual = document.querySelector(".select.color");
   
   addEventListener("click", altCor);
   addEventListener("click", trocaCor);
