@@ -67,4 +67,6 @@ window.onload = () => {
 createLinesAndRows()
 randomColor()
 chooseColor()
+newCollor()
+
 }
