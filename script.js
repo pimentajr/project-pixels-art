@@ -13,16 +13,16 @@ for (let i=1; i<=5; i+=1 ){
     pixelBoard.appendChild(line);
 }
 
-let colorPaleteDiv = document.querySelector('#color-palette');
+let palette = document.getElementById('color-palette')
 
-function selectColor() {
-  colorPaleteDiv.addEventListener('click', function(event){
-    let colorDiv = document.querySelector('.selected');
-    if (event.target.id !== 'color-palette'){
-      colorDiv.classList.remove('selected');
-      event.target.classList.add('selected');
+function changeColor(event){
+    let oldColor = document.getElementsByClassName('selected')
+    if(event.target.id !== 'color-palette'){
+        oldColor.classList.remove('selected')
+        event.target.classList.add('selected');
     }
-  }); 
 }
 
-selectColor();
+palette.addEventListener('click', changeColor)
+
+
