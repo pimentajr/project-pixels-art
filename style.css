@@ -17,7 +17,6 @@
 .pixel {
   display: table-cell;
   border: 1px solid black;
-  /* background-color: white; */
 }
 
 .color {
