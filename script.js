@@ -1,5 +1,6 @@
 const colorsArray = ['black', 'red', 'blue', 'yellow'];
 const button = document.getElementById('clear-board');
+const sizeButton = document.getElementById('size-button');
 
 function createColors(colors) {
   const sectionBoxColors = document.querySelector('#color-palette');
@@ -67,9 +68,14 @@ function resetColor() {
   const removeColor = document.querySelectorAll('.pixel');
   for (let index = 0; index < removeColor.length; index += 1) {
     const colorPixel = removeColor[index];
-    /* colorPixel.style.backgroundColor = null; */
     colorPixel.style.backgroundColor = 'white';
   }
 }
 
 button.addEventListener('click', resetColor);
+
+
+const size = document.getElementById('size');
+function changeSizePixel() {
+
+}

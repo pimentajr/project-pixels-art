@@ -33,8 +33,25 @@
 }
 
 #clear-board {
-  margin: 20px;
+  margin: 10px;
   width: 150px;
+  height: 30px;
+  font-size: 20px;
+  border-radius: 2px;
+  border: 1px solid black;
+}
+
+#generate-board {
+  margin: 10px;
+  width: 150px;
+  height: 30px;
+  font-size: 20px;
+  border-radius: 2px;
+  border: 1px solid black;
+}
+
+#board-size {
+  width: 70px;
   height: 30px;
   font-size: 20px;
   border-radius: 2px;
