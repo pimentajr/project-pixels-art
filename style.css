@@ -55,3 +55,7 @@ main {
   width: 200px;
   margin: 0 auto;
 }
+
+#clear-board {
+  margin: 10px auto;
+}
