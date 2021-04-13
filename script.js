@@ -9,10 +9,9 @@ function palette(event) {
 }
 function clearBoard(event){
   const listPixels=document.getElementsByClassName('pixel');
-  console.log(listPixels);
-   for (let index=0; index <= listPixels.length; index += 1){
-     listPixels[index].style.backgroundColor='white';
-   }
+  for (let index = 0; index < listPixels.length; index += 1){
+    listPixels[index].style.backgroundColor = 'white';
+  }
 }
 function inicio() {
   const colorPalette = document.getElementById('color-palette');
