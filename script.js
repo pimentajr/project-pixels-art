@@ -1,10 +1,10 @@
 window.onload = function () {
-  randomColors();
+  randomColors;
   createColons(5);
   createLines(5);
+  pixelBackground('white');
 };
 
-//
 const randomC1 = document.getElementById('randomColor1');
 const randomC2 = document.getElementById('randomColor2');
 const randomC3 = document.getElementById('randomColor3');
@@ -29,9 +29,8 @@ function randomColors() {
   }
 }
 buttonColors.addEventListener('click', randomColors);
-//
-const pBlock = document.querySelector('#pixel-board');
 
+const pBlock = document.querySelector('#pixel-board');
 function createColons(colonsNumber) {
   for (let index = 0; index < colonsNumber; index += 1) {
   const colon = document.createElement('div');
@@ -39,6 +38,7 @@ function createColons(colonsNumber) {
   pBlock.appendChild(colon);
   }
 }
+
 const pColons = document.getElementsByClassName('colon');
 function createLines(linesNumber) {
   for (let index = 0; index < pColons.length; index += 1) {
@@ -48,8 +48,13 @@ function createLines(linesNumber) {
       pixel.className = 'pixel';
       element.appendChild(pixel);
     }
-    let pixel = document.createElement('div');
-
   }
 }
 
+const pixeis = document.getElementsByClassName('pixel');
+function pixelBackground(color) {
+  for (let index = 0; index < pixeis.length; index += 1) {
+    const pixelIndex = pixeis[index];
+    pixelIndex.style.backgroundColor = color;
+  }
+}
