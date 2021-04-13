@@ -76,3 +76,22 @@ function inputBoard(boardValue) {
   }
 }
 generateBoard.addEventListener('click', inputBoard);
+
+function randomizingColors() {
+  return Math.floor(Math.random() * 255);
+}
+
+function getRandomColors() {
+  /* const firstRandomColors = Math.floor(Math.random() * 255);
+  const secondRandomColors = Math.floor(Math.random() * 255);
+  const thirdRandomColors = Math.floor(Math.random() * 255); */
+  const colors = document.querySelectorAll('.color');
+  colors[0].style.backgroundColor = 'black';
+
+  for (let indexRandomColors = 1; indexRandomColors < colors.length; indexRandomColors += 1) {
+    const color = colors[indexRandomColors];
+    const rgb = `rgb(${randomizingColors()}, ${randomizingColors()}, ${randomizingColors()})`;
+    color.style.backgroundColor = rgb;
+  }
+}
+window.onload = getRandomColors;
