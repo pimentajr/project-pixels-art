@@ -4,7 +4,7 @@
 }
 
 #red {
-	background-color:red;
+	background-color: red;
 }
 
 #blue {
@@ -24,7 +24,23 @@
 	border: solid;
 	border-color: black;
 	border-width: 1px;
-	
+
+}
+
+#pixel-board{
+	display: inline-block;
+
+}
+
+.pixel{
+	height: 70px;
+	width: 70px;
+	display: inline-block;
+	border: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: white;
+
 }
 
 
