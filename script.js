@@ -91,18 +91,30 @@ let setBoardSizeButton = document.querySelector('#generate-board');
 
 let inputBoardSize = document.querySelector('#board-size');
 
-//let newSize = 0;
-
-inputBoardSize.addEventListener('change', function (event) {
-  pixelSquareSize = event.target.value;
-})
-
 setBoardSizeButton.addEventListener('click', function () {
-  let squareLength = pixelSquare.children.length;
-  for (let index = 0; index < squareLength; index += 1) {
-    pixelSquare.removeChild(pixelSquare.firstChild);
+  let newSize = parseInt(inputBoardSize.value);
+  if (!newSize) {
+    alert('Board inválido!');
+  } else {
 
-  }
+    let squareLength = pixelSquare.children.length;
+    for (let index = 0; index < squareLength; index += 1) {
+      pixelSquare.removeChild(pixelSquare.firstChild);
   
-  createBoard(pixelSquareSize);
+    }
+    
+    createBoard(newSize);
+  
+    pixelCollection = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixelCollection.length; index +=1) {
+      pixelCollection[index].style.backgroundColor = 'white';
+    }
+
+    for (let index = 0; index < pixelCollection.length; index +=1) {
+      pixelCollection[index].addEventListener('click', matchColor)
+    }
+
+    clearButton.addEventListener('click', colorWhite);
+  }
+
 })
