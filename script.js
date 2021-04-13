@@ -67,8 +67,12 @@ function checkImput() {
     window.alert('Board inválido!');
   } else {
     pixelBoard.innerHTML = '';
+    createPixel();
   }
-  createPixel();
 }
 
 vqv.addEventListener('click', checkImput);
+
+function aleatoryColor() {
+
+}
