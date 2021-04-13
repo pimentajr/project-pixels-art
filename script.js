@@ -1,12 +1,14 @@
-const black = document.querySelector('#color1');
-black.classList.add('selected');
+function selectedBlack() {
+    const black = document.querySelector('#color1');
+    black.classList.add('selected');
+};
 
-const palcolors = document.getElementByTagName('color-palette');
+selectedBlack();
 
 function addPalClass(event) {
     const Classes = document.querySelectorAll('.selected');
     const choosenClasses = event.target;
-    for (let index = 0; index < Classes.length; index += 1){
+    for (let index = 0; index < Classes.length; index += 1) {
         Classes[index].classList.remove('selected');
     }
     choosenClasses.classList.add('selected');
@@ -20,7 +22,7 @@ function pixelFill() {
     selectedColor.addEventListener('click', (event) => {
         const allPixels = event.target;
         const currentColor = document.getElementsByClassName('selected');
-        if (allPixels.className === 'pixel'){
+        if (allPixels.className === 'pixel') {
             allPixels.style.backgroundColor = currentColor.style.backgroundColor;
         }
     });
@@ -32,7 +34,7 @@ const cleartableButton = document.querySelector('#clear-board');
 
 cleartableButton.addEventListener('click', () => {
     const pixel = document.querySelectorAll('.pixel');
-    for (index = 0; index < pixel.length; index += 1){
+    for (let index = 0; index < pixel.length; index += 1) {
         const pixels = pixel[index];
         pixels.backgroundColor = 'white';
     }
