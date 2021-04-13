@@ -1,6 +1,5 @@
 const colorsArray = ['black', 'red', 'blue', 'yellow'];
 const button = document.getElementById('clear-board');
-const sizeButton = document.getElementById('size-button');
 
 function createColors(colors) {
   const sectionBoxColors = document.querySelector('#color-palette');
@@ -71,11 +70,31 @@ function resetColor() {
     colorPixel.style.backgroundColor = 'white';
   }
 }
-
 button.addEventListener('click', resetColor);
 
+const sizeButton = document.getElementById('generate-board');
+const input = document.getElementById('board-size');
 
-const size = document.getElementById('size');
 function changeSizePixel() {
+  const size = document.querySelectorAll('.pixel');
+  for (let index = 0; index < size.length; index += 1) {
+    const inputSize = input.value;
+    const pixel = size[index];
 
+    if (inputSize > 0 && inputSize <= 5) {
+      pixel.style.width = '5' + 'px';
+      pixel.style.height = '5' + 'px';
+    } else if (inputSize >= 50) {
+      pixel.style.width = '50' + 'px';
+      pixel.style.height = '50' + 'px';
+    } else if (inputSize < 0) {
+      alert('Board inválido!');
+      input= "";
+    } else {
+      pixel.style.width = inputSize + 'px';
+      pixel.style.height = inputSize + 'px';
+    }
+  }
 }
+
+sizeButton.addEventListener('click', changeSizePixel);
