@@ -21,8 +21,8 @@ function altCor(e) {
 
 function inicio() {
   let corAtual = document.querySelector('.color.select');
-  document.getElementByClassName('color').addEventListener('click', altCor);
-  document.getElementByClassName('pixel').addEventListener('click', trocaCor);
+//  document.getElementByClassName('color').addEventListener('click', altCor);
+//  document.getElementByClassName('pixel').addEventListener('click', trocaCor);
 }
 
 window.onload = inicio;
