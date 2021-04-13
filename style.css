@@ -1,9 +1,17 @@
+body {
+  text-align: center;
+  background-color: rosybrown;
+}
 .color {
   border: black solid 1px;
   width: 40px;
   height: 40px;
   display: inline-block;
   margin: 3px;
+}
+
+.selected {
+  border: yellow solid 1px;
 }
 
 #black {
