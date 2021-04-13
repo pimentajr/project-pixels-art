@@ -3,14 +3,13 @@ const colorPalette = document.getElementById('color-palette');
 const colors = document.getElementsByClassName('color');
 const colorSelected = document.getElementsByClassName('color selected');
 const pixelBoard = document.getElementById('pixel-board');
-const clearButtom = document.getElementById('clear');
+const clearButtom = document.getElementById('clear-board');
 const pixelGet = document.getElementsByClassName('pixel selected');
-window.onload = colors[0].classList.add('selected');
 
 // Functions
 function clearPage() {
   for (let index = 0; index < pixelGet.length; index += 1) {
-    pixelGet[index].removeAttribute('style');
+    pixelGet[index].style.backgroundColor = 'white';
   }
 }
 
@@ -20,7 +19,7 @@ function removeClass() {
   }
 }
 
-function setClassColor({ target }) {
+function setClassColorPallet({ target }) {
   removeClass();
   if (!target.classList.contains('selected')) {
     target.classList.add('selected');
@@ -29,8 +28,12 @@ function setClassColor({ target }) {
 
 function setColor(e) {
   e.target.classList.add('selected');
-  if (e.target.style.backgroundColor !== undefined) {
-    e.target.style.backgroundColor = colorSelected[0].style.backgroundColor;
+  for (let index = 0; index < colors.length; index += 1) {
+    if (colorSelected.length === 0) {
+      colors[0].classList.add('selected');
+    } else {
+      e.target.style.backgroundColor = colorSelected[0].style.backgroundColor;
+    }
   }
 }
 
@@ -52,5 +55,5 @@ for (let index = 0; index < colors.length; index += 1) {
 }());
 
 pixelBoard.addEventListener('click', setColor);
-colorPalette.addEventListener('click', setClassColor);
+colorPalette.addEventListener('click', setClassColorPallet);
 clearButtom.addEventListener('click', clearPage);
