@@ -17,7 +17,9 @@ function resetSelected() {
 
 function generateColors() {
   const colors = ['black'];
-  const palette = ['blue', 'orange', 'green', 'yellow', 'pink', 'brown', 'grey', 'red', 'cyan'];
+  const palette = ['blue', 'orange', 'green', 'yellow',
+   'pink', 'brown', 'grey', 'red', 'cyan', 'GoldenRod',
+   'Indigo', 'magenta', 'orange', 'violet', 'Yellowgreen', 'lightpink'];
   do {
     const colorIndex = getRandomIntInclusive(0, palette.length - 1);
     const color = palette[colorIndex];
