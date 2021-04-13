@@ -1,27 +1,30 @@
 let selectedColor = 'black';
 
-function setSelectedColor(color){
+function setSelectedColor(color) {
   selectedColor = color;
   console.log(selectedColor);
 }
 // quesito 1
-let elementH1 = document.getElementById('title');
+const elementH1 = document.getElementById('title');
 elementH1.innerText = 'Paleta de Cores';
 
 function resetSelected() {
-  let palletes = document.getElementsByClassName('color');
+  const palletes = document.getElementsByClassName('color');
   for (let index = 0; index < palletes.length; index += 1) {
     palletes[index].className = 'color';
   }
 }
 
-function generateColors () {
+function generateColors() {
   const colors = ['black'];
-  const palette = ['yellow','green', 'blue', 'magenta', 'grey', 'pink', 'purple', 'brown', 'cyan'];
+  const palette = ['blue', 'orange', 'green', 'yellow', 'pink', 'brown', 'grey', 'red', 'cyan'];
   do {
     const colorIndex = getRandomIntInclusive(0, palette.length - 1);
-    colors.push(palette[colorIndex]);
-  } while (colors.length < 4)
+    const color = palette[colorIndex];
+    if (colors.includes(color) === false) {
+      colors.push(color);
+    }
+  } while (colors.length < 4);
   return colors;
 }
 
@@ -32,11 +35,11 @@ function getRandomIntInclusive(min, max) {
 }
 // quesito 2
 function createSquare(colorIndex) {
-  let colors = generateColors();
-  let palette = document.createElement('div');
+  const colors = generateColors();
+  const palette = document.createElement('div');
   palette.style.backgroundColor = colors[colorIndex];
   palette.className = 'color';
-  palette.addEventListener('click', function () {
+  palette.addEventListener('click', () => {
     setSelectedColor(colors[colorIndex]);
     resetSelected();
     palette.className = 'color selected';
@@ -48,7 +51,7 @@ function createSquare(colorIndex) {
 }
 
 function createPalettes(size) {
-  let allPalettes = document.getElementById('color-palette');
+  const allPalettes = document.getElementById('color-palette');
   for (let index = 0; index < size; index += 1) {
     allPalettes.appendChild(createSquare(index));
   }
@@ -56,16 +59,16 @@ function createPalettes(size) {
 
 // quesito 3
 function createSquareboard() {
-  let squareBoard = document.createElement('div');
+  const squareBoard = document.createElement('div');
   squareBoard.className = 'pixel';
-  squareBoard.addEventListener('click', function () {
+  squareBoard.addEventListener('click', () => {
     squareBoard.style.backgroundColor = selectedColor;
   });
   return squareBoard;
 }
 
 function createRowBoard(size) {
-  let row = document.createElement('div');
+  const row = document.createElement('div');
   for (let index = 0; index < size; index += 1) {
     row.appendChild(createSquareboard());
   }
@@ -73,34 +76,33 @@ function createRowBoard(size) {
 }
 // quesito 4
 function createBoard(boardSize) {
-  let mainBoard = document.getElementById('pixel-board');
+  const mainBoard = document.getElementById('pixel-board');
   for (let index = 0; index < boardSize; index += 1) {
     mainBoard.appendChild(createRowBoard(boardSize));
   }
 }
-function resetSquareBoardColors () {
-  let squareBoards = document.getElementsByClassName('pixel');
+function resetSquareBoardColors() {
+  const squareBoards = document.getElementsByClassName('pixel');
   for (let i = 0; i < squareBoards.length; i += 1) {
     squareBoards[i].style.backgroundColor = 'white';
   }
 }
 
-function buildButtonEvents () {
-  let buttonClearBoard = document.getElementById('clear-board');
+function buildButtonEvents() {
+  const buttonClearBoard = document.getElementById('clear-board');
   buttonClearBoard.addEventListener('click', resetSquareBoardColors);
-  
-  let buttonCreateBoard = document.getElementById('generate-board');
+  const buttonCreateBoard = document.getElementById('generate-board');
   buttonCreateBoard.addEventListener('click', createNewBoard);
 }
 
-function createNewBoard () {
-  let inputBoardSize = document.getElementById('board-size');
+function createNewBoard() {
+  const inputBoardSize = document.getElementById('board-size');
   let boardSize = inputBoardSize.value;
   if (validateBoardValue(boardSize)) {
     removeBoard();
     boardSize = generateLimit(boardSize);
     createBoard(boardSize);
-    return; 
+    return;
   }
   alert('Board inválido!');
 }
