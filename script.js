@@ -1,8 +1,9 @@
 // Variables
 const colorPalette = document.getElementById('color-palette');
 const colors = document.getElementsByClassName('color');
+const colorSelected = document.getElementsByClassName('color selected');
 const pixelBoard = document.getElementById('pixel-board');
-// const pixelGet = document.querySelectorAll('.selected');
+// const pixelGet = document.getElementsByClassName('pixel selected');
 
 window.onload = colors[0].classList.add('selected');
 
@@ -25,6 +26,14 @@ function setClassColor({ target }) {
   }
 }
 
+function setColor(e) {
+  e.target.classList.add('selected');
+  if (e.target.style.backgroundColor !== undefined) {
+    e.target.style.backgroundColor = colorSelected[0].style.backgroundColor;
+  }
+}
+
+pixelBoard.addEventListener('click', setColor);
 colorPalette.addEventListener('click', setClassColor);
 
 for (let index = 0; index < colors.length; index += 1) {

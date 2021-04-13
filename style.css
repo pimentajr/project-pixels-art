@@ -40,5 +40,6 @@
 }
 
 .selected {
-  background-color: black;
+  cursor: auto;
+  background-color: auto;
 }
