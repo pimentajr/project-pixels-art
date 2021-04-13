@@ -1,0 +1,40 @@
+#color-palette #color1 {
+  width:100px;
+  height: 100px;
+  background-color: black;
+  border: 1px solid;
+  border-color:black;
+}
+
+#color-palette #color2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border: 1px solid;
+  border-color: black;
+  position: relative;
+  left: 120px;
+  bottom: 102px;
+}
+
+#color-palette #color3 {
+  width: 100px;
+  height: 100px;
+  background-color: darkgreen;
+  border: 1px solid;
+  border-color: black;
+  position: relative;
+  left: 240px;
+  bottom: 204px;
+}
+
+#color-palette #color4 {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  border: 1px solid;
+  border-color: black;
+  position: relative;
+  left: 360px;
+  bottom: 306px;
+}
