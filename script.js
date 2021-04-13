@@ -16,7 +16,13 @@ function selectColor(event) {
   const elementSelected = document.querySelector('.selected');
   elementSelected.classList.remove('selected');
   event.target.classList.add('selected');
-  console.log(event.target);
+}
+
+function pixelPainter(event) {
+  const colorSelected = document.querySelector('.selected').classList[1];
+  const pixelToChange = event.target;
+  pixelToChange.classList.remove('white', 'black', 'blue', 'red', 'green');
+  pixelToChange.classList.add(colorSelected);
 }
 
 window.onload = () => {
@@ -30,5 +36,11 @@ window.onload = () => {
 
   for (let index = 0; index < colorQuery.length; index += 1) {
     colorQuery[index].addEventListener('click', selectColor);
+  }
+
+  const pixels = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', pixelPainter);
   }
 };
