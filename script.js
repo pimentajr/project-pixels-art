@@ -1,7 +1,20 @@
 const pixelBoard = document.querySelector('#pixel-board');
 const colorPalette = document.querySelector('#color-palette');
 
-function generateColor(boxColor) {
+function gridGenerate(grid) {
+  for (let index = 0; index < grid; index += 1) {
+    const column = document.createElement('div');
+    pixelBoard.appendChild(column);
+    for (let index2 = 0; index2 < grid; index2 += 1) {
+      const line = document.createElement('div');
+      column.appendChild(line);
+      line.className = 'pixel';
+    }
+  }
+}
+gridGenerate(5);
+
+function boxColorGenerate(boxColor) {
   const box = document.createElement('div');
   box.style.backgroundColor = boxColor;
   box.className = ('color');
@@ -9,26 +22,12 @@ function generateColor(boxColor) {
   colorPalette.appendChild(box);
 }
 
-generateColor('black');
-generateColor('red');
-generateColor('blue');
-generateColor('yellow');
+boxColorGenerate('black');
+boxColorGenerate('magenta');
+boxColorGenerate('green');
+boxColorGenerate('red');
 
-function populateGrid(size) {
-  for (let index = 0; index < size; index += 1) {
-    const pixelColumn = document.createElement('div');
-    pixelBoard.appendChild(pixelColumn);
-    for (let index2 = 0; index2 < size; index2 += 1) {
-      const pixelLine = document.createElement('div');
-      pixelColumn.appendChild(pixelLine);
-      pixelLine.className = 'pixel';
-    }
-  }
-}
-populateGrid(5);
-
-// Muda a classe selected
-function clickPalette() {
+function selectColor() {
   colorPalette.addEventListener('click', (selectedColor) => {
     const eventTarget = selectedColor.target;
     const color = document.getElementsByClassName('color');
@@ -40,9 +39,8 @@ function clickPalette() {
     }
   });
 }
-clickPalette();
+selectColor();
 
-// Colore o pixel
 function colorGrid() {
   pixelBoard.addEventListener('click', (paintPixel) => {
     const colorSelected = document.querySelector('.selected').style.backgroundColor;
@@ -55,7 +53,6 @@ function colorGrid() {
 
 colorGrid();
 
-// Adiciona um botão e limpa o grid
 function clearGrid() {
   const eventBtn = document.querySelector('#clear-board');
   eventBtn.addEventListener('click', () => {
@@ -68,7 +65,6 @@ function clearGrid() {
 
 clearGrid();
 
-// Addiciona input, botão e faz grid ter tamanho definido por user
 function generateBoard() {
   const input = document.querySelector('#board-size');
   const grtBtn = document.querySelector('#generate-board');
@@ -78,13 +74,12 @@ function generateBoard() {
     else if (input.value > 50) input.value = 50;
     pixelBoard.style.backgroundColor = 'white';
     pixelBoard.innerHTML = '';
-    populateGrid(input.value);
+    gridGenerate(input.value);
   });
 }
 
 generateBoard();
 
-// Cores randomicas
 function randomColor() {
   const paletteColor = document.querySelectorAll('.color');
   for (let index = 1; index < paletteColor.length; index += 1) {

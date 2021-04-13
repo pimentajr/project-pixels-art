@@ -23,23 +23,6 @@ body {
   height: 40px;
   border-radius: 15%;
   margin: 10px;
-  position: auto;
-}
-
-#black {
-  background-color: black;
-}
-
-#green {
-  background-color: green;
-}
-
-#blue {
-  background-color: blue;
-}
-
-#red {
-  background-color: red;
 }
 
 .pixel {
