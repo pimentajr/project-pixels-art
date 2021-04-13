@@ -1,10 +1,3 @@
-window.onload = function () {
-  randomColors;
-  createColons(5);
-  createLines(5);
-  pixelBackground('white');
-};
-
 const randomC1 = document.getElementById('randomColor1');
 const randomC2 = document.getElementById('randomColor2');
 const randomC3 = document.getElementById('randomColor3');
@@ -31,11 +24,15 @@ function randomColors() {
 buttonColors.addEventListener('click', randomColors);
 
 const pBlock = document.querySelector('#pixel-board');
+function creatBlock(numbers) {
+  createColons(numbers);
+  createLines(numbers);
+}
 function createColons(colonsNumber) {
   for (let index = 0; index < colonsNumber; index += 1) {
-  const colon = document.createElement('div');
-  colon.className = 'colon';
-  pBlock.appendChild(colon);
+    const colon = document.createElement('div');
+    colon.className = 'colon';
+    pBlock.appendChild(colon);
   }
 }
 
@@ -43,7 +40,7 @@ const pColons = document.getElementsByClassName('colon');
 function createLines(linesNumber) {
   for (let index = 0; index < pColons.length; index += 1) {
     const element = pColons[index];
-    for (let index = 0; index < linesNumber; index += 1) {
+    for (let index2 = 0; index2 < linesNumber; index2 += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       element.appendChild(pixel);
@@ -58,3 +55,10 @@ function pixelBackground(color) {
     pixelIndex.style.backgroundColor = color;
   }
 }
+
+
+window.onload = function () {
+  randomColors();
+  creatBlock(5);
+  pixelBackground('white');
+};

@@ -5,19 +5,18 @@ header {
   margin-left: -1em;
   margin-right: -1em;
   font-family: Mulish, Arial, Helvetica, sans-serif;
+  border-bottom: 15px solid #2ec18c;
+  border-top: 5px solid #2ec18c;
 }
 
-h1 {
-  border-top: 15px solid #2ec18c;
-}
 
 .color {
   border-style: solid;
   border-width: 1px;
   border-color: black;
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
 }
 
 #blackColor {
@@ -40,17 +39,18 @@ h1 {
   border-style: solid;
   border-width: 1px;
   border-color: black;
-  display: block;
+  display: inline-block;
   width: 40px;
   height: 40px;
 }
 
 .colon {
-  display: inline-block;
+  display: block;
+  margin-bottom: -4px;
 }
 
-main {
-  text-align: center;
+
+#pixel-board {
   margin-top: 20px;
+  text-align: center;
 }
-
