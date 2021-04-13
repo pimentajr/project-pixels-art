@@ -20,6 +20,14 @@ function colorSelector(targetColor) {
   return selectedColor;
 }
 
+function clearBoard() {
+  const boardItems = document.getElementsByClassName('pixel');
+  for (let index = 0; index < boardItems.length; index += 1) {
+    const element = boardItems[index];
+    element.style.backgroundColor = 'white';
+  }
+}
+
 function setColor(event) {
   const targetColor = event.target;
   setSelectColor(targetColor);
@@ -29,6 +37,7 @@ function setColor(event) {
 function starterPixelArt() {
   document.getElementById('color-palette');
   document.addEventListener('click', setColor);
+  document.getElementById('clear-board').addEventListener('click', clearBoard);
 }
 
 window.onload = starterPixelArt;
