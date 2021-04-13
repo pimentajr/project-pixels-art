@@ -2,16 +2,15 @@
 let pixelBoard = document.querySelector('#pixel-board');
 
 for (let i=1; i<=5; i+=1 ){
-    let columns = document.createElement('div');
-    columns.className = 'column';
+    let line = document.createElement('div');
 
     for(let j=1; j<=5; j+=1){
-        let lines = document.createElement('div');
-        lines.className = 'pixel';
-        columns.appendChild(lines);
+        let columns = document.createElement('div');
+        columns.className = 'pixel';
+        line.appendChild(columns);
     }
     
-    pixelBoard.appendChild(columns)
+    pixelBoard.appendChild(line);
 }
 
 
