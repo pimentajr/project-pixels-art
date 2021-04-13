@@ -17,24 +17,24 @@ yellow.style.backgroundColor = 'yellow';
 const pixelBoard = document.getElementById('pixel-board');
 
 for (let indexRow = 0; indexRow < 5; indexRow += 1) {
-  const pixelLine = document.createElement('div');
+  let pixelLine = document.createElement('div');
   pixelLine.className = 'pixelLine';
   pixelBoard.appendChild(pixelLine);
-  
   for (let indexColl = 0; indexColl < 5; indexColl += 1) {
-    const pixelCell = document.createElement('div');
+    let pixelCell = document.createElement('div');
+    pixelCell.className = 'pixel';
     pixelLine.appendChild(pixelCell);
     pixelCell.style.backgroundColor = 'white';
-    }
+  }
 }
 
-// ADICIONAR CLASSE
+// ADICIONAR COR SELECIONADA DA PALETA
 
 const paletteColors = document.querySelector('#color-palette');
 
 function selectColor() {
   paletteColors.addEventListener('click', (event) => {
-    const color = document.getElementsByClassName('selected');
+    const color = document.querySelector('.selected');
     if (event.target.id !== 'color-palette') {
       color.classList.remove('selected');
       event.target.classList.add('selected');
@@ -61,6 +61,6 @@ cleartableButton.innerText = 'Limpar';
 cleartableButton.addEventListener('click', () => {
   const pixel = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixel.length; index += 1) {
-    pixel[index].backgroundColor = 'white';
+    pixel[index].style.backgroundColor = 'white';
   }
 });
