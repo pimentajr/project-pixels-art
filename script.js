@@ -25,7 +25,7 @@ function clearBoard() {
   const boardItems = document.getElementsByClassName('pixel');
   for (let index = 0; index < boardItems.length; index += 1) {
     const element = boardItems[index];
-    document.getElementById('clear-board').style.backgroundColor = 'white';
+    element.getElementById('clear-board').style.backgroundColor = 'white';
   }
 }
 
