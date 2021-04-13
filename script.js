@@ -1,6 +1,14 @@
 window.onload = function pageLoad() {
   document.getElementById('black').classList.add('selected');
-};
+
+    let color2 = document.getElementById('gold');
+    let color3 = document.getElementById('limegreen');
+    let color4 = document.getElementById('crimson');
+
+    color2.style.backgroundColor = aleatoryColor();
+    color3.style.backgroundColor = aleatoryColor();
+    color4.style.backgroundColor = aleatoryColor();
+  };
 
 function setColorAll(event) {
   const aux = document.querySelectorAll('.selected');
@@ -79,21 +87,4 @@ function aleatoryColor() {
   const b = Math.floor(Math.random() * 255);
   const rgb = `rgb(${r}, ${g}, ${b})`;
   return rgb;
-}
-
-var colorAleatory = document.querySelectorAll('.color');
-for (let index = 0; index < colorAleatory; index += 1) {
-  if (colorAleatory[index].id !== 'black') {
-    colorAleatory[index].backgroundColor = aleatoryColor();
-  }
-}
-
-pixelBoard.addEventListener('click', aleatory);
-
-function aleatory(event){
-  const definColors = document.querySelector('.selected').style.backgroundColor;
-  if (event.target.className === 'pixel') {
-    const evento = event.target;
-    evento.style.backgroundColor = definColors;
-  }
 }
