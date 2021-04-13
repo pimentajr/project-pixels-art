@@ -1,13 +1,21 @@
 window.onload = function pageLoad() {
   document.getElementById('black').classList.add('selected');
 
-    let color2 = document.getElementById('gold');
-    let color3 = document.getElementById('limegreen');
-    let color4 = document.getElementById('crimson');
+  const color2 = document.getElementById('gold');
+  const color3 = document.getElementById('limegreen');
+  const color4 = document.getElementById('crimson');
 
-    color2.style.backgroundColor = aleatoryColor();
-    color3.style.backgroundColor = aleatoryColor();
-    color4.style.backgroundColor = aleatoryColor();
+  function aleatoryColor() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    const rgb = `rgb(${r}, ${g}, ${b})`;
+    return rgb;
+  }
+
+  color2.style.backgroundColor = aleatoryColor();
+  color3.style.backgroundColor = aleatoryColor();
+  color4.style.backgroundColor = aleatoryColor();
   };
 
 function setColorAll(event) {
