@@ -74,5 +74,26 @@ function checkImput() {
 vqv.addEventListener('click', checkImput);
 
 function aleatoryColor() {
-createElm
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  const rgb = `rgb(${r}, ${g}, ${b})`;
+  return rgb;
+}
+
+var colorAleatory = document.querySelectorAll('.color');
+for (let index = 0; index < colorAleatory; index += 1) {
+  if (colorAleatory[index].id !== 'black') {
+    colorAleatory[index].backgroundColor = aleatoryColor();
+  }
+}
+
+pixelBoard.addEventListener('click', aleatory);
+
+function aleatory(event){
+  const definColors = document.querySelector('.selected').style.backgroundColor;
+  if (event.target.className === 'pixel') {
+    const evento = event.target;
+    evento.style.backgroundColor = definColors;
+  }
 }
