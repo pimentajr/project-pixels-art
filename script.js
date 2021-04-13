@@ -1,31 +1,35 @@
-function trocaCor(e) {
-  const apontador = e.target;
-  const corEscolhida = document.querySelector('.color.select').style.backgroundColor;
-  if (apontador.style.backgroundColor !== corEscolhida) {
-    apotador.style.backgroundColor = corEscolhida;
-  } else {
-    apontador.style.backgroundColor = 'white';
-  }
+function pintando(event) {
+  const currentColor = document.querySelector('.selected');
+  console.log(currentColor.style.backgroundColor);
+  event.target.style.backgroundColor = currentColor.style.backgroundColor;
 
-  ultimaCorUsada = apontador.style.backgroundColor;
+  
+  // if (apontador.style !== corEscolhida.style.backgroundColor) {
+  //   apotador.style.backgroundColor = corEscolhida.style.backgroundColor;
+  // } else {
+  //   apontador.style.backgroundColor = 'white';
+  // }
+
+ // ultimaCorUsada = apontador.style.backgroundColor;
 }
 
-function altCor(e) {
-  const corEscolhida = e.target;  
-  corAtual = document.querySelector('.color.select');
-  if (corEscolhida !== corAtual) {
-    corEscolhida.classList.remove('selected');
-    corAtual.classList.add('select');
-  }
+function palette(event) {
+  const currentColor = document.querySelector('.selected');
+  currentColor.classList.remove('selected');
+  event.target.classList.add('selected');
 }
 
 function inicio() {
   //const corAtual = document.querySelector('.color.select');
-  const corPincel = document.getElementsByClassName('color');
-  corPincel[0].classList.add('selected');
   
-  addEventListener('click', altCor);
-  addEventListener('click', trocaCor);
+  const colorPalette = document.getElementById('color-palette');
+
+  const pixelBoard = document.getElementById('pixel-board');
+
+  colorPalette.addEventListener('click', palette);
+
+  pixelBoard.addEventListener('click', pintando);
+
 }
 
 window.onload = inicio;
