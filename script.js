@@ -1,21 +1,22 @@
+function paletaDeCores(classes) {
+  const cores = document.createElement('li');
+  cores.className = classes;
+  return cores;
+}
 const colorPalette = document.querySelector('#color-palette');
+colorPalette.appendChild(paletaDeCores('color preto'));
+colorPalette.appendChild(paletaDeCores('color coral'));
+colorPalette.appendChild(paletaDeCores('color violeta'));
+colorPalette.appendChild(paletaDeCores('color aqua'));
 
-const primeiraCor = document.createElement('li');
-primeiraCor.className = 'color preto';
-colorPalette.appendChild(primeiraCor);
-
-for (let index = 0; index < 1; index += 1) {
-  const segundaCor = document.createElement('li');
-  segundaCor.className = 'color verde';
-  colorPalette.appendChild(segundaCor);
-  for (let segundoIndex = 0; segundoIndex < 1; segundoIndex += 1) {
-    const terceriaCor = document.createElement('li');
-    terceriaCor.className = 'color azul';
-    colorPalette.appendChild(terceriaCor);
-    for (let terceiroIndex = 0; terceiroIndex < 1; terceiroIndex += 1) {
-      const quartaCor = document.createElement('li');
-      quartaCor.className = 'color rosa';
-      colorPalette.appendChild(quartaCor);
-    }
+const pixelBoard = document.querySelector('#pixel-board');
+for (let index = 0; index < 5; index += 1) {
+  const linha = document.createElement('tr');
+  linha.className = 'pixel';
+  pixelBoard.appendChild(linha);
+  for (let felipex = 0; felipex < 5; felipex += 1) {
+    const coluna = document.createElement('td');
+    coluna.className = 'pixel';
+    pixelBoard.appendChild(coluna);
   }
 }
