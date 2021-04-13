@@ -30,6 +30,10 @@
   height: auto;
 }
 
+#clear-board {
+  display: inline-block;
+}
+
 .pixel {
   display: table-cell;
   border: 1px;
