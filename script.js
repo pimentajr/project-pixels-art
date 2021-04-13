@@ -7,7 +7,7 @@ const buttonColors = document.getElementById('paletaButton');
 const pBlock = document.querySelector('#pixel-board');
 const pColons = document.getElementsByClassName('colon');
 const pixeis = document.getElementsByClassName('pixel');
-const selected = document.getElementsByClassName('selected')[0];
+const blankButton = document.getElementById('clear-board');
 
 function randomRGB() {
   const random = parseInt((Math.random() * 255), 10);
@@ -64,6 +64,15 @@ function colorSelect(colorS) {
   const colorSe = colorS;
   colorSe.className = 'color selected';
 }
+
+function allBlank() {
+  for (let index = 0; index < pixeis.length; index += 1) {
+    const pixelI = pixeis[index];
+    pixelI.style.backgroundColor = 'white';
+  }
+}
+
+blankButton.addEventListener('click', allBlank);
 
 buttonColors.addEventListener('click', randomColors);
 
