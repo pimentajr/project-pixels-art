@@ -67,6 +67,7 @@ function resetColor() {
   const removeColor = document.querySelectorAll('.pixel');
   for (let index = 0; index < removeColor.length; index += 1) {
     const colorPixel = removeColor[index];
+    colorPixel.style.backgroundColor = null;
     colorPixel.style.backgroundColor = 'white';
   }
 }
