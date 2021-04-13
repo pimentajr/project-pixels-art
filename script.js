@@ -1,7 +1,7 @@
-let colorPalette = document.getElementById('color-palette');
+const colorPalette = document.getElementById('color-palette');
 
 function selectColor(event) {
-  let selectedDiv = document.querySelector('.selected');
+  const selectedDiv = document.querySelector('.selected');
   selectedDiv.classList.remove('selected');
   event.target.classList.add('selected');
 }
