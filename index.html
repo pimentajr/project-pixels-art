@@ -17,11 +17,14 @@
     <div class="color" id="crimson"></div>
   </section>
 
-  <div>
+  <section>
+    <button id="clear-board">Limpar</button>
     <h4>Escolha o Tamaho do Pixel entre 5 e 50</h4>
-    <input type="text" id="board-size">
+    <input type="text" min="1" id="board-size">
     <button id="generate-board">VQV</button>
-  </div>
+
+    
+  </section>
 
   <section id="pixel-board">
     <table>
@@ -66,7 +69,6 @@
       </tr>
     </table>
  </section>
-  <button id="clear-board">Limpar</button>
   <script src="script.js"></script>
 </body>
 </html>
