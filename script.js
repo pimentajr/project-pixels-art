@@ -1,6 +1,10 @@
-function createPixel(column, line, pixelBoard) {
-  for (let index = 0; index < column; index += 1) {
-    for (let jIndex = 0; jIndex < line; jIndex += 1) {
+function createPixel() {
+  const columnElements = 5;
+  const lineElements = 5;
+  const pixelBoard = document.querySelector('#pixel-board');
+
+  for (let index = 0; index < columnElements; index += 1) {
+    for (let jIndex = 0; jIndex < lineElements; jIndex += 1) {
       const elementCreated = document.createElement('div');
       elementCreated.className = 'pixel pixel-base white';
       pixelBoard.appendChild(elementCreated);
@@ -25,21 +29,27 @@ function pixelPainter(event) {
   pixelToChange.classList.add(colorSelected);
 }
 
+function clearBoard() {
+  const pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].classList.remove('white', 'black', 'blue', 'red', 'green');
+    pixel[index].classList.add('white');
+  }
+}
+
 window.onload = () => {
-  const columnElements = 5;
-  const lineElements = 5;
-  const pixelBoard = document.querySelector('#pixel-board');
+  const clearBoardButton = document.getElementById('clear-board');
+  clearBoardButton.addEventListener('click', clearBoard);
+
   const colorQuery = document.querySelectorAll('.color');
   console.log(colorQuery.length);
 
-  createPixel(columnElements, lineElements, pixelBoard);
-
+  createPixel();
   for (let index = 0; index < colorQuery.length; index += 1) {
     colorQuery[index].addEventListener('click', selectColor);
   }
 
   const pixels = document.querySelectorAll('.pixel');
-
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].addEventListener('click', pixelPainter);
   }
