@@ -46,6 +46,19 @@ function createLinesAndRows () {
     }
 }
 
+function newCollor() {
+  const object = document.querySelector('#color-palette');
+  object.addEventListener('click', (event) => {
+    const var2 = document.querySelector('.selected');
+    if(var2){
+      var2.classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+  });
+
+
+}
+
     
 
    
