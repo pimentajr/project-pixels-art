@@ -1,41 +1,64 @@
-function selectedBlack() {
-    const black = document.querySelector('#color1');
-    black.classList.add('selected');
-};
+// CORES DA PALETA
 
-selectedBlack();
+const black = document.getElementsByClassName('color')[0];
+black.style.backgroundColor = 'black';
 
-function addPalClass(event) {
-    const Classes = document.querySelectorAll('.selected');
-    const choosenClasses = event.target;
-    for (let index = 0; index < Classes.length; index += 1) {
-        Classes[index].classList.remove('selected');
+const green = document.getElementsByClassName('color')[0];
+black.style.backgroundColor = 'green';
+
+const blue = document.getElementsByClassName('color')[0];
+black.style.backgroundColor = 'blue';
+
+const yellow = document.getElementsByClassName('color')[0];
+black.style.backgroundColor = 'yellow';
+
+// CRIA TABELA DE PIXELS
+
+const pixelBoard = document.querySelector('#pixel-board');
+
+for (let indexRow = 0; indexRow < 5; indexRow += 1){
+    let pixelLine = document.createElement('div');
+    pixelLine.className = 'pixelRow';
+    pixelBoard.appendChild(pixelRow);
+    for (indexColl = 0; indexColl < 5; indexColl += 1) {
+        let pixelCell = document.createElement('div');
+        pixelLine.appendChild(pixelCell);
+        pixelCell.style.backgroundColor = 'white';
     }
-    choosenClasses.classList.add('selected');
 }
 
-const addClass = document.getElementByTagName('color-palette');
-addClass.addEventListener('click', addPalClass);
+// ADICIONAR CLASSE
 
-function pixelFill() {
-    const selectedColor = document.querySelector('#pixel-board');
-    selectedColor.addEventListener('click', (event) => {
-        const allPixels = event.target;
-        const currentColor = document.getElementsByClassName('selected');
-        if (allPixels.className === 'pixel') {
-            allPixels.style.backgroundColor = currentColor.style.backgroundColor;
-        }
-    });
-}
+const paletteColors = document.getElementById('color-palette');
 
-pixelFill();
+function selectColor() {
+    paletteColors.addEventListener('click', (event) => {
+    const color = document.getElementsByClassName('selected');
+    if (event.target.id !== 'color-palette') {
+        color.classList.remove('selected');
+        event.target.classList.add('selected');
+    }
+  });
+}  
 
-const cleartableButton = document.querySelector('#clear-board');
+selectColor();
+// COLORIR PIXEL
+pixelBoard.addEventListener('click', (event) => {
+    const selectedColor = document.querySelector('.selected').id;
+    if (event.target.className === 'pixel') {
+        event.target.style.backgroundColor = selectedColor;
+    }
+});
+
+// BOTAO DE LIMPAR
+
+const cleartableButton = document.getElementById('clear-board');
+
+cleartableButton.innerText = 'Limpar';
 
 cleartableButton.addEventListener('click', () => {
-    const pixel = document.querySelectorAll('.pixel');
-    for (let index = 0; index < pixel.length; index += 1) {
-        const pixels = pixel[index];
-        pixels.backgroundColor = 'white';
-    }
+  const pixel = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].backgroundColor = 'white';
+  }
 });

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,52 +9,14 @@
 </head>
 <body>
     <h1 id="title">Paleta de Cores</h1>
-    <table id="color-palette">
-        <tr>
-            <td class="color" class ="selected" id="color1"></td>
-            <td class="color" id="color2"></td>
-            <td class="color" id="color3"></td>
-            <td class="color" id="color4"></td>
-        </tr> 
-    </table></section>
+    <div id="color-palette">
+            <div class="color selected" id="black">Preto</div>
+            <div class="color" id="green">Verde</div>
+            <div class="color" id="blue">Azul</div>
+            <div class="color" id="yellow">Amarelo</div>
+    </div>
     <button id="clear-board">Limpar</button>
-    <table id="pixelTable">
-        <tr id="pixel-board">
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-          <td class="pixel"></td>
-        </tr>
-        <tr id="pixel-board">
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-          </tr>
-          <tr id="pixel-board">
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-          </tr>
-          <tr id="pixel-board">
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-          </tr>
-          <tr id="pixel-board">
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-            <td class="pixel"></td>
-          </tr>
-        </table>
+    <div id="pixel-board"></div>
     <script src="script.js"></script>
 </body>
 </html>
