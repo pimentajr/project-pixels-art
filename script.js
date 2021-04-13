@@ -64,3 +64,15 @@ function colorPixelChange() {
 }
 
 colorPixelChange();
+
+function clearButton() {
+  const button = document.getElementById('clear-board');
+  button.addEventListener('click', function () {
+    const getPixelBoard = document.querySelectorAll('#pixel-board>div');
+    for (let index = 0; index < getPixelBoard.length; index += 1) {
+      getPixelBoard[index].style.backgroundColor = 'white';
+    }
+  });
+}
+
+clearButton();
