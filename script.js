@@ -21,3 +21,15 @@ for(let index = 0; index < cores.length; index += 1){
   cor.style.backgroundColor = cores[index];
 }
 
+let pixelsTable = document.querySelector('#pixel-board');
+
+for(let linha = 0; linha < 5; linha += 1){
+  let linhas = document.createElement('tr');
+  pixelsTable.appendChild(linhas);
+  for(let colunas = 0; colunas < 5; colunas += 1){
+    let coluna = document.createElement('td');
+    pixelsTable.appendChild(coluna);
+    coluna.className = 'pixel';
+    coluna.backgroundColor = 'white';
+  }
+}

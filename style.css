@@ -4,10 +4,12 @@ padding: 0;
 }
 
 #title{
-
+text-align: center;
 }
 
 #color-palette {
+  width: 100%;
+  text-align: center;
 }
 
 .color{
@@ -15,10 +17,12 @@ padding: 0;
   height: 60px;
   width: 60px;
   display: inline-block;
+  margin-left: 5px;
 }
 
 #pixel-board{
-
+margin-left: auto;
+margin-right: auto;
 }
 
 .pixel{
@@ -30,5 +34,8 @@ padding: 0;
 .selected{
 }
 
-
-
+#clear-board{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
