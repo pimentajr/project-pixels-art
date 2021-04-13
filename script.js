@@ -1,33 +1,60 @@
-    
-    let black = document.getElementsByClassName("color")[0].style.backgroundColor = "black"
+let colorPalette = document.getElementById('color-palette')
+let colors = document.getElementsByClassName('color')
+let selectedColor = document.querySelector('.selected')
+let pixelBoard = document.getElementById('pixel-board')
+let pixels = document.getElementsByClassName('pixel')
 
-    let red = document.getElementsByClassName("color")[1].style.backgroundColor="red"
 
-    let green = document.getElementsByClassName("color")[2].style.backgroundColor="green"
+//Requisito 4
+function createLinesAndRows () {
+  let board = document.getElementById('pixel-board')
+    for (let i =0; i < 5; i+=1){
+        pixelRow = document.createElement('div')
+        pixelRow.className = 'pixel-row'
+        board.appendChild(pixelRow)
 
-    let purple = document.getElementsByClassName("color")[3].style.backgroundColor="purple"
+        for (let j=0; j < 5; j+= 1){
+            pixelCell = document.createElement('div')
+            pixelCell.className = 'pixel'
+            pixelRow.appendChild(pixelCell)
+            pixelCell.style.backgroundColor = 'white'
 
-    let pixelTable = document.getElementById('pixel-board')
-
-    for (let i = 0;  i < 5; i += 1) {
-        let blockRow = document.createElement('div')
-        blockRow.className = 'pixel-row'
-        pixelTable.appendChild(blockRow)
-    
-    
-    for (let j =0; j < 5; j +=1) {
-        let blockCell = document.createElement('div')
-        blockCell.className = 'pixel'
-        blockRow.appendChild(blockCell)
-        blockCell.style.backgroundColor = 'white'
-        
+        }
     }
+}
+
+//Requisito 2, 3 e 12
+function randomColor() {
+    const randomColor1 = Math.floor(Math.random() * 255);
+    const randomColor2 = Math.floor(Math.random() * 255);
+    const randomColor3 = Math.floor(Math.random() * 255);
+    let msg = `rgb(${randomColor1}, ${randomColor2}, ${randomColor3})`;
+  
+    if (msg === 'rgb(255, 255, 255)' || msg === 'rgb(0, 0, 0)') {
+      msg = `rgb(${randomColor1}, ${randomColor2}, ${randomColor3})`;
+    }
+  
+    return msg;
+  }
+
+  function chooseColor (){
+    const color = document.getElementsByClassName('color');
+    color[0].style.backgroundColor = 'black';
+    color[1].style.backgroundColor = randomColor();
+    color[2].style.backgroundColor = randomColor();
+    color[3].style.backgroundColor = randomColor();
+    for (let i = 0; i < color.length; i += 1) {
+        let refCOlor = 1;
+        if (color[i].style.backgroundColor === color[refCOlor].style.backgroundColor) {
+          color[i].style.backgroundColor = randomColor();
+        }
+        refCOlor += 1;
+      }
+    }
+
     
+
+window.onload = () => {
+createLinesAndRows()
+chooseColor()
 }
-
-function blackSelector(){
-    let black = document.getElementsByClassName("color")[0].classList.add("selected")
-
-}
-
-window.onload = function() { blackSelector() }
