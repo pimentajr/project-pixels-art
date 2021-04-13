@@ -11,7 +11,7 @@ function trocaCor(e) {
 }
 
 function altCor(e) {
-  let corEscolhida = e.target;
+  let corEscolhida = e.target;  
   corAtual = document.querySelector('.color.selected');
   if (corEscolhida !== corAtual) {
     corEscolhida.classList.remove('selected');
