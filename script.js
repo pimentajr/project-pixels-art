@@ -4,7 +4,7 @@ function paletaDeCores(classes) {
   return cores;
 }
 const colorPalette = document.querySelector('#color-palette');
-colorPalette.appendChild(paletaDeCores('color preto selected'));
+colorPalette.appendChild(paletaDeCores('color selected preto'));
 colorPalette.appendChild(paletaDeCores('color coral'));
 colorPalette.appendChild(paletaDeCores('color violeta'));
 colorPalette.appendChild(paletaDeCores('color aqua'));
