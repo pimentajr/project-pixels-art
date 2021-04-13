@@ -38,7 +38,6 @@ function createElm(elementParam) {
   for (let index = 0; index < elementParam; index += 1) {
     const line = document.createElement('div');
     line.className = 'linePixel';
-    
     for (let index2 = 0; index2 < elementParam; index2 += 1) {
       const lineChild = document.createElement('div');
       lineChild.className = 'pixel';
@@ -49,7 +48,7 @@ function createElm(elementParam) {
 }
 
 const boardSize = document.getElementById('board-size');
-const vqv = document.getElementById('generate-board')
+const vqv = document.getElementById('generate-board');
 
 function createPixel() {
   if (boardSize.value < 5) {
