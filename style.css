@@ -1,0 +1,27 @@
+#color-pallete {
+    margin-left: 50px;
+}
+
+.color {
+    display: table-cell;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    padding: 12px;
+  }
+  
+  #color1 {
+    background-color: black;
+  }
+  
+  #color2 {
+    background-color: green;
+  }
+  
+  #color3 {
+    background-color: blue;
+  }
+  
+  #color4 {
+    background-color: yellow;
+  }
