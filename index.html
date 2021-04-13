@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixel Art</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Finaliza requisito 1, adicionando o título. -->
@@ -21,9 +23,11 @@
   </div>
   <br>
 
-  <button id="clear-board">Limpar</button>
-  <input id="board-size" type="number" name="Tamanho" min="1" max="51">
-  <button id="generate-board">VQV</button>
+  <div id="buttons">
+    <button id="clear-board">Limpar</button>
+    <input id="board-size" type="number" name="Tamanho" min="1" max="51">
+    <button id="generate-board">VQV</button>
+  </div>
   <br>
   <div id="pixel-board"></div>
   <script src="script.js"></script>

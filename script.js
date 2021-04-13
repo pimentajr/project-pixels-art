@@ -1,13 +1,29 @@
-//  Finaliza requisito 6, adicionando preto como selected.
+/** Finaliza requisito 6, adicionando preto como selected. */
 window.onload = function addSelect() {
   document.querySelector('.black').classList.add('selected');
 };
 
 let lineWidth = 5;
+/** Modelo de random colors, consultado em Wallace Maxters.
+* Source: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript */
+const red = document.querySelector('.red');
+const blue = document.querySelector('.purple');
+const green = document.querySelector('.green');
 
-// Essa função foi retirada do código de Alberto Candido com a devida permissão.
-// O que basicamente este código faz é remover todos os pixels para que novos sejam criados
-// Assim, evitando conflito.
+function randomColor() {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+
+  return `rgba(${r}, ${g}, ${b})`;
+}
+
+red.style.backgroundColor = randomColor();
+blue.style.backgroundColor = randomColor();
+green.style.backgroundColor = randomColor();
+
+/** Essa função foi retirada do código de Alberto Candido com a devida permissão.
+ * O que basicamente este código faz é remover todos os pixels para que novos sejam criados */
 
 function cleanBoard() {
   const pixelBoard = document.querySelector('#pixel-board');
@@ -28,7 +44,7 @@ function createPixels() {
   }
 }
 
-//  Cria as linhas para alocação dos 5 quadrados de cores por linha.
+/** Cria as linhas para alocação dos 5 quadrados de cores por linha. */
 function createLine() {
   cleanBoard();
   const newLine = lineWidth;
@@ -41,12 +57,14 @@ function createLine() {
   createPixels();
 }
 createLine();
-// Cria os píxeis individuais e os joga dentro da div criado na função anterior. Essa div é a linha.
-// Para esta questão, obtive ajuda do aluno Alberto Candido para direcionamento do que fazer
-// Foi consultado um negócio:
-// https://stackoverflow.com/questions/29229523/how-and-why-to-use-display-table-cell-css
 
-//  07 me baseei pelo código do alberto para entender.
+/**  Requisito 07 | Me baseei no código do alberto para entender melhor a questão.
+ * Cria os píxeis e os joga dentro da div criado na função anterior, que tem a classe ".line"
+ * Também foi consultada uma discussão no fórum StackOverFlow acerca de como fazer tabelas
+ * utilizando estilização no CSS.
+ * Source: https://stackoverflow.com/questions/29229523/how-and-why-to-use-display-table-cell-css
+*/
+
 function removeClass(event) {
   // Essa linha corrige o 'selected' que iria para a ID #color-palette;
   document.querySelector('#color-palette').classList.remove('selected');
@@ -63,8 +81,8 @@ function selectColor() {
 }
 selectColor();
 
-//  08 para resolver esta questão, foi consultada a informação sobre window.getComputedStyle
-//  Source: https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
+/** Requisito 08 | Consulsei W3Schools sobre o "window.getComputedStyle()" para realizar o desafio.
+ * Source: https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp */
 function myFunction(event) {
   const selColor = window.getComputedStyle(document.querySelector('.selected')).backgroundColor;
   const x = event.target;
@@ -78,8 +96,7 @@ function addColor() {
 }
 addColor();
 
-//  09. Cria um botão limpar que deixa todos os pixels brancos;
-
+/** Requisito 09 | Cria um botão limpar que deixa todos os pixels brancos */
 function clearBoard() {
   const paintBoart = document.getElementsByClassName('pixel');
   for (let clear = 0; clear < paintBoart.length; clear += 1) {
@@ -88,8 +105,7 @@ function clearBoard() {
 }
 document.getElementById('clear-board').addEventListener('click', clearBoard);
 
-// 10 e 11 Implementa botão, input e funcionalidades e limita 5:50;
-
+/** Requisitos 10 e 11 | Implementa botão input e funcionalidades de limitação 5:50 */
 function receiveValue() {
   const input = document.getElementById('board-size');
   const button = document.getElementById('generate-board');
