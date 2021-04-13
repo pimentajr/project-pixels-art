@@ -1,4 +1,4 @@
-const colorPalette = document.getElementById('color-palette')
+const colorPalette = document.getElementById('color-palette');
 const blackColor = document.getElementById('blackColor');
 const randomC1 = document.getElementById('randomC1');
 const randomC2 = document.getElementById('randomC2');
@@ -7,6 +7,7 @@ const buttonColors = document.getElementById('paletaButton');
 const pBlock = document.querySelector('#pixel-board');
 const pColons = document.getElementsByClassName('colon');
 const pixeis = document.getElementsByClassName('pixel');
+const selected = document.getElementsByClassName('selected')[0];
 
 function randomRGB() {
   const random = parseInt((Math.random() * 255), 10);
@@ -66,11 +67,18 @@ function colorSelect(colorS) {
 
 buttonColors.addEventListener('click', randomColors);
 
-colorPalette.addEventListener('click', function color(origin) {
+colorPalette.addEventListener('click', function select(origin) {
   const colorOrigin = origin.target;
   const selected = document.getElementsByClassName('selected')[0];
   selected.className = 'color';
   colorOrigin.className = 'color selected';
+});
+
+pBlock.addEventListener('click', function colored(origin) {
+  const selected = document.getElementsByClassName('selected')[0];
+  const colorSelected = selected.style.backgroundColor;
+  const pixelOrigin = origin.target;
+  pixelOrigin.style.backgroundColor = colorSelected;
 })
 
 window.onload = function reset() {
