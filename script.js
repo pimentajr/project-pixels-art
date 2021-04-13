@@ -4,26 +4,40 @@ function selectedColor() {
     const myEvent = event.target;
 
     const divColor = document.querySelectorAll('.color');
-    for(let index = 0; index < divColor.length; index += 1) {
+    for (let index = 0; index < divColor.length; index += 1) {
       divColor[index].classList.remove('selected');
-      if(myEvent.className === 'color') {
+      if (myEvent.className === 'color') {
         myEvent.classList.add('selected');
       }
     }
-
-  })
+  });
 }
 selectedColor();
 
 function selectedPixel() {
-  const pixelSelected = document.getElementById('pixel-board')
+  const pixelSelected = document.getElementById('pixel-board');
   pixelSelected.addEventListener('click', (event) => {
     const myEvent = document.querySelector('.selected');
-      if(event.target.className === 'pixel') {
-        const color = window.getComputedStyle(myEvent).getPropertyValue('background-color');
-        const  clickedPixel = event.target;
-        clickedPixel.style.backgroundColor = color;
-      }
-    })
+    if (event.target.className === 'pixel') {
+      const color = window
+        .getComputedStyle(myEvent)
+        .getPropertyValue('background-color');
+      const clickedPixel = event.target;
+      clickedPixel.style.backgroundColor = color;
+    }
+  });
 }
 selectedPixel();
+
+function clearButton() {
+  const buttonClear = document.getElementById('clear-board')
+  let pixels = document.querySelectorAll('.pixel');
+  buttonClear.addEventListener('click', (event) => {
+      if(event.target.id === 'clear-board'){
+        for (const pixel of pixels) {
+          pixel.style.backgroundColor = 'white';
+        }
+    }
+    })
+}
+clearButton();
