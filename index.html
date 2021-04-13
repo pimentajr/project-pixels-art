@@ -17,7 +17,7 @@
   <div>
     <!-- <p>Dimensione o Pixel Board</p> -->
     <label for="text">Selecione um valor de 5 a 50:</label>
-    <input type="number" min="0" max="50" step="1" id="board-size">
+    <input type="number" min="5" max="50" oninput="validity||(value='');" id="board-size">
     <button id="generate-board">VQV</button>
   </div>
 
