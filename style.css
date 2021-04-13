@@ -21,9 +21,12 @@
   background-color: #97eaf4;
 }
 
+#white , .white {
+  background-color: white;
+}
+
 .pixel {
   width: 41px;
   height: 42px;
   border: 1px solid black;
-  background-color: white;
 }

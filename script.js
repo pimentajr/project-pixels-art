@@ -1,5 +1,11 @@
+const pixels = document.getElementsByClassName('pixel');
 window.onload = () => {
   document.getElementById('black').classList.add('selected');
+
+  for (let index = 0; index < pixels.length; index += 1) {
+    const pixel = pixels[index];
+    pixel.classList.add('white');
+  }
 };
 
 function getSelectedColorElement() {
@@ -28,8 +34,6 @@ function paintElement(elementToBePainted, colorToPaint) {
   elementToBePainted.className = 'pixel';
   elementToBePainted.classList.add(colorToPaint);
 }
-
-const pixels = document.getElementsByClassName('pixel');
 
 const allColors = document.getElementsByClassName('color');
 
