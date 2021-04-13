@@ -93,6 +93,13 @@ let inputBoardSize = document.querySelector('#board-size');
 
 setBoardSizeButton.addEventListener('click', function () {
   let newSize = parseInt(inputBoardSize.value);
+
+  if (newSize < 5) {
+    newSize = 5;
+  } else if (newSize > 50) {
+    newSize = 50;
+  }
+
   if (!newSize) {
     alert('Board inválido!');
   } else {
