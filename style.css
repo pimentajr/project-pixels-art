@@ -17,7 +17,7 @@
   display: table-cell;
   border-style: solid;
   border-color: black;
-  border-width: 2px;
+  border-width: 1px;
 }
 
 #color-1 {
@@ -61,7 +61,7 @@
 }
 
 #clear-board {
-  display:block;
+  display: block;
   margin: 30px auto;
   padding: 5px 25px;
 }
