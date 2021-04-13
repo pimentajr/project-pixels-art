@@ -20,10 +20,10 @@ function altCor(e) {
 }
 
 function inicio() {
-  let corAtual = document.querySelector(".select.color");
+  let corAtual = document.querySelector(".color.select");
   
-  addEventListener("click", altCor);
-  addEventListener("click", trocaCor);
+  document.getElementsByClassName("color").addEventListener("click", altCor);
+  document.getElementsByClassName("pixel").addEventListener("click", trocaCor);
 }
 
 window.onload = inicio;
