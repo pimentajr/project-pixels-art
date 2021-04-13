@@ -17,11 +17,11 @@ yellow.style.backgroundColor = 'yellow';
 const pixelBoard = document.getElementById('pixel-board');
 
 for (let indexRow = 0; indexRow < 5; indexRow += 1) {
-  let pixelLine = document.createElement('div');
+  const pixelLine = document.createElement('div');
   pixelLine.className = 'pixelLine';
   pixelBoard.appendChild(pixelLine);
   for (let indexColl = 0; indexColl < 5; indexColl += 1) {
-    let pixelCell = document.createElement('div');
+    const pixelCell = document.createElement('div');
     pixelCell.className = 'pixel';
     pixelLine.appendChild(pixelCell);
     pixelCell.style.backgroundColor = 'white';
