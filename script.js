@@ -12,17 +12,17 @@ function trocaCor(e) {
 
 function altCor(e) {
   let corEscolhida = e.target;  
-  corAtual = document.querySelector('.color.selected');
+  corAtual = document.querySelector('.color.select');
   if (corEscolhida !== corAtual) {
     corEscolhida.classList.remove('selected');
-    corAtual.classList.add('selected');
+    corAtual.classList.add('select');
   }
 }
 
 function inicio() {
-  let corAtual = document.querySelector(".color.select");
-  document.getElementsByClassName("color").addEventListener("click", altCor);
-  document.getElementsByClassName("pixel").addEventListener("click", trocaCor);
+  let corAtual = document.querySelector('.color.select');
+  document.getElementsByClassName('color').addEventListener('click', altCor);
+  document.getElementsByClassName('pixel').addEventListener('click', trocaCor);
 }
 
 window.onload = inicio;
