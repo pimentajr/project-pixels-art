@@ -1,7 +1,9 @@
 const boardSize = 5;
 const selectedClass = 'selected';
+const changeColorClass = 'change-color';
 const colorPalette = document.getElementById('color-palette');
 const colors = document.getElementsByClassName('color');
+const divChangeColor = document.getElementById(changeColorClass);
 const buttonClearBoard = document.getElementById('clear-board');
 const inputBoardSize = document.getElementById('board-size');
 const buttonGenerateBoard = document.getElementById('generate-board');
@@ -67,7 +69,16 @@ function setSelectedColor(target) {
   target.classList.add(selectedClass);
 }
 
+function removeChangeColorElements() {
+  const previousChangeColorElement = document.querySelector('.change-color');
+  if (previousChangeColorElement) previousChangeColorElement.classList.remove(changeColorClass);
+
+  divChangeColor.innerHTML = '';
+}
+
 function colorPaletteClickHandler({ target }) {
+  removeChangeColorElements();
+
   if (target.classList.contains('color') && !target.classList.contains(selectedClass)) {
     setSelectedColor(target);
   }
@@ -75,6 +86,47 @@ function colorPaletteClickHandler({ target }) {
 
 function setColorElementClickEvent() {
   colorPalette.addEventListener('click', colorPaletteClickHandler);
+}
+
+function changeColor() {
+  const colorElement = document.querySelector('.change-color');
+  const newColor = document.getElementById('changeColorInput').value;
+
+  colorElement.setAttribute('data-color', newColor);
+  colorElement.style.backgroundColor = newColor;
+
+  divChangeColor.innerHTML = '';
+  colorElement.classList.remove(changeColorClass);
+}
+
+function createChangeColorElements() {
+  const changeColorInput = document.createElement('input');
+  changeColorInput.id = 'changeColorInput';
+  changeColorInput.setAttribute('type', 'color');
+  changeColorInput.classList.add('pill');
+  divChangeColor.appendChild(changeColorInput);
+
+  const changeColorButton = document.createElement('button');
+  changeColorButton.id = 'changeColorButton';
+  changeColorButton.innerText = 'Alterar';
+  changeColorButton.classList.add('pill');
+  changeColorButton.style.marginLeft = '1em';
+  divChangeColor.appendChild(changeColorButton);
+
+  changeColorButton.addEventListener('click', changeColor);
+}
+
+function changeElementColor({ target }) {
+  removeChangeColorElements();
+
+  if (target.classList.contains('color')) {
+    target.classList.add(changeColorClass);
+    createChangeColorElements();
+  }
+}
+
+function setColorElementDblclickEvent() {
+  colorPalette.addEventListener('dblclick', changeElementColor);
 }
 
 function paintPixelElementHandler({ target }) {
@@ -121,6 +173,7 @@ function onPageLoad() {
   createBoard(boardSize);
   setSelectedColor(colorPalette.firstElementChild);
   setColorElementClickEvent();
+  setColorElementDblclickEvent();
   setPixelClickEvent();
   setClearBoardClickEvent();
   setGenerateBoardClickEvent();
