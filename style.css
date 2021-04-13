@@ -67,7 +67,7 @@
   border-color: #31385e;
   margin-top: 20px;
   font-size: 16px;
-  
+
 }
 
 #generate-board{
@@ -93,6 +93,12 @@
   font-size: 16px;
 }
 
+#img-fundo{
+  background-image: url(fundo.jpg);
+  display: inline-block;
+  width: 80%;
+  border-radius: 15px;
+}
 
 footer{
   margin-left: 0;
@@ -103,4 +109,4 @@ footer{
   text-align: center;
   background-color: #31385e;
   color: white;
-}
+} 
