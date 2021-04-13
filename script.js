@@ -4,7 +4,7 @@ const colors = document.getElementsByClassName('color');
 const colorSelected = document.getElementsByClassName('color selected');
 const pixelBoard = document.getElementById('pixel-board');
 const clearButtom = document.getElementById('clear-board');
-const pixelGet = document.getElementsByClassName('pixel selected');
+const pixelGet = document.getElementsByClassName('pixel');
 
 // Functions
 function clearPage() {
@@ -27,13 +27,8 @@ function setClassColorPallet({ target }) {
 }
 
 function setColor(e) {
-  e.target.classList.add('selected');
-  for (let index = 0; index < colors.length; index += 1) {
-    if (colorSelected.length === 0) {
-      colors[0].classList.add('selected');
-    } else {
-      e.target.style.backgroundColor = colorSelected[0].style.backgroundColor;
-    }
+  if (e.target.id !== 'pixel-board') {
+    e.target.style.backgroundColor = colorSelected[0].style.backgroundColor;
   }
 }
 

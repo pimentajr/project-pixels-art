@@ -13,6 +13,10 @@
   height: auto;
 }
 
+#pixel-board {
+  border-width: 0;
+}
+
 .color , #table , .pixel {
   table-layout: fixed;
   border-style: solid;
