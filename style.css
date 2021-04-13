@@ -43,3 +43,7 @@ main {
   border: 1px solid black;
   display: table-cell;
 }
+
+#userPainel {
+  margin-top: 20px;
+}
