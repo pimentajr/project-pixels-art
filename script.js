@@ -15,13 +15,18 @@ for (let i=1; i<=5; i+=1 ){
 
 let palette = document.getElementById('color-palette')
 
-palette.addEventListener('click',function(event){
-    let oldColor = document.getElementsByClassName('selected')
-    if(event.target.id !== 'color-palette'){
-        oldColor.classList.remove('selected')
-        event.target.classList.add('selected');
+
+let colorPaleteDiv = document.querySelector('#color-palette');
+
+function selectColor() {
+  colorPaleteDiv.addEventListener('click', function(event){
+    let colorDiv = document.querySelector('.selected');
+    if (event.target.id !== 'color-palette'){
+      colorDiv.classList.remove('selected');
+      event.target.classList.add('selected');
     }
-});
+  }); 
+}
 
 //function changeColor(event){
 //    let oldColor = document.getElementsByClassName('selected')
