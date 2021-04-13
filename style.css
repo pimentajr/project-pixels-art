@@ -1,0 +1,32 @@
+body {
+margin: 0;
+padding: 0;
+}
+
+#title{
+
+}
+
+#color-palette {
+}
+
+.color{
+  border: solid 1px black;
+}
+
+#pixel-board{
+
+}
+
+.pixel{
+  height: 40px;
+  width: 40px;
+  border: solid 1px black;
+}
+
+.selected{
+
+}
+
+
+
