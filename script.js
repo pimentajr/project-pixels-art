@@ -63,3 +63,37 @@ function selectPixel () {
 }
 
 selectPixel();
+
+function choiceSizeOfPixelBox() {
+  const input = document.getElementById('board-size');
+  const rstBtn = document.getElementById('generate-board');
+  rstBtn.addEventListener('click', () => {
+    const pixelBoard = document.getElementById('pixel-board');
+    if (input.value === '') {
+      alert('Board Inválido!');
+    } else if (input.value < 5) {
+      input.value = 5;
+    } else if (input.value > 50) {
+      input.value = 50;
+    }
+    pixelBoard.innerHTML = '';
+    createPixelsSize(input.value);
+  });
+}
+
+choiceSizeOfPixelBox();
+
+function resetColorsButton() {
+  const resetButton = document.createElement('button');
+  const interfaceHtml = document.getElementById('userPainel');
+  interfaceHtml.appendChild(resetButton);
+  resetButton.innerHTML = 'Limpar';
+  resetButton.id = 'clear-board';
+  resetButton.addEventListener('click', () => {
+    const color = document.getElementsByClassName('pixel');
+    for (let index = 0; index < color.length; index += 1) {
+      color[index].style.backgroundColor = 'white';
+    }
+  });
+}
+resetColorsButton();
