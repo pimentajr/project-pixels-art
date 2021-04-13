@@ -23,6 +23,7 @@ function createLinesAndRows () {
     }
 }
 
+
 //Requisito 2, 3 e 12
 function randomColor() {
     const randomColor1 = Math.floor(Math.random() * 255);
@@ -52,9 +53,33 @@ function randomColor() {
       }
     }
 
+    //Requisito 6 e 7
+    function setSelectColor(selectTheColor) {
+        const colorPalette = document.getElementsByClassName('color');
+      
+        for (let index = 0; index < palette.length; index += 1) {
+          const object = palette[index];
+          if (object === selectTheColor) {
+            object.classList.add('selected');
+          } else {
+            object.classList.remove('selected');
+          }
+        }
+      }
+      function colorSelector(selectTheColor) {
+        const selectedColor = getComputedStyle(selectTheColor).backgroundColor;
+        return selectedColor;
+      }
+
+    
     
 
 window.onload = () => {
 createLinesAndRows()
+randomColor()
 chooseColor()
+setSelectColor()
+colorSelector()
+
+
 }
