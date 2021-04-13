@@ -1,5 +1,3 @@
-const { RuleTester } = require("eslint");
-
 window.onload = function pageLoad() {
   document.getElementById('black').classList.add('selected');
 };
