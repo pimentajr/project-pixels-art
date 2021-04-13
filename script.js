@@ -1,6 +1,6 @@
 function trocaCor(e) {
   let apontador = e.target;
-  let corEscolhida = document.querySelector('.color.selected').style.backgroundColor;
+  let corEscolhida = document.querySelector('.color.select').style.backgroundColor;
   if (apontador.style.backgroundColor !== corEscolhida) {
     apotador.style.backgroundColor = corEscolhida;
   } else {
@@ -8,7 +8,6 @@ function trocaCor(e) {
   }
 
   ultimaCorUsada = apontador.style.backgroundColor;
-  e.target.releasePointerCapture(e.pointerId);
 }
 
 function altCor(e) {
