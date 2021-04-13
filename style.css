@@ -23,6 +23,7 @@
   width: 40px;
   height: 40px;
   display: inline-block;
+  background-color: white;
 }
 
 #black {
@@ -46,6 +47,19 @@
 }
 
 #color-palette {
-  display: inline-block;
+  display: table;
 }
 
+.selected {
+  border: 3px inset #1C6EA4;
+}
+
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.row {
+  display: table-row;
+}
