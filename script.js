@@ -33,3 +33,43 @@ function clearBoard() {
 }
 
 btn.addEventListener('click', clearBoard);
+
+function createElm(elementParam) {
+  for (let index = 0; index < elementParam; index += 1) {
+    const line = document.createElement('div');
+    line.className = 'linePixel';
+    
+    for (let index2 = 0; index2 < elementParam; index2 += 1) {
+      const lineChild = document.createElement('div');
+      lineChild.className = 'pixel';
+      line.appendChild(lineChild);
+    }
+    pixelBoard.appendChild(line);
+  }
+}
+
+const boardSize = document.getElementById('board-size');
+const vqv = document.getElementById('generate-board')
+
+function createPixel() {
+  if (boardSize.value < 5) {
+    boardSize.value = 5;
+    createElm(boardSize.value);
+  } else if (boardSize.value > 50) {
+    boardSize.value = 50;
+    createElm(boardSize.value);
+  } else {
+    createElm(boardSize.value);
+  }
+}
+
+function checkImput() {
+  if (!boardSize.value) {
+    window.alert('Board inválido!');
+  } else {
+    pixelBoard.innerHTML = '';
+  }
+  createPixel();
+}
+
+vqv.addEventListener('click', checkImput);
