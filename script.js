@@ -16,7 +16,7 @@ window.onload = function pageLoad() {
   color2.style.backgroundColor = aleatoryColor();
   color3.style.backgroundColor = aleatoryColor();
   color4.style.backgroundColor = aleatoryColor();
-  };
+};
 
 function setColorAll(event) {
   const aux = document.querySelectorAll('.selected');
@@ -88,11 +88,3 @@ function checkImput() {
 }
 
 vqv.addEventListener('click', checkImput);
-
-function aleatoryColor() {
-  const r = Math.floor(Math.random() * 255);
-  const g = Math.floor(Math.random() * 255);
-  const b = Math.floor(Math.random() * 255);
-  const rgb = `rgb(${r}, ${g}, ${b})`;
-  return rgb;
-}
