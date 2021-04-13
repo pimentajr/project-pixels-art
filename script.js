@@ -34,14 +34,40 @@ const mainContainer = create('div');
 mainContainer.id = 'pixel-board';
 add(body, mainContainer);
 
-const tableSize = 25;
+// table (under construction)
+const bottomDiv = document.querySelector('#bottom-div');
+
+const tableInpt = create('input');
+tableInpt.id = 'board-size';
+tableInpt.type = 'number';
+add(bottomDiv, tableInpt);
+
+const tableBtn = create('button');
+tableBtn.id = 'generate-board';
+tableBtn.innerText = 'VQV';
+add(bottomDiv, tableBtn);
+
+const tableValue = tableInpt.value;
+
+function boardSize(size) {
+  for (let index = 0; index < size; index += 1) {
+    const pixels = create('div');
+    pixels.className = 'pixel';
+    add(mainContainer, pixels);
+  }
+}
+
+function setTableSize() {
+  if (tableValue < 5) {
+    boardSize(5);
+  } else if (tableValue > 50) {
+    boardSize(50);
+  } else {
+    boardSize(tableValue);
+  }
+}
 
 // create and set pixels on MainContainer
-for (let index2 = 0; index2 < tableSize; index2 += 1) {
-  const pixels = create('div');
-  pixels.className = 'pixel';
-  add(mainContainer, pixels);
-}
 
 // get all class pixel
 const pixels = document.querySelectorAll('.pixel');
@@ -82,6 +108,7 @@ function start() {
   colors.forEach((element) => element.addEventListener('click', (ev) => classSelected(ev.target)));
   pixels.forEach((pxElm) => pxElm.addEventListener('click', (ev) => drawPixels(ev.target)));
   clearButton.addEventListener('click', clearBoard);
+  tableBtn.addEventListener('click', setTableSize);
 }
 
 // window.onload function
