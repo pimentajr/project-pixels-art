@@ -1,7 +1,12 @@
-const randomC1 = document.getElementById('randomColor1');
-const randomC2 = document.getElementById('randomColor2');
-const randomC3 = document.getElementById('randomColor3');
+const colorPalette = document.getElementById('color-palette')
+const blackColor = document.getElementById('blackColor');
+const randomC1 = document.getElementById('randomC1');
+const randomC2 = document.getElementById('randomC2');
+const randomC3 = document.getElementById('randomC3');
 const buttonColors = document.getElementById('paletaButton');
+const pBlock = document.querySelector('#pixel-board');
+const pColons = document.getElementsByClassName('colon');
+const pixeis = document.getElementsByClassName('pixel');
 
 function randomRGB() {
   const random = parseInt((Math.random() * 255), 10);
@@ -20,14 +25,9 @@ function randomColors() {
     randomC2.style.backgroundColor = rB2;
     randomC3.style.backgroundColor = rB3;
   }
+  blackColor.style.backgroundColor = 'rgb(0, 0, 0)';
 }
-buttonColors.addEventListener('click', randomColors);
 
-const pBlock = document.querySelector('#pixel-board');
-function creatBlock(numbers) {
-  createColons(numbers);
-  createLines(numbers);
-}
 function createColons(colonsNumber) {
   for (let index = 0; index < colonsNumber; index += 1) {
     const colon = document.createElement('div');
@@ -36,7 +36,6 @@ function createColons(colonsNumber) {
   }
 }
 
-const pColons = document.getElementsByClassName('colon');
 function createLines(linesNumber) {
   for (let index = 0; index < pColons.length; index += 1) {
     const element = pColons[index];
@@ -48,7 +47,11 @@ function createLines(linesNumber) {
   }
 }
 
-const pixeis = document.getElementsByClassName('pixel');
+function creatBlock(numbers) {
+  createColons(numbers);
+  createLines(numbers);
+}
+
 function pixelBackground(color) {
   for (let index = 0; index < pixeis.length; index += 1) {
     const pixelIndex = pixeis[index];
@@ -56,9 +59,23 @@ function pixelBackground(color) {
   }
 }
 
+function colorSelect(colorS) {
+  const colorSe = colorS;
+  colorSe.className = 'color selected';
+}
 
-window.onload = function () {
+buttonColors.addEventListener('click', randomColors);
+
+colorPalette.addEventListener('click', function color(origin) {
+  const colorOrigin = origin.target;
+  const selected = document.getElementsByClassName('selected')[0];
+  selected.className = 'color';
+  colorOrigin.className = 'color selected';
+})
+
+window.onload = function reset() {
   randomColors();
   creatBlock(5);
   pixelBackground('white');
+  colorSelect(blackColor);
 };
