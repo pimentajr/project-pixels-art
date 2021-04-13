@@ -29,9 +29,9 @@ function createPixels() {
 }
 
 //  Cria as linhas para alocação dos 5 quadrados de cores por linha.
-function createLine(lineWidth) {
+function createLine() {
   cleanBoard();
-  let newLine = lineWidth;
+  const newLine = lineWidth;
   const pixelTable = document.getElementById('pixel-board');
   for (let index = 0; index < newLine; index += 1) {
     const lines = document.createElement('div');
@@ -99,13 +99,13 @@ function receiveValue() {
       alert('Board inválido!');
     } else if (newVal < 5) {
       lineWidth = 5;
-      createLine(lineWidth);
+      createLine();
     } else if (newVal > 50) {
       lineWidth = 50;
-      createLine(lineWidth);
+      createLine();
     } else {
       lineWidth = input.value;
-      createLine(lineWidth);
+      createLine();
     }
   });
 }
