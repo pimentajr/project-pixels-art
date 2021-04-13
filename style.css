@@ -1,14 +1,33 @@
+:root {
+
+  --color-trybe-green: rgba(3, 107, 82, 1);
+}
+
 * {
   margin: 0;
   padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: var(--color-trybe-green);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
-  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+h1 {
+  user-select: none;
 }
 
 #color-palette {
@@ -22,6 +41,8 @@ main {
   width: 50px;
   height: 50px;
   border: 1px solid black;
+  cursor: pointer;
+  border-radius: 100%;
 }
 
 #controls {
@@ -31,8 +52,39 @@ main {
   justify-content: space-around;
 }
 
+#clear-board:after {
+  content: ' Desenho';
+}
+
+button , input {
+  padding: 1em;
+}
+
+input {
+  text-align: center;
+}
+
+button {
+  background-color: var(--color-trybe-green);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
 #pixel-board {
   display: table;
+}
+
+ol {
+  margin-top: 2em;
+}
+
+li {
+  color: red;
 }
 
 .table-row {
@@ -45,4 +97,8 @@ main {
   height: 40px;
   background-color: white;
   border: 1px solid black;
+}
+
+.pill {
+  border-radius: 1em;
 }

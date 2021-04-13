@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Pixels Art Project</title>
-</head>
-<body>
-  <main>
-    <h1 id="title">Paleta de Cores</h1>
-    <div id="color-palette">
-      <div class="color" data-color="black"></div>
-      <div class="color" data-color="red"></div>
-      <div class="color" data-color="green"></div>
-      <div class="color" data-color="blue"></div>
-    </div>
-    <div id="controls">
-      <button id="clear-board">Limpar</button>
-      <div class="input">
-        <input id="board-size" type="number" min="1" max="50">
-        <button id="generate-board">VQV</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pixels Art Project</title>
+  </head>
+  <body>
+    <main class="pill">
+      <h1 id="title">Paleta de Cores</h1>
+      <div id="color-palette">
+        <div class="color" data-color="black"></div>
+        <div class="color" data-color="red"></div>
+        <div class="color" data-color="green"></div>
+        <div class="color" data-color="blue"></div>
       </div>
-    </div>
-    <div id="pixel-board"></div>
-  </main>
+      <div id="controls">
+        <button class="pill" id="clear-board">Limpar</button>
+        <div class="input">
+          <input class="pill" id="board-size" type="number" min="1" max="50" />
+          <button class="pill" id="generate-board">VQV</button>
+        </div>
+      </div>
+      <div id="pixel-board"></div>
+      <div id="instructions">
+        <ol>
+          <li>Selececione uma das quatro cores para pintar os quadrados</li>
+          <li>
+            Clique duas vezes seguidas no mesmo quadrado para pintar de branco
+          </li>
+        </ol>
+      </div>
+    </main>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
