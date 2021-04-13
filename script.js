@@ -17,14 +17,6 @@ function cleanBoard() {
   }
 }
 
-//  Cria o quadro onde ficarão alocados os pixels a serem modificados
-// function createPixelBoard() {
-//   const pixelTables = document.createElement('div');
-//   pixelTables.id = 'pixel-board';
-//   document.body.appendChild(pixelTables);
-// }
-// createPixelBoard();
-
 function createPixels() {
   const pixelLine = document.getElementsByClassName('line');
   for (let index = 0; index < pixelLine.length; index += 1) {
@@ -37,9 +29,9 @@ function createPixels() {
 }
 
 //  Cria as linhas para alocação dos 5 quadrados de cores por linha.
-function createLine(newLine) {
+function createLine(lineWidth) {
   cleanBoard();
-  newLine = lineWidth;
+  let newLine = lineWidth;
   const pixelTable = document.getElementById('pixel-board');
   for (let index = 0; index < newLine; index += 1) {
     const lines = document.createElement('div');
