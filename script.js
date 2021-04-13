@@ -84,8 +84,15 @@ function paintPixelElementHandler({ target }) {
   }
 }
 
+function resetPixelElementColor({ target }) {
+  if (target.classList.contains('pixel')) {
+    target.setAttribute('style', 'background-color: white;');
+  }
+}
+
 function setPixelClickEvent() {
   pixelBoard.addEventListener('click', paintPixelElementHandler);
+  pixelBoard.addEventListener('dblclick', resetPixelElementColor);
 }
 
 function clearBoard() {
