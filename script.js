@@ -21,7 +21,7 @@ function altCor(e) {
 }
 
 function inicio() {
-  const corAtual = document.selected.querySelector(".color");
+  const corAtual = document.querySelector(".color");
   
   addEventListener("click", altCor);
   addEventListener("click", trocaCor);
