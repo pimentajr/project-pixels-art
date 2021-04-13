@@ -30,14 +30,14 @@ function selectedPixel() {
 selectedPixel();
 
 function clearButton() {
-  const buttonClear = document.getElementById('clear-board')
+  const buttonClear = document.getElementById('clear-board');
   let pixels = document.querySelectorAll('.pixel');
   buttonClear.addEventListener('click', (event) => {
-      if(event.target.id === 'clear-board'){
-        for (const pixel of pixels) {
-          pixel.style.backgroundColor = 'white';
-        }
+    if (event.target.id === 'clear-board') {
+      for (const pixel of pixels) {
+        pixel.style.backgroundColor = 'white';
+      }
     }
-    })
+  });
 }
 clearButton();
