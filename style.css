@@ -7,7 +7,7 @@ body {
   font-family: monospace;
   font-size: 400%;
   color: black;
-  -webkit-text-stroke: 3px purple;
+  -webkit-text-stroke: 3px hsl(300, 100%, 25%);
 }
 
 #color-palette {
@@ -42,3 +42,4 @@ body {
   width: 40px;
   height: 40px;
 }
+
