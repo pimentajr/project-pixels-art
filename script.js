@@ -27,6 +27,17 @@ function pintar () {
 	}
 }
 
+function limpar () {
+	let botao = document.getElementById('clear-board');
+
+	botao.addEventListener('click', function (event) {
+		for (let i = 0; i < linhas.length; i += 1) {
+			linhas[i].style.backgroundColor = 'white';
+		}
+	})
+}
+
+
 function start() {
   for (let i = 0; i < linhas.length; i += 1) {
 		linhas[i].style.backgroundColor = 'white';
@@ -37,6 +48,7 @@ function start() {
 	selected = corBlack;
 	selecionar();
 	pintar();
+	limpar();
 }
 
 window.onload = start;
