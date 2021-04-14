@@ -47,14 +47,14 @@ tableBtn.id = 'generate-board';
 tableBtn.innerText = 'VQV';
 add(midDiv, tableBtn);
 
-// let tableSize = 25;
-
 // create and set pixels on MainContainer
-/* for (let index = 0; index < tableSize; index += 1) {
-  const pixels = create('div');
-  pixels.className = 'pixel';
-  add(mainContainer, pixels);
-} */
+function initialBoard() {
+  for (let index = 0; index < 25; index += 1) {
+    const pixels = create('div');
+    pixels.className = 'pixel';
+    add(mainContainer, pixels);
+  }
+}
 
 function tableConditional(number) {
   let aux = number;
@@ -120,6 +120,7 @@ function clearBoard() {
 // window.onload function
 window.onload = () => {
   randomColors();
+  initialBoard();
   palette.addEventListener('click', classSelected);
   mainContainer.addEventListener('click', drawPixels);
   clearButton.addEventListener('click', clearBoard);
