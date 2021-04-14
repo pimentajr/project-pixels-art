@@ -36,9 +36,9 @@ pixelboard5.appendChild(createTable());
 pixelboard5.appendChild(createTable());
 pixelboard5.appendChild(createTable());
 
-//requisito 7 (deixar o selected apenas na cor selecionada)
-let colorSelected = document.getElementById('color-palette');
-colorSelected.addEventListener('click', function(event){
+// requisito 7 (deixar o selected apenas na cor selecionada)
+const colorSelected = document.getElementById('color-palette');
+colorSelected.addEventListener('click', function(event) {
 let colorClicked = event.target.className; 
 let colorSelectedClassIndex = document.querySelectorAll('.color');
 let colorSelectedclass = document.querySelector('.selected');
@@ -52,22 +52,22 @@ let colorSelectedclass = document.querySelector('.selected');
 }
 })
 
-//requisito 8 (pintar os quadros do pixel)
+// requisito 8 (pintar os quadros do pixel)
 let pixelselected = document.getElementsByClassName('pixel');
 for (let i = 0; i < pixelselected.length; i +=1) {
 pixelselected[i].addEventListener('click', function(){
   let colorSelectedclass1 = document.querySelector('.selected');
     if (colorSelectedclass1.classList.contains('blue')) {
-      pixelselected[i].classList.add('blue');  
+      pixelselected[i].className = 'pixel blue';  
     }
     else if (colorSelectedclass1.classList.contains('black')) {
-      pixelselected[i].classList.add('black');
+      pixelselected[i].className = 'pixel black'; 
     }
     else if (colorSelectedclass1.classList.contains('red')) {
-      pixelselected[i].classList.add('red');
+      pixelselected[i].className = 'pixel red'; 
     }
     else if (colorSelectedclass1.classList.contains('green')) {
-      pixelselected[i].classList.add('green');
+      pixelselected[i].className = 'pixel green'; 
     }
 })
 }
