@@ -1,6 +1,6 @@
 function createTable() {
   const element = document.createElement('div');
-  element.className = 'pixel';
+  element.className = 'pixel white';
   return element;
 }
 

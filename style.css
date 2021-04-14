@@ -14,6 +14,10 @@
   background-color: blue;
 }
 
+.white {
+  background-color: white;
+}
+
 .color {
   width: 100px;
   height: 100px;
