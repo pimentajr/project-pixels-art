@@ -62,22 +62,22 @@ function tableConditional(number) {
   case (aux < 0):
     alert('Board inválido!');
     break;
-  case (aux < 5):
+  case (aux > 0 && aux < 5):
     aux = 5;
     break;
   case (aux > 50):
     aux = 50;
     break;
   default:
-    alert('Board inválido!');
+    break;
   }
   return aux;
 }
 
 function setSize() {
   const tableSize = tableInpt.value;
-  tableConditional(tableSize);
-  for (let index = 0; index < tableSize; index += 1) {
+  const auxSize = tableConditional(tableSize);
+  for (let index = 0; index < auxSize; index += 1) {
     const pixels = create('div');
     pixels.className = 'pixel';
     add(mainContainer, pixels);
