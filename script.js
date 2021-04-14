@@ -71,3 +71,12 @@ pixelselected[i].addEventListener('click', function(){
     }
 })
 }
+
+// requisito 9 (pintar todos os quadros de branco)
+let button = document.getElementById('clear-board');
+let pixelselected1 = document.getElementsByClassName('pixel');
+button.addEventListener('click', function() {
+  for (let i = 0; i < pixelselected1.length; i +=1) {
+    pixelselected1[i].className = 'pixel white';
+  }
+})
