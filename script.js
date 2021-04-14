@@ -22,9 +22,6 @@ function pintar () {
 			pixel = event.target;
 			let pixelStyle = getComputedStyle(pixel);
 			let corStyle = getComputedStyle(selected);
-			console.log('Classe da cor escolhida: '+ selected.classList);
-			console.log('Cor escolhida: ' + corStyle.backgroundColor);
-			console.log('Cor do pixel: ' + pixelStyle.backgroundColor);
 			pixel.style.backgroundColor = corStyle.backgroundColor;
 		});
 	}
