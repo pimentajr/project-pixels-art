@@ -44,19 +44,17 @@ body {
 
 #pixel-board {
   display: table;
-  padding: 67px;
+  background-color: white;
 }
 
 .tr {
   display: table-row;
   height: 40px;
   border: black solid 1px;
-  background-color: white;
 }
 
 .td {
   display: table-cell;
   width: 40px;
   border: black solid 1px;
-  background-color: white;
 }
