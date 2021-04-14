@@ -15,22 +15,19 @@ function selecionar () {
 function pintar () {
 	let quadro = document.getElementsByClassName('tr-board')
 	let pixel;
-	let cor;
-	
-	quadro[0].addEventListener('click', function(event) {
-		// cor = document.querySelector('.selected');
-		cor = selected;
-		pixel = event.target;
-		let corStyle = getComputedStyle(cor);
-		let pixelStyle = getComputedStyle(pixel);
-		console.log('Classe da cor escolhida: '+ cor.classList)
-		
-		console.log('Cor escolhida: ' + corStyle.backgroundColor);
-		// console.log('Cor do pixel: ' + event.target.style.backgroundColor);
-		// console.log('Cor do pixel: ' + pixel.style.backgroundColor);
+
+	for (let index = 0; index < quadro.length; index += 1) {
+		quadro[index].addEventListener('click', function(event) {
+			cor = selected; 	// ou: cor = document.querySelector('.selected');
+			pixel = event.target;
+			let pixelStyle = getComputedStyle(pixel);
+			let corStyle = getComputedStyle(selected);
+			console.log('Classe da cor escolhida: '+ selected.classList);
+			console.log('Cor escolhida: ' + corStyle.backgroundColor);
 			console.log('Cor do pixel: ' + pixelStyle.backgroundColor);
-		pixel.style.backgroundColor = corStyle.backgroundColor;
-	});
+			pixel.style.backgroundColor = corStyle.backgroundColor;
+		});
+	}
 }
 
 function start() {
@@ -44,7 +41,5 @@ function start() {
 	selecionar();
 	pintar();
 }
-
-
 
 window.onload = start;
