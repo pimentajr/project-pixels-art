@@ -13,11 +13,11 @@ for (let i=1; i<=5; i+=1 ){
     pixelBoard.appendChild(line);
 }
 
-let palette = document.getElementById('color-palette')
+let palette = document.querySelector('#color-palette')
 
 function select() {
   palette.addEventListener('click', function(event){
-    let oldColor = document.getElementsByClassName('selected')
+    let oldColor = document.querySelector('.selected')
     if(event.target.id !== 'color-palette'){
         oldColor.classList.remove('selected')
         event.target.classList.add('selected');
@@ -26,6 +26,8 @@ function select() {
 }
 
 select();
+
+
 
 
 
