@@ -15,7 +15,7 @@ for (let i=1; i<=5; i+=1 ){
 
 let palette = document.getElementById('color-palette')
 
-function selectColor() {
+function select() {
   palette.addEventListener('click', function(event){
     let oldColor = document.getElementsByClassName('selected')
     if(event.target.id !== 'color-palette'){
@@ -24,6 +24,10 @@ function selectColor() {
     }
 }); 
 }
+
+select();
+
+
 
 //function changeColor(event){
 //    let oldColor = document.getElementsByClassName('selected')
