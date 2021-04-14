@@ -10,39 +10,29 @@
 #pixel-board {
   display: table;
   margin-top: 3px;
-  /* box-sizing: content-box; */
   box-sizing: border-box;
-  /* width: 800px;
-  height: 800px; */
-  /* position: absolute; */
 }
 
 #tr-board {
   display: table-row;
-  /* position: absolute; */
   width: 800px;
   height: 40px;
 }
 
 .pixel {
   display: table-cell;
-  /* position: absolute; */
   border: 1px solid black;
   color: red;
-  /* padding: 0px; */
   box-sizing: content-box;
-  /* box-sizing: border-box; */
   height: 40px;
   min-height: 40px;
   width: 40px;
   min-width: 40px;
-
 }
 
 .color {
   display: table-cell;
   border: 1px solid black;
-  /* border-collapse: separate; */
 }
 
 .color:nth-child( 1 ) {
