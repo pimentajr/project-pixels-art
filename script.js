@@ -47,10 +47,36 @@ tableBtn.id = 'generate-board';
 tableBtn.innerText = 'VQV';
 add(midDiv, tableBtn);
 
-let tableSize = 25;
+// let tableSize = 25;
+
+// create and set pixels on MainContainer
+/* for (let index = 0; index < tableSize; index += 1) {
+  const pixels = create('div');
+  pixels.className = 'pixel';
+  add(mainContainer, pixels);
+} */
+
+function tableConditional(number) {
+  let aux = number;
+  switch (true) {
+  case (aux < 0):
+    alert('Board inválido!');
+    break;
+  case (aux < 5):
+    aux = 5;
+    break;
+  case (aux > 50):
+    aux = 50;
+    break;
+  default:
+    alert('Board inválido!');
+  }
+  return aux;
+}
 
 function setSize() {
-  tableSize = tableInpt.value;
+  const tableSize = tableInpt.value;
+  tableConditional(tableSize);
   for (let index = 0; index < tableSize; index += 1) {
     const pixels = create('div');
     pixels.className = 'pixel';
@@ -58,15 +84,8 @@ function setSize() {
   }
 }
 
-// create and set pixels on MainContainer
-for (let index = 0; index < tableSize; index += 1) {
-  const pixels = create('div');
-  pixels.className = 'pixel';
-  add(mainContainer, pixels);
-}
-
 // get all class pixel
-const pixels = document.querySelectorAll('.pixel');
+// const pixels = document.querySelectorAll('.pixel');
 
 // initial black color selected
 colors[0].classList.add('selected');
