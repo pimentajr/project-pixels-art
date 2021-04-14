@@ -41,3 +41,18 @@ body {
   border: 1px solid;
   border-color: black;
 }
+
+#pixel-board {
+  display: table;
+  padding: 67px;
+}
+.tr {
+  display: table-row;
+  height: 40px;
+  border: black solid 1px;
+}
+.td {
+  display: table-cell;
+  width: 40px;
+  border: black solid 1px;
+}
