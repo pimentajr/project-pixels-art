@@ -23,12 +23,3 @@ for (let index = 0; index < 5; index += 1) {
     makePixelBoard.appendChild(coluna);
   }
 }
-
-function paintPixel(event) {
-  const cell = event;
-  const selectedColor = document.querySelector('.selected');
-  if (cell.target.className === 'pixel') {
-    cell.target.style.backgroundColor = selectedColor.style.backgroundColor;
-  }
-}
-makePixelBoard.addEventListener(paintPixel('click', paintPixel));
