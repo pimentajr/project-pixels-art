@@ -34,14 +34,16 @@ const mainContainer = create('div');
 mainContainer.id = 'pixel-board';
 add(body, mainContainer);
 
-// table (under construction)
+// custom table size (under construction)
 const midDiv = document.querySelector('#mid-div');
 
+// input
 const tableInpt = create('input');
 tableInpt.id = 'board-size';
 tableInpt.type = 'number';
 add(midDiv, tableInpt);
 
+// create button
 const tableBtn = create('button');
 tableBtn.id = 'generate-board';
 tableBtn.innerText = 'VQV';
@@ -56,10 +58,11 @@ function initialBoard() {
   }
 }
 
+// board conditionals
 function tableConditional(number) {
   let aux = number;
   switch (true) {
-  case (aux < 0):
+  case (aux <= 0):
     alert('Board inválido!');
     break;
   case (aux > 0 && aux < 5):
@@ -69,11 +72,11 @@ function tableConditional(number) {
     aux = 50;
     break;
   default:
-    break;
+    return aux;
   }
-  return aux;
 }
 
+// build board
 function setSize() {
   const tableSize = tableInpt.value;
   const auxSize = tableConditional(tableSize);
