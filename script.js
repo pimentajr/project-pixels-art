@@ -37,7 +37,8 @@ function selectedColor() {
     }
   }
 }
-colorPalette.addEventListener('click', function (events) {
+
+colorPalette.addEventListener('click', (events) => {
   if (events.target.id !== 'color-palette') {
     selectedColor();
     events.target.classList.add('selected');
@@ -103,5 +104,5 @@ function createRandom() {
 
     paletteColors[index6].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   }
-  }
+}
 createRandom();
