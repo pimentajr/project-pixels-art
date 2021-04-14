@@ -35,3 +35,18 @@ pixelboard5.appendChild(createTable());
 pixelboard5.appendChild(createTable());
 pixelboard5.appendChild(createTable());
 pixelboard5.appendChild(createTable());
+
+let colorSelected = document.getElementById('color-palette');
+colorSelected.addEventListener('click', function(event){
+let colorClicked = event.target.className; 
+let colorSelectedClassIndex = document.querySelectorAll('.color');
+let colorSelectedclass = document.querySelector('.selected');
+  if (colorSelectedclass.className !== colorClicked) {
+    for (let i = 0; i < colorSelectedClassIndex.length; i +=1) {
+      colorSelectedclass.classList.remove('selected');
+      if (colorSelectedClassIndex[i].className === colorClicked) {
+        colorSelectedClassIndex[i].classList.add('selected');
+      }
+    } 
+}
+})
