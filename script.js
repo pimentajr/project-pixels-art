@@ -35,39 +35,35 @@ mainContainer.id = 'pixel-board';
 add(body, mainContainer);
 
 // table (under construction)
-const bottomDiv = document.querySelector('#bottom-div');
+const midDiv = document.querySelector('#mid-div');
 
 const tableInpt = create('input');
 tableInpt.id = 'board-size';
 tableInpt.type = 'number';
-add(bottomDiv, tableInpt);
+add(midDiv, tableInpt);
 
 const tableBtn = create('button');
 tableBtn.id = 'generate-board';
 tableBtn.innerText = 'VQV';
-add(bottomDiv, tableBtn);
+add(midDiv, tableBtn);
 
-const tableValue = tableInpt.value;
+let tableSize = 25;
 
-function boardSize(size) {
-  for (let index = 0; index < size; index += 1) {
+function setSize() {
+  tableSize = tableInpt.value;
+  for (let index = 0; index < tableSize; index += 1) {
     const pixels = create('div');
     pixels.className = 'pixel';
     add(mainContainer, pixels);
   }
 }
 
-function setTableSize() {
-  if (tableValue < 5) {
-    boardSize(5);
-  } else if (tableValue > 50) {
-    boardSize(50);
-  } else {
-    boardSize(tableValue);
-  }
-}
-
 // create and set pixels on MainContainer
+for (let index = 0; index < tableSize; index += 1) {
+  const pixels = create('div');
+  pixels.className = 'pixel';
+  add(mainContainer, pixels);
+}
 
 // get all class pixel
 const pixels = document.querySelectorAll('.pixel');
@@ -76,40 +72,37 @@ const pixels = document.querySelectorAll('.pixel');
 colors[0].classList.add('selected');
 
 // Selected Color class (in navigation) function
-function classSelected(element) {
-  colors[0].classList.remove('selected');
-  // forEach element in colors (line 21) remove class if selected or add class selected
-  colors.forEach((e) => e.classList.remove('selected'));
-  element.classList.add('selected');
+function classSelected(event) {
+  const aux = event;
+  if (aux.target === palette) return null; // thanks to Panta
+  for (let index = 0; index < colors.length; index += 1) {
+    colors[index].classList.remove('selected');
+    aux.target.classList.add('selected');
+  }
 }
 
 // draw pixels in the pixelboard
-
-function drawPixels(pxElm) {
-  const aux = pxElm; // I had to use an aux variable to fix an ESlint problem about parameter assignment
-  // takes the style.background of element in selected class
+function drawPixels(event) {
+  const aux = event;
+  if (aux.target === mainContainer) return null; // thanks to Panta
   const pixelSelected = document.querySelector('.selected');
-  aux.style.background = pixelSelected.style.background;
+  aux.target.style.background = pixelSelected.style.background;
 }
 
 const clearButton = document.querySelector('#clear-board');
 
 // function Clear Button
 function clearBoard() {
-  pixels.forEach((e) => { e.style.background = 'white'; });
-}
-
-// start function
-function start() {
-  // Call functions
-  randomColors();
-  // EventListeners
-  // How is a lot of pixels to work, I had to use ForEach, the normal For loop don't work propelly
-  colors.forEach((element) => element.addEventListener('click', (ev) => classSelected(ev.target)));
-  pixels.forEach((pxElm) => pxElm.addEventListener('click', (ev) => drawPixels(ev.target)));
-  clearButton.addEventListener('click', clearBoard);
-  tableBtn.addEventListener('click', setTableSize);
+  for (let index = 0; index < mainContainer.childElementCount; index += 1) {
+    mainContainer.children[index].style.background = 'white';
+  }
 }
 
 // window.onload function
-window.onload = () => start();
+window.onload = () => {
+  randomColors();
+  palette.addEventListener('click', classSelected);
+  mainContainer.addEventListener('click', drawPixels);
+  clearButton.addEventListener('click', clearBoard);
+  tableBtn.addEventListener('click', setSize);
+};

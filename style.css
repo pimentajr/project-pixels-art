@@ -5,7 +5,7 @@
 
 #color-palette {
   margin-top: -10px;
-  margin-left: 10px;
+  margin-left: 25px;
   margin-bottom: 10px;
 }
 
@@ -21,6 +21,7 @@
   border: 1px solid black;
   width: 40px;
   height: 40px;
+  border-radius: 50%;
 }
 
 #pixel-board {
@@ -51,19 +52,23 @@
 }
 
 #clear-board {
+  padding: 2px 5px;
   margin-left: 10px;
   margin-bottom: 15px;
+  border-radius: 20px;
 }
 
-#bottom-div {
+#mid-div {
   display: inline-block;
 }
 
 #board-size {
-  margin-left: 1px;
-  width: 100px;
+  margin-left: 58px;
+  width: 40px;
 }
 
 #generate-board {
-  margin-left: 2px;
+  padding: 2px 5px;
+  margin-left: 3px;
+  border-radius: 20px;
 }
