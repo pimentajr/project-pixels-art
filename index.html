@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css"> 
-    <title>Pixels Art</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css"> 
+  <title>Pixels Art</title>
 </head>
 <body>
+  <div id="external-container">
     <h1 id="title">Paleta de Cores</h1>
-    <div id="color-palette">
+    <label for="controls">Controles</label>
+    <div id="controls">
+      <div id="color-palette">
         <div class="color black selected"></div>
         <div class="color red"></div>
         <div class="color green"></div>
         <div class="color yellow"></div>
+      </div>
+      <div> 
+        <button id="clear-board">
+          <img src="lixeira.png" width='25px'/>
+          <br>Limpar
+        </button>
+        <div id="input-container">
+          <input id="board-size" type="number" min="1">
+          <button id="generate-board">
+            <img src="https://img.icons8.com/carbon-copy/48/000000/rocket.png" width='30px'/>
+            <br>VQV
+          </button>
+        </div>
+      </div>
     </div>
     <div id="pixel-board">
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
-        <div class="pixel"></div>
+      <table id="grid">
+      </table>
     </div>
-    
-    <script src="script.js"></script>
-    
+  </div>
+  <script src="script.js"></script>   
 </body>
 </html>

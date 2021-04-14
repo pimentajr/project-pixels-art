@@ -1,17 +1,44 @@
-body{
-  background-image: url(pac-man.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+#grid {
+  border-collapse: collapse;
 }
 
-#title {
-  text-align: center;
+#grid td {
+  border: solid 1px;
+}
+
+#board-size {
+  width: 50px;
 }
 
 #color-palette {
+  margin-bottom: 20px;
+}
+
+#controls {
+  background: rgb(230, 230, 230);
+  border: 1px solid;
+  border-radius: 3%;
   margin: auto;
-  width: 220px;
+  padding: 20px;
+  text-align: center;
+  width: 50%;
+}
+
+#external-container {
+  background-image: radial-gradient(white, green);
+  border-radius: 3%;
+  height: 500px;
+  margin: auto;
+  text-align: center;
+  width: 400px;
+}
+
+#input-container {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+#title {
   text-align: center;
 }
 
@@ -21,27 +48,19 @@ body{
   display: inline-block;
   height: 35px;
   margin-left: 10px;
-  margin-bottom: 20px;
   vertical-align: middle;
   width: 35px;
 }
 
 #pixel-board {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 0;
-  height: 208px;
-  margin: auto;
-  width: 208px;
+  display: inline-block;
+  margin-top: 20px;
 }
 
 .pixel {
-  border: 1px solid black;
   background-color: white;
-  display: inline-block;
-  height: 40px;
-  width: 40px;
+  height: 41px;
+  width: 41px;
 }
 
 .selected {
