@@ -106,3 +106,32 @@ for (let index6 = 1; index6 < paletteColors.length; index6 += 1) {
 }
 }
 createRandom();
+
+
+// function getSelectedColor() {
+//   const selectedColorPixel = document.querySelector('.selected-color');
+//   const getSelectedColor = document.querySelector('.selected');
+//   const compStyles = getComputedStyle(getSelectedColor);
+//   const selectedBackground = compStyles.getPropertyValue('background-color');
+
+//   selectedColorPixel.style.backgroundColor = selectedBackground;
+// }
+// getSelectedColor();
+
+
+// const colorPalette = document.querySelector('#color-palette');
+// const paletteList = colorPalette.children;
+
+// function selectedColor() {
+//   for (let fourthIndex = 0; fourthIndex < paletteList.length; fourthIndex += 1) {
+//     if (paletteList[fourthIndex].className.includes('selected')) {
+//       paletteList[fourthIndex].classList.remove('selected');
+//     }
+//   }
+// }
+// colorPalette.addEventListener('click', function (events) {
+//   if (events.target.id !== 'color-palette') {
+//     selectedColor();
+//     events.target.classList.add('selected');
+//   }
+// });

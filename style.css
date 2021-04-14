@@ -1,3 +1,7 @@
+#title {
+  text-align: center;
+}
+
 .black {
   background-color: black;
 }
@@ -19,14 +23,71 @@
   width: 60px;
   height: 60px;
   display: inline-block;
-  margin: 1px;
+  margin: -1px;
 }
 
 /* 5 - pixels com 40 pixels de largura e altura, borda preta de 1 px */
 .pixel {
   background-color: white;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border: 1px solid black;
   display: table-cell;
 }
+
+body {
+  flex-grow: inherit;
+  background-image: url('https://i.pinimg.com/originals/df/4e/8b/df4e8ba28f912bf9cdf9fa0dfc196411.png');
+  background-size: 180vh;
+  background-color: rgb(64, 165, 224);
+
+}
+
+#color-palette {
+  margin-left: 666px;
+  margin-bottom: 30px;
+  
+}
+
+#pixel-board {
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: content-box;
+}
+
+#panel  {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 152px;
+  margin-bottom: 30px;
+}
+
+#panel > button {
+  width: max-content;
+  display: inline-block;
+}
+
+#board-size {
+  width: 35px;
+}
+
+h1 {
+  font-family: monospace;
+  font-size: 30px;
+  color: rgb(165, 11, 11);
+}
+
+.selected-color {
+  display:inline-block;
+  border: black solid 1px;
+  padding: 20px;
+  margin-top: 5px;
+}
+
+footer{
+  text-align: center;
+  margin-top: 30px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
