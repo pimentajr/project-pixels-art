@@ -1,16 +1,22 @@
-const colorsArray = ['black', 'red', 'blue', 'yellow'];
 const button = document.getElementById('clear-board');
 
-function createColors(colors) {
+function colors() {
+  return Math.floor(Math.random() * 256);
+}
+colors();
+
+function createColors() {
   const sectionBoxColors = document.querySelector('#color-palette');
-  for (let index = 0; index < colors.length; index += 1) {
+  const firstDiv = document.querySelector('#color-palette').firstElementChild;
+  for (let index = 0; index < 4; index += 1) {
+    const arrayColors = ['rgb(' + colors() + "," + colors() + "," + colors() + ')'];
     const createBoxColors = document.createElement('div');
     sectionBoxColors.appendChild(createBoxColors);
     createBoxColors.className = 'color';
-    createBoxColors.style.backgroundColor = colorsArray[index];
+    createBoxColors.style.backgroundColor = arrayColors[0];
   }
 }
-createColors(colorsArray);
+createColors();
 
 const table = document.querySelector('#pixel-board');
 function createTable(numberRows, unityNumbers) {
@@ -31,6 +37,7 @@ createTable(5, 5);
 
 function inicitalColor() {
   document.querySelector('#color-palette').firstElementChild.className = 'color selected';
+  document.querySelector('#color-palette').firstElementChild.style.backgroundColor = 'black';
 }
 inicitalColor();
 
@@ -90,7 +97,7 @@ function changeSizePixel() {
       pixel.style.width = inputSize + 'px';
       pixel.style.height = inputSize + 'px';
     } else {
-      alert ('Board inválido!');
+      alert('Board inválido!');
       inputSize = ' ';
     }
   }
