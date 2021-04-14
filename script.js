@@ -67,10 +67,10 @@ function tableConditional(number) {
     break;
   case (aux > 0 && aux < 5):
     aux = 5;
-    break;
+    return aux;
   case (aux > 50):
     aux = 50;
-    break;
+    return aux;
   default:
     return aux;
   }
