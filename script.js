@@ -1,6 +1,6 @@
 let colorPalette = document.querySelector('#color-palette');
 
-let cores = ['black', 'red', 'blue', 'green', 'pink', 'yellow', 'brown'];
+let cores = ['black', 'red', 'blue', 'green'];
 
 for(let index = 0; index < cores.length; index += 1){
   let nameCor = cores[index];
@@ -30,6 +30,5 @@ for(let linha = 0; linha < 5; linha += 1){
     let coluna = document.createElement('td');
     pixelsTable.appendChild(coluna);
     coluna.className = 'pixel';
-    coluna.backgroundColor = 'white';
   }
 }
