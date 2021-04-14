@@ -7,28 +7,13 @@
   height: 40px;
   width: 40px;
   border: 1px solid black;
+  margin-right: 3px;
 }
 
 #color-palette {
   width: 180px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.g1 {
-  background-color: black;
-}
-
-.g2 {
-  background-color: rgb(204, 204, 102);
-}
-
-.g3 {
-  background-color: rgb(121, 140, 53);
-}
-
-.g4 {
-  background-color: rgb(72, 89, 34);
 }
 
 #pixel-board {
