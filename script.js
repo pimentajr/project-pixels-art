@@ -82,14 +82,14 @@ function changeSizePixel() {
     const pixel = size[index];
 
     if (inputSize > 0 && inputSize <= 5) {
-      pixel.style.width = '5' + 'px';
-      pixel.style.height = '5' + 'px';
+      pixel.style.width = 5 + 'px';
+      pixel.style.height = 5 + 'px';
     } else if (inputSize >= 50) {
-      pixel.style.width = '50' + 'px';
-      pixel.style.height = '50' + 'px';
+      pixel.style.width = 50 + 'px';
+      pixel.style.height = 50 + 'px';
     } else if (inputSize < 0) {
       alert('Board inválido!');
-      input= "";
+      input.value = ' ';
     } else {
       pixel.style.width = inputSize + 'px';
       pixel.style.height = inputSize + 'px';
