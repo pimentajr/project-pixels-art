@@ -26,11 +26,10 @@
   border: 1px solid black;
   height: 40px;
   width: 40px;
-  display: inline-block;
+  display: table-cell;
 }
 
 #pixel-board {
-  border: 1px solid black;
-  width: 210px;
-  height: 210px;
+  box-sizing: border-box;
+  display: table;
 }
