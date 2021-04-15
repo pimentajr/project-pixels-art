@@ -58,32 +58,29 @@ function initialBoard() {
   }
 }
 
-// board conditionals
-function tableConditional(number) {
-  let aux = number;
-  switch (true) {
-  case (aux <= 0):
-    alert('Board inválido!');
-    break;
-  case (aux > 0 && aux < 5):
-    aux = 5;
-    return aux;
-  case (aux > 50):
-    aux = 50;
-    return aux;
-  default:
-    return aux;
-  }
-}
-
 // build board
-function setSize() {
-  const tableSize = tableInpt.value;
-  const auxSize = tableConditional(tableSize);
-  for (let index = 0; index < auxSize; index += 1) {
+function setSize(number) {
+  while (mainContainer.firstChild) {
+    mainContainer.removeChild(mainContainer.lastChild);
+  }
+  for (let index = 0; index < number; index += 1) {
     const pixels = create('div');
     pixels.className = 'pixel';
     add(mainContainer, pixels);
+  }
+}
+
+// board conditionals
+function tableConditional() {
+  const boardSize = parseInt(document.querySelector('#board-size').value, 10);
+  if (boardSize <= 0) {
+    return alert('Board inválido!');
+  } if (boardSize < 5) {
+    setSize(5);
+  } else if (boardSize > 50) {
+    setSize(50);
+  } else {
+    setSize(boardSize);
   }
 }
 
@@ -127,5 +124,5 @@ window.onload = () => {
   palette.addEventListener('click', classSelected);
   mainContainer.addEventListener('click', drawPixels);
   clearButton.addEventListener('click', clearBoard);
-  tableBtn.addEventListener('click', setSize);
+  tableBtn.addEventListener('click', tableConditional);
 };
