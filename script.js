@@ -27,13 +27,15 @@ boxColorGenerate('magenta');
 boxColorGenerate('green');
 boxColorGenerate('red');
 
+function titleColorSelected() {
 let colorSection = document.getElementById('color-palette');
-
 colorSection.addEventListener('click', function(event) {
   let selectedColor = event.target.style.backgroundColor;
   let selectedColorSpam = document.querySelector('.selected-color');
   selectedColorSpam.innerText = selectedColor;
 });
+}
+titleColorSelected();
 
 function selectColor() {
   colorPalette.addEventListener('click', (selectedColor) => {
