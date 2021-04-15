@@ -17,7 +17,7 @@ for (let index = 0; index < palletColor.length; index += 1) {
 // Cria o quadro com a largura dinamica.
 const board = document.querySelector('#pixel-board');
 const squareSide = 5;
-const squareSideWidht = `${squareSide * 40 + 50}px`;
+const squareSideWidht = `${squareSide * 42}px`;
 
 board.style.width = squareSideWidht;
 for (let index = 0; index < squareSide ** 2; index += 1) {
@@ -39,13 +39,14 @@ if (selected === null) {
 function changeSelected(event) {
   const selectedContainer = document.querySelector('.selected');
   selectedContainer.className = 'color box';
-  
+
   event.target.className += ' selected';
 }
 
 const pallet = document.querySelector('#colors');
 pallet.addEventListener('click', changeSelected);
 
+// Pinta com a cor selecionada
 function paintPixel(event) {
   const selectedContainer = document.querySelector('.selected');
   const selectedColor = selectedContainer.style.backgroundColor;
@@ -53,3 +54,13 @@ function paintPixel(event) {
   event.target.style.backgroundColor = selectedColor;
 }
 board.addEventListener('click', paintPixel);
+
+function cleanBoard() {
+  const squarelist = document.getElementsByClassName('pixel box');
+  for (const square of squarelist) {
+    square.style.backgroundColor = 'white';
+  }
+}
+
+const cleanButton = document.querySelector('#clear-board');
+cleanButton.addEventListener('click', cleanBoard);
