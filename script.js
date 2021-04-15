@@ -27,6 +27,14 @@ boxColorGenerate('magenta');
 boxColorGenerate('green');
 boxColorGenerate('red');
 
+let colorSection = document.getElementById('color-palette');
+
+colorSection.addEventListener('click', function(event) {
+  let selectedColor = event.target.style.backgroundColor;
+  let selectedColorSpam = document.querySelector('.selected-color');
+  selectedColorSpam.innerText = selectedColor;
+});
+
 function selectColor() {
   colorPalette.addEventListener('click', (selectedColor) => {
     const eventTarget = selectedColor.target;
