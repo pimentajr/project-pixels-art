@@ -11,28 +11,14 @@ function setPixelColor(color) {
   });
 }
 
-setPixelColor('black');
-
 function selectThis(e) {
   if (e.target.classList[0] === 'color') { // certifica que é um elemento da palheta
     document.getElementsByClassName('selected')[0].classList.remove('selected');
     e.target.classList.add('selected');
-    const selectedColor = e.target.classList[1];
+    const selectedColor = e.target.style.backgroundColor;
     setPixelColor(selectedColor);
   }
 }
-
-palette.addEventListener('click', selectThis);
-
-buttonClear.addEventListener('click', () => {
-  const tableRows = document.querySelectorAll('tr');
-  for (let r = 0; r < tableRows.length; r += 1) {
-    const pixels = tableRows[r].children;
-    for (let i = 0; i < pixels.length; i += 1) {
-      pixels[i].style.backgroundColor = 'white';
-    }
-  }
-});
 
 function removeBoard() {
   const tableRows = document.querySelectorAll('tr');
@@ -52,7 +38,31 @@ function createBoard(boardSize) {
     }
   }
 }
-createBoard(5);
+
+function randomColors() {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+function changePalette() {
+  const color = document.querySelectorAll('.color');
+  color[0].style.backgroundColor = 'black';
+  for (let i = 1; i <= (color.length - 1); i += 1) {
+    color[i].style.backgroundColor = randomColors();
+  }
+}
+
+buttonClear.addEventListener('click', () => {
+  const tableRows = document.querySelectorAll('tr');
+  for (let r = 0; r < tableRows.length; r += 1) {
+    const pixels = tableRows[r].children;
+    for (let i = 0; i < pixels.length; i += 1) {
+      pixels[i].style.backgroundColor = 'white';
+    }
+  }
+});
 
 buttonBoard.addEventListener('click', () => {
   let sizeValue = input.value;
@@ -68,3 +78,8 @@ buttonBoard.addEventListener('click', () => {
     alert('Board inválido!');
   }
 });
+
+palette.addEventListener('click', selectThis);
+setPixelColor('black');
+createBoard(5);
+changePalette();
