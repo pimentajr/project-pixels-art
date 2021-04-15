@@ -59,7 +59,7 @@ function colorPaintPixel() {
     initialcolor[index].addEventListener('click', (event) => {
       const currentColorSelected = document.querySelector('.selected');
       const windowAtt = window.getComputedStyle(currentColorSelected);
-      const result = event.target.style.backgroundColor;
+      let result = event.target.style.backgroundColor;
       result = windowAtt.backgroundColor;
     });
   }
