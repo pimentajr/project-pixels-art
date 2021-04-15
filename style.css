@@ -11,15 +11,13 @@
 
 #color-palette {
   width: 180px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 #pixel-board {
   padding-top: 20px;
   width: 210px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .pixelLine {
@@ -33,5 +31,11 @@
   width: 40px;
   border: solid black 1px;
   display: table-cell;
+}
+
+.clear-board {
+  margin: 0 auto;
+  text-align: center; 
+  padding-top: 20px;
 }
 
