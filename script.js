@@ -28,12 +28,12 @@ boxColorGenerate('green');
 boxColorGenerate('red');
 
 function titleColorSelected() {
-const colorSection = document.getElementById('color-palette');
-colorSection.addEventListener('click', function(event) {
-  const selectedColor = event.target.style.backgroundColor;
-  const selectedColorSpam = document.querySelector('.selected-color');
-  selectedColorSpam.innerText = selectedColor;
-});
+  const colorSection = document.getElementById('color-palette');
+  colorSection.addEventListener ('click', function(event) {
+    const selectedColor = event.target.style.backgroundColor;
+    const selectedColorSpam = document.querySelector('.selected-color');
+    selectedColorSpam.innerText = selectedColor;
+  });
 }
 titleColorSelected();
 
