@@ -34,23 +34,31 @@ createColumnLines();
 
 // primeira cor selected preta e mudar quando outra cor for selecionada
 
-window.onload = blackColorFirst
-
 function blackColorFirst() {
   colorBlack.className = 'color selected';
 }
 
+window.onload = blackColorFirst
+
 const colorPalette = document.querySelector('#color-palette');
 
-function selectedColor() {
-  colorPalette.addEventListener('click', (event) => {
-    const colorSelected = document.querySelector('.selected');
-    if (event.target.id !== 'color selected') {
-      colorSelected.classList.remove('selected');
-      event.target.classList.add('selected');
+function selectedColor(event) {
+  const colorSelected = document.querySelector('.selected');
+  if (event.target.className !== 'color selected') {
+    colorSelected.classList.remove('selected');
+    event.target.classList.add('selected');
     }
-  })
+};
+
+colorPalette.addEventListener('click', selectedColor);
+
+// colorir os square
+function colorSquare(event) {
+  const colorSelected = document.querySelector('.selected');
+  const selectedBGColor = getComputedStyle(colorSelected).backgroundColor;
+  if (event.target.className === 'pixel') {
+    event.target.style.backgroundColor = selectedBGColor;      
+    }
 }
 
-selectedColor();
-
+pixelBoard.addEventListener('click', colorSquare);
