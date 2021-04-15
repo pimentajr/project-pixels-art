@@ -39,28 +39,31 @@ function paintPixelBoard(color) {
 }
 paintPixelBoard('black');
 
+function selectedState(event) {
+  const currentSelectedColor = document.querySelector('.selected');
+  currentSelectedColor.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
 function selectColor() {
   const selectedcolor = document.querySelectorAll('.color');
   for (let index = 0; index < selectedcolor.length; index += 1) {
-    function selectedState() {
-      for (let token = 0; token <= 3; token += 1) {
-        selectedcolor[token].classList.remove(['selected']);
-      }
-      selectedcolor[index].classList.add(['selected']);
-      selectedcolor[index].style.backgroundColor;
-      const initialcolor = document.querySelectorAll('.pixel');
-      const finalcolor = document.querySelector('.selected');
-      for (let hint = 0; hint < initialcolor.length; hint += 1) {
-        function pixelselected() {
-          initialcolor[hint].style.backgroundColor = finalcolor.style.backgroundColor;
-        }
-        initialcolor[hint].addEventListener('click', pixelselected);
-      }
-    }
     selectedcolor[index].addEventListener('click', selectedState);
   }
 }
 selectColor();
+
+function colorPaintPixel() {
+  const initialcolor = document.querySelectorAll('.pixel');
+  for (let index = 0; index < initialcolor.length; index += 1) {
+    initialcolor[index].addEventListener('click', (event) => {
+      const currentColorSelected = document.querySelector('.selected');
+      let windowAtt = window.getComputedStyle(currentColorSelected);
+      event.target.style.backgroundColor = windowAtt.backgroundColor;
+    });
+  }
+}
+colorPaintPixel()
 
 function buttonClear() {
   const button = document.createElement('button');

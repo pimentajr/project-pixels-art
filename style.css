@@ -44,5 +44,6 @@ body {
 }
 
 .interactive_container {
-  display: block;
+  align-self: center;
 }
+
