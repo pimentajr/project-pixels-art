@@ -81,3 +81,14 @@ function generateBoard() {
   });
 }
 generateBoard();
+
+function randomColor() {
+  const color = document.querySelectorAll('.color');
+  for (let index = 1; index < color.length; index += 1) {
+    const r = Math.random() * 255;
+    const g = Math.random() * 255;
+    const b = Math.random() * 255;
+    color[index].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  }
+}
+randomColor();
