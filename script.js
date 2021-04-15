@@ -1,23 +1,22 @@
-document.querySelector('#black').style.backgroundColor = 'black';
-document.querySelector('#red').style.backgroundColor = 'red';
-document.querySelector('#yellow').style.backgroundColor = 'yellow';
-document.querySelector('#blue').style.backgroundColor = 'blue';
-
-function createColunnLines() {
-  for (let index = 0; index < 5; index += 1) {
+function createColunnLines(size) {
+  for (let index = 0; index < size; index += 1) {
     const colunn = document.createElement('div');
     colunn.className = 'colunn';
     document.querySelector('#pixel-board').appendChild(colunn);
     document.querySelectorAll('.colunn');
-    for (let indice = 0; indice < 5; indice += 1) {
+    for (let indice = 0; indice < size; indice += 1) {
       const lines = document.createElement('div');
       lines.className = 'pixel';
       colunn.appendChild(lines);
     }
   }
-} createColunnLines();
+} createColunnLines(5);
 
 function inicialColor() {
+  document.querySelector('#black').style.backgroundColor = 'black';
+  document.querySelector('#red').style.backgroundColor = 'red';
+  document.querySelector('#yellow').style.backgroundColor = 'yellow';
+  document.querySelector('#blue').style.backgroundColor = 'blue';
   const black = document.querySelector('#black');
   black.className = 'color selected';
 } inicialColor();
@@ -50,11 +49,28 @@ function paintCanvas() {
 
 function boardWhite() {
   const button = document.querySelector('#clear-board');
-  button.addEventListener('click', (use) => {
+  button.addEventListener('click', () => {
     const board = document.querySelectorAll('.pixel');
-    for (let index = 0; index < board.length; index += 1) { 
+    for (let index = 0; index < board.length; index += 1) {
       const element = board[index];
       element.style.backgroundColor = 'white';
     }
   });
 }boardWhite();
+
+function sizePixel() {
+  const input = document.querySelector('#board-size');
+  const buttonVQV = document.querySelector('#generate-board');
+  const pixelBoard = document.querySelector('#pixel-board');
+  buttonVQV.addEventListener('click', () => {
+    if (input.value === '') {
+      alert('Board inválido!');
+    } else if (input.value < 5) {
+      input.value = 5;
+    } else if (input.value > 50) {
+      input.value = 50;
+    }
+    pixelBoard.innerHTML = '';
+    createColunnLines(input.value);
+  });
+} sizePixel();
