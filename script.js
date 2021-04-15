@@ -35,12 +35,21 @@ if (selected === null) {
   blackSquare.className = 'color box selected';
 }
 
+// Muda a cor selecionada
 function changeSelected(event) {
   const selectedContainer = document.querySelector('.selected');
   selectedContainer.className = 'color box';
-
+  
   event.target.className += ' selected';
 }
 
-const pallet = document.querySelector('#color-palette');
+const pallet = document.querySelector('#colors');
 pallet.addEventListener('click', changeSelected);
+
+function paintPixel(event) {
+  const selectedContainer = document.querySelector('.selected');
+  const selectedColor = selectedContainer.style.backgroundColor;
+
+  event.target.style.backgroundColor = selectedColor;
+}
+board.addEventListener('click', paintPixel);

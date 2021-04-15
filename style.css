@@ -11,7 +11,11 @@
 }
 
 #pixel-board {
-  margin: 30px;
+  padding: 30px;
   display: inline-block;
   line-height: 0px;
+}
+
+#colors {
+  display: inline-block;
 }
