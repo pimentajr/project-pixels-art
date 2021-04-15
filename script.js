@@ -38,9 +38,11 @@ add(body, mainContainer);
 const midDiv = document.querySelector('#mid-div');
 
 // input
+// Reference: https://www.w3schools.com/jsref/prop_number_min.asp
 const tableInpt = create('input');
 tableInpt.id = 'board-size';
 tableInpt.type = 'number';
+tableInpt.min = '1';
 add(midDiv, tableInpt);
 
 // create button
