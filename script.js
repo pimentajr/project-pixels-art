@@ -21,7 +21,7 @@ function clearButton() {
 }
 clearButton();
 
-// Cria um quadro de pixels. Baseado no código e na explicação dada por Jean Esteves. Perfil: https://github.com/jeansantest Código: https://github.com/tryber/sd-011-project-pixels-art/pull/6/files
+// Cria um quadro de pixels. Baseado no código e na explicação de Jean Esteves. Perfil: https://github.com/jeansantest Código: https://github.com/tryber/sd-011-project-pixels-art/pull/6/files
 function createPixels(number) {
   const pixelBoard = document.getElementById('pixel-board');
   for (let index = 0; index < number; index += 1) {
