@@ -89,12 +89,11 @@ function changeSizePixel() {
   } else if (input.value >= 50) {
     input.value = 50;
   } else if (input.value > 5 && input.value < 50) {
-    input.value = input;
+    input.value = input.value
   } else {
     alert('Board inválido!');
     input.value = '';
   }
   createTable(input.value, input.value);
-  inicitalColor();
 }
 sizeButton.addEventListener('click', changeSizePixel);
