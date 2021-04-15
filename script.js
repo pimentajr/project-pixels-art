@@ -7,10 +7,11 @@ function randomColor() {
   return `rgb(${r}, ${g}, ${b})`;
 }
 // Cor aleatória para as 3 cores subsequentes
-const pallet = document.querySelectorAll('.genColor');
-for (let index = 0; index < pallet.length; index += 1) {
+document.querySelector('#black').style.backgroundColor = 'black';
+const palletColor = document.querySelectorAll('.genColor');
+for (let index = 0; index < palletColor.length; index += 1) {
   const tempColor = randomColor();
-  pallet[index].style.backgroundColor = tempColor;
+  palletColor[index].style.backgroundColor = tempColor;
 }
 
 // Cria o quadro com a largura dinamica.
@@ -31,5 +32,15 @@ for (let index = 0; index < squareSide ** 2; index += 1) {
 const selected = document.querySelector('.selected');
 if (selected === null) {
   const blackSquare = document.querySelector('#black');
-  blackSquare.className = 'color box black selected';
+  blackSquare.className = 'color box selected';
 }
+
+function changeSelected(event) {
+  const selectedContainer = document.querySelector('.selected');
+  selectedContainer.className = 'color box';
+
+  event.target.className += ' selected';
+}
+
+const pallet = document.querySelector('#color-palette');
+pallet.addEventListener('click', changeSelected);
