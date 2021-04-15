@@ -18,11 +18,11 @@ forthColor.style.backgroundColor = 'rgb(72, 89, 34)';
 const pixelBoard = document.getElementById('pixel-board');
 
 function createColumnLines() {
-  for (let index = 0; index < 5; index += 1) {
+  for (let index = 0; index < 5; index++) {
     const pixelLine = document.createElement('div');
     pixelLine.className = 'pixelLine';
     pixelBoard.appendChild(pixelLine);
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < 5; i++) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       pixelLine.appendChild(pixel);
@@ -38,17 +38,18 @@ function blackColorFirst() {
   colorBlack.className = 'color selected';
 }
 
-window.onload = blackColorFirst
+window.onload = blackColorFirst;
 
 const colorPalette = document.querySelector('#color-palette');
 
 function selectedColor(event) {
   const colorSelected = document.querySelector('.selected');
-  if (event.target.className !== 'color selected') {
+  const color = event.target;
+  if (color.className !== 'color selected') {
     colorSelected.classList.remove('selected');
-    event.target.classList.add('selected');
-    }
-};
+    color.classList.add('selected');
+  }
+}
 
 colorPalette.addEventListener('click', selectedColor);
 
@@ -56,9 +57,22 @@ colorPalette.addEventListener('click', selectedColor);
 function colorSquare(event) {
   const colorSelected = document.querySelector('.selected');
   const selectedBGColor = getComputedStyle(colorSelected).backgroundColor;
-  if (event.target.className === 'pixel') {
-    event.target.style.backgroundColor = selectedBGColor;      
+  const pixel = event.target;
+  if (pixel.className === 'pixel') {
+    pixel.style.backgroundColor = selectedBGColor;      
     }
 }
 
 pixelBoard.addEventListener('click', colorSquare);
+
+// botao de limpar
+const clearButton = document.querySelector('#clear-board');
+
+function clearPixels() {
+  let clearPixel = document.querySelectorAll('.pixel');
+  for (let i = 0; i < clearPixel.length; i++) {
+    clearPixel[i].style.backgroundColor = 'white';
+  }
+}
+
+clearButton.addEventListener('click', clearPixels);
