@@ -95,6 +95,5 @@ function changeSizePixel() {
     input.value = '';
   }
   createTable(input.value, input.value);
-  inicitalColor();
 }
 sizeButton.addEventListener('click', changeSizePixel);
