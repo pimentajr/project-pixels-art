@@ -1,8 +1,10 @@
+const paleta = document.querySelector('#color-palette');
+const pixelBoard = document.querySelector('#pixel-board');
 function createColunnLines(size) {
   for (let index = 0; index < size; index += 1) {
     const colunn = document.createElement('div');
     colunn.className = 'colunn';
-    document.querySelector('#pixel-board').appendChild(colunn);
+    pixelBoard.appendChild(colunn);
     document.querySelectorAll('.colunn');
     for (let indice = 0; indice < size; indice += 1) {
       const lines = document.createElement('div');
@@ -21,8 +23,6 @@ function inicialColor() {
   black.className = 'color selected';
 } inicialColor();
 
-const paleta = document.querySelector('#color-palette');
-
 function choosePalette() {
   paleta.addEventListener('click', (cor) => {
     const eventTarget = cor.target;
@@ -37,7 +37,6 @@ function choosePalette() {
 } choosePalette();
 
 function paintCanvas() {
-  const pixelBoard = document.querySelector('#pixel-board');
   pixelBoard.addEventListener('click', (pixel) => {
     const e = pixel.target;
     const selected = document.querySelector('.selected').style.backgroundColor;
@@ -61,7 +60,6 @@ function boardWhite() {
 function sizePixel() {
   const input = document.querySelector('#board-size');
   const buttonVQV = document.querySelector('#generate-board');
-  const pixelBoard = document.querySelector('#pixel-board');
   buttonVQV.addEventListener('click', () => {
     if (input.value === '') {
       alert('Board inválido!');
@@ -74,3 +72,15 @@ function sizePixel() {
     createColunnLines(input.value);
   });
 } sizePixel();
+
+function randomColor() {
+  const color = document.getElementsByClassName('color');
+  for (let index = 1; index < color.length; index += 1) {
+    const r = parseInt(Math.random() * 255, 10);
+    const g = parseInt(Math.random() * 255, 10);
+    const b = parseInt(Math.random() * 255, 10);
+
+    color[index].style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
+  }
+}
+randomColor();
