@@ -14,10 +14,11 @@ for (let index = 0; index < pallet.length; index += 1) {
 }
 
 const board = document.querySelector('#pixel-board');
-const x = 5;
-const y = 5;
+const squareSide = 5;
+let squareSideWidht = `${squareSide * 40 + 50}px`;
 
-for (let index = 0; index < x * y; index += 1) {
+board.style.width = squareSideWidht;
+for (let index = 0; index < squareSide ** 2; index += 1) {
   const square = document.createElement('div');
   square.style.backgroundColor = 'white';
   square.className = 'pixel box';
