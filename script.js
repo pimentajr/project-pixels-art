@@ -7,7 +7,6 @@ colors();
 
 function createColors() {
   const sectionBoxColors = document.querySelector('#color-palette');
-  const firstDiv = document.querySelector('#color-palette').firstElementChild;
   for (let index = 0; index < 4; index += 1) {
     const arrayColors = ['rgb(' + colors() + "," + colors() + "," + colors() + ')'];
     const createBoxColors = document.createElement('div');
@@ -19,7 +18,9 @@ function createColors() {
 createColors();
 
 const table = document.querySelector('#pixel-board');
+
 function createTable(numberRows, unityNumbers) {
+  table.innerHTML = '';
   for (let index = 0; index < numberRows; index += 1) {
     const createLine = document.createElement('tr');
     createLine.className = 'row';
@@ -83,24 +84,16 @@ const sizeButton = document.getElementById('generate-board');
 const input = document.getElementById('board-size');
 
 function changeSizePixel() {
-  const size = document.querySelectorAll('.pixel');
-  for (let index = 0; index < size.length; index += 1) {
-    const inputSize = input.value;
-    const pixel = size[index];
-    if (inputSize > 0 && inputSize <= 5) {
-      pixel.style.width = 5 + 'px';
-      pixel.style.height = 5 + 'px';
-    } else if (inputSize >= 50) {
-      pixel.style.width = 50 + 'px';
-      pixel.style.height = 50 + 'px';
-    } else if (inputSize > 5 && inputSize < 50) {
-      pixel.style.width = inputSize + 'px';
-      pixel.style.height = inputSize + 'px';
-    } else {
-      alert('Board inválido!');
-      inputSize = ' ';
-    }
+  if (input.value > 0 && input.value <= 5) {
+    input.value = 5;
+  } else if (input.value >= 50) {
+    input.value = 50;
+  } else if (input.value > 5 && input.value < 50) {
+    input.value = input;
+  } else {
+    alert('Board inválido!');
+    input.value = '';
   }
+  createTable(input.value, input.value);
 }
-
 sizeButton.addEventListener('click', changeSizePixel);
