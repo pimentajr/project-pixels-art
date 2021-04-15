@@ -62,8 +62,7 @@ function initialBoard() {
 function setSize(number) {
   while (mainContainer.firstChild) {
     mainContainer.removeChild(mainContainer.lastChild);
-  }
-  for (let index = 0; index < number; index += 1) {
+  } for (let index = 0; index < number; index += 1) {
     const pixels = create('div');
     pixels.className = 'pixel';
     add(mainContainer, pixels);
@@ -71,9 +70,10 @@ function setSize(number) {
 }
 
 // board conditionals
+// Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
 function tableConditional() {
   const boardSize = parseInt(document.querySelector('#board-size').value, 10);
-  if (Number.isNaN(setSize)) {
+  if (boardSize <= 0 || Number.isNaN(boardSize)) {
     return alert('Board inválido!');
   } if (boardSize < 5) {
     setSize(5);
