@@ -73,7 +73,7 @@ function setSize(number) {
 // board conditionals
 function tableConditional() {
   const boardSize = parseInt(document.querySelector('#board-size').value, 10);
-  if (boardSize <= 0) {
+  if (Number.isNaN(setSize)) {
     return alert('Board inválido!');
   } if (boardSize < 5) {
     setSize(5);
