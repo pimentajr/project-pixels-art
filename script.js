@@ -1,23 +1,42 @@
 // Objetos HTML
 // ex 7.
-const colors = document.getElementsByClassName('color');
-const pixels = document.getElementsByClassName('pixel');
-const limpar = document.getElementById('clear-board');
-let board = document.querySelector('#generate-board');
+
+
+
 const mainPage = document.getElementById('main');
 
 // Funções
+const colors = document.getElementsByClassName('color');
 function removeClass() {
   for (let index = 0; index < colors.length; index += 1) {
     colors[index].classList.remove('selected');
   }
 }
+
+// 4
+// Criar uma função que cria um board novo
+
+function createTable(size) {
+  let pixelBoard = document.getElementById('pixel-board');
+  for( let line = 0; line < size; line += 1) {
+    let tableLine = document.createElement('tr');
+    for (let colum = 0; colum < size; colum += 1) {
+      let tableColum = document.createElement('td');
+      tableColum.className = 'pixel';
+      tableLine.appendChild(tableColum);
+    }
+    pixelBoard.appendChild(tableLine);
+  }
+}
+console.log(createTable(4))
 // Ex 7
 function addClass(event) {
   event.target.classList.add('selected');
 }
 
 // ex 9
+const pixels = document.getElementsByClassName('pixel');
+
 function clearPixel() {
   for (let pixel = 0; pixel < pixels.length; pixel += 1) {
     pixels[pixel].style.backgroundColor = 'white';
@@ -25,12 +44,16 @@ function clearPixel() {
 }
 
 // ex 8 ------ Refazer essa questão sozinho.
+/* const colorPallet = document.getElementById('color-palette');
+const selectedColor = colorPallet.getElementsByClassName('selected')[0];
 function colorPixel(event) {
-  const selectedColor = document.getElementsByClassName('selected')[0];
+  console.log('epaa')
   const color = getComputedStyle(selectedColor).backgroundColor;
   const pixelSelected = event.target;
-  pixelSelected.style.backgroundColor = color;
-}
+ event.target.style.backgroundColor = color;
+} */
+
+
 // Regras de negocio
 for (let item = 0; item < colors.length; item += 1) {
   const eventItem = colors[item];
@@ -43,6 +66,7 @@ for (let px = 0; px < pixels.length; px += 1) {
   pixels[px].addEventListener('click', colorPixel);
 }
 
+const limpar = document.getElementById('clear-board');
 limpar.addEventListener('click', clearPixel);
 
 // ex 10
@@ -64,23 +88,9 @@ function deleteByID(id) {
 }
 console.log(deleteByID('pixel-board'));
 
-// Criar uma função que cria um board novo
-function boardGenerate(size) {
-  let newBoar = document.createElement('table');
-  newBoar.id = 'pixel-board';
-  for (let lines = 0; lines < size; lines += 1) {
-    let line = document.createElement('tr');
-    for (let rows = 0; rows < size; rows += 1) {
-      let row = document.createElement('td');
-      row.className = 'pixel';
-      line.appendChild(row);
-    }
-    newBoar.appendChild(line);
-  }
-  return newBoar;
-}
-console.log(boardGenerate(8));
-mainPage.appendChild(boardGenerate(8))
+
+/* console.log(boardGenerate(8));
+mainPage.appendChild(boardGenerate(8)) */
 // Adicionar aos pixels reação ao click para serem pintados.
 
 // Adicionar a boardGenerate ao DOM com todas os pixels brancos - 
