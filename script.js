@@ -18,13 +18,13 @@ yellowSquare.style = 'background-color: yellow';
 
 // Criando seção para armazenar o botão "limpar";
 
-const sectionPixelBoard = document.createElement('section');
-document.body.appendChild(sectionPixelBoard);
+const sectionButtons = document.createElement('section');
+document.body.appendChild(sectionButtons);
 
 const button = document.createElement('button');
 button.innerText = 'Limpar';
 button.id = 'clear-board';
-sectionPixelBoard.appendChild(button);
+sectionButtons.appendChild(button);
 
 function changeColor() {
   const pixels = document.querySelectorAll('.pixel');
@@ -34,6 +34,18 @@ function changeColor() {
   }
 }
 button.addEventListener('click', changeColor);
+
+// Criando input e botão
+
+const input = document.createElement('input');
+input.id = 'board-size';
+input.type = 'number';
+sectionButtons.appendChild(input);
+
+const button2 = document.createElement('button');
+button2.innerText = 'VQV';
+button2.id = 'generate-board';
+sectionButtons.appendChild(button2);
 
 // Criando tabela
 
@@ -48,10 +60,11 @@ for (let index = 1; index <= 5; index += 1) {
   for (let indice = 1; indice <= 5; indice += 1) {
     const columnLines = document.createElement('td');
     columnLines.classList = 'pixel';
-    columnLines.addEventListener('click', (buttom) => {
+    columnLines.addEventListener('click', (botao) => {
       if (document.querySelector('.selected')) {
+        const { target } = botao;
         const color = document.querySelector('.selected').style.backgroundColor;
-        buttom.target.style.backgroundColor = color;
+        target.style.backgroundColor = color;
       }
     });
     tableLines.appendChild(columnLines);
