@@ -58,12 +58,12 @@ function colorPaintPixel() {
   for (let index = 0; index < initialcolor.length; index += 1) {
     initialcolor[index].addEventListener('click', (event) => {
       const currentColorSelected = document.querySelector('.selected');
-      let windowAtt = window.getComputedStyle(currentColorSelected);
+      const windowAtt = window.getComputedStyle(currentColorSelected);
       event.target.style.backgroundColor = windowAtt.backgroundColor;
     });
   }
 }
-colorPaintPixel()
+colorPaintPixel();
 
 function buttonClear() {
   const button = document.createElement('button');
