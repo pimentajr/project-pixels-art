@@ -4,6 +4,10 @@
 function createTable() {
   let input = document.getElementById('board-size');
   let pixelBoard = document.getElementById('pixel-board');
+  if (input.value === '') {
+    alert('Board inválido!');
+  }
+
   for( let line = 0; line < input.value; line += 1) {
     let tableLine = document.createElement('tr');
     tableLine.className = 'rows'
@@ -80,6 +84,7 @@ function deleteTable() {
     rows[index].remove();
   }
 }
+vqvButton.addEventListener('click', deleteTable);
 vqvButton.addEventListener('click', createTable);
 
 /* function validationNumber(number) {
