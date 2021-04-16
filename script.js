@@ -1,21 +1,22 @@
 /* const mainPage = document.getElementById('main'); */
 // 4
 // Criar uma função que cria um board novo
-function createTable(size) {
+function createTable() {
+  let input = document.getElementById('board-size');
   let pixelBoard = document.getElementById('pixel-board');
-  for( let line = 0; line < size; line += 1) {
+  for( let line = 0; line < input.value; line += 1) {
     let tableLine = document.createElement('tr');
-    for (let colum = 0; colum < size; colum += 1) {
+    tableLine.className = 'rows'
+    for (let colum = 0; colum < input.value; colum += 1) {
       let tableColum = document.createElement('td');
       tableColum.className = 'pixel';
       tableLine.appendChild(tableColum);
     }
     pixelBoard.appendChild(tableLine);
   }
+  
 }
-
-let input = document.getElementById('board-size');
-createTable(input.value);
+createTable() 
 
 const colors = document.getElementsByClassName('color');
 
@@ -71,13 +72,21 @@ const limpar = document.getElementById('clear-board');
 limpar.addEventListener('click', clearPixel);
 
 // ex 10
-// Função feita a partir da análise do codigo do colega Jonatha Braga
+const vqvButton = document.getElementById('generate-board');
+
+function deleteTable() {
+  const rows = document.getElementsByClassName('rows');
+  for (let index = rows.length - 1; index >= 0; index -= 1) {
+    rows[index].remove();
+  }
+}
+vqvButton.addEventListener('click', createTable);
+
 /* function validationNumber(number) {
   if (number < 5) {
     return 5;
   }
-  if (number > 50){
-    return 50;
+  
   } 
 } */
 // Criar uma função que deleta o board.
