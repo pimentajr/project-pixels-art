@@ -39,7 +39,7 @@ function configColorPallet(pallet) {
   }
 }
 
-const colorPAllet = document.getElementsByClassName('color-palette');
+const colorPAllet = document.getElementsByClassName('color');
 configColorPallet(colorPAllet);
 
 // ex 8 ------ Refazer essa questão sozinho.
