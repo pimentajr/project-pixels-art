@@ -1,21 +1,6 @@
-// Objetos HTML
-// ex 7.
-
-
-
-const mainPage = document.getElementById('main');
-
-// Funções
-const colors = document.getElementsByClassName('color');
-function removeClass() {
-  for (let index = 0; index < colors.length; index += 1) {
-    colors[index].classList.remove('selected');
-  }
-}
-
+/* const mainPage = document.getElementById('main'); */
 // 4
 // Criar uma função que cria um board novo
-
 function createTable(size) {
   let pixelBoard = document.getElementById('pixel-board');
   for( let line = 0; line < size; line += 1) {
@@ -28,22 +13,52 @@ function createTable(size) {
     pixelBoard.appendChild(tableLine);
   }
 }
-console.log(createTable(4))
+
+let input = document.getElementById('board-size');
+createTable(input.value);
+
+const colors = document.getElementsByClassName('color');
+
 // Ex 7
-function addClass(event) {
-  event.target.classList.add('selected');
-}
-
-// ex 9
-const pixels = document.getElementsByClassName('pixel');
-
-function clearPixel() {
-  for (let pixel = 0; pixel < pixels.length; pixel += 1) {
-    pixels[pixel].style.backgroundColor = 'white';
+function removeClass() {
+  for (let index = 0; index < colors.length; index += 1) {
+    colors[index].classList.remove('selected');
   }
 }
 
+function addClass(event) {
+  event.target.classList.add('selected');
+
+}
+
+function configColorPallet(pallet) {
+  for (let item = 0; item < pallet.length; item += 1) {
+    const eventItem = pallet[item];
+    eventItem.addEventListener('click', removeClass);
+    eventItem.addEventListener('click', addClass);
+  }
+}
+
+const colorPAllet = document.getElementsByClassName('color-palette');
+configColorPallet(colorPAllet);
+
 // ex 8 ------ Refazer essa questão sozinho.
+// criar um evento que quanto o pixel é clicado ele ganha a cor do selected
+function colorPixel(self) {
+  const colorSelected = document.getElementsByClassName('selected')[0];
+  const color = getComputedStyle(colorSelected).backgroundColor;
+  self.target.style.backgroundColor = color;
+}
+
+function appendcolorPixelListener(pixels) {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', colorPixel);
+  }
+}
+
+let pixelsBoard = document.getElementsByClassName('pixel');
+appendcolorPixelListener(pixelsBoard);
+
 /* const colorPallet = document.getElementById('color-palette');
 const selectedColor = colorPallet.getElementsByClassName('selected')[0];
 function colorPixel(event) {
@@ -52,41 +67,44 @@ function colorPixel(event) {
   const pixelSelected = event.target;
  event.target.style.backgroundColor = color;
 } */
+// ex 9
+/* const pixels = document.getElementsByClassName('pixel'); */
 
+/* function clearPixel() {
+  for (let pixel = 0; pixel < pixels.length; pixel += 1) {
+    pixels[pixel].style.backgroundColor = 'white';
+  }
+} */
 
 // Regras de negocio
-for (let item = 0; item < colors.length; item += 1) {
-  const eventItem = colors[item];
-  eventItem.addEventListener('click', removeClass);
-  eventItem.addEventListener('click', addClass);
-}
 
 
-for (let px = 0; px < pixels.length; px += 1) {
+
+/* for (let px = 0; px < pixels.length; px += 1) {
   pixels[px].addEventListener('click', colorPixel);
-}
+} */
 
-const limpar = document.getElementById('clear-board');
+/* const limpar = document.getElementById('clear-board');
 limpar.addEventListener('click', clearPixel);
-
+ */
 // ex 10
 // Função feita a partir da análise do codigo do colega Jonatha Braga
-function validationNumber(number) {
+/* function validationNumber(number) {
   if (number < 5) {
     return 5;
   }
   if (number > 50){
     return 50;
-  }
-}
+  } 
+} */
 // Criar uma função que deleta o board.
-function deleteByID(id) {
+/* function deleteByID(id) {
   const tagToDelete = document.getElementById(id);
   const parentNode = tagToDelete.parentNode;
   parentNode.removeChild(tagToDelete);
   return tagToDelete;
 }
-console.log(deleteByID('pixel-board'));
+console.log(deleteByID('pixel-board')); */
 
 
 /* console.log(boardGenerate(8));
