@@ -59,34 +59,17 @@ function appendcolorPixelListener(pixels) {
 let pixelsBoard = document.getElementsByClassName('pixel');
 appendcolorPixelListener(pixelsBoard);
 
-/* const colorPallet = document.getElementById('color-palette');
-const selectedColor = colorPallet.getElementsByClassName('selected')[0];
-function colorPixel(event) {
-  console.log('epaa')
-  const color = getComputedStyle(selectedColor).backgroundColor;
-  const pixelSelected = event.target;
- event.target.style.backgroundColor = color;
-} */
 // ex 9
-/* const pixels = document.getElementsByClassName('pixel'); */
-
-/* function clearPixel() {
+function clearPixel() {
+  const pixels = document.getElementsByClassName('pixel');
   for (let pixel = 0; pixel < pixels.length; pixel += 1) {
     pixels[pixel].style.backgroundColor = 'white';
   }
-} */
+} 
 
-// Regras de negocio
-
-
-
-/* for (let px = 0; px < pixels.length; px += 1) {
-  pixels[px].addEventListener('click', colorPixel);
-} */
-
-/* const limpar = document.getElementById('clear-board');
+const limpar = document.getElementById('clear-board');
 limpar.addEventListener('click', clearPixel);
- */
+
 // ex 10
 // Função feita a partir da análise do codigo do colega Jonatha Braga
 /* function validationNumber(number) {
