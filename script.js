@@ -32,3 +32,24 @@ for(let linha = 0; linha < 5; linha += 1){
     coluna.className = 'pixel';
   }
 }
+let selectedColor;
+
+colorPalette.addEventListener('click',function (event){
+  selectedColor = event.target.id;
+});
+
+pixelsTable.addEventListener('click', function(event){
+ let pixe = event.target;
+ pixe.style.backgroundColor = 'black';
+ pixe.style.backgroundColor = selectedColor;
+})
+
+let allPixels = document.getElementsByClassName('pixel');
+let button = document.getElementById('clear-board');
+button.addEventListener('click', function(event){
+
+    for(let blocos of allPixels){
+      blocos.style.backgroundColor = 'rgb(255, 255, 255)';
+    }
+
+})
