@@ -22,8 +22,8 @@ function createTable() {
     pixelBoard.appendChild(tableLine);
   }
 }
-createTable()
 
+createTable();
 const colors = document.getElementsByClassName('color');
 
 // Ex 7
@@ -96,4 +96,3 @@ window.onload = function () {
     colorPAllet[index].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   }
 };
-
