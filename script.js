@@ -34,7 +34,7 @@ const mainContainer = create('div');
 mainContainer.id = 'pixel-board';
 add(body, mainContainer);
 
-// custom table size (under construction)
+// custom div for button position
 const midDiv = document.querySelector('#mid-div');
 
 // input
