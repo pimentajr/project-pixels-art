@@ -59,3 +59,8 @@
     height: 40px;
     background-color: white;
 }
+
+#pixel-board{
+    background-color: white;
+    display: inline-block;
+}
