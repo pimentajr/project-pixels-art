@@ -69,7 +69,7 @@ table , tr {
 }
 
 .pixel {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   width: 41px;
   height: 41px;
 }
