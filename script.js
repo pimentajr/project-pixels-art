@@ -21,3 +21,39 @@ for (let index = 0; index < counter; index += 1) {
     createTr.appendChild(createSecondTd);
   }
 }
+let corPaleta = document.querySelectorAll('.color');
+
+let selectedColor = (event) => {
+  let corEscolhida = document.querySelector('.selected');
+  corEscolhida.className = 'color';
+  let evento = event;
+  evento.target.className += ' selected';
+};
+
+let selectedPixel = (event) => {
+  let evento = event;
+  evento.target.className = 'pixel pselected';
+  let colorSelected = document.querySelector('.selected');
+  let style = getComputedStyle(colorSelected);
+  let bgColorSelected = style.backgroundColor;
+  evento.target.style.backgroundColor = bgColorSelected;
+};
+
+for (let index = 0; index < corPaleta.length; index += 1) {
+  corPaleta[index].addEventListener('click', selectedColor);
+}
+
+let pixels = document.querySelectorAll('.pixel');
+
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].addEventListener('click', selectedPixel);
+}
+
+let clearButton = document.querySelector('#Delete');
+let allPixel = document.querySelectorAll('.pixel');
+
+clearButton.addEventListener('click', () => {
+  for (let index = 0; index < allPixel.length; index += 1) {
+    allPixel[index].style.backgroundColor = 'white';
+  }
+});
