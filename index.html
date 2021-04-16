@@ -3,10 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Exercício 5.1</title>
+    <title>Paleta de Cores</title>
+    <link href="style.css" rel="stylesheet">
    </head>
 <body>
   <h1 id="title">Paleta de Cores </h1>
+  <div id="color-palette">
+    <div class="color selected" id="black" style="background-color: black;"></div>
+    <div class="color" id="second-color" style="background-color:orange;"></div>
+    <div class="color" id="third-color" style="background-color: green;"></div>
+    <div class="color" id="fourth-color" style="background-color: blue;"></div>
+  </div>
+
+  <div>
+    <input min="5" max="50" type="number" id="board-size" value="">
+    <button id="generate-board">VQV</button>
+  </div>
+  <button id="clear-board">Limpar</button>
+  <div id="pixel-board"></div>
   <script src="script.js"></script>
   </body>
 </html>
