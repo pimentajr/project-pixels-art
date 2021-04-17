@@ -54,6 +54,7 @@ section {
   width: 212px;
   margin-top: 150px;
   margin-left: 100px;
+  border: 1px solid black;
 }
 
 .pixel {

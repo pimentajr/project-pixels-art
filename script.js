@@ -6,10 +6,7 @@ const pixelBoard = document.querySelector('#pixel-board');
 
 const line = document.getElementById('pixel-board').children;
 
-
-//código daqui pra baixo
-
-
+// código daqui pra baixo
 
 function criarAlinha() {
   for (let index = 0; index < tamanhoPaleta; index += 1) {
@@ -36,8 +33,8 @@ const itemPalette = document.querySelectorAll('.color');
 function selecionarPreta() {
   for (let index = 0; index < itemPalette.length; index += 1) {
     const color = itemPalette[index];
-    if (color.style.backgroundColor === 'black') {
-      color.className = 'selected';
+    if (color.classList.contains('black')) {
+      color.classList.add('selected');
     }
   }
 }
@@ -49,15 +46,12 @@ function selecionarPaleta() {
 
     pixel.addEventListener('click', (events) => {
       const selecionarCor = document.querySelector('.selected');
-      if (pixel.className === 'color') {
-        selecionarCor.classList.remove('selected');
-        events.target.classList.add('selected');
+      selecionarCor.classList.remove('selected');
+      if (pixel.classList.contains('color')) {
+      events.target.classList.add('selected');
       }
     });
   }
 }
 selecionarPaleta();
 
-function colorirPixel() {
-  
-}
