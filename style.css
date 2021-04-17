@@ -3,11 +3,13 @@
   text-align: center;
 } */
 .topo {
-  width: 100%;
+  width: 90%;
   text-align: center;
   padding: 20px;
   background-color: rgb(215, 223, 215);
-  border-radius 3px;
+  border-radius: 3px;
+  margin: 0 auto;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #color-palette {
@@ -17,7 +19,6 @@
 
 .color {
   display: inline-block;
-  background-color: blue;
   border: 1px solid black;
   margin: 1px;
   width: 40px;
@@ -37,24 +38,12 @@
   width: 40px;
   height: 40px;
   border: 1px solid black;
-  /* margin: 0px; */
   line-height: 41px;
 }
 
-/* #clear-board {
-  display: inline-block;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-bottom: 30px;
-  background-color: royalblue;
-  color: white;
-  font-weight: 800;
-  border-radius: 5px;
-} */
-
 #board-size {
   display: inline-block;
-  width: 30px;
+  width: 130px;
 }
 
 /* #generate-board {
@@ -72,22 +61,39 @@
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
-  background-color: burlywood;
-  border-radius: 6px;
+  background-color: rgb(245, 213, 171);
+  border-radius: 3px;
 }
 
 .button {
-  background-color: cyan;
+  background-color: rgb(47, 235, 10);
+  border: none;
+  border-radius: 3px;
+  font: 800 white;
 }
 
 #menu-colors {
   width: 50%;
   margin-right: auto;
   margin-left: auto;
-  background-color: rgb(235, 231, 231);
+  /* background-color: rgb(235, 231, 231); */
 }
 
 #menu-colors div {
   display: inline-block;
-  
+}
+
+.label{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}
+
+.choices {
+  margin: 0 auto;
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.foot {
+  margin: 15px auto;
+  width: 90%;
 }
