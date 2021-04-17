@@ -11,5 +11,9 @@
   background-color: white;
   display: inline-block;
   border: 1px solid black;
-  margin: -0.7px;
+  margin: 2px;
+}
+
+#pixel-board {
+  border-collapse: collapse;
 }
