@@ -1,6 +1,20 @@
 window.onload = function initial() {
   const initialColor = document.querySelector('.black');
   initialColor.classList.add('selected');
+
+  const pixelBoard = document.querySelector('#pixel-board');
+  const size = 5;
+
+  for (let indexLine = 0; indexLine < size; indexLine += 1) {
+    const newLine = document.createElement('div');
+    newLine.className = 'line-pixel';
+    pixelBoard.appendChild(newLine);
+    for (let indexColum = 0; indexColum < size; indexColum += 1) {
+      const newColum = document.createElement('div');
+      newColum.className = 'pixel';
+      newLine.appendChild(newColum);
+    }
+  }
 };
 
 const colorPalette = document.querySelectorAll('.color');
