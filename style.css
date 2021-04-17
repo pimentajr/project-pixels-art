@@ -1,33 +1,26 @@
-.color {
+  div {
     display: inline-block;
   }
   
-  #black {
-    background-color: black;
-  }
   
-  #second-color {
-    background-color: orange;
-  }
-  
-  #third-color {
-    background-color: green;
-  }
-  
-  #fourth-color {
-    background-color: blue;
-  }
-  
-  .color , td {
+  .color {
     width: 40px;
     height: 40px;
     border: 1px solid black;
   }
   
-  #pixel-board {
-    display: table;
+  #primeira-cor {
+    background-color: black;
   }
-  
-  td {
-    background-color: white;
+
+  #segunda-cor {
+    background-color: orange;
+  }
+
+  #terceira-cor {
+    background-color: purple;
+  }
+
+  #quarta-cor {
+    background-color: red;
   }
