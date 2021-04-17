@@ -8,6 +8,17 @@
     height: 40px;
     border: 1px solid black;
   }
+
+  td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black
+    
+  }
+
+  td {
+    background-color: white;
+  }
   
   #primeira-cor {
     background-color: black;
