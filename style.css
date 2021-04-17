@@ -3,16 +3,28 @@
 }
 
 #title {
-  
-  
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-style: italic;
   color: crimson;
 }
 
 section {
-  display: inline-block;
+  display: block;
 }
+
+.seção {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+.dois {
+  display: block;
+  margin-top: 200px;
+  margin-left: 200px;
+}
+
+
 
 #color-list {
   position: absolute;

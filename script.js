@@ -8,29 +8,6 @@ const line = document.getElementById('pixel-board').children;
 
 // código daqui pra baixo
 
-const textBody = document.querySelector('body');
-
-const storeButtom = document.createElement('section');
-textBody.appendChild(storeButtom);
-
-const button = document.createElement('button');
-button.id = 'clear-board';
-button.innerText = 'Limpar';
-storeButtom.appendChild(button);
-
-function CleanPaletas() {
-  const pixels = document.querySelectorAll('.pixel');
-
-  for (let index = 0; index < pixels.length; index += 1) {
-    const clean = pixels[index];
-    clean.style.backgroundColor = 'white';
-  }
-}
-
-button.addEventListener('click', (event) => {
-  CleanPaletas();
-});
-
 const itemPalette = document.querySelectorAll('.color');
 
 function configurarCores() {
@@ -55,7 +32,27 @@ function selecionarPaleta() {
     });
   }
 }
+
 selecionarPaleta();
+
+const secaoDois = document.querySelector('.dois');
+const button = document.createElement('button');
+button.id = 'clear-board';
+button.innerText = 'Limpar';
+secaoDois.appendChild(button);
+
+function CleanPaletas() {
+  const pixels = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < pixels.length; index += 1) {
+    const clean = pixels[index];
+    clean.style.backgroundColor = 'white';
+  }
+}
+
+button.addEventListener('click', (event) => {
+  CleanPaletas();
+});
 
 function criarAlinha() {
   for (let index = 0; index < tamanhoPaleta; index += 1) {
