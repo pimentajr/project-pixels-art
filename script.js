@@ -8,28 +8,57 @@ const line = document.getElementById('pixel-board').children;
 
 // código daqui pra baixo
 
+const itemPalette = document.querySelectorAll('.color');
+
+function configurarCores() {
+  document.querySelector('.black').style.backgroundColor = 'black';
+  document.querySelector('.blue').style.backgroundColor = 'blue';
+  document.querySelector('.red').style.backgroundColor = 'red';
+  document.querySelector('.yellow').style.backgroundColor = 'yellow';
+}
+
+configurarCores();
+
+function selecionarPaleta() {
+  for (let index = 0; index < itemPalette.length; index += 1) {
+    const pixel = itemPalette[index];
+
+    pixel.addEventListener('click', (events) => {
+      const selecionarCor = document.querySelector('.selected');
+      selecionarCor.classList.remove('selected');
+      if (events.target.classList.contains('color')) {
+        events.target.classList.add('selected');
+      }
+    });
+  }
+}
+selecionarPaleta();
+
 function criarAlinha() {
   for (let index = 0; index < tamanhoPaleta; index += 1) {
     const line = document.createElement('div');
     line.classList.add('linha');
+    criarOPixel(line);
     pixelBoard.appendChild(line);
+  }
+}
+
+function criarOPixel(linha) {
+  for (let j = 0; j < tamanhoPaleta; j += 1) {
+    const pixel = document.createElement('div');
+    pixel.classList.add('pixel');
+    pixel.addEventListener('click', (events) => {
+      if (document.querySelector('.selected') !== null) {
+        const color = document.querySelector('.selected').style.backgroundColor;
+        events.target.style.backgroundColor = color;
+      }
+    });
+    linha.appendChild(pixel);
   }
 }
 criarAlinha();
 
-function criarOPixel() {
-  for (let i = 0; i < line.length; i += 1) {
-    for (let j = 0; j < tamanhoPaleta; j += 1) {
-      const pixel = document.createElement('div');
-      pixel.classList.add('pixel');
-      line[i].appendChild(pixel);
-    }
-  }
-}
-criarOPixel();
-
-const itemPalette = document.querySelectorAll('.color');
-// console.log(itemPalette);
+console.log(itemPalette);
 function selecionarPreta() {
   for (let index = 0; index < itemPalette.length; index += 1) {
     const color = itemPalette[index];
@@ -39,19 +68,3 @@ function selecionarPreta() {
   }
 }
 selecionarPreta();
-
-function selecionarPaleta() {
-  for (let index = 0; index < itemPalette.length; index += 1) {
-    const pixel = itemPalette[index];
-
-    pixel.addEventListener('click', (events) => {
-      const selecionarCor = document.querySelector('.selected');
-      selecionarCor.classList.remove('selected');
-      if (pixel.classList.contains('color')) {
-      events.target.classList.add('selected');
-      }
-    });
-  }
-}
-selecionarPaleta();
-
