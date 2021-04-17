@@ -5,6 +5,9 @@ for (let index = 0; index < colors.length; index += 1) {
 }
 
 function onColorClick(event) {
-  document.querySelector('.selected').classList.remove('selected');
-  event.target.classList.add('selected');
+  let selectedColor = document.querySelector('.selected');
+  selectedColor.classList.remove('selected');
+
+  let clickedColor = event.target;
+  clickedColor.classList.add('selected');
 }
