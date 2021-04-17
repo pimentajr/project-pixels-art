@@ -1,20 +1,20 @@
-#color-one {
+#color-black {
   background-color: black;
 }
 
-#color-two {
-  background-color: cornflowerblue;
+#color-blue {
+  background-color: blue;
 }
 
-#color-three {
-  background-color: aquamarine;
+#color-green {
+  background-color: green;
 }
 
-#color-four {
-  background-color: violet;
+#color-red {
+  background-color: red;
 }
 
-.color , td {
+.color {
   width: 40px;
   height: 40px;
   border: 1px solid black;
