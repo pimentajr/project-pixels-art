@@ -5,22 +5,6 @@
   border: 1px solid black;
 }
 
-#black {
-  background-color: black;
-}
-
-#gray21 {
-  background-color: #363636;
-}
-
-#dim-gray {
-  background-color: #696969;
-}
-
-#dark-gray {
-  background-color: #a9a9a9;
-}
-
 .pixel {
   width: 40px;
   height: 40px;

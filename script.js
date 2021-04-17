@@ -11,3 +11,16 @@ function onColorClick(event) {
   let clickedColor = event.target;
   clickedColor.classList.add('selected');
 }
+
+let pixels = document.querySelectorAll('#pixel-board .pixel');
+
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].addEventListener('click', onPixelClick);
+}
+
+function onPixelClick(event) {
+  let selectedColor = document.querySelector('.selected');
+  let selectedColorValue = selectedColor.style.backgroundColor;
+
+  event.target.style.backgroundColor = selectedColorValue;
+}
