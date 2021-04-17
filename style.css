@@ -24,3 +24,15 @@
   #quarta-cor {
     background-color: red;
   }
+
+  #pixel-board{ 
+    display: table;
+    border: 1px solid black;
+    
+}
+
+  .pixel{
+    width: 5px;
+    height: 5px;
+}
+
