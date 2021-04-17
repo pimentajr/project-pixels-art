@@ -1,4 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
 #title {
+  
+  
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-style: italic;
   color: crimson;
@@ -22,8 +28,8 @@ section {
 
 .color {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
 }
 
@@ -44,28 +50,23 @@ section {
 }
 
 #pixel-board {
-  display: block;
-  border: 1px solid black;
+  display: table;
   width: 212px;
   margin-top: 150px;
   margin-left: 100px;
-
-
-  
-
 }
 
 .pixel {
-  display: inline-block;
+  display: table-cell;
   border: 1px solid black;
   width: 40px;
   height: 40px;
   background-color: white;
+ 
 }
 
 .linha {
-  display: block;
-  border: 1px solid black;
+  display: table-row;
   background-color: white;
-  width: 210px;
+  width:fit-content;   
 }
