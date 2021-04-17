@@ -11,7 +11,7 @@ for (let index = 0; index < 4; index += 1) {
   const strColor = 'color';
   const strRGB = 'rgb(';
   const strSc = ', ';
-  const str = ')'
+  const str = ')';
   if (index === 0) {
     const colorSelector = document.createElement('div');
     colorSelector.className = 'color selected';
@@ -51,7 +51,7 @@ function fillBoard(value) {
 }
 
 const boxColorSelect = document.getElementById('color-palette');
-boxColorSelect.addEventListener('click', function(event) {
+boxColorSelect.addEventListener('click', function (event) {
   if (event.target.className === 'color') {
     const colorUnselected = document.getElementsByClassName('selected');
     colorUnselected[0].className = 'color';
@@ -60,18 +60,16 @@ boxColorSelect.addEventListener('click', function(event) {
 });
 
 const board = document.getElementById('pixel-board');
-board.addEventListener('click', function(event) {
+board.addEventListener('click', function (event) {
   if (event.target.className === 'pixel') {
+    const copyBG = event.target;
     const colorPaint = document.getElementsByClassName('selected');
-    event.target.style.backgroundColor = colorPaint[0].style.backgroundColor;
+    copyBG.style.backgroundColor = colorPaint[0].style.backgroundColor;
   }
 });
 
 const clearButton = document.getElementById('clear-board');
-clearButton.addEventListener('click', cleaningPixels);
-
 const generateBoardButton = document.getElementById('generate-board');
-generateBoardButton.addEventListener('click', generateBoad);
 
 function cleaningPixels() {
   const clearPixel = document.querySelectorAll('.pixel');
@@ -90,20 +88,7 @@ function limitsMaxMin(number) {
     size = number;
   }
   return size;
-  }
-
-function generateBoad() {
-  let inputSize = document.getElementById('board-size');
-  // console.log(inputSize.value);
-  if (inputSize.value === '') {
-    alert('Board inválido!');
-  } else {
-    deleteBoard();
-    let choiceNumberOfLines = limitsMaxMin(parseInt(inputSize.value,10));
-    fillBoard(choiceNumberOfLines);
-  }
-};
-
+}
 function deleteBoard() {
   const pixels = document.getElementsByClassName('line');
   for (let index = pixels.length - 1; index >= 0; index -= 1) {
@@ -111,6 +96,21 @@ function deleteBoard() {
   }
 }
 
-window.onload = function() {
+function generateBoad() {
+  const inputSize = document.getElementById('board-size');
+  // console.log(inputSize.value);
+  if (inputSize.value === '') {
+    alert('Board inválido!');
+  } else {
+    deleteBoard();
+    const choiceNumberOfLines = limitsMaxMin(parseInt(inputSize.value, 10));
+    fillBoard(choiceNumberOfLines);
+  }
+};
+
+clearButton.addEventListener('click', cleaningPixels);
+generateBoardButton.addEventListener('click', generateBoad);
+
+window.onload = function () {
   fillBoard(numberOfLines);
 };
