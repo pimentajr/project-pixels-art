@@ -2,21 +2,36 @@
 const title = document.getElementById('title');
 title.style = 'font-family: New Tegomin';
 
-// Adiciona background-color em todos os quadrados da paleta de cores
+// Criando paleta de cores
 
-const blackSquare = document.getElementById('black');
-blackSquare.style = 'background-color: black';
+const colorsPalette = document.createElement('section');
+colorsPalette.id = 'color-palette';
+document.body.appendChild(colorsPalette);
 
-const redSquare = document.getElementById('red');
-redSquare.style = 'background-color: red';
+function colorPalette() {
+  for (let index = 0; index < 4; index += 1) {
+    const colors = document.createElement('div');
+    colors.classList.add('color');
+    colorsPalette.appendChild(colors);
+  }
+  const firstColor = document.querySelector('.color');
+  firstColor.style.backgroundColor = 'black';
+  firstColor.classList.add('selected');
+}
+colorPalette();
 
-const orangeSquare = document.getElementById('orange');
-orangeSquare.style = 'background-color: orange';
+// Criando função de cores aleatórias - Para resolução deste requisito(12) eu peguei como referência o pull request da Gabriela Feijó.
 
-const yellowSquare = document.getElementById('yellow');
-yellowSquare.style = 'background-color: yellow';
-
-// Criando seção para armazenar o botão "limpar";
+function randomColor() {
+  const randomColors = document.querySelectorAll('.color');
+  for (let index = 1; index < randomColors.length; index += 1) {
+    const r = Math.random() * 255;
+    const g = Math.random() * 255;
+    const b = Math.random() * 255;
+    randomColors[index].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  }
+}
+randomColor();
 
 const sectionButtons = document.createElement('section');
 document.body.appendChild(sectionButtons);
@@ -60,9 +75,9 @@ for (let index = 1; index <= 5; index += 1) {
   for (let indice = 1; indice <= 5; indice += 1) {
     const columnLines = document.createElement('td');
     columnLines.classList = 'pixel';
-    columnLines.addEventListener('click', (botao) => {
+    columnLines.addEventListener('click', (event) => {
       if (document.querySelector('.selected')) {
-        const { target } = botao;
+        const { target } = event;
         const color = document.querySelector('.selected').style.backgroundColor;
         target.style.backgroundColor = color;
       }
@@ -74,10 +89,10 @@ for (let index = 1; index <= 5; index += 1) {
 
   const firstEventButton = document.getElementById('color-palette');
 
-  firstEventButton.addEventListener('click', (event2) => {
+  firstEventButton.addEventListener('click', (event) => {
     if (document.querySelector('.selected') !== null) {
       (document.querySelector('.selected').classList.remove('selected'));
     }
-    event2.target.classList.add('selected');
+    event.target.classList.add('selected');
   });
 }

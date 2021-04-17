@@ -1,26 +1,12 @@
 .color {
   padding: 50px;
   display: inline-block;
+  border: solid black 1px;
+  margin: 5px;
 }
 
 body {
   text-align: center;
-}
-
-#black {
-  border: solid black 1px;
-}
-
-#red {
-  border: solid black 1px;
-}
-
-#orange {
-  border: solid black 1px;
-}
-
-#yellow {
-  border: solid black 1px;
 }
 
 #pixel-board {
