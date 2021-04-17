@@ -11,3 +11,23 @@ for (let indexLine = 0; indexLine < 5; indexLine += 1) {
     pixelCell.style.backgroundColor = 'white';
   }
 }
+const colorPalette = document.querySelector('#color-palette');
+
+function selectColor() {
+  colorPalette.addEventListener('click', (event) => {
+    const color = document.querySelector('.selected color');
+    if (event.target.id !== 'color-palette') {
+      color.classList.remove('selected color');
+      event.target.classList.add('selected color');
+    }
+  });
+}
+selectColor();
+
+pixBoard.addEventListener('click', (event) => {
+  const selectedColor = document.querySelector('.selected color').id;
+  if (event.target.className === 'pixel') {
+    const pixelSelected = event.target;
+    pixelSelected.style.backgroundColor = selectedColor;
+  }
+});
