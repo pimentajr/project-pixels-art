@@ -1,5 +1,2 @@
-const pixelBoard = document.querySelector('#pixel-board');
-console.log(pixelBoard);
-
-
-
+const pallete = document.getElementsByClassName('color');
+console.log(pallete);
