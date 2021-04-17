@@ -21,6 +21,7 @@ body {
 #generate-board {
   width: 60px;
 }
+
 #color-palette {
   text-align: center;
 }
@@ -48,14 +49,14 @@ body {
   background-color: green;
 }
 
-table,
-tr,
+table , 
+tr , 
 td {
   border-collapse: collapse;
   border: solid black 1px;
 }
 
-table,
+table , 
 tr {
   width: auto;
   height: auto;
@@ -67,7 +68,7 @@ tr {
 }
 
 .pixel {
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   width: 41px;
   height: 41px;
 }

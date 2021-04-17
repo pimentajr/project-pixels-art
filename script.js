@@ -1,33 +1,3 @@
-// 4
-function createTable() {
-  const input = document.getElementById('board-size');
-  const pixelBoard = document.getElementById('pixel-board');
-  if (input.value === '') {
-    alert('Board inválido!');
-  }
-  if (input.value < 5) {
-    input.value = 5;
-  }
-  if (input.value > 50) {
-    input.value = 50;
-  }
-  for (let line = 0; line < input.value; line += 1) {
-    let tableLine = document.createElement('tr');
-    tableLine.className = 'rows';
-    for (let colum = 0; colum < input.value; colum += 1) {
-      let tableColum = document.createElement('td');
-      tableColum.className = 'pixel';
-      tableLine.appendChild(tableColum);
-    }
-    pixelBoard.appendChild(tableLine);
-  }
-  appendcolorPixelListener(pixelsBoard);
-  randomColor() 
-  limpar.addEventListener('click', clearPixel);
-  vqvButton.addEventListener('click', deleteTable);
-  vqvButton.addEventListener('click', createTable);
-}
-
 const colors = document.getElementsByClassName('color');
 
 // Ex 7
@@ -53,10 +23,10 @@ const colorPAllet = document.getElementsByClassName('color');
 configColorPallet(colorPAllet);
 
 // ex 8 ------ Refazer essa questão sozinho.
-function colorPixel(self) {
+function colorPixel(selff) {
   const colorSelected = document.getElementsByClassName('selected')[0];
   const color = getComputedStyle(colorSelected).backgroundColor;
-  self.target.style.backgroundColor = color;
+  selff.target.style.backgroundColor = color;
 }
 
 function appendcolorPixelListener(pixels) {
@@ -95,5 +65,35 @@ function randomColor() {
     const b = Math.floor(Math.random() * 256);
     colorPAllet[index].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   }
-};
-window.onload = createTable();
+}
+
+function createTable() {
+  const input = document.getElementById('board-size');
+  const pixelBoard = document.getElementById('pixel-board');
+  if (input.value === '') {
+    alert('Board inválido!');
+  }
+  if (input.value < 5) {
+    input.value = 5;
+  }
+  if (input.value > 50) {
+    input.value = 50;
+  }
+  for (let line = 0; line < input.value; line += 1) {
+    const tableLine = document.createElement('tr');
+    tableLine.className = 'rows';
+    for (let colum = 0; colum < input.value; colum += 1) {
+      const tableColum = document.createElement('td');
+      tableColum.className = 'pixel';
+      tableLine.appendChild(tableColum);
+    }
+    pixelBoard.appendChild(tableLine);
+  }
+  appendcolorPixelListener(pixelsBoard);
+  randomColor();
+  limpar.addEventListener('click', clearPixel);
+  vqvButton.addEventListener('click', deleteTable);
+  vqvButton.addEventListener('click', createTable);
+}
+
+window.onload = createTable;
