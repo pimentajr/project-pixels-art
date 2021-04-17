@@ -4,7 +4,6 @@ function createTable() {
   const pixelBoard = document.getElementById('pixel-board');
   if (input.value === '') {
     alert('Board inválido!');
-    return false;
   }
   if (input.value < 5) {
     input.value = 5;
@@ -22,9 +21,13 @@ function createTable() {
     }
     pixelBoard.appendChild(tableLine);
   }
+  appendcolorPixelListener(pixelsBoard);
+  randomColor() 
+  limpar.addEventListener('click', clearPixel);
+  vqvButton.addEventListener('click', deleteTable);
+  vqvButton.addEventListener('click', createTable);
 }
 
-createTable();
 const colors = document.getElementsByClassName('color');
 
 // Ex 7
@@ -63,7 +66,6 @@ function appendcolorPixelListener(pixels) {
 }
 
 let pixelsBoard = document.getElementsByClassName('pixel');
-appendcolorPixelListener(pixelsBoard);
 
 // ex 9
 function clearPixel() {
@@ -74,7 +76,6 @@ function clearPixel() {
 }
 
 const limpar = document.getElementById('clear-board');
-limpar.addEventListener('click', clearPixel);
 
 // ex 10
 const vqvButton = document.getElementById('generate-board');
@@ -85,11 +86,9 @@ function deleteTable() {
     rows[index].remove();
   }
 }
-vqvButton.addEventListener('click', deleteTable);
-vqvButton.addEventListener('click', createTable);
 
 // ex 11
-window.onload = function () {
+function randomColor() {
   for (let index = 1; index < colorPAllet.length; index += 1) {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
@@ -97,3 +96,4 @@ window.onload = function () {
     colorPAllet[index].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   }
 };
+window.onload = createTable();
