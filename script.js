@@ -24,3 +24,12 @@ function onPixelClick(event) {
 
   event.target.style.backgroundColor = selectedColorValue;
 }
+
+let clearBoard = document.getElementById('clear-board');
+clearBoard.addEventListener('click', onClearButton);
+
+function onClearButton() {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = '';
+  }
+}
