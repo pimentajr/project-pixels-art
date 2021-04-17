@@ -1,4 +1,26 @@
-.color {
+.color td {
   border: 1px solid black;
   display: inline-block;
+}
+
+#color-one {
+  background-color: black;
+}
+
+#color-two {
+  background-color: cornflowerblue;
+}
+
+#color-three {
+  background-color: aquamarine;
+}
+
+#color-four {
+  background-color: violet;
+}
+
+.color, td {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
 }
