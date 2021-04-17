@@ -4,6 +4,7 @@ function createTable() {
   const pixelBoard = document.getElementById('pixel-board');
   if (input.value === '') {
     alert('Board inválido!');
+    return false;
   }
   if (input.value < 5) {
     input.value = 5;
