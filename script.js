@@ -16,7 +16,7 @@ createColorDivs();
 // Requisito 4
 const pixelBoard = document.querySelector('#pixel-board');
 
-function PixelBoardMaker(boardSize) {
+function pixelBoardMaker(boardSize) {
   for (let index = 0; index < boardSize; index += 1) {
     const line = document.createElement('div');
     line.className = 'line';
@@ -31,7 +31,8 @@ function PixelBoardMaker(boardSize) {
   }
 }
 
-PixelBoardMaker(5);
+const boardSize = 5;
+pixelBoardMaker(boardSize);
 
 // Requisito 6
 function selectBlackColor() {
@@ -73,9 +74,10 @@ function paintPixel(event) {
 pixelBoard.addEventListener('click', paintPixel);
 
 // Requisito 9
-const bunttonContainer = document.getElementById('clear-btn-container');
+const bunttonContainer = document.getElementById('buttons-container');
 bunttonContainer.style.textAlign = 'center';
 bunttonContainer.style.padding = '10px';
+
 const clearButton = document.createElement('button');
 clearButton.id = 'clear-board';
 clearButton.innerText = 'Limpar';
@@ -89,3 +91,37 @@ function clearPixels() {
 }
 
 clearButton.addEventListener('click', clearPixels);
+
+// Requisito 10
+const changeBoardSizeDiv = document.createElement('div');
+bunttonContainer.appendChild(changeBoardSizeDiv);
+changeBoardSizeDiv.style.padding = '10px 20px';
+
+const inputNumber = document.createElement('input');
+changeBoardSizeDiv.appendChild(inputNumber);
+inputNumber.id = 'board-size';
+inputNumber.value = '';
+inputNumber.type = 'number';
+inputNumber.placeholder = 'Insira um número aqui:';
+
+const generateBoardButton = document.createElement('button');
+changeBoardSizeDiv.appendChild(generateBoardButton);
+generateBoardButton.id = 'generate-board';
+generateBoardButton.innerText = 'VQV';
+
+function verifyInput() {
+  if (inputNumber.value === '') {
+    alert('Board inválido!');
+  }
+}
+
+function remakePixelBoard() {
+  verifyInput();
+  const value = parseInt(inputNumber.value, 10);
+  if (value > 0) {
+    pixelBoard.innerHTML = '';
+    pixelBoardMaker(value);
+  }
+}
+
+generateBoardButton.addEventListener('click', remakePixelBoard);
