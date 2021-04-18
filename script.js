@@ -57,7 +57,9 @@ function changeClassSelected(event) {
       colors[index].className = 'color';
     }
   }
-  clickedColor.target.classList.add('selected');
+  if (clickedColor.target.classList.contains('color')) {
+    clickedColor.target.classList.add('selected');
+  }
 }
 
 colorPaleteSection.addEventListener('click', changeClassSelected);
@@ -79,6 +81,7 @@ bunttonContainer.style.textAlign = 'center';
 bunttonContainer.style.padding = '10px';
 
 const clearButton = document.createElement('button');
+clearButton.classList.add('button', 'is-link', 'm-4');
 clearButton.id = 'clear-board';
 clearButton.innerText = 'Limpar';
 bunttonContainer.appendChild(clearButton);
@@ -93,22 +96,20 @@ function clearPixels() {
 clearButton.addEventListener('click', clearPixels);
 
 // Requisito 10
-const changeBoardSizeDiv = document.createElement('div');
-bunttonContainer.appendChild(changeBoardSizeDiv);
-changeBoardSizeDiv.style.padding = '10px 20px';
-
 const inputNumber = document.createElement('input');
-changeBoardSizeDiv.appendChild(inputNumber);
+inputNumber.classList.add('input', 'is-link');
 inputNumber.id = 'board-size';
 inputNumber.value = '';
 inputNumber.type = 'number';
 inputNumber.min = 1;
-inputNumber.placeholder = 'Insira um número aqui:';
+inputNumber.placeholder = 'Insira o tamanho desejado para o quadro de pixels:';
+bunttonContainer.appendChild(inputNumber);
 
 const generateBoardButton = document.createElement('button');
-changeBoardSizeDiv.appendChild(generateBoardButton);
 generateBoardButton.id = 'generate-board';
 generateBoardButton.innerText = 'VQV';
+generateBoardButton.classList.add('button', 'is-success', 'm-4');
+bunttonContainer.appendChild(generateBoardButton);
 
 function verifyInput() {
   if (inputNumber.value === '') {
