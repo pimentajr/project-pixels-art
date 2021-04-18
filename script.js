@@ -48,14 +48,16 @@ function clearbutton() {
 }
 clearbutton();
 
+const sizeButton = document.getElementById('generate-board');
+
 function sizeBoard() {
-  const sizeButton = document.getElementById('generate-board');
+  
   sizeButton.addEventListener('click', function changeSize() {
     const addNumber = document.getElementById('board-size').value;
     const pixelLines = document.querySelectorAll('.line-pixel');
     if (addNumber === '') {
       alert('Board inválido!');
-    } else {
+    } else if (addNumber >= 5 && addNumber <= 50) {
       for (let index = 0; index < pixelLines.length; index += 1) {
         pixelBoard.removeChild(pixelLines[index]);
       }
@@ -64,3 +66,22 @@ function sizeBoard() {
   });
 }
 sizeBoard();
+
+function sizeLimits() {
+  sizeButton.addEventListener('click', function changeSize() {
+    const addNumber = document.getElementById('board-size').value;
+    const pixelLines = document.querySelectorAll('.line-pixel');
+    if (addNumber < 5) {
+      createPixels(5);
+      for (let index = 0; index < pixelLines.length; index += 1) {
+        pixelBoard.removeChild(pixelLines[index]);
+      }
+    } else if (addNumber > 50) {
+      createPixels(50);
+      for (let index = 0; index < pixelLines.length; index += 1) {
+        pixelBoard.removeChild(pixelLines[index]);
+      }
+    }
+  });
+}
+sizeLimits();
