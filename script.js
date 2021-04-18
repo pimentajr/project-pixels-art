@@ -1,10 +1,10 @@
-function randomNumber () {
+function randomNumber() {
   return Math.random() * 255
 }
 let coresDivs = document.querySelectorAll('.color');
 window.onload = function () { 
   document.querySelector('.black').style.backgroundColor = 'black';
-  for (index = 1; index < coresDivs.length; index += 1) {
+  for (let index = 1; index < coresDivs.length; index += 1) {
     let r = JSON.stringify(Math.ceil(randomNumber()));
     let g = JSON.stringify(Math.ceil(randomNumber()));
     let b = JSON.stringify(Math.ceil(randomNumber()));
