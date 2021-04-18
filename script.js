@@ -1,4 +1,3 @@
-window.onload = function initial() {
   const initialColor = document.querySelector('.black');
   initialColor.classList.add('selected');
 
@@ -18,8 +17,6 @@ window.onload = function initial() {
     }
  }
  createPixels(size);
-  
-};
 
 const colorPalette = document.querySelectorAll('.color');
 for (let index = 0; index < colorPalette.length; index += 1) {
@@ -56,7 +53,7 @@ function sizeBoard() {
 
   sizeButton.addEventListener('click', function changeSize() {
     let addNumber = document.getElementById('board-size').value;
-    if (addNumber === undefined) {
+    if (addNumber === "") {
       alert('Board inválido!');
     } else {
       createPixels(addNumber);
