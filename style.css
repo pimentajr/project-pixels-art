@@ -11,14 +11,15 @@
 }
 
 #color-palette {
-  width: 408px;
+  /* width: 408px; */
+  text-align: center;
   position: relative;
   margin-top: 120px;
   margin-left: auto;
   margin-right: auto;
 }
 
-#button-container {
+#button-container , #board-container {
   text-align: center;
   padding: 30px;
 }
@@ -31,17 +32,22 @@
 }
 
 #pixel-board {
-  width: 510px;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
 
 .color , .pixel {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 40x;
+  height: 40px;
   border-style: solid;
   border-width: 1px;
   border-color: black;
   background-color: white;
+}
+
+.line {
+  height: 40px;
+  text-align: center;
 }
