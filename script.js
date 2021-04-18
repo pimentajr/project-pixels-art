@@ -102,6 +102,7 @@ changeBoardSizeDiv.appendChild(inputNumber);
 inputNumber.id = 'board-size';
 inputNumber.value = '';
 inputNumber.type = 'number';
+inputNumber.min = 1;
 inputNumber.placeholder = 'Insira um número aqui:';
 
 const generateBoardButton = document.createElement('button');
@@ -116,8 +117,8 @@ function verifyInput() {
 }
 
 function remakePixelBoard() {
-  verifyInput();
   const value = parseInt(inputNumber.value, 10);
+  verifyInput();
   if (value > 0) {
     pixelBoard.innerHTML = '';
     pixelBoardMaker(value);
