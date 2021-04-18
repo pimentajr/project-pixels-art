@@ -9,6 +9,7 @@ const buttonGenerateBoard = document.getElementById('generate-board');
 title.innerText = 'Paleta de Cores';
 buttonClearBoard.innerText = 'Limpar';
 buttonGenerateBoard.innerText = 'VQV';
+inputBoardSize.type = 'number'
 
 // Gera um número aleatório de 0 a 255
 function randomNumber() {
@@ -34,14 +35,14 @@ function createPalette() {
 
 // Recupera e corrige valor da dimensão do pixel board
 function dimensionPixelBoard() {
-  const checkValueBoardSize = Number(inputBoardSize.value);
+  const checkValueBoardSize = inputBoardSize.value;
   let valueBoardSize;
-  if ((checkValueBoardSize) <= 5 && (checkValueBoardSize) > 0) {
+  if (checkValueBoardSize <= 5 && checkValueBoardSize > 0) {
     valueBoardSize = 5;
-  } else if ((checkValueBoardSize) >= 50) {
+  } else if (checkValueBoardSize >= 50) {
     valueBoardSize = 50;
   } else {
-    valueBoardSize = (checkValueBoardSize);
+    valueBoardSize = checkValueBoardSize;
   }
   return valueBoardSize;
 }
@@ -77,7 +78,7 @@ function createStandarPixelBoard() {
 
 // Cria linhas para o pixel board, tendo como parâmetro a dimensão do mesmo
 function createPixelBoardVQV() {
-  if (Number(inputBoardSize.value) > 0) {
+  if (inputBoardSize.value > 0) {
     erasePixelBoard();
     const valueBoardSize = dimensionPixelBoard();
     for (let index = 0; index < valueBoardSize; index += 1) {
