@@ -84,3 +84,14 @@ pixelBoardCreator(5, 5);
 // O Gustavo Lemes me ajudou a consertar o erro pelo slack.
 
 document.querySelector('#color1').classList.add('selected');
+
+let colors = document.querySelectorAll('.color');
+let colorSelected = document.querySelector('#color-palete');
+function colorSelector() {
+  for (let index = 0; index < colors.length; colors += 1) {
+    colors[index].addEventListener('click', function(){
+      colorSelected.querySelector('.selected').classList.remove('selected');
+      this.classList.add('selected');
+    })
+  }
+}
