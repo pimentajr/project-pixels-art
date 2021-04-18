@@ -1,22 +1,22 @@
-  const initialColor = document.querySelector('.black');
-  initialColor.classList.add('selected');
+const initialColor = document.querySelector('.black');
+initialColor.classList.add('selected');
 
-  const pixelBoard = document.querySelector('#pixel-board');
-  let size = 5;
+const pixelBoard = document.querySelector('#pixel-board');
+const size = 5;
 
- function createPixels(size) {
+function createPixels(size) {
   for (let indexLine = 0; indexLine < size; indexLine += 1) {
-      const newLine = document.createElement('div');
-      newLine.className = 'line-pixel';
-      pixelBoard.appendChild(newLine);
-      for (let indexColum = 0; indexColum < size; indexColum += 1) {
-        const newColum = document.createElement('div');
-        newColum.className = 'pixel';
-        newLine.appendChild(newColum);
-      }
+    const newLine = document.createElement('div');
+    newLine.className = 'line-pixel';
+    pixelBoard.appendChild(newLine);
+    for (let indexColum = 0; indexColum < size; indexColum += 1) {
+      const newColum = document.createElement('div');
+      newColum.className = 'pixel';
+      newLine.appendChild(newColum);
     }
- }
- createPixels(size);
+  }
+}
+createPixels(size);
 
 const colorPalette = document.querySelectorAll('.color');
 for (let index = 0; index < colorPalette.length; index += 1) {
@@ -50,14 +50,17 @@ clearbutton();
 
 function sizeBoard() {
   const sizeButton = document.getElementById('generate-board');
-
   sizeButton.addEventListener('click', function changeSize() {
-    let addNumber = document.getElementById('board-size').value;
-    if (addNumber === "") {
+    const addNumber = document.getElementById('board-size').value;
+    const pixelLines = document.querySelectorAll('.line-pixel');
+    if (addNumber === '') {
       alert('Board inválido!');
     } else {
+      for (let index = 0; index < pixelLines.length; index += 1) {
+        pixelBoard.removeChild(pixelLines[index]);
+      }
       createPixels(addNumber);
     }
-  })
+  });
 }
 sizeBoard();
