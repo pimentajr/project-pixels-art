@@ -32,6 +32,7 @@ function pixelColor() {
   pixel.addEventListener('click', function pixelClick(event) {
     const selected = document.querySelector('.selected');
     pixel = event.target;
+    pixel.style.backgroundColor = selected.style.backgroundColor;
     pixel.style.backgroundColor = selected.classList[1];
   });
 }
@@ -85,3 +86,13 @@ function sizeLimits() {
   });
 }
 sizeLimits();
+
+function randomColor() {
+  const colors = ['red', 'blue', 'green', 'purple', 'pink', 'yellow', 'grey', 'brown', 'orange', 'aqua', 'aquamarine', 'coral', 'darkblue', 'darkred', 'darkgreen', 'darkmagenta', 'darkorange'];
+  const randomPalette = document.querySelectorAll('.color');
+  for (let index = 1; index < randomPalette.length; index += 1) {
+    let random = Math.floor(Math.random() * colors.length);
+    randomPalette[index].style.backgroundColor = colors[random];
+  }
+  }
+randomColor(); //Referencia: Requisito resolvido com instruções em https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
