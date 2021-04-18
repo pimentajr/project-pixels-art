@@ -1,19 +1,27 @@
+*{
+   box-sizing: border-box;
+}
+
 .color {
   border: solid black 1px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  padding: 20px
 }
 
-#black{
-  background-color: black;
+.pixel-board {
+  display: table;
+  margin: auto;
 }
 
-#pink {
-  background-color: pink;
+.row {
+  display: table-row;
 }
 
-#red{
-  background-color: red;
-}
-
-#grenn{
-  background-color: green;
+.pixel {
+  height: 40px;
+  width: 40px;
+  border: solid black 1px;
+  display: table-cell;
 }
