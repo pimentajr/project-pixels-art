@@ -66,7 +66,7 @@ color4Selector('yellow');
 // }
 function pixelBoardCreator(collumns, rows) {
   for (let indexR = 1; indexR <= rows; indexR += 1) {
-    newPixelRow = document.createElement('tr');
+    const newPixelRow = document.createElement('tr');
     document.querySelector('#pixel-board').appendChild(newPixelRow);
   }
   for (let indexT = 0; indexT <= rows; indexT += 1) {
