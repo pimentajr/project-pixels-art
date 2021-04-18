@@ -1,9 +1,23 @@
+function randomNumber () {
+  return Math.random() * 255
+}
+let coresDivs = document.querySelectorAll('.color');
+window.onload = function () { 
+  document.querySelector('.black').style.backgroundColor = 'black';
+  for (index = 1; index < coresDivs.length; index += 1) {
+    let r = JSON.stringify(Math.ceil(randomNumber()));
+    let g = JSON.stringify(Math.ceil(randomNumber()));
+    let b = JSON.stringify(Math.ceil(randomNumber()));
+    coresDivs[index].style.backgroundColor = 'rgb('+ r +', ' + g  +', '+ b + ')';
+  }
+}
 const pixelBoardLocation = document.getElementById('pixel-board');
 
 function createDiv(number) {
   for (let index = 0; index < number * number; index += 1) {
     const createdDiv = document.createElement('div');
     createdDiv.className = 'pixel';
+    createdDiv.style.backgroundColor = 'white';
     pixelBoardLocation.appendChild(createdDiv);
     pixelBoardLocation.style.width = (number * 52) + 'px';
   }
@@ -31,12 +45,8 @@ document.getElementById('color-palette').addEventListener('click', changeSelecte
 function changeColorPixel(event) {
   const eventTarget = event.target;
   const classColor = document.querySelectorAll('.selected')[0].classList[1];
-  if (event.target.classList.length !== 1) {
-    eventTarget.classList.remove(event.target.classList[1]);
-    eventTarget.classList.add(classColor);
-  } else {
-    eventTarget.classList.add(classColor);
-  }
+  let backgroundColorPixel = document.querySelectorAll('.selected')[0].style.backgroundColor;
+  eventTarget.style.backgroundColor = backgroundColorPixel;
 }
 document.getElementById('pixel-board').addEventListener('click', changeColorPixel);
 
@@ -58,3 +68,4 @@ function resizePixels() {
   }
 }
 document.getElementById('generate-board').addEventListener('click', resizePixels);
+
