@@ -11,7 +11,6 @@
 }
 
 #color-palette {
-  /* width: 408px; */
   text-align: center;
   position: relative;
   margin-top: 120px;
@@ -39,7 +38,7 @@
 
 .color , .pixel {
   display: inline-block;
-  width: 40x;
+  width: 40px;
   height: 40px;
   border-style: solid;
   border-width: 1px;

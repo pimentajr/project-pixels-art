@@ -17,7 +17,7 @@ function randomNumber() {
 
 // Gera uma cor aleatória
 function generateColor() {
-  return `RGB(${randomNumber()},${randomNumber()},${randomNumber()}`
+  return `RGB(${randomNumber()},${randomNumber()},${randomNumber()}`;
 }
 
 // Cria paleta de cores
@@ -27,7 +27,6 @@ function createPalette() {
     const randomColor = document.createElement('div');
     randomColor.className = 'color';
     randomColor.style.background = listOfColors[index];
-    randomColor.style.width = '40px';
     colorsPalette.appendChild(randomColor);
   }
   document.getElementsByClassName('color')[0].classList.add('selected');
@@ -36,17 +35,13 @@ function createPalette() {
 // Recupera e corrige valor da dimensão do pixel board
 function dimensionPixelBoard() {
   const checkValueBoardSize = Number(inputBoardSize.value);
-  let valueBoardSize = 0;
-
+  let valueBoardSize;
   if ((checkValueBoardSize) <= 5 && (checkValueBoardSize) > 0) {
     valueBoardSize = 5;
   } else if ((checkValueBoardSize) >= 50) {
     valueBoardSize = 50;
-  } else if ((checkValueBoardSize) < 50 && (checkValueBoardSize) > 5) {
-    valueBoardSize = (checkValueBoardSize);
   } else {
-    alert('Board inválido!');
-    valueBoardSize = 5;
+    valueBoardSize = (checkValueBoardSize);
   }
   return valueBoardSize;
 }
@@ -54,7 +49,6 @@ function dimensionPixelBoard() {
 // Apaga pixel board
 function erasePixelBoard() {
   const linesPixelBoard = document.getElementsByClassName('line');
-
   for (let index = linesPixelBoard.length - 1; index >= 0; index -= 1) {
     linesPixelBoard[index].remove();
   }
@@ -73,7 +67,6 @@ function createColumnsPixelBoard(divLine, valueBoardSize) {
 // Cria pixel board padrão 5x5
 function createStandarPixelBoard() {
   const valueBoardSize = 5;
-
   for (let index = 0; index < valueBoardSize; index += 1) {
     const lineBoard = document.createElement('div');
     lineBoard.classList.add('line');
@@ -84,14 +77,17 @@ function createStandarPixelBoard() {
 
 // Cria linhas para o pixel board, tendo como parâmetro a dimensão do mesmo
 function createPixelBoardVQV() {
-  erasePixelBoard();
-  const valueBoardSize = dimensionPixelBoard();
-
-  for (let index = 0; index < valueBoardSize; index += 1) {
-    const lineBoard = document.createElement('div');
-    lineBoard.classList.add('line');
-    pixelBoard.appendChild(lineBoard);
-    createColumnsPixelBoard(lineBoard, valueBoardSize);
+  if (Number(inputBoardSize.value) > 0) {
+    erasePixelBoard();
+    const valueBoardSize = dimensionPixelBoard();
+    for (let index = 0; index < valueBoardSize; index += 1) {
+      const lineBoard = document.createElement('div');
+      lineBoard.classList.add('line');
+      pixelBoard.appendChild(lineBoard);
+      createColumnsPixelBoard(lineBoard, valueBoardSize);
+    }
+  } else {
+    alert('Board inválido!');
   }
 }
 
@@ -114,7 +110,7 @@ function clearBoard() {
   }
 }
 
-window.onload = function () {
+window.onload = function opening() {
   createPalette();
   createStandarPixelBoard();
 };
