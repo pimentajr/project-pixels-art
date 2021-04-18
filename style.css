@@ -1,6 +1,6 @@
 /*Core disponíveis na paleta*/
- #first-color{
-  background-color: black;
+#first-color{
+background-color: black;
  }
  #second-color{
   background-color: green;
@@ -17,7 +17,6 @@
     height: 50px;
     width: 50px;
 }
-
 
 /* Quadro de pixels*/
 
