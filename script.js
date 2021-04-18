@@ -22,3 +22,13 @@ color1Selector('black');
 color2Selector('green');
 color3Selector('red');
 color4Selector('yellow');
+
+const pixelBoard = document.querySelector('#pixel-board');
+for (let index = 1; index < 26; index += 1) {
+  let block = document.createElement('div');
+  block.style.backgroundColor = 'green';
+  block.className = 'pixel';
+  block.id = 'pixel' + index;
+
+  pixelBoard.appendChild(block);
+}
