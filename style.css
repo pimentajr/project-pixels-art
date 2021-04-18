@@ -1,24 +1,24 @@
 .color {
-    width: 60px;
-    height: 60px;
-    border: solid 1px;
-    display: inline-block;
+  width: 60px;
+  height: 60px;
+  border: solid 1px;
+  display: inline-block;
 }
 
-#color-pallete {}
+/* #color-pallete {} */
 
 #red {
-    background-color: red;
+  background-color: red;
 }
 
 #green {
-    background-color: green;
+  background-color: green;
 }
 
 #orange {
-    background-color: orange;
+  background-color: orange;
 }
 
 #blue {
-    background-color: blue;
+  background-color: blue;
 }
