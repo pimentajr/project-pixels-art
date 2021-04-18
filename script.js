@@ -76,14 +76,15 @@ function checkNumber(number) {
   createTable(number);
 }
 
-function checkInput(input) {
-  if (!input) return alert('Board inválido!');
-  checkNumber(input);
+function checkInput() {
+  const Boardinput = document.getElementById('board-size').value;
+  if (!Boardinput) return alert('Board inválido!');
+  
 }
 
 function newBoard() {
   const Boardinput = document.getElementById('board-size').value;
-  checkInput(Boardinput);
+  checkNumber(Boardinput);
 }
 
 function createTable(number) {
@@ -103,6 +104,7 @@ function createTable(number) {
   limpar.addEventListener('click', clearPixel);
   vqvButton.addEventListener('click', deleteTable);
   vqvButton.addEventListener('click', newBoard);
+  vqvButton.addEventListener('click', checkInput);
 }
 
 window.onload = newBoard;
