@@ -66,21 +66,32 @@ function randomColor() {
     colorPAllet[index].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   }
 }
+function checkNumber(number) {
+  if (number < 5) {
+    number = 5;
+  }
+  if (number > 50) {
+    number = 50;
+  }
+  createTable(number);
+}
 
-function createTable() {
-  const input = document.getElementById('board-size');
-  const pixelBoard = document.getElementById('pixel-board');
-  if (!input.value) return alert('Board inválido!');
-  if (input.value < 5) {
-    input.value = 5;
-  }
-  if (input.value > 50) {
-    input.value = 50;
-  }
-  for (let line = 0; line < input.value; line += 1) {
+function checkInput(input) {
+  if (!input) return alert('Board inválido!');
+  checkNumber(input);
+}
+
+function newBoard() {
+  const Boardinput = document.getElementById('board-size').value;
+  checkInput(Boardinput);
+}
+
+function createTable(number) {
+  const pixelBoard = document.getElementById('pixel-board'); 
+  for (let line = 0; line < number; line += 1) {
     const tableLine = document.createElement('tr');
     tableLine.className = 'rows';
-    for (let colum = 0; colum < input.value; colum += 1) {
+    for (let colum = 0; colum < number; colum += 1) {
       const tableColum = document.createElement('td');
       tableColum.className = 'pixel';
       tableLine.appendChild(tableColum);
@@ -91,7 +102,7 @@ function createTable() {
   randomColor();
   limpar.addEventListener('click', clearPixel);
   vqvButton.addEventListener('click', deleteTable);
-  vqvButton.addEventListener('click', createTable);
+  vqvButton.addEventListener('click', newBoard);
 }
 
-window.onload = createTable;
+window.onload = newBoard;
