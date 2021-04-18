@@ -1,3 +1,6 @@
+const pixelBoard = document.querySelector('#pixel-board');
+
+
 
 //Requisito 2, 3 e 12
 function randomColor() {
@@ -46,6 +49,7 @@ function createLinesAndRows () {
     }
 }
 
+//Requisito 6 e 7 - Deixar a cor selecionada
 function newCollor() {
   const object = document.querySelector('#color-palette');
   object.addEventListener('click', (event) => {
@@ -53,13 +57,42 @@ function newCollor() {
     if(var2){
       var2.classList.remove('selected');
     }
-    event.target.classList.add('selected');
+    event.target.classList.add('selected'); // retorna o elemento que disparou o evento
   });
 
 
 }
 
-    
+
+// REq 8 - Função para colorir os quadradinhos
+
+function colorPixel() {
+  const pixel = document.getElementsByClassName('pixel');
+
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].addEventListener('click', () => {
+      const selectedColor = document.querySelector('.selected');
+      pixel[index].style.backgroundColor = selectedColor.style.backgroundColor;
+    });
+  }
+}
+
+
+
+// requisito 9 - Botão que limpa os quadradinhos
+function clearButton() {
+  const button = document.getElementById('clear-board');
+  const pixelCell = document.getElementsByClassName('pixel');
+
+  button.addEventListener('click', () => {
+    for (let i = 0; i < pixelCell.length; i += 1) {
+      pixelCell[i].style.backgroundColor = 'white';
+    }
+  });
+}
+
+
+
 
    
 
@@ -68,5 +101,7 @@ createLinesAndRows()
 randomColor()
 chooseColor()
 newCollor()
+colorPixel()
+clearButton()
 
 }
