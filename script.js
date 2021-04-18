@@ -84,15 +84,15 @@ const sizeButton = document.getElementById('generate-board');
 const input = document.getElementById('board-size');
 
 function changeSizePixel() {
-  if (input.value > 0 && input.value <= 5) {
-    input.value = 5;
-  } else if (input.value >= 50) {
-    input.value = 50;
-  } else if (input.value > 5 && input.value < 50) {
-    input.value;
+  if (input.value > 0 && input.value  <= 5) {
+    input.value  = 5;
+  } else if (input.value  >= 50) {
+    input.value  = 50;
+  } else if (input.value  > 5 && input.value  < 50) {
+    input.value  = input.value ;
   } else {
     alert('Board inválido!');
-    input.value = '';
+    input.value  = '';
   }
   createTable(input.value, input.value);
 }
