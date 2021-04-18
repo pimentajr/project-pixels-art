@@ -1,7 +1,7 @@
 
 let pixelBoard = document.querySelector('#pixel-board');
 
-for (let i=1; i<=5; i+=1 ){
+for (let index = 1; index <= 5; index += 1 ){
     let line = document.createElement('div');
 
     for(let j=1; j<=5; j+=1){
@@ -24,8 +24,18 @@ function select() {
     }
 }); 
 }
-
 select();
+
+pixelBoard.addEventListener('click', function(event){
+
+    let fillPixel = document.querySelector('.select')
+    if (event.target.className === 'pixel') {
+        event.target.style.backgroundColor = fillPixel;
+    }
+});
+
+
+
 
 
 
