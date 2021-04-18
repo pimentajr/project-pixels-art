@@ -9,7 +9,8 @@ const buttonGenerateBoard = document.getElementById('generate-board');
 title.innerText = 'Paleta de Cores';
 buttonClearBoard.innerText = 'Limpar';
 buttonGenerateBoard.innerText = 'VQV';
-inputBoardSize.type = 'number'
+inputBoardSize.type = 'number';
+inputBoardSize.min = '1';
 
 // Gera um número aleatório de 0 a 255
 function randomNumber() {
