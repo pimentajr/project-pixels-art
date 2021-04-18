@@ -1,7 +1,10 @@
 const boardSize = document.getElementById('board-size');
 const pixelBoard = document.getElementById('pixel-board');
 const button = document.getElementById('generate-board');
+const color = document.getElementsByClassName('color');
+const palleteColor = document.getElementById('color-palette');
 
+// parte 1 criação do pixel board dinâmico
 // criando pixel board  
 function createPixelBoard(input){
   for(let r = 0; r < input; r += 1){
@@ -24,4 +27,27 @@ button.onclick =  function expandBoard() {
    }
    createPixelBoard(input);
 };
+// parte 2 - Função para gerar cores 
+//  getRandomColor () - https://stackoverflow.com/questions/1484506/random-color-generator
+function getRandomColor() {
+  let letters = '0123456789ABCDEF';
+  let colors = '#';
+  for (let index = 0; index < 6; index +=1) {
+    colors += letters[Math.floor(Math.random() * 16)];
+  }
+  return colors;
+}
 
+function  colorpalettes() {
+  const palletes = ['black'];
+for(let index = 0; index < 3; index += 1){
+  palletes.push(getRandomColor());
+}
+
+for(let index = 0; index < color.length; index += 1){
+  color[index].style.backgroundColor = palletes[index];
+}
+ return palletes;
+}
+
+colorpalettes();
