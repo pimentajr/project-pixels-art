@@ -20,30 +20,6 @@
   background-color: #ED33F2;
 }
 
-#color-palette div td:nth-of-type( 5 ) {
-  background-color: #AB39DB;
-}
-
-#color-palette div td:nth-of-type( 6 ) {
-  background-color: #8533F2;
-}
-
-#color-palette div td:nth-of-type( 7 ) {
-  background-color: #4D31E8;
-}
-
-#color-palette div td:nth-of-type( 8 ) {
-  background-color: #47185C;
-}
-
-#color-palette div td:nth-of-type( 9 ) {
-  background-color: #C47EE1;
-}
-
-#color-palette div td:nth-of-type( 10 ) {
-  background-color: #AB39DB;
-}
-
 #Delete {
   border-radius: 2px;
   border-color: transparent;

@@ -1,32 +1,32 @@
-let creationFirst = document.createElement('div');
-let creationPalette = document.querySelector('#color-palette');
+const creationFirst = document.createElement('div');
+const creationPalette = document.querySelector('#color-palette');
 creationPalette.appendChild(creationFirst);
-for (let index = 0; index < 10; index += 1) {
-  let creationFirstTd = document.createElement('td');
+for (let index = 0; index < 4; index += 1) {
+  const creationFirstTd = document.createElement('td');
   creationFirstTd.className = 'color';
   creationFirst.appendChild(creationFirstTd);
 }
 document.querySelector('.color').className += ' selected';
 
-let counter = 5;
+const counter = 5;
 
 for (let index = 0; index < counter; index += 1) {
-  let createTr = document.createElement('div');
+  const createTr = document.createElement('div');
   createTr.className = 'pixeld';
-  let theTable = document.querySelector('#pixel-board');
+  const theTable = document.querySelector('#pixel-board');
   theTable.appendChild(createTr);
   for (let count = 0; count < counter; count += 1) {
-    let createSecondTd = document.createElement('td');
+    const createSecondTd = document.createElement('td');
     createSecondTd.className = 'pixel';
     createTr.appendChild(createSecondTd);
   }
 }
-let corPaleta = document.querySelectorAll('.color');
+const corPaleta = document.querySelectorAll('.color');
 
-let selectedColor = (event) => {
-  let corEscolhida = document.querySelector('.selected');
+const selectedColor = (event) => {
+  const corEscolhida = document.querySelector('.selected');
   corEscolhida.className = 'color';
-  let evento = event;
+  const evento = event;
   evento.target.className += ' selected';
 };
 
