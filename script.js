@@ -97,12 +97,13 @@ clearButton.addEventListener('click', clearPixels);
 
 // Requisito 10
 const inputNumber = document.createElement('input');
-inputNumber.classList.add('input', 'is-link');
+inputNumber.classList.add('input', 'is-link', 'm-4');
 inputNumber.id = 'board-size';
 inputNumber.value = '';
 inputNumber.type = 'number';
+inputNumber.style.width = '30%';
 inputNumber.min = 1;
-inputNumber.placeholder = 'Insira o tamanho desejado para o quadro de pixels:';
+inputNumber.placeholder = 'Insira um novo tamanho para o quadro:';
 bunttonContainer.appendChild(inputNumber);
 
 const generateBoardButton = document.createElement('button');
