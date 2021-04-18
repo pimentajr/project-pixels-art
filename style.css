@@ -1,4 +1,4 @@
-ody {
+body {
     text-align: center;
   }
   
@@ -15,5 +15,28 @@ ody {
     justify-content: center;
     margin: 5px;
     text-align: center;
+    width: 41px;
+  }
+  
+  .pixel {
+    background-color: white;
+  }
+  
+  table , tr , td {
+    border: 1px solid black;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: 40px auto;
+  }
+  
+  tr {
+    height: 40px;
+  }
+  
+  td {
+    background-color: white;
+    height: 41px;
     width: 41px;
   }
