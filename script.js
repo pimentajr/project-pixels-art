@@ -25,9 +25,9 @@ color4Selector('yellow');
 
 const pixelBoard = document.querySelector('#pixel-board');
 for (let index = 1; index < 26; index += 1) {
-  let block = document.createElement('div');
+  const block = document.createElement('div');
   block.className = 'pixel';
-  block.id = 'pixel' + index;
+  block.id = ('pixel' + index);
 
   pixelBoard.appendChild(block);
 }
