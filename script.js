@@ -81,5 +81,6 @@ function pixelBoardCreator(collumns, rows) {
   }
 }
 pixelBoardCreator(5, 5);
-//O Gustavo Lemes me ajudou a consertar o erro pelo slack.
+// O Gustavo Lemes me ajudou a consertar o erro pelo slack.
 
+document.querySelector('#color1').classList.add('selected');
