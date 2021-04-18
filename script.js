@@ -119,7 +119,14 @@ function verifyInput() {
 function remakePixelBoard() {
   const value = parseInt(inputNumber.value, 10);
   verifyInput();
-  if (value > 0) {
+
+  if (value < 5) {
+    pixelBoard.innerHTML = '';
+    pixelBoardMaker(5);
+  } else if (value > 50) {
+    pixelBoard.innerHTML = '';
+    pixelBoardMaker(50);
+  } else {
     pixelBoard.innerHTML = '';
     pixelBoardMaker(value);
   }
