@@ -2,9 +2,9 @@ const title = document.getElementById('title');
 const colorsPalette = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board');
 const pixel = document.getElementsByClassName('pixel');
-const buttonClearBoard = document.getElementById('clear-board');
 const inputBoardSize = document.getElementById('board-size');
 const buttonGenerateBoard = document.getElementById('generate-board');
+const buttonClearBoard = document.getElementById('clear-board');
 
 title.innerText = 'Paleta de Cores';
 buttonClearBoard.innerText = 'Limpar';
@@ -67,7 +67,7 @@ function createColumnsPixelBoard(divLine, valueBoardSize) {
 }
 
 // Cria pixel board padrão 5x5
-function createStandarPixelBoard() {
+function createStandardPixelBoard() {
   const valueBoardSize = 5;
   for (let index = 0; index < valueBoardSize; index += 1) {
     const lineBoard = document.createElement('div');
@@ -93,11 +93,13 @@ function createPixelBoardVQV() {
   }
 }
 
+// Seleciona uma das cores da paleta
 function getColor(colorX) {
   document.getElementsByClassName('selected')[0].classList.remove('selected');
   colorX.target.classList.add('selected');
 }
 
+// Colore o pixel do pixel board clicado
 function colorPixel(pixelX) {
   const pixelBeColored = pixelX.target;
   const newColor = document.getElementsByClassName('selected')[0].style.background;
@@ -106,6 +108,7 @@ function colorPixel(pixelX) {
   }
 }
 
+// Pinta de branco o pixel board
 function clearBoard() {
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = 'white';
@@ -114,7 +117,7 @@ function clearBoard() {
 
 window.onload = function opening() {
   createPalette();
-  createStandarPixelBoard();
+  createStandardPixelBoard();
 };
 
 colorsPalette.addEventListener('click', getColor);
