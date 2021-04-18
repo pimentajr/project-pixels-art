@@ -17,6 +17,7 @@
 
 .row {
   display: table-row;
+  background-color: white;
 }
 
 .pixel {
@@ -24,4 +25,5 @@
   width: 40px;
   border: solid black 1px;
   display: table-cell;
+  background-color: white;
 }

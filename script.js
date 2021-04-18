@@ -14,5 +14,14 @@ function createPixelBoard(input){
     cell.className = 'pixel';
   }
   }
-}
-createPixelBoard(5);
+} 
+//button VQV  
+button.onclick =  function expandBoard() {
+   pixelBoard.innerHTML = '';
+   let input = boardSize.value;
+   if(input === '') {
+     alert ('Board inválido!');
+   }
+   createPixelBoard(input);
+};
+
