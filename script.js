@@ -70,9 +70,7 @@ function randomColor() {
 function createTable() {
   const input = document.getElementById('board-size');
   const pixelBoard = document.getElementById('pixel-board');
-  if (input.value === '') {
-    alert('Board inválido!');
-  }
+  if (!input.value) return alert('Board inválido!');
   if (input.value < 5) {
     input.value = 5;
   }
