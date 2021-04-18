@@ -9,5 +9,8 @@
 .pixel {
   width: 40px;
   height: 40px;
-  background-color: white;
+  background-color: white(128, 0, 128);
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
 }
