@@ -61,10 +61,14 @@ document.getElementById('clear-board').addEventListener('click', clearPixel);
 
 function resizePixels() {
   const inputValue = document.getElementById('board-size').value;
-  if (inputValue >= 5 && inputValue <= 50) {
-    removeAndAddDivPixel(inputValue);
+  if (inputValue <= 0) {
+    alert('Board inválido!');    
+  } else if (inputValue <=5) {
+    removeAndAddDivPixel(5)
+  } else if (inputValue >= 50) {
+    removeAndAddDivPixel(50);
   } else {
-    alert('Board inválido!');
+    removeAndAddDivPixel(inputValue);
   }
 }
 document.getElementById('generate-board').addEventListener('click', resizePixels);
