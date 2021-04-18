@@ -1,6 +1,7 @@
 const creationFirst = document.createElement('div');
 const creationPalette = document.querySelector('#color-palette');
 creationPalette.appendChild(creationFirst);
+
 for (let index = 0; index < 4; index += 1) {
   const creationFirstTd = document.createElement('td');
   creationFirstTd.className = 'color';
@@ -49,7 +50,7 @@ for (let index = 0; index < pixels.length; index += 1) {
   pixels[index].addEventListener('click', selectedPixel);
 }
 
-let clearButton = document.querySelector('#Delete');
+let clearButton = document.querySelector('#Limpar');
 let allPixel = document.querySelectorAll('.pixel');
 
 clearButton.addEventListener('click', () => {
