@@ -28,11 +28,21 @@ select();
 
 pixelBoard.addEventListener('click', function(event){
 
-    let fillPixel = document.querySelector('.select')
+    let fillPixel = document.querySelector('.selected').id;
     if (event.target.className === 'pixel') {
         event.target.style.backgroundColor = fillPixel;
     }
 });
+
+let clear = document.getElementById("clear-borad");
+
+clear.addEventListener('click',function(){
+    let getPixel = document.querySelectorAll ('.pixel');
+    for(let index = 0; index < getPixel.length; index += 1){
+        getPixel[index].style.backgroundColor = 'white'
+    }
+});
+
 
 
 
