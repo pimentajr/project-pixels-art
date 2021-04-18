@@ -1,6 +1,6 @@
 // 1
 // feito no html
-// 2 e 3 
+// 2 e 3
 const black = document.querySelectorAll('.color')[0];
 black.style.backgroundColor = 'black';
 const red = document.querySelectorAll('.color')[1];
@@ -9,7 +9,7 @@ const yellow = document.querySelectorAll('.color')[2];
 yellow.style.backgroundColor = 'yellow';
 const blue = document.querySelectorAll('.color')[3];
 blue.style.backgroundColor = 'blue';
-// 4 e 5 
+// 4 e 5
 const pixelBoard = document.getElementById('pixel-board');
 for (let i = 0; i < 5; i += 1) {
   const pixelRow = document.createElement('div');
@@ -23,7 +23,7 @@ for (let i = 0; i < 5; i += 1) {
     pixelCell.style.backgroundColor = 'white';
   }
 }
-// 6 e 7 
+// 6 e 7
 const paletaCores = document.querySelector('#color-palette');
 function selectedColor() {
   paletaCores.addEventListener('click', (event) => {
@@ -35,7 +35,7 @@ function selectedColor() {
   });
 }
 selectedColor();
-// 8 
+// 8
 pixelBoard.addEventListener('click', (event) => {
   const actualColor = document.querySelector('.selected').id;
   if (event.target.className === 'pixel') {
