@@ -5,19 +5,19 @@
 }
 
 .pixelRow {
-    border: solid black 1px;
-    width: 40px;
-    height: 40px;
-    display: table-row;
+  border: solid black 1px;
+  width: 40px;
+  height: 40px;
+  display: table-row;
 }
 
 .pixel {
-    border: solid black 1px;
-    width: 40px;
-    height: 40px;
-    display: table-cell;
+  border: solid black 1px;
+  width: 40px;
+  height: 40px;
+  display: table-cell;
 }
 
 #pixel-board {
-    padding: 10px;
+  padding: 10px;
 }
