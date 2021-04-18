@@ -3,18 +3,22 @@ window.onload = function initial() {
   initialColor.classList.add('selected');
 
   const pixelBoard = document.querySelector('#pixel-board');
-  const size = 5;
+  let size = 5;
 
+ function createPixels(size) {
   for (let indexLine = 0; indexLine < size; indexLine += 1) {
-    const newLine = document.createElement('div');
-    newLine.className = 'line-pixel';
-    pixelBoard.appendChild(newLine);
-    for (let indexColum = 0; indexColum < size; indexColum += 1) {
-      const newColum = document.createElement('div');
-      newColum.className = 'pixel';
-      newLine.appendChild(newColum);
+      const newLine = document.createElement('div');
+      newLine.className = 'line-pixel';
+      pixelBoard.appendChild(newLine);
+      for (let indexColum = 0; indexColum < size; indexColum += 1) {
+        const newColum = document.createElement('div');
+        newColum.className = 'pixel';
+        newLine.appendChild(newColum);
+      }
     }
-  }
+ }
+ createPixels(size);
+  
 };
 
 const colorPalette = document.querySelectorAll('.color');
@@ -46,3 +50,17 @@ function clearbutton() {
   });
 }
 clearbutton();
+
+function sizeBoard() {
+  const sizeButton = document.getElementById('generate-board');
+
+  sizeButton.addEventListener('click', function changeSize() {
+    let addNumber = document.getElementById('board-size').value;
+    if (addNumber === undefined) {
+      alert('Board inválido!');
+    } else {
+      createPixels(addNumber);
+    }
+  })
+}
+sizeBoard();
