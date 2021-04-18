@@ -53,8 +53,8 @@ document.getElementById('pixel-board').addEventListener('click', changeColorPixe
 function clearPixel() {
   const quantidadeDePixel = document.querySelectorAll('.pixel').length;
   for (let contador = 0; contador < quantidadeDePixel; contador += 1) {
-    const selector = document.querySelectorAll('.pixel')[contador];
-    selector.classList.remove(selector.classList[1]);
+    let selector = document.querySelectorAll('.pixel')[contador];
+    selector.style.backgroundColor = 'white';
   }
 }
 document.getElementById('clear-board').addEventListener('click', clearPixel);
