@@ -97,10 +97,25 @@ function generateDimensionalTable() {
   buttonVQV.addEventListener('click', changesTableSize);
 }
 
+function createFooter() {
+  const footer = document.createElement('footer');
+  const textFooter = document.createElement('p');
+  footer.id = 'baseboard';
+  footer.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+  document.body.appendChild(footer);
+  textFooter.id = 'footer';
+  textFooter.style.color = 'rgb(255, 255, 255)';
+  textFooter.textContent = '@Savio Moraes - 2021';
+  textFooter.style.marginLeft = 'auto';
+  textFooter.style.marginRight = 'auto';
+  footer.appendChild(textFooter);
+}
+
 window.onload = function reloadBrowser() {
   createColorPalette();
   reinsertTable(5);
   changeTheColor();
   colorRemovalEvent();
   generateDimensionalTable();
+  createFooter();
 };
