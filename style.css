@@ -1,16 +1,16 @@
 /*Core disponíveis na paleta*/
-    #first-color{
-        background-color: black;
-    }
-    #second-color{
-        background-color: green;
-    }
-    #third-color{
-        background-color: blue;
-    }
-    #fourth-color{
-        background-color: red;
-    }
+ #first-color{
+  background-color: black;
+ }
+ #second-color{
+  background-color: green;
+ }
+ #third-color{
+  background-color: blue;
+ }
+ #fourth-color{
+  background-color: red;
+ }
 /* Largura, altura e borda das cores da paleta*/
 .color{
     border: 1px solid black;
