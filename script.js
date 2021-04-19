@@ -5,20 +5,23 @@ const color = document.getElementsByClassName('color');
 const palleteColor = document.getElementById('color-palette');
 const pixel = document.getElementsByClassName('pixel');
 const buttonClear = document.getElementById('clear-board');
-// parte 1 criação do pixel board dinâmico
-// criando pixel board  
-function createPixelBoard(input){
-  for(let r = 0; r < input; r += 1){
+// Requisito 5
+function createPixelBoard(input) {
+  for(let r = 0; r < input; r += 1) {
     const row = document.createElement('div');
     pixelBoard.appendChild(row);
     row.className = 'row';
-  for(let c = 0; c < input; c +=1){
-    const cell = document.createElement('div');
-    row.appendChild(cell);
-    cell.className = 'pixel';
+    row.style.backgroundColor = 'white';
+    for(let c = 0; c < input; c +=1) {
+      const cell = document.createElement('div');
+      row.appendChild(cell);
+      cell.className = 'pixel';
+      cell.style.backgroundColor = 'white';
+    }
   }
-  }
+
 } 
+createPixelBoard(5);
 
 //button VQV  
 button.onclick =  function expandBoard() {
