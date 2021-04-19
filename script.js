@@ -1,3 +1,8 @@
+function blackInit () {
+  document.getElementById('black').className = 'color selected';
+}
+
+
 function selecionaCor(event) {
   const colorPalette = document.getElementsByClassName('color');
   for (let index = 0; index < colorPalette.length; index += 1) {
@@ -22,6 +27,7 @@ const eventButton = document.getElementById('clear-board');
 eventButton.addEventListener('click', boardWhite);
 
 function requisitosIniciais() {
+  blackInit();
   document.getElementById('color-palette').addEventListener('click', selecionaCor);
   document.getElementById('clear-board').addEventListener('click', boardWhite);
 }
