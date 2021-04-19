@@ -17,6 +17,10 @@
   cursor: pointer;
 }
 
+.black { 
+  background-color: black;
+}
+
 .red {
   background-color: red;
 }
