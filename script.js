@@ -52,3 +52,12 @@ let changeColor = document.querySelector('#pixel-board');
 changeColor.addEventListener('click', function(event){
     event.target.style.backgroundColor = corSelecionada;
 });
+
+//Botão Limpar
+let limparButton = document.getElementById('clear-board');
+limparButton.addEventListener('click', function(){
+    let capturarPixels = document.getElementsByClassName('pixel');
+    for(let i=0;i<capturarPixels.length;i++){
+        capturarPixels[i].style.backgroundColor='white';
+    }
+});
