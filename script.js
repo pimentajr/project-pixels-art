@@ -1,24 +1,14 @@
-const black = document.getElementById('black');
-const pink = document.getElementById('pink');
-const blue = document.getElementById('blue');
-const red = document.getElementById('red');
-
-const paletaDeCores = [black, pink, blue, red];
-
-function selectColorPixel(event) { 
-  for (let index = 0; index < paletaDeCores; index += 1) {
-    if (paletaDeCores[index].classList.contains('selected')) {
-      paletaDeCores[index].classList.remove('selected');
+function selecionaCor(event) {
+  const colorPalette = document.getElementsByClassName('color');
+  for (let index = 0; index < colorPalette.length; index += 1) {
+    const elementSelected = colorPalette[index];
+    if (elementSelected === event.target) {
+      elementSelected.classList.add('selected');
+    } else {
+      elementSelected.classList.remove('selected');
     }
   }
-  event.target.classList.add('selected');
-  console.log(event.target.className);
 }
-
-black.addEventListener('click', selectColorPixel);
-pink.addEventListener('click', selectColorPixel);
-blue.addEventListener('click', selectColorPixel);
-red.addEventListener('click', selectColorPixel);
 
 function boardWhite() {
   const pixelBoard = document.getElementsByClassName('pixel');
@@ -32,6 +22,7 @@ const eventButton = document.getElementById('clear-board');
 eventButton.addEventListener('click', boardWhite);
 
 function requisitosIniciais() {
+  document.getElementById('color-palette').addEventListener('click', selecionaCor);
   document.getElementById('clear-board').addEventListener('click', boardWhite);
 }
 window.onload = requisitosIniciais;
