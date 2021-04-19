@@ -9,7 +9,7 @@ let savedColor = 'black';
 function selectionColor(color) {
     const colorTarget = color.target;
     if (colorTarget.classList.contains('color')) {
-        const removeColor = document.querySelector('.selected'):
+        const removeColor = document.querySelector('.selected');
         removeColor.classList.remove('selected');
 
         savedColor = colorTarget.style.backgroundColor.classList.add('selected');
