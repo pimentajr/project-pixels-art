@@ -117,9 +117,13 @@ function pixelSelector (element) {
   for (index = 0; index < colors.length; index += 1) {
     pixels[index].classList.add('ping');
   }
-  element.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor
+  element.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
 }
-pixels[0].addEventListener('click', pixelSelector);
+for (let indexP = 0; indexP < pixels.length; indexP += 1) {
+  pixels[indexP].addEventListener('click', pixelSelector);
+
+}
+// pixels[0].addEventListener('click', pixelSelector);
 
 
 
