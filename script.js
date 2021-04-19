@@ -13,15 +13,15 @@ function createPalette() {
 createPalette();
 
 // Requisito 4
-function createPixelBoard() {
+function createPixelBoard(n) {
   const frame = document.createElement('div');
   frame.id = 'pixel-board';
   document.body.appendChild(frame);
   const frameX = document.querySelector('#pixel-board');
-  for (let lines = 0; lines < 5; lines += 1) {
+  for (let lines = 0; lines < n; lines += 1) {
     let box = document.createElement('div');
     frameX.appendChild(box);
-    for (let index = 0; index < 5; index += 1) {
+    for (let index = 0; index < n; index += 1) {
       box = document.createElement('div');
       box.classList.add('pixel');
       frameX.appendChild(box);
@@ -29,7 +29,7 @@ function createPixelBoard() {
     }
   }
 }
-createPixelBoard();
+createPixelBoard(5);
 
 // Requisito 7
 function changeSelection(event) {
@@ -74,3 +74,48 @@ btnClear.addEventListener('click', () => {
     box[index].style.backgroundColor = 'white';
   }
 });
+
+// // Requisito 10
+// function createInputAndButton() {
+//   const section = document.querySelector('section');
+//   const input = document.createElement('input');
+//   input.id = 'board-size';
+//   section.appendChild(input);
+//   const btnVQV = document.createElement('button');
+//   btnVQV.id = 'generate-board';
+//   btnVQV.innerText = 'VQV';
+//   section.appendChild(btnVQV);
+// }
+// createInputAndButton();
+
+// function clearInput() {
+//   document.querySelector('input').value = '';
+// }
+
+// const btnAdd = document.querySelector('#generate-board');
+// btnAdd.addEventListener('click', () => {
+//   const valueInput = document.querySelector('input').value;
+//   let n = valueInput;
+//   if (n > 5 && n <= 50) {
+//     createPixelBoard(n);
+//   }
+//   else if (n > 50) {
+//     createPixelBoard(50);
+//   }
+//   else if (n < 0 || n === '') {
+//     alert("Board inválido!");
+//   }
+//   clearInput();
+// });
+
+// Requisito 11
+function generateColorPalette() {
+  const color = document.querySelectorAll('.color');
+  for (let index = 1; index < color.length; index += 1) {
+    const r = Math.random() * 255;
+    const g = Math.random() * 255;
+    const b = Math.random() * 255;
+    color[index].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  }
+}
+generateColorPalette();
