@@ -30,21 +30,22 @@ body {
 }
 
 #pixel-board {
-  width: 5px;
-  height: 200px;
-  display: grid;
-  grid-template-columns: 40px 40px 40px 40px 40px;
-  margin: 0 auto;
-  justify-content: center;
-  align-content: center;
+display: inline-block;
 }
 
-#pixel-board div {
+.pixel {
+  display: table-cell;
   width: 40px;
   height: 40px;
   border: black solid 1px;
   background-color: white;
   cursor: pointer;
+}
+
+.divPix {
+display:flex;
+margin: 0 auto;
+justify-content: center;
 }
 
 #btn {
