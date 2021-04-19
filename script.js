@@ -124,11 +124,12 @@ for (let indexP = 0; indexP < pixels.length; indexP += 1) {
   pixels[indexP].addEventListener('click', pixelSelector);
 }
 
-function setColor1() {
+function defaultColor() {
   colors[0].className = 'color selected';
   console.log('Welcome');
-colors[0].onload = setColor1();
 }
+defaultColor();
+
 
 // function clearPixel() {
 //   document.querySelector('#clear-board').addEventListener('click', clearPixels{
@@ -137,10 +138,11 @@ colors[0].onload = setColor1();
 //     }
 //   })
 // }
-
-function clearPixels() {
+clearButton = document.querySelector('#clear-board');
+clearButton.addEventListener('click', function clearPixels(){
   for (let indexP = 0; indexP < pixels.length; indexP += 1) {
     pixels[indexP].style.backgroundColor = 'white';
   }
-}
+});
+
 // fonte: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_form_reset
