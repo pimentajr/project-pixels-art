@@ -15,14 +15,14 @@ function generatePixelBoard (size) {
   const totalSize = size * size;
   const borderWidth = (size * 40) + 40;
   pixelBoard.style.width = `${borderWidth}px`
-  for (let i = 0 ; i < totalSize ; i += 1){
+  for (let i = 0 ; i < totalSize ; i += 1) {
     const divPixel = document.createElement('div');
     divPixel.classList.add('pixel');
     pixelBoard.appendChild(divPixel);
   }
 }
 
-function generateRandomColor(){
+function generateRandomColor() {
   const red = Math.floor(Math.random() * 255);
   const blue = Math.floor(Math.random() * 255);
   const green = Math.floor(Math.random() * 255);
@@ -32,11 +32,11 @@ function generateRandomColor(){
   return generateColor;
 }
 
-function generateColorPalette(){
+function generateColorPalette() {
   for (let i = 0 ; i < 4 ; i += 1){
     const divColor = document.createElement('div');
     divColor.classList.add('color');
-    if (i === 0){
+    if (i === 0) {
       divColor.style.backgroundColor = 'black';
     }else{
       divColor.style.backgroundColor = generateRandomColor();
