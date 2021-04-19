@@ -3,10 +3,23 @@ function showColor(){
 }
 
 let black = document.getElementById('black');
-let red = document.getElementById('red');
-let blue = document.getElementById('blue');
-let green = document.getElementById('green');
+
+let red = document.getElementById('cor2');
+let blue = document.getElementById('cor3');
+let green = document.getElementById('cor4');
+
 let cores = document.getElementById('color-palette');
+
+//Cores randomicas 1 até 256
+let random2 = Math.floor((Math.random()*30)); //2
+let random3 = Math.ceil((Math.random()*150)); //3
+let random4 = Math.floor((Math.random()*300)); //4
+let randomString2 = random2.toString(); //2
+let randomString3 = random3.toString(); //3
+let randomString4 = random4.toString(); //4
+red.style.backgroundColor = 'rgb('+randomString2+','+randomString3+','+randomString4+')'; //2
+blue.style.backgroundColor = 'rgb('+randomString3+','+randomString2+','+randomString4+')'; //3
+green.style.backgroundColor = 'rgb('+randomString4+','+randomString3+','+randomString2+')'; //4
 
 let corSelecionada = 'black';
 
@@ -24,7 +37,7 @@ red.addEventListener('click', function(event){
     black.className = 'color';
     blue.className = 'color';
     green.className = 'color';
-    corSelecionada = 'red';
+    corSelecionada = 'rgb('+randomString2+','+randomString3+','+randomString4+')';
     showColor();
 });
 
@@ -33,7 +46,7 @@ blue.addEventListener('click', function(event){
     black.className = 'color';
     blue.className = 'color selected';
     green.className = 'color';
-    corSelecionada = 'blue';
+    corSelecionada = 'rgb('+randomString3+','+randomString2+','+randomString4+')';
     showColor();
 });
 
@@ -42,12 +55,14 @@ green.addEventListener('click', function(event){
     black.className = 'color';
     blue.className = 'color';
     green.className = 'color selected';
-    corSelecionada = 'green';
+    corSelecionada = 'rgb('+randomString4+','+randomString3+','+randomString2+')';
     showColor();
 });
 
 let selectedColor = document.getElementsByClassName('color selected');
 let changeColor = document.querySelector('#pixel-board');
+
+
 
 changeColor.addEventListener('click', function(event){
     event.target.style.backgroundColor = corSelecionada;
