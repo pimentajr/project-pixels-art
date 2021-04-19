@@ -62,8 +62,6 @@ green.addEventListener('click', function(event){
 let selectedColor = document.getElementsByClassName('color selected');
 let changeColor = document.querySelector('#pixel-board');
 
-
-
 changeColor.addEventListener('click', function(event){
     event.target.style.backgroundColor = corSelecionada;
 });
@@ -77,12 +75,27 @@ limparButton.addEventListener('click', function(){
     }
 });
 
-//Botão gerar novos pixels
+//Botão gerar novos pixel 
+// pais a serem destruídos
+//<div id='linha1'></div>
+//<div id='linha2'></div>
+//<div id='linha3'></div>
+//<div id='linha4'></div>
+//<div id='linha5'></div>
 let numeroNovosPixels = document.getElementById('board-size');
 let buttonNovosPixels = document.getElementById('generate-board');
 let paizão = document.getElementById('pixel-board');
-
 buttonNovosPixels.addEventListener('click', function(){
+    let remover1 = document.getElementById('linha1');
+    remover1.parentNode.removeChild(remover1);
+    let remover2 = document.getElementById('linha2');
+    remover2.parentNode.removeChild(remover2);
+    let remover3 = document.getElementById('linha3');
+    remover3.parentNode.removeChild(remover3);
+    let remover4 = document.getElementById('linha4');
+    remover4.parentNode.removeChild(remover4);
+    let remover5 = document.getElementById('linha5');
+    remover5.parentNode.removeChild(remover5);   
     let tamanho = parseInt(numeroNovosPixels.value);
     if(numeroNovosPixels.value<5){
         tamanho=5;
