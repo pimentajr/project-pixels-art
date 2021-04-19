@@ -27,16 +27,6 @@ boxColorGenerate('magenta');
 boxColorGenerate('green');
 boxColorGenerate('red');
 
-function titleColorSelected() {
-  const colorSection = document.getElementById('color-palette');
-  colorSection.addEventListener('click', (event) => {
-    const selectedColor = event.target.style.backgroundColor;
-    const selectedColorSpam = document.querySelector('.selected-color');
-    selectedColorSpam.innerText = selectedColor;
-  });
-}
-titleColorSelected();
-
 function selectColor() {
   colorPalette.addEventListener('click', (selectedColor) => {
     const eventTarget = selectedColor.target;
@@ -96,7 +86,7 @@ function randomColor() {
     const a = parseInt(Math.random() * 255, 10);
     const b = parseInt(Math.random() * 255, 10);
     const c = parseInt(Math.random() * 255, 10);
-    paletteColor[index].style.backgroundColor = `rgba(${a}, ${b}, ${c})`;
+    paletteColor[index].style.backgroundColor = `rgb(${a}, ${b}, ${c})`;
   }
 }
 
