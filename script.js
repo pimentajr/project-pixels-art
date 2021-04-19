@@ -83,15 +83,31 @@ function pixelBoardCreator(collumns, rows) {
 pixelBoardCreator(5, 5);
 // O Gustavo Lemes me ajudou a consertar o erro pelo slack.
 
-document.querySelector('#color1').classList.add('selected');
+// document.querySelector('#color1').classList.add('selected');
 
-let colors = document.querySelectorAll('.color');
-let colorSelected = document.querySelector('#color-palete');
-function colorSelector() {
-  for (let index = 0; index < colors.length; colors += 1) {
-    colors[index].addEventListener('click', function(){
-      colorSelected.querySelector('.selected').classList.remove('selected');
-      this.classList.add('selected');
-    })
+// const colors = document.querySelectorAll('.color');
+// let selectedColor = '';
+// for (let index = 0; index < colors.length; index += 1) {
+//   colors[index].addEventListener ('click', function() {
+//     colors[index].classList.remove('selected')
+//     // console.log('aaaaaaaaaa')
+//     // if (colors[index].getAttribute('class') === 'color selected') {
+//     //   selectedColor = colors[index].style.backgroundColor
+//     // } else if ()
+//   })
+
+// }
+// console.log(selectedColor)
+
+const colors = document.querySelectorAll('.color');
+
+function classChanger (element) {
+  for (index = 0; index < colors.length; index += 1) {
+    colors[index].className = 'color';
   }
+  element.target.className = 'color selected';
 }
+colors[0].addEventListener('click', classChanger);
+colors[1].addEventListener('click', classChanger);
+colors[2].addEventListener('click', classChanger);
+colors[3].addEventListener('click', classChanger);
