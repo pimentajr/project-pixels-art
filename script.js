@@ -102,7 +102,7 @@ pixelBoardCreator(5, 5);
 const colors = document.querySelectorAll('.color');
 
 function classChanger(element) {
-  for (index = 0; index < colors.length; index += 1) {
+  for (let index = 0; index < colors.length; index += 1) {
     colors[index].className = 'color';
   }
   element.target.className = 'color selected';
@@ -116,7 +116,8 @@ function pixelSelector (element) {
   for (index = 0; index < colors.length; index += 1) {
     pixels[index].classList.add('ping');
   }
-  element.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+  let TheElement = element;
+  TheElement.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
 }
 for (let indexP = 0; indexP < pixels.length; indexP += 1) {
   pixels[indexP].addEventListener('click', pixelSelector);
