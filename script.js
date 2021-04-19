@@ -22,6 +22,16 @@ function generatePixelBoard (size) {
   }
 }
 
+function generateRandomColor(){
+  const red = Math.floor(Math.random() * 255);
+  const blue = Math.floor(Math.random() * 255);
+  const green = Math.floor(Math.random() * 255);
+
+  const generateColor = `rgb(${red}, ${blue}, ${green})`;
+
+  return generateColor;
+}
+
 function generateColorPalette(){
   for (let i = 0 ; i < 4 ; i += 1){
     const divColor = document.createElement('div');
