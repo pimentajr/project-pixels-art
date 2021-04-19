@@ -30,3 +30,8 @@ function boardWhite() {
 
 const eventButton = document.getElementById('clear-board');
 eventButton.addEventListener('click', boardWhite);
+
+function requisitosIniciais() {
+  document.getElementById('clear-board').addEventListener('click', boardWhite);
+}
+window.onload = requisitosIniciais;
