@@ -39,9 +39,10 @@ yellowColor.addEventListener('click', selectYellowColor);
 
 const emptyPixel = document.querySelector('#pixel-board');
 function pixelColor(event) {
+  const aux = event;
   const colorChosen = document.querySelector('.selected');
   const currentSelectedColor = window.getComputedStyle(colorChosen).backgroundColor;
-  event.target.style.backgroundColor = currentSelectedColor;
+  aux.target.style.backgroundColor = currentSelectedColor;
 }
 emptyPixel.addEventListener('click', pixelColor);
 
