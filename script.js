@@ -23,7 +23,8 @@ red.addEventListener('click', selectColorPixel);
 function boardWhite() {
   const pixelBoard = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixelBoard.length; index += 1) {
-    pixelBoard[index].style.backgroundColor = 'white';
+    const elementWhite = pixelBoard[index];
+    elementWhite.style.backgroundColor = 'white';
   }
 }
 
