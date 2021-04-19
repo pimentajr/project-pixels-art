@@ -105,7 +105,7 @@ function classChanger(element) {
   for (let index = 0; index < colors.length; index += 1) {
     colors[index].className = 'color';
   }
-  const TheElement = element
+  const TheElement = element;
   TheElement.target.className = 'color selected';
 }
 for (let indexCC = 0; indexCC < colors.length; indexCC += 1) {
@@ -117,17 +117,17 @@ function pixelSelector(element) {
   for (let index = 0; index < colors.length; index += 1) {
     pixels[index].classList.add('ping');
   }
-  const TheElement = element;
-  TheElement.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+  const TheEl = element;
+  TheEl.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
 }
 for (let indexP = 0; indexP < pixels.length; indexP += 1) {
   pixels[indexP].addEventListener('click', pixelSelector);
 }
 
-colors[0].onload = setColor1();
 function setColor1() {
   colors[0].className = 'color selected';
   console.log('Welcome');
+colors[0].onload = setColor1();
 }
 
 // function clearPixel() {
