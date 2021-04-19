@@ -1,7 +1,6 @@
-function blackInit () {
+function blackInit() {
   document.getElementById('black').className = 'color selected';
 }
-
 
 function selecionaCor(event) {
   const colorPalette = document.getElementsByClassName('color');
@@ -14,6 +13,19 @@ function selecionaCor(event) {
     }
   }
 }
+
+function paintingPixel(event) {
+  event.target.style.backgroundColor = getComputedStyle(document.querySelector('.selected')).backgroundColor;
+}
+
+function boardListener() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', paintingPixel);
+  }
+}
+
+boardListener();
 
 function boardWhite() {
   const pixelBoard = document.getElementsByClassName('pixel');
