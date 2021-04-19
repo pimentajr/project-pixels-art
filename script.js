@@ -1,5 +1,4 @@
-
-// 2 e 3
+// Req 2 e 3
 const black = document.querySelectorAll('.color')[0];
 black.style.backgroundColor = 'black';
 const red = document.querySelectorAll('.color')[1];
@@ -8,7 +7,7 @@ const green = document.querySelectorAll('.color')[2];
 green.style.backgroundColor = 'green';
 const blue = document.querySelectorAll('.color')[3];
 blue.style.backgroundColor = 'blue';
-// 4 e 5
+// Req 4 e 5
 const pixelBoard = document.getElementById('pixel-board');
 for (let i = 0; i < 5; i += 1) {
   const pixelRow = document.createElement('div');
@@ -22,7 +21,7 @@ for (let i = 0; i < 5; i += 1) {
     pixelCell.style.backgroundColor = 'white';
   }
 }
-// 6 e 7
+// Req 6 e 7
 const paletaCores = document.querySelector('#color-palette');
 function selectedColor() {
   paletaCores.addEventListener('click', (event) => {
@@ -34,7 +33,7 @@ function selectedColor() {
   });
 }
 selectedColor();
-// 8
+// Req 8
 pixelBoard.addEventListener('click', (event) => {
   const actualColor = document.querySelector('.selected').id;
   if (event.target.className === 'pixel') {
@@ -42,8 +41,9 @@ pixelBoard.addEventListener('click', (event) => {
     evTarget.style.backgroundColor = actualColor;
   }
 });
-// 9
+// Req 9
 const clearButton = document.getElementById('clear-board');
+clearButton.innerText = 'Limpar';
 clearButton.addEventListener('click', () => {
   const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
