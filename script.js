@@ -14,3 +14,8 @@ function selectColorPixel(event) {
   event.target.classList.add('selected');
   console.log(event.target.className);
 }
+
+black.addEventListener('click', selectColorPixel);
+pink.addEventListener('click', selectColorPixel);
+blue.addEventListener('click', selectColorPixel);
+red.addEventListener('click', selectColorPixel);
