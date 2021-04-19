@@ -3,16 +3,26 @@ document.getElementById('red').style.backgroundColor = 'red';
 document.getElementById('blue').style.backgroundColor = 'blue';
 document.getElementById('yellow').style.backgroundColor = 'yellow';
 
-const captureClassColor = document.querySelectorAll('.color');
-for (index = 0; index < captureClassColor.length; index +=1) {
-    let liColor = captureClassColor[index]
-    liColor.addEventListener("click", selectCLass);
-    function selectCLass (event) {
-        if (event.target.classList.contains('selected')) {
-            event.target.classList.remove('selected');
-            event.target.classList.add('selected');
-        }
-        
-    }
+const colorPalette = document.querySelector('#color-palette');
+const pixelBoard = documennnt.querySelector('#pixel-board');
 
+let savedColor = 'black';
+function selectionColor(color) {
+    const colorTarget = color.target;
+    if (colorTarget.classList.contains('color')) {
+        const removeColor = document.querySelector('.selected'):
+        removeColor.classList.remove('selected');
+
+        savedColor = colorTarget.style.backgroundColor.classList.add('selected');
+    }
 }
+
+function setColor(color) {
+    const newColor = color.target;
+    if (newColor.className === 'pixel') {
+        newColor.style.backgroundColor = savedColor;
+    }
+}
+
+window.onnload = selectingColor;
+colorPalette.addEventListener('click', selectingColor)
