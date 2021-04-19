@@ -16,3 +16,12 @@ const pixels = document.querySelectorAll('.pixel');
 for (let index = 0; index < pixels.length; index += 1) {
   pixels[index].addEventListener('click', Coloring);
 }
+
+function clearBoard() {
+  const pixelBoard = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixelBoard.length; index += 1) {
+    pixelBoard[index].style.backgroundColor = 'white';
+  }
+}
+const buttonClear = document.querySelector('#clear-board');
+buttonClear.addEventListener('click', clearBoard);
