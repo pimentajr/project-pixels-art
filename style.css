@@ -1,3 +1,6 @@
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 .color {
   border-color: black;
   border: 1px solid;
@@ -6,21 +9,52 @@
   margin: 2px;
   display: inline-block;
 }
+body {
+  background-image: url(https://images2.alphacoders.com/109/1098024.png);
+}
+
+#title {
+  text-align: center;
+  color: white;
+  }
+
+/* https://www.javatpoint.com/how-to-center-a-button-in-css */
+#clear-board {
+  text-align: center;
+  margin: auto;
+  font-size: 15px;
+  display: flex;
+  display: grid;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px;
+  font-weight: bolder  ;
+}
+
+#color-palette {
+  text-align: center;
+  margin: 40px;
+}
 
 #black {
   background-color: black;
+  border-radius: 100%;
 }
 
 #red {
   background-color: red;
+  border-radius: 100%;
 }
 
 #blue {
   background-color: blue;
+  border-radius: 100%;
 }
 
 #purple {
   background-color: purple;
+  border-radius: 100%;
 }
 
 .pixel {
@@ -33,5 +67,14 @@
 
 .table {
   border-collapse: collapse;
+  margin: 20px;
 }
 
+#clear-board {
+  font-size: 16px;
+}
+
+#pixel-board {
+  margin: auto;
+  display: table;
+}
