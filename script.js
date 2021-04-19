@@ -61,3 +61,29 @@ limparButton.addEventListener('click', function(){
         capturarPixels[i].style.backgroundColor='white';
     }
 });
+
+//Botão gerar novos pixels
+let numeroNovosPixels = document.getElementById('board-size');
+let buttonNovosPixels = document.getElementById('generate-board');
+let paizão = document.getElementById('pixel-board');
+
+buttonNovosPixels.addEventListener('click', function(){
+    let tamanho = parseInt(numeroNovosPixels.value);
+    if(tamanho < 0 || tamanho > 50 || tamanho < 5 || numeroNovosPixels.value == ''){
+        alert('Board inválido!');
+    }else{
+        for(let i=1;i<=tamanho;i++){
+            for(let j=1;j<=tamanho;j++){
+                let novosPixels = document.createElement('div');
+                novosPixels.className='pixel';
+                novosPixels.style.backgroundColor='white';
+                novosPixels.style.display='inline-block';
+                novosPixels.style.height='40px';
+                novosPixels.style.width='40px';
+                paizão.appendChild(novosPixels);
+            }
+            let mudarLinha = document.createElement('br');
+            paizão.appendChild(mudarLinha);
+        }
+    }
+});
