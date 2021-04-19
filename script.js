@@ -6,6 +6,7 @@ const colorPalette = document.querySelector('#color-palette');
 const pixelBoard = document.querySelector('#pixel-board');
 
 let savedColor = 'black';
+// eslint-disable-next-line no-unused-vars
 function selectionColor(color) {
     const colorTarget = color.target;
     if (colorTarget.classList.contains('color')) {
