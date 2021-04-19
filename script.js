@@ -69,6 +69,12 @@ let paizão = document.getElementById('pixel-board');
 
 buttonNovosPixels.addEventListener('click', function(){
     let tamanho = parseInt(numeroNovosPixels.value);
+    if(numeroNovosPixels.value<5){
+        tamanho=5;
+    }
+    if(numeroNovosPixels.value>50){
+        tamanho=50;
+    }
     if(tamanho < 0 || tamanho > 50 || tamanho < 5 || numeroNovosPixels.value == ''){
         alert('Board inválido!');
     }else{
