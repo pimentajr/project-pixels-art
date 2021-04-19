@@ -105,18 +105,19 @@ function classChanger(element) {
   for (let index = 0; index < colors.length; index += 1) {
     colors[index].className = 'color';
   }
-  element.target.className = 'color selected';
+  const TheElement = element
+  TheElement.target.className = 'color selected';
 }
 for (let indexCC = 0; indexCC < colors.length; indexCC += 1) {
   colors[indexCC].addEventListener('click', classChanger);
 }
 
 const pixels = document.querySelectorAll('.pixel');
-function pixelSelector (element) {
-  for (index = 0; index < colors.length; index += 1) {
+function pixelSelector(element) {
+  for (let index = 0; index < colors.length; index += 1) {
     pixels[index].classList.add('ping');
   }
-  let TheElement = element;
+  const TheElement = element;
   TheElement.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
 }
 for (let indexP = 0; indexP < pixels.length; indexP += 1) {
@@ -124,9 +125,9 @@ for (let indexP = 0; indexP < pixels.length; indexP += 1) {
 }
 
 colors[0].onload = setColor1();
-function setColor1 () {
+function setColor1() {
   colors[0].className = 'color selected';
-  console.log('alibaba');
+  console.log('Welcome');
 }
 
 // function clearPixel() {
