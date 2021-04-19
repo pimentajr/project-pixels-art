@@ -19,6 +19,7 @@ function createPixelBoard(input){
   }
   }
 } 
+
 //button VQV  
 button.onclick =  function expandBoard() {
    pixelBoard.innerHTML = '';
@@ -42,8 +43,13 @@ palleteColor.onclick = function chosenColor(e) {
   }
   e.target.classList.add('selected');
 }
-
-
+// pintar pixel 
+pixelBoard.onclick = function toPaint (e){
+  const selectedColor = document.querySelector('.selected');
+  if(e.target.className === 'pixel') {
+    e.target.style.backgroundColor = selectedColor.style.backgroundColor;
+  }
+};
 // parte 2 - Função para gerar cores 
 //  getRandomColor () - https://stackoverflow.com/questions/1484506/random-color-generator
 function getRandomColor() {
