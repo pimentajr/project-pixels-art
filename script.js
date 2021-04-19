@@ -80,7 +80,11 @@ function pixelBoardCreator(collumns, rows) {
     }
   }
 }
-pixelBoardCreator(5, 5);
+
+let size = '5';
+
+pixelBoardCreator(size, size);
+
 // O Gustavo Lemes me ajudou a consertar o erro pelo slack.
 
 // document.querySelector('#color1').classList.add('selected');
@@ -112,17 +116,7 @@ for (let indexCC = 0; indexCC < colors.length; indexCC += 1) {
   colors[indexCC].addEventListener('click', classChanger);
 }
 
-const pixels = document.querySelectorAll('.pixel');
-function pixelSelector(element) {
-  for (let index = 0; index < colors.length; index += 1) {
-    pixels[index].classList.add('ping');
-  }
-  const TheEl = element;
-  TheEl.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
-}
-for (let indexP = 0; indexP < pixels.length; indexP += 1) {
-  pixels[indexP].addEventListener('click', pixelSelector);
-}
+
 
 function defaultColor() {
   colors[0].className = 'color selected';
@@ -145,3 +139,24 @@ clearButton.addEventListener('click', function clearPixels() {
 });
 
 // fonte: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_form_reset
+
+const VQVButton = document.querySelector('#generate-board');
+const pixelBoard = document.querySelector('#pixel-board');
+
+function generateBoard() {
+  const boardSize = document.querySelector('#board-size').value;
+  for (let index = pixelBoard.children.length - 1; index >= 0; index -= 1) {
+    pixelBoard.children[index].remove();
+  }
+    pixelBoardCreator(boardSize, boardSize);
+ }
+VQVButton.addEventListener('click', generateBoard);
+
+const pixels = document.querySelectorAll('.pixel');
+function pixelSelector(element) {
+  const TheEl = element;
+  TheEl.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+}
+for (let indexP = 0; indexP < pixels.length; indexP += 1) {
+  pixels[indexP].addEventListener('click', pixelSelector);
+}
