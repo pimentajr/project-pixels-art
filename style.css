@@ -1,32 +1,31 @@
 *{
-   box-sizing: border-box;
+ box-sizing: border-box;
 }
 
-.color {
-  border: solid black 1px;
+.color { 
   display: inline-block;
   height: 40px;
   width: 40px;
-  padding: 20px
+}
+
+.color, .pixel{
+  border: solid black 1px;
 }
 
 .pixel-board {
-  display: table;
-  margin: auto;
+ display: table;
 }
 
 .row {
   display: table-row;
-  background-color: white;
-  border: solid black 1px;
   height:40px;
   width: 40px;
+  background-color: white;
 }
 
 .pixel {
+  display: table-cell;
   height:40px;
   width: 40px;
-  border: solid black 1px;
-  display: table-cell;
   background-color: white;
 }
