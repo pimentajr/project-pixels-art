@@ -107,10 +107,9 @@ function classChanger(element) {
   }
   element.target.className = 'color selected';
 }
-colors[0].addEventListener('click', classChanger);
-colors[1].addEventListener('click', classChanger);
-colors[2].addEventListener('click', classChanger);
-colors[3].addEventListener('click', classChanger);
+for (let indexCC = 0; indexCC < colors.length; indexCC += 1) {
+  colors[indexCC].addEventListener('click', classChanger);
+}
 
 const pixels = document.querySelectorAll('.pixel');
 function pixelSelector (element) {
@@ -121,15 +120,25 @@ function pixelSelector (element) {
 }
 for (let indexP = 0; indexP < pixels.length; indexP += 1) {
   pixels[indexP].addEventListener('click', pixelSelector);
-
 }
-// pixels[0].addEventListener('click', pixelSelector);
-
-
-
 
 colors[0].onload = setColor1();
 function setColor1 () {
   colors[0].className = 'color selected';
   console.log('alibaba');
 }
+
+// function clearPixel() {
+//   document.querySelector('#clear-board').addEventListener('click', clearPixels{
+//     for (let indexP = 0; indexP < pixels.length; indexP += 1) {
+//       pixels[indexP].style.backgroundColor = 'white';
+//     }
+//   })
+// }
+
+function clearPixels() {
+  for (let indexP = 0; indexP < pixels.length; indexP += 1) {
+    pixels[indexP].style.backgroundColor = 'white';
+  }
+}
+// fonte: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_form_reset
