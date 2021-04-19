@@ -130,7 +130,6 @@ function defaultColor() {
 }
 defaultColor();
 
-
 // function clearPixel() {
 //   document.querySelector('#clear-board').addEventListener('click', clearPixels{
 //     for (let indexP = 0; indexP < pixels.length; indexP += 1) {
@@ -138,8 +137,8 @@ defaultColor();
 //     }
 //   })
 // }
-clearButton = document.querySelector('#clear-board');
-clearButton.addEventListener('click', function clearPixels(){
+const clearButton = document.querySelector('#clear-board');
+clearButton.addEventListener('click', function clearPixels() {
   for (let indexP = 0; indexP < pixels.length; indexP += 1) {
     pixels[indexP].style.backgroundColor = 'white';
   }
