@@ -3,7 +3,7 @@ document.getElementById('red').style.backgroundColor = 'red';
 document.getElementById('blue').style.backgroundColor = 'blue';
 document.getElementById('yellow').style.backgroundColor = 'yellow';
 const colorPalette = document.querySelector('#color-palette');
-const pixelBoard = documennnt.querySelector('#pixel-board');
+const pixelBoard = document.querySelector('#pixel-board');
 
 let savedColor = 'black';
 function selectionColor(color) {
