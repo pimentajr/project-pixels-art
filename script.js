@@ -53,7 +53,7 @@ btnClear.addEventListener('click', clearPixel);
 function makeDivs(colum) {
   for (let i = 0; i < colum; i += 1) {
     const pixelDiv = document.createElement('div');
-    for (let i = 0; i < colum; i += 1) {
+    for (let j = 0; j < colum; j += 1) {
       const pixelLine = document.createElement('div');
       pixelLine.className = 'pixel';
       pixelDiv.appendChild(pixelLine);
@@ -63,9 +63,9 @@ function makeDivs(colum) {
 }
 
 function removeTable() {
-  let removePixel = document.querySelector('#pixel-board')
+  const removePixel = document.querySelector('#pixel-board');
   for (let i = 0; i < removePixel.childElementCount;) {
-    removePixel.removeChild(removePixel.childNodes[0])
+    removePixel.removeChild(removePixel.childNodes[0]);
   }
 }
 
