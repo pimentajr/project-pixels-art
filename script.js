@@ -111,3 +111,9 @@ colors[0].addEventListener('click', classChanger);
 colors[1].addEventListener('click', classChanger);
 colors[2].addEventListener('click', classChanger);
 colors[3].addEventListener('click', classChanger);
+
+colors[0].onload = setColor1();
+function setColor1 () {
+  colors[0].className = 'color selected';
+  console.log('alibaba');
+}
