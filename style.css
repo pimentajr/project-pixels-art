@@ -1,5 +1,5 @@
-*{
- box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 .color { 
@@ -8,7 +8,7 @@
   width: 40px;
 }
 
-.color, .pixel{
+.color, .pixel {
   border: solid black 1px;
 }
 
@@ -22,6 +22,6 @@
 
 .pixel {
   display: table-cell;
-  height:40px;
+  height: 40px;
   width: 40px;
 }

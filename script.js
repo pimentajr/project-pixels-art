@@ -1,18 +1,17 @@
 const boardSize = document.getElementById('board-size');
 const pixelBoard = document.getElementById('pixel-board');
-const button = document.getElementById('generate-board');
 const color = document.getElementsByClassName('color');
 const palleteColor = document.getElementById('color-palette');
 const pixel = document.getElementsByClassName('pixel');
 const buttonClear = document.getElementById('clear-board');
 // Requisito 5
 function createPixelBoard(input) {
-  for(let r = 0; r < input; r += 1) {
+  for (let r = 0; r < input; r += 1) {
     const row = document.createElement('div');
     pixelBoard.appendChild(row);
     row.className = 'row';
     row.style.backgroundColor = 'white';
-    for(let c = 0; c < input; c +=1) {
+    for (let c = 0; c < input; c += 1) {
       const cell = document.createElement('div');
       row.appendChild(cell);
       cell.className = 'pixel';
@@ -23,21 +22,6 @@ function createPixelBoard(input) {
 } 
 createPixelBoard(5);
 
-//button VQV  
-button.onclick =  function expandBoard() {
-   pixelBoard.innerHTML = '';
-   let input = boardSize.value;
-   if(input === '') {
-     alert ('Board inválido!');
-   }
-   createPixelBoard(input);
-};
-// button de limpar 
-buttonClear.onclick = function clear() {
-  for( let index = 0; index < pixel.length; index += 1){
-    pixel[index].style.backgroundColor = 'white';
-  }
-}
 // cor selecionada
 palleteColor.onclick = function chosenColor(e) {
   const selectedColor = document.querySelector('.selected');
@@ -77,3 +61,10 @@ for(let index = 0; index < color.length; index += 1){
 }
 
 colorpalettes();
+
+// button de limpar 
+buttonClear.onclick = function clear() {
+  for( let index = 0; index < pixel.length; index += 1){
+    pixel[index].style.backgroundColor = 'white';
+  }
+}
