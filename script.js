@@ -20,7 +20,7 @@ function colorPalette() {
 }
 colorPalette();
 
-// Criando função de cores aleatórias - Para resolução deste requisito(12) eu peguei como referência o pull request da Gabriela Feijó.
+// Criando função de cores aleatórias - Para resolução deste requisito(12), peguei como referência o pull request da Gabriela Feijó.
 
 function randomColor() {
   const randomColors = document.querySelectorAll('.color');
@@ -55,6 +55,8 @@ button.addEventListener('click', changeColor);
 const input = document.createElement('input');
 input.id = 'board-size';
 input.type = 'number';
+input.min = 1;
+input.max = 50;
 sectionButtons.appendChild(input);
 
 const button2 = document.createElement('button');
@@ -62,7 +64,7 @@ button2.innerText = 'VQV';
 button2.id = 'generate-board';
 sectionButtons.appendChild(button2);
 
-// Criando tabela
+// Criando tabela e adicionando evento para classe selected
 
 const divPixels = document.createElement('div');
 divPixels.id = 'pixel-board';
