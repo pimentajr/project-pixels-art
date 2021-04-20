@@ -66,6 +66,26 @@ function randomColor() {
     colorPAllet[index].style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   }
 }
+
+function createTable(number) {
+  const pixelBoard = document.getElementById('pixel-board');
+  for (let line = 0; line < number; line += 1) {
+    const tableLine = document.createElement('tr');
+    tableLine.className = 'rows';
+    for (let colum = 0; colum < number; colum += 1) {
+      const tableColum = document.createElement('td');
+      tableColum.className = 'pixel';
+      tableLine.appendChild(tableColum);
+    }
+    pixelBoard.appendChild(tableLine);
+  }
+  appendcolorPixelListener(pixelsBoard);
+  randomColor();
+  limpar.addEventListener('click', clearPixel);
+  vqvButton.addEventListener('click', deleteTable);
+  vqvButton.addEventListener('click', newBoard);
+}
+
 function checkNumber(number) {
   if (number < 5) {
     number = 5;
@@ -87,25 +107,6 @@ function checkInput(Boardinput) {
 function newBoard() {
   const Boardinput = document.getElementById('board-size').value;
   checkInput(Boardinput);
-}
-
-function createTable(number) {
-  const pixelBoard = document.getElementById('pixel-board'); 
-  for (let line = 0; line < number; line += 1) {
-    const tableLine = document.createElement('tr');
-    tableLine.className = 'rows';
-    for (let colum = 0; colum < number; colum += 1) {
-      const tableColum = document.createElement('td');
-      tableColum.className = 'pixel';
-      tableLine.appendChild(tableColum);
-    }
-    pixelBoard.appendChild(tableLine);
-  }
-  appendcolorPixelListener(pixelsBoard);
-  randomColor();
-  limpar.addEventListener('click', clearPixel);
-  vqvButton.addEventListener('click', deleteTable);
-  vqvButton.addEventListener('click', newBoard);
 }
 
 window.onload = createTable(5);
