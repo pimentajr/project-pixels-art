@@ -20,7 +20,7 @@ for (let i = 1; i < cores.length; i += 1) {
 // cria a grid de pixel
 function criarGrid() {
   const tagTable = document.createElement('table'); // <table> <table/>
-  divisaoTop.appendChild(tagTable);
+  divTop.appendChild(tagTable);
   // valida se o input é menor que 5 ou maior que 50
   if (inputUser.value < 5) {
     tamanhoGrid = 5;
