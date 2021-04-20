@@ -1,3 +1,8 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
 h1 {
   text-align: center;
 }
@@ -75,4 +80,23 @@ button {
 .menu button {
   margin-right: 5px;
   padding: 5px;
+}
+
+.footer {
+  padding: 2%;
+  margin-top: 10%;
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(38, 39, 43);
+  font-size: 1.5rem;
+  color: white;
+}
+
+.footer a {
+  color: rgb(253, 251, 251);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: rgb(33, 134, 97);
 }
