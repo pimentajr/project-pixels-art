@@ -1,15 +1,30 @@
+/** Consultei uma função do site para gerar cores hexadecimais aleatórias.
+ * Source: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript */
+function generateColor(opacidade = 1) {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+
+  return `rgba(${r}, ${g}, ${b}, ${opacidade})`;
+}
+
+const board = document.querySelector('#pixel-board');
+
 function setColorPalette() {
   const color = document.querySelectorAll('.color');
-  const arrColors = ['black', 'red', 'blue', 'yellow'];
-  for (let index = 0; index < arrColors.length; index += 1) {
-    color[index].classList.add(arrColors[index]);
+  color[0].classList.add('selected');
+  color[0].style.backgroundColor = 'black';
+  const arrColors = [generateColor(), generateColor(), generateColor()];
+  for (let index = 1; index <= arrColors.length; index += 1) {
+    color[index].style.backgroundColor = arrColors[index - 1];
   }
-  document.getElementsByClassName('color')[0].classList.add('selected');
 }
 
 setColorPalette();
 
-function generatePixels(row, column, table) {
+function generatePixels(row, column) {
+  const table = document.createElement('table');
+  board.appendChild(table);
   for (let index = 0; index < row; index += 1) {
     const tr = document.createElement('tr');
     for (let secondIndex = 0; secondIndex < column; secondIndex += 1) {
@@ -24,19 +39,18 @@ function generatePixels(row, column, table) {
 }
 
 function pixelBoardSize() {
-  const board = document.querySelector('#pixel-board');
   const table = document.createElement('table');
   board.appendChild(table);
-  generatePixels(5, 5, table);
+  generatePixels(5, 5);
 }
 
 pixelBoardSize();
 
 function getColorPalette(event) {
-  const selected = document.querySelector('.selected');
-  selected.classList.remove('selected');
-  const selectedColor = event.target.classList[1];
-  document.getElementsByClassName(selectedColor)[0].classList.add('selected');
+  const reset = document.querySelector('.selected');
+  reset.classList.remove('selected');
+  const selectedColor = event.target;
+  selectedColor.classList.add('selected');
 }
 
 function selectColor() {
@@ -52,8 +66,7 @@ function getPixel(event, pixel) {
   const selectedColor = document.querySelector('.selected');
   let currentPixel = pixel;
   currentPixel = event.target;
-  const color = selectedColor.classList[1];
-  currentPixel.style.backgroundColor = color;
+  currentPixel.style.backgroundColor = selectedColor.style.backgroundColor;
 }
 
 function paintPixel() {
@@ -83,26 +96,19 @@ clearBoard();
 function generateBoard() {
   const button = document.getElementById('generate-board');
   const boardSize = document.getElementById('board-size');
-
   button.addEventListener('click', () => {
     let size = parseInt(boardSize.value, 10);
     boardSize.value = '';
     if (!size) {
       return alert('Board inválido!');
     }
-
-    const board = document.querySelector('#pixel-board');
     board.lastChild.remove();
-    const table = document.createElement('table');
-    board.appendChild(table);
-
     if (size < 5) {
       size = 5;
     } else if (size > 50) {
       size = 50;
     }
-
-    generatePixels(size, size, table);
+    generatePixels(size, size);
     paintPixel();
   });
 }
