@@ -12,7 +12,7 @@ body {
   margin: 2px;
 }
 
-#color-palette div:nth-of-type( 1 ) {
+#color1 {
   width: 80px;
   height: 80px;
   background-color: black;
@@ -20,7 +20,7 @@ body {
   border-color: black;
 }
 
-#color-palette div:nth-of-type( 2 ) {
+#color2 {
   width: 80px;
   height: 80px;
   background-color: red;
@@ -28,7 +28,7 @@ body {
   border-color: black;
 }
 
-#color-palette div:nth-of-type( 3 ) {
+#color3 {
   width: 80px;
   height: 80px;
   background-color: green;
@@ -36,7 +36,7 @@ body {
   border-color: black;
 }
 
-#color-palette div:nth-of-type( 4 ) {
+#color4 {
   width: 80px;
   height: 80px;
   background-color: blue;
