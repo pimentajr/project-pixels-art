@@ -21,7 +21,7 @@ function createPixelBoard(valueInput) {
   for (let lines = 0; lines < valueInput; lines += 1) {
     const line = document.createElement('tr');
     pixelBoard.appendChild(line);
-    for (let columns = 0; columns < valueInput - 1; columns += 1) {
+    for (let columns = 0; columns < valueInput; columns += 1) {
       const column = document.createElement('td');
       column.classList.add('pixel');
       line.appendChild(column);
