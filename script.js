@@ -1,95 +1,102 @@
-document.getElementById('black').style.backgroundColor = 'black';
-document.getElementById('red').style.backgroundColor = 'red';
-document.getElementById('blue').style.backgroundColor = 'blue';
-document.getElementById('yellow').style.backgroundColor = 'yellow';
-let pixelBoard = document.querySelector('#pixel-board');
-
-let colorPalette = document.querySelector('#color-palette');
-
-const genetateButton = document.querySelector('#generate-board');
-const boardSize = document.querySelector('#board-size');
-generateColorPalette();
-generatePixelBoard(5);
-
-function generatePixelBoard (size) {
-  const totalSize = size * size;
-  const borderWidth = (size * 40) + 40;
-  pixelBoard.style.width = `${borderWidth}px`
-  for (let i = 0 ; i < totalSize ; i += 1) {
-    const divPixel = document.createElement('div');
-    divPixel.classList.add('pixel');
-    pixelBoard.appendChild(divPixel);
-  }
-}
-
-function generateRandomColor() {
-  const red = Math.floor(Math.random() * 255);
-  const blue = Math.floor(Math.random() * 255);
-  const green = Math.floor(Math.random() * 255);
-
-  const generateColor = `rgb(${red}, ${blue}, ${green})`;
-
-  return generateColor;
-}
-
-function generateColorPalette() {
-  for (let i = 0 ; i < 4 ; i += 1){
-    const divColor = document.createElement('div');
-    divColor.classList.add('color');
-    if (i === 0) {
-      divColor.style.backgroundColor = 'black';
-    }else{
-      divColor.style.backgroundColor = generateRandomColor();
+// cria paleta das 4 opcoes ou mais de cores
+function opcoesCores(param) {
+    let colorPallette = document.querySelector('.tableColor');
+    for (let key = 0; key < param; key += 1) {
+      let colunaPallete = document.createElement('button');
+      colunaPallete.className = 'color';
+      if ([key] == 0) {
+        colunaPallete.style.backgroundColor = 'black';
+        colunaPallete.id = 'black';
+        colunaPallete.className = 'color selected';
+      } else {
+        const cor = 'rgb(' + Math.floor(Math.random(255) * (255 + 1)) + ',' + Math.floor(Math.random(255) * (255 + 1)) + ',' + Math.floor(Math.random(255) * (255 + 1)) + ')';
+        if (cor !== 'rgb(255,255,255') {
+          colunaPallete.style.backgroundColor = `${cor}`;
+          colunaPallete.id = `${cor}`;
+        }
+      }
+      colorPallette.appendChild(colunaPallete);
     }
-    divColor.classList.add(`div${i}`);
-    colorPalette.appendChild(divColor);
   }
-}
-let currentColor = "black";
-let itemSel = document.querySelector('.div0');
-itemSel.classList.add('selected');
-
-genetateButton.addEventListener('click', function(){
-
-  while (pixelBoard.firstChild){
-    pixelBoard.removeChild(pixelBoard.lastChild);
+  opcoesCores(4);
+  
+  // cria os pixels
+  function criarTR(tamanho) {
+    const paletta = document.querySelector('#pixel-board');
+    for (let i = 0; i < tamanho; i += 1) {
+      const linhaPaleta = document.createElement('tr');
+      linhaPaleta.className = 'linha';
+      paletta.appendChild(linhaPaleta);
+      for (let z = 0; z < tamanho; z += 1) {
+        const linhaPaleta1 = document.createElement('button');
+        if (tamanho > 10) {
+          linhaPaleta1.className = 'pixel1';
+          paletta.id = "pixel-board1"
+        } else {
+          linhaPaleta1.className = 'pixel';
+          paletta.id = "pixel-board"
+        }
+        linhaPaleta1.style.backgroundColor = 'white';
+        paletta.appendChild(linhaPaleta1);
+  
+      }
+    }
   }
-  if(boardSize.value == ''){
-    alert("Board inválido!");
+  criarTR(5);
+  
+  // limpa os pixels para branco
+  function limpar() {
+    const pixels = document.getElementsByClassName('pixel');
+    const button = document.getElementById('clear-board');
+    button.addEventListener('click', function() {
+      for (let index = 0; index < pixels.length; index += 1) {
+        pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
+      }
+    });
   }
-  let numBoard = boardSize.value;
-  if (numBoard < 5){
-    numBoard = 5;
-  }else if (numBoard > 50){
-    numBoard = 50;
+  limpar();
+  // muda os tamanhos do box
+  
+  const newBoard = document.getElementById('generate-board');
+  newBoard.addEventListener('click', refazer);
+  
+  function refazer() {
+    const tamanhoLinha = document.getElementById('board-size');
+  
+    let tamanho;
+    if (tamanhoLinha.value == '') {
+      alert('Board inválido!');
+    } else if (tamanhoLinha.value < 5) {
+      tamanho = 5;
+  
+    } else if (tamanhoLinha.value > 50) {
+      tamanho = 50;
+  
+    } else {
+      tamanho = tamanhoLinha.value;
+    }
+    document.querySelector('#pixel-board').innerHTML = '';
+  
+    criarTR(tamanho);
+  
   }
-
-  generatePixelBoard(numBoard);
-});
-
-colorPalette.addEventListener('click', function(event) {
-  let selectedColor = event.target.style.backgroundColor;
-  let selectedDiv = event.target;
-  let previousDiv = document.querySelector('.selected');
-  previousDiv.classList.remove('selected')
-  selectedDiv.classList.add('selected');
-  currentColor = selectedColor;
-});
-
-
-pixelBoard.addEventListener('click', function(event){
-  let selectedPixel = event.target;
-  selectedPixel.style.backgroundColor = currentColor;
-  //console.log(selectedPixel);
-
-});
-
-let clearBoard = document.querySelector('#clear-board');
-
-clearBoard.addEventListener('click', function(event){
-  let pixelArray = document.querySelectorAll('.pixel');
-  for (let i = 0 ; i < pixelArray.length ; i += 1){
-    pixelArray[i].style.backgroundColor = "white";
+  
+  function selectedElement() {
+    const colors = document.getElementsByClassName('color');
+    for (let index = 0; index < colors.length; index += 1) {
+      colors[index].addEventListener('click', function() {
+        for (let index2 = 0; index2 < colors.length; index2 += 1) {
+          colors[index2].classList.remove('selected');
+        }
+        this.classList.add('selected');
+      });
+    }
   }
-
-});
+  selectedElement();
+  
+  const col = document.querySelector('#pixel-board');
+  col.addEventListener('click', pintar);
+  
+  function pintar(event) {
+    event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+  }
