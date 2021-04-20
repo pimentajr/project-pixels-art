@@ -1,7 +1,7 @@
 const pixelBoards = document.getElementById('pixel-board');
 const btnClear = document.getElementById('clear-board');
 const currentColor = document.getElementsByClassName('selected');
-const colorSelect = document.querySelectorAll('#color-palette>button');
+const cat = document.querySelectorAll('#color-palette>button');
 const btnSize = document.getElementById('generate-board');
 const blackColor = document.getElementById('black');
 const redColor = document.getElementById('red');
@@ -10,9 +10,9 @@ const greenColor = document.getElementById('green');
 
 // https://www.w3schools.com/howto/howto_js_active_element.asp
 function selectedColor() {
-  for (let i = 0; i < colorSelect.length; i += 1) {
-    colorSelect[i].className = 'color';
-    colorSelect[i].addEventListener('click', function () {
+  for (let i = 0; i < cat.length; i += 1) {
+    cat[i].className = 'color';
+    cat[i].addEventListener('click', function () {
       currentColor[0].className = currentColor[0].className.replace('selected', '');
       this.className = 'selected color';
     });
