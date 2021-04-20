@@ -58,8 +58,8 @@ function criarGridValue() {
 // limpar grid da grid
 function limpaGrid() {
   divTop.innerHTML = '';
-
 }
+
 // limpa cor grid
 function clearBtt() {
   for (let i = 0; i < pixels.length; i += 1) {
@@ -67,7 +67,15 @@ function clearBtt() {
   }
 }
 
+// verificar valor da grid
+function verificaGridValeu() {
+  if (inputUser.value == '') {
+    alert('Board inválido!');
+  }
+}
+
 button.addEventListener('click', clearBtt);
 criarBtt.addEventListener('click', limpaGrid);
 criarBtt.addEventListener('click', criarGridValue);
 criarBtt.addEventListener('click', printPixels);
+criarBtt.addEventListener('click', criarGrid);
