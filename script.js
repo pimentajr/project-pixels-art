@@ -15,12 +15,10 @@ for (index= 0; index < captureClassColor.lenght; index += 1) {
     }
 }
     
-    
-}
 
 document.getElementById('#pixel-board').onclick = changeColor;   
 
     function changeColor() {
-        document.body.style.color = "purple";
+        document.body.style.color = "selected";
         return false;
     }   
