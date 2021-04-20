@@ -2,10 +2,11 @@
   margin: 0;
 }
 
+/*
 header {
   margin: 20px, 0;
   text-align: center;
-}
+} */
 
 /* Estilização (Requisito 2) */
 .color {
@@ -30,4 +31,5 @@ header {
 #pixel-board {
   border: solid 1px black;
   width: max-content;
+  align-self: center;
 }
