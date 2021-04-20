@@ -1,9 +1,9 @@
 let tamanhoGrid = 5;
-const cores = document.querySelectorAll('.color'); 
-const pixels = document.getElementsByClassName('pixel'); 
-const button = document.getElementById('clear-board'); 
-const criarBtt = document.getElementById('generate-board'); 
-const divTop = document.getElementById('pixel-board'); 
+const cores = document.querySelectorAll('.color');
+const pixels = document.getElementsByClassName('pixel');
+const button = document.getElementById('clear-board');
+const criarBtt = document.getElementById('generate-board');
+const divTop = document.getElementById('pixel-board');
 const inputUser = document.querySelector('#board-size');
 
 // randomiza cores a ser selecionada
@@ -12,7 +12,6 @@ function corRandom() {
   const r = Math.floor(Math.random() * 255);
   const g = Math.floor(Math.random() * 255);
   const b = Math.floor(Math.random() * 255);
-  
   return `rgb(${r}, ${g}, ${b})`;
 }
 for (let i = 1; i < cores.length; i += 1) {
@@ -70,7 +69,5 @@ function clearBtt() {
 
 button.addEventListener('click', clearBtt);
 criarBtt.addEventListener('click', limpaGrid);
-criarBtt.addEventListener('click', verificaInput);
-criarBtt.addEventListener('click', verificaGridValeu);
 criarBtt.addEventListener('click', criarGridValue);
 criarBtt.addEventListener('click', printPixels);
