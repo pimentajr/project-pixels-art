@@ -2,7 +2,8 @@
 function createPalette() {
   const colorPalette = document.createElement('div');
   colorPalette.id = 'color-palette';
-  document.body.appendChild(colorPalette);
+  const header = document.querySelector('header');
+  header.appendChild(colorPalette);
   for (let index = 0; index < 4; index += 1) {
     const colors = document.createElement('div');
     colors.classList.add('color');
@@ -13,19 +14,17 @@ function createPalette() {
 createPalette();
 
 // Requisito 4
-function createPixelBoard(n) {
-  const frame = document.createElement('div');
-  frame.id = 'pixel-board';
-  document.body.appendChild(frame);
-  const frameX = document.querySelector('#pixel-board');
-  for (let lines = 0; lines < n; lines += 1) {
-    let box = document.createElement('div');
-    frameX.appendChild(box);
-    for (let index = 0; index < n; index += 1) {
-      box = document.createElement('div');
-      box.classList.add('pixel');
-      frameX.appendChild(box);
-      box.style.backgroundColor = 'white';
+function createPixelBoard(valueInput) {
+  const pixelBoard = document.createElement('div');
+  document.body.appendChild(pixelBoard);
+  pixelBoard.id = 'pixel-board';
+  for (let lines = 0; lines < valueInput; lines += 1) {
+    const line = document.createElement('tr');
+    pixelBoard.appendChild(line);
+    for (let columns = 0; columns < valueInput - 1; columns += 1) {
+      const column = document.createElement('td');
+      column.classList.add('pixel');
+      line.appendChild(column);
     }
   }
 }
@@ -75,40 +74,42 @@ btnClear.addEventListener('click', () => {
   }
 });
 
-// // Requisito 10
-// function createInputAndButton() {
-//   const section = document.querySelector('section');
-//   const input = document.createElement('input');
-//   input.id = 'board-size';
-//   section.appendChild(input);
-//   const btnVQV = document.createElement('button');
-//   btnVQV.id = 'generate-board';
-//   btnVQV.innerText = 'VQV';
-//   section.appendChild(btnVQV);
-// }
-// createInputAndButton();
+// Requisito 10
+function createInputAndButton() {
+  const section = document.querySelector('section');
+  const input = document.createElement('input');
+  input.id = 'board-size';
+  section.appendChild(input);
+  const btnVQV = document.createElement('button');
+  btnVQV.id = 'generate-board';
+  btnVQV.innerText = 'VQV';
+  section.appendChild(btnVQV);
+}
+createInputAndButton();
 
-// function clearInput() {
-//   document.querySelector('input').value = '';
-// }
+function clearInput() {
+  document.querySelector('input').value = '';
+}
 
-// const btnAdd = document.querySelector('#generate-board');
-// btnAdd.addEventListener('click', () => {
-//   const valueInput = document.querySelector('input').value;
-//   let n = valueInput;
-//   if (n > 5 && n <= 50) {
-//     createPixelBoard(n);
-//   }
-//   else if (n > 50) {
-//     createPixelBoard(50);
-//   }
-//   else if (n < 0 || n === '') {
-//     alert("Board inválido!");
-//   }
-//   clearInput();
-// });
+const btnAdd = document.querySelector('#generate-board');
+btnAdd.addEventListener('click', () => {
+  let valueInput = document.querySelector('input').value;
 
-// Requisito 11
+  if (valueInput < 0 || valueInput === '') {
+    alert('Board inválido!');
+    valueInput = 5;
+    // Requisito 11
+  } else if (valueInput < 5) {
+    valueInput = 5;
+  } else if (valueInput > 50) {
+    valueInput = 50;
+  }
+  clearInput();
+  createPixelBoard(valueInput);
+});
+
+// Requisito 12
+// Para esse requisito contei com um help da Estudante Gabriela Feijó.
 function generateColorPalette() {
   const color = document.querySelectorAll('.color');
   for (let index = 1; index < color.length; index += 1) {

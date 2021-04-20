@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+}
+
+header {
+  margin: 20px, 0;
+  text-align: center;
+}
+
 /* Estilização (Requisito 2) */
 .color {
   border: solid 1px black;
@@ -13,9 +22,12 @@
 
 /* Estilização (Requisito 5) */
 .pixel {
-  display: inline-block;
   height: 40px;
   width: 40px;
   border: solid 1px black;
-  margin: 0;
+}
+
+#pixel-board {
+  border: solid 1px black;
+  width: max-content;
 }
