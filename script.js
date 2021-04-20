@@ -36,9 +36,7 @@ function getColorPalette(event) {
   const selected = document.querySelector('.selected');
   selected.classList.remove('selected');
   const selectedColor = event.target.classList[1];
-  return document
-    .getElementsByClassName(selectedColor)[0]
-    .classList.add('selected');
+  document.getElementsByClassName(selectedColor)[0].classList.add('selected');
 }
 
 function selectColor() {
@@ -60,12 +58,14 @@ function getPixel(event, pixel) {
 
 function paintPixel() {
   const pixel = document.querySelectorAll('.pixel');
+  console.log(pixel.length);
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].addEventListener('click', getPixel);
   }
 }
 
 paintPixel();
+
 
 function clearPixel() {
   const pixel = document.querySelectorAll('.pixel');
