@@ -19,7 +19,7 @@ function createColorElements() {
     red.style.backgroundColor = 'red';
     blue.style.backgroundColor = 'blue';
   }
-  createColorElements(();
+  createColorElements();
 
   function createPixelBoard() {
     for (let i = 0; i < 5; i += 1) {
@@ -57,8 +57,8 @@ function createColorElements() {
 
     for (let i = 0; i < genericAttribute1.length; i += 1) {
         genericAttribute1[i].addEventListener('click',function() {
-        let cor = document.querySelector('.selected')
-        genericAttribute1[i].style.backgroundColor = window.getComputedStyle(cor).getPropertyValue('background-color');
+        let color = document.querySelector('.selected')
+        genericAttribute1[i].style.backgroundColor = window.getComputedStyle(color).getPropertyValue('background-color');
       })
     }
   }
