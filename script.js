@@ -8,19 +8,6 @@ const redColor = document.getElementById('red');
 const blueColor = document.getElementById('blue');
 const greenColor = document.getElementById('green');
 
-// https://www.codecademy.com/forum_questions/525e864c80ff338580001a53
-const safeColors = ['00', '33', '66', '99', 'cc', 'ff'];
-const makeColors = function () {
-  return Math.floor(Math.random() * 6);
-};
-
-const randomColor = function () {
-  const r = safeColors[makeColors()];
-  const g = safeColors[makeColors()];
-  const b = safeColors[makeColors()];
-  return `#${r + g + b}`;
-};
-
 // https://www.w3schools.com/howto/howto_js_active_element.asp
 function selectedColor() {
   for (let i = 0; i < colorPalette.length; i += 1) {
@@ -71,7 +58,7 @@ function removeTable() {
 
 function boardsValue() {
   const boardSize = document.getElementById('board-size');
-  if (boardSize.value === '') {
+  if (boardSize.value < '0') {
     alert('Board inválido!');
   } else if (boardSize.value < 5) {
     boardSize.value = 5;
@@ -84,14 +71,22 @@ function boardsValue() {
 
 btnSize.addEventListener('click', boardsValue);
 
+function randomColor() {
+  const r = parseInt(Math.random() * 255);
+  const g = parseInt(Math.random() * 255);
+  const b = parseInt(Math.random() * 255);
+
+  return `rgb(${r},${g},${b})`;
+}
+
 blackColor.style.backgroundColor = 'black';
 redColor.style.backgroundColor = randomColor();
 blueColor.style.backgroundColor = randomColor();
 greenColor.style.backgroundColor = randomColor();
-
-boardsValue();
+window.onload = () => {
 selectedColor();
-makeDivs();
+makeDivs(5);
 
 const colorBlack = document.getElementsByClassName('color')[0];
 colorBlack.className = 'selected color';
+}
