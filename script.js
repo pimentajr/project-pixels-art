@@ -1,5 +1,5 @@
 const pixelBoard = document.getElementById('pixel-board');
-let color = document.getElementsByClassName('color');
+const color = document.getElementsByClassName('color');
 const palleteColor = document.getElementById('color-palette');
 const pixel = document.getElementsByClassName('pixel');
 const buttonClear = document.getElementById('clear-board');
@@ -36,8 +36,8 @@ pixelBoard.onclick = function toPaint(e) {
 }
 
 function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  const  colors = '#';
+  let letters = '0123456789ABCDEF';
+  let colors = '#';
   for (let index = 0; index < 6; index += 1) {
     colors += letters[Math.floor(Math.random() * 16)];
   }
@@ -57,6 +57,7 @@ function colorpalettes() {
 }
 
 colorpalettes();
+
 buttonClear.onclick = function clear() {
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = 'white';
