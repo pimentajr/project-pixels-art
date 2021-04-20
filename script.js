@@ -23,10 +23,10 @@ const colorPAllet = document.getElementsByClassName('color');
 configColorPallet(colorPAllet);
 
 // ex 8 ------ Refazer essa questão sozinho.
-function colorPixel(selff) {
+function colorPixel(self) {
   const colorSelected = document.getElementsByClassName('selected')[0];
   const color = getComputedStyle(colorSelected).backgroundColor;
-  selff.target.style.backgroundColor = color;
+  self.target.style.backgroundColor = color;
 }
 
 function appendcolorPixelListener(pixels) {
@@ -35,7 +35,7 @@ function appendcolorPixelListener(pixels) {
   }
 }
 
-let pixelsBoard = document.getElementsByClassName('pixel');
+const pixelsBoard = document.getElementsByClassName('pixel');
 
 // ex 9
 function clearPixel() {
@@ -67,6 +67,11 @@ function randomColor() {
   }
 }
 
+function newBoard() {
+  const Boardinput = document.getElementById('board-size').value;
+  checkInput(Boardinput);
+}
+
 function createTable(number) {
   const pixelBoard = document.getElementById('pixel-board');
   for (let line = 0; line < number; line += 1) {
@@ -87,13 +92,14 @@ function createTable(number) {
 }
 
 function checkNumber(number) {
-  if (number < 5) {
-    number = 5;
+  let num = number;
+  if (num < 5) {
+    num = 5;
   }
-  if (number > 50) {
-    number = 50;
+  if (num > 50) {
+    num = 50;
   }
-  createTable(number);
+  createTable(num);
 }
 
 function checkInput(Boardinput) {
@@ -102,11 +108,6 @@ function checkInput(Boardinput) {
     return;
   }
   checkNumber(Boardinput);
-}
-
-function newBoard() {
-  const Boardinput = document.getElementById('board-size').value;
-  checkInput(Boardinput);
 }
 
 window.onload = createTable(5);
