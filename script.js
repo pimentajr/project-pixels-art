@@ -19,7 +19,6 @@ function createPixelBoard(input) {
   }
 }
 createPixelBoard(5);
-
 palleteColor.onclick = function chosenColor(e) {
   const selectedColor = document.querySelector('.selected');
   if (selectedColor) {
@@ -27,14 +26,12 @@ palleteColor.onclick = function chosenColor(e) {
   }
   e.target.classList.add('selected');
 }
-
 pixelBoard.onclick = function toPaint(e) {
   const selectedColor = document.querySelector('.selected');
   if (e.target.className === 'pixel') {
     e.target.style.backgroundColor = selectedColor.style.backgroundColor;
   }
 };
-
 function getRandomColor() {
   const letters = '0123456789ABCDEF';
   const  colors = '#';
@@ -43,7 +40,6 @@ function getRandomColor() {
   }
   return colors;
 }
-
 function colorpalettes() {
   const palletes = ['black'];
   for (let index = 0; index < 3; index += 1) {
@@ -56,7 +52,6 @@ function colorpalettes() {
   return palletes;
 }
 colorpalettes();
-
 buttonClear.onclick = function clear() {
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = 'white';
