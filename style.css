@@ -1,5 +1,5 @@
 body {
-  background-image: url('grey-scale-dark.jpg');
+  background-image: url('pixel-art01.png');
   background-size: cover;
 }
 
@@ -10,7 +10,6 @@ body {
 
 #title {
   font-family: RocknRoll One, sans-serif;
-  color: antiquewhite;
   font-size: 35px;
 }
 
