@@ -9,14 +9,10 @@ function setColorPalette() {
 
 setColorPalette();
 
-function generatePixels() {
-  const board = document.querySelector('#pixel-board');
-  const table = document.createElement('table');
-  board.appendChild(table);
-
-  for (let index = 0; index < 5; index += 1) {
+function generatePixels(value, table) {
+  for (let index = 0; index < value; index += 1) {
     const tr = document.createElement('tr');
-    for (let secondIndex = 0; secondIndex < 5; secondIndex += 1) {
+    for (let secondIndex = 0; secondIndex < value; secondIndex += 1) {
       const td = document.createElement('td');
       const div = document.createElement('div');
       div.classList.add('pixel');
@@ -27,7 +23,14 @@ function generatePixels() {
   }
 }
 
-generatePixels();
+function pixelBoardSize() {
+  const board = document.querySelector('#pixel-board');
+  const table = document.createElement('table');
+  board.appendChild(table);
+  generatePixels(5, table);
+}
+
+pixelBoardSize();
 
 function getColorPalette(event) {
   const selected = document.querySelector('.selected');
@@ -66,14 +69,35 @@ paintPixel();
 
 function clearPixel() {
   const pixel = document.querySelectorAll('.pixel');
-  for (let index = 0; index < 25; index += 1) {
+  for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = 'white';
   }
 }
 
 function clearBoard() {
-  const button = document.getElementById('clear-board');
-  button.addEventListener('click', clearPixel);
+  const buttonClear = document.getElementById('clear-board');
+  buttonClear.addEventListener('click', clearPixel);
 }
 
 clearBoard();
+
+function generateBoard() {
+  const button = document.getElementById('generate-board');
+  const boardSize = document.getElementById('board-size');
+
+  button.addEventListener('click', () => {
+    const size = parseInt(boardSize.value, 10);
+
+    if (!size) {
+      return alert('Board inválido!');
+    }
+    const board = document.querySelector('#pixel-board');
+    board.lastChild.remove();
+    const table = document.createElement('table');
+    board.appendChild(table);
+    generatePixels(size, table);
+    paintPixel();
+  });
+}
+
+generateBoard();

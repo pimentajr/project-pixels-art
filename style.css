@@ -41,3 +41,38 @@ button {
   padding: 5px;
   margin-left: 5px;
 }
+
+.pixel-colors {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.pixel-colors div {
+  margin: 2px;
+}
+
+.pixel-table {
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  margin: 15px;
+  border: 1px solid rgb(216, 213, 213);
+  box-shadow: 1px #333434;
+}
+
+.menu label {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.menu button {
+  margin-right: 5px;
+  padding: 5px;
+}
