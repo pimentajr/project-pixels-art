@@ -1,35 +1,25 @@
-#title {
-    display: flex;
-    width: 300px; 
-    margin-left: auto;
-    margin-right: auto; 
-}
-
-#color-palette {
-    width: 400px; 
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .color , .selected {
     border: 1px black solid;
     width: 80px;
     height: 40px;
     display: inline-block
   }
-
-.pixel {
+  
+  ul {
+    padding-inline-start: 0px;
+  }
+  
+  .pixel {
+    border: 1px solid black;
     height: 40px;
     width: 40px;
-    border: 1px solid black;
-    padding: 15px;
     display: inline-block;
     background-color: white;
-}
-
-#pixel-board {
-    width: 430px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-}
+  }
+  
+  #pixel-board {
+    display: table;
+    width: 220px;
+    height: 120px;
+  }
+  
