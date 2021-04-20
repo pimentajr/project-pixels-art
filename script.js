@@ -4,7 +4,7 @@ document.getElementById('blue').style.backgroundColor = 'blue';
 document.getElementById('yellow').style.backgroundColor = 'yellow';
 
 const captureClassColor = document.querySelectorAll('.color');
-for (index = 0; index < captureClassColor.lenght; index += 1) {
+for (let index = 0; index < captureClassColor.lenght; index += 1) {
     let liColor = captureClassColor[index]
     liColor.addEventListener('click', selectedClass);
     // eslint-disable-next-line no-inner-declarations
