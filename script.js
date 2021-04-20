@@ -21,15 +21,24 @@ for (let i = 1; i < cores.length; i += 1) {
 // cria a grid de pixel
 function criarGrid() {
   const tagTable = document.createElement('table'); // <table> <table/>
-  // declara a div que vamos usar
-  divTop.appendChild(tagTable);
+  divisaoTop.appendChild(tagTable);
+  // valida se o input é menor que 5 ou maior que 50
+  if (inputUser.value < 5) {
+    tamanhoGrid = 5;
+  } else if (inputUser.value > 50) {
+    tamanhoGrid = 50;
+  }
   for (let n = 1; n <= tamanhoGrid; n += 1) {
     const tagTR = document.createElement('tr');
-  for (let i = 0; i < cores.length; i += 1) {
-      cores[i].addEventListener('click', selecionaCor);
+    tagTable.appendChild(tagTR);
+    for (let b = 1; b <= tamanhoGrid; b += 1) {
+      const tagTH = document.createElement('th');
+      tagTH.className = 'pixel';
+      tagTR.appendChild(tagTH);
     }
   }
 }
+criarGrid();
 // print a grade
 function printPixels() {
   for (let i = 0; i < pixels.length; i += 1) {
@@ -64,3 +73,4 @@ criarBtt.addEventListener('click', limpaGrid);
 criarBtt.addEventListener('click', verificaInput);
 criarBtt.addEventListener('click', verificaGridValeu);
 criarBtt.addEventListener('click', criarGridValue);
+criarBtt.addEventListener('click', printPixels);
