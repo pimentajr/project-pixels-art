@@ -67,6 +67,14 @@ function randomColor() {
   }
 }
 
+function checkInput(Boardinput) {
+  if (!Boardinput) {
+    alert('Board inválido!');
+    return;
+  }
+  checkNumber(Boardinput);
+}
+
 function newBoard() {
   const Boardinput = document.getElementById('board-size').value;
   checkInput(Boardinput);
@@ -100,14 +108,6 @@ function checkNumber(number) {
     num = 50;
   }
   createTable(num);
-}
-
-function checkInput(Boardinput) {
-  if (!Boardinput) {
-    alert('Board inválido!');
-    return;
-  }
-  checkNumber(Boardinput);
 }
 
 window.onload = createTable(5);
