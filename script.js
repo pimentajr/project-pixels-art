@@ -17,7 +17,6 @@ function createPixelBoard(input) {
       cell.style.backgroundColor = 'white';
     }
   }
-
 }
 createPixelBoard(5);
 
@@ -37,8 +36,8 @@ pixelBoard.onclick = function toPaint(e) {
 };
 
 function getRandomColor() {
-  let letters = '0123456789ABCDEF';
-  let colors = '#';
+  const letters = '0123456789ABCDEF';
+  const  colors = '#';
   for (let index = 0; index < 6; index += 1) {
     colors += letters[Math.floor(Math.random() * 16)];
   }
@@ -56,7 +55,6 @@ function colorpalettes() {
   }
   return palletes;
 }
-
 colorpalettes();
 
 buttonClear.onclick = function clear() {
