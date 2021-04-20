@@ -1,7 +1,7 @@
 const pixelBoards = document.getElementById('pixel-board');
 const btnClear = document.getElementById('clear-board');
 const currentColor = document.getElementsByClassName('selected');
-const colorPalette = document.querySelectorAll('#color-palette>button');
+const colorSelect = document.querySelectorAll('#color-palette>button');
 const btnSize = document.getElementById('generate-board');
 const blackColor = document.getElementById('black');
 const redColor = document.getElementById('red');
@@ -10,9 +10,9 @@ const greenColor = document.getElementById('green');
 
 // https://www.w3schools.com/howto/howto_js_active_element.asp
 function selectedColor() {
-  for (let i = 0; i < colorPalette.length; i += 1) {
-    colorPalette[i].className = 'color';
-    colorPalette[i].addEventListener('click', function () {
+  for (let i = 0; i < colorSelect.length; i += 1) {
+    colorSelect[i].className = 'color';
+    colorSelect[i].addEventListener('click', function () {
       currentColor[0].className = currentColor[0].className.replace('selected', '');
       this.className = 'selected color';
     });
@@ -72,9 +72,9 @@ function boardsValue() {
 btnSize.addEventListener('click', boardsValue);
 
 function randomColor() {
-  const r = parseInt(Math.random() * 255);
-  const g = parseInt(Math.random() * 255);
-  const b = parseInt(Math.random() * 255);
+  const r = parseInt(Math.random() * '255');
+  const g = parseInt(Math.random() * '255');
+  const b = parseInt(Math.random() * '255');
 
   return `rgb(${r},${g},${b})`;
 }
@@ -83,10 +83,11 @@ blackColor.style.backgroundColor = 'black';
 redColor.style.backgroundColor = randomColor();
 blueColor.style.backgroundColor = randomColor();
 greenColor.style.backgroundColor = randomColor();
-window.onload = () => {
-selectedColor();
-makeDivs(5);
 
-const colorBlack = document.getElementsByClassName('color')[0];
-colorBlack.className = 'selected color';
+window.onload = () => {
+  selectedColor();
+  makeDivs(5);
+
+  const colorBlack = document.getElementsByClassName('color')[0];
+  colorBlack.className = 'selected color';
 }

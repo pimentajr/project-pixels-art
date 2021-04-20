@@ -30,7 +30,7 @@ body {
 }
 
 #pixel-board {
-display: inline-block;
+  display: inline-block;
 }
 
 .pixel {
