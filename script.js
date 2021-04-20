@@ -26,17 +26,17 @@ palleteColor.onclick = function chosenColor(e) {
     selectedColor.classList.remove('selected');
   }
   e.target.classList.add('selected');
-}
+};
 
 pixelBoard.onclick = function toPaint(e) {
   const selectedColor = document.querySelector('.selected');
   if (e.target.className === 'pixel') {
     e.target.style.backgroundColor = selectedColor.style.backgroundColor;
   }
-}
+};
 
 function getRandomColor() {
-  let letters = '0123456789ABCDEF';
+  const letters = '0123456789ABCDEF';
   let colors = '#';
   for (let index = 0; index < 6; index += 1) {
     colors += letters[Math.floor(Math.random() * 16)];
