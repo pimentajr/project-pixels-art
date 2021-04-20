@@ -12,10 +12,7 @@
   <main>
     <section id="section">
       <h1 id="title">Paleta de Cores</h1>
-      <div id="size">
-        <button id="generate-board">VQV</button><input id="board-size">
-        <table id="color-palette">
-      </div>
+      <table id="color-palette">
         <tr>
           <th class="color selected" id="black"></th>
           <th class="color" id="green"></th>
@@ -23,7 +20,11 @@
           <th class="color" id="blue"></th>
         </tr>
       </table>
-      <button id="clear-board">Limpar</button>
+      <div id="size">
+        <button id="generate-board">VQV</button><input type="number" id="board-size" min="1">
+        <br>
+        <button id="clear-board">Limpar</button>
+      </div>
       <table id="pixel-board"></table>
     </section>
   </main>
