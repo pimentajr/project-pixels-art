@@ -72,9 +72,9 @@ function boardsValue() {
 btnSize.addEventListener('click', boardsValue);
 
 function randomColor() {
-  const r = parseInt(Math.random() * '255');
-  const g = parseInt(Math.random() * '255');
-  const b = parseInt(Math.random() * '255');
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
 
   return `rgb(${r},${g},${b})`;
 }
@@ -90,4 +90,4 @@ window.onload = () => {
 
   const colorBlack = document.getElementsByClassName('color')[0];
   colorBlack.className = 'selected color';
-}
+};
