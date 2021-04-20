@@ -58,7 +58,7 @@ function createPixel() {
 }
 
 function conditionalSize() {
-  if (inputButton.value < 8) {
+  if (inputButton.value < 8 && inputButton.value > 0) {
     createPixel();
   }
 }
