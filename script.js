@@ -1,17 +1,16 @@
-function createColorElements() {
-    const colorCreation = document.getElementById('color-palette');
+function criarCores() {
+    const pai = document.getElementById('color-palette');
   
     for (i = 0; i < 4; i += 1) {
-      const genericAttribute2 = document.createElement('li');
-      genericAttribute2.className = 'color';
-      colorCreation .appendChild(genericAttribute2);
+      const filho = document.createElement('li');
+      filho.className = 'color';
+      pai.appendChild(filho);
     }
-    const color = document.getElementsByClassName('color');
-    const black = color[0];
-    const green = color[1];
-    const red = color[2];
-    const blue = color[3];
-   
+    const cor = document.getElementsByClassName('color');
+    const black = cor[0];
+    const green = cor[1];
+    const red = cor[2];
+    const blue = cor[3];
    
   
     black.style.backgroundColor = 'black';
@@ -19,32 +18,32 @@ function createColorElements() {
     red.style.backgroundColor = 'red';
     blue.style.backgroundColor = 'blue';
   }
-  createColorElements(();
+  criarCores();
   
-  function createPixelBoard() {
+  function criarQuadro() {
     for (let i = 0; i < 5; i += 1) {
       for (let j = 0; j < 5; j += 1) {
-        const genericAttribute2 = document.createElement('li');
-        genericAttribute2.className = 'pixel';
-        document.getElementById('pixel-board').appendChild(genericAttribute2);
+        const filho = document.createElement('li');
+        filho.className = 'pixel';
+        document.getElementById('pixel-board').appendChild(filho);
       }
     }
   }
-  createPixelBoard();
+  criarQuadro();
   
-  function selectBlackColor() {
+  function CorPretaSelected() {
     const blackColor = document.getElementsByClassName('color')[0];
     blackColor.className = 'color selected';
   }
-  selec();
+  CorPretaSelected();
   
   function selectedClass() {
-    const genericAttribute1 = document.getElementById('color-palette');
-    genericAttribute1.addEventListener('click', function(event) {
-      const genericAttribute2 = document.getElementsByClassName('color');
-      for (i = 0; i < genericAttribute2.length; i += 1) {
-        if(genericAttribute2[i].className !== 'color') {
-            genericAttribute2[i].className = 'color';
+    const pai = document.getElementById('color-palette');
+    pai.addEventListener('click', function(event) {
+      const filho = document.getElementsByClassName('color');
+      for (i = 0; i < filho.length; i += 1) {
+        if(filho[i].className !== 'color') {
+          filho[i].className = 'color';
         }
         event.target.className = 'color selected';
       }
@@ -52,14 +51,14 @@ function createColorElements() {
   }
   selectedClass()
   
-  function paintPixel () {
-    let genericAttribute1 = document.getElementsByClassName('pixel')
+  function pintarPixeis () {
+    let pai = document.getElementsByClassName('pixel')
   
-    for (let i = 0; i < genericAttribute1.length; i += 1) {
-        genericAttribute1[i].addEventListener('click',function() {
+    for (let i = 0; i < pai.length; i += 1) {
+      pai[i].addEventListener('click',function() {
         let cor = document.querySelector('.selected')
-        genericAttribute1[i].style.backgroundColor = window.getComputedStyle(cor).getPropertyValue('background-color');
+          pai[i].style.backgroundColor = window.getComputedStyle(cor).getPropertyValue('background-color');
       })
     }
   }
-  paintPixel ();
+  pintarPixeis ();
