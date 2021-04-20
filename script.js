@@ -17,12 +17,15 @@ for (let indexLine = 0; indexLine < 5; indexLine += 1) {
 
 // cor inicial padrão preta 
 
-let currentColor = 'black';
+let currentColor = document.getElementById('black').style.backgroundColor;
 // guardar cor clicada 
 let clickedPalette = document.getElementById('color-palette');
 clickedPalette.addEventListener('click', function () {
   let clickedColor = event.target.style.backgroundColor;
   currentColor = clickedColor;
+  let colorSelected = document.getElementsByClassName('selected')[0];
+  colorSelected.classList.remove('selected');
+  event.target.classList.add('selected')
 })
 
 // pintar pixel com a cor atual
@@ -37,7 +40,7 @@ thePixelBoard.addEventListener('click', function () {
 // remover cores da tabela
 let clearBoard = document.getElementsByClassName('clear-board')[0];
 clearBoard.addEventListener('click', function () {
-  let pixelClear = document.getElementsByClassName('pixel');
+  const pixelClear = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixelClear.length; index++) {
     pixelClear[index].style.backgroundColor = 'white';
  }
