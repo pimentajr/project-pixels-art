@@ -12,7 +12,7 @@ const greenColor = document.getElementById('green');
 function selectedColor() {
   for (let i = 0; i < colorSelect.length; i += 1) {
     colorSelect[i].className = 'color';
-    colorSelect[i].addEventListener('click', (event) => {
+    colorSelect[i].addEventListener('click', function () {
       currentColor[0].className = currentColor[0].className.replace('selected', '');
       this.className = 'selected color';
     });
