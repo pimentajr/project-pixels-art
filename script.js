@@ -1,6 +1,7 @@
 window.onload = function() {
   let select = document.querySelector('.color')
   select.className = 'color selected'
+  createBoard()
 }
 
 function colorPallete(){
@@ -38,5 +39,14 @@ function clear() {
   var squares = document.getElementsByClassName('pixel')
   for (let square = 0; square < squares.length; square += 1){
     squares[square].style.backgroundColor = 'white'
+  }
+}
+
+function createBoard() { 
+  var pixelCount = 25
+  for (let i = 0; i < 25; i += 1){
+    var createPixel = document.createElement('div')
+    createPixel.classList.add('pixel')
+    document.getElementById("pixel-board").appendChild(createPixel)
   }
 }
