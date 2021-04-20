@@ -4,5 +4,5 @@ let allPixels = document.querySelectorAll('.pixel');
 
 window.onload = function () {
   let blackColor = document.getElementById('color1');
-  blackColor.classList = 'selected';
+  blackColor.classList.add('selected');
 }
