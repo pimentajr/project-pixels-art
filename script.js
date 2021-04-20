@@ -37,10 +37,11 @@ if (selected === null) {
 
 // Muda a cor selecionada
 function changeSelected(event) {
+  const evento = event;
   const selectedContainer = document.querySelector('.selected');
   selectedContainer.className = 'color box';
 
-  event.target.className += ' selected';
+  evento.target.className += ' selected';
 }
 
 const pallet = document.querySelector('#colors');
@@ -48,17 +49,18 @@ pallet.addEventListener('click', changeSelected);
 
 // Pinta com a cor selecionada
 function paintPixel(event) {
+  const evento = event;
   const selectedContainer = document.querySelector('.selected');
   const selectedColor = selectedContainer.style.backgroundColor;
 
-  event.target.style.backgroundColor = selectedColor;
+  evento.target.style.backgroundColor = selectedColor;
 }
 board.addEventListener('click', paintPixel);
 
 function cleanBoard() {
   const squarelist = document.getElementsByClassName('pixel box');
-  for (const square of squarelist) {
-    square.style.backgroundColor = 'white';
+  for (let index = 0; index < squarelist.length; index += 1) {
+    squarelist[index].style.backgroundColor = 'white';
   }
 }
 
