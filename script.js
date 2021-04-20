@@ -1,5 +1,5 @@
 const pixelBoard = document.getElementById('pixel-board');
-const color = document.getElementsByClassName('color');
+let color = document.getElementsByClassName('color');
 const palleteColor = document.getElementById('color-palette');
 const pixel = document.getElementsByClassName('pixel');
 const buttonClear = document.getElementById('clear-board');
@@ -17,7 +17,7 @@ function createPixelBoard(input) {
       cell.style.backgroundColor = 'white';
     }
   }
-};
+}
 createPixelBoard(5);
 
 palleteColor.onclick = function chosenColor(e) {
@@ -26,14 +26,14 @@ palleteColor.onclick = function chosenColor(e) {
     selectedColor.classList.remove('selected');
   }
   e.target.classList.add('selected');
-};
+}
 
 pixelBoard.onclick = function toPaint(e) {
   const selectedColor = document.querySelector('.selected');
   if (e.target.className === 'pixel') {
     e.target.style.backgroundColor = selectedColor.style.backgroundColor;
   }
-};
+}
 
 function getRandomColor() {
   const letters = '0123456789ABCDEF';
@@ -42,7 +42,7 @@ function getRandomColor() {
     colors += letters[Math.floor(Math.random() * 16)];
   }
   return colors;
-};
+}
 
 function colorpalettes() {
   const palletes = ['black'];
@@ -54,7 +54,7 @@ function colorpalettes() {
     color[index].style.backgroundColor = palletes[index];
   }
   return palletes;
-};
+}
 
 colorpalettes();
 buttonClear.onclick = function clear() {
