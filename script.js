@@ -67,7 +67,7 @@ function limpaGrid() {
 }
 // verificar valor da grid
 function verificaGridValeu() {
-  if (inputUser.value == '') {
+  if (inputUser.value === '') {
     alert('Board inválido!');
   }
 }
