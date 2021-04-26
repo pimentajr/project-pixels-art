@@ -1,5 +1,13 @@
 const colorPallet = document.querySelector('#color-palette');
 
+function createRGB() {
+  const r = Math.ceil(Math.random() * 255);
+  const g = Math.ceil(Math.random() * 255);
+  const b = Math.ceil(Math.random() * 255);
+
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
 function createColor(array) {
   for (let i = 0; i < array.length; i += 1) {
     const color = document.createElement('div');
@@ -8,7 +16,7 @@ function createColor(array) {
     colorPallet.appendChild(color);
   }
 }
-createColor(['black', 'red', 'blue', 'green']);
+createColor(['black', createRGB(), createRGB(), createRGB()]);
 
 function createBoard(n) {
   const board = document.querySelector('#pixel-board');
