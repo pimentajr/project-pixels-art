@@ -12,18 +12,18 @@ function createPixelBoard(size) {
   const pixelBoard = document.querySelector('#pixel-board');
   pixelBoard.innerHTML = '';
   for (let row = 0; row < size; row += 1) {
-    //Criar div que representa a linha.
+    // Criar div que representa a linha.
     const rowPixels = document.createElement('div');
     for (let column = 0; column < size; column += 1) {
-      //Criar cada coluna da linha.
+      // Criar cada coluna da linha.
       const columnPixel = document.createElement('div');
-      //Adicionar classe pixel a esse elemento
+      // Adicionar classe pixel a esse elemento
       columnPixel.className = 'pixel';
-      //Adicionar a coluna na linha
+      // Adicionar a coluna na linha
       rowPixels.appendChild(columnPixel);
-      columnPixel.style.backgroundColor = 'white';   
+      columnPixel.style.backgroundColor = 'white';
     }
-    //Adicionar a linha ao tabuleiro.
+    // Adicionar a linha ao tabuleiro.
     pixelBoard.appendChild(rowPixels);
   }
 }
@@ -32,9 +32,9 @@ createPixelBoard(5);
 
 function paintPixel(event) {
   // Descobrir qual a cor da paleta de cores está selecionada
-  //Descobrir uma forma de pegar o background color do elemento que tem a classe selected
-  //Adicionar este backgroundColor ao elemento clicado
-  //event.target
+  // Descobrir uma forma de pegar o background color do elemento que tem a classe selected
+  // Adicionar este backgroundColor ao elemento clicado
+  // event.target
   const currentColor = document.querySelector('.selected').id;
   if (event.target.className === 'pixel') {
     const getColor = event.target;
@@ -44,3 +44,10 @@ function paintPixel(event) {
 const pixelBoard = document.querySelector('#pixel-board');
 pixelBoard.addEventListener('click', paintPixel);
 
+const clearBtn = document.querySelector('#clear-board');
+clearBtn.addEventListener('click', function() {
+  const pixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+});
