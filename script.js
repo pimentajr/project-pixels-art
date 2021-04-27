@@ -21,6 +21,7 @@ function createPixelBoard(size) {
       columnPixel.className = 'pixel';
       //Adicionar a coluna na linha
       rowPixels.appendChild(columnPixel);
+      columnPixel.style.backgroundColor = 'white';   
     }
     //Adicionar a linha ao tabuleiro.
     pixelBoard.appendChild(rowPixels);
@@ -34,4 +35,13 @@ function paintPixel(event) {
   //Descobrir uma forma de pegar o background color do elemento que tem a classe selected
   //Adicionar este backgroundColor ao elemento clicado
   //event.target
+  const currentColor = document.querySelector('selected').id;
+  if (event.target.className === 'pixel') {
+    const getColor = event.target;
+    getColor.style.backgroundColor = currentColor;
+  }
 }
+const pixelBoard = document.querySelector('#pixel-board');
+pixelBoard.addEventListener('click', paintPixel);
+
+
