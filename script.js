@@ -1,3 +1,33 @@
+function randomColor() {
+  let round = Math.round,
+    random = Math.random,
+    s = 255;
+  return (
+    'rgba(' +
+    round(random() * s) +
+    ',' +
+    round(random() * s) +
+    ',' +
+    round(random() * s) +
+    ',' +
+    random().toFixed(1) +
+    ')'
+  );
+}
+
+randomColor();
+window.onload = function setRandomColor() {
+  let colors = document.getElementsByClassName('color');
+  for (index = 0; index < colors.length; index++) {
+    if (colors[index].classList.contains('black')) {
+      console.log('ja possui cor');
+    } else {
+      let cu = randomColor();
+      colors[index].style.backgroundColor = cu;
+    }
+  }
+};
+
 function board(row, column) {
   let height = row;
   let width = column;
@@ -16,6 +46,9 @@ function board(row, column) {
 const paleta = document.getElementById('color-palette');
 paleta.addEventListener('click', selectedColor);
 paleta.addEventListener('click', pickColor);
+
+const clearBoard = document.getElementById('clear-board');
+clearBoard.addEventListener('click', whiteBoard);
 
 const quadro = document.getElementById('pixel-board');
 quadro.addEventListener('click', setColor);
@@ -43,9 +76,6 @@ function setColor(event) {
   console.log(event.target.style);
 }
 
-const clearBoard = document.getElementById('clear-board');
-clearBoard.addEventListener('click', whiteBoard);
-
 function whiteBoard() {
   let white = 'rgb(255,255,255)';
   let pixel = document.getElementsByClassName('pixel');
@@ -55,7 +85,6 @@ function whiteBoard() {
 }
 
 function deleteBoard() {
-  console.log(quadro.lastChild);
   while (quadro.lastElementChild) {
     quadro.removeChild(quadro.lastElementChild);
   }
@@ -73,7 +102,6 @@ resizeButton.addEventListener('click', function () {
 
   size = parseInt(size);
 
-  
   if (size < 5) {
     size = 5;
   } else if (size > 50) {

@@ -11,18 +11,6 @@
   background-color: black;
 }
 
-.red {
-  background-color: red;
-}
-
-.green {
-  background-color: seagreen;
-}
-
-.purple {
-  background-color: purple;
-}
-
 #pixel-board {
   display: block;
   border: 0;
@@ -42,4 +30,8 @@
 #clear-board {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+#pixel-board div {
+  height: 40px;
 }
