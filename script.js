@@ -12,5 +12,14 @@ function selectColor (event) {
   event.target.classList.add('selected');
 }
 
-// criar um evento de click para identificar de onde veio o 
-// console.log(listenerFun());
+const pixelBoard = document.querySelector('#pixel-board');
+pixelBoard.addEventListener("click", paintPixel);
+
+function paintPixel (event) {
+  let selectedColor = document.querySelector('.selected');
+  let computedStyle = window.getComputedStyle(selectedColor);
+
+  if (event.target.className === 'pixel') {
+  event.target.style.backgroundColor = computedStyle.getPropertyValue('background-color')
+  }
+}
