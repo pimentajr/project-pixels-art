@@ -21,8 +21,8 @@
 }
 
 #pixel-board{
-
-}class="color"
+display: flex;
+}
 
 .pixel{
   border: 1px solid black;

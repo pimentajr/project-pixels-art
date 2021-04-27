@@ -1,14 +1,15 @@
 const startColor = document.getElementById('black');
 startColor.classList.add('selected');
 
-// atribuir a clase selected a cor que for clicada
-// criar um evento de click para identificar de onde veio o click
-
-let clickTest = document.getElementsByClassName('color');
+// identifica o click dentro da paleta de cores
+let clickTest = document.getElementById('color-palette');
+clickTest.addEventListener("click", listenerFun);
 
 function listenerFun (event) {
-  for (let index = 0; index < clickTest.length; index += 1) {
-    clickTest[index].addEventListener("click", listenerFun);
-  }
+  // atribuir a clase selected a cor que for clicada
+  event.classList.add('selected');
+console.log(event.target);
 }
-console.log(listenerFun());
+
+// criar um evento de click para identificar de onde veio o click
+// console.log(listenerFun());
