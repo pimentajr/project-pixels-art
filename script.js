@@ -12,6 +12,7 @@ function selectColor (event) {
   event.target.classList.add('selected');
 }
 
+// selecionar e pintar os pixels
 const pixelBoard = document.querySelector('#pixel-board');
 pixelBoard.addEventListener("click", paintPixel);
 
@@ -23,3 +24,15 @@ function paintPixel (event) {
   event.target.style.backgroundColor = computedStyle.getPropertyValue('background-color')
   }
 }
+
+const button = document.querySelector('#clear-board')
+button.addEventListener("click", clearBoard);
+function clearBoard () {
+ let butonPainted = document.querySelectorAll('.pixel');
+//  butonPainted.style.backgroundColor = 'white'
+for (let index = 0; index < butonPainted.length; index += 1) {
+  butonPainted[index].style.backgroundColor = 'white'
+}
+}
+
+
