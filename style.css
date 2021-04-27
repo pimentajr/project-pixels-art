@@ -1,0 +1,22 @@
+.color {
+  border: 1px solid black;
+}
+
+#color-palette {
+  border: 2px solid red;
+  display: flex;
+}
+
+#black{
+  background-color: black;
+}
+#magenta{
+  background-color: magenta;
+}
+#cyan{
+  background-color: cyan;
+}
+#green{
+  background-color:  greenyellow;
+}
+
