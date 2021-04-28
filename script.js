@@ -57,8 +57,8 @@ framePwd.addEventListener('click', paintPixel);
 // Requisito 9
 function createButtonClearPixels() {
   const section = document.createElement('section');
-  const colorPalette2 = document.querySelector('#color-palette');
-  colorPalette2.appendChild(section);
+  const header = document.querySelector('header');
+  header.appendChild(section);
   const btnClearPixels = document.createElement('button');
   section.appendChild(btnClearPixels);
   btnClearPixels.id = 'clear-board';
@@ -94,7 +94,7 @@ function clearInput() {
 const btnAdd = document.querySelector('#generate-board');
 btnAdd.addEventListener('click', () => {
   let valueInput = document.querySelector('input').value;
-  if (valueInput < 0 || valueInput === '') {
+  if (valueInput === '') {
     alert('Board inválido!');
   }
   // Requisito 11
