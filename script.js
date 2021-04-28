@@ -45,9 +45,25 @@ const pixelBoard = document.querySelector('#pixel-board');
 pixelBoard.addEventListener('click', paintPixel);
 
 const clearBtn = document.querySelector('#clear-board');
-clearBtn.addEventListener('click', function() {
+clearBtn.addEventListener('click', () => {
   const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
+});
+
+const vqvBtn = document.querySelector('#generate-board');
+const inputSize = document.querySelector('#board-size');
+vqvBtn.addEventListener('click', () => {
+  if (inputSize.value < 5){
+    inputSize.value = 5;
+  } else 
+  if (inputSize.value >= 5 && inputSize.value <= 50) {
+    return createPixelBoard(inputSize.value);
+  } if (inputSize > 50){
+    inputSize.value = 50;
+  } 
+  else {
+    alert('Board inválido!')
+    }
 });
