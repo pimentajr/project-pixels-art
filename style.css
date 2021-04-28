@@ -2,11 +2,22 @@
   margin: 0;
 }
 
-/*
 header {
-  margin: 20px, 0;
   text-align: center;
-} */
+  margin-bottom: 20px;
+}
+
+header h1 {
+  background-color: chartreuse;
+  font-family: monospace;
+  margin-bottom: 20px;
+}
+
+html {
+  background: url('https://images.unsplash.com/photo-1602532262454-d18bf4c4e0af?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80n9js4lD4ax8');
+  background-size: cover;
+  position: relative;
+}
 
 /* Estilização (Requisito 2) */
 .color {
@@ -32,5 +43,11 @@ header {
 #pixel-board {
   border: solid 1px black;
   width: max-content;
-  align-self: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }

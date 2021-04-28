@@ -50,7 +50,8 @@ const framePwd = document.querySelector('#pixel-board');
 function paintPixel(event) {
   const colorClassSelected = document.querySelector('.selected');
   const colorCurrent = getComputedStyle(colorClassSelected).backgroundColor; // A função getComputedStyle retorna todos as propriedades do CSS que foram usadas para renderizar um elemento na tela.
-  event.target.style.backgroundColor = colorCurrent;
+  let even = event.target;
+  even.style.backgroundColor = colorCurrent;
 }
 framePwd.addEventListener('click', paintPixel);
 
@@ -79,6 +80,8 @@ function createInputAndButton() {
   const section = document.querySelector('section');
   const input = document.createElement('input');
   input.id = 'board-size';
+  input.min = '1';
+  input.type = 'number';
   section.appendChild(input);
   const btnVQV = document.createElement('button');
   btnVQV.id = 'generate-board';
@@ -91,22 +94,32 @@ function clearInput() {
   document.querySelector('input').value = '';
 }
 
+// Requisito 11
+function validationInput(valueInput) {
+  let inputValue = valueInput.value;
+  if (inputValue < 5 && inputValue > 0) {
+    inputValue = 5;
+  }
+  if (inputValue > 50) {
+    inputValue = 50;
+  }
+  return inputValue;
+}
+
 const btnAdd = document.querySelector('#generate-board');
 btnAdd.addEventListener('click', () => {
-  let valueInput = document.querySelector('input').value;
-  if (valueInput === '') {
+  const valueInput = document.querySelector('#board-size');
+  if (valueInput.value === '') {
     alert('Board inválido!');
+    clearInput();
   }
-  // Requisito 11
-  const pixelBoard = document.querySelector('#pixel-board');
-  document.body.removeChild(pixelBoard);
-  if (valueInput < 5) {
-    valueInput = 5;
-  } else if (valueInput > 50) {
-    valueInput = 50;
+  const size = validationInput(valueInput);
+  if (size > 0 && size <= 50) {
+    const pixelBoard = document.querySelector('#pixel-board');
+    document.body.removeChild(pixelBoard);
+    createPixelBoard(size);
+    clearInput();
   }
-  clearInput();
-  createPixelBoard(valueInput);
 });
 
 // Requisito 12
