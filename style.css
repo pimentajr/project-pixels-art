@@ -1,0 +1,35 @@
+color-palette {
+  display: table;
+  width: 60%;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.table-line {
+  display: table-row;
+}
+
+.color {
+  display: table-cell;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  width: 25%;
+  height: 100%;
+}
+
+#color-1 {
+  background-color: black;
+}
+
+#color-2 {
+  background-color: red;
+}
+
+#color-3 {
+  background-color: yellow;
+}
+
+#color-4 {
+  background-color: blue;
+}
