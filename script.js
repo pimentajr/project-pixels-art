@@ -55,15 +55,35 @@ clearBtn.addEventListener('click', () => {
 const vqvBtn = document.querySelector('#generate-board');
 const inputSize = document.querySelector('#board-size');
 vqvBtn.addEventListener('click', () => {
-  if (inputSize.value < 5){
+  if (inputSize.value < 5) {
     inputSize.value = 5;
-  } else 
-  if (inputSize.value >= 5 && inputSize.value <= 50) {
+  } else if (inputSize.value >= 5 && inputSize.value <= 50) {
     return createPixelBoard(inputSize.value);
-  } if (inputSize > 50){
+  } if (inputSize > 50) {
     inputSize.value = 50;
-  } 
+  }
   else {
-    alert('Board inválido!')
-    }
+    alert('Board inválido!');
+  }
 });
+
+function randomPalletsColors() {
+  let rgb;
+  rgb = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
+  return rgb;
+}
+
+let getColor = document.querySelectorAll('.color');
+for (let index =0; index < getColor.length; index += 1) {
+  if (getColor[index].id !== 'black') {
+    getColor[index].style.backgroundColor = randomPalletsColors();
+  }
+}
+pixelBoard.addEventListener('click', (event) => {
+  const storageColor = document.querySelector('.selected').style.backgroundColor;
+  if (event.target.classList === 'pixel') {
+    const eventTarget = event.target;
+    eventTarget.style.backgroundColor = storageColor;
+  }
+})
+randomPalletsColors(); 
