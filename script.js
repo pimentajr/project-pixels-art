@@ -50,7 +50,7 @@ const framePwd = document.querySelector('#pixel-board');
 function paintPixel(event) {
   const colorClassSelected = document.querySelector('.selected');
   const colorCurrent = getComputedStyle(colorClassSelected).backgroundColor; // A função getComputedStyle retorna todos as propriedades do CSS que foram usadas para renderizar um elemento na tela.
-  let even = event.target;
+  const even = event.target;
   even.style.backgroundColor = colorCurrent;
 }
 framePwd.addEventListener('click', paintPixel);
