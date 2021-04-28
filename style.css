@@ -1,21 +1,24 @@
 body {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    background-color: gray;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
 }
+
 .color {
-    border: 1px solid black;
-    display: inline-block;
-    height: 40px;
-    width: 40px;
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
 }
-.camps, .linha {
-    display: flex;
+
+.camps , .linha {
+  display: flex;
 }
+
 .pixel {
-    background-color: white;
-    border: 1px solid black;
-    height: 40px;
-    width: 40px;
+  background-color: white;
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
 }
