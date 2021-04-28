@@ -35,10 +35,10 @@ function paintPixel(event) {
   // Descobrir uma forma de pegar o background color do elemento que tem a classe selected
   // Adicionar este backgroundColor ao elemento clicado
   // event.target
-  const currentColor = document.querySelector('.selected').id;
+  const storageColor = document.querySelector('.selected').id;
   if (event.target.className === 'pixel') {
     const getColor = event.target;
-    getColor.style.backgroundColor = currentColor;
+    getColor.style.backgroundColor = storageColor;
   }
 }
 const pixelBoard = document.querySelector('#pixel-board');
