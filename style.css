@@ -1,7 +1,5 @@
 color-palette {
   display: table;
-  width: 60%;
-  height: 40px;
   margin: 0 auto;
 }
 
@@ -14,8 +12,8 @@ color-palette {
   border-style: solid;
   border-color: black;
   border-width: 1px;
-  width: 25%;
-  height: 100%;
+  width: 40px;
+  height: 40px;
 }
 
 #color-1 {
@@ -32,4 +30,28 @@ color-palette {
 
 #color-4 {
   background-color: blue;
+}
+
+#pixel-board {
+  display: table;
+  margin: 35px auto;
+}
+
+.pixel-line {
+  display: table-row;
+  height: auto;
+}
+
+.pixel {
+  display: table-cell;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+}
+
+.selected {
+  outline: 8px solid white;
 }
