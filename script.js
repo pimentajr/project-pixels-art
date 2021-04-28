@@ -46,13 +46,13 @@ colorPalette.addEventListener('click', changeSelection);
 * Para a solucionar esse requisito, consultei a Pull Request de Islene Gomes.
 * link: https://github.com/tryber/sd-011-project-pixels-art/pull/146/
 */
-function paintPixels(event) {
+const framePwd = document.querySelector('#pixel-board');
+function paintPixel(event) {
   const colorClassSelected = document.querySelector('.selected');
   const colorCurrent = getComputedStyle(colorClassSelected).backgroundColor; // A função getComputedStyle retorna todos as propriedades do CSS que foram usadas para renderizar um elemento na tela.
   event.target.style.backgroundColor = colorCurrent;
 }
-const framePwd = document.querySelector('#pixel-board');
-framePwd.addEventListener('click', paintPixels);
+framePwd.addEventListener('click', paintPixel);
 
 // Requisito 9
 function createButtonClearPixels() {
@@ -94,12 +94,13 @@ function clearInput() {
 const btnAdd = document.querySelector('#generate-board');
 btnAdd.addEventListener('click', () => {
   let valueInput = document.querySelector('input').value;
-
   if (valueInput < 0 || valueInput === '') {
     alert('Board inválido!');
-    valueInput = 5;
-    // Requisito 11
-  } else if (valueInput < 5) {
+  }
+  // Requisito 11
+  const pixelBoard = document.querySelector('#pixel-board');
+  document.body.removeChild(pixelBoard);
+  if (valueInput < 5) {
     valueInput = 5;
   } else if (valueInput > 50) {
     valueInput = 50;
