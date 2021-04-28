@@ -10,7 +10,7 @@ body {
     height: 40px;
     width: 40px;
 }
-.camps, .linhas {
+.camps, .linha {
     display: flex;
 }
 .pixel {

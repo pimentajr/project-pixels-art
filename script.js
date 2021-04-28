@@ -1,10 +1,10 @@
 //Declaração das constantes que serão utilizadas.
 
-const paletteColor = document.querySelector('#palette');
-const quadroPixel = document.querySelector('#board');
-const tamanhoQuadro = document.getElementById('size');
-const botaoGerar = document.getElementById('generate');
-const botaoLimpar = document.querySelector('#clear');
+const paletteColor = document.querySelector('#color-palette');
+const quadroPixel = document.querySelector('#pixel-board');
+const tamanhoQuadro = document.getElementById('board-size');
+const botaoGerar = document.getElementById('generate-board');
+const botaoLimpar = document.querySelector('#clear-board');
 
 //Função para criar a paleta de cores.
 
@@ -54,7 +54,7 @@ function quadroPixels(capacidade) {
     let linhas = ' ';
     for (linhas = 0; linhas < capacidade; linhas += 1) {
       const quadro = document.createElement('div');
-      quadro.classList.add('linhas');
+      quadro.classList.add('linha');
       quadroPixel.appendChild(quadro);
       let colunas = ' ';
       for (colunas = 0; colunas < capacidade; colunas += 1) {
@@ -102,8 +102,8 @@ botaoLimpar.addEventListener('click', redefinir);
 //Função que define o número mínimo e máximo de colunas X linhas no quadro de pixels.
 
 function minSizeAndMaxSize(tamanho) {
-  if (tamanho < 5 && tamanho > 0) {
-    tamanho = tamanho;
+  if (tamanho < 5 && tamanho >= 0) {
+    tamanho = 5;
   }
   if (tamanho > 50) {
     tamanho = 50;
@@ -116,9 +116,9 @@ function minSizeAndMaxSize(tamanho) {
 function gerarTabela() {
   const tamanho = tamanhoQuadro.value;
   if (!tamanho) {
-    return alert('Seleção de tamanho inválida!');
+    return alert('Board inválido!');
   }
   const  tamanhoDefinido= minSizeAndMaxSize(tamanho);
-  quadroPixel.innerHTML = '';
+  quadroPixel.innerHTML = ' ';
   return quadroPixels(tamanhoDefinido);
 }

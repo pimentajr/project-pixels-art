@@ -6,15 +6,15 @@
     <title>Pixel Art</title>
 	<link rel="stylesheet" href="style.css">
 </head>
-	<h1 >Paleta de Cores</h1>
+	<h1 id='title'>Paleta de Cores</h1>
 <body>
-	<div id="palette"></div>
+	<div id="color-palette"></div>
 	<div class="camps">
-		<input type="number" id="size" placeholder="Tamanho, Max:50">
-		<button id="generate" onclick="gerarTabela()">Gerar quadro</button>
-		<button id="clear">Limpar cores</button>
+		<input type="number" id="board-size" min="1" pattern="[1-9]+$" placeholder="Tamanho, Min : 5 Max: 50">
+		<button id="generate-board" onclick="gerarTabela()">VQV</button>
+		<button id="clear-board">Limpar</button>
 	</div>
-	<div id="board"></div>
+	<div id="pixel-board"></div>
 	<script src="script.js"></script>
 </body>
 </html>
