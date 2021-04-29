@@ -7,6 +7,16 @@ h1 {
   text-align: center;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  padding: 15px 0;
+}
+
 .color {
   border: 1px solid black;
   width: 50px;
@@ -47,12 +57,11 @@ button {
 }
 
 .menu {
+  width: 30%;
+  margin: 20px auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 15px;
-  margin: 15px;
-  border: 1px solid rgb(216, 213, 213);
-  box-shadow: 1px #333434;
 }
 
 .menu label {
@@ -64,11 +73,11 @@ button {
 .menu button {
   margin-right: 5px;
   padding: 5px;
+  width: 20%;
 }
 
 .footer {
-  padding: 2%;
-  margin-top: 10%;
+  padding: 15px 30px;
   display: flex;
   justify-content: flex-end;
   background-color: rgb(38, 39, 43);

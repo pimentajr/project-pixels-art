@@ -1,3 +1,6 @@
+const board = document.querySelector('#pixel-board');
+const selectColor = document.getElementById('color-palette');
+
 /** Consultei uma função do site para gerar cores hexadecimais aleatórias.
  * Source: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript */
 function generateColor(opacidade = 1) {
@@ -7,8 +10,6 @@ function generateColor(opacidade = 1) {
 
   return `rgba(${r}, ${g}, ${b}, ${opacidade})`;
 }
-
-const board = document.querySelector('#pixel-board');
 
 function setColorPalette() {
   const color = document.querySelectorAll('.color');
@@ -46,21 +47,14 @@ function pixelBoardSize() {
 
 pixelBoardSize();
 
-function getColorPalette(event) {
-  const reset = document.querySelector('.selected');
-  reset.classList.remove('selected');
-  const selectedColor = event.target;
-  selectedColor.classList.add('selected');
-}
-
-function selectColor() {
-  const colorSelection = document.querySelectorAll('.color');
-  for (let index = 0; index < colorSelection.length; index += 1) {
-    colorSelection[index].addEventListener('click', getColorPalette);
+selectColor.addEventListener('click', (event) => {
+  if (event.target.tagName === 'DIV') {
+    const reset = document.querySelector('.selected');
+    reset.classList.remove('selected');
+    const selectedColor = event.target;
+    selectedColor.classList.add('selected');
   }
-}
-
-selectColor();
+})
 
 function getPixel(event, pixel) {
   const selectedColor = document.querySelector('.selected');
