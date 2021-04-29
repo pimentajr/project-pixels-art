@@ -8,9 +8,12 @@ h1 {
 }
 
 body {
+  background-image: url('background-image.jpg');
+  background-size: cover;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  color: #fc3458;
 }
 
 header {
@@ -68,28 +71,11 @@ button {
   display: flex;
   align-items: center;
   margin-right: 5px;
+  font-size: 18px;
 }
 
 .menu button {
   margin-right: 5px;
   padding: 5px;
   width: 20%;
-}
-
-.footer {
-  padding: 15px 30px;
-  display: flex;
-  justify-content: flex-end;
-  background-color: rgb(38, 39, 43);
-  font-size: 1.5rem;
-  color: white;
-}
-
-.footer a {
-  color: rgb(253, 251, 251);
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: rgb(33, 134, 97);
 }
