@@ -32,6 +32,11 @@ function createLineSquares(lineLength, pixelBoard) {
       squares[index] = document.createElement('div');
       squares[index].className = 'pixel';
       squares[index].style.backgroundColor = 'rgba(255, 255, 255)';
+      if(index === 0 && lineIndex === 0) {
+        squares[index].classList.add("bombwhite");
+      } else if (index === lineLength-1 && lineIndex === lineLength-1) {
+        squares[index].classList.add("bombblack");
+      }
       lines[lineIndex].appendChild(squares[index]);
     }
   }

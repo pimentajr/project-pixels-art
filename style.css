@@ -8,14 +8,32 @@
 /* Main */
 body {
   text-align: center;
+  background-image: url('bomberman4.jpg');
+  background-size: 100%;
+}
+
+.bombblack {
+  background: url(bombblack.jpg);
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+}
+
+.bombwhite {
+  background: url(bombwhite.jpg);
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
 }
 
 #pixel-board {
   display: inline-block;
+  border: 40px solid black;
+  border-image: url("block.png") 35 / 41px round;
+  
+  
 }
 
 .pixel {
-  display: inline-block;
+  display:table-cell;
   width: 40px;
   height: 40px;
   border: 1px solid black;
