@@ -1,5 +1,6 @@
 const board = document.querySelector('#pixel-board');
 const selectColor = document.getElementById('color-palette');
+const paintPixel = document.getElementById('pixel-board');
 
 /** Consultei uma função do site para gerar cores hexadecimais aleatórias.
  * Source: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript */
@@ -54,24 +55,14 @@ selectColor.addEventListener('click', (event) => {
     const selectedColor = event.target;
     selectedColor.classList.add('selected');
   }
-})
+});
 
-function getPixel(event, pixel) {
-  const selectedColor = document.querySelector('.selected');
-  let currentPixel = pixel;
-  currentPixel = event.target;
-  currentPixel.style.backgroundColor = selectedColor.style.backgroundColor;
-}
-
-function paintPixel() {
-  const pixel = document.querySelectorAll('.pixel');
-  console.log(pixel.length);
-  for (let index = 0; index < pixel.length; index += 1) {
-    pixel[index].addEventListener('click', getPixel);
+paintPixel.addEventListener('click', (event) => {
+  if (event.target.tagName === 'DIV') {
+    const selectedColor = document.querySelector('.selected');
+    event.target.style.backgroundColor = selectedColor.style.backgroundColor;
   }
-}
-
-paintPixel();
+});
 
 function clearPixel() {
   const pixel = document.querySelectorAll('.pixel');
@@ -103,7 +94,6 @@ function generateBoard() {
       size = 50;
     }
     generatePixels(size, size);
-    paintPixel();
   });
 }
 
