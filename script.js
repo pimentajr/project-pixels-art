@@ -45,7 +45,7 @@ function colorSelectedPixel(event) {
 }
 
 /**
- * Adiciona um EventListener em todos os elementos da classe ecolhida (referredClass), para, ao sinal de um evento (eventName), seja executada a funcao indicada (funtionToRun)
+ * Adiciona um EventListener em todos os elementos da classe ecolhida (referredClass), para, ao sinal de um evento (eventName), seja executada a funcao indicada (functionToRun)
  * Ref: https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
  * Ref: https://www.w3schools.com/jsref/jsref_foreach.asp
  * Ref: https://www.w3schools.com/js/js_arrow_function.asp
@@ -65,12 +65,42 @@ function clearBoard() {
   });
 }
 
+function inputValue() {
+  let input = parseInt(document.getElementById('board-size').value, 10);
+  if (input < 5) {
+    input = 5;
+  } else if (input > 50) {
+    input = 50;
+  }
+  return input;
+}
+
+function removeBoard() {
+  const rows = document.getElementById('pixel-board').children;
+  const rowLength = rows.length;
+  for (let index = 0; index < rowLength; index += 1) {
+    rows[0].remove();
+  }
+}
+
+function newBoard() {
+  const input = inputValue();
+  if (!input) {
+    alert('Board inválido!');
+  }
+  removeBoard();
+  createPixelBoard(input);
+  addEventListenerFunction('.pixel', 'click', colorSelectedPixel);
+}
+
 window.onload = function init() {
   // createPixelBoard(5);
   const initialColor = document.querySelector('.color'); // busca o primeiro elemento com a classe 'color' que é o black
   initialColor.classList.add('selected'); // adiciona a classe 'selected' na cor black
   addEventListenerFunction('.color', 'click', selectedColor);
   addEventListenerFunction('.pixel', 'click', colorSelectedPixel);
-  const button = document.getElementById('clear-board');
-  button.addEventListener('click', clearBoard);
+  const clearButton = document.getElementById('clear-board');
+  clearButton.addEventListener('click', clearBoard);
+  const vqvButton = document.getElementById('generate-board');
+  vqvButton.addEventListener('click', newBoard);
 };
