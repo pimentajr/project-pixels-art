@@ -1,4 +1,36 @@
 /**
+ * Cria 4 elementos div, atribui a eles a classe 'color' e, ao primeiro, a classe 'selected'.
+ */
+function createPalette() {
+  const colorPalette = document.getElementById('color-palette');
+  const numColors = 4;
+  for (let index = 0; index < numColors; index += 1) {
+    const color = document.createElement('div');
+    color.classList.add('color');
+    colorPalette.appendChild(color);
+  }
+  document.querySelector('.color').classList.add('selected');
+}
+
+/**
+ * Retorna um numero qualquer entre 1 e 255.
+ */
+function randomNum() {
+  return Math.round(Math.random() * 255);
+}
+
+/**
+ * Atribui a background color 'black' ao primeiro elemento de classe 'color' e, aos demais, cores quaisquer atraves da funcao randomNum.
+ */
+function colorizePalette() {
+  const paletteColors = document.querySelectorAll('.color');
+  paletteColors[0].style.backgroundColor = 'black';
+  for (let i = 1; i < paletteColors.length; i += 1) {
+    paletteColors[i].style.backgroundColor = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`;
+  }
+}
+
+/**
  * Cria um elemento div e atribui a ele a classe 'pixel'.
  */
 function createPixel() {
@@ -57,6 +89,9 @@ function addEventListenerFunction(referredClass, eventName, functionToRun) {
   });
 }
 
+/**
+ * Atribui a todos os elementos de classe 'pixel' a background color 'white'.
+ */
 function clearBoard() {
   const pixel = document.querySelectorAll('.pixel');
   pixel.forEach((item) => {
@@ -65,6 +100,9 @@ function clearBoard() {
   });
 }
 
+/**
+ * Certifica que o valor do input estja entre 5 e 50.
+ */
 function inputValue() {
   let input = parseInt(document.getElementById('board-size').value, 10);
   if (input < 5) {
@@ -75,6 +113,9 @@ function inputValue() {
   return input;
 }
 
+/**
+ * Remove os elementos que formam o pixel board.
+ */
 function removeBoard() {
   const rows = document.getElementById('pixel-board').children;
   const rowLength = rows.length;
@@ -83,6 +124,9 @@ function removeBoard() {
   }
 }
 
+/**
+ * Se o valor do input for válido, remove o board anterior atraves da funcao removeBoard, cria um novo board do tamanho de acordo com o valor inputado e aplica ao seus pixels a funcao que os permitem ser coloridos.
+ */
 function newBoard() {
   const input = inputValue();
   if (!input) {
@@ -94,7 +138,8 @@ function newBoard() {
 }
 
 window.onload = function init() {
-  // createPixelBoard(5);
+  createPalette();
+  colorizePalette();
   const initialColor = document.querySelector('.color'); // busca o primeiro elemento com a classe 'color' que é o black
   initialColor.classList.add('selected'); // adiciona a classe 'selected' na cor black
   addEventListenerFunction('.color', 'click', selectedColor);
@@ -103,4 +148,6 @@ window.onload = function init() {
   clearButton.addEventListener('click', clearBoard);
   const vqvButton = document.getElementById('generate-board');
   vqvButton.addEventListener('click', newBoard);
+  const newColorsButton = document.getElementById('randomize-colors');
+  newColorsButton.addEventListener('click', colorizePalette);
 };
