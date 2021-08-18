@@ -37,7 +37,7 @@ Com os softwares instalados, siga as instruções abaixo:
 git clone https://github.com/pimentajr/project-pixels-art
 
 # Entrar no diretório
-cd sd-011-project-pixels-art
+cd project-pixels-art
 
 # Baixar as dependências
 npm i
