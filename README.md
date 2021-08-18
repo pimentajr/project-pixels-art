@@ -34,7 +34,7 @@ Com os softwares instalados, siga as instruções abaixo:
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/pimentajr/sd-011-project-pixels-art
+git clone https://github.com/pimentajr/project-pixels-art
 
 # Entrar no diretório
 cd sd-011-project-pixels-art
