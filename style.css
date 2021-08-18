@@ -1,0 +1,151 @@
+:root {
+
+  --first-color: black;
+
+  --second-color: red;
+
+  --third-color: blue;
+
+  --fourth-color: green;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 110px;
+}
+
+h1 {
+  font-family: New Tegomin, serif;
+  font-size: 50px;
+  text-align: center;
+  margin: 30px auto;
+  width: 450px;
+  cursor: no-drop;
+  transition: 0.8s;
+  color: black;
+}
+
+h1:after {
+  content: '';
+  display: block;
+  width: 400px;
+  height: 4px;
+  background: linear-gradient(90deg, red 0%, blue 52%, green 100%);
+  margin: 1px auto;
+  transition: 0.8s;
+}
+
+h1:hover {
+  color: red;
+  font-size: 56px;
+  transition: 0.5s;
+}
+
+h1:hover:after {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+li:hover {
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+
+#containerButton {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#board-size {
+  background-color: white;
+  border: solid 1px black;
+  display: inline-block;
+  margin: 21px auto 0;
+  padding: 5px;
+  text-align: center;
+  font-size: 12px;
+  width: 60px;
+}
+
+#generate-board {
+  background-color: black;
+  color: white;
+  border: solid 1px black;
+  display: inline-block;
+  margin: 21px 0;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 12px;
+}
+
+#color-palette {
+  margin: 0 auto;
+  height: 42px;
+  width: 180px;
+}
+
+#color-palette ul {
+  text-align: center;
+  margin: 0;
+}
+
+#color-palette ul li {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border: solid 1px black;
+}
+
+.pixel {
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  border: solid 1px black;
+}
+
+.pixel:hover {
+  transform: scale(0.95);
+  transition: 0.3s;
+}
+
+.colorBlack {
+  background-color: var(--first-color);
+}
+
+.colorRed {
+  background-color: var(--second-color);
+}
+
+.colorBlue {
+  background-color: var(--third-color);
+}
+
+.colorGreen {
+  background-color: var(--fourth-color);
+}
+
+#pixel-board {
+  margin: 20px auto;
+  background-color: white;
+}
+
+.selected {
+  color: black;
+}
+
+#clear-board {
+  background-color: black;
+  color: white;
+  border: solid 1px black;
+  display: inline-block;
+  margin: 21px 0 21px 10px;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 12px;
+}
+
