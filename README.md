@@ -34,10 +34,10 @@ Com os softwares instalados, siga as instruções abaixo:
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/pimentajr/project-pixels-art
+git clone https://github.com/pimentajr/trybe-pixels-art
 
 # Entrar no diretório
-cd project-pixels-art
+cd trybe-pixels-art
 
 # Baixar as dependências
 npm i
